@@ -421,7 +421,9 @@ bool CStatusEffectContainer::CanGainStatusEffect(CStatusEffect* PStatusEffect)
         }
         else if (overwrite == EFFECTOVERWRITE::EQUAL_HIGHER)
         {
-            if (PStatusEffect->GetTier() != 0 && existingEffect->GetTier() != 0)
+            if (PStatusEffect->GetTier() != 0 &&
+                existingEffect->GetTier() != 0 &&
+                PStatusEffect->GetTier() != existingEffect->GetTier())
             {
                 return PStatusEffect->GetTier() >= existingEffect->GetTier();
             }
@@ -1707,7 +1709,13 @@ void CStatusEffectContainer::LoadStatusEffects()
 
 void CStatusEffectContainer::SaveStatusEffects(bool logout, bool skipRemove)
 {
-    XI_DEBUG_BREAK_IF(m_POwner->objtype != TYPE_PC);
+    // Print entity name and bail out if entity isn't a player.
+    if (m_POwner->objtype != TYPE_PC)
+    {
+        ShowDebug("Non-player entity %s (ID: %d) attempt to save Status Effect.", m_POwner->GetName(), m_POwner->id);
+
+        return;
+    }
 
     sql->Query("DELETE FROM char_effects WHERE charid = %u", m_POwner->id);
 

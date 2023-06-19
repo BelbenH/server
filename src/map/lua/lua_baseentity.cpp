@@ -78,6 +78,7 @@
 #include "ai/states/weaponskill_state.h"
 
 #include "ai/controllers/mob_controller.h"
+#include "ai/controllers/spirit_controller.h"
 #include "ai/controllers/trust_controller.h"
 
 #include "ai/helpers/gambits_container.h"
@@ -517,6 +518,21 @@ void CLuaBaseEntity::messageCombat(sol::object const& speaker, int32 p0, int32 p
     }
 
     PChar->pushPacket(new CMessageCombatPacket(PSpeaker, PChar, p0, p1, message));
+}
+
+/************************************************************************
+ *  Function: messageStandard(id)
+ *  Purpose : Sends a standard message
+ *  Example : player:messageStandard(287)
+ *  Notes   :
+ ************************************************************************/
+
+void CLuaBaseEntity::messageStandard(uint16 messageID)
+{
+    if (auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity))
+    {
+        PChar->pushPacket(new CMessageStandardPacket(messageID));
+    }
 }
 
 void CLuaBaseEntity::customMenu(sol::object const& obj)
@@ -2177,7 +2193,7 @@ void CLuaBaseEntity::leaveGame()
  *  Notes   : Currently only used for HELM animations.
  ************************************************************************/
 
-void CLuaBaseEntity::sendEmote(CLuaBaseEntity* target, uint8 emID, uint8 emMode, bool self = false)
+void CLuaBaseEntity::sendEmote(CLuaBaseEntity* target, uint8 emID, uint8 emMode, bool self)
 {
     XI_DEBUG_BREAK_IF(m_PBaseEntity->objtype != TYPE_PC)
 
@@ -6084,7 +6100,7 @@ uint8 CLuaBaseEntity::levelRestriction(sol::object const& level)
                         petutils::CalculateAutomatonStats(PChar, PPet);
                         break;
                     case PET_TYPE::LUOPAN:
-                        petutils::CalculateLoupanStats(PChar, PPet);
+                        petutils::CalculateLuopanStats(PChar, PPet);
                         break;
                     default:
                         petutils::DespawnPet(PChar);
@@ -11164,7 +11180,7 @@ bool CLuaBaseEntity::getClaimable()
  *  Function: clearEnmityForEntity(...)
  *  Purpose :
  *  Example : mob:clearEnmityForEntity(player)
- *  Notes   : Taken from LSB. When merging from upstream, please accept theirs.
+ *  Notes   :
  ************************************************************************/
 
 void CLuaBaseEntity::clearEnmityForEntity(CLuaBaseEntity* PEntity)
@@ -12280,9 +12296,10 @@ int32 CLuaBaseEntity::physicalDmgTaken(double damage, sol::variadic_args va)
 {
     XI_DEBUG_BREAK_IF(m_PBaseEntity->objtype == TYPE_NPC);
 
-    DAMAGE_TYPE damageType = va[0].is<uint32>() ? va[0].as<DAMAGE_TYPE>() : DAMAGE_TYPE::NONE;
+    DAMAGE_TYPE damageType    = va[0].is<uint32>() ? va[0].as<DAMAGE_TYPE>() : DAMAGE_TYPE::NONE;
+    bool        ignoreDmgMods = va[1].is<bool>() ? va[1].as<bool>() : false;
 
-    return battleutils::PhysicalDmgTaken(static_cast<CBattleEntity*>(m_PBaseEntity), static_cast<int32>(damage), damageType);
+    return battleutils::PhysicalDmgTaken(static_cast<CBattleEntity*>(m_PBaseEntity), static_cast<int32>(damage), damageType, false, ignoreDmgMods);
 }
 
 /************************************************************************
@@ -12296,9 +12313,10 @@ int32 CLuaBaseEntity::magicDmgTaken(double damage, sol::variadic_args va)
 {
     XI_DEBUG_BREAK_IF(m_PBaseEntity->objtype == TYPE_NPC);
 
-    ELEMENT elementType = va[0].is<uint32>() ? va[0].as<ELEMENT>() : ELEMENT_NONE;
+    ELEMENT elementType   = va[0].is<uint32>() ? va[0].as<ELEMENT>() : ELEMENT_NONE;
+    bool    ignoreDmgMods = va[1].is<bool>() ? va[1].as<bool>() : false;
 
-    return battleutils::MagicDmgTaken(static_cast<CBattleEntity*>(m_PBaseEntity), static_cast<int32>(damage), elementType);
+    return battleutils::MagicDmgTaken(static_cast<CBattleEntity*>(m_PBaseEntity), static_cast<int32>(damage), elementType, ignoreDmgMods);
 }
 
 /************************************************************************
@@ -12312,9 +12330,10 @@ int32 CLuaBaseEntity::rangedDmgTaken(double damage, sol::variadic_args va)
 {
     XI_DEBUG_BREAK_IF(m_PBaseEntity->objtype == TYPE_NPC);
 
-    DAMAGE_TYPE damageType = va[0].is<uint32>() ? va[0].as<DAMAGE_TYPE>() : DAMAGE_TYPE::NONE;
+    DAMAGE_TYPE damageType    = va[0].is<uint32>() ? va[0].as<DAMAGE_TYPE>() : DAMAGE_TYPE::NONE;
+    bool        ignoreDmgMods = va[1].is<bool>() ? va[1].as<bool>() : false;
 
-    return battleutils::RangedDmgTaken(static_cast<CBattleEntity*>(m_PBaseEntity), static_cast<int32>(damage), damageType);
+    return battleutils::RangedDmgTaken(static_cast<CBattleEntity*>(m_PBaseEntity), static_cast<int32>(damage), damageType, false, ignoreDmgMods);
 }
 
 /************************************************************************
@@ -12324,11 +12343,13 @@ int32 CLuaBaseEntity::rangedDmgTaken(double damage, sol::variadic_args va)
  *  Notes   : Passes argument to BreathDmgTaken member of battleutils
  ************************************************************************/
 
-int32 CLuaBaseEntity::breathDmgTaken(double damage)
+int32 CLuaBaseEntity::breathDmgTaken(double damage, sol::variadic_args va)
 {
     XI_DEBUG_BREAK_IF(m_PBaseEntity->objtype == TYPE_NPC);
 
-    return battleutils::BreathDmgTaken(static_cast<CBattleEntity*>(m_PBaseEntity), static_cast<int32>(damage));
+    bool ignoreDmgMods = va[0].is<bool>() ? va[0].as<bool>() : false;
+
+    return battleutils::BreathDmgTaken(static_cast<CBattleEntity*>(m_PBaseEntity), static_cast<int32>(damage), ignoreDmgMods);
 }
 
 /************************************************************************
@@ -13585,9 +13606,13 @@ bool CLuaBaseEntity::charmPet(CLuaBaseEntity const* target)
 void CLuaBaseEntity::petAttack(CLuaBaseEntity* PEntity)
 {
     XI_DEBUG_BREAK_IF(m_PBaseEntity->objtype == TYPE_NPC);
-
-    if (static_cast<CBattleEntity*>(m_PBaseEntity)->PPet != nullptr)
+    CPetEntity* pet = static_cast<CPetEntity*>(static_cast<CBattleEntity*>(m_PBaseEntity)->PPet);
+    if (pet != nullptr)
     {
+        // A temporary fix until we move the spirit controller to lua.
+        if (pet->m_PetID >= PETID::PETID_AIRSPIRIT && pet->m_PetID <= PETID::PETID_DARKSPIRIT)
+            static_cast<CSpiritController*>(pet->PAI->GetController())->setMagicCooldowns();
+
         petutils::AttackTarget(static_cast<CBattleEntity*>(m_PBaseEntity), static_cast<CBattleEntity*>(PEntity->GetBaseEntity()));
     }
 }
@@ -13615,10 +13640,14 @@ void CLuaBaseEntity::petRetreat()
 {
     XI_DEBUG_BREAK_IF(m_PBaseEntity->objtype == TYPE_NPC);
 
-    auto* PBattle = static_cast<CBattleEntity*>(m_PBaseEntity);
-
-    if (PBattle->PPet != nullptr)
+    auto*       PBattle = static_cast<CBattleEntity*>(m_PBaseEntity);
+    CPetEntity* pet     = static_cast<CPetEntity*>(PBattle->PPet);
+    if (pet != nullptr)
     {
+        // A temporary fix until we move the spirit controller to lua.
+        if (pet->m_PetID >= PETID::PETID_AIRSPIRIT && pet->m_PetID <= PETID::PETID_DARKSPIRIT)
+            static_cast<CSpiritController*>(pet->PAI->GetController())->setMagicCooldowns();
+
         petutils::RetreatToMaster(PBattle);
     }
 }
@@ -15391,6 +15420,7 @@ uint32 CLuaBaseEntity::getDropID()
 }
 
 /************************************************************************
+ *  DEPRECATED: Use target:addListener("ITEM_DROPS", ...) instead.
  *  Function: setDropID()
  *  Purpose : Permanently changes the Drop ID assigned to a Mob
  *  Example : target:setDropID(2408)
@@ -16492,6 +16522,7 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("messageSpecial", CLuaBaseEntity::messageSpecial);
     SOL_REGISTER("messageSystem", CLuaBaseEntity::messageSystem);
     SOL_REGISTER("messageCombat", CLuaBaseEntity::messageCombat);
+    SOL_REGISTER("messageStandard", CLuaBaseEntity::messageStandard);
     SOL_REGISTER("customMenu", CLuaBaseEntity::customMenu);
 
     // Variables
@@ -17023,6 +17054,7 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("clearEnmity", CLuaBaseEntity::clearEnmity);
     SOL_REGISTER("setClaimable", CLuaBaseEntity::setClaimable);
     SOL_REGISTER("getClaimable", CLuaBaseEntity::getClaimable);
+    SOL_REGISTER("clearEnmityForEntity", CLuaBaseEntity::clearEnmityForEntity);
 
     // Status Effects
     SOL_REGISTER("addStatusEffect", CLuaBaseEntity::addStatusEffect);

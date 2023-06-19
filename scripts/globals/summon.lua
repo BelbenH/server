@@ -367,7 +367,11 @@ xi.summon.avatarFinalAdjustments = function(dmg, mob, skill, target, skilltype, 
     -- Calculate Blood Pact Damage before stoneskin
     dmg = dmg + dmg * mob:getMod(xi.mod.BP_DAMAGE) / 100
 
-    dmg = xi.damage.applyDamageTaken(target, dmg, skilltype, damagetype)
+    -- if magic then apply magic mods here
+    -- (physical mods are applied in physicalSDT)
+    if skilltype == xi.attackType.MAGICAL then
+        dmg = xi.damage.applyDamageTaken(target, dmg, skilltype, damagetype)
+    end
 
     -- handle One For All, Liement
 
@@ -601,7 +605,8 @@ xi.summon.avatarMagicSkill = function(avatar, target, skill, wsParams)
     local mab           = 100 + avatar:getMod(xi.mod.MATT)
     local mdb           = 100 + target:getMod(xi.mod.MDEF)
     local mdef          = mab / mdb
-    local mdt           = utils.ternary((sdtMod ~= nil), target:getMod(sdtMod), 1)
+    -- magic SDT range from -10000 to 10000 with positive values meaning less damage
+    local mdt           = utils.ternary((sdtMod ~= nil), 1 - (target:getMod(sdtMod) / 10000), 1)
     local bonus         = xi.settings.main.WEAPON_SKILL_POWER
 
     -- Account for potentially 0 MDT

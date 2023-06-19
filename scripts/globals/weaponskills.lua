@@ -946,6 +946,7 @@ xi.weaponskills.doMagicWeaponskill = function(attacker, target, wsID, wsParams, 
         -- Calculate magical bonuses and reductions
         dmg = xi.magic.addBonusesAbility(attacker, wsParams.element, target, dmg, wsParams)
         dmg = dmg * xi.magic.applyAbilityResistance(attacker, target, wsParams)
+
         dmg = target:magicDmgTaken(dmg, wsParams.element)
 
         if dmg < 0 then
@@ -1021,8 +1022,6 @@ xi.weaponskills.takeWeaponskillDamage = function(defender, attacker, wsParams, p
 
         action:reaction(defender:getID(), xi.reaction.EVADE)
     end
-
-    finaldmg = xi.damage.applyDamageTaken(defender, finaldmg, attack.type, attack.damageType)
 
     local targetTPMult = wsParams.targetTPMult or 1
     local attackerTPMult = wsParams.attackerTPMult or 1

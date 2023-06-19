@@ -29,7 +29,6 @@ global_objects=(
     Module
     Override
     super
-    applyOverride
 
     common
     zones
@@ -40,6 +39,7 @@ global_objects=(
     mixins
     g_mixins
     applyMixins
+    mixinOptions
 
     set
     printf

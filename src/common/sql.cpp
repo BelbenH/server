@@ -195,6 +195,35 @@ void SqlConnection::SetupKeepalive()
     m_PingInterval = timeout + reserve;
 }
 
+void SqlConnection::CheckCharset()
+{
+    // Check that the SQL charset is what we require
+    auto ret = QueryStr("SELECT @@character_set_database, @@collation_database;");
+    if (ret != SQL_ERROR && NumRows())
+    {
+        bool foundError = false;
+        while (NextRow() == SQL_SUCCESS)
+        {
+            auto charsetSetting   = GetStringData(0);
+            auto collationSetting = GetStringData(1);
+            if (!starts_with(charsetSetting, "utf8") || !starts_with(collationSetting, "utf8"))
+            {
+                foundError = true;
+                // clang-format off
+                ShowWarning(fmt::format("Unexpected character_set or collation setting in database: {}: {}. Expected utf8*.",
+                    charsetSetting, collationSetting).c_str());
+                // clang-format on
+            }
+        }
+
+        if (foundError)
+        {
+            ShowWarning("Non utf8 charset can result in data reads and writes being corrupted!");
+            ShowWarning("Non utf8 collation can be indicative that the database was not set up per required specifications.");
+        }
+    }
+}
+
 int32 SqlConnection::TryPing()
 {
     TracyZoneScoped;
