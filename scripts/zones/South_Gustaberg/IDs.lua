@@ -90,6 +90,7 @@ zones[xi.zone.SOUTH_GUSTABERG] =
             [17216226] = 17216226,  -- Smile Helper
             [17216227] = 17216227,  -- Smile Helper
         },
+        FISH_EYES = 17216210, -- Sunbreeze festival goldish NPC
     },
 }
 

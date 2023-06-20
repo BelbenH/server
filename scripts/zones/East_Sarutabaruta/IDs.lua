@@ -79,6 +79,7 @@ zones[xi.zone.EAST_SARUTABARUTA] =
             [17253122] = 17253122,  -- Smile Helper
             [17253123] = 17253123,  -- Smile Helper
         },
+        KESHA = 17253106, -- Sunbreeze Festival Goldfish NPC
     },
 }
 

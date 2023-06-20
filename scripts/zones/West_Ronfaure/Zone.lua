@@ -40,6 +40,11 @@ zoneObject.onZoneIn = function(player, prevZone)
     return cs
 end
 
+zoneObject.onZoneTick = function(zone)
+    local npc = GetNPCByID(zones[zone:getID()].npc.SARADORIAL)
+    xi.events.sunbreeze_festival.onZoneTick(zone, npc)
+end
+
 zoneObject.onZoneOut = function(player)
     if player:hasStatusEffect(xi.effect.BATTLEFIELD) then
         player:delStatusEffect(xi.effect.BATTLEFIELD)
@@ -48,6 +53,10 @@ end
 
 zoneObject.onConquestUpdate = function(zone, updatetype, influence, owner, ranking, isConquestAlliance)
     xi.conq.onConquestUpdate(zone, updatetype, influence, owner, ranking, isConquestAlliance)
+end
+
+zoneObject.onGameHour = function(zone)
+    xi.events.sunbreeze_festival.spawnFireworks(zone)
 end
 
 zoneObject.onGameDay = function()

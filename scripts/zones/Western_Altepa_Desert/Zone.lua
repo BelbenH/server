@@ -74,6 +74,10 @@ end
 zoneObject.onEventFinish = function(player, csid, option)
 end
 
+zoneObject.onGameHour = function(zone)
+    xi.events.sunbreeze_festival.spawnFireworks(zone)
+end
+
 zoneObject.onZoneWeatherChange = function(weather)
     if xi.settings.main.ENABLE_WOTG == 1 then
         local dahu = GetMobByID(ID.mob.DAHU)
