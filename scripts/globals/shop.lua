@@ -197,7 +197,7 @@ xi.shop.generalGuildStock =
         { xi.item.PIECE_OF_PIE_DOUGH,         1600, xi.craftRank.CRAFTSMAN  },
         { xi.item.PIECE_OF_PIZZA_DOUGH,       3000, xi.craftRank.CRAFTSMAN  },
         { xi.item.AZUKI_BEAN,                  600, xi.craftRank.CRAFTSMAN  },
-        -- kits																  -- Return on Craft (Profits:) Test Complete! Prices have been ajusted accordingly.
+        -- kits																  -- Return on Craft (Profits:) Test Complete! Prices ajusted.
 		{ xi.item.COOKING_KIT_5,              148, xi.craftRank.AMATEUR    }, -- 74g 	(Pebble Soup)
         { xi.item.COOKING_KIT_10,             100, xi.craftRank.AMATEUR    }, -- 50g	(Orange Juice)
         { xi.item.COOKING_KIT_15,              80, xi.craftRank.RECRUIT    }, -- 40g	(Slice of Bluetail x4)
@@ -232,7 +232,7 @@ xi.shop.generalGuildStock =
         { xi.item.SPOOL_OF_SILK_THREAD,      1500, xi.craftRank.APPRENTICE },
         { xi.item.CLUMP_OF_KARAKUL_WOOL,     1400, xi.craftRank.JOURNEYMAN },
         { xi.item.SPOOL_OF_GOLD_THREAD,     14500, xi.craftRank.CRAFTSMAN  },
-        -- kits															      -- Return on Craft (Profits:) Test Complete! Prices have been ajusted accordingly.
+        -- kits															      -- Return on Craft (Profits:) Test Complete! Prices ajusted.
 		{ xi.item.CLOTHCRAFT_KIT_5,           140, xi.craftRank.AMATEUR    }, -- 70g	(Headgear)
         { xi.item.CLOTHCRAFT_KIT_10,          238, xi.craftRank.AMATEUR    }, -- 119g	(Doublet)
         { xi.item.CLOTHCRAFT_KIT_15,          124, xi.craftRank.RECRUIT    }, -- 62g	(Red Grass Thread)
@@ -288,7 +288,7 @@ xi.shop.generalGuildStock =
         { xi.item.GOLD_SHEET,               32000, xi.craftRank.JOURNEYMAN },
         { xi.item.GOLD_CHAIN,               58000, xi.craftRank.JOURNEYMAN },
         { xi.item.CHUNK_OF_PLATINUM_ORE,     6000, xi.craftRank.CRAFTSMAN  },
-        -- kits 															  -- Return on Craft (Profits:) Test Complete! Prices have been ajusted accordingly.
+        -- kits 															  -- Return on Craft (Profits:) Test Complete! Prices ajusted.
 		{ xi.item.GOLDSMITHING_KIT_5,          38, xi.craftRank.AMATEUR    }, -- 19g 	(Copper Ring)
         { xi.item.GOLDSMITHING_KIT_10,         96, xi.craftRank.AMATEUR    }, -- 48g 	(Brass Ingot)
         { xi.item.GOLDSMITHING_KIT_15,        280, xi.craftRank.RECRUIT    }, -- 140g 	(Brass Zaghnal)
@@ -328,17 +328,26 @@ xi.shop.generalGuildStock =
         { xi.item.MAHOGANY_LOG,               4500, xi.craftRank.JOURNEYMAN },
         { xi.item.EBONY_LOG,                  5000, xi.craftRank.CRAFTSMAN  },
         { xi.item.FEYWEALD_LOG,               5500, xi.craftRank.CRAFTSMAN  },
-        { xi.item.WOODWORKING_KIT_5,           300, xi.craftRank.AMATEUR    },
-        { xi.item.WOODWORKING_KIT_10,          400, xi.craftRank.AMATEUR    },
-        { xi.item.WOODWORKING_KIT_15,          650, xi.craftRank.AMATEUR    },
-        { xi.item.WOODWORKING_KIT_20,         1050, xi.craftRank.AMATEUR    },
-        { xi.item.WOODWORKING_KIT_25,         1600, xi.craftRank.AMATEUR    },
-        { xi.item.WOODWORKING_KIT_30,         2300, xi.craftRank.AMATEUR    },
-        { xi.item.WOODWORKING_KIT_35,         3150, xi.craftRank.AMATEUR    },
-        { xi.item.WOODWORKING_KIT_40,         4150, xi.craftRank.AMATEUR    },
-        { xi.item.WOODWORKING_KIT_45,         5300, xi.craftRank.AMATEUR    },
-        { xi.item.WOODWORKING_KIT_50,         7600, xi.craftRank.AMATEUR    },
-        { xi.item.CYPRESS_LOG,             1126125, xi.craftRank.AMATEUR    },
+        -- kits 															 -- Return on Craft (Profits:) Test Complete! Prices ajusted.
+		{ xi.item.WOODWORKING_KIT_5,         112, xi.craftRank.AMATEUR    }, -- 56g		(Padded Box)
+        { xi.item.WOODWORKING_KIT_10,         32, xi.craftRank.AMATEUR    }, -- 16g		(Ash Staff)
+        { xi.item.WOODWORKING_KIT_15,        274, xi.craftRank.RECRUIT    }, -- 137g 	(Bamboo Fishing Rod)
+        { xi.item.WOODWORKING_KIT_20,        440, xi.craftRank.RECRUIT    }, -- 220g	(Piccolo)
+        { xi.item.WOODWORKING_KIT_25,        492, xi.craftRank.INITIATE   }, -- 246g	(Tarutaru Stool)
+        { xi.item.WOODWORKING_KIT_30,        198, xi.craftRank.INITIATE   }, -- 99g		(Silver Arrow x33)
+        { xi.item.WOODWORKING_KIT_35,        660, xi.craftRank.NOVICE     }, -- 330g	(Black Bolt x33)
+        { xi.item.WOODWORKING_KIT_40,       1280, xi.craftRank.NOVICE     }, -- 640g	(Bahut)
+        { xi.item.WOODWORKING_KIT_45,       1960, xi.craftRank.APPRENTICE }, -- 980g	(Rosewood Lumber)
+        { xi.item.WOODWORKING_KIT_50,        462, xi.craftRank.APPRENTICE }, -- 231g	(Sleep Arrow x33)
+		{ xi.item.WOODWORKING_KIT_55,        570, xi.craftRank.JOURNEYMAN }, -- 285g	(Fastwater Fishing Rod)
+		{ xi.item.WOODWORKING_KIT_60,       4064, xi.craftRank.JOURNEYMAN }, -- 2032g	(Pot of White Viola)
+		{ xi.item.WOODWORKING_KIT_65,       1756, xi.craftRank.CRAFTSMAN  }, -- 878g	(Tarutaru Fishing Rod)
+        { xi.item.WOODWORKING_KIT_71,       7118, xi.craftRank.CRAFTSMAN  }, -- 4753g	(Ebony Harp)
+        { xi.item.WOODWORKING_KIT_74,       2160, xi.craftRank.ARTISAN    }, -- 1080g	(Hume Fishing Rod)
+        { xi.item.WOODWORKING_KIT_81,       6400, xi.craftRank.ARTISAN    }, -- 3200g	(Cabinet)
+        { xi.item.WOODWORKING_KIT_84,      12924, xi.craftRank.ADEPT      }, -- 6462g	(Numinous Shield)
+        { xi.item.WOODWORKING_KIT_90,      14000, xi.craftRank.ADEPT      }, -- 7000g	(Mythic Harp)
+        { xi.item.WOODWORKING_KIT_94,       2889, xi.craftRank.VETERAN    }, -- 0g		(Sasah Wand) Price of all items average. 112+32+274+440.../19=2889g.
     },
 
     [xi.skill.ALCHEMY] =
@@ -361,17 +370,26 @@ xi.shop.generalGuildStock =
         { xi.item.JAR_OF_TOAD_OIL,              3600, xi.craftRank.JOURNEYMAN },
         { xi.item.CERMET_CHUNK,                 5000, xi.craftRank.CRAFTSMAN  },
         { xi.item.PINCH_OF_VENOM_DUST,          1035, xi.craftRank.CRAFTSMAN  },
-        { xi.item.ALCHEMY_KIT_5,                 300, xi.craftRank.AMATEUR    },
-        { xi.item.ALCHEMY_KIT_10,                400, xi.craftRank.AMATEUR    },
-        { xi.item.ALCHEMY_KIT_15,                650, xi.craftRank.AMATEUR    },
-        { xi.item.ALCHEMY_KIT_20,               1050, xi.craftRank.AMATEUR    },
-        { xi.item.ALCHEMY_KIT_25,               1600, xi.craftRank.AMATEUR    },
-        { xi.item.ALCHEMY_KIT_30,               2300, xi.craftRank.AMATEUR    },
-        { xi.item.ALCHEMY_KIT_35,               3150, xi.craftRank.AMATEUR    },
-        { xi.item.ALCHEMY_KIT_40,               4150, xi.craftRank.AMATEUR    },
-        { xi.item.ALCHEMY_KIT_45,               5300, xi.craftRank.AMATEUR    },
-        { xi.item.ALCHEMY_KIT_50,               7600, xi.craftRank.AMATEUR    },
-        { xi.item.AZURE_LEAF,                1126125, xi.craftRank.AMATEUR    },
+		-- kits 															 -- Return on Craft (Profits:) Test Complete! Prices ajusted.
+		{ xi.item.ALCHEMY_KIT_5,         112, xi.craftRank.AMATEUR    }, -- 56g		(Padded Box)
+        { xi.item.WOODWORKING_KIT_10,         32, xi.craftRank.AMATEUR    }, -- 16g		(Ash Staff)
+        { xi.item.WOODWORKING_KIT_15,        274, xi.craftRank.RECRUIT    }, -- 137g 	(Bamboo Fishing Rod)
+        { xi.item.WOODWORKING_KIT_20,        440, xi.craftRank.RECRUIT    }, -- 220g	(Piccolo)
+        { xi.item.WOODWORKING_KIT_25,        492, xi.craftRank.INITIATE   }, -- 246g	(Tarutaru Stool)
+        { xi.item.WOODWORKING_KIT_30,        198, xi.craftRank.INITIATE   }, -- 99g		(Silver Arrow x33)
+        { xi.item.WOODWORKING_KIT_35,        660, xi.craftRank.NOVICE     }, -- 330g	(Black Bolt x33)
+        { xi.item.WOODWORKING_KIT_40,       1280, xi.craftRank.NOVICE     }, -- 640g	(Bahut)
+        { xi.item.WOODWORKING_KIT_45,       1960, xi.craftRank.APPRENTICE }, -- 980g	(Rosewood Lumber)
+        { xi.item.WOODWORKING_KIT_50,        462, xi.craftRank.APPRENTICE }, -- 231g	(Sleep Arrow x33)
+		{ xi.item.WOODWORKING_KIT_55,        570, xi.craftRank.JOURNEYMAN }, -- 285g	(Fastwater Fishing Rod)
+		{ xi.item.WOODWORKING_KIT_60,       4064, xi.craftRank.JOURNEYMAN }, -- 2032g	(Pot of White Viola)
+		{ xi.item.WOODWORKING_KIT_65,       1756, xi.craftRank.CRAFTSMAN  }, -- 878g	(Tarutaru Fishing Rod)
+        { xi.item.WOODWORKING_KIT_71,       7118, xi.craftRank.CRAFTSMAN  }, -- 4753g	(Ebony Harp)
+        { xi.item.WOODWORKING_KIT_74,       2160, xi.craftRank.ARTISAN    }, -- 1080g	(Hume Fishing Rod)
+        { xi.item.WOODWORKING_KIT_81,       6400, xi.craftRank.ARTISAN    }, -- 3200g	(Cabinet)
+        { xi.item.WOODWORKING_KIT_84,      12924, xi.craftRank.ADEPT      }, -- 6462g	(Numinous Shield)
+        { xi.item.WOODWORKING_KIT_90,      14000, xi.craftRank.ADEPT      }, -- 7000g	(Mythic Harp)
+        { xi.item.WOODWORKING_KIT_94,       2889, xi.craftRank.VETERAN    }, -- 0g		(Sasah Wand) Price of all items average. 112+32+274+440.../19=2889g.
     },
 
     [xi.skill.BONECRAFT] =

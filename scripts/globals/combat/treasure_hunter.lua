@@ -6,7 +6,7 @@
 -- TH3 = +50%
 -- TH4+ = +75%
 -----------------------------------
-require('scripts/globals/utils')
+-- require('scripts/globals/utils')
 -----------------------------------
 xi = xi or {}
 xi.combat = xi.combat or {}
