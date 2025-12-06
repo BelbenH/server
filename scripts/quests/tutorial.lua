@@ -101,7 +101,7 @@ xi.tutorial.onEventFinish = function(player, csid, option, npc_event_offset, nat
         npcUtil.giveKeyItem(player, xi.ki.CONQUEST_PROMOTION_VOUCHER)
         player:setCharVar('TutorialProgress', 7)
     elseif csid == (npc_event_offset + 10) then
-        if npcUtil.giveItem(player, { { xi.item.CHOCOBO_SHIRT, 1 }, { xi.item:DESTRIER_BERET, 1 }, {xi.item.RAISING_EARRING, 1 } }) then
+        if npcUtil.giveItem(player, { { xi.item.CHOCOBO_SHIRT, 1 }, { xi.item.DESTRIER_BERET, 1 }, { xi.item.RAISING_EARRING, 1 } }) then
             player:setCharVar('TutorialProgress', 8)
         end
     elseif csid == (npc_event_offset + 12) then
