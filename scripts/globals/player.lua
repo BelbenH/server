@@ -148,6 +148,9 @@ xi.player.charCreate = function(player)
     -- Auto-bypass RoE "First Step Forward" - Bypasses needing spark NPC
     player:setEminenceCompleted(1, true)
     player:setEminenceProgress(1, 1)
+
+    -- Give player the server linkshell
+    player:addLinkpearl('PhalanxRising', true)
 end
 
 -- called by core after a player logs into the server or zones
