@@ -122,11 +122,13 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
 
     local chocogrow = player:getCharVar('[XISP]chocoGrow')
 
+    if choco:getLocalVar('[XISP]ownerID') ~= player:getID() then
+        player:printToPlayer('This chocobo does not seem to recognize you as its owner.', xi.msg.channel.NS_SAY, ' ')
+        return
+    end
+
     if chocogrow >= 20 then -- Adult
-        if choco:getLocalVar('[XISP]ownerID') ~= player:getID() then
-            player:printToPlayer('This chocobo does not seem to recognize you as its owner.', xi.msg.channel.NS_SAY, ' ')
-            return
-        elseif player:getMainLvl() < 20 then
+        if player:getMainLvl() < 20 then
             player:printToPlayer('You need to be at least level 20 to ride your chocobo.', xi.msg.channel.NS_SAY, ' ')
             return
         elseif #player:getNotorietyList() > 0 then
