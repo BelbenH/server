@@ -9,9 +9,9 @@ entity.onTrigger = function(player, npc)
     local stock =
     {
         { xi.item.BRASS_FLOWERPOT,      1050, 3 },
-        { xi.item.PICKAXE,               208, 3 },
-		{ xi.item.HATCHET,               208, 3 },
-		{ xi.item.SICKLE,                208, 3 },
+        { xi.item.PICKAXE,             15000, 3 },
+		{ xi.item.HATCHET,             15000, 3 },
+		{ xi.item.SICKLE,              15000, 3 },
         { xi.item.FLASK_OF_EYE_DROPS,   1698, 3 },
         { xi.item.ANTIDOTE,              228, 3 },
         { xi.item.FLASK_OF_ECHO_DROPS,   832, 3 },

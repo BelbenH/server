@@ -13,7 +13,6 @@ entity.onTrigger = function(player, npc)
         { xi.item.CROSSBOW_BOLT,              6 },
         { xi.item.SCROLL_OF_WIND_THRENODY,  567 },
         { xi.item.SCROLL_OF_WATER_THRENODY, 420 },
-        { xi.item.PICKAXE,                  200 },
     }
 
     player:showText(npc, zones[xi.zone.UPPER_JEUNO].text.MP_SHOP_DIALOG)

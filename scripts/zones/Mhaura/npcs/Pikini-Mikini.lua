@@ -16,7 +16,6 @@ entity.onTrigger = function(player, npc)
         { xi.item.FLASK_OF_DISTILLED_WATER,    12 },
         { xi.item.SHEET_OF_PARCHMENT,        2059 },
         { xi.item.LUGWORM,                     12 },
-        { xi.item.HATCHET,                    520 },
         { xi.item.STRIP_OF_MEAT_JERKY,        124 },
         { xi.item.DISH_OF_SALSA,              153 },
         { xi.item.MHAURA_WAYSTONE,          10400 },
