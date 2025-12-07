@@ -36,9 +36,9 @@ entity.onTrigger = function(player, npc)
         { xi.item.SHIKANOFUDA,         	    501, 3 },
         { xi.item.CHONOFUDA,                501, 3 },
 		-- 🔥 Added Ninja Tools --
-        { xi.item.PICKAXE,               	208, 3 },
-		{ xi.item.HATCHET,               	208, 3 },
-        { xi.item.SICKLE,                   208, 3 },
+        { xi.item.PICKAXE,               	15000, 3 },
+		{ xi.item.HATCHET,               	15000, 3 },
+        { xi.item.SICKLE,                   15000, 3 },
     }
 
     -- Thief's tools.

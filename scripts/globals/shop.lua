@@ -969,11 +969,6 @@ xi.shop.handleValerianoShop = function(player, npc)
         { xi.item.SCROLL_OF_FOWL_AUBADE,        3369 },
         { xi.item.SCROLL_OF_ADVANCING_MARCH,    2379 },
         { xi.item.SCROLL_OF_GODDESSS_HYMNUS,  104000 },
-        { xi.item.SCROLL_OF_FIRE_CAROL_II,     37128 },
-        { xi.item.SCROLL_OF_WIND_CAROL_II,     34944 },
-        { xi.item.SCROLL_OF_EARTH_CAROL_II,    30680 },
-        { xi.item.SCROLL_OF_WATER_CAROL_II,    32240 },
-        { xi.item.SCROLL_OF_MAGES_BALLAD_III, 140039 },
     }
 
     local zoneId = player:getZoneID()

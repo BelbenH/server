@@ -12,8 +12,6 @@ entity.onTrigger = function(player, npc)
     {
         { 4116,  4500, }, --Hi-Potion
         { 4132, 28000, }, --Hi-Ether
-        { 605,    200, }, --Pickaxe
-        { 1020,   300, }, --Sickle
     }
 
     player:showText(npc, ID.text.BLINGBRIX_SHOP_DIALOG)

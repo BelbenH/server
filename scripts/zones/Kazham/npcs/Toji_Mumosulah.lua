@@ -18,8 +18,6 @@ entity.onTrigger = function(player, npc)
         { xi.item.BALL_OF_INSECT_PASTE,         42 },
         { xi.item.JUG_OF_FISH_BROTH,            94 },
         { xi.item.JUG_OF_SEEDBED_SOIL,         499 },
-        { xi.item.HATCHET,                     525 },
-        { xi.item.SCROLL_OF_FOE_LULLABY_II,  73647 },
         { xi.item.SCROLL_OF_ARMYS_PAEON_III,  3780 },
     }
 
