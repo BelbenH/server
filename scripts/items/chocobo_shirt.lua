@@ -19,9 +19,9 @@ itemObject.onItemUse = function(target)
     -- 4100 Thunder
     -- 4101 Water
     -- 4102 Light
-    -- 4103 Dark
-    local itemID = 4095 + VanadielDayElement()
-    npcUtil.giveItem(target, { { itemID, math.random(2, 12) } })
+    -- 4103 Dark (Changed starting check value to 4103 to do clusters instead of crystals.)
+    local itemID = 4103 + VanadielDayElement()
+    npcUtil.giveItem(target, { { itemID, math.random(1, 3) } })
 end
 
 return itemObject
