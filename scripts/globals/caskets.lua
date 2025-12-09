@@ -231,6 +231,15 @@ end
 -- Desc: Sets all the base localVar's, type of chest and if locked, sets the random number.
 -----------------------------------
 local function setCasketData(player, x, y, z, r, npc, partyID, mobLvl)
+    -----------------------------------
+    -- NOTE: Super Kupowers Myriad Mystery Boxes add an additional 20% chance the chest will be locked.
+    -----------------------------------
+    local typeChance       = math.random()
+    local chestStyle       = 965
+    local correctNum       = math.random(10, 99)
+    local attempts         = math.random(5, 8)
+	-- orginal is local attempts = math.random(4, 6)
+    local kupowersBonus    = 0
     -- Early return.
     if npc == nil then
         return
@@ -238,7 +247,7 @@ local function setCasketData(player, x, y, z, r, npc, partyID, mobLvl)
 
     local chestStyle = 965
     local correctNum = math.random(10, 99)
-    local attempts   = math.random(4, 6)
+    local attempts   = math.random(5, 8)
 
     -- Get casket type.
     local kupowersBonus = 0 -- TODO: Kupowers add a 20% chance.

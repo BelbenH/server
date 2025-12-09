@@ -29958,7 +29958,7 @@ INSERT INTO `item_mods` VALUES (15925,29,2); -- MDEF: 2
 INSERT INTO `item_mods` VALUES (15925,30,2); -- MACC: 2
 
 -- Bronze Bandolier
-INSERT INTO `item_mods` VALUES (15926,26,1); -- RACC: 1
+INSERT INTO `item_mods` VALUES (15926,26,5); -- RACC: 5
 
 -- Pinwheel Belt
 INSERT INTO `item_mods` VALUES (15927,1,2); -- DEF: 2
