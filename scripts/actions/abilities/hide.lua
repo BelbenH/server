@@ -13,7 +13,23 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    return xi.job_utils.thief.useHide(player, target, ability)
+    -- Run the default Hide logic
+    local result = xi.job_utils.thief.useHide(player, target, ability)
+
+    -- Optional: only shed hate if Hide actually succeeded
+    -- (adjust this condition if your useHide returns something different)
+    -- if result == 0 then
+
+    -- Get whatever you’re currently targeting (likely the mob you have hate on)
+    local mob = player:getTarget()
+    if mob ~= nil and mob:isMob() then
+        -- Tell THAT mob to forget its enmity for this player
+        mob:resetEnmity(player)
+    end
+
+    -- end
+
+    return result
 end
 
 return abilityObject
