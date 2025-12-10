@@ -95,7 +95,7 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
                 local choco = GetMobByID(playerArg:getCharVar('[XISP]chocoID'))
                 if choco then
                     playerArg:delStatusEffectSilent(xi.effect.MOUNTED)
-                    playerArg:setLocalVar('ownChoco', 1)
+                    playerArg:setCharVar('ownChoco', 1)
 
                     local traits =
                     {
@@ -107,7 +107,7 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
                     -- This line registers the player's chocobo as the player's mount
                     playerArg:registerChocobo(playerArg:getCharVar('[XISP]chocoColor'), traits)
 
-                    playerArg:addStatusEffectEx(xi.effect.MOUNTED, xi.effect.MOUNTED, xi.mount.CHOCOBO, 0, 1800, 0, 360, true)
+                    playerArg:addStatusEffectEx(xi.effect.MOUNTED, xi.effect.MOUNTED, xi.mount.CHOCOBO, 0, 0, 0, 360, true)
                     choco:setBehavior(bit.band(choco:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
                     DespawnMob(choco:getID())
                 end
@@ -134,9 +134,10 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
         elseif #player:getNotorietyList() > 0 then
             player:printToPlayer('You cannot mount your chocobo while in combat.', xi.msg.channel.NS_SAY, ' ')
             return
-        elseif player:getCharVar('[XISP]chocoboTimer') > os.time() then -- Timer set when getting off mount
-            player:printToPlayer('Your chocobo appears too tired to ride.', xi.msg.channel.NS_SAY, ' ')
-            return
+        -- elseif player:getCharVar('[XISP]chocoboTimer') > os.time() then -- Timer set when getting off mount
+        --     player:printToPlayer('Your chocobo appears too tired to ride.', xi.msg.channel.NS_SAY, ' ')
+        --     player:printToPlayer('You must wait ' .. math.ceil((player:getCharVar('[XISP]chocoboTimer') - os.time()) / 60) .. ' more minute(s).', xi.msg.channel.NS_SAY, ' ')
+        --     return
         end
 
         menu.options = dialogue
@@ -194,7 +195,11 @@ xi.xispchocobo.despawnChocobo = function(player)
     end
 end
 
-xi.xispchocobo.spawnChocobo = function(player, zone)
+xi.xispchocobo.spawnChocobo = function(player)
+    xi.xispchocobo.despawnChocobo(player) -- Always despawn when spawning a new one
+
+    player:setCharVar('[XISP]chocoColor', 1)
+
     if player:getCharVar('[XISP]hasChocobo') == 1 then
         local look       = '0x0700200000000000000000000000000000000000' -- Default yellow chocobo
         local pos        = player:getPos()
@@ -202,6 +207,7 @@ xi.xispchocobo.spawnChocobo = function(player, zone)
         local chocoStage = player:getCharVar('[XISP]chocoGrow')
         local color      = player:getCharVar('[XISP]chocoColor')
         local babyLook   = 1997
+        local zone       = player:getZone()
 
         if chocoStage < 10 then
             name = 'Baby Chocobo'
@@ -212,7 +218,9 @@ xi.xispchocobo.spawnChocobo = function(player, zone)
         -- Alternatively check for zones we don't want chocobo in
         if
             player:getStatusEffect(xi.effect.MOUNTED) ~= nil or
-            (chocoStage >= 20 and zone:getTypeMask() ~= xi.zoneType.OUTDOORS)
+            (chocoStage >= 20 and
+            zone and
+            zone:getTypeMask() ~= xi.zoneType.OUTDOORS)
         then
             return
         end
@@ -246,7 +254,7 @@ xi.xispchocobo.spawnChocobo = function(player, zone)
 
         local choco = zone:insertDynamicEntity({
             objtype               = xi.objType.MOB,
-            -- allegiance            = xi.allegiance.PLAYER,
+            allegiance            = xi.allegiance.PLAYER,
             name                  = name,
             x                     = pos.x,
             y                     = pos.y,
@@ -282,14 +290,6 @@ xi.xispchocobo.spawnChocobo = function(player, zone)
 
             onMobRoam = function(choco)
                 xi.xispfollow.follow(choco, player)
-                -- Cute animations
-                if math.random(10) <= 2 and choco:getModelId() == 1997 then
-                    if math.random(2) == 1 then
-                        choco:entityAnimationPacket(xi.animationString.SPECIAL_10)
-                    else
-                        choco:entityAnimationPacket(xi.animationString.SPECIAL_00)
-                    end
-                end
             end,
         })
 
