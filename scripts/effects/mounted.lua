@@ -32,17 +32,17 @@ effectObject.onEffectGain = function(target, effect)
     end
 
     -- XISP Changes ------------------------------------------
-    local hasChocobo = target:getCharVar('[XISP]chocoID')
+    local hasChocobo     = target:getCharVar('[XISP]chocoID')
+    local ridingOwnChoco = target:getCharVar('ownChoco')
 
     if hasChocobo > 0 then
-        xi.xispchocobo.despawnChocobo(target)
-
-        if target:getLocalVar('ownChoco') == 1 then
-            target:changeMusic(4, 177) -- Special XISP mount music
-        end
+        target:setCharVar('[XISP]chocoID', 0)
     end
-    -- Reset chocobo ID
-    target:setCharVar('[XISP]chocoID', 0)
+
+    if ridingOwnChoco == 1 then
+        xi.xispchocobo.despawnChocobo(target)
+        target:changeMusic(4, 177) -- Special XISP mount music
+    end
     ---------------------------------------------------------
 end
 
@@ -59,10 +59,11 @@ effectObject.onEffectLose = function(target, effect)
         xi.chocoboGame.dismountChoco(target)
 
         -- XISP Changes ------------------------------------------
-        if target:getLocalVar('ridingOwnChoco') == 1 then
-            target:setLocalVar('ridingOwnChoco', 0)
-            target:setCharVar('[XISP]chocoboTimer', os.time() + 300) -- 5 minutes
+        if target:getCharVar('ownChoco') == 1 then
+            target:setCharVar('[XISP]chocoboTimer', os.time() + math.random(180, 300)) -- 3 - 5 minutes
+            target:setCharVar('ownChoco', 0)
         end
+
 
         target:timer(3000, function(targetArg)
             if targetArg:getCharVar('[XISP]hasChocobo') == 1 then

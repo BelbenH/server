@@ -37,9 +37,7 @@ end
 xi.xisp.onZone = function(player)
     -- Respawn Followers
     player:timer(200, function(playerArg)
-        local zone = player:getZone()
-        xi.xispchocobo.despawnChocobo(playerArg)
-        xi.xispchocobo.spawnChocobo(playerArg, zone)
+        xi.xispchocobo.spawnChocobo(playerArg)
     end)
 end
 
