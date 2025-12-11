@@ -39,11 +39,9 @@ xi.xispfollow.follow = function(entity, player)
 
     -- Update movement parameters
     if entity:checkDistance(player) > dist then
-        print(true)
         entity:setLocalVar('isMoving', 1)
         entity:pathTo(posX, lPos.y, posZ, xi.path.flag.RUN)
     else
-        print("Not following")
         entity:setLocalVar('isMoving', 0)
         entity:pathTo(pos.x, pos.y, pos.z)
     end

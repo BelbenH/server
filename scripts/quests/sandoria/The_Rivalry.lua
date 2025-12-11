@@ -63,13 +63,13 @@ quest.sections =
                     local totalFish    = moatCarp + forestCarp + fishCountVar
 
                     if moatCarp + forestCarp > 0 and moatCarp + forestCarp == count then
-                        if totalFish >= 10000 then
+                        if totalFish >= 1000 then
                             player:setLocalVar('FishTraded', totalFish) -- Used to transfer the variable into oneventfinish
-                            player:setLocalVar('GilToReward', moatCarp * 10 + forestCarp * 15) -- Forces the gil reward to happen AFTER the event like in captures
+                            player:setLocalVar('GilToReward', moatCarp * 50 + forestCarp * 75) -- Forces the gil reward to happen AFTER the event like in captures
                             return quest:progressEvent(303)
                         else
                             player:setLocalVar('FishTraded', totalFish)
-                            player:setLocalVar('GilToReward', moatCarp * 10 + forestCarp * 15) -- Forces the gil reward to happen AFTER the event like in captures
+                            player:setLocalVar('GilToReward', moatCarp * 50 + forestCarp * 75) -- Forces the gil reward to happen AFTER the event like in captures
                             return quest:progressEvent(301)
                         end
                     end
@@ -139,7 +139,7 @@ quest.sections =
 
                     if moatCarp + forestCarp > 0 and moatCarp + forestCarp == count then
                         player:setLocalVar('FishTraded', totalFish)
-                        player:setLocalVar('GilToReward', moatCarp * 10 + forestCarp * 15) -- Forces the gil reward to happen AFTER the event like in captures
+                        player:setLocalVar('GilToReward', moatCarp * 50 + forestCarp * 75) -- Forces the gil reward to happen AFTER the event like in captures
                         return quest:progressEvent(301)
                     end
                 end,

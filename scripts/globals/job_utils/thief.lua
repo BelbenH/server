@@ -258,7 +258,13 @@ xi.job_utils.thief.useFeint = function(player, target, ability)
 end
 
 xi.job_utils.thief.useFlee = function(player, target, ability)
-    local duration = 60 + player:getMod(xi.mod.FLEE_DURATION)
+    -- Base 30s for everyone
+    local duration = 30 + player:getMod(xi.mod.FLEE_DURATION)
+
+    -- Thieves with THF as main job get +15s more (total 45s before gear/mods) + (Rogues's Poulaines = 60s)
+    if player:getMainJob() == xi.job.THF then
+        duration = duration + 15
+    end
 
     -- TODO: Flee will not override all types of weight effect. Find out which aren't overriden.
     if player:hasStatusEffect(xi.effect.WEIGHT) then

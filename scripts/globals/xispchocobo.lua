@@ -198,8 +198,6 @@ end
 xi.xispchocobo.spawnChocobo = function(player)
     xi.xispchocobo.despawnChocobo(player) -- Always despawn when spawning a new one
 
-    player:setCharVar('[XISP]chocoColor', 1)
-
     if player:getCharVar('[XISP]hasChocobo') == 1 then
         local look       = '0x0700200000000000000000000000000000000000' -- Default yellow chocobo
         local pos        = player:getPos()
