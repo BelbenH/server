@@ -3,6 +3,8 @@
 --  Mob: Forest Hare
 -- Note: PH for Jaggedy-Eared Jack
 -----------------------------------
+local ID = zones[xi.zone.WEST_RONFAURE]
+-----------------------------------
 ---@type TMobEntity
 local entity = {}
 
