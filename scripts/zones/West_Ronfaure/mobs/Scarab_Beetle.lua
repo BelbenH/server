@@ -3,6 +3,8 @@
 --  Mob: Scarab Beetle
 -- Note: PH for Fungus Beetle
 -----------------------------------
+local ID = zones[xi.zone.WEST_RONFAURE]
+-----------------------------------
 ---@type TMobEntity
 local entity = {}
 

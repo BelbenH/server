@@ -6604,10 +6604,10 @@ INSERT INTO `item_basic` VALUES (8839,0,'goldsmithing_kit_35','gold._kit_35',@GE
 INSERT INTO `item_basic` VALUES (8840,0,'goldsmithing_kit_40','gold._kit_40',@GENERAL_TYPE,12,4,@GOLDSMITHING,481);
 INSERT INTO `item_basic` VALUES (8841,0,'goldsmithing_kit_45','gold._kit_45',@GENERAL_TYPE,12,4,@GOLDSMITHING,577);
 INSERT INTO `item_basic` VALUES (8842,0,'goldsmithing_kit_50','gold._kit_50',@GENERAL_TYPE,12,4,@GOLDSMITHING,673);
-INSERT INTO `item_basic` VALUES (8843,0,'goldsmithing_kit_55','gold._kit_55',@GENERAL_TYPE,12,24644,@NONE,794);
-INSERT INTO `item_basic` VALUES (8844,0,'goldsmithing_kit_60','gold._kit_60',@GENERAL_TYPE,12,24644,@NONE,0);
-INSERT INTO `item_basic` VALUES (8845,0,'goldsmithing_kit_65','gold._kit_65',@GENERAL_TYPE,12,24644,@NONE,0);
-INSERT INTO `item_basic` VALUES (8846,0,'goldsmithing_kit_70','gold._kit_70',@GENERAL_TYPE,12,24644,@NONE,0);
+INSERT INTO `item_basic` VALUES (8843,0,'goldsmithing_kit_55','gold._kit_55',@GENERAL_TYPE,12,4,@GOLDSMITHING,794);
+INSERT INTO `item_basic` VALUES (8844,0,'goldsmithing_kit_60','gold._kit_60',@GENERAL_TYPE,12,4,@GOLDSMITHING,0);
+INSERT INTO `item_basic` VALUES (8845,0,'goldsmithing_kit_65','gold._kit_65',@GENERAL_TYPE,12,4,@GOLDSMITHING,0);
+INSERT INTO `item_basic` VALUES (8846,0,'goldsmithing_kit_70','gold._kit_70',@GENERAL_TYPE,12,4,@GOLDSMITHING,0);
 INSERT INTO `item_basic` VALUES (8847,0,'clothcraft_kit_5','cloth._kit_5',@GENERAL_TYPE,12,4,@CLOTHCRAFT,6);
 INSERT INTO `item_basic` VALUES (8848,0,'clothcraft_kit_10','cloth._kit_10',@GENERAL_TYPE,12,4,@CLOTHCRAFT,19);
 INSERT INTO `item_basic` VALUES (8849,0,'clothcraft_kit_15','cloth._kit_15',@GENERAL_TYPE,12,4,@CLOTHCRAFT,49);
