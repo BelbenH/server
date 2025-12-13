@@ -204,14 +204,15 @@ xi.shop.generalGuildStock =
         { xi.item.PIECE_OF_PIZZA_DOUGH,         3000, xi.craftRank.CRAFTSMAN  },
         { xi.item.AZUKI_BEAN,                    600, xi.craftRank.CRAFTSMAN  },
         -- kits																     -- Return on Craft (Profits:) Test Complete! Prices ajusted.
+        -- Meat mithkabob / jack-o-lantern / ranged food / tank good / mage food
 		{ xi.item.COOKING_KIT_5,                 148, xi.craftRank.AMATEUR    }, -- 74g 	(Pebble Soup)
-        { xi.item.COOKING_KIT_10,                100, xi.craftRank.AMATEUR    }, -- 50g	(Orange Juice)
-        { xi.item.COOKING_KIT_15,                 80, xi.craftRank.RECRUIT    }, -- 40g	(Slice of Bluetail x4)
-        { xi.item.COOKING_KIT_20,                152, xi.craftRank.RECRUIT    }, -- 76g	(Apple Juice)
+        { xi.item.COOKING_KIT_10,                100, xi.craftRank.AMATEUR    }, -- 50g	    (Orange Juice)
+        { xi.item.COOKING_KIT_15,                 80, xi.craftRank.RECRUIT    }, -- 40g	    (Slice of Bluetail x4)
+        { xi.item.COOKING_KIT_20,                152, xi.craftRank.RECRUIT    }, -- 76g	    (Apple Juice)
         { xi.item.COOKING_KIT_25,                512, xi.craftRank.INITIATE   }, -- 256g	(Vegetable Soup)
-        { xi.item.COOKING_KIT_30,                194, xi.craftRank.INITIATE   }, -- 97g	(Pineapple Juice)
+        { xi.item.COOKING_KIT_30,                194, xi.craftRank.INITIATE   }, -- 97g 	(Pineapple Juice)
         { xi.item.COOKING_KIT_35,                240, xi.craftRank.NOVICE     }, -- 120g	(Meatball x12)
-        { xi.item.COOKING_KIT_40,                440, xi.craftRank.NOVICE     }, -- 220g 	(Melon Juice)
+        { xi.item.COOKING_KIT_40,                440, xi.craftRank.NOVICE     }, -- 220g 	(Melon Juice) 
         { xi.item.COOKING_KIT_45,                698, xi.craftRank.APPRENTICE }, -- 349g	(Menemen)
         { xi.item.COOKING_KIT_50,                616, xi.craftRank.APPRENTICE }, -- 308g	(Apple Pie x4)
 		{ xi.item.COOKING_KIT_55,                336, xi.craftRank.JOURNEYMAN }, -- 168g	(Beaugreen Saute)
@@ -222,7 +223,7 @@ xi.shop.generalGuildStock =
         { xi.item.COOKING_KIT_80,               2870, xi.craftRank.ARTISAN    }, -- 1435g	(Shallops Tropicale)
         { xi.item.COOKING_KIT_85,               1412, xi.craftRank.ADEPT      }, -- 706g	(Yellow Curry)
         { xi.item.COOKING_KIT_90,               1320, xi.craftRank.ADEPT      }, -- 660g	(Vampire Juice)
-        { xi.item.COOKING_KIT_95,               1578, xi.craftRank.VETERAN    }, -- 789g	(Dragon Steak)
+        -- { xi.item.COOKING_KIT_95,               1578, xi.craftRank.VETERAN    }, -- 789g	(Dragon Steak)
 	},
 
     [xi.skill.CLOTHCRAFT] =
@@ -244,7 +245,7 @@ xi.shop.generalGuildStock =
         { xi.item.CLOTHCRAFT_KIT_15,             124, xi.craftRank.RECRUIT    }, -- 62g	(Red Grass Thread)
         { xi.item.CLOTHCRAFT_KIT_20,             764, xi.craftRank.RECRUIT    }, -- 382g	(Cotton Headband)
         { xi.item.CLOTHCRAFT_KIT_25,             630, xi.craftRank.INITIATE   }, -- 315g	(Bracers)
-        { xi.item.CLOTHCRAFT_KIT_30,             600, xi.craftRank.INITIATE   }, -- 300g	(Fisherman's Tunica)
+        { xi.item.CLOTHCRAFT_KIT_30,             600, xi.craftRank.INITIATE   }, -- 300g	(Fisherman's Tunica) Maybe more harvest gear
         { xi.item.CLOTHCRAFT_KIT_35,            1200, xi.craftRank.NOVICE     }, -- 600g	(Wool Thread)
         { xi.item.CLOTHCRAFT_KIT_40,            2352, xi.craftRank.NOVICE     }, -- 1176g	(Shadow Roll x3)
         { xi.item.CLOTHCRAFT_KIT_45,            8468, xi.craftRank.APPRENTICE }, -- 4234g	(Wool Cap)
@@ -257,7 +258,7 @@ xi.shop.generalGuildStock =
         { xi.item.CLOTHCRAFT_KIT_80,            5964, xi.craftRank.ARTISAN    }, -- 2982g	(Brocade Obi)
         { xi.item.CLOTHCRAFT_KIT_85,            7820, xi.craftRank.ADEPT      }, -- 3910g	(Rainbow Headband)
         { xi.item.CLOTHCRAFT_KIT_90,            7680, xi.craftRank.ADEPT      }, -- 3840g	(Rainbow Obi)
-        { xi.item.CLOTHCRAFT_KIT_95,            7200, xi.craftRank.VETERAN    }, -- 3600g	(Tarutaru Sash)
+        -- { xi.item.CLOTHCRAFT_KIT_95,            7200, xi.craftRank.VETERAN    }, -- 3600g	(Tarutaru Sash)
 	},
 
     [xi.skill.GOLDSMITHING] =
@@ -298,8 +299,8 @@ xi.shop.generalGuildStock =
 		{ xi.item.GOLDSMITHING_KIT_5,             38, xi.craftRank.AMATEUR    }, -- 19g 	(Copper Ring)
         { xi.item.GOLDSMITHING_KIT_10,            96, xi.craftRank.AMATEUR    }, -- 48g 	(Brass Ingot)
         { xi.item.GOLDSMITHING_KIT_15,           280, xi.craftRank.RECRUIT    }, -- 140g 	(Brass Zaghnal)
-        { xi.item.GOLDSMITHING_KIT_20,           700, xi.craftRank.RECRUIT    }, -- 350g   (Silver Ingot)
-        { xi.item.GOLDSMITHING_KIT_25,           714, xi.craftRank.INITIATE   }, -- 357g   (Silver Belt)
+        { xi.item.GOLDSMITHING_KIT_20,           700, xi.craftRank.RECRUIT    }, -- 350g    (Silver Ingot)
+        { xi.item.GOLDSMITHING_KIT_25,           714, xi.craftRank.INITIATE   }, -- 357g    (Silver Belt)
         { xi.item.GOLDSMITHING_KIT_30,          1508, xi.craftRank.INITIATE   }, -- 754g	(Brass Finger Gauntlets)
         { xi.item.GOLDSMITHING_KIT_35,          1222, xi.craftRank.NOVICE     }, -- 611g	(Tigereye Ring)
         { xi.item.GOLDSMITHING_KIT_40,          2500, xi.craftRank.NOVICE     }, -- 1250g	(Mythril Ingot)
@@ -307,13 +308,13 @@ xi.shop.generalGuildStock =
         { xi.item.GOLDSMITHING_KIT_50,          1644, xi.craftRank.APPRENTICE }, -- 822g	(Aluminum Sheet)
 		{ xi.item.GOLDSMITHING_KIT_55,          5908, xi.craftRank.JOURNEYMAN }, -- 2954g	(Heater Shield)
 		{ xi.item.GOLDSMITHING_KIT_60,          7094, xi.craftRank.JOURNEYMAN }, -- 3547g	(Mythril Cuisses)
-		{ xi.item.GOLDSMITHING_KIT_65,          3962, xi.craftRank.CRAFTSMAN  }, -- 1981g	(Moon Earring)
+		{ xi.item.GOLDSMITHING_KIT_65,          3962, xi.craftRank.CRAFTSMAN  }, -- 1981g	(Moon Earring) Maybe reconsider
         { xi.item.GOLDSMITHING_KIT_70,          7118, xi.craftRank.CRAFTSMAN  }, -- 3559g	(Gold Bangles)
         { xi.item.GOLDSMITHING_KIT_75,          6500, xi.craftRank.ARTISAN    }, -- 3250g	(Ashura)
         { xi.item.GOLDSMITHING_KIT_80,          8160, xi.craftRank.ARTISAN    }, -- 4080g	(Gold Buckler)
         { xi.item.GOLDSMITHING_KIT_85,          9582, xi.craftRank.ADEPT      }, -- 4791g	(Platinum Bangles)
-        { xi.item.GOLDSMITHING_KIT_90,          7560, xi.craftRank.ADEPT      }, -- 3780g	(Jeweled Collar)
-        { xi.item.GOLDSMITHING_KIT_94,          4037, xi.craftRank.VETERAN    }, -- 0g		(Phrygian ring) Price of all items average. 38+96+280+700.../19=4037g.
+        { xi.item.GOLDSMITHING_KIT_90,          7560, xi.craftRank.ADEPT      }, -- 1840g	(Muscle Belt) - Custom change
+        -- { xi.item.GOLDSMITHING_KIT_94,          4037, xi.craftRank.VETERAN    }, -- 0g		(Phrygian ring) Price of all items average. 38+96+280+700.../19=4037g.
 	},
 
     [xi.skill.WOODWORKING] =
@@ -346,14 +347,14 @@ xi.shop.generalGuildStock =
         { xi.item.WOODWORKING_KIT_45,           1960, xi.craftRank.APPRENTICE }, -- 980g	(Rosewood Lumber)
         { xi.item.WOODWORKING_KIT_50,            462, xi.craftRank.APPRENTICE }, -- 231g	(Sleep Arrow x33)
 		{ xi.item.WOODWORKING_KIT_55,            570, xi.craftRank.JOURNEYMAN }, -- 285g	(Fastwater Fishing Rod)
-		{ xi.item.WOODWORKING_KIT_60,           4064, xi.craftRank.JOURNEYMAN }, -- 2032g	(Pot of White Viola)
+		{ xi.item.WOODWORKING_KIT_60,            760, xi.craftRank.JOURNEYMAN }, -- 165g	(Scorpion Arrow x 33)
 		{ xi.item.WOODWORKING_KIT_65,           1756, xi.craftRank.CRAFTSMAN  }, -- 878g	(Tarutaru Fishing Rod)
-        { xi.item.WOODWORKING_KIT_71,           7118, xi.craftRank.CRAFTSMAN  }, -- 4753g	(Ebony Harp)
+        { xi.item.WOODWORKING_KIT_71,           1242, xi.craftRank.CRAFTSMAN  }, -- 198g	(Demon Arrow x 33)
         { xi.item.WOODWORKING_KIT_74,           2160, xi.craftRank.ARTISAN    }, -- 1080g	(Hume Fishing Rod)
-        { xi.item.WOODWORKING_KIT_81,           6400, xi.craftRank.ARTISAN    }, -- 3200g	(Cabinet)
-        { xi.item.WOODWORKING_KIT_84,          12924, xi.craftRank.ADEPT      }, -- 6462g	(Numinous Shield)
-        { xi.item.WOODWORKING_KIT_90,      	   14000, xi.craftRank.ADEPT      }, -- 7000g	(Mythic Harp)
-        { xi.item.WOODWORKING_KIT_94,       	2889, xi.craftRank.VETERAN    }, -- 0g		(Sasah Wand) Price of all items average. 112+32+274+440.../19=2889g.
+        { xi.item.WOODWORKING_KIT_81,           1453, xi.craftRank.ARTISAN    }, -- 198g	(Marid Arrow x 33)
+        { xi.item.WOODWORKING_KIT_84,           2125, xi.craftRank.ADEPT      }, -- 717g   	(Battle Staff)
+        { xi.item.WOODWORKING_KIT_90,      	    1836, xi.craftRank.ADEPT      }, -- 15g 	Kabura Arrow x 11)
+        -- { xi.item.WOODWORKING_KIT_94,       	2889, xi.craftRank.VETERAN    }, -- 0g		(Sasah Wand) Price of all items average. 112+32+274+440.../19=2889g.
     },
 
     [xi.skill.ALCHEMY] =
@@ -389,13 +390,13 @@ xi.shop.generalGuildStock =
         { xi.item.ALCHEMY_KIT_50,               1208, xi.craftRank.APPRENTICE }, -- 604g	(Ether)
 		{ xi.item.ALCHEMY_KIT_55,               2400, xi.craftRank.JOURNEYMAN }, -- 1200g	(Yoto)
 		{ xi.item.ALCHEMY_KIT_60,                492, xi.craftRank.JOURNEYMAN }, -- 246g	(Hi-Potion)
-		{ xi.item.ALCHEMY_KIT_65,               5338, xi.craftRank.CRAFTSMAN  }, -- 2669g	(Melt Baselard)
-        { xi.item.ALCHEMY_KIT_70,              20756, xi.craftRank.CRAFTSMAN  }, -- 10378g	(Saber)
-        { xi.item.ALCHEMY_KIT_75,              14580, xi.craftRank.ARTISAN    }, -- 7290g	(Venom Kukri)
-        { xi.item.ALCHEMY_KIT_80,              16900, xi.craftRank.ARTISAN    }, -- 8450g	(Stun Knife)
-        { xi.item.ALCHEMY_KIT_85,              15200, xi.craftRank.ADEPT      }, -- 7600g	(Bloody Rapier)
-        { xi.item.ALCHEMY_KIT_90,              11878, xi.craftRank.ADEPT      }, -- 5939g	(Bloody Lance)
-        { xi.item.ALCHEMY_KIT_95,               1578, xi.craftRank.VETERAN    }, -- 789g	(Max-Potion)
+		{ xi.item.ALCHEMY_KIT_65,                853, xi.craftRank.CRAFTSMAN  }, -- 2669g	(Silver Nugget x9)
+        { xi.item.ALCHEMY_KIT_70,               3467, xi.craftRank.CRAFTSMAN  }, -- 984g    (Remedy)
+        { xi.item.ALCHEMY_KIT_75,               2282, xi.craftRank.ARTISAN    }, -- 1141g 	(Halcyon Rod)
+        { xi.item.ALCHEMY_KIT_80,               2536, xi.craftRank.ARTISAN    }, -- 51g	    (Bloody Bolt Heads x6)
+        { xi.item.ALCHEMY_KIT_85,               3500, xi.craftRank.ADEPT      }, -- 179g	(Alchemist's Water x6)
+        { xi.item.ALCHEMY_KIT_90,               2894, xi.craftRank.ADEPT      }, -- 1358g	(Super Ether)
+        -- { xi.item.ALCHEMY_KIT_95,               1578, xi.craftRank.VETERAN    }, -- 789g	(Max-Potion)
     },
 
     [xi.skill.BONECRAFT] =
@@ -434,7 +435,7 @@ xi.shop.generalGuildStock =
         { xi.item.BONECRAFT_KIT_80,             8608, xi.craftRank.ARTISAN    }, -- 4304g	(Coral Ring)
         { xi.item.BONECRAFT_KIT_85,             1500, xi.craftRank.ADEPT      }, -- 750g	(Hellish Bugle)
         { xi.item.BONECRAFT_KIT_90,             7816, xi.craftRank.ADEPT      }, -- 3908g	(Dragon Claws)
-        { xi.item.BONECRAFT_KIT_95,            27582, xi.craftRank.VETERAN    }, -- 13791g	(Carapace Breastplate)
+        -- { xi.item.BONECRAFT_KIT_95,            27582, xi.craftRank.VETERAN    }, -- 13791g	(Carapace Breastplate)
     },
 
     [xi.skill.LEATHERCRAFT] =
@@ -467,12 +468,12 @@ xi.shop.generalGuildStock =
 		{ xi.item.LEATHERCRAFT_KIT_55,          7200, xi.craftRank.JOURNEYMAN }, -- 3600g	(Raptor Gloves)	
 		{ xi.item.LEATHERCRAFT_KIT_60,          1570, xi.craftRank.JOURNEYMAN }, -- 785g	(Hard Leather Ring)
 		{ xi.item.LEATHERCRAFT_KIT_66,          7766, xi.craftRank.CRAFTSMAN  }, -- 3883g	(Battle Boots)
-        { xi.item.LEATHERCRAFT_KIT_70,         15790, xi.craftRank.CRAFTSMAN  }, -- 7895g	(Behemoth Mantle)
+        { xi.item.LEATHERCRAFT_KIT_70,          7500, xi.craftRank.CRAFTSMAN  }, -- 3500g	(Tabin Boots)
         { xi.item.LEATHERCRAFT_KIT_75,          2500, xi.craftRank.ARTISAN    }, -- 1250g	(Tiger Mantle)
         { xi.item.LEATHERCRAFT_KIT_79,          4132, xi.craftRank.ARTISAN    }, -- 2066g	(Marid Mantle)
         { xi.item.LEATHERCRAFT_KIT_85,          4304, xi.craftRank.ADEPT      }, -- 2152g	(Coeurl Mantle)
         { xi.item.LEATHERCRAFT_KIT_90,          8688, xi.craftRank.ADEPT      }, -- 4344g	(Koenigs Belt)
-        { xi.item.LEATHERCRAFT_KIT_95,         15526, xi.craftRank.VETERAN    }, -- 7763g	(Peiste Mantle)
+        -- { xi.item.LEATHERCRAFT_KIT_95,         15526, xi.craftRank.VETERAN    }, -- 7763g	(Peiste Mantle)
     },
 
     [xi.skill.SMITHING] =
@@ -514,7 +515,7 @@ xi.shop.generalGuildStock =
         { xi.item.SMITHING_KIT_80,              4132, xi.craftRank.ARTISAN    }, -- 
         { xi.item.SMITHING_KIT_84,              4304, xi.craftRank.ADEPT      }, -- 
         { xi.item.SMITHING_KIT_91,              8688, xi.craftRank.ADEPT      }, -- 
-        { xi.item.SMITHING_KIT_94,             15526, xi.craftRank.VETERAN    }, -- 
+        -- { xi.item.SMITHING_KIT_94,             15526, xi.craftRank.VETERAN    }, -- 
     },
 }
 
