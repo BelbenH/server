@@ -1774,7 +1774,7 @@ INSERT INTO `item_usable` VALUES (5905,'undying_moiety',1,1,0,0,0,0,0,0);       
 INSERT INTO `item_usable` VALUES (5906,'page_from_abdhaljs_on_war',1,1,0,0,0,0,0,0); -- TODO: Not implemented
 INSERT INTO `item_usable` VALUES (5907,'winterflower',1,1,28,0,0,0,0,0);
 INSERT INTO `item_usable` VALUES (5908,'butterpear',1,1,28,0,0,0,0,0);
-INSERT INTO `item_usable` VALUES (5909,'pickled_rarab_tail',1,1,0,0,0,0,0,0); -- TODO: Not implemented
+INSERT INTO `item_usable` VALUES (5909,'pickled_rarab_tail',1,1,0,0,0,0,0,0); -- (Phalanx)
 INSERT INTO `item_usable` VALUES (5910,'heavy_metal_pouch',1,1,55,0,0,0,0,0);
 INSERT INTO `item_usable` VALUES (5911,'olde_rarab_tail',4,1,55,0,0,0,0,0); -- Need to verify animation
 INSERT INTO `item_usable` VALUES (5912,'gargouille_quiver',1,1,55,0,0,0,0,0);
@@ -2832,6 +2832,7 @@ INSERT INTO `item_usable` VALUES (22142,'armageddon',1,1,55,0,1,10,3600,0);
 INSERT INTO `item_usable` VALUES (22143,'fomalhaut',1,1,55,0,1,10,3600,0);
 -- INSERT INTO `item_usable` VALUES (22288,'mandragora_pouch',1,2,55,0,1,10,216000,0);  -- Enchantment: Tiny Allowance (Enchantment gives a random small amount of gil (<2,000))
 INSERT INTO `item_usable` VALUES (25585,'black_chocobo_cap',1,8,79,0,1,30,72000,0);
+INSERT INTO `item_usable` VALUES (25671,'rarab_cap_+1',1,8,33,0,1,30,3600,0);
 INSERT INTO `item_usable` VALUES (25679,'white_rarab_cap_+1',1,8,33,0,1,30,72000,0);
 INSERT INTO `item_usable` VALUES (25774,'fancy_gilet',1,2,55,0,1,30,86400,0); -- Dispense: persikos snow cone
 INSERT INTO `item_usable` VALUES (25775,'fancy_top',1,2,55,0,1,30,86400,0); -- Dispense: persikos snow cone

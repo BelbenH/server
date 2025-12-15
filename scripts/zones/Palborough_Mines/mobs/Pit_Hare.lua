@@ -1,13 +1,11 @@
 -----------------------------------
--- Area: West Ronfaure
---  Mob: Wild Rabbit
+-- Area: Palborough Mines
+--  Mob: Pit Hare
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
 
 entity.onMobDeath = function(mob, player, optParams)
-	-- Set respawn time in seconds
-	mob:setRespawnTime(30)
     xi.alphamob.spawnAlpha(mob, player)
 end
 

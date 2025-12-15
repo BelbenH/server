@@ -1,13 +1,15 @@
 -----------------------------------
--- Area: West Ronfaure
---  Mob: Wild Rabbit
+-- Area: La Theine Plateau
+--  Mob: Steppe Hare
+-----------------------------------
+require('scripts/quests/tutorial')
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
 
 entity.onMobDeath = function(mob, player, optParams)
-	-- Set respawn time in seconds
-	mob:setRespawnTime(30)
+    xi.regime.checkRegime(player, mob, 5, 1, xi.regime.type.FIELDS)
+    xi.tutorial.onMobDeath(player)
     xi.alphamob.spawnAlpha(mob, player)
 end
 
