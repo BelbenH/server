@@ -10,6 +10,9 @@ local entity = {}
 entity.phList =
 {
     [ID.mob.VALKURM_EMPEROR - 4] = ID.mob.VALKURM_EMPEROR, -- -228.957 2.776 -101.226
+    [ID.mob.VALKURM_EMPEROR - 3] = ID.mob.VALKURM_EMPEROR, -- Added (Phalanx)
+    [ID.mob.VALKURM_EMPEROR - 2] = ID.mob.VALKURM_EMPEROR, -- Added (Phalanx)
+    [ID.mob.VALKURM_EMPEROR - 1] = ID.mob.VALKURM_EMPEROR, -- Added (Phalanx)
 }
 
 entity.spawnPoints =

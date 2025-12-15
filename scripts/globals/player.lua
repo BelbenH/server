@@ -146,7 +146,7 @@ xi.player.charCreate = function(player)
     player:setCharVar('EinherjarIntro', 1)              -- Has not seen Einherjar intro
     player:setNewPlayer(true)                           -- apply new player flag
     -- Auto-bypass RoE "First Step Forward" - Bypasses needing spark NPC
-    player:setEminenceCompleted(1, true)
+    player:setEminenceCompleted(1, true) -- Use this command to bypass the progression need. !exec target:setEminenceCompleted(1, true)
     player:setEminenceProgress(1, 1)
 end
 

@@ -12,9 +12,11 @@ entity.onEventFinish = function(player, csid, option, npc)
     if csid == 106 and option == 0 then
         local stock =
         {
-            { xi.item.RICE_BALL,       168 },
-            { xi.item.EEL_KABOB,      3150 },
-            { xi.item.GARLIC_CRACKER,    4 },
+            { xi.item.PINCH_OF_PRISM_POWDER,  625 },
+            { xi.item.POT_OF_SILENT_OIL,      625 },
+            { xi.item.RICE_BALL,              168 },
+            { xi.item.EEL_KABOB,             3150 },
+            { xi.item.GARLIC_CRACKER,           4 },
         }
 
         xi.shop.general(player, stock, xi.fameArea.NORG)

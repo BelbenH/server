@@ -37,7 +37,7 @@ entity.onTrigger = function(player, npc)
         { xi.item.BLOODY_BOLT,                    32, 3, }, --added
         { xi.item.VENOM_BOLT,                     35, 3, }, --added
         { xi.item.HOLY_BOLT,                      38, 3, }, --added
-        { xi.MYTHRIL_BOLT,                        25, 3, }, --added
+        { xi.item.MYTHRIL_BOLT,                   25, 3, }, --added
         { xi.item.BOOMERANG,                    1820, 3, },
         { xi.item.TATHLUM,                        90, 3, }, --added
         { xi.item.SCROLL_OF_BATTLEFIELD_ELEGY,  4992, 3, },

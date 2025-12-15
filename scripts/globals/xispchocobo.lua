@@ -134,10 +134,13 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
         elseif #player:getNotorietyList() > 0 then
             player:printToPlayer('You cannot mount your chocobo while in combat.', xi.msg.channel.NS_SAY, ' ')
             return
-        -- elseif player:getCharVar('[XISP]chocoboTimer') > os.time() then -- Timer set when getting off mount
-        --     player:printToPlayer('Your chocobo appears too tired to ride.', xi.msg.channel.NS_SAY, ' ')
-        --     player:printToPlayer('You must wait ' .. math.ceil((player:getCharVar('[XISP]chocoboTimer') - os.time()) / 60) .. ' more minute(s).', xi.msg.channel.NS_SAY, ' ')
-        --     return
+        elseif player:getCharVar('[XISP]chocoboTimer') > os.time() then -- Timer set when getting off mount
+            local chocoTimer = player:getCharVar('[XISP]chocoboTimer') - os.time()
+            local minutes    = math.floor(chocoTimer / 60)
+            local seconds    = chocoTimer % 60
+            player:printToPlayer('Your chocobo appears too tired to ride.', xi.msg.channel.NS_SAY, ' ')
+            player:printToPlayer('You must wait ' .. minutes .. ' more minute(s) and ' .. seconds .. " seconds(s).", xi.msg.channel.NS_SAY, ' ')
+            return
         end
 
         menu.options = dialogue
@@ -287,7 +290,7 @@ xi.xispchocobo.spawnChocobo = function(player)
             end,
 
             onMobRoam = function(choco)
-                xi.xispfollow.follow(choco, player)
+                xi.xispfollow.follow(choco, GetPlayerByID(choco:getLocalVar('[XISP]ownerID')))
             end,
         })
 
