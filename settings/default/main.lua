@@ -316,4 +316,7 @@ xi.settings.main =
     -- SYSTEM
     DISABLE_INACTIVITY_WATCHDOG = true, -- true/false. If this is enabled, the watchdog which detects if the main loop isn't being ticked will no longer be able to kill the process.
     INACTIVITY_WATCHDOG_PERIOD  = 2000,  -- Time in milliseconds which the inactivity watchdog will wait between ticks of the main loop before potentially killing the target process.
+
+    -- PHALANX
+    ALPHA_MOB_SPAWN_CHANCE = 5, -- Scale between 0-100
 }

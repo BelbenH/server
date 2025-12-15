@@ -16,6 +16,8 @@ entity.onMobDeath = function(mob, player, optParams)
     if player ~= nil and optParams ~= nil and optParams.isKiller then
         xi.regime.checkRegime(player, mob, 2, 1, xi.regime.type.FIELDS)
     end
+
+    xi.alphamob.spawnAlpha(mob, player)
 end
 
 entity.onMobDespawn = function(mob)

@@ -12,6 +12,11 @@ effectObject.onEffectTick = function(target, effect)
 end
 
 effectObject.onEffectLose = function(target, effect)
+    -- Case for Pickled Rarab Tail (Phalanx)
+    if effect:getPower() == 91 and target:hasStatusEffect(xi.effect.WEIGHT) then
+        target:delStatusEffect(xi.effect.WEIGHT)
+    end
+
     target:setCostume(0)
 end
 
