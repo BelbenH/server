@@ -7,16 +7,22 @@ local ID = zones[xi.zone.MAZE_OF_SHAKHRAMI]
 local zoneObject = {}
 
 zoneObject.onInitialize = function(zone)
+    local respawnTime = GetServerVariable("LeechKing_Argus_Respawn") - os.time()
+
+    if respawnTime <= 0 then
+        respawnTime = 300 -- 5 minutes
+    end
+
     if math.random(1, 100) <= 50 then
         DisallowRespawn(ID.mob.LEECH_KING, true)
         DisallowRespawn(ID.mob.ARGUS, false)
         xi.mob.updateNMSpawnPoint(ID.mob.ARGUS)
-        GetMobByID(ID.mob.ARGUS):setRespawnTime(math.random(900, 7200))
+        GetMobByID(ID.mob.ARGUS):setRespawnTime(respawnTime)
     else
         DisallowRespawn(ID.mob.ARGUS, true)
         DisallowRespawn(ID.mob.LEECH_KING, false)
         xi.mob.updateNMSpawnPoint(ID.mob.LEECH_KING)
-        GetMobByID(ID.mob.LEECH_KING):setRespawnTime(math.random(900, 7200))
+        GetMobByID(ID.mob.LEECH_KING):setRespawnTime(respawnTime)
     end
 
     xi.treasure.initZone(zone)
