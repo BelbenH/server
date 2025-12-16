@@ -14,36 +14,23 @@ entity.spawnPoints =
     { x =  244.000, y =  20.000, z =  -79.000 },
     { x =  272.000, y =  20.000, z =  -79.000 }
 }
-
-entity.onMobInitialize = function(mob)
-    -- This handles BOTH Leech King and Argus init timers
-    if math.random(1, 100) <= 50 then
-        DisallowRespawn(ID.mob.LEECH_KING, true)
-        DisallowRespawn(ID.mob.ARGUS, false)
-        xi.mob.updateNMSpawnPoint(ID.mob.ARGUS)
-        GetMobByID(ID.mob.ARGUS):setRespawnTime(math.random(900, 7200))
-    else
-        DisallowRespawn(ID.mob.ARGUS, true)
-        DisallowRespawn(ID.mob.LEECH_KING, false)
-        xi.mob.updateNMSpawnPoint(ID.mob.LEECH_KING)
-        GetMobByID(ID.mob.LEECH_KING):setRespawnTime(math.random(900, 7200))
-    end
-end
-
 entity.onMobDeath = function(mob, player, optParams)
 end
 
 entity.onMobDespawn = function(mob)
+    local respawnTime = math.random(64800, 108000) -- 18 - 30 hours
+    SetServerVariable("LeechKing_Argus_Respawn", os.time() + respawnTime)
+
     if math.random(1, 100) <= 50 then
         DisallowRespawn(ID.mob.LEECH_KING, true)
         DisallowRespawn(ID.mob.ARGUS, false)
         xi.mob.updateNMSpawnPoint(ID.mob.ARGUS)
-        GetMobByID(ID.mob.ARGUS):setRespawnTime(math.random(3600, 7200)) -- 1-2 hours
+        GetMobByID(ID.mob.ARGUS):setRespawnTime(respawnTime)
     else
         DisallowRespawn(ID.mob.ARGUS, true)
         DisallowRespawn(ID.mob.LEECH_KING, false)
         xi.mob.updateNMSpawnPoint(ID.mob.LEECH_KING)
-        GetMobByID(ID.mob.LEECH_KING):setRespawnTime(math.random(3600, 7200)) -- 1-2 hours
+        GetMobByID(ID.mob.LEECH_KING):setRespawnTime(respawnTime)
     end
 end
 

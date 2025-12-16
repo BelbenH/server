@@ -18,10 +18,10 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local params = {}
     params.numHits = 2
     params.ftpMod = { 1.0, 1.5, 2.0 }
-    params.str_wsc = 0.3
+    params.str_wsc = 0.4 -- (Phalanx) Default: 0.3
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
-        params.dex_wsc = 0.3
+        params.dex_wsc = 0.4 -- (Phalanx) Default: 0.3
     end
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
