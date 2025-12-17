@@ -250,7 +250,6 @@ quest.sections =
                             end
 
                             treantMob:updateClaim(player)
-                            player:confirmTrade()
 
                             -- QM is visible, but cannot be used to spawn Forger again until ten minutes have elapsed
                             -- since the NM despawns.
