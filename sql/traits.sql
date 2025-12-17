@@ -175,11 +175,13 @@ INSERT INTO `traits` VALUES (8,'max mp boost',21,30,1,1096,10,'SOA',0);
 INSERT INTO `traits` VALUES (8,'max mp boost',21,60,2,1096,20,'SOA',0);
 INSERT INTO `traits` VALUES (8,'max mp boost',21,90,3,1096,40,'SOA',0);
 INSERT INTO `traits` VALUES (9,'auto regen',3,25,1,370,1,NULL,0);
+INSERT INTO `traits` VALUES (9,'auto regen',2,15,1,370,1,NULL,0); -- (Phalanx) MNK trait lvl 15
 INSERT INTO `traits` VALUES (9,'auto regen',3,76,2,370,2,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (9,'auto regen',22,35,1,370,1,'SOA',0);
 INSERT INTO `traits` VALUES (9,'auto regen',22,65,2,370,2,'SOA',0);
 INSERT INTO `traits` VALUES (9,'auto regen',22,95,3,370,3,'SOA',0);
 INSERT INTO `traits` VALUES (10,'auto refresh',7,35,1,369,1,'TOAU',0);
+INSERT INTO `traits` VALUES (10,'auto refresh',8,45,1,369,1,'TOAU',0); -- (Phalanx) DRK trait lvl 45
 INSERT INTO `traits` VALUES (10,'auto refresh',15,25,1,369,1,NULL,0);
 INSERT INTO `traits` VALUES (10,'auto refresh',15,90,2,369,2,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (11,'rapid shot',11,15,1,359,25,NULL,0);
@@ -229,6 +231,7 @@ INSERT INTO `traits` VALUES (18,'dual wield',19,40,2,259,15,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (18,'dual wield',19,60,3,259,25,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (18,'dual wield',19,80,4,259,30,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (19,'treasure hunter',6,15,1,303,1,NULL,0);
+INSERT INTO `traits` VALUES (19,'treasure hunter',17,35,1,303,1,NULL,0); -- (Phalanx) COR trait lvl 35
 INSERT INTO `traits` VALUES (20,'gilfinder',6,5,1,897,1,NULL,0);
 INSERT INTO `traits` VALUES (20,'gilfinder',6,90,2,897,2,NULL,0); -- https://wiki.ffo.jp/html/1677.html
 INSERT INTO `traits` VALUES (21,'alertness',11,5,1,0,0,NULL,0);
@@ -412,6 +415,7 @@ INSERT INTO `traits` VALUES (63,'resist amnesia',18,55,3,253,20,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (63,'resist amnesia',18,75,4,253,25,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (63,'resist amnesia',18,95,5,253,30,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (64,'treasure hunter ii',6,45,2,303,1,NULL,0);
+INSERT INTO `traits` VALUES (64,'treasure hunter ii',17,70,2,303,1,NULL,0); -- (Phalanx) COR trait lvl 70
 INSERT INTO `traits` VALUES (65,'treasure hunter iii',6,90,3,303,1,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (66,'kick attacks',2,51,1,292,10,NULL,0);
 INSERT INTO `traits` VALUES (66,'kick attacks',2,71,2,292,12,NULL,0);
