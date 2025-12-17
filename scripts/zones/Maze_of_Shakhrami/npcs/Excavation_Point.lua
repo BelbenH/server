@@ -13,9 +13,7 @@ entity.onTrade = function(player, npc, trade)
         not player:hasItem(xi.item.WYVERN_EGG) and
         npcUtil.tradeHas(trade, xi.item.PICKAXE)
     then
-        if npcUtil.giveItem(player, xi.item.WYVERN_EGG) then
-            player:confirmTrade()
-        end
+        npcUtil.giveItem(player, xi.item.WYVERN_EGG)
     else
         xi.helm.onTrade(player, npc, trade, xi.helmType.EXCAVATION, 60)
     end

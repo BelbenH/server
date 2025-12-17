@@ -21,8 +21,6 @@ entity.onTrade = function(player, npc, trade)
                 else
                     player:startEvent(43, 12, 0, xi.item.CHUNK_OF_MINE_GRAVEL) -- Mine Gravel
                 end
-            else
-                player:startEvent(47, 8, xi.item.SHARP_STONE) -- pickaxe breaks
             end
         else
             player:startEvent(53) -- cannot carry any more
@@ -38,10 +36,9 @@ end
 
 entity.onEventFinish = function(player, csid, option, npc)
     if csid == 51 and npcUtil.giveItem(player, xi.item.SHARP_STONE) then
-        player:confirmTrade()
         player:setCharVar('Quest[2][26]Prog', 3)
-    elseif csid == 43 and npcUtil.giveItem(player, xi.item.CHUNK_OF_MINE_GRAVEL) then
-        player:confirmTrade()
+    elseif csid == 43 then
+        npcUtil.giveItem(player, xi.item.CHUNK_OF_MINE_GRAVEL)
     elseif csid == 47 then
         player:confirmTrade()
     end
