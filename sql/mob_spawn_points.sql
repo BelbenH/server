@@ -52688,7 +52688,7 @@ INSERT INTO `mob_spawn_points` VALUES (17371509,0,'Yagudos_Elemental','Yagudo\'s
 -- INSERT INTO `mob_spawn_points` VALUES (17371510,0,'Yagudo_Piper','Yagudo Piper',15,-87.000,0.500,-69.000,10);
 INSERT INTO `mob_spawn_points` VALUES (17371511,0,'Digger_Wasp','Digger Wasp',17,-56.281,-2.045,-113.655,8);
 INSERT INTO `mob_spawn_points` VALUES (17371512,0,'Digger_Wasp','Digger Wasp',17,-51.484,-0.971,-120.564,127);
--- INSERT INTO `mob_spawn_points` VALUES (17371513,0,'Yagudo_Mendicant','Yagudo Mendicant',13,-39.073,0.597,-115.279,28);
+INSERT INTO `mob_spawn_points` VALUES (17371513,0,'Yagudo_Mendicant','Yagudo Mendicant',13,-39.073,0.597,-115.279,28);
 INSERT INTO `mob_spawn_points` VALUES (17371514,0,'Yagudos_Elemental','Yagudo\'s Elemental',14,1.000,1.000,1.000,0);
 INSERT INTO `mob_spawn_points` VALUES (17371515,0,'Hoo_Mjuu_the_Torrent','Hoo Mjuu the Torrent',23,-50.000,1.000,-75.000,127);
 INSERT INTO `mob_spawn_points` VALUES (17371516,0,'Yagudo_Mendicant','Yagudo Mendicant',13,20.816,-3.251,-146.962,127);

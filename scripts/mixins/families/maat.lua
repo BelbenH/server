@@ -12,6 +12,18 @@ g_mixins.families.maat = function(maatMob)
         else
             mob:setLocalVar('specialThreshold', math.random(50, 60))
         end
+
+        -- Phalanx General buffs
+        mob:addMod(xi.mod.HP,    500)
+        mob:addMod(xi.mod.EVA,   30)
+        mob:addMod(xi.mod.DEF,   50)
+        mob:addMod(xi.mod.MEVA,  20)
+        mob:addMod(xi.mod.MDEF,  20)
+        mob:addMod(xi.mod.ATTP, -20)
+        mob:addMod(xi.mod.GRAVITYRES, 40)
+        mob:addMod(xi.mod.SILENCERES, 40)
+        mob:addMod(xi.mod.BINDRES,    40)
+        mob:addMod(xi.mod.SLEEPRES,   40)
     end)
 
     maatMob:addListener('ROAM_TICK', 'MAAT_RTICK', function(mob)
@@ -75,11 +87,26 @@ g_mixins.families.maat = function(maatMob)
 
         if
             mob:getHPP() < 20 or
-            (mob:getMainJob() == xi.job.WHM and mob:getBattleTime() > 300)
+            (mob:getMainJob() == xi.job.WHM and mob:getBattleTime() > 450) -- (Phalanx) Default: 300
         then
             local ID = zones[mob:getZoneID()]
             mob:showText(mob, ID.text.YOUVE_COME_A_LONG_WAY)
             mob:getBattlefield():win()
+        end
+
+        -- RDM
+        if mob:getMainJob() == xi.job.RDM then
+            if mob:getHPP() > 75 then
+                mob:addStatusEffectEx(xi.effect.PHYSICAL_SHIELD, 0, 1, 0, 0)
+                mob:delStatusEffectSilent(xi.effect.MAGIC_SHIELD)
+                mob:setAutoAttackEnabled(false)
+                mob:setMagicCastingEnabled(true)
+            else
+                mob:addStatusEffectEx(xi.effect.MAGIC_SHIELD, 0, 1, 0, 0)
+                mob:delStatusEffectSilent(xi.effect.PHYSICAL_SHIELD)
+                mob:setAutoAttackEnabled(true)
+                mob:setMagicCastingEnabled(false)
+            end
         end
     end)
 

@@ -9,6 +9,10 @@
 local abilityObject = {}
 
 abilityObject.onAbilityCheck = function(player, target, ability)
+    if player:getMainJob() == xi.job.THF then
+        ability:setRecast(45)
+    end
+
     return 0, 0
 end
 

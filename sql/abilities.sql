@@ -33,21 +33,21 @@ CREATE TABLE `abilities` (
 --
 -- ORDER BY:  `abilityId`
 
-INSERT INTO `abilities` VALUES (16,'mighty_strikes',1,0,1,3600,0,0,0,33,2000,0,6,0,0,0,1,300,0,0,NULL);
-INSERT INTO `abilities` VALUES (17,'hundred_fists',2,0,1,3600,0,0,0,34,2000,0,6,0,0,0,1,300,0,0,NULL);
-INSERT INTO `abilities` VALUES (18,'benediction',3,0,1,3600,0,102,0,35,2000,0,6,0,1,14,0,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (19,'manafont',4,0,1,3600,0,0,0,36,2000,0,6,0,0,0,1,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (20,'chainspell',5,0,1,3600,0,0,0,37,2000,0,6,0,0,0,1,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (21,'perfect_dodge',6,0,1,3600,0,0,0,38,2000,0,6,0,0,0,1,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (22,'invincible',7,0,1,3600,0,0,0,18,2000,0,6,0,0,0,1,7200,0,0,NULL);
-INSERT INTO `abilities` VALUES (23,'blood_weapon',8,0,1,3600,0,0,0,19,2000,0,6,0,0,0,1,80,0,0,NULL);
-INSERT INTO `abilities` VALUES (24,'familiar',9,0,1,3600,0,0,0,39,2000,0,6,0,0,0,0,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (25,'soul_voice',10,0,1,3600,0,0,0,40,2000,0,6,0,0,0,1,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (26,'eagle_eye_shot',11,0,4,3600,0,110,0,186,2000,0,3,20,0,0,0,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (27,'meikyo_shisui',12,0,1,3600,0,0,0,96,2000,0,6,0,0,0,1,300,0,0,NULL);
-INSERT INTO `abilities` VALUES (28,'mijin_gakure',13,0,4,3600,0,110,0,93,2000,0,6,16,0,0,0,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (29,'spirit_surge',14,0,1,3600,0,0,0,97,2000,0,6,0,0,0,0,0,0,0,'COP');
-INSERT INTO `abilities` VALUES (30,'astral_flow',15,0,1,3600,0,0,0,95,2000,0,6,0,0,0,0,0,0,0,NULL);
+INSERT INTO `abilities` VALUES (16,'mighty_strikes',1,0,1,1800,0,0,0,33,2000,0,6,0,0,0,1,300,0,0,NULL);
+INSERT INTO `abilities` VALUES (17,'hundred_fists',2,0,1,1800,0,0,0,34,2000,0,6,0,0,0,1,300,0,0,NULL);
+INSERT INTO `abilities` VALUES (18,'benediction',3,0,1,1800,0,102,0,35,2000,0,6,0,1,14,0,0,0,0,NULL);
+INSERT INTO `abilities` VALUES (19,'manafont',4,0,1,1800,0,0,0,36,2000,0,6,0,0,0,1,0,0,0,NULL);
+INSERT INTO `abilities` VALUES (20,'chainspell',5,0,1,1800,0,0,0,37,2000,0,6,0,0,0,1,0,0,0,NULL);
+INSERT INTO `abilities` VALUES (21,'perfect_dodge',6,0,1,1800,0,0,0,38,2000,0,6,0,0,0,1,0,0,0,NULL);
+INSERT INTO `abilities` VALUES (22,'invincible',7,0,1,1800,0,0,0,18,2000,0,6,0,0,0,1,7200,0,0,NULL);
+INSERT INTO `abilities` VALUES (23,'blood_weapon',8,0,1,1800,0,0,0,19,2000,0,6,0,0,0,1,80,0,0,NULL);
+INSERT INTO `abilities` VALUES (24,'familiar',9,0,1,1800,0,0,0,39,2000,0,6,0,0,0,0,0,0,0,NULL);
+INSERT INTO `abilities` VALUES (25,'soul_voice',10,0,1,1800,0,0,0,40,2000,0,6,0,0,0,1,0,0,0,NULL);
+INSERT INTO `abilities` VALUES (26,'eagle_eye_shot',11,0,4,1800,0,110,0,186,2000,0,3,20,0,0,0,0,0,0,NULL);
+INSERT INTO `abilities` VALUES (27,'meikyo_shisui',12,0,1,1800,0,0,0,96,2000,0,6,0,0,0,1,300,0,0,NULL);
+INSERT INTO `abilities` VALUES (28,'mijin_gakure',13,0,4,1800,0,110,0,93,2000,0,6,16,0,0,0,0,0,0,NULL);
+INSERT INTO `abilities` VALUES (29,'spirit_surge',14,0,1,1800,0,0,0,97,2000,0,6,0,0,0,0,0,0,0,'COP');
+INSERT INTO `abilities` VALUES (30,'astral_flow',15,0,1,1800,0,0,0,95,2000,0,6,0,0,0,0,0,0,0,NULL);
 INSERT INTO `abilities` VALUES (31,'berserk',1,15,1,300,1,115,0,0,2000,0,6,0,0,0,1,80,384,0,NULL);
 INSERT INTO `abilities` VALUES (32,'warcry',1,35,1,300,2,116,0,28,2000,0,6,0,1,14,1,300,388,0,NULL);
 INSERT INTO `abilities` VALUES (33,'defender',1,25,1,180,3,117,0,1,2000,0,6,0,0,0,1,80,386,0,NULL);
@@ -55,7 +55,7 @@ INSERT INTO `abilities` VALUES (34,'aggressor',1,45,1,300,4,118,0,2,2000,0,6,0,0
 INSERT INTO `abilities` VALUES (35,'provoke',1,5,4,30,5,119,0,3,2000,0,6,16,0,0,1,1800,0,0,NULL);
 INSERT INTO `abilities` VALUES (36,'focus',2,25,1,120,13,120,0,4,2000,0,6,0,0,0,1,300,448,0,NULL);
 INSERT INTO `abilities` VALUES (37,'dodge',2,15,1,120,14,121,0,5,2000,0,6,0,0,0,1,300,450,0,NULL);
-INSERT INTO `abilities` VALUES (38,'chakra',2,35,1,180,15,102,0,6,2000,0,6,0,0,0,1,300,452,0,NULL);
+INSERT INTO `abilities` VALUES (38,'chakra',2,10,1,120,15,102,0,6,2000,0,6,0,0,0,1,300,452,0,NULL);
 INSERT INTO `abilities` VALUES (39,'boost',2,5,1,15,16,116,0,7,2000,0,6,0,0,0,1,300,0,0,NULL);
 INSERT INTO `abilities` VALUES (40,'counterstance',2,45,1,300,17,0,0,8,2000,0,6,0,0,0,1,900,0,0,NULL);
 INSERT INTO `abilities` VALUES (41,'steal',6,5,4,300,60,125,0,181,2000,0,3,3,0,0,1,300,0,0,NULL);
