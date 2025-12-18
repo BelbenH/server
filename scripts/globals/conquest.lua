@@ -581,6 +581,22 @@ local function conquestRanking()
     return GetNationRank(xi.nation.SANDORIA) + 4 * GetNationRank(xi.nation.BASTOK) + 16 * GetNationRank(xi.nation.WINDURST)
 end
 
+-- Phalanx
+-- Forces output of conquest ranking to be favorable to player's nation
+local function forceConquestRanking(player)
+    local nation = player:getNation()
+
+    if nation == xi.nation.SANDORIA then
+        return 57 -- Sandoria first place
+    elseif nation == xi.nation.BASTOK then
+        return 54 -- Bastok first place
+    elseif nation == xi.nation.WINDURST then
+        return 30 -- Windurst first place
+    end
+
+    return 0
+end
+
 xi.conquest.toggleRegionalNPCs = function(zone)
     -- Show/Hide regional NPCs
     -- If there is a draw or a 1st place Alliance, those NPCs won't be available anywhere.
@@ -1199,17 +1215,17 @@ xi.conquest.overseerOnTrigger = function(player, npc, guardNation, guardType, gu
     -- JEUNO OVERSEERS
     elseif guardType == xi.conquest.guard.CITY and guardNation == xi.nation.OTHER then
         local a1 = getArg1(player, guardNation, guardType)
-        local a3 = conquestRanking()
+        local a3 = forceConquestRanking(player)
         local a6 = getArg6(player)
         local a7 = player:getCP()
 
         player:startEvent(guardEvent, a1, 0, a3, 0, 0, a6, a7, 0)
 
-    -- CITY AND FOREIGN OVERSEERS
+        -- CITY AND FOREIGN OVERSEERS
     elseif guardType <= xi.conquest.guard.FOREIGN then
         local a1 = getArg1(player, guardNation, guardType)
         local a2 = getExForceAvailable(player, guardNation)
-        local a3 = conquestRanking()
+        local a3 = forceConquestRanking(player)
         local a4 = suppliesAvailableBitmask(player, guardNation)
         local a5 = player:getTeleport(guardNation)
         local a6 = getArg6(player)
