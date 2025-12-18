@@ -12117,11 +12117,11 @@ INSERT INTO `mob_groups` VALUES (122,7167,171,'Goblin_Lansquenet',0,128,0,0,0,60
 -- Zeruhn_Mines (Zone 172)
 -- ------------------------------------------------------------
 
-INSERT INTO `mob_groups` VALUES (1,1038,172,'Ding_Bats',330,0,654,0,0,1,3,0);
+INSERT INTO `mob_groups` VALUES (1,1038,172,'Ding_Bats',60,0,654,0,0,1,3,0);
 INSERT INTO `mob_groups` VALUES (2,6420,172,'Burrower_Worm',330,0,2501,0,0,75,79,0);
 INSERT INTO `mob_groups` VALUES (3,6469,172,'Colliery_Bat',330,0,654,0,0,75,80,0);
 INSERT INTO `mob_groups` VALUES (4,6365,172,'Soot_Crab',330,0,2104,0,0,75,78,0);
-INSERT INTO `mob_groups` VALUES (5,3371,172,'River_Crab',330,0,2103,0,0,2,4,0);
+INSERT INTO `mob_groups` VALUES (5,3371,172,'River_Crab',60,0,2103,0,0,2,4,0);
 INSERT INTO `mob_groups` VALUES (6,6399,172,'Veindigger_Leech',330,0,963,0,0,75,80,0);
 
 -- The Gloom Phantom's Approach
@@ -13020,20 +13020,20 @@ INSERT INTO `mob_groups` VALUES (98,7257,188,'Vanguard_Pathfinder',600,0,2563,40
 -- King_Ranperres_Tomb (Zone 190)
 -- ------------------------------------------------------------
 
-INSERT INTO `mob_groups` VALUES (1,1038,190,'Ding_Bats',660,2,655,0,0,2,5,0);
-INSERT INTO `mob_groups` VALUES (2,656,190,'Carrion_Worm',660,0,428,0,0,2,5,0);
-INSERT INTO `mob_groups` VALUES (3,1737,190,'Goblin_Thug',660,0,1170,0,0,4,8,0);
-INSERT INTO `mob_groups` VALUES (4,2763,190,'Mouse_Bat',660,0,386,0,0,3,6,0);
-INSERT INTO `mob_groups` VALUES (5,1744,190,'Goblin_Weaver',660,0,1183,0,0,4,8,0);
-INSERT INTO `mob_groups` VALUES (6,3780,190,'Stone_Eater',660,0,2340,0,0,5,7,0);
+INSERT INTO `mob_groups` VALUES (1,1038,190,'Ding_Bats',60,2,655,0,0,2,5,0);
+INSERT INTO `mob_groups` VALUES (2,656,190,'Carrion_Worm',60,0,428,0,0,2,5,0);
+INSERT INTO `mob_groups` VALUES (3,1737,190,'Goblin_Thug',60,0,1170,0,0,4,8,0);
+INSERT INTO `mob_groups` VALUES (4,2763,190,'Mouse_Bat',60,0,386,0,0,3,6,0);
+INSERT INTO `mob_groups` VALUES (5,1744,190,'Goblin_Weaver',60,0,1183,0,0,4,8,0);
+INSERT INTO `mob_groups` VALUES (6,3780,190,'Stone_Eater',60,0,2340,0,0,5,7,0);
 INSERT INTO `mob_groups` VALUES (7,1214,190,'Enchanted_Bones_blm',660,1,769,0,0,4,8,0);
 INSERT INTO `mob_groups` VALUES (8,3739,190,'Spook',960,1,2840,0,0,11,13,0);
-INSERT INTO `mob_groups` VALUES (9,4349,190,'Wind_Bats',660,0,82,0,0,9,11,0);
-INSERT INTO `mob_groups` VALUES (10,1635,190,'Goblin_Ambusher',660,0,1019,0,0,12,16,0);
-INSERT INTO `mob_groups` VALUES (11,1738,190,'Goblin_Tinkerer',660,0,1175,0,0,12,16,0);
-INSERT INTO `mob_groups` VALUES (12,1643,190,'Goblin_Butcher',660,0,1033,0,0,12,16,0);
+INSERT INTO `mob_groups` VALUES (9,4349,190,'Wind_Bats',60,0,82,0,0,9,11,0);
+INSERT INTO `mob_groups` VALUES (10,1635,190,'Goblin_Ambusher',60,0,1019,0,0,12,16,0);
+INSERT INTO `mob_groups` VALUES (11,1738,190,'Goblin_Tinkerer',60,0,1175,0,0,12,16,0);
+INSERT INTO `mob_groups` VALUES (12,1643,190,'Goblin_Butcher',60,0,1033,0,0,12,16,0);
 INSERT INTO `mob_groups` VALUES (13,1796,190,'Grave_Bat',660,0,1221,0,0,11,13,0);
-INSERT INTO `mob_groups` VALUES (14,3378,190,'Rock_Eater',660,0,2116,0,0,14,16,0);
+INSERT INTO `mob_groups` VALUES (14,3378,190,'Rock_Eater',60,0,2116,0,0,14,16,0);
 INSERT INTO `mob_groups` VALUES (15,1670,190,'Goblin_Gruel',23400,0,1087,0,0,18,20,0);
 INSERT INTO `mob_groups` VALUES (16,2797,190,'Nachzehrer_war',660,0,1771,0,0,15,18,0);
 INSERT INTO `mob_groups` VALUES (17,5769,190,'Gwyllgi',0,32,3053,1500,0,31,34,0);
@@ -13042,9 +13042,9 @@ INSERT INTO `mob_groups` VALUES (19,857,190,'Crypt_Ghost',0,128,544,0,0,20,21,0)
 INSERT INTO `mob_groups` VALUES (20,3152,190,'Plague_Bats',660,2,2002,0,0,15,17,0);
 INSERT INTO `mob_groups` VALUES (21,5726,190,'Ankou',3600,0,2989,650,650,21,21,0);
 INSERT INTO `mob_groups` VALUES (22,4569,190,'Barbastelle',0,128,2971,550,0,16,19,0);
-INSERT INTO `mob_groups` VALUES (23,1690,190,'Goblin_Mugger',660,0,1118,0,0,21,23,0);
-INSERT INTO `mob_groups` VALUES (24,1683,190,'Goblin_Leecher',660,0,1100,0,0,21,23,0);
-INSERT INTO `mob_groups` VALUES (25,1666,190,'Goblin_Gambler',660,0,1083,0,0,21,23,0);
+INSERT INTO `mob_groups` VALUES (23,1690,190,'Goblin_Mugger',60,0,1118,0,0,21,23,0);
+INSERT INTO `mob_groups` VALUES (24,1683,190,'Goblin_Leecher',60,0,1100,0,0,21,23,0);
+INSERT INTO `mob_groups` VALUES (25,1666,190,'Goblin_Gambler',60,0,1083,0,0,21,23,0);
 INSERT INTO `mob_groups` VALUES (26,3946,190,'Locus_Tomb_Worm',330,0,428,293000,0,131,133,0);
 INSERT INTO `mob_groups` VALUES (27,6460,190,'Locus_Dire_Bat',330,0,461,300000,0,133,135,0);
 INSERT INTO `mob_groups` VALUES (28,6801,190,'Locus_Cutlass_Scorpion',330,0,549,305000,0,135,137,0);
@@ -13082,19 +13082,19 @@ INSERT INTO `mob_groups` VALUES (3,6786,191,'Wadi_Leech_fished',0,128,2599,0,0,1
 INSERT INTO `mob_groups` VALUES (4,5133,191,'Thread_Leech_fished',0,128,79,0,0,21,23,0);
 
 INSERT INTO `mob_groups` VALUES (5,1508,191,'Geyser_Lizard',0,128,952,0,0,28,30,0);
-INSERT INTO `mob_groups` VALUES (6,3381,191,'Rock_Lizard',330,0,2120,0,0,5,8,0);
-INSERT INTO `mob_groups` VALUES (7,1737,191,'Goblin_Thug',330,0,1170,0,0,5,8,0);
-INSERT INTO `mob_groups` VALUES (8,1744,191,'Goblin_Weaver',330,0,1183,0,0,5,8,0);
+INSERT INTO `mob_groups` VALUES (6,3381,191,'Rock_Lizard',60,0,2120,0,0,5,8,0);
+INSERT INTO `mob_groups` VALUES (7,1737,191,'Goblin_Thug',60,0,1170,0,0,5,8,0);
+INSERT INTO `mob_groups` VALUES (8,1744,191,'Goblin_Weaver',60,0,1183,0,0,5,8,0);
 INSERT INTO `mob_groups` VALUES (9,1965,191,'Hoarder_Hare',330,0,309,0,0,6,8,0);
 INSERT INTO `mob_groups` VALUES (10,4830,191,'Teporingo',0,32,3019,630,0,20,20,0);
-INSERT INTO `mob_groups` VALUES (11,1635,191,'Goblin_Ambusher',330,0,1020,0,0,12,16,0);
-INSERT INTO `mob_groups` VALUES (12,1738,191,'Goblin_Tinkerer',330,0,1176,0,0,12,16,0);
-INSERT INTO `mob_groups` VALUES (13,1643,191,'Goblin_Butcher',330,0,1034,0,0,12,16,0);
-INSERT INTO `mob_groups` VALUES (14,4272,191,'Wadi_Hare',330,0,2598,0,0,11,14,0);
+INSERT INTO `mob_groups` VALUES (11,1635,191,'Goblin_Ambusher',60,0,1020,0,0,12,16,0);
+INSERT INTO `mob_groups` VALUES (12,1738,191,'Goblin_Tinkerer',60,0,1176,0,0,12,16,0);
+INSERT INTO `mob_groups` VALUES (13,1643,191,'Goblin_Butcher',60,0,1034,0,0,12,16,0);
+INSERT INTO `mob_groups` VALUES (14,4272,191,'Wadi_Hare',60,0,2598,0,0,11,14,0);
 INSERT INTO `mob_groups` VALUES (15,3764,191,'Steam_Lizard',330,0,2327,0,0,16,20,0);
-INSERT INTO `mob_groups` VALUES (16,1659,191,'Goblin_Fisher',330,0,1052,0,0,5,8,0);
-INSERT INTO `mob_groups` VALUES (17,3780,191,'Stone_Eater',330,0,2341,0,0,3,5,0);
-INSERT INTO `mob_groups` VALUES (18,4271,191,'Wadi_Crab',330,0,2597,0,0,7,9,0);
+INSERT INTO `mob_groups` VALUES (16,1659,191,'Goblin_Fisher',60,0,1052,0,0,5,8,0);
+INSERT INTO `mob_groups` VALUES (17,3780,191,'Stone_Eater',60,0,2341,0,0,3,5,0);
+INSERT INTO `mob_groups` VALUES (18,4271,191,'Wadi_Crab',60,0,2597,0,0,7,9,0);
 INSERT INTO `mob_groups` VALUES (19,6666,191,'Goblin_Brigand',330,0,1119,0,0,86,89,0);
 INSERT INTO `mob_groups` VALUES (20,6671,191,'Goblin_Headsman',330,0,1035,0,0,86,90,0);
 INSERT INTO `mob_groups` VALUES (21,6664,191,'Goblin_Healer',330,0,2881,0,0,86,90,0);
@@ -13830,7 +13830,7 @@ INSERT INTO `mob_groups` VALUES (6,7042,209,'Titan_Prime_ASA',0,128,0,4000,0,40,
 INSERT INTO `mob_groups` VALUES (7,6954,209,'Titan_Prime_HTBF',0,128,0,0,0,99,99,0);
 
 -- ------------------------------------------------------------
--- GM Zone (Zone 210)
+-- GM Zone (Zone 210) (Phalanx)
 -- ------------------------------------------------------------
 
 -- Garrison NPCs (1 per level cap). These are inserted dynamically. Only min/max level matters.
@@ -13841,9 +13841,9 @@ INSERT INTO `mob_groups` VALUES (3,7071,210,'Garrison_40',0,128,0,0,0,35,40,1);
 INSERT INTO `mob_groups` VALUES (4,7071,210,'Garrison_50',0,128,0,0,0,45,50,1);
 INSERT INTO `mob_groups` VALUES (5,7071,210,'Garrison_75',0,128,0,0,0,70,75,1);
 INSERT INTO `mob_groups` VALUES (100,7071,210,'[XISP]Chocobo',0,128,0,0,0,99,99,0);
--- Alpha Mobs
+-- Alpha Mobs -- VALUES (UniqueID, NM(Mob_pool_ID, Keep the rest the same.))
 INSERT INTO `mob_groups` VALUES (200,2125,210,'[XISP]RabbitAlpha',0,128,0,0,0,1,75,0);
-
+INSERT INTO `mob_groups` VALUES (201,5546,210,'[XISP]MandragoraAlpha',0,128,0,0,0,1,75,0);
 -- ------------------------------------------------------------
 -- Cloister_of_Tides (Zone 211)
 -- ------------------------------------------------------------
