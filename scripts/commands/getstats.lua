@@ -15,23 +15,12 @@ local options =
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 0,
     parameters = 's'
 }
 
 commandObj.onTrigger = function(player, option)
-    local target = player:getCursorTarget()
-    if target == nil then
-        player:printToPlayer('Target something first.')
-        return
-    end
-
-    local targetType = target:getObjType()
-
-    if targetType == xi.objType.NPC then
-        player:printToPlayer('Target something other than an NPC..They don\'t have stats!')
-        return
-    end
+    local target = player
 
     -- map integer option to a name for easier reading in if/else for convenient use
     if
@@ -57,14 +46,9 @@ commandObj.onTrigger = function(player, option)
             player:printToPlayer(string.format('Total MND: %i ', target:getStat(xi.mod.MND)), xi.msg.channel.SYSTEM_3)
             player:printToPlayer(string.format('Total INT: %i ', target:getStat(xi.mod.INT)), xi.msg.channel.SYSTEM_3)
             player:printToPlayer(string.format('Total CHR: %i ', target:getStat(xi.mod.CHR)), xi.msg.channel.SYSTEM_3)
-            if targetType == xi.objType.PC then
-                player:printToPlayer(string.format('Total Subtle Blow: %i ', target:getMod(xi.mod.SUBTLE_BLOW)), xi.msg.channel.SYSTEM_3)
-                player:printToPlayer(string.format('Total Store TP: %i ', target:getMod(xi.mod.STORETP)), xi.msg.channel.SYSTEM_3)
-                player:printToPlayer(string.format('%s\'s base Treasure Hunter with current equipment: %i', target:getName(), target:getMod(xi.mod.TREASURE_HUNTER)), xi.msg.channel.SYSTEM_3)
-            elseif targetType == xi.objType.MOB then
-                player:printToPlayer(string.format('Mob\'s current Treasure Hunter Tier: %i', target:getTHlevel()), xi.msg.channel.SYSTEM_3)
-                player:printToPlayer(string.format('Battletime: %i ', target:getBattleTime()), xi.msg.channel.SYSTEM_3)
-            end
+            player:printToPlayer(string.format('Total Subtle Blow: %i ', target:getMod(xi.mod.SUBTLE_BLOW)), xi.msg.channel.SYSTEM_3)
+            player:printToPlayer(string.format('Total Store TP: %i ', target:getMod(xi.mod.STORETP)), xi.msg.channel.SYSTEM_3)
+            player:printToPlayer(string.format('%s\'s base Treasure Hunter with current equipment: %i', target:getName(), target:getMod(xi.mod.TREASURE_HUNTER)), xi.msg.channel.SYSTEM_3)
         end,
 
         ['offensive'] = function()
@@ -120,34 +104,14 @@ commandObj.onTrigger = function(player, option)
                 player:printToPlayer(message, xi.msg.channel.SYSTEM_3)
             end
 
-            if targetType == xi.objType.MOB then
-                -- Print immunities
-                local printString = 'Immunities:'
-                local hasImmunities = false
-                for k, v in pairs(xi.immunity) do
-                    if v > 0 then
-                        if target:hasImmunity(v) then
-                            printString = printString .. ' ' .. k
-                            hasImmunities = true
-                        end
-                    end
-                end
-
-                if not hasImmunities then
-                    printString = printString .. ' None'
-                end
-
-                player:printToPlayer(printString, xi.msg.channel.SYSTEM_3)
-            end
-
             return
         end,
 
         ['default'] = function()
             -- Not found in switch statement, so we didn't match an option
-            local printString = 'Please choose a report type:'
+            local printString = 'Please choose a report type: '
             for k, v in ipairs(options) do
-                printString = printString .. ' ' .. v .. '-' .. k
+                printString = printString .. k .. ': '  .. v .. ' '
             end
 
             player:printToPlayer(printString)
