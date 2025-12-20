@@ -1,44 +1,67 @@
 xi = xi or {}
 xi.xispchocobo = xi.xispchocobo or {}
 
-local menu1 = {}
-local dialogue1 = {}
+xi.xispchocobo.names =
+{
+    [1]  = 'Ruby',
+    [2]  = 'Vivi',
+    [3]  = 'Pickle',
+    [4]  = 'Sunny',
+    [5]  = 'Coco',
+    [6]  = 'Peaches',
+    [7]  = 'Koko',
+    [8]  = 'Daisy',
+    [9]  = 'Pumpkin',
+    [10] = 'Shamrock',
+    [11] = 'Boko',
+    [12] = 'Chocolina',
+    [13] = 'Sunploom',
+    [14] = 'Poppy',
+    [15] = 'Sunstride',
+    [16] = 'Kwehlington',
+    [17] = 'Chocobro',
+    [18] = 'Ten',
+    [19] = 'Peep',
+    [20] = 'Goldrush',
+    [21] = 'Gysalyn',
+    [22] = 'Ironbeak',
+    [23] = 'Olive',
+    [24] = 'Slippers',
+    [25] = 'Pippin',
+    [26] = 'Buttons',
+    [27] = 'Beakachu',
+}
 
-
-menu1 =
+local menu1 =
 {
     title = 'Would you like to raise a new chocobo?',
     options = {},
 }
 
-dialogue1 =
+local dialogue1 =
 {
     {
         'Can\'t wait!',
         function(playerArg)
-            if playerArg:getCharVar('[XISP]hasChocobo') == 1 then
-                playerArg:printToPlayer('It appears you already have a chocobo.', xi.msg.channel.SAY, ' ')
+            playerArg:printToPlayer('Congratulations on your new chocobo! All the best to you both.', xi.msg.channel.SAY, ' ')
+            playerArg:setCharVar('[XISP]hasChocobo', 1)
+            playerArg:setCharVar('[XISP]chocoGrow', 0)
+            playerArg:setCharVar('[XISP]hasEgg', 0)
+
+            local colorChance = math.random(1, 100)
+            if colorChance <= 3 then
+                playerArg:setCharVar('[XISP]chocoColor', 2) -- Black   3% chance
+            elseif colorChance <= 8 then
+                playerArg:setCharVar('[XISP]chocoColor', 4) -- Blue    5% chance
+            elseif colorChance <= 13 then
+                playerArg:setCharVar('[XISP]chocoColor', 6) -- Red     5% chance
+            elseif colorChance <= 18 then
+                playerArg:setCharVar('[XISP]chocoColor', 8) -- Green   5% chance
             else
-                playerArg:printToPlayer('Congratulations on your new chocobo! All the best to you both.', xi.msg.channel.SAY, ' ')
-                playerArg:setCharVar('[XISP]hasChocobo', 1)
-                playerArg:setCharVar('[XISP]chocoGrow', 0)
-                playerArg:setCharVar('[XISP]hasEgg', 0)
-
-                local colorChance = math.random(1, 100)
-                if colorChance <= 3 then
-                    playerArg:setCharVar('[XISP]chocoColor', 2) -- Black   3% chance
-                elseif colorChance <= 8 then
-                    playerArg:setCharVar('[XISP]chocoColor', 4) -- Blue    5% chance
-                elseif colorChance <= 13 then
-                    playerArg:setCharVar('[XISP]chocoColor', 6) -- Red     5% chance
-                elseif colorChance <= 18 then
-                    playerArg:setCharVar('[XISP]chocoColor', 8) -- Green   5% chance
-                else
-                    playerArg:setCharVar('[XISP]chocoColor', 1) -- Normal 82% chance
-                end
-
-                xi.xispchocobo.spawnChocobo(playerArg, playerArg:getZone())
+                playerArg:setCharVar('[XISP]chocoColor', 1) -- Normal 82% chance
             end
+
+            xi.xispchocobo.spawnChocobo(playerArg, playerArg:getZone())
         end,
     },
     {
@@ -47,6 +70,346 @@ dialogue1 =
         end,
     },
 }
+
+local namePrompt1 =
+{
+    title = 'Page 1:',
+}
+
+local namePrompt2 =
+{
+    title = 'Page 2:',
+}
+
+local namePrompt3 =
+{
+    title = 'Page 3:',
+}
+
+local namePrompt4 =
+{
+    title = 'Page 4:',
+}
+
+local namePrompt5 = -- Unused for now
+{
+    title = 'Page 5:',
+}
+
+local namePromptConfirm =
+{
+    title = 'Are you sure you that\'s what you want?',
+}
+
+local nameList1 = {}
+local nameList2 = {}
+local nameList3 = {}
+local nameList4 = {}
+local nameList5 = {} -- Unused for now
+
+nameList1 =
+{
+    {
+        xi.xispchocobo.names[1],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 1)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[2],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 2)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[3],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 3)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[4],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 4)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[5],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 5)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[6],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 6)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[7],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 7)
+        end,
+    },
+
+    {
+        'Next Page',
+        function(playerArg)
+            namePrompt2.options = nameList2
+            xi.xisp.sendMenu(playerArg, namePrompt2)
+        end,
+    },
+}
+
+nameList2 =
+{
+    {
+        xi.xispchocobo.names[8],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 8)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[9],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 9)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[10],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 10)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[11],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 11)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[12],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 12)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[13],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 13)
+        end,
+    },
+
+    {
+        'Next Page',
+        function(playerArg)
+            namePrompt3.options = nameList3
+            xi.xisp.sendMenu(playerArg, namePrompt3)
+        end,
+    },
+
+    {
+        'Go Back',
+        function(playerArg)
+            namePrompt1.options = nameList1
+            xi.xisp.sendMenu(playerArg, namePrompt1)
+        end,
+    },
+}
+
+nameList3 =
+{
+    {
+        xi.xispchocobo.names[14],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 14)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[15],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 15)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[16],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 16)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[17],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 17)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[18],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 19)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[19],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 20)
+        end,
+    },
+
+    {
+        'Next Page',
+        function(playerArg)
+            namePrompt4.options = nameList4
+            xi.xisp.sendMenu(playerArg, namePrompt4)
+        end,
+    },
+
+    {
+        'Go Back',
+        function(playerArg)
+            namePrompt2.options = nameList2
+            xi.xisp.sendMenu(playerArg, namePrompt2)
+        end,
+    },
+}
+
+nameList4 =
+{
+    {
+        xi.xispchocobo.names[20],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 23)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[21],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 23)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[22],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 23)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[23],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 23)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[24],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 24)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[25],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 25)
+        end,
+    },
+
+    {
+        'Next Page',
+        function(playerArg)
+            namePrompt5.options = nameList5
+            xi.xisp.sendMenu(playerArg, namePrompt5)
+        end,
+    },
+
+    {
+        'Go Back',
+        function(playerArg)
+            namePrompt3.options = nameList3
+            xi.xisp.sendMenu(playerArg, namePrompt3)
+        end,
+    },
+}
+
+nameList5 =
+{
+    {
+        xi.xispchocobo.names[26],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 26)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[27],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 27)
+        end,
+    },
+
+    {
+        'Go Back',
+        function(playerArg)
+            namePrompt4.options = nameList4
+            xi.xisp.sendMenu(playerArg, namePrompt4)
+        end,
+    },
+}
+
+xi.xispchocobo.confirmNamePrompt = function(player, name)
+    namePromptConfirm.options =
+    {
+        {
+            'Yes, ' .. xi.xispchocobo.names[name] .. ' is perfect!',
+            function(playerArg)
+                print('Chocobo named ' .. name .. '!')
+                playerArg:setCharVar('[XISP]chocoName', name)
+                playerArg:printToPlayer('Your chocobo has been named ' .. xi.xispchocobo.names[name] .. '!', xi.msg.channel.SAY, 'Fonteloube')
+            end,
+        },
+        {
+            'No, I want to choose a different name.',
+            function(playerArg)
+                namePrompt1.options = nameList1
+                xi.xisp.sendMenu(playerArg, namePrompt1)
+            end,
+        },
+    }
+
+    xi.xisp.sendMenu(player, namePromptConfirm)
+end
+
+xi.xispchocobo.onNameTrigger = function(player, npc)
+    if player:getCharVar('[XISP]hasChocobo') == 1 then
+        if player:getCharVar('[XISP]chocoName') > 0 then
+            player:printToPlayer('Your chocobo has already been named.', xi.msg.channel.SAY, npc:getName())
+            return
+        else
+            player:printToPlayer('Hello, Adventurer. I see you have raised a chocobo. Would you like to give it a name?', xi.msg.channel.SAY, npc:getName())
+            namePrompt1.options = nameList1
+            xi.xisp.sendMenu(player, namePrompt1)
+        end
+    end
+end
 
 xi.xispchocobo.onTrainerTrade = function(player, npc, trade)
     local name = npc:getName()
@@ -61,6 +424,7 @@ xi.xispchocobo.onTrainerTrade = function(player, npc, trade)
         then
             if player:getCharVar('[XISP]hasChocobo') == 1 then
                 player:printToPlayer('It looks like you already have a chocobo.', xi.msg.channel.SAY, name)
+                return
             else
                 player:printToPlayer('A new chocobo egg? How wonderful! I will hold onto it for you.', xi.msg.channel.SAY, name)
                 player:setCharVar('[XISP]hasEgg', 1)
@@ -83,14 +447,14 @@ end
 xi.xispchocobo.chocoboTrigger = function(player, choco)
     menu =
     {
-        title = 'Would you like to mount your chocobo?',
+        title = 'Your chocobo awaits your command.',
         options = {},
     }
 
     dialogue =
     {
         {
-            'Yes',
+            'Mount my chocobo.',
             function(playerArg)
                 local choco = GetMobByID(playerArg:getCharVar('[XISP]chocoID'))
                 if choco then
@@ -113,9 +477,18 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
                 end
             end,
         },
+
         {
-            'Not right now.',
+            'Nevermind.',
             function(playerArg)
+                return
+            end,
+        },
+
+        {
+            'Dismiss',
+            function(playerArg)
+                xi.xispchocobo.despawnChocobo(playerArg)
             end,
         },
     }
@@ -128,6 +501,10 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
     end
 
     if chocogrow >= 20 then -- Adult
+        if player:getLocalVar('needsToZone') == 1 then -- First time reaching adult stage
+            return
+        end
+
         if player:getMainLvl() < 20 then
             player:printToPlayer('You need to be at least level 20 to ride your chocobo.', xi.msg.channel.NS_SAY, ' ')
             return
@@ -167,19 +544,11 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
             elseif chocogrow <= 19 then
                 player:printToPlayer('Your chocobo seems almost fully grown!', xi.msg.channel.SYSTEM_3, ' ')
             else
-                -- Chocobo all grown up!
-                choco:entityAnimationPacket(xi.animationString.SPECIAL_20)
+                player:setLocalVar('needsToZone', 1)
             end
         end
 
-        if chocogrow < 1 then
-            choco:entityAnimationPacket(xi.animationString.SPECIAL_00)
-        elseif chocogrow < 3 then
-            choco:entityAnimationPacket(xi.animationString.SPECIAL_30)
-        elseif chocogrow < 6 then
-            choco:entityAnimationPacket(xi.animationString.SPECIAL_30)
-        elseif chocogrow <= 9 then
-            choco:entityAnimationPacket(xi.animationString.SPECIAL_20)
+        if chocogrow <= 8 then
             choco:independentAnimation(choco, 252, 4)
         else
             choco:independentAnimation(choco, 251, 4)
@@ -214,6 +583,10 @@ xi.xispchocobo.spawnChocobo = function(player)
             name = 'Baby Chocobo'
         elseif chocoStage < 20 then
             name = 'Young Chocobo'
+        end
+
+        if player:getCharVar('[XISP]chocoName') > 0 then
+            name = xi.xispchocobo.names[player:getCharVar('[XISP]chocoName')]
         end
 
         -- Alternatively check for zones we don't want chocobo in
