@@ -42,28 +42,7 @@ commandObj.onTrigger = function(player, skillName, skillLV, target)
         return
     end
 
-    if target == nil then
-        if player:getCursorTarget() == nil then
-            targ = player
-        else
-            if player:getCursorTarget():isPC() then
-                targ = player:getCursorTarget()
-            else
-                error(player, 'You must target a player or specify a name.')
-                return
-            end
-        end
-    else
-        targ = GetPlayerByName(target)
-        if targ == nil then
-            player:printToPlayer(string.format('Player named "%s" not found!', target))
-            return
-        end
-    end
-
-    if not targ then
-        return
-    end
+    targ = player
 
     targ:setSkillLevel(skillID, skillLV * 10)
     targ:messageBasic(xi.msg.basic.SKILL_REACHES_LEVEL, skillID, skillLV)

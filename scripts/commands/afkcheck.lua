@@ -15,6 +15,8 @@ commandObj.cmdprops =
 }
 
 commandObj.onTrigger = function(player)
+    xi.xisp.trackGM(player, 'afkCheck')
+
     -- Validate target
     local target = player:getCursorTarget()
 

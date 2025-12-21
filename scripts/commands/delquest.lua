@@ -19,6 +19,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, logId, questId, target)
+    xi.xisp.trackGM(player, 'delQuest')
+
     -- validate logId
     local questLog = logIdHelpers.getQuestLogInfo(logId)
     if questLog == nil then

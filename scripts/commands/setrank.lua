@@ -22,7 +22,7 @@ commandObj.onTrigger = function(player, target, rank)
         return
     end
 
-    local targ = GetPlayerByName(target)
+    local targ = player
 
     if targ == nil then
         error(player, string.format('Cannot find player: %s.', target))

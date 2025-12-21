@@ -7,7 +7,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = 'is'
 }
 
@@ -17,6 +17,7 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, itemId, target)
+    xi.xisp.trackGM(player, 'delItem')
     -- validate itemId
     if itemId == nil or itemId < 1 then
         error(player, 'Invalid itemID.')

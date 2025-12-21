@@ -17,6 +17,7 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, spellParam, target)
+    xi.xisp.trackGM(player, 'delSpell')
     local spellId = tonumber(spellParam) or xi.magic.spell[string.upper(spellParam)]
 
     -- validate spellId
@@ -26,16 +27,7 @@ commandObj.onTrigger = function(player, spellParam, target)
     end
 
     -- validate target
-    local targ
-    if target == nil then
-        targ = player
-    else
-        targ = GetPlayerByName(target)
-        if targ == nil then
-            error(player, string.format('Player named "%s" not found!', target))
-            return
-        end
-    end
+    local targ = player
 
     -- add spell
     targ:delSpell(spellId)

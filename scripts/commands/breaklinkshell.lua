@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, target)
+    xi.xisp.trackGM(player, 'breakLinkshell')
+
     -- validate target
     if not target then
         error(player, 'You must enter a linkshell name.')

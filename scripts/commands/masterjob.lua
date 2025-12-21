@@ -11,23 +11,8 @@ commandObj.cmdprops =
     parameters = 's'
 }
 
-local function error(player, msg)
-    player:printToPlayer(msg)
-    player:printToPlayer('!masterjob <player>')
-end
-
 commandObj.onTrigger = function(player, target)
-    local targ
-    if target and target ~= '' then
-        targ = GetPlayerByName(target)
-    else
-        targ = player
-    end
-
-    if not targ then
-        error(player, string.format('Unable to find player named "%s"', target))
-        return
-    end
+    local targ = player
 
     targ:masterJob()
     player:printToPlayer(string.format('Mastered %s\'s main job!', targ:getName()))

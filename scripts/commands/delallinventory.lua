@@ -7,7 +7,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = 's'
 }
 
@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, target)
+    xi.xisp.trackGM(player, 'delAllInventory')
+
     -- validate target
     local targ
     if target == nil then

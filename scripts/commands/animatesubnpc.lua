@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, arg1, arg2)
+    xi.xisp.trackGM(player, 'animatSubNPC')
+
     local targ
     local animationId
 

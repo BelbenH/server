@@ -17,6 +17,7 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, minutes, target)
+    xi.xisp.trackGM(player, 'addAbyTime')
     -- validate target
     local targ
     if target == nil then

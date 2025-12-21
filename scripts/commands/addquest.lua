@@ -19,6 +19,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, logId, questId, target)
+    xi.xisp.trackGM(player, 'addQuest')
+
     -- validate logId
     local questLog = logIdHelpers.getQuestLogInfo(logId)
     if questLog == nil then
@@ -41,16 +43,7 @@ commandObj.onTrigger = function(player, logId, questId, target)
     end
 
     -- validate target
-    local targ
-    if target == nil then
-        targ = player
-    else
-        targ = GetPlayerByName(target)
-        if targ == nil then
-            error(player, string.format('Player named "%s" not found!', target))
-            return
-        end
-    end
+    local targ = player
 
     -- add quest
     targ:addQuest(logId, questId)

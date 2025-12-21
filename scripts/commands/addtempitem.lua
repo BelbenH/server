@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, itemId, quantity)
+    xi.xisp.trackGM(player, 'addTempItem')
+
     -- Load needed text ids for players current zone..
     local ID = zones[player:getZoneID()]
     -- validate itemId

@@ -19,6 +19,7 @@ itemObject.onItemEquip = function(target, item)
             not optParams.isWeaponSkillKill
         then
             player:incrementCharVar('ChaosbringerKills', 1)
+            player:printToPlayer(string.format(player:getCharVar('ChaosbringerKills') .. ' / 200 souls harvested.'))
         end
     end)
 end

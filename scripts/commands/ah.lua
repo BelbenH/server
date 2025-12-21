@@ -7,11 +7,13 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = ''
 }
 
 commandObj.onTrigger = function(player)
+    xi.xisp.trackGM(player, 'auctionHouse')
+
     player:sendMenu(xi.menuType.AUCTION)
 end
 

@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, skillId)
+    xi.xisp.trackGM(player, 'capSkill')
+
     -- validate skillId
     if skillId == nil then
         error(player, 'You must provide a skillID.')

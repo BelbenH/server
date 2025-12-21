@@ -12,16 +12,15 @@ commandObj.cmdprops =
 }
 
 commandObj.onTrigger = function(player, target, itemId, amount, aug0, aug0val, aug1, aug1val, aug2, aug2val, aug3, aug3val)
+    xi.xisp.trackGM(player, 'giveItem')
+    print('GM COMMAND: ' .. player:getName() .. ' gave item ID: ' .. itemId)
+
     if target == nil or itemId == nil then
         player:printToPlayer('You must enter a valid player name and item ID.')
         return
     end
 
-    local targ = GetPlayerByName(target)
-    if targ == nil then
-        player:printToPlayer(string.format('Player named "%s" not found!', target))
-        return
-    end
+    local targ = player
 
     -- Load needed text ids for target's current zone..
     local ID = zones[targ:getZoneID()]

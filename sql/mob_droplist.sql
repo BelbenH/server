@@ -28957,27 +28957,27 @@ INSERT INTO `mob_droplist` VALUES (3411,1,5,@VCOMMON,14577,250); -- Valhalla Bre
 -- START OF PHALANX SECTION
 -- ALPHA RABBIT --
 -- Alpha Rabbit (Level 20 and below)
-INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,856,@ALWAYS);    -- Rabbit Hide
-INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,856,@COMMON);    -- Rabbit Hide
-INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,856,@UNCOMMON);  -- Rabbit Hide
-INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,5909,@UNCOMMON); -- Pickled Rarab Tail
-INSERT INTO `mob_droplist` VALUES (4500,1,1,@ALWAYS,25670,950);      -- Rarab Cap
-INSERT INTO `mob_droplist` VALUES (4500,1,1,@ALWAYS,25671,50);       -- Rarab Cap +1
+INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,856,@ALWAYS);     -- Rabbit Hide
+INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,856,@COMMON);     -- Rabbit Hide
+INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,856,@UNCOMMON);   -- Rabbit Hide
+INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,5909,@UNCOMMON);  -- Pickled Rarab Tail
+INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,25670,@UNCOMMON); -- Rarab Cap
+INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,25671,@VRARE);    -- Rarab Cap +1
 -- Alpha Rabbit (Level 50 and below)
 INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,856,@ALWAYS);    -- Rabbit Hide
 INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,856,@VCOMMON);   -- Rabbit Hide
 INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,856,@COMMON);    -- Rabbit Hide
 INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,5909,@UNCOMMON); -- Pickled Rarab Tail
-INSERT INTO `mob_droplist` VALUES (4501,1,1,@ALWAYS,25670,925);      -- Rarab Cap
-INSERT INTO `mob_droplist` VALUES (4501,1,1,@ALWAYS,25671,75);       -- Rarab Cap +1
+INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,25670,@UNCOMMON); -- Rarab Cap
+INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,25671,@VRARE);    -- Rarab Cap +1
 -- Alpha Rabbit (Level 75 and below)
 INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,856,@ALWAYS);    -- Rabbit Hide
 INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,856,@ALWAYS);    -- Rabbit Hide
 INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,856,@VCOMMON);   -- Rabbit Hide
 INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,856,@COMMON);    -- Rabbit Hide
 INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,5909,@COMMON); -- Pickled Rarab Tail
-INSERT INTO `mob_droplist` VALUES (4502,1,1,@ALWAYS,25670,900);      -- Rarab Cap
-INSERT INTO `mob_droplist` VALUES (4502,1,1,@ALWAYS,25671,100);      -- Rarab Cap +1
+INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,25670,@UNCOMMON); -- Rarab Cap
+INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,25671,@RARE);    -- Rarab Cap +1
 
 -- ALPHA MANDRAGORA --
 -- Alpha Mandragora (Level 20 and below)

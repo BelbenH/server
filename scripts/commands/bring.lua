@@ -7,7 +7,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = 'si'
 }
 
@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, target, forceZone)
+    xi.xisp.trackGM(player, 'bring')
+
     -- validate target
     if target == nil then
         error(player, 'You must enter a target player name.')

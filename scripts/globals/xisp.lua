@@ -63,3 +63,7 @@ xi.xisp.getPointAroundLoc = function(pos, min, max)
 
     return posX, posZ
 end
+
+xi.xisp.trackGM = function(player, commandName)
+    print('GM COMMAND:' .. player:getName() .. ' used command: ' .. commandName)
+end

@@ -7,7 +7,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = 'ssssss'
 }
 
@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, arg1, arg2, arg3, arg4, arg5, arg6)
+    xi.xisp.trackGM(player, 'addEffect')
+
     local targ
     local id
     local power
