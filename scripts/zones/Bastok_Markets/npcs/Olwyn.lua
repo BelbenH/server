@@ -13,14 +13,14 @@ end
 entity.onTrigger = function(player, npc)
     local stock =
     {
-        { xi.item.PICKAXE,            15000, 3 },
-		{ xi.item.HATCHET,            15000, 3 },
-		{ xi.item.SICKLE,             15000, 3 },
-        { xi.item.FLASK_OF_EYE_DROPS,  1698, 3 },
-        { xi.item.ANTIDOTE,             228, 3 },
-        { xi.item.FLASK_OF_ECHO_DROPS,  832, 3 },
-        { xi.item.POTION,               546, 3 },
-        { xi.item.ETHER,               2025, 3 },
+        { xi.item.PICKAXE,             15000, 3 },
+		{ xi.item.HATCHET,             15000, 3 },
+		{ xi.item.SICKLE,              15000, 3 },
+        { xi.item.FLASK_OF_EYE_DROPS,   1698, 3 },
+        { xi.item.ANTIDOTE,              228, 3 },
+        { xi.item.FLASK_OF_ECHO_DROPS,   832, 3 },
+        { xi.item.POTION,                546, 3 },
+        { xi.item.ETHER,                2025, 3 },
         -- 🔥 Added Ninja Tools --
         { xi.item.SHIHEI,              	 101, 3 },
         { xi.item.SAIRUI_RAN,          	 101, 3 },
