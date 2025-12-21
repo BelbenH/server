@@ -14,9 +14,9 @@ entity.onTrigger = function(player, npc)
         { xi.item.WRAPPED_BOW,                  8236, 3, },
         { xi.item.LONGBOW,                       511, 3, },
         { xi.item.GREAT_BOW,                   22684, 3, },
-        { xi.item.LIGHT_CROSSBOW,                 187, 3 },
-        { xi.item.CROSSBOW,                      2472, 3 },
-        { xi.item.ZAMBURAK,                     16005, 3 },
+        { xi.item.LIGHT_CROSSBOW,                187, 3, },
+        { xi.item.CROSSBOW,                     2472, 3, },
+        { xi.item.ZAMBURAK,                    16005, 3, },
         { xi.item.WOODEN_ARROW,                    3, 3, }, --orginally 4g
         { xi.item.BONE_ARROW,                      5, 3, }, --added
         { xi.item.IRON_ARROW,                      8, 3, },

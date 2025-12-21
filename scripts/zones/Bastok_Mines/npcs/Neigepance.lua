@@ -10,8 +10,8 @@ entity.onTrigger = function(player, npc)
     {
         { xi.item.BUNCH_OF_GYSAHL_GREENS,       71, 3 },
         { xi.item.CHOCOBO_FEATHER,               8, 3 },
-        { xi.item.DART,                         10, 1 },
-        { xi.item.BLACK_CHOCOBO_FEATHER,      1300, 1 },
+        { xi.item.DART,                         10, 3 },
+        { xi.item.BLACK_CHOCOBO_FEATHER,      1300, 3 },
         { xi.item.PET_FOOD_ALPHA_BISCUIT,       12, 3 },
         { xi.item.PET_FOOD_BETA_BISCUIT,        94, 3 },
         { xi.item.JUG_OF_CARROT_BROTH,          63, 3 },

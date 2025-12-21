@@ -2368,7 +2368,7 @@ xi.roe.records =
         trigger = xi.roeTrigger.DEAL_DAMAGE,
         goal = 10,
         reqs = { dmgMin = 1110, dmgMax = 1120 },
-        reward = { sparks = 300, exp = 1500, item = { { xi.item.COPPER_AMAN_VOUCHER, 2 } } },
+        reward = { sparks = 300, exp = 1500, },
     },
 
     [29] =
@@ -2377,7 +2377,7 @@ xi.roe.records =
         goal = 100000,
         increment = 0,
         notify = 5000,
-        reward = { sparks = 1000, exp = 5000, item = { xi.item.BEITETSU_PARCEL } },
+        reward = { sparks = 1000, exp = 5000, },
         check = function(self, player, params)
             if params.dmg and params.dmg > 0 then
                 params.progress = params.progress + params.dmg
@@ -2479,7 +2479,7 @@ xi.roe.records =
         goal = 10000,
         increment = 0,
         notify = 500,
-        reward = { sparks = 1000, exp = 1000, item = { { xi.item.COPPER_AMAN_VOUCHER, 2 } } },
+        reward = { sparks = 1000, exp = 1000, },
         check = function(self, player, params)
             if params.dmg and params.dmg > 0 then
                 params.progress = params.progress + params.dmg
@@ -2496,7 +2496,7 @@ xi.roe.records =
         goal = 20000,
         increment = 0,
         notify = 1000,
-        reward = { sparks = 3000, exp = 5000, item = { { xi.item.COPPER_AMAN_VOUCHER, 4 } } },
+        reward = { sparks = 3000, exp = 5000, },
         check = function(self, player, params)
             if params.dmg and params.dmg > 0 then
                 params.progress = params.progress + params.dmg
@@ -2513,7 +2513,7 @@ xi.roe.records =
         goal = 30000,
         increment = 0,
         notify = 1000,
-        reward = { sparks = 3000, exp = 5000, item = { { xi.item.COPPER_AMAN_VOUCHER, 6 } } },
+        reward = { sparks = 3000, exp = 5000, },
         check = function(self, player, params)
             if params.dmg and params.dmg > 0 then
                 params.progress = params.progress + params.dmg
@@ -3232,7 +3232,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 104 } },
         flags = set { 'repeat' },
-        reward = { sparks = 12, exp = 600, accolades = 5, item = { { xi.item.MEAT_MITHKABOB, 12 } } },
+        reward = { sparks = 12, exp = 600, accolades = 5, item = { { xi.item.MEAT_MITHKABOB, 1 } } },
     },
 
     [240] =
@@ -3369,7 +3369,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 109 } },
         flags = set { 'repeat' },
-        reward = { sparks = 12, exp = 600, accolades = 5, item = { { xi.item.PLATE_OF_CRAB_SUSHI, 12 } } },
+        reward = { sparks = 12, exp = 600, accolades = 5, item = { { xi.item.PLATE_OF_CRAB_SUSHI, 1 } } },
     },
 
     [257] =
@@ -3581,7 +3581,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 119 } },
         flags = set { 'repeat' },
-        reward = { sparks = 12, exp = 600, accolades = 5, item = { { xi.item.APPLE_PIE, 12 } } },
+        reward = { sparks = 12, exp = 600, accolades = 5, item = { { xi.item.APPLE_PIE, 1 } } },
     },
 
     [283] =
@@ -3761,7 +3761,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 184 } },
         flags = set { 'repeat' },
-        reward = { sparks = 13, exp = 100, accolades = 5, item = { { xi.item.CONE_OF_SNOLL_GELATO, 12 } } },
+        reward = { sparks = 13, exp = 100, accolades = 5, item = { { xi.item.CONE_OF_SNOLL_GELATO, 1 } } },
     },
 
     [305] =
@@ -3777,7 +3777,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 157 } },
         flags = set { 'repeat' },
-        reward = { sparks = 13, exp = 100, accolades = 5, item = { { xi.item.PLATE_OF_SOLE_SUSHI, 12 } } },
+        reward = { sparks = 13, exp = 100, accolades = 5, item = { { xi.item.PLATE_OF_SOLE_SUSHI, 1 } } },
     },
 
     [307] =
@@ -3793,7 +3793,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 158 } },
         flags = set { 'repeat' },
-        reward = { sparks = 14, exp = 100, accolades = 5, item = { { xi.item.YELLOW_CURRY_BUN, 12 } } },
+        reward = { sparks = 14, exp = 100, accolades = 5, item = { { xi.item.YELLOW_CURRY_BUN, 1 } } },
     },
 
     [309] =
@@ -3809,7 +3809,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 127 } },
         flags = set { 'repeat' },
-        reward = { sparks = 14, exp = 100, accolades = 5, item = { { xi.item.FISH_MITHKABOB, 12 } } },
+        reward = { sparks = 14, exp = 100, accolades = 5, item = { { xi.item.FISH_MITHKABOB, 1 } } },
     },
 
     -----------------------------------
@@ -4235,7 +4235,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 121 } },
         flags = set { 'repeat' },
-        reward = { sparks = 12, exp = 600, accolades = 5, item = { { xi.item.FLASK_OF_ECHO_DROPS, 12 } } },
+        reward = { sparks = 12, exp = 600, accolades = 5, item = { { xi.item.FLASK_OF_ECHO_DROPS, 1 } } },
     },
 
     [392] =
@@ -4244,7 +4244,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 122 } },
         flags = set { 'repeat' },
-        reward = { sparks = 16, exp = 800, accolades = 5, item = { { xi.item.BOTTLE_OF_MULSUM, 12 } } },
+        reward = { sparks = 16, exp = 800, accolades = 5, item = { { xi.item.BOTTLE_OF_MULSUM, 1 } } },
     },
 
     [394] =
@@ -4253,7 +4253,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 153 } },
         flags = set { 'repeat' },
-        reward = { sparks = 16, exp = 100, accolades = 5, item = { { xi.item.FLASK_OF_DEODORIZER, 12 } } },
+        reward = { sparks = 16, exp = 100, accolades = 5, item = { { xi.item.FLASK_OF_DEODORIZER, 1 } } },
     },
 
     [396] =
@@ -4271,7 +4271,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 114 } },
         flags = set { 'repeat' },
-        reward = { sparks = 13, exp = 650, accolades = 5, item = { { xi.item.PINCH_OF_PRISM_POWDER, 12 } } },
+        reward = { sparks = 13, exp = 650, accolades = 5, item = { { xi.item.PINCH_OF_PRISM_POWDER, 1 } } },
     },
 
     [400] =
@@ -4280,7 +4280,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 125 } },
         flags = set { 'repeat' },
-        reward = { sparks = 14, exp = 700, accolades = 5, item = { { xi.item.POT_OF_SILENT_OIL, 12 } } },
+        reward = { sparks = 14, exp = 700, accolades = 5, item = { { xi.item.POT_OF_SILENT_OIL, 1 } } },
     },
 
     [402] =
@@ -5263,7 +5263,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 101 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [181] =
@@ -5272,7 +5272,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 140 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [182] =
@@ -5281,7 +5281,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 196 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [183] =
@@ -5290,7 +5290,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 104 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [184] =
@@ -5299,7 +5299,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 172 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [185] =
@@ -5308,7 +5308,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 143 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [186] =
@@ -5317,7 +5317,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 115 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.SICKLE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [187] =
@@ -5326,7 +5326,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 145 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.SICKLE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [188] =
@@ -5335,7 +5335,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 118 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [189] =
@@ -5344,7 +5344,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 117 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [190] =
@@ -5353,7 +5353,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 198 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [389] =
@@ -5362,7 +5362,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 142 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     -----------------------------------
@@ -5379,7 +5379,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 123 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [479] =
@@ -5388,7 +5388,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 124 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [480] =
@@ -5397,7 +5397,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 205 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [485] =
@@ -5406,7 +5406,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 173 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     -----------------------------------
@@ -5419,7 +5419,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 11 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [482] =
@@ -5428,7 +5428,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 12 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [483] =
@@ -5437,7 +5437,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 24 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [484] =
@@ -5446,7 +5446,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 25 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [486] =
@@ -5455,7 +5455,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 2 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [487] =
@@ -5464,7 +5464,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 7 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     -----------------------------------
@@ -5477,7 +5477,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 52 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.SICKLE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [600] =
@@ -5486,7 +5486,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 65 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [601] =
@@ -5495,7 +5495,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 51 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.SICKLE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [602] =
@@ -5504,7 +5504,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 62 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [603] =
@@ -5513,7 +5513,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 61 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [604] =
@@ -5522,7 +5522,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 79 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     -----------------------------------
@@ -5535,7 +5535,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 81 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [607] =
@@ -5544,7 +5544,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 82 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [608] =
@@ -5553,7 +5553,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 88 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.PICKAXE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [609] =
@@ -5562,7 +5562,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 89 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.SICKLE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [610] =
@@ -5571,7 +5571,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 95 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.SICKLE, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     [611] =
@@ -5580,7 +5580,7 @@ xi.roe.records =
         goal = 5,
         reqs = { zone = set { 96 } },
         flags = set { 'repeat' },
-        reward = { sparks = 100, exp = 500, accolades = 10, item = { { xi.item.HATCHET, 12 } } },
+        reward = { sparks = 100, exp = 500, accolades = 10, },
     },
 
     -----------------------------------
@@ -5623,7 +5623,7 @@ xi.roe.records =
         trigger = xi.roeTrigger.DEFEAT_MOB,
         reqs = { mobID = set { 17506670 } },
         flags = set { 'repeat' },
-        reward = { sparks = 1000, exp = 5000, accolades = 100, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 1000, exp = 5000, accolades = 100, },
     },
 
     [728] =
@@ -5686,7 +5686,7 @@ xi.roe.records =
         trigger = xi.roeTrigger.DEFEAT_MOB,
         reqs = { mobID = set { 16912848 } },
         flags = set { 'repeat' },
-        reward = { sparks = 1000, exp = 5000, accolades = 100, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 1000, exp = 5000, accolades = 100, },
     },
 
     [812] =
@@ -6068,7 +6068,7 @@ xi.roe.records =
         trigger = xi.roeTrigger.DEFEAT_MOB,
         reqs = { mobID = set { 16928966 } },
         flags = set { 'repeat' },
-        reward = { sparks = 1000, exp = 5000, accolades = 100, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 1000, exp = 5000, accolades = 100, },
     },
 
     [783] =
@@ -6076,7 +6076,7 @@ xi.roe.records =
         trigger = xi.roeTrigger.DEFEAT_MOB,
         reqs = { mobID = set { 16933124 } },
         flags = set { 'repeat' },
-        reward = { sparks = 1000, exp = 5000, accolades = 100, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 1000, exp = 5000, accolades = 100, },
     },
 
     -----------------------------------
@@ -9487,7 +9487,7 @@ xi.roe.records =
         goal = 30,
         reqs = { mobXP = true },
         flags = set { 'daily' },
-        reward = { sparks = 100, exp = 500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 100, exp = 500, accolades = 300, },
     },
 
     [4083] =
@@ -9495,7 +9495,7 @@ xi.roe.records =
         trigger = xi.roeTrigger.BUFF_ALLY,
         goal = 20,
         flags = set { 'daily' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4084] =
@@ -9504,7 +9504,7 @@ xi.roe.records =
         goal = 30,
         reqs = { healMin = 500 },
         flags = set { 'daily' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     -----------------------------------
@@ -9517,7 +9517,7 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, zoneNot = abysseaZones, mobSystem = set { xi.eco.AQUAN } },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4009] =
@@ -9526,7 +9526,7 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, zoneNot = abysseaZones, mobSystem = set { xi.eco.BEAST } },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4010] =
@@ -9535,7 +9535,7 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, zoneNot = abysseaZones, mobSystem = set { xi.eco.PLANTOID } },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4011] =
@@ -9544,7 +9544,7 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, zoneNot = abysseaZones, mobSystem = set { xi.eco.LIZARD } },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4012] =
@@ -9553,7 +9553,7 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, zoneNot = abysseaZones, mobSystem = set { xi.eco.VERMIN } },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4013] =
@@ -9562,7 +9562,7 @@ xi.roe.records =
         goal = 5000,
         increment = 0,
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
         check = function(self, player, params)
             if params.exp and params.exp > 0 then
                 params.progress = params.progress + params.exp
@@ -9579,7 +9579,7 @@ xi.roe.records =
         goal = 3,
         reqs = { itemID = set { xi.item.BEASTMENS_SEAL, xi.item.KINDREDS_SEAL, xi.item.KINDREDS_CREST, xi.item.HIGH_KINDREDS_CREST, xi.item.SACRED_KINDREDS_CREST } },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4015] =
@@ -9588,7 +9588,7 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, zoneNot = abysseaZones, mobSystem = set { xi.eco.BIRD } },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4016] =
@@ -9597,7 +9597,7 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, zoneNot = abysseaZones, mobSystem = set { xi.eco.AMORPH } },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4017] =
@@ -9606,7 +9606,7 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, zoneNot = abysseaZones, mobSystem = set { xi.eco.UNDEAD } },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4018] =
@@ -9615,14 +9615,14 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, zoneNot = abysseaZones, mobSystem = set { xi.eco.ARCANA } },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4019] =
     { -- Crack Treasure Caskets (Triggered from caskets.lua)
         goal = 10,
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4020] =
@@ -9631,7 +9631,7 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, atkType = xi.attackType.PHYSICAL },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     [4021] =
@@ -9640,7 +9640,7 @@ xi.roe.records =
         goal = 20,
         reqs = { mobXP = true, atkType = xi.attackType.MAGICAL },
         flags = set { 'timed', 'repeat' },
-        reward = { sparks = 300, exp = 1500, accolades = 300, item = { xi.item.COPPER_AMAN_VOUCHER } },
+        reward = { sparks = 300, exp = 1500, accolades = 300, },
     },
 
     -----------------------------------

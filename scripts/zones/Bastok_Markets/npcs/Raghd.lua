@@ -9,10 +9,14 @@ local entity = {}
 entity.onTrigger = function(player, npc)
     local stock =
     {
-        { xi.item.COPPER_RING,      79, 3 },
-        { xi.item.BRASS_RING,      210, 2 },
-        { xi.item.SILVER_RING,    1312, 2 },
-        { xi.item.SILVER_EARRING, 1312, 2 },
+        { xi.item.RED_ROCK,          2800, 3 },
+        { xi.item.BLUE_ROCK,         2800, 3 },
+        { xi.item.YELLOW_ROCK,       2800, 3 },
+        { xi.item.GREEN_ROCK,        2800, 3 },
+        { xi.item.TRANSLUCENT_ROCK,  2800, 3 },
+        { xi.item.PURPLE_ROCK,       2800, 3 },
+        { xi.item.BLACK_ROCK,        2800, 3 },
+        { xi.item.WHITE_ROCK,        2800, 3 },
     }
 
     player:showText(npc, zones[xi.zone.BASTOK_MARKETS].text.RAGHD_SHOP_DIALOG)
