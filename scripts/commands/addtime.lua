@@ -21,6 +21,8 @@ local function error(player)
 end
 
 commandObj.onTrigger = function(player, offset)
+    xi.xisp.trackGM(player, 'addTime')
+
     -- validate offset
     if offset == nil then
         error(player)

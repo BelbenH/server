@@ -51,7 +51,7 @@ commandObj.onTrigger = function(player, arg1, arg2)
 
     -- set nation
     targ:setNation(nation)
-    player:printToPlayer(string.format('Set %s\'s home nation to %s.', targ:getName(), nationByNum[nation]))
+    player:printToPlayer(string.format('Set %s\'s home nation to %s.', player:getName(), nationByNum[nation]))
     player:printToPlayer('NOTE! This does NOT clear or update ANY mission or related variables! ')
 end
 

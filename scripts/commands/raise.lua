@@ -7,7 +7,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = 'ss'
 }
 
@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, arg1, arg2)
+    xi.xisp.trackGM(player, 'raise')
+
     local power
     local target
     local targ

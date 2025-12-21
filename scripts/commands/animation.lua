@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, animationId)
+    xi.xisp.trackGM(player, 'animation')
+
     local oldAnimation = player:getAnimation()
 
     if animationId == nil then

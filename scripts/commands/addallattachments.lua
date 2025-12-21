@@ -37,15 +37,12 @@ local function AddAllAttachments(player)
 end
 
 commandObj.onTrigger = function(player, target)
-    if target == nil then
-        AddAllAttachments(player)
+    xi.xisp.trackGM(player, 'addAllAttachments')
+    local targ = player
+    if targ == nil then
+        player:printToPlayer(string.format('Player named "%s" not found!', target))
     else
-        local targ = GetPlayerByName(target)
-        if targ == nil then
-            player:printToPlayer(string.format('Player named "%s" not found!', target))
-        else
-            AddAllAttachments(targ)
-        end
+        AddAllAttachments(targ)
     end
 end
 

@@ -13,6 +13,8 @@ commandObj.cmdprops =
 }
 
 commandObj.onTrigger = function(player)
+    xi.xisp.trackGM(player, 'fafnir')
+
     ---@type CZone|CInstance?
     local zoneOrInstanceObj = player:getZone()
 

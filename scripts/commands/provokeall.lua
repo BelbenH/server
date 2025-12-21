@@ -7,11 +7,13 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 5,
     parameters = ''
 }
 
 commandObj.onTrigger = function(player)
+    xi.xisp.trackGM(player, 'provokeAll')
+
     local zone = player:getZone()
     if not zone then
         return

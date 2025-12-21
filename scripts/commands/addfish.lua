@@ -8,7 +8,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 3,
+    permission = 4,
     parameters = 'siii'
 }
 
@@ -18,6 +18,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, item, length, weight, ranked)
+    xi.xisp.trackGM(player, 'addFish')
+
     -- Load needed text ids for players current zone..
     local ID = zones[player:getZoneID()]
     local itemToGet = 0

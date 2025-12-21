@@ -7,7 +7,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = 'i'
 }
 
@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, mobId)
+    xi.xisp.trackGM(player, 'despawnMob')
+
     -- validate mobId
     local targ
     if mobId == nil then

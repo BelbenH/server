@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, cp)
+    xi.xisp.trackGM(player, 'giveConquestPoints')
+
     -- validate amount
     if cp == nil or cp == 0 then
         error(player, 'Invalid amount.')

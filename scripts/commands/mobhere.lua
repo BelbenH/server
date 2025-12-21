@@ -8,7 +8,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = 'is'
 }
 
@@ -18,6 +18,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, mobId, noDepop)
+    xi.xisp.trackGM(player, 'mobHere')
+
     local zone = player:getZone()
     if not zone then
         return

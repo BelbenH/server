@@ -7,7 +7,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = 'is'
 }
 
@@ -38,6 +38,7 @@ local containerNames =
 }
 
 commandObj.onTrigger = function(player, container, target)
+    xi.xisp.trackGM(player, 'delContainerItems')
     -- validate target
     local targ
     if target == nil then

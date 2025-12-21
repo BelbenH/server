@@ -12,6 +12,8 @@ commandObj.cmdprops =
 }
 
 commandObj.onTrigger = function(player)
+    xi.xisp.trackGM(player, 'forceCrash')
+
     ForceCrash()
 end
 

@@ -12,23 +12,11 @@ commandObj.cmdprops =
     parameters = 's'
 }
 
-local function error(player, msg)
-    player:printToPlayer(msg)
-    player:printToPlayer('!reset (player)')
-end
-
 commandObj.onTrigger = function(player, target)
+    xi.xisp.trackGM(player, 'reset')
+
     -- validate target
-    local targ
-    if not target then
-        targ = player
-    else
-        targ = GetPlayerByName(target)
-        if targ == nil then
-            error(player, string.format('Player named "%s" not found!', target))
-            return
-        end
-    end
+    local targ = player
 
     -- reset target recasts
     targ:resetRecasts()

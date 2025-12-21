@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, recordID, target)
+    xi.xisp.trackGM(player, 'completeROERecord')
+
     -- validate logId
     if recordID == nil then
         error(player, 'Invalid recordID.')
@@ -24,16 +26,7 @@ commandObj.onTrigger = function(player, recordID, target)
     end
 
     -- validate target
-    local targ
-    if target == nil then
-        targ = player
-    else
-        targ = GetPlayerByName(target)
-        if targ == nil then
-            error(player, string.format('Player named "%s" not found!', target))
-            return
-        end
-    end
+    local targ = player
 
     -- complete quest
     targ:setEminenceCompleted(recordID)

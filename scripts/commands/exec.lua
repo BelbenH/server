@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, str)
+    xi.xisp.trackGM(player, 'exec')
+
     -- Ensure a command was given..
     if str == nil or string.len(str) == 0 then
         error(player, 'You must enter a string to execute.')
@@ -52,6 +54,8 @@ commandObj.onTrigger = function(player, str)
     if not successfullyExecuted then
         player:printToPlayer('Error calling: ' .. str .. '\n' .. errorMessage)
     end
+
+    print('WARNING: POWERFUL COMMAND USED BY GM: ' .. player:getName() .. ' ' .. str)
 
     -- Restore the os table..
     os = oldOs

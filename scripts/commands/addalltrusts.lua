@@ -18,6 +18,7 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, target)
+    xi.xisp.trackGM(player, 'addAllTrusts')
     local validSpells =
     {
         896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920,
@@ -29,16 +30,7 @@ commandObj.onTrigger = function(player, target)
     }
 
     -- validate target
-    local targ
-    if target == nil then
-        targ = player
-    else
-        targ = GetPlayerByName(target)
-        if targ == nil then
-            error(player, fmt('Player named "{}" not found!', target))
-            return
-        end
-    end
+    local targ = player
 
     if
         xi.commands.addallspells and

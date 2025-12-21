@@ -17,17 +17,9 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, target)
+    xi.xisp.trackGM(player, 'addAllWeaponskills')
     -- validate target
-    local targ
-    if target then
-        targ = GetPlayerByName(target)
-        if not targ then
-            error(player, string.format('Player named "%s" not found!', target))
-            return
-        end
-    else
-        targ = player
-    end
+    local targ = player
 
     -- add all learned weaponskills
     for _, wsUnlockId in pairs(xi.wsUnlock) do

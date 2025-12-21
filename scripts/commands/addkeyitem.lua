@@ -17,6 +17,7 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, keyId, target)
+    xi.xisp.trackGM(player, 'addKeyItem')
     -- validate key item id
     if keyId == nil then
         error(player, 'You must supply a Key Item ID.')
@@ -30,16 +31,7 @@ commandObj.onTrigger = function(player, keyId, target)
     end
 
     -- validate target
-    local targ
-    if target == nil then
-        targ = player
-    else
-        targ = GetPlayerByName(target)
-        if targ == nil then
-            error(player, string.format('Player named "%s" not found!', target))
-            return
-        end
-    end
+    local targ = player
 
     -- add key item to target
     if targ:hasKeyItem(keyId) then

@@ -12,6 +12,7 @@ commandObj.cmdprops =
 }
 
 commandObj.onTrigger = function(player)
+    xi.xisp.trackGM(player, 'capAllSkills')
     player:capAllSkills()
     player:printToPlayer('All skills capped!')
 end

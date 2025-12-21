@@ -7,7 +7,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = 'iis'
 }
 
@@ -17,6 +17,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, slot, points, target)
+    xi.xisp.trackGM(player, 'addWeaponskillPoints')
+
     -- validate slot
     if slot < xi.slot.MAIN or slot > xi.slot.RANGED then
         error(player, 'Slot out of range.')

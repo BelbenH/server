@@ -39,6 +39,8 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, target)
+    xi.xisp.trackGM(player, 'addAllAtma')
+
     -- validate target
     local targ
     if target == nil then

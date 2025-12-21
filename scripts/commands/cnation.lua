@@ -7,7 +7,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 1,
+    permission = 4,
     parameters = 'ss'
 }
 
@@ -25,6 +25,7 @@ local function error(player, msg)
 end
 
 commandObj.onTrigger = function(player, target, nation)
+    xi.xisp.trackGM(player, 'cNation')
     local nationNumToName = {}
 
     for k, v in pairs(nationNameToNum) do

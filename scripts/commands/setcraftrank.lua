@@ -23,7 +23,6 @@ commandObj.onTrigger = function(player, craftName, tier, target)
     end
 
     local skillID = tonumber(craftName) or xi.skill[string.upper(craftName)]
-    local targ = nil
 
     if skillID == nil or skillID < 48 or skillID > 57 then
         error(player, 'You must specify a valid craft skill.')
@@ -41,28 +40,7 @@ commandObj.onTrigger = function(player, craftName, tier, target)
         return
     end
 
-    if target == nil then
-        if player:getCursorTarget() == nil then
-            targ = player
-        else
-            if player:getCursorTarget():isPC() then
-                targ = player:getCursorTarget()
-            else
-                error(player, 'You must target a player or specify a name.')
-                return
-            end
-        end
-    else
-        targ = GetPlayerByName(target)
-        if targ == nil then
-            player:printToPlayer(string.format('Player named "%s" not found!', target))
-            return
-        end
-    end
-
-    if not targ then
-        return
-    end
+    targ = player
 
     targ:setSkillRank(skillID, craftRank)
     targ:printToPlayer(string.format('Your %s craft skill rank has been adjusted to: %s', craftName, craftRank))
