@@ -13,7 +13,7 @@ commandObj.cmdprops =
 
 commandObj.onTrigger = function(player, target, itemId, amount, aug0, aug0val, aug1, aug1val, aug2, aug2val, aug3, aug3val)
     xi.xisp.trackGM(player, 'giveItem')
-    print('GM COMMAND: ' .. player:getName() .. ' gave item ID: ' .. itemId)
+    print('GM COMMAND: ' .. player:getName() .. ' attempted to give item ID: ' .. itemId .. ' to player: ' .. target)
 
     if target == nil or itemId == nil then
         player:printToPlayer('You must enter a valid player name and item ID.')
