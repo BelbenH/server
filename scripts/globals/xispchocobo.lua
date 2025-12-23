@@ -30,6 +30,7 @@ xi.xispchocobo.names =
     [25] = 'Pippin',
     [26] = 'Buttons',
     [27] = 'Beakachu',
+    [28] = 'Pookie',
 }
 
 local menu1 =
@@ -367,6 +368,13 @@ nameList5 =
     },
 
     {
+        xi.xispchocobo.names[28],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 28)
+        end,
+    },
+
+    {
         'Go Back',
         function(playerArg)
             namePrompt4.options = nameList4
@@ -569,6 +577,11 @@ end
 
 xi.xispchocobo.spawnChocobo = function(player)
     xi.xispchocobo.despawnChocobo(player) -- Always despawn when spawning a new one
+
+    -- Don't spawn chocobo if player is mounted
+    if player:hasStatusEffect(xi.effect.MOUNTED) then
+        return
+    end
 
     if player:getCharVar('[XISP]hasChocobo') == 1 then
         local look       = '0x0700200000000000000000000000000000000000' -- Default yellow chocobo
