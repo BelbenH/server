@@ -44519,7 +44519,7 @@ INSERT INTO `mob_spawn_points` VALUES (17285211,0,'Goblin_Trader','Goblin Trader
 INSERT INTO `mob_spawn_points` VALUES (17285212,0,'Goblins_Bee','Goblin\'s Bee',18,1.000,1.000,1.000,0);
 -- INSERT INTO `mob_spawn_points` VALUES (17285213,0,'Master_Coeurl','Master Coeurl',19,215.377,0.028,79.638,127);
 -- INSERT INTO `mob_spawn_points` VALUES (17285214,0,'Goblin_Robber','Goblin Robber',16,217.886,-0.207,45.751,127);
-INSERT INTO `mob_spawn_points` VALUES (17285215,0,'Goblin_Trader','Goblin Trader',17,204.760,-0.467,36.447,127);
+INSERT INTO `mob_spawn_points` VALUES (17285215,0,'Goblin_Trader','Goblin Trader',17,206.8995,0.1653,48.2510,52);
 INSERT INTO `mob_spawn_points` VALUES (17285216,0,'Goblins_Bee','Goblin\'s Bee',18,1.000,1.000,1.000,0);
 INSERT INTO `mob_spawn_points` VALUES (17285217,0,'Goblin_Trader','Goblin Trader',17,244.7958,0.0000,39.6268,29);
 INSERT INTO `mob_spawn_points` VALUES (17285218,0,'Goblins_Bee','Goblin\'s Bee',18,1.000,1.000,1.000,0);
