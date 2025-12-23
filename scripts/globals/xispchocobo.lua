@@ -261,14 +261,14 @@ nameList3 =
     {
         xi.xispchocobo.names[18],
         function(playerArg)
-            xi.xispchocobo.confirmNamePrompt(playerArg, 19)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 18)
         end,
     },
 
     {
         xi.xispchocobo.names[19],
         function(playerArg)
-            xi.xispchocobo.confirmNamePrompt(playerArg, 20)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 19)
         end,
     },
 
@@ -294,21 +294,21 @@ nameList4 =
     {
         xi.xispchocobo.names[20],
         function(playerArg)
-            xi.xispchocobo.confirmNamePrompt(playerArg, 23)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 20)
         end,
     },
 
     {
         xi.xispchocobo.names[21],
         function(playerArg)
-            xi.xispchocobo.confirmNamePrompt(playerArg, 23)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 21)
         end,
     },
 
     {
         xi.xispchocobo.names[22],
         function(playerArg)
-            xi.xispchocobo.confirmNamePrompt(playerArg, 23)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 22)
         end,
     },
 
