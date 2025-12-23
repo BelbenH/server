@@ -3977,18 +3977,18 @@ INSERT INTO `item_basic` VALUES (4124,0,'max-potion','max-potion',@USABLE_TYPE,1
 INSERT INTO `item_basic` VALUES (4125,0,'max-potion_+1','max-potion_+1',@USABLE_TYPE,1,1540,@MEDICINES,986);
 INSERT INTO `item_basic` VALUES (4126,0,'max-potion_+2','max-potion_+2',@USABLE_TYPE,1,1540,@MEDICINES,1232);
 INSERT INTO `item_basic` VALUES (4127,0,'max-potion_+3','max-potion_+3',@USABLE_TYPE,1,1540,@MEDICINES,1540);
-INSERT INTO `item_basic` VALUES (4128,0,'ether','ether',@USABLE_TYPE,1,1540,@MEDICINES,604);
-INSERT INTO `item_basic` VALUES (4129,0,'ether_+1','ether_+1',@USABLE_TYPE,1,1540,@MEDICINES,771);
-INSERT INTO `item_basic` VALUES (4130,0,'ether_+2','ether_+2',@USABLE_TYPE,1,1540,@MEDICINES,963);
-INSERT INTO `item_basic` VALUES (4131,0,'ether_+3','ether_+3',@USABLE_TYPE,1,1540,@MEDICINES,1203);
-INSERT INTO `item_basic` VALUES (4132,0,'hi-ether','hi-ether',@USABLE_TYPE,1,1540,@MEDICINES,985);
-INSERT INTO `item_basic` VALUES (4133,0,'hi-ether_+1','hi-ether_+1',@USABLE_TYPE,1,1540,@MEDICINES,1050);
-INSERT INTO `item_basic` VALUES (4134,0,'hi-ether_+2','hi-ether_+2',@USABLE_TYPE,1,1540,@MEDICINES,1100);
-INSERT INTO `item_basic` VALUES (4135,0,'hi-ether_+3','hi-ether_+3',@USABLE_TYPE,1,1540,@MEDICINES,1150);
-INSERT INTO `item_basic` VALUES (4136,0,'super_ether','super_ether',@USABLE_TYPE,1,1540,@MEDICINES,1325);
-INSERT INTO `item_basic` VALUES (4137,0,'super_ether_+1','super_ether_+1',@USABLE_TYPE,1,1540,@MEDICINES,1457);
-INSERT INTO `item_basic` VALUES (4138,0,'super_ether_+2','super_ether_+2',@USABLE_TYPE,1,1540,@MEDICINES,2007);
-INSERT INTO `item_basic` VALUES (4139,0,'super_ether_+3','super_ether_+3',@USABLE_TYPE,1,1540,@MEDICINES,2508);
+INSERT INTO `item_basic` VALUES (4128,0,'ether','ether',@USABLE_TYPE,1,1540,@MEDICINES,110);
+INSERT INTO `item_basic` VALUES (4129,0,'ether_+1','ether_+1',@USABLE_TYPE,1,1540,@MEDICINES,185);
+INSERT INTO `item_basic` VALUES (4130,0,'ether_+2','ether_+2',@USABLE_TYPE,1,1540,@MEDICINES,240);
+INSERT INTO `item_basic` VALUES (4131,0,'ether_+3','ether_+3',@USABLE_TYPE,1,1540,@MEDICINES,298);
+INSERT INTO `item_basic` VALUES (4132,0,'hi-ether','hi-ether',@USABLE_TYPE,1,1540,@MEDICINES,150);
+INSERT INTO `item_basic` VALUES (4133,0,'hi-ether_+1','hi-ether_+1',@USABLE_TYPE,1,1540,@MEDICINES,189);
+INSERT INTO `item_basic` VALUES (4134,0,'hi-ether_+2','hi-ether_+2',@USABLE_TYPE,1,1540,@MEDICINES,254);
+INSERT INTO `item_basic` VALUES (4135,0,'hi-ether_+3','hi-ether_+3',@USABLE_TYPE,1,1540,@MEDICINES,354);
+INSERT INTO `item_basic` VALUES (4136,0,'super_ether','super_ether',@USABLE_TYPE,1,1540,@MEDICINES,440);
+INSERT INTO `item_basic` VALUES (4137,0,'super_ether_+1','super_ether_+1',@USABLE_TYPE,1,1540,@MEDICINES,602);
+INSERT INTO `item_basic` VALUES (4138,0,'super_ether_+2','super_ether_+2',@USABLE_TYPE,1,1540,@MEDICINES,805);
+INSERT INTO `item_basic` VALUES (4139,0,'super_ether_+3','super_ether_+3',@USABLE_TYPE,1,1540,@MEDICINES,1036);
 INSERT INTO `item_basic` VALUES (4140,0,'pro-ether','pro-ether',@USABLE_TYPE,1,1540,@MEDICINES,1450);
 INSERT INTO `item_basic` VALUES (4141,0,'pro-ether_+1','pro-ether_+1',@USABLE_TYPE,1,1540,@MEDICINES,1812);
 INSERT INTO `item_basic` VALUES (4142,0,'pro-ether_+2','pro-ether_+2',@USABLE_TYPE,1,1540,@MEDICINES,2265);
@@ -4020,10 +4020,10 @@ INSERT INTO `item_basic` VALUES (4168,0,'twinkle_shower','twinkle_shower',@USABL
 INSERT INTO `item_basic` VALUES (4169,0,'little_comet','little_comet',@USABLE_TYPE,99,1548,@ALCHEMY_2,25);
 INSERT INTO `item_basic` VALUES (4170,0,'wedding_bell','wedding_bell',@USABLE_TYPE,99,1548,@ALCHEMY_2,44);
 INSERT INTO `item_basic` VALUES (4171,0,'flask_of_vitriol','vitriol',@USABLE_TYPE,12,1540,@MEDICINES,120);
-INSERT INTO `item_basic` VALUES (4172,0,'reraiser','reraiser',@USABLE_TYPE,1,38404,@MEDICINES,0);
-INSERT INTO `item_basic` VALUES (4173,0,'hi-reraiser','hi-reraiser',@USABLE_TYPE,1,38404,@MEDICINES,0);
-INSERT INTO `item_basic` VALUES (4174,0,'vile_elixir','vile_elixir',@USABLE_TYPE,1,38404,@MEDICINES,0);
-INSERT INTO `item_basic` VALUES (4175,0,'vile_elixir_+1','vile_elixir_+1',@USABLE_TYPE,1,38404,@MEDICINES,0);
+INSERT INTO `item_basic` VALUES (4172,0,'reraiser','reraiser',@USABLE_TYPE,1,38404,@MEDICINES,5612);
+INSERT INTO `item_basic` VALUES (4173,0,'hi-reraiser','hi-reraiser',@USABLE_TYPE,1,38404,@MEDICINES,8642);
+INSERT INTO `item_basic` VALUES (4174,0,'vile_elixir','vile_elixir',@USABLE_TYPE,1,38404,@MEDICINES,7256);
+INSERT INTO `item_basic` VALUES (4175,0,'vile_elixir_+1','vile_elixir_+1',@USABLE_TYPE,1,38404,@MEDICINES,9135);
 INSERT INTO `item_basic` VALUES (4176,0,'new_years_gift','new_years_gift',@USABLE_TYPE,1,63056,@NONE,0);
 INSERT INTO `item_basic` VALUES (4177,0,'new_years_gift','new_years_gift',@USABLE_TYPE,1,63056,@NONE,0);
 INSERT INTO `item_basic` VALUES (4178,0,'new_years_gift','new_years_gift',@USABLE_TYPE,1,63056,@NONE,0);
@@ -9871,7 +9871,7 @@ INSERT INTO `item_basic` VALUES (12432,0,'faceguard','faceguard',@EQUIPMENT_TYPE
 INSERT INTO `item_basic` VALUES (12433,0,'brass_mask','brass_mask',@EQUIPMENT_TYPE,1,2084,@HEAD,800);
 INSERT INTO `item_basic` VALUES (12434,0,'genbus_kabuto','genbus_kabuto',@EQUIPMENT_TYPE,1,63572,@NONE,0);
 INSERT INTO `item_basic` VALUES (12435,0,'coral_visor','coral_visor',@EQUIPMENT_TYPE,1,2084,@HEAD,3677);
-INSERT INTO `item_basic` VALUES (12436,0,'dragon_mask','dragon_mask',@EQUIPMENT_TYPE,1,2084,@HEAD,8036);
+INSERT INTO `item_basic` VALUES (12436,0,'dragon_mask','dragon_mask',@EQUIPMENT_TYPE,1,2084,@HEAD,4265);
 INSERT INTO `item_basic` VALUES (12437,0,'gavial_mask','gavial_mask',@EQUIPMENT_TYPE,1,2084,@HEAD,675);
 INSERT INTO `item_basic` VALUES (12438,0,'centurions_visor','centurions_visor',@EQUIPMENT_TYPE,1,2052,@HEAD,2181);
 INSERT INTO `item_basic` VALUES (12439,0,'bascinet_+1','bascinet_+1',@EQUIPMENT_TYPE,1,2080,@HEAD,4303);
@@ -10126,8 +10126,8 @@ INSERT INTO `item_basic` VALUES (12687,0,'royal_squires_mufflers','ryl.sqr._muff
 INSERT INTO `item_basic` VALUES (12688,0,'scale_finger_gauntlets','scale_fng._gnt.',@EQUIPMENT_TYPE,1,2084,@HANDS,238);
 INSERT INTO `item_basic` VALUES (12689,0,'brass_finger_gauntlets','brass_fng._gnt.',@EQUIPMENT_TYPE,1,2084,@HANDS,754);
 INSERT INTO `item_basic` VALUES (12690,0,'seiryus_kote','seiryus_kote',@EQUIPMENT_TYPE,1,63572,@NONE,0);
-INSERT INTO `item_basic` VALUES (12691,0,'coral_finger_gauntlets','coral_fng._gnt.',@EQUIPMENT_TYPE,1,2084,@HANDS,4449);
-INSERT INTO `item_basic` VALUES (12692,0,'dragon_finger_gauntlets','dragon_fng._gnt.',@EQUIPMENT_TYPE,1,2084,@HANDS,6900);
+INSERT INTO `item_basic` VALUES (12691,0,'coral_finger_gauntlets','coral_fng._gnt.',@EQUIPMENT_TYPE,1,2084,@HANDS,3800);
+INSERT INTO `item_basic` VALUES (12692,0,'dragon_finger_gauntlets','dragon_fng._gnt.',@EQUIPMENT_TYPE,1,2084,@HANDS,4200);
 INSERT INTO `item_basic` VALUES (12693,0,'gavial_finger_gauntlets','gavial_fng._gnt.',@EQUIPMENT_TYPE,1,2084,@HANDS,4928);
 INSERT INTO `item_basic` VALUES (12694,0,'centurions_finger_gauntlets','ctr._f._gauntlets',@EQUIPMENT_TYPE,1,2052,@HANDS,1748);
 INSERT INTO `item_basic` VALUES (12695,0,'bronze_mittens_+1','bronze_mittens_+1',@EQUIPMENT_TYPE,1,2080,@HANDS,40);
@@ -10253,8 +10253,8 @@ INSERT INTO `item_basic` VALUES (12815,0,'royal_squires_breeches','ryl.sqr._bree
 INSERT INTO `item_basic` VALUES (12816,0,'scale_cuisses','scale_cuisses',@EQUIPMENT_TYPE,1,2084,@LEGS,358);
 INSERT INTO `item_basic` VALUES (12817,0,'brass_cuisses','brass_cuisses',@EQUIPMENT_TYPE,1,2084,@LEGS,783);
 INSERT INTO `item_basic` VALUES (12818,0,'byakkos_haidate','byakkos_haidate',@EQUIPMENT_TYPE,1,63572,@NONE,0);
-INSERT INTO `item_basic` VALUES (12819,0,'coral_cuisses','coral_cuisses',@EQUIPMENT_TYPE,1,2084,@LEGS,6248);
-INSERT INTO `item_basic` VALUES (12820,0,'dragon_cuisses','dragon_cuisses',@EQUIPMENT_TYPE,1,2084,@LEGS,9676);
+INSERT INTO `item_basic` VALUES (12819,0,'coral_cuisses','coral_cuisses',@EQUIPMENT_TYPE,1,2084,@LEGS,4350);
+INSERT INTO `item_basic` VALUES (12820,0,'dragon_cuisses','dragon_cuisses',@EQUIPMENT_TYPE,1,2084,@LEGS,5850);
 INSERT INTO `item_basic` VALUES (12821,0,'gavial_cuisses','gavial_cuisses',@EQUIPMENT_TYPE,1,2084,@LEGS,2050);
 INSERT INTO `item_basic` VALUES (12822,0,'centurions_cuisses','ctr._cuisses',@EQUIPMENT_TYPE,1,2052,@LEGS,2622);
 INSERT INTO `item_basic` VALUES (12823,0,'bronze_subligar_+1','brz._subligar_+1',@EQUIPMENT_TYPE,1,2080,@LEGS,60);
@@ -10379,8 +10379,8 @@ INSERT INTO `item_basic` VALUES (12943,0,'royal_squires_sollerets','ryl.sqr._sol
 INSERT INTO `item_basic` VALUES (12944,0,'scale_greaves','scale_greaves',@EQUIPMENT_TYPE,1,2084,@FEET,217);
 INSERT INTO `item_basic` VALUES (12945,0,'brass_greaves','brass_greaves',@EQUIPMENT_TYPE,1,2084,@FEET,718);
 INSERT INTO `item_basic` VALUES (12946,0,'suzakus_sune-ate','suzakus_sune-ate',@EQUIPMENT_TYPE,1,63572,@NONE,0);
-INSERT INTO `item_basic` VALUES (12947,0,'coral_greaves','coral_greaves',@EQUIPMENT_TYPE,1,2084,@FEET,4212);
-INSERT INTO `item_basic` VALUES (12948,0,'dragon_greaves','dragon_greaves',@EQUIPMENT_TYPE,1,2084,@FEET,5907);
+INSERT INTO `item_basic` VALUES (12947,0,'coral_greaves','coral_greaves',@EQUIPMENT_TYPE,1,2084,@FEET,2345);
+INSERT INTO `item_basic` VALUES (12948,0,'dragon_greaves','dragon_greaves',@EQUIPMENT_TYPE,1,2084,@FEET,2956);
 INSERT INTO `item_basic` VALUES (12949,0,'gavial_greaves','gavial_greaves',@EQUIPMENT_TYPE,1,2084,@FEET,4739);
 INSERT INTO `item_basic` VALUES (12950,0,'centurions_greaves','ctr._greaves',@EQUIPMENT_TYPE,1,2052,@FEET,1572);
 INSERT INTO `item_basic` VALUES (12951,0,'bronze_leggings_+1','brz._leggings_+1',@EQUIPMENT_TYPE,1,2080,@FEET,40);
@@ -11292,7 +11292,7 @@ INSERT INTO `item_basic` VALUES (13856,0,'wizards_petasos','wizards_petasos',@EQ
 INSERT INTO `item_basic` VALUES (13857,0,'choral_roundlet','choral_roundlet',@EQUIPMENT_TYPE,1,63552,@NONE,0);
 INSERT INTO `item_basic` VALUES (13858,0,'prism_headband','prism_headband',@EQUIPMENT_TYPE,1,2080,@HEAD,3910);
 INSERT INTO `item_basic` VALUES (13859,0,'coral_visor_+1','coral_visor_+1',@EQUIPMENT_TYPE,1,2080,@HEAD,4596);
-INSERT INTO `item_basic` VALUES (13860,0,'dragon_mask_+1','dragon_mask_+1',@EQUIPMENT_TYPE,1,2080,@HEAD,8120);
+INSERT INTO `item_basic` VALUES (13860,0,'dragon_mask_+1','dragon_mask_+1',@EQUIPMENT_TYPE,1,2080,@HEAD,5136);
 INSERT INTO `item_basic` VALUES (13861,0,'feral_helm','feral_helm',@EQUIPMENT_TYPE,1,2080,@HEAD,3794);
 INSERT INTO `item_basic` VALUES (13862,0,'torama_mask','torama_mask',@EQUIPMENT_TYPE,1,2080,@HEAD,4284);
 INSERT INTO `item_basic` VALUES (13863,0,'darksteel_cap_+1','darksteel_cap_+1',@EQUIPMENT_TYPE,1,2080,@HEAD,8971);
@@ -11422,8 +11422,8 @@ INSERT INTO `item_basic` VALUES (13986,0,'platinum_bangles_+1','ptm._bangles_+1'
 INSERT INTO `item_basic` VALUES (13987,0,'coral_bangles','coral_bangles',@EQUIPMENT_TYPE,1,2084,@HANDS,4106);
 INSERT INTO `item_basic` VALUES (13988,0,'mermans_bangles','mermans_bangles',@EQUIPMENT_TYPE,1,2080,@HANDS,4106);
 INSERT INTO `item_basic` VALUES (13989,0,'darksteel_gauntlets_+1','dst._gauntlets_+1',@EQUIPMENT_TYPE,1,2080,@HANDS,5732);
-INSERT INTO `item_basic` VALUES (13990,0,'coral_finger_gauntlets_+1','coral_fng._gnt._+1',@EQUIPMENT_TYPE,1,2080,@HANDS,5561);
-INSERT INTO `item_basic` VALUES (13991,0,'dragon_finger_gauntlets_+1','dragon_f._gnt._+1',@EQUIPMENT_TYPE,1,2080,@HANDS,7344);
+INSERT INTO `item_basic` VALUES (13990,0,'coral_finger_gauntlets_+1','coral_fng._gnt._+1',@EQUIPMENT_TYPE,1,2080,@HANDS,4896);
+INSERT INTO `item_basic` VALUES (13991,0,'dragon_finger_gauntlets_+1','dragon_f._gnt._+1',@EQUIPMENT_TYPE,1,2080,@HANDS,5236);
 INSERT INTO `item_basic` VALUES (13992,0,'feral_gloves','feral_gloves',@EQUIPMENT_TYPE,1,2080,@HANDS,1994);
 INSERT INTO `item_basic` VALUES (13993,0,'torama_gloves','torama_gloves',@EQUIPMENT_TYPE,1,2080,@HANDS,4722);
 INSERT INTO `item_basic` VALUES (13994,0,'darksteel_mittens_+1','dst._mittens_+1',@EQUIPMENT_TYPE,1,2080,@HANDS,6600);
@@ -11538,8 +11538,8 @@ INSERT INTO `item_basic` VALUES (14102,0,'drachen_greaves','drachen_greaves',@EQ
 INSERT INTO `item_basic` VALUES (14103,0,'evokers_pigaches','evokers_pigaches',@EQUIPMENT_TYPE,1,63552,@NONE,0);
 INSERT INTO `item_basic` VALUES (14104,0,'battle_boots_+1','battle_boots_+1',@EQUIPMENT_TYPE,1,2080,@FEET,4853);
 INSERT INTO `item_basic` VALUES (14105,0,'darksteel_sabatons_+1','dst._sabatons_+1',@EQUIPMENT_TYPE,1,2080,@FEET,5430);
-INSERT INTO `item_basic` VALUES (14106,0,'coral_greaves_+1','coral_greaves_+1',@EQUIPMENT_TYPE,1,2080,@FEET,2400);
-INSERT INTO `item_basic` VALUES (14107,0,'dragon_greaves_+1','drg._greaves_+1',@EQUIPMENT_TYPE,1,2080,@FEET,7383);
+INSERT INTO `item_basic` VALUES (14106,0,'coral_greaves_+1','coral_greaves_+1',@EQUIPMENT_TYPE,1,2080,@FEET,2897);
+INSERT INTO `item_basic` VALUES (14107,0,'dragon_greaves_+1','drg._greaves_+1',@EQUIPMENT_TYPE,1,2080,@FEET,3125);
 INSERT INTO `item_basic` VALUES (14108,0,'feral_ledelsens','feral_ledelsens',@EQUIPMENT_TYPE,1,2080,@FEET,4146);
 INSERT INTO `item_basic` VALUES (14109,0,'torama_ledelsens','torama_ledelsens',@EQUIPMENT_TYPE,1,2080,@FEET,4541);
 INSERT INTO `item_basic` VALUES (14110,0,'darksteel_leggings_+1','dst._leggings_+1',@EQUIPMENT_TYPE,1,2080,@FEET,5347);
@@ -11662,8 +11662,8 @@ INSERT INTO `item_basic` VALUES (14226,0,'ninja_hakama','ninja_hakama',@EQUIPMEN
 INSERT INTO `item_basic` VALUES (14227,0,'drachen_brais','drachen_brais',@EQUIPMENT_TYPE,1,63552,@NONE,0);
 INSERT INTO `item_basic` VALUES (14228,0,'evokers_spats','evokers_spats',@EQUIPMENT_TYPE,1,63552,@NONE,0);
 INSERT INTO `item_basic` VALUES (14229,0,'darksteel_cuisses_+1','dst._cuisses_+1',@EQUIPMENT_TYPE,1,2080,@LEGS,8125);
-INSERT INTO `item_basic` VALUES (14230,0,'coral_cuisses_+1','coral_cuisses_+1',@EQUIPMENT_TYPE,1,2080,@LEGS,7810);
-INSERT INTO `item_basic` VALUES (14231,0,'dragon_cuisses_+1','dragon_cuisses_+1',@EQUIPMENT_TYPE,1,2080,@LEGS,9762);
+INSERT INTO `item_basic` VALUES (14230,0,'coral_cuisses_+1','coral_cuisses_+1',@EQUIPMENT_TYPE,1,2080,@LEGS,6105);
+INSERT INTO `item_basic` VALUES (14231,0,'dragon_cuisses_+1','dragon_cuisses_+1',@EQUIPMENT_TYPE,1,2080,@LEGS,6705);
 INSERT INTO `item_basic` VALUES (14232,0,'feral_trousers','feral_trousers',@EQUIPMENT_TYPE,1,2080,@LEGS,6150);
 INSERT INTO `item_basic` VALUES (14233,0,'torama_trousers','torama_trousers',@EQUIPMENT_TYPE,1,2080,@LEGS,6833);
 INSERT INTO `item_basic` VALUES (14234,0,'darksteel_subligar_+1','dst._subligar_+1',@EQUIPMENT_TYPE,1,2080,@LEGS,7931);
@@ -13892,7 +13892,7 @@ INSERT INTO `item_basic` VALUES (16472,0,'poison_knife','poison_knife',@WEAPON_T
 INSERT INTO `item_basic` VALUES (16473,0,'kukri','kukri',@WEAPON_TYPE,1,2084,@DAGGER,1035);
 INSERT INTO `item_basic` VALUES (16475,0,'mythril_kukri','mythril_kukri',@WEAPON_TYPE,1,2084,@DAGGER,2484);
 INSERT INTO `item_basic` VALUES (16476,0,'darksteel_kukri','darksteel_kukri',@WEAPON_TYPE,1,2084,@DAGGER,6073);
-INSERT INTO `item_basic` VALUES (16477,0,'cermet_kukri','cermet_kukri',@WEAPON_TYPE,1,2084,@DAGGER,8910);
+INSERT INTO `item_basic` VALUES (16477,0,'cermet_kukri','cermet_kukri',@WEAPON_TYPE,1,2084,@DAGGER,6583);
 INSERT INTO `item_basic` VALUES (16478,0,'poison_kukri','poison_kukri',@WEAPON_TYPE,1,2084,@DAGGER,1215);
 INSERT INTO `item_basic` VALUES (16479,0,'acid_kukri','acid_kukri',@WEAPON_TYPE,1,2084,@DAGGER,2269);
 INSERT INTO `item_basic` VALUES (16480,0,'thiefs_knife','thiefs_knife',@WEAPON_TYPE,1,34820,@DAGGER,11205);
@@ -13954,7 +13954,7 @@ INSERT INTO `item_basic` VALUES (16535,0,'bronze_sword','bronze_sword',@WEAPON_T
 INSERT INTO `item_basic` VALUES (16536,0,'iron_sword','iron_sword',@WEAPON_TYPE,1,2084,@SWORD,1320);
 INSERT INTO `item_basic` VALUES (16537,0,'mythril_sword','mythril_sword',@WEAPON_TYPE,1,2084,@SWORD,4100);
 INSERT INTO `item_basic` VALUES (16538,0,'darksteel_sword','darksteel_sword',@WEAPON_TYPE,1,2084,@SWORD,7525);
-INSERT INTO `item_basic` VALUES (16539,0,'cermet_sword','cermet_sword',@WEAPON_TYPE,1,2084,@SWORD,9460);
+INSERT INTO `item_basic` VALUES (16539,0,'cermet_sword','cermet_sword',@WEAPON_TYPE,1,2084,@SWORD,7689);
 INSERT INTO `item_basic` VALUES (16540,0,'tyrfing','tyrfing',@WEAPON_TYPE,1,63572,@NONE,0);
 INSERT INTO `item_basic` VALUES (16541,0,'jagdplaute','jagdplaute',@WEAPON_TYPE,1,2084,@SWORD,13545);
 INSERT INTO `item_basic` VALUES (16542,0,'wing_sword','wing_sword',@WEAPON_TYPE,1,2084,@SWORD,9673);
@@ -14063,7 +14063,7 @@ INSERT INTO `item_basic` VALUES (16648,0,'legionnaires_axe','legionnaires_axe',@
 INSERT INTO `item_basic` VALUES (16649,0,'bone_pick','bone_pick',@WEAPON_TYPE,1,2084,@AXE,362);
 INSERT INTO `item_basic` VALUES (16650,0,'war_pick','war_pick',@WEAPON_TYPE,1,2084,@AXE,3375);
 INSERT INTO `item_basic` VALUES (16651,0,'mythril_pick','mythril_pick',@WEAPON_TYPE,1,2084,@AXE,7395);
-INSERT INTO `item_basic` VALUES (16652,0,'darksteel_pick','darksteel_pick',@WEAPON_TYPE,1,2084,@AXE,11814);
+INSERT INTO `item_basic` VALUES (16652,0,'darksteel_pick','darksteel_pick',@WEAPON_TYPE,1,2084,@AXE,3580);
 INSERT INTO `item_basic` VALUES (16653,0,'nadziak','nadziak',@WEAPON_TYPE,1,2084,@AXE,5565);
 INSERT INTO `item_basic` VALUES (16654,0,'glyph_axe','glyph_axe',@WEAPON_TYPE,1,63572,@NONE,0);
 INSERT INTO `item_basic` VALUES (16655,0,'rusty_pick','rusty_pick',@WEAPON_TYPE,1,2052,@AXE,115);
@@ -14093,7 +14093,7 @@ INSERT INTO `item_basic` VALUES (16678,0,'razor_axe','razor_axe',@WEAPON_TYPE,1,
 INSERT INTO `item_basic` VALUES (16679,0,'wrath_tabar','wrath_tabar',@WEAPON_TYPE,1,34820,@AXE,6045);
 INSERT INTO `item_basic` VALUES (16680,0,'barbaroi_axe','barbaroi_axe',@WEAPON_TYPE,1,63552,@NONE,0);
 INSERT INTO `item_basic` VALUES (16681,0,'gerwitzs_axe','gerwitzs_axe',@WEAPON_TYPE,1,63552,@NONE,0);
-INSERT INTO `item_basic` VALUES (16682,0,'darksteel_pick_+1','darksteel_pick_+1',@WEAPON_TYPE,1,2080,@AXE,12566);
+INSERT INTO `item_basic` VALUES (16682,0,'darksteel_pick_+1','darksteel_pick_+1',@WEAPON_TYPE,1,2080,@AXE,6500);
 INSERT INTO `item_basic` VALUES (16683,0,'darksteel_tabar_+1','dst._tabar_+1',@WEAPON_TYPE,1,2080,@AXE,8925);
 INSERT INTO `item_basic` VALUES (16684,0,'kabrakans_axe','kabrakans_axe',@WEAPON_TYPE,1,34820,@AXE,12372);
 INSERT INTO `item_basic` VALUES (16685,0,'nadziak_+1','nadziak_+1',@WEAPON_TYPE,1,2080,@AXE,9175); -- TODO: Verify BaseSell
@@ -14235,7 +14235,7 @@ INSERT INTO `item_basic` VALUES (16821,0,'duel_rapier','duel_rapier',@WEAPON_TYP
 INSERT INTO `item_basic` VALUES (16822,0,'crimson_blade','crimson_blade',@WEAPON_TYPE,1,2052,@SWORD,9157);
 INSERT INTO `item_basic` VALUES (16823,0,'flame_degen_+1','flame_degen_+1',@WEAPON_TYPE,1,2080,@SWORD,6045);
 INSERT INTO `item_basic` VALUES (16824,0,'carnage_rapier','carnage_rapier',@WEAPON_TYPE,1,2080,@SWORD,7710);
-INSERT INTO `item_basic` VALUES (16825,0,'cermet_sword_+1','cermet_sword_+1',@WEAPON_TYPE,1,2080,@SWORD,10771);
+INSERT INTO `item_basic` VALUES (16825,0,'cermet_sword_+1','cermet_sword_+1',@WEAPON_TYPE,1,2080,@SWORD,8132);
 INSERT INTO `item_basic` VALUES (16826,0,'divine_sword_+1','divine_sword_+1',@WEAPON_TYPE,1,2080,@SWORD,6658); -- TODO: Verify BaseSell
 INSERT INTO `item_basic` VALUES (16827,0,'carnage_blade','carnage_blade',@WEAPON_TYPE,1,2080,@SWORD,8131);
 INSERT INTO `item_basic` VALUES (16828,0,'bastard_sword_+1','bastard_sword_+1',@WEAPON_TYPE,1,2080,@SWORD,14731);
@@ -14507,8 +14507,8 @@ INSERT INTO `item_basic` VALUES (17095,0,'ash_pole','ash_pole',@WEAPON_TYPE,1,20
 INSERT INTO `item_basic` VALUES (17096,0,'holly_pole','holly_pole',@WEAPON_TYPE,1,2084,@STAFF,423);
 INSERT INTO `item_basic` VALUES (17097,0,'elm_pole','elm_pole',@WEAPON_TYPE,1,2084,@STAFF,760);
 INSERT INTO `item_basic` VALUES (17098,0,'oak_pole','oak_pole',@WEAPON_TYPE,1,2084,@STAFF,1560);
-INSERT INTO `item_basic` VALUES (17099,0,'mahogany_pole','mahogany_pole',@WEAPON_TYPE,1,2084,@STAFF,7700);
-INSERT INTO `item_basic` VALUES (17100,0,'ebony_pole','ebony_pole',@WEAPON_TYPE,1,2084,@STAFF,4350);
+INSERT INTO `item_basic` VALUES (17099,0,'mahogany_pole','mahogany_pole',@WEAPON_TYPE,1,2084,@STAFF,4250);
+INSERT INTO `item_basic` VALUES (17100,0,'ebony_pole','ebony_pole',@WEAPON_TYPE,1,2084,@STAFF,2150);
 INSERT INTO `item_basic` VALUES (17101,0,'mythic_pole','mythic_pole',@WEAPON_TYPE,1,2084,@STAFF,4858);
 INSERT INTO `item_basic` VALUES (17102,0,'eight-sided_pole','eight-sided_pole',@WEAPON_TYPE,1,2084,@STAFF,1200);
 INSERT INTO `item_basic` VALUES (17103,0,'mercenarys_pole','mercenarys_pole',@WEAPON_TYPE,1,2052,@STAFF,2669);
@@ -14924,7 +14924,7 @@ INSERT INTO `item_basic` VALUES (17517,0,'hydro_patas_+1','hydro_patas_+1',@WEAP
 INSERT INTO `item_basic` VALUES (17518,0,'manoples_+1','manoples_+1',@WEAPON_TYPE,1,2080,@H2H,5501); -- TODO: Verify BaseSell
 INSERT INTO `item_basic` VALUES (17519,0,'platoon_cesti','platoon_cesti',@WEAPON_TYPE,1,2052,@H2H,1189);
 INSERT INTO `item_basic` VALUES (17520,0,'heavy_staff','heavy_staff',@WEAPON_TYPE,1,2080,@STAFF,8751);
-INSERT INTO `item_basic` VALUES (17521,0,'mahogany_pole_+1','mahogany_pole_+1',@WEAPON_TYPE,1,2080,@STAFF,7700);
+INSERT INTO `item_basic` VALUES (17521,0,'mahogany_pole_+1','mahogany_pole_+1',@WEAPON_TYPE,1,2080,@STAFF,5132);
 INSERT INTO `item_basic` VALUES (17522,0,'pride_staff','pride_staff',@WEAPON_TYPE,1,34820,@STAFF,7861);
 INSERT INTO `item_basic` VALUES (17523,0,'quarterstaff','quarterstaff',@WEAPON_TYPE,1,2084,@STAFF,1050);
 INSERT INTO `item_basic` VALUES (17524,0,'footmans_staff','footmans_staff',@WEAPON_TYPE,1,2080,@STAFF,6674);
@@ -15006,7 +15006,7 @@ INSERT INTO `item_basic` VALUES (17599,0,'diaboloss_pole','diaboloss_pole',@WEAP
 INSERT INTO `item_basic` VALUES (17600,0,'stun_knife_+1','stun_knife_+1',@WEAPON_TYPE,1,2080,@DAGGER,10562);
 INSERT INTO `item_basic` VALUES (17601,0,'demons_knife','demons_knife',@WEAPON_TYPE,1,2084,@DAGGER,1871);
 INSERT INTO `item_basic` VALUES (17602,0,'demons_knife_+1','demons_knife_+1',@WEAPON_TYPE,1,2080,@DAGGER,2338);
-INSERT INTO `item_basic` VALUES (17603,0,'cermet_kukri_+1','cermet_kukri_+1',@WEAPON_TYPE,1,2080,@DAGGER,9256); -- TODO: Verify BaseSell
+INSERT INTO `item_basic` VALUES (17603,0,'cermet_kukri_+1','cermet_kukri_+1',@WEAPON_TYPE,1,2080,@DAGGER,6953); -- TODO: Verify BaseSell
 INSERT INTO `item_basic` VALUES (17604,0,'venom_kukri_+1','venom_kukri_+1',@WEAPON_TYPE,1,2080,@DAGGER,11570);
 INSERT INTO `item_basic` VALUES (17605,0,'acid_dagger','acid_dagger',@WEAPON_TYPE,1,2084,@DAGGER,1535);
 INSERT INTO `item_basic` VALUES (17606,0,'corrosive_dagger','corrosive_dagger',@WEAPON_TYPE,1,2080,@DAGGER,1535);
