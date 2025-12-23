@@ -156,7 +156,7 @@ local function calculateSkillUp(player)
     local realSkill = player:getCharSkillLevel(xi.skill.DIG)
     local increment = 1
 
-    -- this probably needs correcting
+    -- random roll for skill up chance
     local roll = math.random(1, 100)
 
     -- make sure our skill isn't capped
@@ -168,16 +168,57 @@ local function calculateSkillUp(player)
             end
 
             -- skill up!
-            player:setSkillLevel(xi.skill.DIG, realSkill + increment)
+            local newSkill = realSkill + increment
+            player:setSkillLevel(xi.skill.DIG, newSkill)
+
+            -- VISUAL: Skill Rises Message
+            local playerName = player:getName()
+            local displayAmount = string.format("%.1f", increment / 10)
+            player:printToPlayer(string.format("%s's digging skill rises %s points.", playerName, displayAmount), 0x1D)
+
+            -- NEW VISUAL: Level Up Notification
+            -- Checks if the new skill is a whole number (e.g., 10, 20, 30...)
+            if newSkill % 10 == 0 then
+                local level = string.format("%d", newSkill / 10)
+                player:printToPlayer(string.format("Your digging skill has reached level %s!", level), 0x1D)
+            end
 
             -- update the skill rank
-            -- Digging does not have test items, so increment rank once player hits 10.0, 20.0, .. 100.0
-            if (realSkill + increment) >= (skillRank * 100) + 100 then
+            if newSkill >= (skillRank * 100) + 100 then
                 player:setSkillRank(xi.skill.DIG, skillRank + 1)
             end
         end
     end
 end
+
+-- local function calculateSkillUp(player)
+--     local skillRank = player:getSkillRank(xi.skill.DIG)
+--     local maxSkill  = utils.clamp((skillRank + 1) * 100, 0, 1000)
+--     local realSkill = player:getCharSkillLevel(xi.skill.DIG)
+--     local increment = 1
+
+--     -- this probably needs correcting
+--     local roll = math.random(1, 100)
+
+--     -- make sure our skill isn't capped
+--     if realSkill < maxSkill then
+--         -- can we skill up?
+--         if roll <= 15 then
+--             if (increment + realSkill) > maxSkill then
+--                 increment = maxSkill - realSkill
+--             end
+
+--             -- skill up!
+--             player:setSkillLevel(xi.skill.DIG, realSkill + increment)
+
+--             -- update the skill rank
+--             -- Digging does not have test items, so increment rank once player hits 10.0, 20.0, .. 100.0
+--             if (realSkill + increment) >= (skillRank * 100) + 100 then
+--                 player:setSkillRank(xi.skill.DIG, skillRank + 1)
+--             end
+--         end
+--     end
+-- end
 
 local function handleDiggingLayer(player, zoneId, currentLayer)
     local digTable = xi.chocoboDig.digInfo[zoneId][currentLayer]

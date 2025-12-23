@@ -29,7 +29,7 @@ entity.onTrigger = function(player, npc)
         { xi.item.SCROLL_OF_KNIGHTS_MINNE,        18, 3, },
         { xi.item.SCROLL_OF_KNIGHTS_MINNE_II,    998, 3, },
         { xi.item.SCROLL_OF_KNIGHTS_MINNE_III,  5948, 3, },
-        { xi.item.SCROLL_OF_KNIGHTS_MINNE_V,   57304, 3, },
+        -- { xi.item.SCROLL_OF_KNIGHTS_MINNE_V,   57304, 3, }, --OoE
         { xi.item.DART,                           10, 2, },
         { xi.item.BLACK_CHOCOBO_FEATHER,        1300, 1, },
         { xi.item.PET_FOOD_ALPHA_BISCUIT,         12, 3, },
