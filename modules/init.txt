@@ -36,5 +36,10 @@
 #
 # Live example:
 
+# File root of modules
+renamer
+
+# Individual modules
 custom/commands/
 custom/lua/test_npcs_in_gm_home.lua
+era/sql/cop_level_restrictions.sql
