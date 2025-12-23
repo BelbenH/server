@@ -6940,7 +6940,7 @@ INSERT INTO `item_equipment` VALUES (17212,'selenes_bow',60,0,1024,36,0,0,4,0,0,
 INSERT INTO `item_equipment` VALUES (17213,'staurobow',74,0,1185,62,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (17214,'staurobow_+1',74,0,1185,62,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (17215,'thugs_zamburak',40,0,1185,52,0,0,4,0,0,0);
-INSERT INTO `item_equipment` VALUES (17216,'light_crossbow',1,0,1153,56,0,0,4,0,0,0);
+INSERT INTO `item_equipment` VALUES (17216,'light_crossbow',1,0,1185,56,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (17217,'crossbow',12,0,1185,53,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (17218,'zamburak',30,0,1185,55,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (17219,'arbalest',50,0,1185,54,0,0,4,0,0,0);
@@ -6952,7 +6952,7 @@ INSERT INTO `item_equipment` VALUES (17224,'killer_crossbow',40,0,1185,52,0,0,4,
 INSERT INTO `item_equipment` VALUES (17225,'crossbow_+1',12,0,1185,53,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (17226,'arbalest_+1',50,0,1185,54,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (17227,'heavy_crossbow+1',60,0,1185,52,0,0,4,0,0,0);
-INSERT INTO `item_equipment` VALUES (17228,'light_crossbow_+1',1,0,1153,56,0,0,4,0,0,0);
+INSERT INTO `item_equipment` VALUES (17228,'light_crossbow_+1',1,0,1185,56,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (17229,'zamburak_+1',30,0,1185,55,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (17230,'power_crossbow',25,0,1185,62,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (17231,'tells_crossbow',44,0,1185,53,0,0,4,0,0,0);
