@@ -70,8 +70,59 @@ content.groups =
 content.loot =
 {
     {
-        { itemId = xi.item.DRUIDS_ROPE,           weight = 250 },
-        { itemId = xi.item.AEGIS_RING,            weight = 250 },
+        { itemId = xi.item.GIL,                   weight = 1000, amount = 6000 },
+    },
+
+    {
+        { itemId = xi.item.DRUIDS_ROPE,           weight = 500 },
+        { itemId = xi.item.GOLD_BEASTCOIN,        weight =  25 },
+        { itemId = xi.item.MYTHRIL_BEASTCOIN,     weight =  25 },
+        { itemId = xi.item.BLACK_ROCK,            weight =  25 },
+        { itemId = xi.item.BLUE_ROCK,             weight =  25 },
+        { itemId = xi.item.GREEN_ROCK,            weight =  25 },
+        { itemId = xi.item.PURPLE_ROCK,           weight =  25 },
+        { itemId = xi.item.RED_ROCK,              weight =  25 },
+        { itemId = xi.item.TRANSLUCENT_ROCK,      weight =  25 },
+        { itemId = xi.item.WHITE_ROCK,            weight =  25 },
+        { itemId = xi.item.YELLOW_ROCK,           weight =  25 },
+        { itemId = xi.item.AMETRINE,              weight =  25 },
+        { itemId = xi.item.BLACK_PEARL,           weight =  25 },
+        { itemId = xi.item.GARNET,                weight =  25 },
+        { itemId = xi.item.GOSHENITE,             weight =  25 },
+        { itemId = xi.item.PEARL,                 weight =  25 },
+        { itemId = xi.item.PERIDOT,               weight =  25 },
+        { itemId = xi.item.SPHENE,                weight =  25 },
+        { itemId = xi.item.TURQUOISE,             weight =  25 },
+        { itemId = xi.item.OAK_LOG,               weight =  25 },
+        { itemId = xi.item.VILE_ELIXIR,           weight =  25 },
+    },
+
+    {
+        { itemId = xi.item.AEGIS_RING,            weight = 500 },
+        { itemId = xi.item.GOLD_BEASTCOIN,        weight =  25 },
+        { itemId = xi.item.MYTHRIL_BEASTCOIN,     weight =  25 },
+        { itemId = xi.item.BLACK_ROCK,            weight =  25 },
+        { itemId = xi.item.BLUE_ROCK,             weight =  25 },
+        { itemId = xi.item.GREEN_ROCK,            weight =  25 },
+        { itemId = xi.item.PURPLE_ROCK,           weight =  25 },
+        { itemId = xi.item.RED_ROCK,              weight =  25 },
+        { itemId = xi.item.TRANSLUCENT_ROCK,      weight =  25 },
+        { itemId = xi.item.WHITE_ROCK,            weight =  25 },
+        { itemId = xi.item.YELLOW_ROCK,           weight =  25 },
+        { itemId = xi.item.AMETRINE,              weight =  25 },
+        { itemId = xi.item.BLACK_PEARL,           weight =  25 },
+        { itemId = xi.item.GARNET,                weight =  25 },
+        { itemId = xi.item.GOSHENITE,             weight =  25 },
+        { itemId = xi.item.PEARL,                 weight =  25 },
+        { itemId = xi.item.PERIDOT,               weight =  25 },
+        { itemId = xi.item.SPHENE,                weight =  25 },
+        { itemId = xi.item.TURQUOISE,             weight =  25 },
+        { itemId = xi.item.OAK_LOG,               weight =  25 },
+        { itemId = xi.item.RERAISER,              weight =  25 },
+    },
+
+    {
+        { itemId = xi.item.BLITZ_RING,            weight = 500 },
         { itemId = xi.item.GOLD_BEASTCOIN,        weight =  25 },
         { itemId = xi.item.MYTHRIL_BEASTCOIN,     weight =  25 },
         { itemId = xi.item.BLACK_ROCK,            weight =  25 },
@@ -92,12 +143,6 @@ content.loot =
         { itemId = xi.item.TURQUOISE,             weight =  25 },
         { itemId = xi.item.ROSEWOOD_LOG,          weight =  25 },
         { itemId = xi.item.OAK_LOG,               weight =  25 },
-    },
-
-    {
-        { itemId = xi.item.BLITZ_RING,            weight = 500 },
-        { itemId = xi.item.RERAISER,              weight = 250 },
-        { itemId = xi.item.VILE_ELIXIR,           weight = 250 },
     },
 
     {
