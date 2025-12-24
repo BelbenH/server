@@ -6,7 +6,7 @@
 local entity = {}
 
 entity.onMobInitialize = function(mob)
-    mob:renameEntity('Steve Irwin', true)
+    mob:renameEntity('Hobgoblin Zoro', true)
 end
 
 return entity

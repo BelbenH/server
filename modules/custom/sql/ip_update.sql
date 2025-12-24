@@ -1,0 +1,1 @@
+UPDATE `zone_settings` SET zoneip = '73.252.33.70' WHERE zoneip = '127.0.0.1'

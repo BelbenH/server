@@ -42,4 +42,10 @@ renamer
 # Individual modules
 custom/commands/
 custom/lua/test_npcs_in_gm_home.lua
+
+# Update IP address for zones
+custom/sql/ip_update.sql
+
+# Era Modules
 era/sql/cop_level_restrictions.sql
+era/sql/era_mob_spawns.sql
