@@ -31,6 +31,7 @@ xi.xispchocobo.names =
     [26] = 'Buttons',
     [27] = 'Beakachu',
     [28] = 'Pookie',
+    [29] = 'Lemon Drop',
 }
 
 local menu1 =
@@ -371,6 +372,13 @@ nameList5 =
         xi.xispchocobo.names[28],
         function(playerArg)
             xi.xispchocobo.confirmNamePrompt(playerArg, 28)
+        end,
+    },
+
+    {
+        xi.xispchocobo.names[29],
+        function(playerArg)
+            xi.xispchocobo.confirmNamePrompt(playerArg, 29)
         end,
     },
 
