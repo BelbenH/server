@@ -1,12 +1,12 @@
 -----------------------------------
 -- Area: Bibiki Bay
---  Mob: Hypnos Eft
+--  Mob: Hobgoblin Physician
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
 
 entity.onMobInitialize = function(mob)
-    mob:renameEntity('Steve Irwin', true)
+    mob:renameEntity('Hobgoblin Doc', true)
 end
 
 return entity
