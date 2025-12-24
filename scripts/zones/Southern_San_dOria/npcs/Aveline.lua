@@ -22,7 +22,6 @@ entity.onTrigger = function(player, npc)
         { xi.item.HANDFUL_OF_BAY_LEAVES,      135, 1, },
         { xi.item.BOTTLE_OF_APPLE_VINEGAR,     91, 1, },
     }
-
     player:showText(npc, ID.text.RAIMBROYS_SHOP_DIALOG)
     xi.shop.nation(player, stock, xi.nation.SANDORIA)
 end

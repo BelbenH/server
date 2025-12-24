@@ -29,7 +29,7 @@ entity.onTrigger = function(player, npc)
     }
 
     player:showText(npc, ID.text.RAIMBROYS_SHOP_DIALOG + 1)
-    xi.shop.nation(player, stock, xi.nation.SANDORIA)
+    xi.shop.general(player, xi.shop.phalanxShops.lowTierMeleeArmor, xi.fameArea.SANDORIA)
 end
 
 return entity

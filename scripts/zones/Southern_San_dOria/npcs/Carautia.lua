@@ -11,20 +11,22 @@ local entity = {}
 entity.onTrigger = function(player, npc)
     local stock =
     {
-        { xi.item.LAUAN_SHIELD,        124, 3, },
-        { xi.item.MAPLE_SHIELD,        629, 3, },
-        { xi.item.MAHOGANY_SHIELD,    5179, 2, },
-        { xi.item.KITE_SHIELD,       11880, 1, },
-        { xi.item.BRONZE_SUBLIGAR,     216, 3, },
-        { xi.item.BRASS_SUBLIGAR,     2080, 3, },
-        { xi.item.LEATHER_TROUSERS,    557, 3, },
-        { xi.item.STUDDED_TROUSERS,  19127, 2, },
-        { xi.item.CHAIN_HOSE,        13104, 1, },
-        { xi.item.BRONZE_LEGGINGS,     133, 3, },
-        { xi.item.BRASS_LEGGINGS,     1289, 3, },
-        { xi.item.LEATHER_HIGHBOOTS,   349, 3, },
-        { xi.item.STUDDED_BOOTS,     11618, 2, },
-        { xi.item.GREAVES,            8049, 1, },
+        { xi.item.CIRCLET,                 200, 3, },
+        { xi.item.COPPER_HAIRPIN,          185, 3, },
+        { xi.item.BONE_HAIRPIN,            540, 3, },
+        { xi.item.HEADGEAR,               2013, 3, },
+        { xi.item.BRASS_HAIRPIN,          1295, 3, },
+        { xi.item.PILGRIM_TUNICA,         7777, 3, },
+        { xi.item.ROBE,                    300, 3, },
+        { xi.item.TUNIC,                  1400, 3, },
+        { xi.item.DOUBLET,                2854, 3, },
+        { xi.item.GLOVES,                 1575, 3, },
+        { xi.item.CUFFS,                   165, 3, },
+        { xi.item.MITTS,                   655, 3, },
+        { xi.item.SLOPS,                   240, 3, },
+        { xi.item.BRAIS,                  2194, 3, },
+        { xi.item.ASH_CLOGS,               155, 3, },
+        { xi.item.GAITERS,                1466, 3, },
     }
 
     player:showText(npc, ID.text.CARAUTIA_SHOP_DIALOG)

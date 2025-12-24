@@ -14,7 +14,7 @@ xi.combat.treasureHunter.treasureHunterTable =
     [ 3] = { 6800, 5000, 2000,  900,  350, 180,  50 }, --(Phalanx)Original values:[ 3] = { 6000, 4250, 1650,  750,  225, 120,  35 }, Replaced with values from [ 6]
     [ 4] = { 7050, 5500, 2250, 1050,  475, 230,  70 }, --(Phalanx)Original values:[ 4] = { 6400, 4500, 1800,  800,  250, 140,  40 }, Replaced with values from [ 8]
     [ 5] = { 7350, 6000, 2650, 1250,  650, 300,  90 }, --(Phalanx)Original values:[ 5] = { 6666, 4750, 1900,  850,  300, 160,  45 }, Replaced with values from [10]
-    [ 6] = { 6800, 5000, 2000,  900,  350, 180,  50 },
+    [ 6] = { 7600, 6500, 2950, 1550,  825, 400, 115 }, --(Phalanx)Original values:[ 6] = { 6800, 5000, 2000,  900,  350, 180,  50 }, Replaced with values from [12]
     [ 7] = { 6900, 5250, 2100,  950,  400, 200,  60 },
     [ 8] = { 7050, 5500, 2250, 1050,  475, 230,  70 },
     [ 9] = { 7200, 5750, 2400, 1150,  550, 260,  80 },
