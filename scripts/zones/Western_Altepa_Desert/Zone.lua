@@ -9,6 +9,9 @@ local zoneObject = {}
 
 zoneObject.onInitialize = function(zone)
     xi.beastmenTreasure.updatePeddlestox(xi.zone.YUHTUNGA_JUNGLE, ID.npc.PEDDLESTOX)
+
+    local pos = { x = -240, y = 0, z = -650 }
+    xi.customspawn.spawnQM(zone, pos, zones[xi.zone.WESTERN_ALTEPA_DESERT].mob.KING_VINEGARROON)
 end
 
 zoneObject.onGameDay = function()
@@ -51,7 +54,7 @@ zoneObject.onZoneWeatherChange = function(weather)
     -- HNM King Vinegarroon only spawns during earth weather
     local kvMob = GetMobByID(ID.mob.KING_VINEGARROON)
 
-    if kvMob then
+    if kvMob and false then -- (Phalanx): King V is popped
         if weather == xi.weather.DUST_STORM or weather == xi.weather.SAND_STORM then
             DisallowRespawn(ID.mob.KING_VINEGARROON, false) -- Allow respawn.
 

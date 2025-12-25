@@ -50,7 +50,7 @@ zones[xi.zone.BHAFLAU_THICKETS] =
         },
         DEA                = GetFirstID('Dea'),
         EMERGENT_ELM       = GetFirstID('Emergent_Elm'),
-        HARVESTMAN         = GetFirstID('Harvestman'),
+        -- HARVESTMAN         = GetFirstID('Harvestman'), -- Phalanx removed
         LIVIDROOT_AMOOSHAH = GetFirstID('Lividroot_Amooshah'),
         MAHISHASURA        = GetFirstID('Mahishasura'),
         NIS_PUK            = GetFirstID('Nis_Puk'),

@@ -23,7 +23,7 @@ zones[xi.zone.VUNKERL_INLET_S] =
     },
     mob =
     {
-        BIG_BANG = GetFirstID('Big_Bang'),
+        -- BIG_BANG = GetFirstID('Big_Bang'), -- Phalanx removed
         PALLAS   = GetFirstID('Pallas'),
     },
     npc =

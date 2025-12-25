@@ -98,9 +98,4 @@ entity.onMobDeath = function(mob, player, optParams)
     player:addTitle(xi.title.ROC_STAR)
 end
 
-entity.onMobDespawn = function(mob)
-    xi.mob.updateNMSpawnPoint(mob)
-    mob:setRespawnTime(math.random(3600, 7200)) -- 1 to 2 hours
-end
-
 return entity

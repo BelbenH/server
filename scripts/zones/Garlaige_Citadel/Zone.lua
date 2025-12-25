@@ -26,6 +26,9 @@ zoneObject.onInitialize = function(zone)
     zone:registerCuboidTriggerArea(22, -131.5, -1, 322, -129, 1, 324.5)
 
     xi.treasure.initZone(zone)
+
+    local pos = { x = -300, y = 19.6, z = 253 }
+    xi.customspawn.spawnQM(zone, pos, zones[xi.zone.GARLAIGE_CITADEL].mob.SERKET)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

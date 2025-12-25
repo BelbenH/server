@@ -14,6 +14,9 @@ zoneObject.onInitialize = function(zone)
     xi.helm.initZone(zone, xi.helmType.LOGGING)
 
     xi.voidwalker.zoneOnInit(zone)
+
+    local pos = { x = -158, y = 0.68, z = 453 }
+    xi.customspawn.spawnQM(zone, pos, zones[xi.zone.JUGNER_FOREST].mob.KING_ARTHRO)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)
