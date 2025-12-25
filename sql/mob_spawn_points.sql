@@ -54278,7 +54278,7 @@ INSERT INTO `mob_spawn_points` VALUES (17391620,1,'Orcish_Trooper','Orcish Troop
 INSERT INTO `mob_spawn_points` VALUES (17391621,2,'Orcish_Bowshooter','Orcish Bowshooter',1,3.625,-9.252,-378.358,31);
 INSERT INTO `mob_spawn_points` VALUES (17391622,2,'Orcish_Footsoldier','Orcish Footsoldier',2,-16.358,-4.915,-383.09,250);
 INSERT INTO `mob_spawn_points` VALUES (17391623,2,'Orcish_Gladiator','Orcish Gladiator',3,3.74,-9.302,-378.126,37);
--- INSERT INTO `mob_spawn_points` VALUES (17391624,2,'Orcish_Trooper','Orcish Trooper',4,-17.486,-4.65,-382.491,63);
+INSERT INTO `mob_spawn_points` VALUES (17391624,2,'Orcish_Trooper','Orcish Trooper',4,-17.486,-4.65,-382.491,63);
 -- INSERT INTO `mob_spawn_points` VALUES (17391625,0,'Orcish_Bowshooter','Orcish Bowshooter',1,-29.122,-1.231,-334.652,215);
 INSERT INTO `mob_spawn_points` VALUES (17391626,0,'Orcish_Footsoldier','Orcish Footsoldier',2,-38.894,-0.7,-331.111,189);
 INSERT INTO `mob_spawn_points` VALUES (17391627,0,'Orcish_Gladiator','Orcish Gladiator',3,-22.422,-2.093,-298.238,231);
@@ -54294,13 +54294,13 @@ INSERT INTO `mob_spawn_points` VALUES (17391636,0,'Orcish_Trooper','Orcish Troop
 INSERT INTO `mob_spawn_points` VALUES (17391637,4,'Orcish_Veteran','Orcish Veteran',5,-5.67,-0.998,-299,213);
 INSERT INTO `mob_spawn_points` VALUES (17391638,4,'Orcish_Predator','Orcish Predator',6,11.891,-0.982,-313.199,247);
 INSERT INTO `mob_spawn_points` VALUES (17391639,4,'Orcish_Zerker','Orcish Zerker',7,-11.548,-1.14,-327.863,44);
--- INSERT INTO `mob_spawn_points` VALUES (17391640,4,'Orcish_Warchief','Orcish Warchief',8,9.901,-0.997,-303.03,218);
+INSERT INTO `mob_spawn_points` VALUES (17391640,4,'Orcish_Warchief','Orcish Warchief',8,9.901,-0.997,-303.03,218);
 INSERT INTO `mob_spawn_points` VALUES (17391641,5,'Orcish_Veteran','Orcish Veteran',5,-9.894,-1.008,-263.598,122);
--- INSERT INTO `mob_spawn_points` VALUES (17391642,5,'Orcish_Predator','Orcish Predator',6,-4.859,-0.981,-291.185,226);
+INSERT INTO `mob_spawn_points` VALUES (17391642,5,'Orcish_Predator','Orcish Predator',6,-4.859,-0.981,-291.185,226);
 INSERT INTO `mob_spawn_points` VALUES (17391643,5,'Orcish_Zerker','Orcish Zerker',7,45.214,-0.892,-273.878,67);
 INSERT INTO `mob_spawn_points` VALUES (17391644,5,'Orcish_Warchief','Orcish Warchief',8,14.339,-0.676,-288.125,4);
 INSERT INTO `mob_spawn_points` VALUES (17391645,6,'Orcish_Veteran','Orcish Veteran',5,-2.461,-0.621,-288.688,99);
--- INSERT INTO `mob_spawn_points` VALUES (17391646,6,'Orcish_Predator','Orcish Predator',6,-9.166,-0.871,-285.93,173);
+INSERT INTO `mob_spawn_points` VALUES (17391646,6,'Orcish_Predator','Orcish Predator',6,-9.166,-0.871,-285.93,173);
 INSERT INTO `mob_spawn_points` VALUES (17391647,6,'Orcish_Zerker','Orcish Zerker',7,4.553,-0.679,-271.649,125);
 INSERT INTO `mob_spawn_points` VALUES (17391648,6,'Orcish_Warchief','Orcish Warchief',8,2.387,-0.627,-279.345,216);
 INSERT INTO `mob_spawn_points` VALUES (17391649,7,'Orcish_Veteran','Orcish Veteran',5,36.085,-1.113,-294.562,0);
@@ -54384,7 +54384,7 @@ INSERT INTO `mob_spawn_points` VALUES (17391726,0,'Orcish_Dreadnought','Orcish D
 INSERT INTO `mob_spawn_points` VALUES (17391727,0,'Orcish_Warlord','Orcish Warlord',13,98.262,-1.442,-136.775,171);
 INSERT INTO `mob_spawn_points` VALUES (17391728,25,'Orcish_Farkiller','Orcish Farkiller',9,81.612,-0.871,-95.945,198);
 INSERT INTO `mob_spawn_points` VALUES (17391729,25,'Orcish_Dreadnought','Orcish Dreadnought',10,80.109,-0.729,-96.661,6);
--- INSERT INTO `mob_spawn_points` VALUES (17391730,25,'Orcish_Champion','Orcish Champion',11,74.046,-0.602,-96.967,85);
+INSERT INTO `mob_spawn_points` VALUES (17391730,25,'Orcish_Champion','Orcish Champion',11,74.046,-0.602,-96.967,85);
 INSERT INTO `mob_spawn_points` VALUES (17391731,25,'Orcish_Dragoon','Orcish Dragoon',12,87.621,-0.746,-99.655,249);
 INSERT INTO `mob_spawn_points` VALUES (17391732,26,'Orcish_Farkiller','Orcish Farkiller',9,92.288,-0.902,-104.923,6);
 INSERT INTO `mob_spawn_points` VALUES (17391733,26,'Orcish_Dreadnought','Orcish Dreadnought',10,74.246,-0.85,-100.137,26);
@@ -54398,7 +54398,7 @@ INSERT INTO `mob_spawn_points` VALUES (17391740,28,'Orcish_Farkiller','Orcish Fa
 INSERT INTO `mob_spawn_points` VALUES (17391741,28,'Orcish_Dreadnought','Orcish Dreadnought',10,25.838,-5.137,-182.017,142);
 INSERT INTO `mob_spawn_points` VALUES (17391742,28,'Orcish_Champion','Orcish Champion',11,22.331,-4.146,-177.93,166);
 INSERT INTO `mob_spawn_points` VALUES (17391743,28,'Orcish_Dragoon','Orcish Dragoon',12,20.194,-3.432,-173.901,165);
--- INSERT INTO `mob_spawn_points` VALUES (17391744,29,'Orcish_Farkiller','Orcish Farkiller',9,220.928,-0.848,-197.194,148);
+INSERT INTO `mob_spawn_points` VALUES (17391744,29,'Orcish_Farkiller','Orcish Farkiller',9,220.928,-0.848,-197.194,148);
 INSERT INTO `mob_spawn_points` VALUES (17391745,29,'Orcish_Dreadnought','Orcish Dreadnought',10,222.498,-10.007,-248.089,95);
 INSERT INTO `mob_spawn_points` VALUES (17391746,29,'Orcish_Champion','Orcish Champion',11,218.908,-1.422,-205.988,62);
 INSERT INTO `mob_spawn_points` VALUES (17391747,29,'Orcish_Dragoon','Orcish Dragoon',12,224.811,-5.6,-224.852,74);
@@ -54410,7 +54410,7 @@ INSERT INTO `mob_spawn_points` VALUES (17391752,31,'Orcish_Farkiller','Orcish Fa
 INSERT INTO `mob_spawn_points` VALUES (17391753,31,'Orcish_Dreadnought','Orcish Dreadnought',10,213.123,-1.009,-177.874,84);
 INSERT INTO `mob_spawn_points` VALUES (17391754,31,'Orcish_Champion','Orcish Champion',11,232.275,-1.189,-173.161,223);
 INSERT INTO `mob_spawn_points` VALUES (17391755,31,'Orcish_Dragoon','Orcish Dragoon',12,225.83,-1.198,-178.593,60);
--- INSERT INTO `mob_spawn_points` VALUES (17391756,32,'Orcish_Farkiller','Orcish Farkiller',9,222.399,-1.19,-172.888,136);
+INSERT INTO `mob_spawn_points` VALUES (17391756,32,'Orcish_Farkiller','Orcish Farkiller',9,222.399,-1.19,-172.888,136);
 INSERT INTO `mob_spawn_points` VALUES (17391757,32,'Orcish_Dreadnought','Orcish Dreadnought',10,219.006,-0.924,-167.484,9);
 INSERT INTO `mob_spawn_points` VALUES (17391758,32,'Orcish_Champion','Orcish Champion',11,222.655,-0.905,-203.161,100);
 INSERT INTO `mob_spawn_points` VALUES (17391759,32,'Orcish_Dragoon','Orcish Dragoon',12,213.765,-1.5,-171.343,214);
@@ -54418,7 +54418,7 @@ INSERT INTO `mob_spawn_points` VALUES (17391759,32,'Orcish_Dragoon','Orcish Drag
 INSERT INTO `mob_spawn_points` VALUES (17391761,33,'Orcish_Farkiller','Orcish Farkiller',9,241.359,-0.677,-132.041,77);
 INSERT INTO `mob_spawn_points` VALUES (17391762,33,'Orcish_Dreadnought','Orcish Dreadnought',10,211.271,-1.007,-125.252,81);
 INSERT INTO `mob_spawn_points` VALUES (17391763,33,'Orcish_Champion','Orcish Champion',11,208.955,-0.824,-128.572,149);
--- INSERT INTO `mob_spawn_points` VALUES (17391764,33,'Orcish_Dragoon','Orcish Dragoon',12,217.739,-1.166,-123.409,233);
+INSERT INTO `mob_spawn_points` VALUES (17391764,33,'Orcish_Dragoon','Orcish Dragoon',12,217.739,-1.166,-123.409,233);
 INSERT INTO `mob_spawn_points` VALUES (17391765,0,'Orcish_Hexspinner','Orcish Hexspinner',15,217.819,-3.025,-102.635,76);
 INSERT INTO `mob_spawn_points` VALUES (17391766,0,'Orcish_Warlord','Orcish Warlord',13,230.037,-2.886,-95.685,8);
 -- INSERT INTO `mob_spawn_points` VALUES (17391767,0,'Orcish_Protector','Orcish Protector',14,259.298,-1.634,-99.486,190);
