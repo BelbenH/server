@@ -10,20 +10,21 @@ local entity = {}
 entity.onTrigger = function(player, npc)
     local stock =
     {
-        { xi.item.FACEGUARD,              1508, },
-        { xi.item.HEADGEAR,               2013, },
-        { xi.item.SCALE_MAIL,             2319, },
-        { xi.item.DOUBLET,                2854, },
-        { xi.item.SCALE_FINGER_GAUNTLETS, 1237, },
-        { xi.item.GLOVES,                 1575, },
-        { xi.item.SCALE_CUISSES,          1861, },
-        { xi.item.BRAIS,                  2194, },
-        { xi.item.SCALE_GREAVES,          1128, },
-        { xi.item.GAITERS,                1466, },
+        { xi.item.LAUAN_SHIELD,                 124, 3, },
+        { xi.item.MAPLE_SHIELD,                 629, 3, },
+        { xi.item.ASPIS,                        945, 3, },
+        { xi.item.ETHER_TANK,                  6040, 3, },
+        { xi.item.POTION_TANK,                 2926, 3, },
+        { xi.item.APPLE_AU_LAIT_TANK,          3880, 3, },
+        { xi.item.RABBIT_MANTLE,                220, 3, },
+        { xi.item.CAPE,                         425, 3, },
+        { xi.item.BLOOD_STONE,                  125, 3, },
+        { xi.item.LEATHER_BELT,                 425, 3, },
+        { xi.item.HEKO_OBI,                     495, 3, },
     }
 
     player:showText(npc, ID.text.CARAUTIA_SHOP_DIALOG)
-    xi.shop.general(player, stock)
+    xi.shop.nation(player, stock, xi.nation.SANDORIA)
 end
 
 return entity

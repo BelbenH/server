@@ -116,19 +116,7 @@ xi.shop.curio =
 --     where place is what place the nation must be in for item to be stocked
 -- nation is a xi.nation ID from scripts/enum/nation.lua
 xi.shop.nation = function(player, stock, nation)
-    local rank     = GetNationRank(nation)
-    local newStock = {}
-    for _, stockItem in ipairs(stock) do
-        if
-            (stockItem[3] == 1 and player:getNation() == nation and rank == 1) or
-            (stockItem[3] == 2 and rank <= 2) or
-            (stockItem[3] == 3)
-        then
-            table.insert(newStock, { stockItem[1], stockItem[2] })
-        end
-    end
-
-    xi.shop.general(player, newStock, nation)
+    xi.shop.general(player, stock, nation) -- (Phalanx): Don't check for nation's conquest ranking
 end
 
 -- send outpost shop dialog to player
@@ -701,6 +689,136 @@ xi.shop.curioVendorMoogleStock =
         { xi.item.OLDTON_CHEST_KEY,      2500, xi.ki.RHAPSODY_IN_WHITE },
         { xi.item.NEWTON_COFFER_KEY,     5000, xi.ki.RHAPSODY_IN_UMBER },
         { xi.item.PSOXJA_CHEST_KEY,      2500, xi.ki.RHAPSODY_IN_WHITE },
+    },
+}
+
+-- Balancing all shops to sell at 5 times the cost of the npc price vs. the 10 times
+-- amount that's in place. Any specialty items will still be x 10 or more.
+xi.shop.phalanxShops =
+{
+    lowTierRanged = -- Used for starter city ranged weapon shops. (Levels: 1 to 11)
+    {
+        { xi.item.SHORTBOW,                       55, },
+        { xi.item.LONGBOW,                       511, },
+        { xi.item.SELF_BOW,                      557, },
+        { xi.item.LIGHT_CROSSBOW,                187, },
+        { xi.item.MUSKETOON,                     500, },
+        { xi.item.PEBBLE,                          3, },
+        { xi.item.BOMB_ARM,                      750, },
+        { xi.item.COARSE_BOOMERANG,             1200, }, -- x 10 specialty item.
+        { xi.item.DART,                           10, },
+        { xi.item.WOODEN_ARROW,                    5, },
+        { xi.item.BONE_ARROW,                      5, },
+        { xi.item.BONE_QUIVER,                   515, },
+        { xi.item.CROSSBOW_BOLT,                   5, },
+        { xi.item.BLIND_BOLT,                     25, },
+        { xi.item.BLIND_BOLT_QUIVER,            3000, },
+        { xi.item.BRONZE_BULLET,                  15, },
+        { xi.item.BRONZE_BULLET_POUCH,          1500, },
+        { xi.item.TIN_BULLET,                     25, },
+    },
+    
+    lowTierMelee = -- Used for starter city melee weapon shops. (Levels: 1 to 11)
+    {
+        { xi.item.CESTI,                         120, },
+        { xi.item.CAT_BAGHNAKHS,                 145, },
+        { xi.item.BRONZE_KNUCKLES,               305, },
+        { xi.item.BRASS_KNUCKLES,                900, },
+        { xi.item.BRASS_BAGHNAKHS,              1690, },
+        { xi.item.BRONZE_DAGGER,                 195, },
+        { xi.item.BRONZE_KNIFE,                  205, },
+        { xi.item.BLIND_DAGGER,                  500, },
+        { xi.item.BLIND_KNIFE,                   675, },
+        { xi.item.BRASS_DAGGER,                  930, },
+        { xi.item.BRONZE_SWORD,                  335, },
+        { xi.item.XIPHOS,                        840, },
+        { xi.item.SAPARA,                        990, },
+        { xi.item.SPATHA,                       1860, },
+        { xi.item.BEE_SPATHA,                   3525, },
+        { xi.item.RUSTY_GREATSWORD,              430, },
+        { xi.item.CLAYMORE,                     2720, },
+        { xi.item.BRONZE_AXE,                    395, },
+        { xi.item.BRASS_AXE,                    1560, },
+        { xi.item.BUTTERFLY_AXE,                 840, },
+        { xi.item.INFERNO_AXE,                  1745, },
+        { xi.item.BRONZE_ZAGHNAL,                430, },
+        { xi.item.BRASS_ZAGHNAL,                 700, },
+        { xi.item.HARPOON,                       135, },
+        { xi.item.BRONZE_SPEAR,                 1100, },
+        { xi.item.KUNAI,                        1105, },
+        { xi.item.WAKIZASHI,                    1500, },
+        { xi.item.TACHI,                        1745, },
+        { xi.item.ASH_CLUB,                       90, },
+        { xi.item.MAPLE_WAND,                     85, },
+        { xi.item.BRONZE_MACE,                   235, },
+        { xi.item.BRONZE_HAMMER,                 425, },
+        { xi.item.BRONZE_ROD,                    125, },
+        { xi.item.WILLOW_WAND,                   370, },
+        { xi.item.ASH_STAFF,                      80, },
+        { xi.item.ASH_POLE,                      525, },
+        { xi.item.HOLLY_STAFF,                   635, },
+    },
+
+    lowTierMeleeArmor = -- Used for starter city melee armor sets. (Levels: 1 to 11)
+    {
+        { xi.item.NOMAD_CAP,                    77777, 3, },
+        { xi.item.BRONZE_CAP,                     210, 3, },
+        { xi.item.LEATHER_BANDANA,                260, 3, },
+        { xi.item.HACHIMAKI,                      825, 3, },
+        { xi.item.FACEGUARD,                     1508, 3, },
+        { xi.item.BRASS_CAP,                     1635, 3, },
+        { xi.item.VAGABONDS_TUNICA,              1180, 3, },
+        { xi.item.BRONZE_HARNESS,                 320, 3, },
+        { xi.item.LEATHER_VEST,                   698, 3, },
+        { xi.item.KENPOGI,                       1245, 3, },
+        { xi.item.SCALE_MAIL,                    2319, 3, },
+        { xi.item.BRASS_HARNESS,                 2485, 3, },
+        { xi.item.VAGABONDS_GLOVES,               680, 3, },
+        { xi.item.BRONZE_MITTENS,                 145, 3, },
+        { xi.item.LEATHER_GLOVES,                 374, 3, },
+        { xi.item.TEKKO,                          685, 3, },
+        { xi.item.SCALE_FINGER_GAUNTLETS,        1237, 3, },
+        { xi.item.BRASS_MITTENS,                 1365, 3, },
+        { xi.item.VAGABONDS_HOSE,                1100, 3, },
+        { xi.item.BRONZE_SUBLIGAR,                216, 3, },
+        { xi.item.LEATHER_TROUSERS,               557, 3, },
+        { xi.item.SITABAKI,                       995, 3, },
+        { xi.item.SCALE_CUISSES,                 1861, 3, },
+        { xi.item.BRASS_SUBLIGAR,                2000, 3, },
+        { xi.item.VAGABONDS_BOOTS,                610, 3, },
+        { xi.item.BRONZE_LEGGINGS,                133, 3, },
+        { xi.item.LEATHER_HIGHBOOTS,              349, 3, },
+        { xi.item.KYAHAN,                         635, 3, },
+        { xi.item.SCALE_GREAVES,                 1128, 3, },
+        { xi.item.BRASS_LEGGINGS,                1120, 3, },
+    },
+
+    lowTierEssentials = -- Used for starter city item (bag-sign) shop vendors. Potions, Ethers, Antidotes, etc...
+    {
+        { xi.item.FLASK_OF_EYE_DROPS,           1038, },
+        { xi.item.ANTIDOTE,                      158, },
+        { xi.item.FLASK_OF_ECHO_DROPS,           400, },
+        { xi.item.POTION,                        266, },
+        { xi.item.ETHER,                        1208, },
+        -- { xi.item.LIVING_KEY,                   2910, }, -- x 10 specialty item. ***ADD TO HIGHER TIER ESSENTIALS SHOP***
+        { xi.item.PICKAXE,                     15000, },
+        { xi.item.HATCHET,                     15000, },
+        { xi.item.SICKLE,                      15000, },
+        { xi.item.SET_OF_THIEFS_TOOLS,          1800, }, -- x 10 specialty item.
+    },
+
+    ninjaEssentials = -- Used to give players QoL access to basic Ninja tools. 
+    {
+        { xi.item.KUNAI,                        1105, },
+        { xi.item.SHURIKEN,                       50, },
+        { xi.item.SHIHEI,              	         101, },
+        { xi.item.SHINOBI_TABI,        	         101, },
+		{ xi.item.SANJAKU_TENUGUI,     	         101, },
+        { xi.item.SAIRUI_RAN,          	         101, },
+		{ xi.item.KAGINAWA,          	         101, },
+        { xi.item.JUSATSU,          	         101, },
+        { xi.item.KODOKU,              	         101, },
+        { xi.item.INOSHISHINOFUDA,               101, },
     },
 }
 
