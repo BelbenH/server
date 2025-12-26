@@ -146,14 +146,25 @@ WHERE mobid IN (16793800, 16793842);
 -- INSERT INTO `mob_groups` VALUES (49,7060,190,'Locus_Spartoi_Warrior',960,0,2125,311800,0,135,137,0);
 
 -- Horutoto Ruins
--- INSERT INTO `mob_groups` VALUES (7,6077,192,'Deathwatch_Beetle',330,0,670,0,0,79,82,0);
--- INSERT INTO `mob_groups` VALUES (8,6667,192,'Goblin_Flesher',330,0,1035,0,0,79,82,0);
--- INSERT INTO `mob_groups` VALUES (9,6663,192,'Goblin_Metallurgist',330,0,1035,0,0,78,82,0);
--- INSERT INTO `mob_groups` VALUES (10,6654,192,'Goblin_Lurcher',330,0,1170,0,0,78,84,0);
--- INSERT INTO `mob_groups` VALUES (11,6530,192,'Skinnymalinks',330,0,678,0,0,81,84,0);
--- INSERT INTO `mob_groups` VALUES (12,6535,192,'Skinnymajinx',330,0,769,0,0,81,84,0);
--- INSERT INTO `mob_groups` VALUES (13,6461,192,'Covin_Bat',330,0,461,0,0,81,83,0);
--- INSERT INTO `mob_groups` VALUES (14,6656,192,'Goblin_Trailblazer',330,0,1018,0,0,78,82,0);
+-- https://ffxiclopedia.fandom.com/wiki/Inner_Horutoto_Ruins?oldid=1086909
+UPDATE `mob_spawn_points` SET groupid = 29, mobname = 'Beady_Beetle', polutils_name = 'Beady Beetle'
+WHERE mobname = 'Deathwatch_Beetle';
+UPDATE `mob_spawn_points` SET groupid = 21, mobname = 'Battle_Bat', polutils_name = 'Battle Bat'
+WHERE mobname = 'Covin_Bat';
+UPDATE `mob_spawn_points` SET groupid = 2, mobname = 'Goblin_Thug', polutils_name = 'Goblin Thug'
+WHERE mobname = 'Goblin_Lurcher';
+UPDATE `mob_spawn_points` SET groupid = 2, mobname = 'Goblin_Thug', polutils_name = 'Goblin Thug'
+WHERE mobname = 'Goblin_Flesher';
+UPDATE `mob_spawn_points` SET groupid = 4, mobname = 'Goblin_Weaver', polutils_name = 'Goblin Weaver'
+WHERE mobname = 'Goblin_Trailblazer';
+UPDATE `mob_spawn_points` SET groupid = 4, mobname = 'Goblin_Weaver', polutils_name = 'Goblin Weaver'
+WHERE mobname = 'Goblin_Metallurgist';
+UPDATE `mob_spawn_points` SET groupid = 1, mobname = 'Battue_Bats', polutils_name = 'Battue Bats'
+WHERE mobname = 'Troika_Bats';
+UPDATE `mob_spawn_points` SET groupid = 5, mobname = 'Magicked_Bones', polutils_name = 'Magicked Bones'
+WHERE mobname = 'Skinnymalinks';
+UPDATE `mob_spawn_points` SET groupid = 28, mobname = 'Magicked_Bones', polutils_name = 'Magicked Bones'
+WHERE mobname = 'Skinnymajinx';
 
 -- Ordelle's Caves
 -- INSERT INTO `mob_groups` VALUES (18,5356,193,'Buds_Bunny',330,0,326,0,0,83,89,0);

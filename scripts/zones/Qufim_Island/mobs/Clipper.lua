@@ -11,3 +11,5 @@ entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 43, 2, xi.regime.type.FIELDS)
     xi.alphamob.spawnAlpha(mob, player)
 end
+
+return entity

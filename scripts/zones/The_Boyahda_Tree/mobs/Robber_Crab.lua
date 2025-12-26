@@ -17,3 +17,5 @@ entity.onMobDespawn = function(mob)
     local params = {}
     xi.mob.phOnDespawn(mob, ID.mob.AQUARIUS, 5, 1, params) -- can repop instantly
 end
+
+return entity

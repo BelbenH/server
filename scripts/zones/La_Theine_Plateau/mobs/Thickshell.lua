@@ -12,3 +12,5 @@ entity.onMobDeath = function(mob, player, optParams)
     xi.tutorial.onMobDeath(player)
     xi.alphamob.spawnAlpha(mob, player)
 end
+
+return entity
