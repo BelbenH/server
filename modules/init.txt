@@ -49,3 +49,4 @@ custom/sql/ip_update.sql
 # Era Modules
 era/sql/cop_level_restrictions.sql
 era/sql/era_mob_spawns.sql
+era/sql/remove_aptant_nms.sql

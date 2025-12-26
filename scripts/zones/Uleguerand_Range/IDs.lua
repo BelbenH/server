@@ -27,7 +27,7 @@ zones[xi.zone.ULEGUERAND_RANGE] =
     },
     mob =
     {
-        SKVADER     = GetFirstID('Skvader'),
+        -- SKVADER     = GetFirstID('Skvader'), -- Phalanx Removed
         MAGNOTAUR   = GetFirstID('Magnotaur'),
         BONNACON    = GetFirstID('Bonnacon'),
         JORMUNGAND  = GetFirstID('Jormungand'),

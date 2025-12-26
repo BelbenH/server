@@ -93,9 +93,4 @@ entity.onMobDeath = function(mob, player, optParams)
     player:addTitle(xi.title.SERKET_BREAKER)
 end
 
-entity.onMobDespawn = function(mob)
-    xi.mob.updateNMSpawnPoint(mob)
-    mob:setRespawnTime(math.random(75600, 86400)) -- 21 to 24 hours
-end
-
 return entity

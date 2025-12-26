@@ -32,8 +32,8 @@ zones[xi.zone.TORAIMARAI_CANAL] =
     },
     mob =
     {
-        CANAL_MOOCHER     = GetFirstID('Canal_Moocher'),
-        KONJAC            = GetFirstID('Konjac'),
+        -- CANAL_MOOCHER     = GetFirstID('Canal_Moocher'), -- Phalanx Removed
+        -- KONJAC            = GetFirstID('Konjac'), -- Phalanx Removed
         MAGIC_SLUDGE      = GetFirstID('Magic_Sludge'),
         HINGE_OILS_OFFSET = GetFirstID('Hinge_Oil'),
         MIMIC             = GetFirstID('Mimic'),

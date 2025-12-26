@@ -11,6 +11,9 @@ zoneObject.onInitialize = function(zone)
 
     -- A Chocobo Riding Game finish line
     zone:registerCylindricalTriggerArea(1, 218.533, 484.50, 20)
+
+    local pos = { x = -685, y = -32, z = -366 }
+    xi.customspawn.spawnQM(zone, pos, zones[xi.zone.ROLANBERRY_FIELDS].mob.SIMURGH)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

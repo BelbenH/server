@@ -26,7 +26,7 @@ zones[xi.zone.FORT_KARUGO_NARUGO_S] =
     {
         RATATOSKR                = GetFirstID('Ratatoskr'),
         KIRTIMUKHA               = GetFirstID('Kirtimukha'),
-        DEMOISELLE_DESOLEE       = GetFirstID('Demoiselle_Desolee'),
+        -- DEMOISELLE_DESOLEE       = GetFirstID('Demoiselle_Desolee'), -- Phalanx Removed
         TIGRESS_STRIKES_WAR_LYNX = GetFirstID('War_Lynx'),
     },
     npc =

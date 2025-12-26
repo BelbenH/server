@@ -12,6 +12,9 @@ zoneObject.onInitialize = function(zone)
 
     GetNPCByID(ID.npc.QM2 + math.random(0, 5)):setLocalVar('Quest[2][70]Option', 1) -- Determine which QM is active today for THF AF2
     xi.voidwalker.zoneOnInit(zone)
+
+    local pos = { x = 278, y = 8, z = -280 }
+    xi.customspawn.spawnQM(zone, pos, zones[xi.zone.SAUROMUGUE_CHAMPAIGN].mob.ROC)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

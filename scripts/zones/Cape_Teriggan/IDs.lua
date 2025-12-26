@@ -51,7 +51,7 @@ zones[xi.zone.CAPE_TERIGGAN] =
         KREUTZET               = GetFirstID('Kreutzet'),
         AXESARION_THE_WANDERER = GetFirstID('Axesarion_the_Wanderer'),
         STOLAS                 = GetFirstID('Stolas'),
-        ZMEY_GORYNYCH          = GetFirstID('Zmey_Gorynych')
+        -- ZMEY_GORYNYCH          = GetFirstID('Zmey_Gorynych') -- Phalanx Removed
     },
     npc =
     {

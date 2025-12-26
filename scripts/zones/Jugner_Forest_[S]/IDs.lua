@@ -45,7 +45,7 @@ zones[xi.zone.JUGNER_FOREST_S] =
 
     mob =
     {
-        DRUMSKULL_ZOGDREGG    = GetFirstID('Drumskull_Zogdregg'),
+        -- DRUMSKULL_ZOGDREGG    = GetFirstID('Drumskull_Zogdregg'), -- Phalanx removed
         FINGERFILCHER_DRADZAD = GetFirstID('Fingerfilcher_Dradzad'),
         COBRACLAW_BUCHZVOTCH  = GetFirstID('Cobraclaw_Buchzvotch'),
         VULKODLAC             = GetFirstID('Vulkodlac'),
