@@ -13143,7 +13143,7 @@ INSERT INTO `mob_groups` VALUES (25,4567,192,'Nocuous_Weapon',0,32,1497,550,0,25
 INSERT INTO `mob_groups` VALUES (26,4319,192,'Wendigo_war',300,0,2638,0,0,25,28,0);
 INSERT INTO `mob_groups` VALUES (27,4320,192,'Wendigo_blm',300,0,2640,0,0,25,28,0);
 INSERT INTO `mob_groups` VALUES (28,7072,192,'Magicked_Bones_dagger',0,128,2867,0,0,3,8,0);
-
+INSERT INTO `mob_groups` VALUES (29,382,192,'Beady_Beetle',330,0,670,0,0,11,16,0);
 -- ------------------------------------------------------------
 -- Ordelles_Caves (Zone 193)
 -- ------------------------------------------------------------

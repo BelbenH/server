@@ -13,6 +13,10 @@ entity.phList =
     [ID.mob.MAGICKED_BONES - 1] = ID.mob.MAGICKED_BONES + 1, -- Dagger Magicked Bones
 }
 
+entity.onMobInitialize = function(mob)
+    mob:renameEntity('Magicked Bones', true)
+end
+
 entity.onMobRoam = function(mob)
     local totd = VanadielTOTD()
     if totd ~= xi.time.NIGHT and totd ~= xi.time.MIDNIGHT then
