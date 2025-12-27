@@ -280,7 +280,7 @@ INSERT INTO `item_weapon` VALUES (16633,'degen_+1',3,0,0,0,0,1,1,218,15,0);
 INSERT INTO `item_weapon` VALUES (16634,'broadsword_+1',3,0,0,0,0,2,1,227,20,0);
 INSERT INTO `item_weapon` VALUES (16635,'mythril_sword_+1',3,0,0,0,0,2,1,225,22,0);
 INSERT INTO `item_weapon` VALUES (16636,'tulwar_+1',3,0,0,0,0,2,1,230,24,0);
-INSERT INTO `item_weapon` VALUES (16637,'deathbringer',4,0,0,0,0,2,1,466,20,0);
+INSERT INTO `item_weapon` VALUES (16637,'deathbringer',4,0,0,0,0,2,1,466,24,0); -- (Phalanx) Default: 20
 INSERT INTO `item_weapon` VALUES (16638,'claymore_+1',4,0,0,0,0,2,1,431,23,0);
 INSERT INTO `item_weapon` VALUES (16639,'fine_claymore',4,0,0,0,0,2,1,431,47,0);
 INSERT INTO `item_weapon` VALUES (16640,'bronze_axe',5,0,0,0,0,2,1,276,8,0);

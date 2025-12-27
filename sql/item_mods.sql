@@ -306,7 +306,7 @@ INSERT INTO `item_mods` VALUES (10292,30,10);  -- MACC: 10
 INSERT INTO `item_mods` VALUES (10292,114,18); -- ENFEEBLE: 18
 
 -- Chocobo Shirt
-INSERT INTO `item_mods` VALUES (10293,1,2);   -- DEF: 2
+INSERT INTO `item_mods` VALUES (10293,1,4);   -- DEF: 4
 INSERT INTO `item_mods` VALUES (10293,156,1); -- APPRECIATE_GYSAHL_GREENS: 1
 
 -- Kokous Earring
@@ -8985,7 +8985,7 @@ INSERT INTO `item_mods` VALUES (11810,112,10); -- HEALING: 10
 INSERT INTO `item_mods` VALUES (11810,114,10); -- ENFEEBLE: 10
 
 -- Destrier Beret
-INSERT INTO `item_mods` VALUES (11811,1,7); -- DEF: 7
+INSERT INTO `item_mods` VALUES (11811,1,4); -- DEF: 4
 
 -- Charity Cap
 INSERT INTO `item_mods` VALUES (11812,1,1); -- DEF: 1
@@ -29958,7 +29958,7 @@ INSERT INTO `item_mods` VALUES (15925,29,2); -- MDEF: 2
 INSERT INTO `item_mods` VALUES (15925,30,2); -- MACC: 2
 
 -- Bronze Bandolier
-INSERT INTO `item_mods` VALUES (15926,26,5); -- RACC: 5
+INSERT INTO `item_mods` VALUES (15926,26,5); -- RACC: 5 (Phalanx) Default: 1
 
 -- Pinwheel Belt
 INSERT INTO `item_mods` VALUES (15927,1,2); -- DEF: 2
@@ -32584,8 +32584,8 @@ INSERT INTO `item_mods` VALUES (16629,9,2); -- DEX: 2
 INSERT INTO `item_mods` VALUES (16630,11,7); -- AGI: 7
 
 -- Deathbringer
-INSERT INTO `item_mods` VALUES (16637,1,-6); -- DEF: -6
-INSERT INTO `item_mods` VALUES (16637,23,8); -- ATT: 8
+INSERT INTO `item_mods` VALUES (16637,1,-10); -- DEF: -10 (Phalanx) Default: -6
+INSERT INTO `item_mods` VALUES (16637,23,8); -- ATT: 8 
 
 -- Nadziak
 INSERT INTO `item_mods` VALUES (16653,2,10); -- HP: 10

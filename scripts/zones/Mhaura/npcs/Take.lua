@@ -23,7 +23,7 @@ entity.onTrigger = function(player, npc)
     }
 
     player:printToPlayer('Can I interest you in a hot meal?', xi.msg.channel.SAY, npc:getName())
-    xi.shop.general(player, stock, xi.fameArea.WINDURST)
+    xi.shop.general(player, xi.shop.phalanxShops.lowTier2Foods, xi.fameArea.WINDURST)
 end
 
 return entity

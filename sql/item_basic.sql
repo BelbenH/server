@@ -597,7 +597,7 @@ INSERT INTO `item_basic` VALUES (601,0,'ointment_case','ointment_case',@GENERAL_
 INSERT INTO `item_basic` VALUES (602,0,'blessed_waterskin','blessed_waterskin',@GENERAL_TYPE,1,29760,@NONE,0);
 INSERT INTO `item_basic` VALUES (603,0,'skin_of_cheval_river_water','cheval_water',@GENERAL_TYPE,1,28736,@NONE,0);
 INSERT INTO `item_basic` VALUES (604,0,'vatical_fragment','vatical_fragment',@GENERAL_TYPE,1,61504,@NONE,0);
-INSERT INTO `item_basic` VALUES (605,0,'pickaxe','pickaxe',@GENERAL_TYPE,99,1028,@MISC,50);
+INSERT INTO `item_basic` VALUES (605,0,'pickaxe','pickaxe',@GENERAL_TYPE,1,1028,@MISC,50);
 INSERT INTO `item_basic` VALUES (606,0,'quadav_fetich_head','fetich_head',@GENERAL_TYPE,1,32772,@BEAST_MADE,200);
 INSERT INTO `item_basic` VALUES (607,0,'quadav_fetich_torso','fetich_torso',@GENERAL_TYPE,1,32772,@BEAST_MADE,200);
 INSERT INTO `item_basic` VALUES (608,0,'quadav_fetich_arms','fetich_arms',@GENERAL_TYPE,1,32772,@BEAST_MADE,200);
@@ -1012,8 +1012,8 @@ INSERT INTO `item_basic` VALUES (1016,0,'remi_shell','remi_shell',@GENERAL_TYPE,
 INSERT INTO `item_basic` VALUES (1017,0,'scorpion_stinger','scorpion_stinger',@GENERAL_TYPE,1,57428,@NONE,383);
 INSERT INTO `item_basic` VALUES (1018,0,'bulb_of_shaman_garlic','shaman_garlic',@GENERAL_TYPE,12,24660,@NONE,50);
 INSERT INTO `item_basic` VALUES (1019,0,'chunk_of_lufet_salt','lufet_salt',@GENERAL_TYPE,12,24660,@NONE,19);
-INSERT INTO `item_basic` VALUES (1020,0,'sickle','sickle',@GENERAL_TYPE,99,1028,@MISC,75);
-INSERT INTO `item_basic` VALUES (1021,0,'hatchet','hatchet',@GENERAL_TYPE,99,1028,@MISC,125);
+INSERT INTO `item_basic` VALUES (1020,0,'sickle','sickle',@GENERAL_TYPE,1,1028,@MISC,75);
+INSERT INTO `item_basic` VALUES (1021,0,'hatchet','hatchet',@GENERAL_TYPE,1,1028,@MISC,125);
 INSERT INTO `item_basic` VALUES (1022,0,'set_of_thiefs_tools','thiefs_tools',@GENERAL_TYPE,12,1028,@MISC,180);
 INSERT INTO `item_basic` VALUES (1023,0,'living_key','living_key',@GENERAL_TYPE,12,1028,@MISC,291);
 INSERT INTO `item_basic` VALUES (1024,0,'ghelsba_chest_key','gls._chest_key',@GENERAL_TYPE,1,62548,@NONE,0);
