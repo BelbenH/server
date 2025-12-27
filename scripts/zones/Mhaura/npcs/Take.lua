@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Mhaura
---  NPC: Runito-Monito
+--  NPC: Take
 -----------------------------------
 ---@type TNpcEntity
 local entity = {}
@@ -22,8 +22,8 @@ entity.onTrigger = function(player, npc)
         { xi.item.CROSSBOW_BOLT,      6 },
     }
 
-    player:printToPlayer('Looking for the meanest weapons around?! I got em! Take a look!', xi.msg.channel.SAY, npc:getName())
-    xi.shop.general(player, xi.shop.phalanxShops.lowTier2Weapons, xi.fameArea.WINDURST)
+    player:printToPlayer('Can I interest you in a hot meal?', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, stock, xi.fameArea.WINDURST)
 end
 
 return entity

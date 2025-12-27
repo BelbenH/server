@@ -21,8 +21,8 @@ entity.onTrigger = function(player, npc)
         { xi.item.SCROLL_OF_FRAZZLE,    28304 },
     }
 
-    player:showText(npc, zones[xi.zone.MHAURA].text.TYAPADOLIH_SHOP_DIALOG)
-    xi.shop.general(player, stock, xi.fameArea.WINDURST)
+    player:printToPlayer('I sell tools, not excuses. If you fail... that part is free.', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.ninjaEssentials, xi.fameArea.WINDURST)
 end
 
 return entity

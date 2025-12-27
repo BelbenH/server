@@ -14707,7 +14707,7 @@ INSERT INTO `item_basic` VALUES (17300,0,'platinum_bullet','platinum_bullet',@WE
 INSERT INTO `item_basic` VALUES (17301,0,'shuriken','shuriken',@WEAPON_TYPE,99,2052,@AMMUNITION,10);
 INSERT INTO `item_basic` VALUES (17302,0,'juji_shuriken','juji_shuriken',@WEAPON_TYPE,99,2052,@AMMUNITION,15);
 INSERT INTO `item_basic` VALUES (17303,0,'manji_shuriken','manji_shuriken',@WEAPON_TYPE,99,2052,@AMMUNITION,21);
-INSERT INTO `item_basic` VALUES (17304,0,'fuma_shuriken','fuma_shuriken',@WEAPON_TYPE,99,2052,@AMMUNITION,50);
+INSERT INTO `item_basic` VALUES (17304,0,'fuma_shuriken','fuma_shuriken',@WEAPON_TYPE,99,2052,@AMMUNITION,28);
 INSERT INTO `item_basic` VALUES (17305,0,'cluster_arm','cluster_arm',@WEAPON_TYPE,12,2052,@AMMUNITION,459);
 INSERT INTO `item_basic` VALUES (17306,0,'snoll_arm','snoll_arm',@WEAPON_TYPE,12,2052,@AMMUNITION,300);
 INSERT INTO `item_basic` VALUES (17307,0,'dart','dart',@WEAPON_TYPE,99,2052,@AMMUNITION,2);

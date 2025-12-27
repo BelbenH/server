@@ -25,8 +25,8 @@ entity.onTrigger = function(player, npc)
         { xi.item.BRASS_LEGGINGS,    1289 },
     }
 
-    player:showText(npc, zones[xi.zone.MHAURA].text.GRAINE_SHOP_DIALOG)
-    xi.shop.general(player, stock, xi.fameArea.WINDURST)
+    player:printToPlayer('I\'ve got armor for sell! Although... from the looks of you, I\'m not sure you could afford it.', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.lowTier2MeleeArmor, xi.fameArea.WINDURST)
 end
 
 return entity
