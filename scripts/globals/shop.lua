@@ -692,100 +692,101 @@ xi.shop.curioVendorMoogleStock =
     },
 }
 
--- Balancing all shops to sell at 5 times the cost of the npc price vs. the 10 times
--- amount that's in place. Any specialty items will still be x 10 or more.
+-- Balancing all shops to sell at 5 times the cost of the npc price vs. the 10 times amount that's in place.
+-- Any specialty items will still be x 10 or more.
+-- Any NM / Chest related items will be talked about and an amount will be given for balancing.
 xi.shop.phalanxShops =
 {
     lowTierRanged = -- Used for starter city ranged weapon shops. (Levels: 1 to 11)
     {
-        { xi.item.SHORTBOW,                       55, },
-        { xi.item.LONGBOW,                       511, },
-        { xi.item.SELF_BOW,                      557, },
-        { xi.item.LIGHT_CROSSBOW,                187, },
-        { xi.item.MUSKETOON,                     500, },
-        { xi.item.PEBBLE,                          3, },
-        { xi.item.BOMB_ARM,                      750, },
-        { xi.item.COARSE_BOOMERANG,             1200, }, -- x 10 specialty item.
-        { xi.item.DART,                           10, },
-        { xi.item.WOODEN_ARROW,                    5, },
-        { xi.item.BONE_ARROW,                      5, },
-        { xi.item.BONE_QUIVER,                   515, },
-        { xi.item.CROSSBOW_BOLT,                   5, },
-        { xi.item.BLIND_BOLT,                     25, },
-        { xi.item.BLIND_BOLT_QUIVER,            3000, },
-        { xi.item.BRONZE_BULLET,                  15, },
-        { xi.item.BRONZE_BULLET_POUCH,          1500, },
-        { xi.item.TIN_BULLET,                     25, },
+        { xi.item.SHORTBOW,                           55, },
+        { xi.item.LONGBOW,                           511, },
+        { xi.item.SELF_BOW,                          557, },
+        { xi.item.LIGHT_CROSSBOW,                    187, },
+        { xi.item.MUSKETOON,                         500, },
+        { xi.item.PEBBLE,                              3, },
+        { xi.item.BOMB_ARM,                          750, },
+        { xi.item.COARSE_BOOMERANG,                 1200, }, -- x 10 specialty item.
+        { xi.item.DART,                               10, },
+        { xi.item.WOODEN_ARROW,                        5, },
+        { xi.item.BONE_ARROW,                          5, },
+        { xi.item.BONE_QUIVER,                       515, },
+        { xi.item.CROSSBOW_BOLT,                       5, },
+        { xi.item.BLIND_BOLT,                         25, },
+        { xi.item.BLIND_BOLT_QUIVER,                3000, },
+        { xi.item.BRONZE_BULLET,                      15, },
+        { xi.item.BRONZE_BULLET_POUCH,              1500, },
+        { xi.item.TIN_BULLET,                         25, },
     },
     
     lowTierMelee = -- Used for starter city melee weapon shops. (Levels: 1 to 11)
     {
-        { xi.item.CESTI,                         120, },
-        { xi.item.CAT_BAGHNAKHS,                 145, },
-        { xi.item.BRONZE_KNUCKLES,               305, },
-        { xi.item.BRASS_KNUCKLES,                900, },
-        { xi.item.BRASS_BAGHNAKHS,              1690, },
-        { xi.item.BRONZE_DAGGER,                 195, },
-        { xi.item.BRONZE_KNIFE,                  205, },
-        { xi.item.BLIND_DAGGER,                  500, },
-        { xi.item.BLIND_KNIFE,                   675, },
-        { xi.item.BRASS_DAGGER,                  930, },
-        { xi.item.BRONZE_SWORD,                  335, },
-        { xi.item.XIPHOS,                        840, },
-        { xi.item.SAPARA,                        990, },
-        { xi.item.SPATHA,                       1860, },
-        { xi.item.BEE_SPATHA,                   3525, },
-        { xi.item.RUSTY_GREATSWORD,              430, },
-        { xi.item.CLAYMORE,                     2720, },
-        { xi.item.BRONZE_AXE,                    395, },
-        { xi.item.BRASS_AXE,                    1560, },
-        { xi.item.BUTTERFLY_AXE,                 840, },
-        { xi.item.INFERNO_AXE,                  1745, },
-        { xi.item.BRONZE_ZAGHNAL,                430, },
-        { xi.item.BRASS_ZAGHNAL,                 700, },
-        { xi.item.HARPOON,                       135, },
-        { xi.item.BRONZE_SPEAR,                 1100, },
-        { xi.item.KUNAI,                        1105, },
-        { xi.item.WAKIZASHI,                    1500, },
-        { xi.item.TACHI,                        1745, },
-        { xi.item.ASH_CLUB,                       90, },
-        { xi.item.MAPLE_WAND,                     85, },
-        { xi.item.BRONZE_MACE,                   235, },
-        { xi.item.BRONZE_HAMMER,                 425, },
-        { xi.item.BRONZE_ROD,                    125, },
-        { xi.item.WILLOW_WAND,                   370, },
-        { xi.item.ASH_STAFF,                      80, },
-        { xi.item.ASH_POLE,                      525, },
-        { xi.item.HOLLY_STAFF,                   635, },
+        { xi.item.CESTI,                             120, },
+        { xi.item.CAT_BAGHNAKHS,                     145, },
+        { xi.item.BRONZE_KNUCKLES,                   305, },
+        { xi.item.BRASS_KNUCKLES,                    900, },
+        { xi.item.BRASS_BAGHNAKHS,                  1690, },
+        { xi.item.BRONZE_DAGGER,                     195, },
+        { xi.item.BRONZE_KNIFE,                      205, },
+        { xi.item.BLIND_DAGGER,                      500, },
+        { xi.item.BLIND_KNIFE,                       675, },
+        { xi.item.BRASS_DAGGER,                      930, },
+        { xi.item.BRONZE_SWORD,                      335, },
+        { xi.item.XIPHOS,                            840, },
+        { xi.item.SAPARA,                            990, },
+        { xi.item.SPATHA,                           1860, },
+        { xi.item.BEE_SPATHA,                       3525, },
+        { xi.item.RUSTY_GREATSWORD,                  430, },
+        { xi.item.CLAYMORE,                         2720, },
+        { xi.item.BRONZE_AXE,                        395, },
+        { xi.item.BRASS_AXE,                        1560, },
+        { xi.item.BUTTERFLY_AXE,                     840, },
+        { xi.item.INFERNO_AXE,                      1745, },
+        { xi.item.BRONZE_ZAGHNAL,                    430, },
+        { xi.item.BRASS_ZAGHNAL,                     700, },
+        { xi.item.HARPOON,                           135, },
+        { xi.item.BRONZE_SPEAR,                     1100, },
+        { xi.item.KUNAI,                            1105, },
+        { xi.item.WAKIZASHI,                        1500, },
+        { xi.item.TACHI,                            1745, },
+        { xi.item.ASH_CLUB,                           90, },
+        { xi.item.MAPLE_WAND,                         85, },
+        { xi.item.BRONZE_MACE,                       235, },
+        { xi.item.BRONZE_HAMMER,                     425, },
+        { xi.item.BRONZE_ROD,                        125, },
+        { xi.item.WILLOW_WAND,                       370, },
+        { xi.item.ASH_STAFF,                          80, },
+        { xi.item.ASH_POLE,                          525, },
+        { xi.item.HOLLY_STAFF,                       635, },
     },
 
     lowTierMeleeArmor = -- Used for starter city melee armor sets. (Levels: 1 to 11)
     {
-        { xi.item.NOMAD_CAP,                    77777, 3, },
+        { xi.item.NOMAD_CAP,                    77777, 3, }, -- ?? specialty item.
         { xi.item.BRONZE_CAP,                     210, 3, },
         { xi.item.LEATHER_BANDANA,                260, 3, },
         { xi.item.HACHIMAKI,                      825, 3, },
         { xi.item.FACEGUARD,                     1508, 3, },
         { xi.item.BRASS_CAP,                     1635, 3, },
-        { xi.item.VAGABONDS_TUNICA,              1180, 3, },
+        { xi.item.VAGABONDS_TUNICA,              4180, 3, }, -- ?? specialty item.
         { xi.item.BRONZE_HARNESS,                 320, 3, },
         { xi.item.LEATHER_VEST,                   698, 3, },
         { xi.item.KENPOGI,                       1245, 3, },
         { xi.item.SCALE_MAIL,                    2319, 3, },
         { xi.item.BRASS_HARNESS,                 2485, 3, },
-        { xi.item.VAGABONDS_GLOVES,               680, 3, },
+        { xi.item.VAGABONDS_GLOVES,              3680, 3, }, -- ?? specialty item.
         { xi.item.BRONZE_MITTENS,                 145, 3, },
         { xi.item.LEATHER_GLOVES,                 374, 3, },
         { xi.item.TEKKO,                          685, 3, },
         { xi.item.SCALE_FINGER_GAUNTLETS,        1237, 3, },
         { xi.item.BRASS_MITTENS,                 1365, 3, },
-        { xi.item.VAGABONDS_HOSE,                1100, 3, },
+        { xi.item.VAGABONDS_HOSE,                4100, 3, }, -- ?? specialty item.
         { xi.item.BRONZE_SUBLIGAR,                216, 3, },
         { xi.item.LEATHER_TROUSERS,               557, 3, },
         { xi.item.SITABAKI,                       995, 3, },
         { xi.item.SCALE_CUISSES,                 1861, 3, },
         { xi.item.BRASS_SUBLIGAR,                2000, 3, },
-        { xi.item.VAGABONDS_BOOTS,                610, 3, },
+        { xi.item.VAGABONDS_BOOTS,               3610, 3, }, -- ?? specialty item.
         { xi.item.BRONZE_LEGGINGS,                133, 3, },
         { xi.item.LEATHER_HIGHBOOTS,              349, 3, },
         { xi.item.KYAHAN,                         635, 3, },
@@ -793,32 +794,176 @@ xi.shop.phalanxShops =
         { xi.item.BRASS_LEGGINGS,                1120, 3, },
     },
 
-    lowTierEssentials = -- Used for starter city item (bag-sign) shop vendors. Potions, Ethers, Antidotes, etc...
+    lowTier2MeleeArmor = -- Used for starter city melee armor sets. (Levels: 1 to 11)
     {
-        { xi.item.FLASK_OF_EYE_DROPS,           1038, },
-        { xi.item.ANTIDOTE,                      158, },
-        { xi.item.FLASK_OF_ECHO_DROPS,           400, },
-        { xi.item.POTION,                        266, },
-        { xi.item.ETHER,                        1208, },
-        -- { xi.item.LIVING_KEY,                   2910, }, -- x 10 specialty item. ***ADD TO HIGHER TIER ESSENTIALS SHOP***
-        { xi.item.PICKAXE,                     15000, },
-        { xi.item.HATCHET,                     15000, },
-        { xi.item.SICKLE,                      15000, },
-        { xi.item.SET_OF_THIEFS_TOOLS,          1800, }, -- x 10 specialty item.
+        { xi.item.ELM_SHIELD,                       1815, },
+        { xi.item.LANTERN_SHIELD,                  85843, }, -- x ?? specialty item.
+        { xi.item.MAHOGANY_SHIELD,                  4150, },
+        { xi.item.POETS_CIRCLET,                    2070, },
+        { xi.item.COTTON_HEADBAND,                  3820, }, -- x 10 specialty item.
+        { xi.item.SHELL_HAIRPIN,                    3750, },
+        { xi.item.BONE_MASK,                        3260, },
+        { xi.item.LIZARD_HELM,                       885, },
+        { xi.item.COTTON_HACHIMAKI,                 4160, },
+        { xi.item.GARRISON_SALLET,                200000, }, -- x ?? specialty item.
+        { xi.item.SILVER_HAIRPIN,                   1755, },
+        { xi.item.TRUMP_CROWN,                    153678, }, -- x ?? specialty item.
+        { xi.item.TRADERS_CHAPEAU,                  5480, }, -- x 10 specialty item.
+        { xi.item.BEETLE_MASK,                      6170, },
+        { xi.item.FOCUS_COLLAR,                     5690, }, -- x 10 specialty item.
+        { xi.item.FANG_NECKLACE,                    6360, }, -- x 10 specialty item.
+        { xi.item.BEETLE_GORGET,                    3890, },
+        { xi.item.LINEN_ROBE,                       3085, },
+        { xi.item.LIZARD_JERKIN,                    1225, },
+        { xi.item.COTTON_DOGI,                      2350, },
+        { xi.item.GARRISON_TUNICA,                200000, }, -- x ?? specialty item.
+        { xi.item.BLACK_TUNIC,                     16220, }, -- x 10 specialty item.
+        { xi.item.TRADERS_SAIO,                     7100, }, -- x 10 specialty item.
+        { xi.item.BEETLE_HARNESS,                   2280, },
+        { xi.item.LINEN_CUFFS,                      1745, },
+        { xi.item.GUERILLA_GLOVES,                 43992, }, -- x ?? specialty item.
+        { xi.item.BATTLE_GLOVES,                   67676, }, -- x ?? specialty item.
+        { xi.item.BONE_MITTENS,                     2720, },
+        { xi.item.SCENTLESS_ARMLETS,               41093, }, -- x ?? specialty item.
+        { xi.item.LIZARD_GLOVES,                     750, },
+        { xi.item.COTTON_TEKKO,                     3440, },
+        { xi.item.GARRISON_GLOVES,                200000, }, -- x ?? specialty item.
+        { xi.item.TRADERS_CUFFS,                    5880, }, -- x 10 specialty item.
+        { xi.item.BEETLE_MITTENS,                   1410, },
+        { xi.item.PLATE_BELT,                       2435, },
+        { xi.item.FRIARS_ROPE,                     30113, }, -- x ?? specialty item.
+        { xi.item.WARRIORS_BELT,                    3360, }, -- x 10 specialty item.
+        { xi.item.LIZARD_BELT,                      2195, },
+        { xi.item.MAGIC_BELT,                       2530, },
+        { xi.item.BARBARIANS_BELT,                  5060, }, -- x 10 specialty item.
+        -- { xi.item.SAMSONIAN_BELT,                  50199, }, -- x ?? specialty item. Doesn't give +3 STR bonus.
+        -- { xi.item.TOUGH_BELT,                      50199, }, -- x ?? specialty item. Doesn't give +3 VIT bonus.
+        -- { xi.item.RUNNERS_BELT,                    50199, }, -- x ?? specialty item. Doesn't give +3 DEX bonus.
+        { xi.item.ACROBATS_BELT,                   50199, }, -- x ?? specialty item. Working properly.
+        { xi.item.SILVER_OBI,                       6130, }, -- x 10 specialty item.
+        { xi.item.MOHBWA_SASH,                     26733, }, -- x ?? specialty item.
+        { xi.item.LINEN_SLOPS,                      2365, },
+        { xi.item.BONE_SUBLIGAR,                    1810, },
+        { xi.item.LIZARD_TROUSERS,                  1295, },
+        { xi.item.COTTON_SITABAKI,                  4975, },
+        { xi.item.BLACK_SLACKS,                     5625, },
+        { xi.item.TRADERS_SLOPS,                    6670, },
+        { xi.item.BEETLE_SUBLIGAR,                  2400, },
+        { xi.item.GARRISON_HOSE,                  200000, }, -- x ?? specialty item.
+        { xi.item.HOLLY_CLOGS,                      1625, },
+        { xi.item.LIGHT_SOLEAS,                    95433, }, -- x ?? specialty item.
+        { xi.item.BONE_LEGGINGS,                    2475, },
+        { xi.item.LIZARD_LEDELSENS,                 2865, },
+        { xi.item.COTTON_KYAHAN,                    3145, },
+        { xi.item.GARRISON_BOOTS,                 200000, }, -- x ?? specialty item.
+        { xi.item.TRADERS_PIGACHES,                 3370, }, -- x 10 specialty item.
+        { xi.item.BEETLE_LEGGINGS,                  6910, },
+        { xi.item.TRAVELERS_MANTLE,                75000, }, -- x ?? specialty item.
+        { xi.item.BESIEGER_MANTLE,                 94992, }, -- x ?? specialty item.
+        { xi.item.LIZARD_MANTLE,                     410, },
+        { xi.item.COTTON_CAPE,                      2450, },
+        { xi.item.DHALMEL_MANTLE,                   2760, }, -- Look over capes once more then start working on earrings.
+        -- { xi.item.TALISMAN_CAPE,                   50199, }, -- x ?? specialty item. Error: Unable to use item. Not working.
+        { xi.item.BREATH_MANTLE,                   50199, }, -- x ?? specialty item. 
+    },
+
+    lowTierEssentials = -- Used for starter city item (bag-sign) shop vendors. Potions, Ethers, HELM tools, etc...
+    {
+        { xi.item.FLASK_OF_EYE_DROPS,               1038, },
+        { xi.item.ANTIDOTE,                          158, },
+        { xi.item.FLASK_OF_ECHO_DROPS,               400, },
+        { xi.item.POTION,                            266, },
+        { xi.item.ETHER,                            1208, },
+        -- { xi.item.LIVING_KEY,                       2910, }, -- x 10 specialty item. ***ADD TO HIGHER TIER ESSENTIALS SHOP***
+        { xi.item.PICKAXE,                         15000, },
+        { xi.item.HATCHET,                         15000, },
+        { xi.item.SICKLE,                          15000, },
+        { xi.item.SET_OF_THIEFS_TOOLS,              1800, }, -- x 10 specialty item.
     },
 
     ninjaEssentials = -- Used to give players QoL access to basic Ninja tools. 
     {
-        { xi.item.KUNAI,                        1105, },
-        { xi.item.SHURIKEN,                       50, },
-        { xi.item.SHIHEI,              	         101, },
-        { xi.item.SHINOBI_TABI,        	         101, },
-		{ xi.item.SANJAKU_TENUGUI,     	         101, },
-        { xi.item.SAIRUI_RAN,          	         101, },
-		{ xi.item.KAGINAWA,          	         101, },
-        { xi.item.JUSATSU,          	         101, },
-        { xi.item.KODOKU,              	         101, },
-        { xi.item.INOSHISHINOFUDA,               101, },
+        { xi.item.SHURIKEN,                           50, },
+        { xi.item.JUJI_SHURIKEN,                      75, },
+        { xi.item.MANJI_SHURIKEN,                    105, },
+        { xi.item.FUMA_SHURIKEN,                     140, },
+        { xi.item.NOKIZARU_SHURIKEN,             4999999, },
+        { xi.item.SHIHEI,              	             101, },
+        { xi.item.SHINOBI_TABI,        	             101, },
+		{ xi.item.SANJAKU_TENUGUI,     	             101, },
+        { xi.item.SAIRUI_RAN,          	             101, },
+		{ xi.item.KAGINAWA,          	             101, },
+        { xi.item.JUSATSU,          	             101, },
+        { xi.item.KODOKU,              	             101, },
+        { xi.item.INOSHISHINOFUDA,                   101, },
+    },
+
+    lowTier2Weapons= -- Used for Tier 2 weapon shops in Mhaura / Selbina. (Levels: 12 to 21)
+    {
+        { xi.item.LIZARD_CESTI,                     1510, }, 
+        { xi.item.STRIKE_BAGHNAKHS,                 6900, }, -- x 10 specialty item.
+        { xi.item.SILENCE_BAGHNAKHS,                8450, }, -- x 10 specialty item.
+        { xi.item.METAL_KNUCKLES,                   4365, },
+        { xi.item.DAGGER,                           2030, },
+        { xi.item.SILENCE_DAGGER,                   4140, }, -- x 10 specialty item.
+        { xi.item.KNIFE,                            2425, },
+        { xi.item.BASELARD,                         3990, },
+        { xi.item.POISON_BASELARD,                  3200, }, -- x 10 specialty item.
+        { xi.item.POISON_DAGGER,                    9590, }, -- x 10 specialty item.
+        { xi.item.KUKRI,                            5715, },
+        { xi.item.POISON_KNIFE,                    12260, }, -- x 10 specialty item.
+        { xi.item.BILBO,                            3495, },
+        { xi.item.BRASS_XIPHOS,                     3915, },
+        { xi.item.SCIMITAR,                         4615, },
+        { xi.item.IRON_SWORD,                       6600, },
+        { xi.item.FIRE_SWORD,                      13460, }, -- x 10 specialty item.
+        { xi.item.LONGSWORD,                        6330, },
+        { xi.item.SMALL_SWORD,                     32900, }, -- x ?? specialty item.
+        { xi.item.DEGEN,                            8520, },
+        { xi.item.FLAME_CLAYMORE,                   9790, }, -- x 10 specialty item.
+        { xi.item.TWO_HANDED_SWORD,                11835, },
+        { xi.item.BONE_AXE,                         1025, },
+        { xi.item.BONE_PICK,                        1810, },
+        { xi.item.BATTLEAXE,                        6815, },
+        { xi.item.GREATAXE,                         4550, },
+        { xi.item.MOTH_AXE,                        39970, }, -- x ?? specialty item.
+        { xi.item.SERPETTE,                        26970, }, -- x ?? specialty item.
+        { xi.item.SCYTHE,                           8830, },
+        { xi.item.ZAGHNAL,                         10450, },
+        { xi.item.BRASS_SPEAR,                      2000, },
+        { xi.item.FUSCINA,                         31600, }, -- x ?? specialty item.
+        { xi.item.SHINOBI_GATANA,                   4665, },
+        { xi.item.MOKUTO,                           8940, },
+        { xi.item.SUZUME,                           5160, },
+        { xi.item.GANKO,                            5000, },
+        { xi.item.UCHIGATANA,                       3335, },
+        { xi.item.NODACHI,                          6770, },
+        { xi.item.GUNROMARU,                        4885, },
+        { xi.item.BRASS_HAMMER,                     2315, },
+        { xi.item.BRASS_ROD,                         690, },
+        { xi.item.CHESTNUT_CLUB,                    1450, },
+        { xi.item.YEW_WAND,                         1305, },
+        { xi.item.MACE,                             4040, },
+        { xi.item.BOUNCER_CLUB,                     9200, }, -- x 10 specialty item.
+        { xi.item.WARHAMMER,                        5465, },
+        { xi.item.EARTH_WAND,                      35802, }, -- ?? specialty item.
+        { xi.item.HOLLY_POLE,                       2115, },
+        { xi.item.MISERY_STAFF,                    46333, }, -- ?? specialty item.
+        { xi.item.HUNTERS_LONGBOW,                 69420, }, -- ?? specialty item.
+        { xi.item.POWER_BOW,                        4955, },
+        { xi.item.CROSSBOW,                         2355, },
+        { xi.item.BANDITS_GUN,                     10000, },
+        { xi.item.TANEGASHIMA,                      9330, },
+        { xi.item.BOOMERANG,                        1695, },
+        { xi.item.HAWKEYE,                            45, },
+        { xi.item.GRENADE,                           825, },
+        { xi.item.FLAME_BOOMERANG,                 24996, }, -- ?? specialty item.
+        { xi.item.IRON_ARROW,                          9, },
+        { xi.item.FANG_ARROW,                         24, },
+        { xi.item.BEETLE_ARROW,                       18, },
+        { xi.item.POISON_ARROW,                       14, },
+        { xi.item.ACID_BOLT,                          25, },
+        { xi.item.ACID_BOLT_QUIVER,                 3500, },
     },
 }
 

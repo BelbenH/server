@@ -20,9 +20,9 @@ return {
     ['Numi_Adaligo']     = { event = 50 },
     ['Phoochuchu']       = { event = 300 },
     ['Rycharde']         = { event = 69 },
-    ['Take']             = { event = 59 },
+    -- ['Take']             = { event = 59 }, -- Phalanx
     ['Tonasav']          = { event = 372 },
     ['Zexu']             = { event = 121 },
-    ['Zhon_Kihshimo']    = { event = 25 },
+    -- ['Zhon_Kihshimo']    = { event = 25 }, -- Phalanx
     ['Zurko-Bazurko']    = { event = 347 },
 }
