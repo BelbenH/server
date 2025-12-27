@@ -20,9 +20,9 @@ CREATE TABLE IF NOT EXISTS `item_latents` (
 -- INSERT INTO `item_latents` VALUES (itemID,modId,modValue,latentId,latentParam); -- Human readable latent & mod
 
 -- Chocobo Shirt
-INSERT INTO `item_latents` VALUES (10293,25,50,50,31);   -- Under Lv.31 : Acc.+50
-INSERT INTO `item_latents` VALUES (10293,26,50,50,31);   -- Under Lv.31 : Rng. Acc.+50
-INSERT INTO `item_latents` VALUES (10293,30,50,50,31);   -- Under Lv.31 : Mag. Acc.+50
+INSERT INTO `item_latents` VALUES (10293,25,5,50,16);   -- Under Lv.16 : Acc.+5
+INSERT INTO `item_latents` VALUES (10293,26,5,50,16);   -- Under Lv.16 : Rng. Acc.+5   
+INSERT INTO `item_latents` VALUES (10293,30,5,50,16);   -- Under Lv.16 : Mag. Acc.+5
 -- INSERT INTO `item_latents` VALUES (10293,??,-1,50,31); -- Initiate and below: Likelihood of synthesis material loss -1%
 
 -- Pyracmon Cap (10447)
@@ -210,12 +210,12 @@ INSERT INTO `item_latents` VALUES (11727,68,1,16,6);
 INSERT INTO `item_latents` VALUES (11752,346,1,9,16);    -- Diabolos perpetuation cost -1
 
 -- Destrier Beret
-INSERT INTO `item_latents` VALUES (11811,64,1,50,31);    -- Combat Skill Gain +1
-INSERT INTO `item_latents` VALUES (11811,65,1,50,31);    -- Magic Skill Gain +1
-INSERT INTO `item_latents` VALUES (11811,76,12,50,31);   -- MOVE_SPEED_GEAR_BONUS +12%
-INSERT INTO `item_latents` VALUES (11811,369,1,50,31);   -- Adds "Refresh"
-INSERT INTO `item_latents` VALUES (11811,370,1,50,31);   -- Adds "Regen"
-INSERT INTO `item_latents` VALUES (11811,456,1,50,31);   -- Adds "Reraise"
+INSERT INTO `item_latents` VALUES (11811,64,1,50,16);    -- Combat Skill Gain +1
+INSERT INTO `item_latents` VALUES (11811,65,1,50,16);    -- Magic Skill Gain +1
+INSERT INTO `item_latents` VALUES (11811,76,12,50,16);   -- MOVE_SPEED_GEAR_BONUS +12%
+INSERT INTO `item_latents` VALUES (11811,369,1,50,16);   -- Adds "Refresh"
+INSERT INTO `item_latents` VALUES (11811,370,1,50,16);   -- Adds "Regen"
+INSERT INTO `item_latents` VALUES (11811,456,1,50,16);   -- Adds "Reraise"
 
 -- Royal Squire's Shield +1/+2
 INSERT INTO `item_latents` VALUES (12366,2,7,53,0);      -- HP +7 in areas inside own nation's control

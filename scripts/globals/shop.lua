@@ -864,7 +864,22 @@ xi.shop.phalanxShops =
         { xi.item.COTTON_CAPE,                      2450, },
         { xi.item.DHALMEL_MANTLE,                   2760, }, -- Look over capes once more then start working on earrings.
         -- { xi.item.TALISMAN_CAPE,                   50199, }, -- x ?? specialty item. Error: Unable to use item. Not working.
-        { xi.item.BREATH_MANTLE,                   50199, }, -- x ?? specialty item. 
+        { xi.item.BREATH_MANTLE,                   50199, }, -- x ?? specialty item. Working properly.
+        { xi.item.SILVER_EARRING,                   1250, },
+        { xi.item.BONE_EARRING,                     1460, },
+        { xi.item.BEETLE_EARRING,                   2945, },
+        { xi.item.OPAL_RING,                       10000, },
+        { xi.item.SARDONYX_RING,                   10000, },
+        { xi.item.TOURMALINE_RING,                 10000, },
+        { xi.item.CLEAR_RING,                      10000, },
+        { xi.item.AMETHYST_RING,                   10000, },
+        { xi.item.LAPIS_LAZULI_RING,               10000, },
+        { xi.item.AMBER_RING,                      10000, },
+        { xi.item.ONYX_RING,                       10000, },
+        { xi.item.POISONA_RING,                    24893, }, -- x ?? specialty item.
+        { xi.item.BONE_RING,                        1510, },
+        { xi.item.BOMB_RING,                       74923, }, -- x ?? specialty item.
+        { xi.item.BEETLE_RING,                      2945, },
     },
 
     lowTierEssentials = -- Used for starter city item (bag-sign) shop vendors. Potions, Ethers, HELM tools, etc...
@@ -879,6 +894,22 @@ xi.shop.phalanxShops =
         { xi.item.HATCHET,                         15000, },
         { xi.item.SICKLE,                          15000, },
         { xi.item.SET_OF_THIEFS_TOOLS,              1800, }, -- x 10 specialty item.
+    },
+
+    lowTier2Foods = -- Used for Mhuara / Selbina food vendors. 
+    {
+        { xi.item.STRIP_OF_MEAT_JERKY,               150, },
+        { xi.item.DRIED_DATE,                        455, },
+        { xi.item.ARMY_BISCUIT,                      150, },
+        { xi.item.ROAST_MUSHROOM,                    430, },
+        { xi.item.SLICE_OF_ROAST_MUTTON,             900, },
+        { xi.item.BOWL_OF_PEA_SOUP,                 2800, }, -- x 10 specialty item. Can be used for cooking guild turn-in.
+        { xi.item.ROAST_CARP,                        645, },
+        { xi.item.BOTTLE_OF_APPLE_JUICE,             380, },
+        { xi.item.ROAST_PIPIRA,                     1175, },
+        { xi.item.JUG_OF_SOY_MILK,                   150, },
+        { xi.item.BAKED_POPOTO,                      410, },
+        { xi.item.JACK_O_LANTERN,                   2500, },
     },
 
     ninjaEssentials = -- Used to give players QoL access to basic Ninja tools. 
