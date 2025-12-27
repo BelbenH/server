@@ -484,26 +484,26 @@ xi.shop.generalGuildStock =
         { xi.item.STEEL_NUGGET,                  800, xi.craftRank.JOURNEYMAN },
         { xi.item.DARKSTEEL_SHEET,             28000, xi.craftRank.JOURNEYMAN },
         { xi.item.CHUNK_OF_SWAMP_ORE,           5000, xi.craftRank.CRAFTSMAN  },
-        -- kits 															     -- Return on Craft (Profits:) In progress...
-		{ xi.item.SMITHING_KIT_5,         	     104, xi.craftRank.AMATEUR    }, -- 
-        { xi.item.SMITHING_KIT_10,         	     184, xi.craftRank.AMATEUR    }, -- 
-        { xi.item.SMITHING_KIT_15,               354, xi.craftRank.RECRUIT    }, -- 
-        { xi.item.SMITHING_KIT_20,               360, xi.craftRank.RECRUIT    }, -- 
-        { xi.item.SMITHING_KIT_25,               672, xi.craftRank.INITIATE   }, -- 
-        { xi.item.SMITHING_KIT_30,              3360, xi.craftRank.INITIATE   }, -- 
-        { xi.item.SMITHING_KIT_35,              1208, xi.craftRank.NOVICE     }, -- 
-        { xi.item.SMITHING_KIT_40,              1330, xi.craftRank.NOVICE     }, -- 
-        { xi.item.SMITHING_KIT_45,              3360, xi.craftRank.APPRENTICE }, -- 
-        { xi.item.SMITHING_KIT_50,              2560, xi.craftRank.APPRENTICE }, -- 
-		{ xi.item.SMITHING_KIT_55,              7200, xi.craftRank.JOURNEYMAN }, -- 
-		{ xi.item.SMITHING_KIT_60,              1570, xi.craftRank.JOURNEYMAN }, -- 
-		{ xi.item.SMITHING_KIT_65,              7766, xi.craftRank.CRAFTSMAN  }, -- 
-        { xi.item.SMITHING_KIT_70,             15790, xi.craftRank.CRAFTSMAN  }, -- 
-        { xi.item.SMITHING_KIT_76,              2500, xi.craftRank.ARTISAN    }, -- 
-        { xi.item.SMITHING_KIT_80,              4132, xi.craftRank.ARTISAN    }, -- 
-        { xi.item.SMITHING_KIT_84,              4304, xi.craftRank.ADEPT      }, -- 
-        { xi.item.SMITHING_KIT_91,              8688, xi.craftRank.ADEPT      }, -- 
-        -- { xi.item.SMITHING_KIT_94,             15526, xi.craftRank.VETERAN    }, -- 
+        -- kits 															     -- Return on Craft (Profits:) Test Complete! Prices ajusted.
+		{ xi.item.SMITHING_KIT_5,         	      82, xi.craftRank.AMATEUR    }, -- 41g     (Bronze Knife)
+        { xi.item.SMITHING_KIT_10,         	      94, xi.craftRank.AMATEUR    }, -- 47g     (Bronze Mace)
+        { xi.item.SMITHING_KIT_15,                90, xi.craftRank.RECRUIT    }, -- 45g     (Tin Ingot)
+        { xi.item.SMITHING_KIT_20,                72, xi.craftRank.RECRUIT    }, -- 36g     (Iron Arrowheads x6)
+        { xi.item.SMITHING_KIT_25,               744, xi.craftRank.INITIATE   }, -- 372g    (Spatha)
+        { xi.item.SMITHING_KIT_30,               640, xi.craftRank.INITIATE   }, -- 320g    (Tathlum/Tathla x8)
+        { xi.item.SMITHING_KIT_35,              1360, xi.craftRank.NOVICE     }, -- 680g    (Targe)
+        { xi.item.SMITHING_KIT_40,              2800, xi.craftRank.NOVICE     }, -- 1400g   (Steel Scales)
+        { xi.item.SMITHING_KIT_45,              1564, xi.craftRank.APPRENTICE }, -- 782g    (Mythril Rod)
+        { xi.item.SMITHING_KIT_50,              3060, xi.craftRank.APPRENTICE }, -- 1530g   (Kite Shield)
+		{ xi.item.SMITHING_KIT_55,              7080, xi.craftRank.JOURNEYMAN }, -- 3540g   (Sallet)
+		{ xi.item.SMITHING_KIT_60,              9906, xi.craftRank.JOURNEYMAN }, -- 4953g   (Darksteel Mace)
+		{ xi.item.SMITHING_KIT_65,             12146, xi.craftRank.CRAFTSMAN  }, -- 6073g   (Darksteel Kukri)
+        { xi.item.SMITHING_KIT_70,              4650, xi.craftRank.CRAFTSMAN  }, -- 2325g   (Hien)
+        { xi.item.SMITHING_KIT_76,              7516, xi.craftRank.ARTISAN    }, -- 3758g   (Keppu)
+        { xi.item.SMITHING_KIT_80,             20680, xi.craftRank.ARTISAN    }, -- 10340g  (Katzbalger)
+        { xi.item.SMITHING_KIT_84,             12870, xi.craftRank.ADEPT      }, -- 6345g   (Thick Mufflers)
+        { xi.item.SMITHING_KIT_91,              5780, xi.craftRank.ADEPT      }, -- 2890g   (Gully)
+        -- { xi.item.SMITHING_KIT_94,             15526, xi.craftRank.VETERAN    }, -- Broken kit. "That combination of materials cannot be synthesized."
     },
 }
 
