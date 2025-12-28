@@ -22,9 +22,9 @@ local familyData =
         skillID = 496,
         bonusSpawnChance = 0,
         name    = { 'Mandragore', 'Root Reaper', 'Sproutbane', 'Sapling Hex', 'Briar Imp', },
-        [tierOne]   = { dropList = 4503, groupID = 201, look = 268,                                          exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.REGAIN] = 100, }, },
-        [tierTwo]   = { dropList = 4504, groupID = 201, look = 2955,                                         exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.REGAIN] = 100, }, },
-        [tierThree] = { dropList = 4505, groupID = 201, look = '0x00008E0B00000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.REGAIN] = 100, }, },
+        [tierOne]   = { dropList = 4503, groupID = 201, look = 268,                                          mobMods = { [xi.mobMod.EXP_BONUS] = 150, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.REGEN] = 2,  [xi.mod.REGAIN] = 100, }, },
+        [tierTwo]   = { dropList = 4504, groupID = 201, look = 2955,                                         mobMods = { [xi.mobMod.EXP_BONUS] = 400, [xi.mobMod.GIL_MIN] = 1000, [xi.mobMod.GIL_MAX] = 2500, }, mods = { [xi.mod.REGEN] = 5,  [xi.mod.REGAIN] = 150, }, },
+        [tierThree] = { dropList = 4505, groupID = 201, look = '0x00008E0B00000000000000000000000000000000', mobMods = { [xi.mobMod.EXP_BONUS] = 650, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.REGEN] = 25, [xi.mod.REGAIN] = 200, }, },
     },
 
     [xi.mobSuperFamily.CRAB] =
@@ -159,13 +159,14 @@ end
 
 xi.alphamob.calculateStats = function(mob, levelData)
     -- Add mods if any
-    mob:addMod(xi.mod.EVA,           levelData.mods[xi.mod.EVA]           or 0)
-    mob:addMod(xi.mod.ACC,           levelData.mods[xi.mod.ACC]           or 0)
-    mob:addMod(xi.mod.DEF,           levelData.mods[xi.mod.DEF]           or 0)
-    mob:addMod(xi.mod.MEVA,          levelData.mods[xi.mod.MEVA]          or 0)
-    mob:addMod(xi.mod.MDEF,          levelData.mods[xi.mod.MDEF]          or 0)
-    mob:addMod(xi.mod.ATTP,          levelData.mods[xi.mod.ATTP]          or 0)
-    mob:addMod(xi.mod.DOUBLE_ATTACK, levelData.mods[xi.mod.DOUBLE_ATTACK] or 0)
+    mob:addMod(xi.mod.EVA,           levelData.mods[xi.mod.EVA]          or 0)
+    mob:addMod(xi.mod.ACC,           levelData.mods[xi.mod.ACC]          or 0)
+    mob:addMod(xi.mod.DEF,           levelData.mods[xi.mod.DEF]          or 0)
+    mob:addMod(xi.mod.MEVA,          levelData.mods[xi.mod.MEVA]         or 0)
+    mob:addMod(xi.mod.MDEF,          levelData.mods[xi.mod.MDEF]         or 0)
+    mob:addMod(xi.mod.ATTP,          levelData.mods[xi.mod.ATTP]         or 0)
+    mob:addMod(xi.mod.REGEN,         levelData.mods[xi.mod.REGEN]        or 0)
+    mob:addMod(xi.mod.DOUBLE_ATTACK, levelData.mod[xi.mod.DOUBLE_ATTACK] or 0)
 
     -- Add mob mods if any
     mob:addMobMod(xi.mobMod.WEAPON_BONUS, levelData.mobMods[xi.mobMod.WEAPON_BONUS] or 0)
