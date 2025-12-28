@@ -63,6 +63,7 @@ local amikiriSpawnPoints =
 
 entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 768, 2, xi.regime.type.GROUNDS)
+    xi.alphamob.spawnAlpha(mob, player)
 end
 
 entity.onMobDespawn = function(mob)

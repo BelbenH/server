@@ -13841,9 +13841,11 @@ INSERT INTO `mob_groups` VALUES (4,7071,210,'Garrison_50',0,128,0,0,0,45,50,1);
 INSERT INTO `mob_groups` VALUES (5,7071,210,'Garrison_75',0,128,0,0,0,70,75,1);
 INSERT INTO `mob_groups` VALUES (100,7071,210,'[XISP]Chocobo',0,128,0,0,0,99,99,0);
 -- Alpha Mobs -- VALUES (UniqueID, NM(Mob_pool_ID, Keep the rest the same.))
-INSERT INTO `mob_groups` VALUES (200,2125,210,'[XISP]RabbitAlpha',0,128,0,0,0,1,75,0);
-INSERT INTO `mob_groups` VALUES (201,5546,210,'[XISP]MandragoraAlpha',0,128,0,0,0,1,75,0);
-INSERT INTO `mob_groups` VALUES (202,206,210,'[XISP]CrabAlpha',0,128,0,0,0,1,75,0);
+INSERT INTO `mob_groups` VALUES (200,2125,210,'[XISP]RabbitAlpha',0,128,0,0,0,1,85,0);
+INSERT INTO `mob_groups` VALUES (201,5546,210,'[XISP]MandragoraAlpha',0,128,0,0,0,1,85,0);
+INSERT INTO `mob_groups` VALUES (202,206,210,'[XISP]CrabAlpha',0,128,0,0,0,1,85,0);
+INSERT INTO `mob_groups` VALUES (203,5862,210,'[XISP]ScorpionAlpha',0,128,0,0,0,1,85,0);
+INSERT INTO `mob_groups` VALUES (204,3376,210,'[XISP]GreaterBirdAlpha',0,128,0,0,0,1,85,0);
 -- ------------------------------------------------------------
 -- Cloister_of_Tides (Zone 211)
 -- ------------------------------------------------------------
