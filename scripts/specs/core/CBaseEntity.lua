@@ -1249,6 +1249,11 @@ end
 function CBaseEntity:setLook(look)
 end
 
+---@param lookStr string
+---@return nil
+function CBaseEntity:setLookString(lookStr)
+end
+
 ---@nodiscard
 ---@return integer
 function CBaseEntity:getCostume()

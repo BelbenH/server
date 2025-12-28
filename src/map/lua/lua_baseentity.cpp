@@ -5780,6 +5780,25 @@ void CLuaBaseEntity::setLook(const sol::table& look)
 }
 
 /************************************************************************
+ *  Function: setLookString()
+ *  Purpose : Updates the look of an equipped NPC
+ *  Example : trust:setLookString('0x0009800018301800380123090')
+ *  Note    : Only for dynamic trusts
+ ************************************************************************/
+void CLuaBaseEntity::setLookString(const std::string& lookStr)
+{
+    if (m_PBaseEntity->objtype == TYPE_TRUST)
+    {
+        m_PBaseEntity->look = stringToLook(lookStr);
+        m_PBaseEntity->updatemask |= UPDATE_LOOK;
+    }
+    else
+    {
+        return;
+    }
+}
+
+/************************************************************************
  *  Function: getCostume()
  *  Purpose : Returns the PC's appearance
  *  Example : player:getCostume()
@@ -19650,6 +19669,7 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("getModelId", CLuaBaseEntity::getModelId);
     SOL_REGISTER("setModelId", CLuaBaseEntity::setModelId);
     SOL_REGISTER("setLook", CLuaBaseEntity::setLook);
+    SOL_REGISTER("setLookString", CLuaBaseEntity::setLookString);
     SOL_REGISTER("getCostume", CLuaBaseEntity::getCostume);
     SOL_REGISTER("setCostume", CLuaBaseEntity::setCostume);
     SOL_REGISTER("getCostume2", CLuaBaseEntity::getCostume2);
