@@ -25,8 +25,14 @@ WHERE mobid IN (16793800, 16793842);
 
 -- Gusgen Mines (Needs perfect revision)
 -- https://ffxiclopedia.fandom.com/wiki/Gusgen_Mines?oldid=1271411
--- INSERT INTO `mob_groups` VALUES (23,6532,196,'Accursed_Soldier',300,0,678,0,0,85,89,0);
--- INSERT INTO `mob_groups` VALUES (24,6537,196,'Accursed_Sorcerer',300,0,769,0,0,85,89,0);
+UPDATE `mob_spawn_points` SET groupid = 22, mobname = 'Wight', polutils_name = 'Wight'
+WHERE mobname = 'Accursed_Soldier';
+UPDATE `mob_spawn_points` SET groupid = 45, mobname = 'Wight', polutils_name = 'Wight'
+WHERE mobname = 'Accursed_Sorcerer';
+UPDATE `mob_spawn_points` SET groupid = 20, mobname = 'Sadfly', polutils_name = 'Sadfly'
+WHERE mobname = 'Madfly';
+UPDATE `mob_spawn_points` SET groupid = 16, mobname = 'Ore_Eater', polutils_name = 'Ore Eater'
+WHERE mobname = 'Rockmill';
 
 -- Dangruf Wadi (Needs perfect revision)
 -- https://ffxiclopedia.fandom.com/wiki/Dangruf_Wadi?oldid=822577
@@ -43,73 +49,23 @@ WHERE mobid IN (16793800, 16793842);
 -- INSERT INTO `mob_groups` VALUES (29,6660,191,'Goblin_Bladesmith',330,0,1026,0,0,86,91,0);
 -- INSERT INTO `mob_groups` VALUES (30,6665,191,'Goblin_Bushwhacker',330,0,1031,0,0,90,91,0);
 
--- Promyvion Dem
--- INSERT INTO `mob_groups` VALUES (2,2048,18,'Idle_Wanderer',960,0,1350,0,0,83,84,0);
-
--- Promyvion Holla
--- INSERT INTO `mob_groups` VALUES (3,2048,16,'Idle_Wanderer',960,0,1350,0,0,83,84,0);
-
--- Promyvion Mea
--- INSERT INTO `mob_groups` VALUES (3,2048,20,'Idle_Wanderer',960,0,1350,0,0,83,84,0);
-
--- Promyvion Vahzl
--- INSERT INTO `mob_groups` VALUES (7,2048,22,'Idle_Wanderer',960,0,1350,0,0,84,85,0);
-
 -- Bhaflau Thickets
--- INSERT INTO `mob_groups` VALUES (52,1802,52,'Locus_Colibri',330,0,1225,0,0,133,135,0);
--- INSERT INTO `mob_groups` VALUES (53,4355,52,'Locus_Wivre',330,0,2952,0,0,135,137,0);
-
--- Lufaise Meadows
--- INSERT INTO `mob_groups` VALUES (75,4692,24,'Abununnu',0,128,0,0,9999,105,106,0);
--- INSERT INTO `mob_groups` VALUES (76,4691,24,'Gloam_Servitor_mage',0,128,0,0,9999,101,102,0);
--- INSERT INTO `mob_groups` VALUES (77,4690,24,'Gloam_Servitor_melee',0,128,0,0,0,101,102,0);
-
--- Phomiuna Aqueducts
--- INSERT INTO `mob_groups` VALUES (44,4531,27,'Aqueduct_Spider',330,0,3006,0,0,84,85,0);
-
--- Sacrarium
--- INSERT INTO `mob_groups` VALUES (41,4531,28,'Aqueduct_Spider',330,0,3006,0,0,84,86,0);
+UPDATE `mob_spawn_points` SET groupid = 150, mobname = 'Greater_Colibri', polutils_name = 'Greater Colibri'
+WHERE mobname = 'Locus_Colibri';
+UPDATE `mob_spawn_points` SET groupid = 151, mobname = 'Wivre', polutils_name = 'Wivre'
+WHERE mobname = 'Locus_Wivre';
 
 -- Tememos
--- INSERT INTO `mob_groups` VALUES (122,6153,37,'Temenos_Aern_nin',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (123,6154,37,'Temenos_Aern_drg',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (124,6155,37,'Temenos_Aern_war',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (125,6156,37,'Temenos_Aern_blm',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (126,6157,37,'Temenos_Aern_brd',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (127,6158,37,'Temenos_Aern_mnk',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (128,6159,37,'Temenos_Aern_sam',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (129,6160,37,'Temenos_Aern_thf',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (130,6161,37,'Temenos_Aern_rng',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (131,6162,37,'Temenos_Aern_bst',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (132,6163,37,'Temenos_Aern_whm',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (133,6164,37,'Temenos_Aern_rdm',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (134,6165,37,'Temenos_Aern_smn',0,128,2861,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (135,6166,37,'Temenos_Aern_drk',0,128,2861,0,0,101,102,0);
 
 -- Appolyon
--- INSERT INTO `mob_groups` VALUES (82,6106,38,'Apollyon_Demon_blm',0,128,2865,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (83,6107,38,'Apollyon_Demon_pld',0,128,2865,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (84,6108,38,'Apollyon_Demon_drk',0,128,2865,0,0,101,102,0);
--- INSERT INTO `mob_groups` VALUES (85,6109,38,'Apollyon_Demon_rdm',0,128,2865,0,0,101,102,0);
-
--- Mount Zhayolm
--- INSERT INTO `mob_groups` VALUES (54,3465,61,'Sarameya',0,128,2162,50000,0,88,89,0);
--- INSERT INTO `mob_groups` VALUES (55,5191,61,'Vanasarvik',0,128,0,0,25000,99,99,0);
--- INSERT INTO `mob_groups` VALUES (56,6751,61,'Elders_Imp',0,128,0,0,0,99,99,0);
--- INSERT INTO `mob_groups` VALUES (57,6752,61,'Grand_Grenade',0,128,0,0,0,99,99,0);
--- INSERT INTO `mob_groups` VALUES (58,6753,61,'Sarama',0,128,0,0,0,99,99,0);
-
--- Mamook
--- INSERT INTO `mob_groups` VALUES (70,6756,65,'Predatory_Colibri',0,128,0,0,0,99,99,0);
-
--- Aydeewa Subterrane
--- INSERT INTO `mob_groups` VALUES (37,0,68,'Tumult_Curator',0,128,0,0,0,99,99,0);
--- INSERT INTO `mob_groups` VALUES (38,0,68,'Tumult_Lamp',0,128,0,0,0,99,99,0);
 
 -- The Boyhada Tree
--- INSERT INTO `mob_groups` VALUES (25,4578,153,'Mourning_Crawler',330,0,3007,0,0,103,105,0);
--- INSERT INTO `mob_groups` VALUES (26,4577,153,'Snaggletooth_Peapuk',330,0,2814,0,0,102,105,0);
--- INSERT INTO `mob_groups` VALUES (27,6369,153,'Viseclaw',330,0,3197,0,0,102,105,0);
+UPDATE `mob_spawn_points` SET groupid = 21, mobname = 'Steelshell', polutils_name = 'Steelshell'
+WHERE mobname = 'Viseclaw';
+UPDATE `mob_spawn_points` SET groupid = 22, mobname = 'Processionaire', polutils_name = 'Processionaire'
+WHERE mobname = 'Mourning_Crawler';
+UPDATE `mob_spawn_points` SET groupid = 23, mobname = 'Darter', polutils_name = 'Darter'
+WHERE mobname = 'Snaggletooth_Peapuk';
 
 -- Ranguemont Pass
 -- INSERT INTO `mob_groups` VALUES (20,6606,166,'Hovering_Oculus',330,0,3196,0,0,87,92,0);
@@ -130,10 +86,21 @@ WHERE mobid IN (16793800, 16793842);
 -- The Toromarai Canal
 -- INSERT INTO `mob_groups` VALUES (24,619,169,'Blackwater_Pugil',330,0,3204,0,0,96,98,0);
 -- INSERT INTO `mob_groups` VALUES (25,6366,169,'Plunderer_Crab',330,0,3200,0,0,95,98,0);
+-- INSERT INTO `mob_groups` VALUES (28,6426,169,'Deviling_Bats',330,0,3198,0,0,95,97,0);
+-- INSERT INTO `mob_groups` VALUES (29,6541,169,'Sodden_Bones',330,0,3203,0,0,95,98,0);
+-- INSERT INTO `mob_groups` VALUES (30,6534,169,'Drowned_Bones',330,0,3199,0,0,95,98,0);
+-- INSERT INTO `mob_groups` VALUES (31,6073,169,'Starborer',330,0,3108,0,0,95,97,0);
+-- INSERT INTO `mob_groups` VALUES (32,6335,169,'Rapier_Scorpion',330,0,3202,0,0,95,99,0);
+-- INSERT INTO `mob_groups` VALUES (35,6377,169,'Poroggo_Excavator',330,0,3201,0,0,97,99,0);
+-- INSERT INTO `mob_groups` VALUES (36,6378,169,'Flume_Toad',330,0,3205,0,0,94,96,0);
 
 -- Korroloka Tunnel
 -- INSERT INTO `mob_groups` VALUES (18,4816,173,'Lacerator',330,0,0,0,0,87,91,0);
 -- INSERT INTO `mob_groups` VALUES (19,6404,173,'Spool_Leech',330,0,79,0,0,87,91,0);
+UPDATE `mob_spawn_points` SET groupid = 13, mobname = 'Clipper', polutils_name = 'Clipper'
+WHERE mobname = 'Lacerator';
+UPDATE `mob_spawn_points` SET groupid = 6, mobname = 'Thread_Leech', polutils_name = 'Thread Leech'
+WHERE mobname = 'Spool_Leech';
 
 -- King Ranperre's Tomb
 -- INSERT INTO `mob_groups` VALUES (26,3946,190,'Locus_Tomb_Worm',330,0,428,293000,0,131,133,0);

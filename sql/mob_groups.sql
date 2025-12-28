@@ -2964,6 +2964,9 @@ INSERT INTO `mob_groups` VALUES (95,7164,52,'Qutrub_Wastrel',0,128,0,0,0,82,84,0
 INSERT INTO `mob_groups` VALUES (96,7165,52,'Expunger',0,128,0,0,0,82,84,0);
 INSERT INTO `mob_groups` VALUES (97,7166,52,'Medusa',0,128,0,0,0,85,85,0);
 INSERT INTO `mob_groups` VALUES (98,7188,52,'Chigoe_pet',0,128,466,0,0,71,73,0);
+-- Phalanx era mobs
+INSERT INTO `mob_groups` VALUES (150,2396,52,'Greater_Colibri',330,0,1509,0,0,81,82,0);
+INSERT INTO `mob_groups` VALUES (151,4355,52,'Wivre',330,0,2952,0,0,80,81,0);
 
 -- ------------------------------------------------------------
 -- Arrapago_Reef (Zone 54)
