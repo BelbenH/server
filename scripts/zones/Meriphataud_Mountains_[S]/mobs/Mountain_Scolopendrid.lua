@@ -9,6 +9,7 @@ local ID = zones[xi.zone.MERIPHATAUD_MOUNTAINS_S]
 local entity = {}
 
 entity.onMobDeath = function(mob, player, optParams)
+    xi.alphamob.spawnAlpha(mob, player)
 end
 
 entity.onMobDespawn = function(mob)
