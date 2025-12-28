@@ -62,7 +62,8 @@ quest.sections =
                 player:getMainJob() <= 15 and -- Only the "old" jobs may start this quest.
                 player:getMainLvl() >= 66 and
                 player:getLevelCap() == 70 and
-                xi.settings.main.MAX_LEVEL >= 75
+                xi.settings.main.MAX_LEVEL >= 75 and
+                false -- Temporarily remove limit break 70 from the game (Phalanx)
         end,
 
         [xi.zone.RULUDE_GARDENS] =
