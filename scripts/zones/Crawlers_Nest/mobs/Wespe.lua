@@ -8,6 +8,10 @@ local ID = zones[xi.zone.CRAWLERS_NEST]
 ---@type TMobEntity
 local entity = {}
 
+entity.onMobSpawn = function(mob)
+    mob:renameEntity('Wespe', true)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 691, 2, xi.regime.type.GROUNDS)
 end
