@@ -5,6 +5,10 @@
 ---@type TMobEntity
 local entity = {}
 
+entity.onMobSpawn = function(mob)
+    mob:renameEntity('Ancient Bat', true)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 698, 2, xi.regime.type.GROUNDS)
     xi.regime.checkRegime(player, mob, 699, 2, xi.regime.type.GROUNDS)

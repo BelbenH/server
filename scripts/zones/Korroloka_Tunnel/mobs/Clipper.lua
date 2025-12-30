@@ -8,6 +8,10 @@ local ID = zones[xi.zone.KORROLOKA_TUNNEL]
 ---@type TMobEntity
 local entity = {}
 
+entity.onMobSpawn = function(mob)
+    mob:renameEntity('Clipper', true)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 731, 1, xi.regime.type.GROUNDS)
     xi.alphamob.spawnAlpha(mob, player)

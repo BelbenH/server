@@ -1,16 +1,15 @@
 -----------------------------------
--- Area: Garlaige Citadel
---  Mob: Chamber Beetle
+-- Area: Gusgen Mines
+--  Mob: Sadfly
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
 
 entity.onMobSpawn = function(mob)
-    mob:renameEntity('Chamber Beetle', true)
+    mob:renameEntity('Sadfly', true)
 end
 
 entity.onMobDeath = function(mob, player, optParams)
-    xi.regime.checkRegime(player, mob, 707, 2, xi.regime.type.GROUNDS)
 end
 
 return entity
