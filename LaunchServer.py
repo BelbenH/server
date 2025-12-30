@@ -12,10 +12,10 @@ from datetime import datetime
 # =========================
 
 EXECUTABLES = [
-    r"E:.\xi_connect.exe",
-    r"E:.\xi_map.exe",
-    r"E:.\xi_search.exe",
-    r"E:.\xi_world.exe",
+    r".\xi_connect.exe",
+    r".\xi_map.exe",
+    r".\xi_search.exe",
+    r".\xi_world.exe",
 ]
 
 WATCH_INTERVAL = 1.0
