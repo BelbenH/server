@@ -42,6 +42,8 @@ renamer
 # Individual modules
 custom/commands/
 custom/lua/test_npcs_in_gm_home.lua
+# Custom IP Logger
+custom/sql/log_ips.sql
 
 # Update IP address for zones
 custom/sql/ip_update.sql
