@@ -11806,7 +11806,7 @@ INSERT INTO `mob_groups` VALUES (13,5849,166,'Gloom_Eye',0,32,3060,8600,0,73,74,
 INSERT INTO `mob_groups` VALUES (14,3838,166,'Taisai',960,0,2374,0,0,35,38,0);
 INSERT INTO `mob_groups` VALUES (15,3839,166,'Taisaijin',0,128,2375,0,0,60,60,0);
 INSERT INTO `mob_groups` VALUES (16,1537,166,'Giant_Scorpion',792,0,972,0,0,38,40,0);
-INSERT INTO `mob_groups` VALUES (17,374,166,'Bat_Eye',792,0,246,0,0,42,44,0);
+INSERT INTO `mob_groups` VALUES (17,374,166,'Bat_Eye',960,0,246,0,0,42,44,0);
 INSERT INTO `mob_groups` VALUES (18,1912,166,'Hecteyes',960,0,1288,0,0,31,34,0);
 INSERT INTO `mob_groups` VALUES (19,4574,166,'Mucoid_Mass',6000,0,3016,0,0,45,48,0);
 INSERT INTO `mob_groups` VALUES (20,6606,166,'Hovering_Oculus',330,0,3196,0,0,87,92,0);
@@ -11824,6 +11824,11 @@ INSERT INTO `mob_groups` VALUES (31,6883,166,'Hyakume',0,32,0,0,0,0,0,0);
 
 -- Curilla Unleashed
 INSERT INTO `mob_groups` VALUES (32,0,166,'Harnessed_Smilodon',0,128,0,0,0,0,0,0);
+-- Phalanx out of era mobs
+INSERT INTO `mob_groups` VALUES (100,1665,166,'Goblin_Furrier',960,0,1149,0,0,32,34,0);
+INSERT INTO `mob_groups` VALUES (101,1715,166,'Goblin_Smithy',960,0,1163,0,0,32,34,0);
+INSERT INTO `mob_groups` VALUES (102,1710,166,'Goblin_Shaman',960,0,1065,0,0,32,34,0);
+INSERT INTO `mob_groups` VALUES (103,1694,166,'Goblin_Pathfinder',960,0,1124,0,0,32,34,0);
 
 -- ------------------------------------------------------------
 -- Bostaunieux_Oubliette (Zone 167)
@@ -11860,7 +11865,6 @@ INSERT INTO `mob_groups` VALUES (26,6723,167,'Garbage_Gel',0,128,0,0,0,122,122,0
 
 -- Curilla Unleashed
 INSERT INTO `mob_groups` VALUES (27,0,167,'Trion',0,128,0,0,0,0,0,0);
-INSERT INTO `mob_groups` VALUES (28,7161,167,'Gespenst',300,0,950,0,0,68,70,0);
 
 -- ------------------------------------------------------------
 -- Chamber_of_Oracles (Zone 168)
@@ -11945,6 +11949,8 @@ INSERT INTO `mob_groups` VALUES (39,6540,169,'Doom_Soldier',960,0,685,0,0,65,67,
 INSERT INTO `mob_groups` VALUES (40,5757,169,'Brazen_Bones',28800,0,2868,20000,0,85,85,0);
 INSERT INTO `mob_groups` VALUES (41,3755,169,'Starmite',960,0,2325,0,0,65,67,0);
 INSERT INTO `mob_groups` VALUES (42,2664,169,'Mimic',0,128,1684,0,0,65,67,0);
+-- Phalanx era mobs
+INSERT INTO `mob_groups` VALUES (100,871,169,'Cutlass_Scorpion',960,0,3202,0,0,64,66,0);
 
 -- ------------------------------------------------------------
 -- Full_Moon_Fountain (Zone 170)
@@ -13072,6 +13078,12 @@ INSERT INTO `mob_groups` VALUES (47,6889,190,'Arcus_Blades',0,128,0,0,0,0,0,0);
 INSERT INTO `mob_groups` VALUES (48,7058,190,'Locus_Hati',960,0,1278,305000,0,136,137,0);
 INSERT INTO `mob_groups` VALUES (50,7059,190,'Locus_Spartoi_Sorcerer',960,0,2301,311800,0,135,137,0);
 INSERT INTO `mob_groups` VALUES (49,7060,190,'Locus_Spartoi_Warrior',960,0,2125,311800,0,135,137,0);
+-- Era Mobs
+INSERT INTO `mob_groups` VALUES (100,3946,190,'Tomb_Worm',660,0,428,0,0,58,60,0);
+INSERT INTO `mob_groups` VALUES (101,1044,190,'Dire_Bat',660,0,461,0,0,62,64,0);
+INSERT INTO `mob_groups` VALUES (102,871,190,'Cutlass_Scorpion',660,0,549,0,0,63,65,0);
+INSERT INTO `mob_groups` VALUES (103,6392,190,'Thousand_Eyes',660,0,942,0,0,60,62,0);
+INSERT INTO `mob_groups` VALUES (104,244,190,'Armet_Beetle',660,0,670,0,0,64,66,0);
 
 -- ------------------------------------------------------------
 -- Dangruf_Wadi (Zone 191)

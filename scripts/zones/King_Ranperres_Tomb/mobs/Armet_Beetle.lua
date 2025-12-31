@@ -1,12 +1,12 @@
 -----------------------------------
 -- Area: King Ranperres Tomb
---  Mob: Stone Eater
+--  Mob: Armet Beetle
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
 
-entity.onMobDeath = function(mob, player, optParams)
-    xi.regime.checkRegime(player, mob, 632, 1, xi.regime.type.GROUNDS)
+entity.onMobSpawn = function(mob)
+    mob:renameEntity('Armet Beetle', true)
 end
 
 return entity

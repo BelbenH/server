@@ -1,11 +1,11 @@
 -----------------------------------
---  Mob: Alpha Spawning Scorpion
+--  Mob: Phalanx out of era mob
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
 
 entity.onMobSpawn = function(mob)
-    mob:renameEntity('Cutlass_Scorp.', true)
+    mob:renameEntity('Scavenger Crab', true)
 end
 
 entity.onMobDeath = function(mob, player, optParams)

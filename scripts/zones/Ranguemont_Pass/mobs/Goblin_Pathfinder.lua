@@ -1,16 +1,12 @@
 -----------------------------------
 -- Area: Ranguemont Pass
---  Mob: Stirge
+--  Mob: OOE Goblins
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
 
 entity.onMobSpawn = function(mob)
-    mob:renameEntity('Stirge', true)
-end
-
-entity.onMobDeath = function(mob, player, optParams)
-    xi.regime.checkRegime(player, mob, 606, 1, xi.regime.type.GROUNDS)
+    mob:renameEntity('Bear Grylls', true)
 end
 
 return entity

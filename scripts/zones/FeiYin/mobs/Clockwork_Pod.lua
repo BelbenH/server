@@ -8,6 +8,10 @@ local ID = zones[xi.zone.FEIYIN]
 ---@type TMobEntity
 local entity = {}
 
+entity.onMobSpawn = function(mob)
+    mob:renameEntity('Clockwork Pod', true)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
 end
 

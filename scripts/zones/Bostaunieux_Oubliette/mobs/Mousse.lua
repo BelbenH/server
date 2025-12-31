@@ -8,6 +8,10 @@ local ID = zones[xi.zone.BOSTAUNIEUX_OUBLIETTE]
 ---@type TMobEntity
 local entity = {}
 
+entity.onMobSpawn = function(mob)
+    mob:renameEntity('Mousse', true)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
 end
 
