@@ -6,7 +6,7 @@
 local entity = {}
 
 entity.onMobDeath = function(mob, player, optParams)
-    xi.regime.checkRegime(player, mob, 617, 1, xi.regime.type.GROUNDS)
+    player:setCharVar('[XISP]rareMob1', 1) -- Phalanx (Custom rare mob hunting quest)
 end
 
 return entity

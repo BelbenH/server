@@ -14,13 +14,13 @@ UPDATE `mob_spawn_points` SET groupid = 40, mobname = 'Bight_Rarab', polutils_na
 WHERE mobid IN (16793803, 16793808, 16793806, 16793829, 16793831, 16793832, 16793846);
 UPDATE `mob_spawn_points` SET groupid = 41, mobname = 'Camelopard', polutils_name = 'Camelopard'
 WHERE mobid IN (16793812, 16793813, 16793816, 16793817, 16793834, 16793836, 16793837);
-UPDATE `mob_spawn_points`SET groupid = 42, mobname = 'Hobgoblin_Physician', polutils_name = 'Hobgoblin Physician'
+UPDATE `mob_spawn_points` SET groupid = 42, mobname = 'Hobgoblin_Physician', polutils_name = 'Hobgoblin Physician'
 WHERE mobid IN (16793818, 16793838, 16793843);
-UPDATE `mob_spawn_points`SET groupid = 43, mobname = 'Hobgoblin_Alastor', polutils_name = 'Hobgoblin Alastor'
+UPDATE `mob_spawn_points` SET groupid = 43, mobname = 'Hobgoblin_Alastor', polutils_name = 'Hobgoblin Alastor'
 WHERE mobid IN (16793821, 16793839, 16793840);
 UPDATE `mob_spawn_points` SET groupid = 44, mobname = 'Hypnos_Eft', polutils_name = 'Hypnos Eft'
 WHERE mobname = 'Locus_Ghost_Crab' OR mobname = 'Locus_Hypnos_Eft';
-UPDATE `mob_spawn_points`SET groupid = 45, mobname = 'Hobgoblin_Angler', polutils_name = 'Hobgoblin Angler'
+UPDATE `mob_spawn_points` SET groupid = 45, mobname = 'Hobgoblin_Angler', polutils_name = 'Hobgoblin Angler'
 WHERE mobid IN (16793800, 16793842);
 
 -- Gusgen Mines (Needs perfect revision)
@@ -64,31 +64,46 @@ UPDATE `mob_spawn_points` SET groupid = 23, mobname = 'Darter', polutils_name = 
 WHERE mobname = 'Snaggletooth_Peapuk';
 
 -- Ranguemont Pass
--- INSERT INTO `mob_groups` VALUES (20,6606,166,'Hovering_Oculus',330,0,3196,0,0,87,92,0);
--- INSERT INTO `mob_groups` VALUES (21,6459,166,'Bilesucker',330,0,461,0,0,87,92,0);
--- INSERT INTO `mob_groups` VALUES (22,6657,166,'Goblin_Hoodoo',330,0,1149,0,0,86,90,0);
--- INSERT INTO `mob_groups` VALUES (23,6662,166,'Goblin_Artificer',330,0,1163,0,0,88,90,0);
--- INSERT INTO `mob_groups` VALUES (24,6655,166,'Goblin_Tanner',330,0,1065,0,0,88,90,0);
--- INSERT INTO `mob_groups` VALUES (25,6668,166,'Goblin_Chaser',330,0,1124,0,0,88,90,0);
--- INSERT INTO `mob_groups` VALUES (26,1721,166,'Goblins_Bats',0,128,0,0,0,83,84,0);
+UPDATE `mob_spawn_points` SET groupid = 17, mobname = 'Bat_Eye', polutils_name = 'Bat Eye'
+WHERE mobname = 'Hovering_Oculus';
+UPDATE `mob_spawn_points` SET groupid = 12, mobname = 'Stirge', polutils_name = 'Stirge'
+WHERE mobname = 'Bilesucker';
+UPDATE `mob_spawn_points` SET groupid = 100, mobname = 'Goblin_Furrier', polutils_name = 'Goblin Furrier'
+WHERE mobname = 'Goblin_Hoodoo';
+UPDATE `mob_spawn_points` SET groupid = 101, mobname = 'Goblin_Smithy', polutils_name = 'Goblin Smithy'
+WHERE mobname = 'Goblin_Artificer';
+UPDATE `mob_spawn_points` SET groupid = 102, mobname = 'Goblin_Shaman', polutils_name = 'Goblin Shaman'
+WHERE mobname = 'Goblin_Tanner';
+UPDATE `mob_spawn_points` SET groupid = 103, mobname = 'Goblin_Pathfinder', polutils_name = 'Goblin Pathfinder'
+WHERE mobname = 'Goblin_Chaser';
+UPDATE `mob_groups` SET minLevel = 25, maxLevel = 27 WHERE name = 'Goblins_Bats' AND zoneid = 166;
 
 -- The Bostaunieux Obliette
--- INSERT INTO `mob_groups` VALUES (15,6475,167,'Blind_Bat',300,0,2165,0,0,94,99,0);
--- INSERT INTO `mob_groups` VALUES (16,6411,167,'Panna_Cotta',300,0,1972,0,0,95,96,0);
--- INSERT INTO `mob_groups` VALUES (17,6509,167,'Nachtmahr',300,0,2164,0,0,96,97,0);
--- INSERT INTO `mob_groups` VALUES (18,6527,167,'Dabilla',300,0,2878,0,0,94,97,0);
--- INSERT INTO `mob_groups` VALUES (19,6582,167,'Wurdalak',300,0,2882,0,0,97,99,0);
+UPDATE `mob_spawn_points` SET groupid = 6, mobname = 'Werebat', polutils_name = 'Werebat'
+WHERE mobname = 'Blind_Bat';
+UPDATE `mob_spawn_points` SET groupid = 10, mobname = 'Mousse', polutils_name = 'Mousse'
+WHERE mobname = 'Panna_Cotta';
+UPDATE `mob_spawn_points` SET groupid = 22, mobname = 'Gespenst', polutils_name = 'Gespenst'
+WHERE mobname = 'Nachtmahr';
+UPDATE `mob_spawn_points` SET groupid = 8, mobname = 'Garm', polutils_name = 'Garm'
+WHERE mobname = 'Dabilla';
+UPDATE `mob_groups` SET minLevel = 65, maxLevel = 68, dropid = 27, respawntime = 1080 WHERE name = 'Wurdalak'; -- Demon Abjucator droplist (Phalanx custom OOE mob)
 
 -- The Toromarai Canal
--- INSERT INTO `mob_groups` VALUES (24,619,169,'Blackwater_Pugil',330,0,3204,0,0,96,98,0);
--- INSERT INTO `mob_groups` VALUES (25,6366,169,'Plunderer_Crab',330,0,3200,0,0,95,98,0);
--- INSERT INTO `mob_groups` VALUES (28,6426,169,'Deviling_Bats',330,0,3198,0,0,95,97,0);
--- INSERT INTO `mob_groups` VALUES (29,6541,169,'Sodden_Bones',330,0,3203,0,0,95,98,0);
--- INSERT INTO `mob_groups` VALUES (30,6534,169,'Drowned_Bones',330,0,3199,0,0,95,98,0);
--- INSERT INTO `mob_groups` VALUES (31,6073,169,'Starborer',330,0,3108,0,0,95,97,0);
--- INSERT INTO `mob_groups` VALUES (32,6335,169,'Rapier_Scorpion',330,0,3202,0,0,95,99,0);
--- INSERT INTO `mob_groups` VALUES (35,6377,169,'Poroggo_Excavator',330,0,3201,0,0,97,99,0);
--- INSERT INTO `mob_groups` VALUES (36,6378,169,'Flume_Toad',330,0,3205,0,0,94,96,0);
+UPDATE `mob_spawn_points` SET groupid = 22, mobname = 'Stygian_Pugil', polutils_name = 'Stygian Pugil'
+WHERE mobname = 'Blackwater_Pugil';
+UPDATE `mob_spawn_points` SET groupid = 15, mobname = 'Scavenger_Crab', polutils_name = 'Scavenger Crab'
+WHERE mobname = 'Plunderer_Crab';
+UPDATE `mob_spawn_points` SET groupid = 33, mobname = 'Impish_Bats', polutils_name = 'Impish Bats'
+WHERE mobname = 'Deviling_Bats';
+UPDATE `mob_spawn_points` SET groupid = 16, mobname = 'Fleshcraver', polutils_name = 'Fleshcraver'
+WHERE mobname = 'Sodden_Bones';
+UPDATE `mob_spawn_points` SET groupid = 17, mobname = 'Mindcraver', polutils_name = 'Mindcraver'
+WHERE mobname = 'Drowned_Bones';
+UPDATE `mob_spawn_points` SET groupid = 41, mobname = 'Starmite', polutils_name = 'Starmite'
+WHERE mobname = 'Starborer';
+UPDATE `mob_spawn_points` SET groupid = 100, mobname = 'Cutlass_Scorpion', polutils_name = 'Cutlass Scorpion'
+WHERE mobname = 'Rapier_Scorpion';
 
 -- Korroloka Tunnel
 UPDATE `mob_spawn_points` SET groupid = 13, mobname = 'Clipper', polutils_name = 'Clipper'
@@ -97,14 +112,20 @@ UPDATE `mob_spawn_points` SET groupid = 6, mobname = 'Thread_Leech', polutils_na
 WHERE mobname = 'Spool_Leech';
 
 -- King Ranperre's Tomb
--- INSERT INTO `mob_groups` VALUES (26,3946,190,'Locus_Tomb_Worm',330,0,428,293000,0,131,133,0);
--- INSERT INTO `mob_groups` VALUES (27,6460,190,'Locus_Dire_Bat',330,0,461,300000,0,133,135,0);
--- INSERT INTO `mob_groups` VALUES (28,6801,190,'Locus_Cutlass_Scorpion',330,0,549,305000,0,135,137,0);
--- INSERT INTO `mob_groups` VALUES (29,6391,190,'Locus_Thousand_Eyes',300,0,2402,305
--- INSERT INTO `mob_groups` VALUES (30,1898,190,'Hati',960,0,1278,0,0,135,137,0);
--- INSERT INTO `mob_groups` VALUES (36,244,190,'Locus_Armet_Beetle',330,0,670,302500,0,134,136,0);
--- INSERT INTO `mob_groups` VALUES (50,7059,190,'Locus_Spartoi_Sorcerer',960,0,2301,311800,0,135,137,0);
--- INSERT INTO `mob_groups` VALUES (49,7060,190,'Locus_Spartoi_Warrior',960,0,2125,311800,0,135,137,0);
+UPDATE `mob_spawn_points` SET groupid = 100, mobname = 'Tomb_Worm', polutils_name = 'Tomb Worm'
+WHERE mobname = 'Locus_Tomb_Worm';
+UPDATE `mob_spawn_points` SET groupid = 101, mobname = 'Dire_Bat', polutils_name = 'Dire Bat'
+WHERE mobname = 'Locus_Dire_Bat';
+UPDATE `mob_spawn_points` SET groupid = 102, mobname = 'Cutlass_Scorpion', polutils_name = 'Cutlass Scorpion'
+WHERE mobname = 'Locus_Cutlass_Scorpion';
+UPDATE `mob_spawn_points` SET groupid = 103, mobname = 'Thousand_Eyes', polutils_name = 'Thousand Eyes'
+WHERE mobname = 'Locus_Thousand_Eyes';
+UPDATE `mob_spawn_points` SET groupid = 104, mobname = 'Armet_Beetle', polutils_name = 'Armet Beetle'
+WHERE mobname = 'Locus_Armet_Beetle';
+UPDATE `mob_spawn_points` SET groupid = 31, mobname = 'Spartoi_Warrior', polutils_name = 'Spartoi Warrior'
+WHERE mobname = 'Locus_Spartoi_Warrior';
+UPDATE `mob_spawn_points` SET groupid = 32, mobname = 'Spartoi_Sorcerer', polutils_name = 'Spartoi Sorcerer'
+WHERE mobname = 'Locus_Spartoi_Sorcerer';
 
 -- Horutoto Ruins
 -- https://ffxiclopedia.fandom.com/wiki/Inner_Horutoto_Ruins?oldid=1086909
@@ -133,7 +154,7 @@ WHERE mobname = 'Buds_Bunny';
 UPDATE `mob_spawn_points` SET groupid = 55, mobname = 'Poison_Leech', polutils_name = 'Poison Leech'
 WHERE mobname = 'Bilis_Leech';
 UPDATE `mob_spawn_points` SET groupid = 38, mobname = 'Slash_Pine', polutils_name = 'Slash Pine'
-WHERE mobname = 'Skinnymajinx';
+WHERE mobname = 'Swagger_Spruce';
 UPDATE `mob_spawn_points` SET groupid = 29, mobname = 'Goliath_Beetle', polutils_name = 'Goliath Beetle'
 WHERE mobname = 'Targe_Beetle';
 
@@ -151,7 +172,7 @@ WHERE mobname = 'Vespo';
 UPDATE `mob_spawn_points` SET groupid = 14, mobname = 'Hornfly', polutils_name = 'Hornfly'
 WHERE mobname = 'Dancing_Jewel';
 UPDATE `mob_spawn_points` SET groupid = 15, mobname = 'Exoray', polutils_name = 'Exoray'
-WHERE mobname = 'Exoray';
+WHERE mobname = 'Olid_Funguar';
 
 -- Maze of Shakrami
 UPDATE `mob_spawn_points` SET groupid = 17, mobname = 'Poison_Leech', polutils_name = 'Poison Leech'
@@ -170,15 +191,28 @@ UPDATE `mob_spawn_points` SET groupid = 26, mobname = 'Chamber_Beetle', polutils
 WHERE mobname = 'Warden_Beetle';
 
 -- Fei'yin
--- INSERT INTO `mob_groups` VALUES (16,6513,204,'Wekufe',330,0,2530,0,0,97,99,0);
--- INSERT INTO `mob_groups` VALUES (17,6598,204,'Sentient_Carafe',330,0,3191,0,0,95,99,0);
--- INSERT INTO `mob_groups` VALUES (18,6474,204,'Balayang',330,0,3190,0,0,95,99,0);
--- INSERT INTO `mob_groups` VALUES (40,6892,204,'Orientalis_Shadow',0,128,0,0,0,128,128,0);
--- INSERT INTO `mob_groups` VALUES (41,6893,204,'Borealis_Shadow',0,128,0,0,0,128,128,0);
--- INSERT INTO `mob_groups` VALUES (42,6894,204,'Australis_Shadow',0,128,0,0,0,128,128,0);
--- INSERT INTO `mob_groups` VALUES (43,6895,204,'Occidentalis_Shadow',0,128,0,0,0,128,128,0);
--- INSERT INTO `mob_groups` VALUES (44,6896,204,'Carousing_Celine',0,128,0,0,0,128,128,0);
--- INSERT INTO `mob_groups` VALUES (45,6889,204,'Arcus_Blades',0,128,0,0,0,125,125,0);
+UPDATE `mob_spawn_points` SET groupid = 12, mobname = 'Shadow', polutils_name = 'Shadow'
+WHERE mobid = 17612882;
+UPDATE `mob_spawn_points` SET groupid = 13, mobname = 'Shadow', polutils_name = 'Shadow'
+WHERE mobid IN (17612884, 17612902);
+UPDATE `mob_spawn_points` SET groupid = 14, mobname = 'Shadow', polutils_name = 'Shadow'
+WHERE mobid IN (17612905, 17612917);
+UPDATE `mob_spawn_points` SET groupid = 15, mobname = 'Shadow', polutils_name = 'Shadow'
+WHERE mobid IN (17612888, 17612914);
+UPDATE `mob_spawn_points` SET groupid = 13, mobname = 'Shadow', polutils_name = 'Shadow'
+WHERE mobid IN (17612927, 17612928);
+UPDATE `mob_spawn_points` SET groupid = 14, mobname = 'Shadow', polutils_name = 'Shadow'
+WHERE mobid IN (17612932, 17612933);
+UPDATE `mob_spawn_points` SET groupid = 15, mobname = 'Shadow', polutils_name = 'Shadow'
+WHERE mobid IN (17612939, 17612940);
+UPDATE `mob_spawn_points` SET groupid = 2, mobname = 'Revenant', polutils_name = 'Revenant'
+WHERE mobname = 'Wekufe';
+UPDATE `mob_spawn_points` SET groupid = 8, mobname = 'Clockwork_Pod', polutils_name = 'Clockwork Pod'
+WHERE mobname = 'Sentient_Carafe';
+UPDATE `mob_spawn_points` SET groupid = 4, mobname = 'Vampire_Bat', polutils_name = 'Vampire Bat'
+WHERE mobname = 'Balayang';
+UPDATE `mob_spawn_points` SET groupid = 12, mobname = 'Shadow', polutils_name = 'Shadow'
+WHERE mobid = 17612925;
 
 -- Labyrinth of Onzozo
 UPDATE `mob_spawn_points` SET pos_x = 28, pos_y = 5, pos_z = 290 WHERE mobid = 17649827; -- Wyvern

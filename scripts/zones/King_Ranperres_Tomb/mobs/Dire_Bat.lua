@@ -1,15 +1,16 @@
 -----------------------------------
---  Mob: Alpha Spawning Scorpion
+-- Area: King Ranperres Tomb
+--  Mob: Dire Bat
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
 
 entity.onMobSpawn = function(mob)
-    mob:renameEntity('Cutlass_Scorp.', true)
+    mob:renameEntity('Dire Bat', true)
 end
 
 entity.onMobDeath = function(mob, player, optParams)
-    xi.alphamob.spawnAlpha(mob, player)
+    xi.regime.checkRegime(player, mob, 631, 1, xi.regime.type.GROUNDS)
 end
 
 return entity

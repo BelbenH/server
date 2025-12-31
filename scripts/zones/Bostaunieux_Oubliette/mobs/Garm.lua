@@ -8,6 +8,10 @@ local ID = zones[xi.zone.BOSTAUNIEUX_OUBLIETTE]
 ---@type TMobEntity
 local entity = {}
 
+entity.onMobSpawn = function(mob)
+    mob:renameEntity('Garm', true)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 612, 1, xi.regime.type.GROUNDS)
 end
