@@ -243,20 +243,6 @@ xi.player.onGameIn = function(player, firstLogin, zoning)
     -- This assists with ensuring Abyssea visitant status is handled properly on logins
     player:setLocalVar('gameLogin', 0)
 
-    -- BENSIN (Make me look like a taru but sting like an elvaan.):
-    if player:getName() == "Bensin" then
-        -- We apply modifiers to match the Elvaan/Taru gap.
-        -- These numbers are examples; you can tune them to your liking.
-        player:addMod(xi.mod.STR, 12)  -- Elvaan STR boost
-        player:addMod(xi.mod.VIT, 8)   -- Elvaan VIT boost
-        player:addMod(xi.mod.MND, 10)  -- Elvaan MND boost
-        player:addMod(xi.mod.HP, 150)  -- Elvaan HP boost
-        
-        -- We reduce Taru-specific highs to match Elvaan lows
-        player:addMod(xi.mod.INT, -10) 
-        player:addMod(xi.mod.MP, -100)
-    end
-
     xi.xisp.onZone(player) -- XISP Change
 end
 
