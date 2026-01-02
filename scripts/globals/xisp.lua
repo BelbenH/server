@@ -35,9 +35,8 @@ xi.xisp.sendMenu = function(player, menuID)
 end
 
 xi.xisp.onZone = function(player)
-    -- Respawn Followers
     player:timer(200, function(playerArg)
-        xi.xispchocobo.spawnChocobo(playerArg)
+        xi.xispchocobo.despawnChocobo(playerArg)
     end)
 end
 

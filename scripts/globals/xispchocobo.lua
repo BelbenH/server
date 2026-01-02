@@ -64,6 +64,7 @@ local dialogue1 =
             end
 
             xi.xispchocobo.spawnChocobo(playerArg, playerArg:getZone())
+            npcUtil.giveItem(playerArg, xi.item.CHOCOBO_WHISTLE)
         end,
     },
     {
@@ -457,6 +458,12 @@ xi.xispchocobo.onTrainerTrigger = function(player, npc)
     if player:getCharVar('[XISP]hasEgg') == 1 then
         menu1.options = dialogue1
         xi.xisp.sendMenu(player, menu1)
+
+    elseif
+        player:getCharVar('[XISP]hasChocobo') == 1 and
+        not player:hasItem(xi.item.CHOCOBO_WHISTLE)
+    then
+        npcUtil.giveItem(player, xi.item.CHOCOBO_WHISTLE)
     end
 end
 
@@ -573,8 +580,11 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
 end
 
 xi.xispchocobo.despawnChocobo = function(player)
-    if player:getCharVar('[XISP]hasChocobo') == 1 then
+    local chocoVar = player:getCharVar('[XISP]hasChocobo')
+
+    if chocoVar and chocoVar == 1 then
         local choco = GetMobByID(player:getCharVar('[XISP]chocoID'))
+        player:setCharVar('[XISP]chocoboSpawned', 0)
 
         if choco and choco:isSpawned() then
             choco:setBehavior(bit.band(choco:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
@@ -585,6 +595,8 @@ end
 
 xi.xispchocobo.spawnChocobo = function(player)
     xi.xispchocobo.despawnChocobo(player) -- Always despawn when spawning a new one
+
+    player:setCharVar('[XISP]chocoboSpawned', 1)
 
     -- Don't spawn chocobo if player is mounted
     if player:hasStatusEffect(xi.effect.MOUNTED) then
