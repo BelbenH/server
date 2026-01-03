@@ -36,7 +36,12 @@ end
 
 xi.xisp.onZone = function(player)
     player:timer(200, function(playerArg)
-        xi.xispchocobo.despawnChocobo(playerArg)
+        -- Spawn if chick / teen by default
+        if playerArg:getCharVar('[XISP]chocoGrow') <= 19 then
+            xi.xispchocobo.spawnChocobo(playerArg)
+        else
+            xi.xispchocobo.despawnChocobo(playerArg)
+        end
     end)
 end
 
