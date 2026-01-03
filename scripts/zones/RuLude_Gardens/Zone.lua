@@ -9,6 +9,9 @@ zoneObject.onInitialize = function(zone)
 
     local pos = { x = -5.687, y = 9, z = -41.341, rot = 131 }
     xi.xispteleport.spawnFrog(zone, pos)
+
+    local wisemanPos = { x = -56.894, y = 12, z = -34.977, rot = 190 }
+    xi.augment.spawnWiseman(zone, wisemanPos)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)
