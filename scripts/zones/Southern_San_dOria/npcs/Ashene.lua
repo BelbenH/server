@@ -28,7 +28,8 @@ entity.onTrigger = function(player, npc)
         { xi.item.FLEURET,       15491, 1, },
     }
 
-    player:showText(npc, ID.text.ASH_THADI_ENE_SHOP_DIALOG)
+    player:printToPlayer('Welcome to Helbort\'s Blades!', xi.msg.channel.SAY, npc:getName())
+    player:printToPlayer('I sell steel meant for the hand, not the ego. Swing carefully.', xi.msg.channel.SAY, npc:getName())
     xi.shop.general(player, xi.shop.phalanxShops.lowTierMelee, xi.fameArea.SANDORIA)
 end
 

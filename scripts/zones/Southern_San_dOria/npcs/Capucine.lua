@@ -21,7 +21,7 @@ entity.onTrigger = function(player, npc)
         { xi.item.HOLLY_CLOGS,   1690, },
     }
 
-    player:showText(npc, ID.text.CAPUCINE_SHOP_DIALOG)
+    player:printToPlayer('Potions and helm tools only. Preparedness is not optional.', xi.msg.channel.SAY, npc:getName())
     xi.shop.general(player, xi.shop.phalanxShops.lowTierEssentials, xi.fameArea.SANDORIA)
 end
 

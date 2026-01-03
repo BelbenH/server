@@ -186,6 +186,7 @@ settings, default_settings = populate_settings()
 
 # These are the 'protected' files
 player_data = [
+    "account_ip_record.sql",
     "accounts.sql",
     "accounts_banned.sql",
     "accounts_totp.sql",

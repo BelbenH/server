@@ -6,6 +6,10 @@ local zoneObject = {}
 
 zoneObject.onInitialize = function(zone)
     zone:registerCuboidTriggerArea(1, 13, 0, 123.518, 28, 0, 173) -- Approaching Airship Docks
+
+    -- Phalanx Teleport Moogle
+    local pos = { x = 1, y = 0, z = 126.30, rot = 0 }
+    xi.phalanxTeleports.spawnNPC(zone, pos)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

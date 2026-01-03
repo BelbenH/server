@@ -19,8 +19,10 @@ entity.onTrigger = function(player, npc)
         { xi.item.SCROLL_OF_LIGHTNING_THRENODY, 1431, 3, },
     }
 
-    player:showText(npc, ID.text.LUSIANE_SHOP_DIALOG)
-    xi.shop.nation(player, stock, xi.nation.SANDORIA)
+    player:printToPlayer('Welcome, adventurer.', xi.msg.channel.SAY, npc:getName())
+    player:printToPlayer('This shop offers simple fishing tackle and equipment for those just beginning.', xi.msg.channel.SAY, npc:getName())
+    player:printToPlayer('Treat it well, and it will serve you.', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.lowTierTackleShop, xi.fameArea.SANDORIA)
 end
 
 return entity

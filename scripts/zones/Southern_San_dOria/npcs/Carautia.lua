@@ -29,8 +29,9 @@ entity.onTrigger = function(player, npc)
         { xi.item.GAITERS,                1466, 3, },
     }
 
-    player:showText(npc, ID.text.CARAUTIA_SHOP_DIALOG)
-    xi.shop.nation(player, stock, xi.nation.SANDORIA)
+    player:printToPlayer('Basic magic armor, taught by Master Nyelbert\'s principles, start here.', xi.msg.channel.SAY, npc:getName())
+    player:printToPlayer('If you\'re looking for higher tier armors, you must speak with Graine in Mhaura or Falgima in Selbina.', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.lowTierMageArmor, xi.fameArea.SANDORIA)
 end
 
 return entity

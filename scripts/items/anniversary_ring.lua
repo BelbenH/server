@@ -23,7 +23,7 @@ itemObject.onItemUse = function(target)
     local effect    = xi.effect.DEDICATION
     local power     = 100
     local duration  = 43200
-    local subpower  = 10000
+    local subpower  = 3000 -- Phalanx (Era values. Default: 10,000)
 
     xi.itemUtils.addItemExpEffect(target, effect, power, duration, subpower)
 end

@@ -8,6 +8,10 @@ local zoneObject = {}
 
 zoneObject.onInitialize = function(zone)
     xi.server.setExplorerMoogles(ID.npc.EXPLORER_MOOGLE)
+
+    -- Phalanx custom tele
+    local pos = { x = 116.440, y = 0, z = -8.460, rot = 160 } -- Correct Coordinates
+    xi.phalanxTeleports.spawnNPC(zone, pos)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

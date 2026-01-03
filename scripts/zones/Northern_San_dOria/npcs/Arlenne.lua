@@ -28,8 +28,8 @@ entity.onTrigger = function(player, npc)
         { xi.item.ZAGHNAL,         13041, 1, },
     }
 
-    player:showText(npc, ID.text.ARLENNE_SHOP_DIALOG)
-    xi.shop.nation(player, stock, xi.nation.SANDORIA)
+    player:printToPlayer('The Royal Armory issues these melee weapons for basic training and service. Strength without control is useless.', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.lowTierMelee, xi.fameArea.SANDORIA)
 end
 
 return entity

@@ -470,11 +470,13 @@ xi.shop.generalGuildStock =
         { xi.item.MANDREL,                        75, xi.craftRank.AMATEUR    },
         { xi.item.CHUNK_OF_COPPER_ORE,            12, xi.craftRank.AMATEUR    },
         { xi.item.BRONZE_NUGGET,                  70, xi.craftRank.AMATEUR    },
+        { xi.item.DARKSTEEL_INGOT,             23750, xi.craftRank.AMATEUR    }, -- (Phalanx) added for QoL (Added for QoL DRK AF feet quest.)
+        { xi.item.IRON_CHAIN,                   9327, xi.craftRank.AMATEUR    }, -- (Phalanx) added for QoL (Bonecraft ingredient test item.)
         { xi.item.CHUNK_OF_TIN_ORE,               60, xi.craftRank.RECRUIT    },
         { xi.item.BRONZE_SHEET,                  120, xi.craftRank.RECRUIT    },
         { xi.item.CHUNK_OF_IRON_ORE,             900, xi.craftRank.RECRUIT    },
         { xi.item.CHUNK_OF_KOPPARNICKEL_ORE,     800, xi.craftRank.INITIATE   },
-        { xi.item.IRON_NUGGET,                   500, xi.craftRank.INITIATE   },
+        { xi.item.IRON_NUGGET,                   500, xi.craftRank.INITIATE   }, 
         { xi.item.IRON_SHEET,                   6000, xi.craftRank.INITIATE   },
         { xi.item.STEEL_SHEET,                 10000, xi.craftRank.NOVICE     },
         { xi.item.STEEL_INGOT,                  6000, xi.craftRank.APPRENTICE },
@@ -692,11 +694,44 @@ xi.shop.curioVendorMoogleStock =
     },
 }
 
--- Balancing all shops to sell at 5 times the cost of the npc price vs. the 10 times amount that's in place.
+-- PHALANX SHOPS --
+-- Balancing all shops to sell at 5 times the cost of the npc price vs. the 10 times amount that's default.
 -- Any specialty items will still be x 10 or more.
--- Any NM / Chest related items will be talked about and an amount will be given for balancing.
+-- Any NM / Chest related items will be talked about and an amount will be given for balancing. (Will be overpriced!)
 xi.shop.phalanxShops =
 {
+    customArachagnonShop = -- Elvaan RSE merchant. Northern San d'Oria - (F-3)
+    {
+        { xi.item.ELVAAN_JERKIN,                     312, },
+        { xi.item.MAGNA_JERKIN,                   312000, }, -- x ?? specialty item. -- M
+        { xi.item.ELVAAN_BODICE,                     312, },
+        { xi.item.MAGNA_BODICE,                   312000, }, -- x ?? specialty item. -- F
+        { xi.item.ELVAAN_GLOVES,                     187, },
+        { xi.item.MAGNA_GAUNTLETS,                187000, }, -- x ?? specialty item. -- M
+        { xi.item.WOOD_GAUNTLETS,                 374000, }, -- x ?? specialty item. -- M
+        { xi.item.ELVAAN_GAUNTLETS,                  187, },
+        { xi.item.MAGNA_GLOVES,                   187000, }, -- x ?? specialty item. -- F
+        { xi.item.WOOD_GLOVES,                    374000, }, -- x ?? specialty item. -- F
+        { xi.item.ELVAAN_M_CHAUSSES,                 270, },
+        { xi.item.MAGNA_M_CHAUSSES,               270000, }, -- x ?? specialty item. -- M
+        { xi.item.ELVAAN_F_CHAUSSES,                 270, },
+        { xi.item.MAGNA_F_CHAUSSES,               270000, }, -- x ?? specialty item. -- F
+        { xi.item.ELVAAN_M_LEDELSENS,                187, },
+        { xi.item.MAGNA_M_LEDELSENS,              187000, }, -- x ?? specialty item. -- M
+        { xi.item.WOOD_M_LEDELSENS,               374000, }, -- x ?? specialty item. -- M
+        { xi.item.ELVAAN_F_LEDELSENS,                187, },
+        { xi.item.MAGNA_F_LEDELSENS,              187000, }, -- x ?? specialty item. -- F
+        { xi.item.WOOD_F_LEDELSENS,               374000, }, -- x ?? specialty item. -- F
+        { xi.item.OLIBANUM_SACHET,                450000, }, -- x ?? specialty item.
+        { xi.item.ATTAR_SACHET,                   450000, }, -- x ?? specialty item.
+        { xi.item.FOREST_BELT,                    450000, }, -- x ?? specialty item.
+        { xi.item.FOREST_STONE,                   450000, }, -- x ?? specialty item.
+        { xi.item.FOREST_ROPE,                    999999, }, -- x ?? specialty item.
+        { xi.item.FOREST_SASH,                    999999, }, -- x ?? specialty item.
+        { xi.item.DESAMILIONS_EARRING,            999999, }, -- x ?? specialty item.
+        { xi.item.MELNINAS_EARRING,               999999, }, -- x ?? specialty item.
+    },
+
     lowTierRanged = -- Used for starter city ranged weapon shops. (Levels: 1 to 11)
     {
         { xi.item.SHORTBOW,                           55, },
@@ -762,39 +797,74 @@ xi.shop.phalanxShops =
 
     lowTierMeleeArmor = -- Used for starter city melee armor sets. (Levels: 1 to 11)
     {
-        { xi.item.NOMAD_CAP,                    77777, 3, }, -- ?? specialty item.
-        { xi.item.BRONZE_CAP,                     210, 3, },
-        { xi.item.LEATHER_BANDANA,                260, 3, },
-        { xi.item.HACHIMAKI,                      825, 3, },
-        { xi.item.FACEGUARD,                     1508, 3, },
-        { xi.item.BRASS_CAP,                     1635, 3, },
-        { xi.item.VAGABONDS_TUNICA,              4180, 3, }, -- ?? specialty item.
-        { xi.item.BRONZE_HARNESS,                 320, 3, },
-        { xi.item.LEATHER_VEST,                   698, 3, },
-        { xi.item.KENPOGI,                       1245, 3, },
-        { xi.item.SCALE_MAIL,                    2319, 3, },
-        { xi.item.BRASS_HARNESS,                 2485, 3, },
-        { xi.item.VAGABONDS_GLOVES,              3680, 3, }, -- ?? specialty item.
-        { xi.item.BRONZE_MITTENS,                 145, 3, },
-        { xi.item.LEATHER_GLOVES,                 374, 3, },
-        { xi.item.TEKKO,                          685, 3, },
-        { xi.item.SCALE_FINGER_GAUNTLETS,        1237, 3, },
-        { xi.item.BRASS_MITTENS,                 1365, 3, },
-        { xi.item.VAGABONDS_HOSE,                4100, 3, }, -- ?? specialty item.
-        { xi.item.BRONZE_SUBLIGAR,                216, 3, },
-        { xi.item.LEATHER_TROUSERS,               557, 3, },
-        { xi.item.SITABAKI,                       995, 3, },
-        { xi.item.SCALE_CUISSES,                 1861, 3, },
-        { xi.item.BRASS_SUBLIGAR,                2000, 3, },
-        { xi.item.VAGABONDS_BOOTS,               3610, 3, }, -- ?? specialty item.
-        { xi.item.BRONZE_LEGGINGS,                133, 3, },
-        { xi.item.LEATHER_HIGHBOOTS,              349, 3, },
-        { xi.item.KYAHAN,                         635, 3, },
-        { xi.item.SCALE_GREAVES,                 1128, 3, },
-        { xi.item.BRASS_LEGGINGS,                1120, 3, },
+        { xi.item.NOMAD_CAP,                       77777, }, -- x ?? specialty item.
+        { xi.item.BRONZE_CAP,                        210, },
+        { xi.item.LEATHER_BANDANA,                   260, },
+        { xi.item.HACHIMAKI,                         825, },
+        { xi.item.FACEGUARD,                        1508, },
+        { xi.item.BRASS_CAP,                        1635, },
+        { xi.item.VAGABONDS_TUNICA,                 4180, }, -- x ?? specialty item.
+        { xi.item.BRONZE_HARNESS,                    320, },
+        { xi.item.LEATHER_VEST,                      698, },
+        { xi.item.KENPOGI,                          1245, },
+        { xi.item.SCALE_MAIL,                       2319, },
+        { xi.item.BRASS_HARNESS,                    2485, },
+        { xi.item.VAGABONDS_GLOVES,                 3680, }, -- x ?? specialty item.
+        { xi.item.BRONZE_MITTENS,                    145, },
+        { xi.item.LEATHER_GLOVES,                    374, },
+        { xi.item.TEKKO,                             685, },
+        { xi.item.SCALE_FINGER_GAUNTLETS,           1237, },
+        { xi.item.BRASS_MITTENS,                    1365, },
+        { xi.item.VAGABONDS_HOSE,                   4100, }, -- x ?? specialty item.
+        { xi.item.BRONZE_SUBLIGAR,                   216, },
+        { xi.item.LEATHER_TROUSERS,                  557, },
+        { xi.item.SITABAKI,                          995, },
+        { xi.item.SCALE_CUISSES,                    1861, },
+        { xi.item.BRASS_SUBLIGAR,                   2000, },
+        { xi.item.VAGABONDS_BOOTS,                  3610, }, -- x ?? specialty item.
+        { xi.item.BRONZE_LEGGINGS,                   133, },
+        { xi.item.LEATHER_HIGHBOOTS,                 349, },
+        { xi.item.KYAHAN,                            635, },
+        { xi.item.SCALE_GREAVES,                    1128, },
+        { xi.item.BRASS_LEGGINGS,                   1120, },
     },
 
-    lowTier2MeleeArmor = -- Used for starter city melee armor sets. (Levels: 1 to 11)
+    lowTierMageArmor = -- Used for starter city mage armor sets. (Levels: 1 to 11)
+    {
+        { xi.item.CIRCLET,                           200, },
+        { xi.item.COPPER_HAIRPIN,                    185, },
+        { xi.item.BONE_HAIRPIN,                      540, },
+        { xi.item.HEADGEAR,                         2013, },
+        { xi.item.BRASS_HAIRPIN,                    1295, },
+        { xi.item.PILGRIM_TUNICA,                   7777, },
+        { xi.item.ROBE,                              300, },
+        { xi.item.TUNIC,                            1400, },
+        { xi.item.DOUBLET,                          2854, },
+        { xi.item.GLOVES,                           1575, },
+        { xi.item.CUFFS,                             165, },
+        { xi.item.MITTS,                             655, },
+        { xi.item.SLOPS,                             240, },
+        { xi.item.BRAIS,                            2194, },
+        { xi.item.ASH_CLOGS,                         155, },
+        { xi.item.GAITERS,                          1466, },
+    },
+
+    lowTierMisc = -- Used for starter shields and accessories. (Levels: 1 to 11)
+    {
+        { xi.item.LAUAN_SHIELD,                      124, },
+        { xi.item.MAPLE_SHIELD,                      629, },
+        { xi.item.ASPIS,                             945, },
+        { xi.item.ETHER_TANK,                       6040, },
+        { xi.item.POTION_TANK,                      2926, },
+        { xi.item.APPLE_AU_LAIT_TANK,               3880, },
+        { xi.item.RABBIT_MANTLE,                     220, },
+        { xi.item.CAPE,                              425, },
+        { xi.item.BLOOD_STONE,                       125, },
+        { xi.item.LEATHER_BELT,                      425, },
+        { xi.item.HEKO_OBI,                          495, },
+    },
+
+    lowTier2MixedArmor = -- Used for Mhuara / Selbina. (Levels: 12 to 21)
     {
         { xi.item.ELM_SHIELD,                       1815, },
         { xi.item.LANTERN_SHIELD,                  85843, }, -- x ?? specialty item.
@@ -814,6 +884,7 @@ xi.shop.phalanxShops =
         { xi.item.FANG_NECKLACE,                    6360, }, -- x 10 specialty item.
         { xi.item.BEETLE_GORGET,                    3890, },
         { xi.item.LINEN_ROBE,                       3085, },
+        { xi.item.BONE_HARNESS,                     1810, },
         { xi.item.LIZARD_JERKIN,                    1225, },
         { xi.item.COTTON_DOGI,                      2350, },
         { xi.item.GARRISON_TUNICA,                200000, }, -- x ?? specialty item.
@@ -896,7 +967,33 @@ xi.shop.phalanxShops =
         { xi.item.SET_OF_THIEFS_TOOLS,              1800, }, -- x 10 specialty item.
     },
 
-    lowTier2Foods = -- Used for Mhuara / Selbina food vendors. 
+    lowTierTackleShop = -- Used for starter city tackle. 
+    {
+        { xi.item.LUGWORM,                            12, },
+        { xi.item.LITTLE_WORM,                         4, },
+        { xi.item.BALL_OF_INSECT_PASTE,               25, },
+        { xi.item.FLY_LURE,                         1200, }, -- x 10 specialty item.
+        { xi.item.WORM_LURE,                        1200, }, -- x 10 specialty item.
+        { xi.item.SHRIMP_LURE,                      7640, }, -- x ?? specialty item.
+        { xi.item.BAMBOO_FISHING_ROD,                561, },
+        { xi.item.YEW_FISHING_ROD,                   245, },
+        { xi.item.WILLOW_FISHING_ROD,                 74, },
+        { xi.item.TLAHTLAMAH_GLASSES,              89869, }, -- x ?? specialty item.
+        { xi.item.FISHERMANS_TUNICA,               25000, }, -- x ?? specialty item.
+        { xi.item.FISHERMANS_GLOVES,               15000, }, -- x ?? specialty item.
+        { xi.item.FISHERMANS_HOSE,                 25000, }, -- x ?? specialty item.
+        { xi.item.FISHERMANS_BOOTS,                15000, }, -- x ?? specialty item.
+        { xi.item.PELICAN_RING,                   145332, }, -- x ?? specialty item.
+    },
+
+    lowTierFoods = -- Used for starter city inns, restaurants, or any place you would see food for sale, shop vendors. (Levels: 1 to 11)
+    {
+        { xi.item.LOVE_CHOCOLATE,                    775, },
+        { xi.item.DRIED_BERRY,                       335, },
+        { xi.item.EAR_OF_ROASTED_CORN,                80, },
+    },
+
+    lowTier2Foods = -- Used for Mhuara / Selbina food vendors. (Levels: 12 to 21)
     {
         { xi.item.STRIP_OF_MEAT_JERKY,               150, },
         { xi.item.DRIED_DATE,                        455, },

@@ -23,8 +23,9 @@ entity.onTrigger = function(player, npc)
         { xi.item.HEKO_OBI,                     495, 3, },
     }
 
-    player:showText(npc, ID.text.CARAUTIA_SHOP_DIALOG)
-    xi.shop.nation(player, stock, xi.nation.SANDORIA)
+    player:printToPlayer('If a cape distracts you more than it protects, you chose poorly.', xi.msg.channel.SAY, npc:getName())
+    player:printToPlayer('If something catches your eye, let me know.', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.lowTierMisc, xi.fameArea.SANDORIA)
 end
 
 return entity
