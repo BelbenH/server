@@ -26,6 +26,9 @@ end
 
 zoneObject.onInitialize = function(zone)
     xi.server.setExplorerMoogles(ID.npc.EXPLORER_MOOGLE)
+
+    local pos = { x = 6.227, y = -4, z = 71.940, rot = 128 }
+    xi.xispteleport.spawnFrog(zone, pos)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

@@ -16,8 +16,8 @@ zoneObject.onInitialize = function(zone)
     xi.events.harvestFestival.applyHalloweenNpcCostumes(zone:getID())
 
     -- Phalanx Teleport Moogle
-    local pos = { x = -223.03, y = 8, z = 40.42, rot = 231 }
-    xi.phalanxTeleports.spawnNPC(zone, pos)
+    local pos = { x = -223.03, y = 8, z = 40.42, rot = 130 }
+    xi.xispteleport.spawnFrog(zone, pos)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

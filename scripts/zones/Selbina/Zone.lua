@@ -9,6 +9,9 @@ local zoneObject = {}
 zoneObject.onInitialize = function(zone)
     xi.server.setExplorerMoogles(ID.npc.EXPLORER_MOOGLE)
     InitializeFishingContestSystem()
+
+    local pos = { x = 10.410, y = -14.558, z = 62.831, rot = 250 }
+    xi.xispteleport.spawnFrog(zone, pos)
 end
 
 zoneObject.onGameHour = function(zone)

@@ -12,6 +12,9 @@ zoneObject.onInitialize = function(zone)
     xi.events.harvestFestival.applyHalloweenNpcCostumes(zone:getID())
     xi.chocobo.initZone(zone)
     xi.chocoboGame.clearRecord(zone)
+
+    local pos = { x = 81.650, y = 0, z = -64.100, rot = 109 }
+    xi.xispteleport.spawnFrog(zone, pos)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)
