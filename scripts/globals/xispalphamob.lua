@@ -107,15 +107,15 @@ xi.alphamob.spawnAlpha = function(mob, player, phList)
         local pos       = mob:getPos()
         local alphaLvl  = playerLvl
 
-        if mobLvl >= tierOne then
-            levelData = alphaData[tierOne]
-            alphaLvl  = alphaLvl + 2
+        if mobLvl >= tierThree then
+            levelData = alphaData[tierThree]
+            alphaLvl  = alphaLvl + 4
         elseif mobLvl >= tierTwo then
             levelData = alphaData[tierTwo]
             alphaLvl  = alphaLvl + 3
-        elseif mobLvl >= tierThree then
-            levelData = alphaData[tierThree]
-            alphaLvl  = alphaLvl + 4
+        elseif mobLvl >= tierOne then
+            levelData = alphaData[tierOne]
+            alphaLvl  = alphaLvl + 2
         end
 
 
