@@ -17,7 +17,7 @@ local frogTeleTable =
         {
             'San d\'Oria',
             function(playerArg)
-                local teleData = { x = -228.1927, y = 8, z = 40.070, rot = 255, zone = xi.zone.NORTHERN_SAN_DORIA }
+                local teleData = { x = -230.898, y = 8, z = 13.7368, rot = 255, zone = xi.zone.NORTHERN_SAN_DORIA }
                 xi.xispteleport.frogTeleTo(playerArg, teleData)
             end,
         },
@@ -29,7 +29,7 @@ local frogTeleTable =
         {
             'Windurst',
             function(playerArg)
-                local teleData = { x = 185.6, y = -12, z = 223.5, rot = 96, zone = xi.zone.PORT_WINDURST }
+                local teleData = { x = -224.533, y = -8, z = 199.853, rot = 2, zone = xi.zone.PORT_WINDURST }
                 xi.xispteleport.frogTeleTo(playerArg, teleData)
             end,
         },
@@ -77,7 +77,7 @@ local frogTeleTable =
         {
             'Jeuno',
             function(playerArg)
-                local teleData = { x = 0, y = 9, z = -30, rot = 60, zone = xi.zone.RULUDE_GARDENS }
+                local teleData = { x = 0.0171217, y = 7.90089, z = -40.2593, rot = 192, zone = xi.zone.RULUDE_GARDENS }
                 xi.xispteleport.frogTeleTo(playerArg, teleData)
             end,
         },

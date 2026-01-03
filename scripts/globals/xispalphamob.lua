@@ -52,9 +52,9 @@ local familyData =
         skillID = 125,
         bonusSpawnChance = 0,
         name    = { 'Zephyr', 'Aeralith', 'Omenwing', 'Pidgeotto', 'Sky Seraph', },
-        [tierOne]   = { dropList = 4512, groupID = 204, look = 366,  exp = 750,  gil = 1500, mobMods = { [xi.mobMod.EXP_BONUS] = 150, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.EVA] = 50,  [xi.mod.DOUBLE_ATTACK] = 15, }, },
-        [tierTwo]   = { dropList = 4513, groupID = 204, look = 2965, exp = 1250, gil = 2000, mobMods = { [xi.mobMod.EXP_BONUS] = 400, [xi.mobMod.GIL_MIN] = 1000, [xi.mobMod.GIL_MAX] = 2500, }, mods = { [xi.mod.EVA] = 75,  [xi.mod.DOUBLE_ATTACK] = 20, }, },
-        [tierThree] = { dropList = 4514, groupID = 204, look = 227,  exp = 1500, gil = 3000, mobMods = { [xi.mobMod.EXP_BONUS] = 650, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.EVA] = 100, [xi.mod.DOUBLE_ATTACK] = 25, }, },
+        [tierOne]   = { dropList = 4512, groupID = 204, look = 336, exp = 750,  gil = 1500, mobMods = { [xi.mobMod.EXP_BONUS] = 150, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.EVA] = 50,  [xi.mod.DOUBLE_ATTACK] = 15, }, },
+        [tierTwo]   = { dropList = 4513, groupID = 204, look = 337, exp = 1250, gil = 2000, mobMods = { [xi.mobMod.EXP_BONUS] = 400, [xi.mobMod.GIL_MIN] = 1000, [xi.mobMod.GIL_MAX] = 2500, }, mods = { [xi.mod.EVA] = 75,  [xi.mod.DOUBLE_ATTACK] = 20, }, },
+        [tierThree] = { dropList = 4514, groupID = 204, look = 338, exp = 1500, gil = 3000, mobMods = { [xi.mobMod.EXP_BONUS] = 650, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.EVA] = 100, [xi.mod.DOUBLE_ATTACK] = 25, }, },
     },
 }
 
