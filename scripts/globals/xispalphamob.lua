@@ -12,9 +12,9 @@ local familyData =
         skillID = 404,
         bonusSpawnChance = 0,
         name    = { 'Alpha Jack', 'Grim Hare', 'Big Thumper', 'Mad Hopper', 'Bunzilla', }, --mob_mod.lua
-        [tierOne]   = { dropList = 4500, groupID = 200, look = 268,  mobMods = { [xi.mobMod.EXP_BONUS] = 150, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.EVA] = 10, }, },
-        [tierTwo]   = { dropList = 4501, groupID = 200, look = 2955, mobMods = { [xi.mobMod.EXP_BONUS] = 400, [xi.mobMod.GIL_MIN] = 1000, [xi.mobMod.GIL_MAX] = 2500, }, mods = { [xi.mod.EVA] = 15, }, },
-        [tierThree] = { dropList = 4502, groupID = 200, look = 1937, mobMods = { [xi.mobMod.EXP_BONUS] = 650, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.EVA] = 25, }, },
+        [tierOne]   = { dropList = 4500, groupID = 200, look = 268,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.EVA] = 10, }, },
+        [tierTwo]   = { dropList = 4501, groupID = 200, look = 2955, exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.EVA] = 15, }, },
+        [tierThree] = { dropList = 4502, groupID = 200, look = 1937, exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.EVA] = 25, }, },
     },
 
     [xi.mobSuperFamily.MANDRAGORA] =
@@ -22,9 +22,9 @@ local familyData =
         skillID = 496,
         bonusSpawnChance = 0,
         name    = { 'Mandragore', 'Root Reaper', 'Sproutbane', 'Sapling Hex', 'Briar Imp', },
-        [tierOne]   = { dropList = 4503, groupID = 201, look = 268,                                          mobMods = { [xi.mobMod.EXP_BONUS] = 150, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.REGAIN] = 100, }, },
-        [tierTwo]   = { dropList = 4504, groupID = 201, look = 2955,                                         mobMods = { [xi.mobMod.EXP_BONUS] = 400, [xi.mobMod.GIL_MIN] = 1000, [xi.mobMod.GIL_MAX] = 2500, }, mods = { [xi.mod.REGAIN] = 100, }, },
-        [tierThree] = { dropList = 4505, groupID = 201, look = '0x00008E0B00000000000000000000000000000000', mobMods = { [xi.mobMod.EXP_BONUS] = 650, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.REGAIN] = 100, }, },
+        [tierOne]   = { dropList = 4503, groupID = 201, look = 268,                                          exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.REGAIN] = 100, }, },
+        [tierTwo]   = { dropList = 4504, groupID = 201, look = 2955,                                         exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.REGAIN] = 100, }, },
+        [tierThree] = { dropList = 4505, groupID = 201, look = '0x00008E0B00000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.REGAIN] = 100, }, },
     },
 
     [xi.mobSuperFamily.CRAB] =
@@ -32,9 +32,9 @@ local familyData =
         skillID = 75,
         bonusSpawnChance = 0,
         name    = { 'Tidebreaker', 'Lord of Brine', 'Bloodreef', 'Old Carapax', 'Reef Bulwark', },
-        [tierOne]   = { dropList = 4506, groupID = 202, look = 366,  mobMods = { [xi.mobMod.EXP_BONUS] = 150, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.DEF] = 50,  }, },
-        [tierTwo]   = { dropList = 4507, groupID = 202, look = 2965, mobMods = { [xi.mobMod.EXP_BONUS] = 400, [xi.mobMod.GIL_MIN] = 1000, [xi.mobMod.GIL_MAX] = 2500, }, mods = { [xi.mod.DEF] = 75,  }, },
-        [tierThree] = { dropList = 4508, groupID = 202, look = 358,  mobMods = { [xi.mobMod.EXP_BONUS] = 650, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.DEF] = 150, }, },
+        [tierOne]   = { dropList = 4506, groupID = 202, look = 366,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.DEF] = 50,  [xi.mod.MDEF] = -75, }, },
+        [tierTwo]   = { dropList = 4507, groupID = 202, look = 2965, exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.DEF] = 75,  [xi.mod.MDEF] = -60, }, },
+        [tierThree] = { dropList = 4508, groupID = 202, look = 358,  exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.DEF] = 150, [xi.mod.MDEF] = -50, }, },
     },
 
     [xi.mobSuperFamily.SCORPION] =
@@ -42,9 +42,9 @@ local familyData =
         skillID = 217,
         bonusSpawnChance = 2, -- Very few scorpions. Also they're not used as EXP generally
         name    = { 'Toxic Maw', 'Vashara', 'Khepracis', 'Crown Teslon', 'Sable Stinger', },
-        [tierOne]   = { dropList = 4509, groupID = 203, look = 286,  mobMods = { [xi.mobMod.EXP_BONUS] = 450, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.ATTP] = 10, }, },
-        [tierTwo]   = { dropList = 4510, groupID = 203, look = 337,  mobMods = { [xi.mobMod.EXP_BONUS] = 700, [xi.mobMod.GIL_MIN] = 1000, [xi.mobMod.GIL_MAX] = 2500, }, mods = { [xi.mod.ATTP] = 20, }, },
-        [tierThree] = { dropList = 4511, groupID = 203, look = 2107, mobMods = { [xi.mobMod.EXP_BONUS] = 950, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.ATTP] = 30, }, },
+        [tierOne]   = { dropList = 4509, groupID = 203, look = 286,  exp = 950,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ATTP] = 10, }, },
+        [tierTwo]   = { dropList = 4510, groupID = 203, look = 337,  exp = 1750, gil = 2000, mobMods = {  }, mods = { [xi.mod.ATTP] = 20, }, },
+        [tierThree] = { dropList = 4511, groupID = 203, look = 2107, exp = 2100, gil = 3000, mobMods = {  }, mods = { [xi.mod.ATTP] = 30, }, },
     },
 
     [xi.mobSuperFamily.GREATER_BIRD] =
@@ -52,9 +52,9 @@ local familyData =
         skillID = 125,
         bonusSpawnChance = 0,
         name    = { 'Zephyr', 'Aeralith', 'Omenwing', 'Pidgeotto', 'Sky Seraph', },
-        [tierOne]   = { dropList = 4512, groupID = 204, look = 366,  mobMods = { [xi.mobMod.EXP_BONUS] = 150, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.EVA] = 50,  [xi.mod.DOUBLE_ATTACK] = 15, }, },
-        [tierTwo]   = { dropList = 4513, groupID = 204, look = 2965, mobMods = { [xi.mobMod.EXP_BONUS] = 400, [xi.mobMod.GIL_MIN] = 1000, [xi.mobMod.GIL_MAX] = 2500, }, mods = { [xi.mod.EVA] = 75,  [xi.mod.DOUBLE_ATTACK] = 20, }, },
-        [tierThree] = { dropList = 4514, groupID = 204, look = 227,  mobMods = { [xi.mobMod.EXP_BONUS] = 650, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.EVA] = 100, [xi.mod.DOUBLE_ATTACK] = 25, }, },
+        [tierOne]   = { dropList = 4512, groupID = 204, look = 366,  exp = 750,  gil = 1500, mobMods = { [xi.mobMod.EXP_BONUS] = 150, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.EVA] = 50,  [xi.mod.DOUBLE_ATTACK] = 15, }, },
+        [tierTwo]   = { dropList = 4513, groupID = 204, look = 2965, exp = 1250, gil = 2000, mobMods = { [xi.mobMod.EXP_BONUS] = 400, [xi.mobMod.GIL_MIN] = 1000, [xi.mobMod.GIL_MAX] = 2500, }, mods = { [xi.mod.EVA] = 75,  [xi.mod.DOUBLE_ATTACK] = 20, }, },
+        [tierThree] = { dropList = 4514, groupID = 204, look = 227,  exp = 1500, gil = 3000, mobMods = { [xi.mobMod.EXP_BONUS] = 650, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.EVA] = 100, [xi.mod.DOUBLE_ATTACK] = 25, }, },
     },
 }
 
@@ -118,14 +118,13 @@ xi.alphamob.spawnAlpha = function(mob, player, phList)
             alphaLvl  = alphaLvl + 2
         end
 
-
         local alpha = zone:insertDynamicEntity({
             objtype               = xi.objType.MOB,
             name                  = alphaData.name[math.random(1, #alphaData.name)],
-            x                     = pos.x,
+            x                     = pos.x + math.random(-2, 2),
             y                     = pos.y,
-            z                     = pos.z + 1,
-            rotation              = math.random(0, 360),
+            z                     = pos.z + math.random(-2, 2),
+            rotation              = pos.rot,
             minLevel              = alphaLvl,
             maxLevel              = alphaLvl + 2,
             look                  = levelData.look,
@@ -140,7 +139,11 @@ xi.alphamob.spawnAlpha = function(mob, player, phList)
                 xi.alphamob.calculateStats(alpha, levelData)
             end,
 
-            onMobDeath = function(alpha)
+            onMobDeath = function(alpha, player)
+                if player:getMainLvl() < alpha:getMainLvl() then
+                    player:addExp(xi.settings.main.EXP_RATE * levelData.exp + math.random(-250, 250))
+                    npcUtil.giveCurrency(player, 'gil', levelData.gil + math.random(-100, 100))
+                end
             end,
 
             onMobDespawn = function(alpha)
@@ -166,7 +169,5 @@ xi.alphamob.calculateStats = function(mob, levelData)
 
     -- Add mob mods if any
     mob:addMobMod(xi.mobMod.WEAPON_BONUS, levelData.mobMods[xi.mobMod.WEAPON_BONUS] or 0)
-    mob:addMobMod(xi.mobMod.GIL_MIN,      levelData.mobMods[xi.mobMod.GIL_MIN]      or 0)
-    mob:addMobMod(xi.mobMod.GIL_MAX,      levelData.mobMods[xi.mobMod.GIL_MAX]      or 0)
-    mob:addMobMod(xi.mobMod.EXP_BONUS,    levelData.mobMods[xi.mobMod.EXP_BONUS]    or 0)
+    mob:addMobMod(xi.mobMod.EXP_BONUS, -100) -- Don't reward exp naturally
 end
