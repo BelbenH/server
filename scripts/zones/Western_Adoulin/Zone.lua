@@ -9,7 +9,7 @@ zoneObject.onInitialize = function(zone)
 
     -- Phalanx Teleport Moogle
     local pos = { x = 1, y = 0, z = 126.30, rot = 0 }
-    xi.phalanxTeleports.spawnNPC(zone, pos)
+    xi.xispteleport.spawnFrog(zone, pos)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)
