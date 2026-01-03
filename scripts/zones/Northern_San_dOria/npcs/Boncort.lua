@@ -28,7 +28,8 @@ entity.onTrigger = function(player, npc)
 
     }
 
-    player:showText(npc, ID.text.BONCORT_SHOP_DIALOG)
+    player:printToPlayer('Welcome to the Pheonix Perch Inn!', xi.msg.channel.SAY, npc:getName())
+    player:printToPlayer('Can I interest you in a bed or a hot meal?', xi.msg.channel.SAY, npc:getName())
     xi.shop.nation(player, stock, xi.nation.SANDORIA)
 end
 

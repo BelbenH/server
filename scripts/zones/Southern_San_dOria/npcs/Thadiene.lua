@@ -24,7 +24,8 @@ entity.onTrigger = function(player, npc)
         { xi.item.SCROLL_OF_BATTLEFIELD_ELEGY,  4992, 3, },
     }
 
-    player:showText(npc, ID.text.ASH_THADI_ENE_SHOP_DIALOG)
+    player:printToPlayer('Welcome to Helbort\'s Blades!', xi.msg.channel.SAY, npc:getName())
+    player:printToPlayer('Looking for simple ranged weapons for learning aim and restraint? Look no futher. Just remember skilling up comes before power...', xi.msg.channel.SAY, npc:getName())
     xi.shop.general(player, xi.shop.phalanxShops.lowTierRanged, xi.fameArea.SANDORIA)
 end
 

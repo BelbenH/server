@@ -42,7 +42,7 @@ entity.onTrigger = function(player, npc)
         table.insert(stock, { xi.item.LIVING_KEY, 5520, 3 })
     end
 
-    player:showText(npc, ID.text.OSTALIE_SHOP_DIALOG)
+    player:printToPlayer('I sell proper tools. What you do with them is your responsibility.', xi.msg.channel.SAY, npc:getName())
     xi.shop.general(player, xi.shop.phalanxShops.ninjaEssentials, xi.fameArea.SANDORIA)
 end
 

@@ -26,7 +26,7 @@ entity.onTrigger = function(player, npc)
     }
 
     player:printToPlayer('I\'ve got armor for sell! Although... from the looks of you, I\'m not sure you could afford it.', xi.msg.channel.SAY, npc:getName())
-    xi.shop.general(player, xi.shop.phalanxShops.lowTier2MeleeArmor, xi.fameArea.WINDURST)
+    xi.shop.general(player, xi.shop.phalanxShops.lowTier2MixedArmor, xi.fameArea.WINDURST)
 end
 
 return entity

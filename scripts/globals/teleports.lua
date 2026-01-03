@@ -358,15 +358,17 @@ end
 
 xi.teleport.toExplorerMoogle = function(player, zone)
     if zone == 231 then
-        player:setPos(39.4, -0.2, 25, 253, zone)       -- Northern_San_d'Oria
+        player:setPos(131.046, -0.199, -4.6613, 159, zone)  -- Northern_San_d'Oria
     elseif zone == 234 then
-        player:setPos(76.82, 0, -66.12, 232, zone)     -- Bastok_Mines
+        player:setPos(76.82, 0, -66.12, 232, zone)          -- Bastok_Mines
     elseif zone == 240 then
-        player:setPos(185.6, -12, 223.5, 96, zone)     -- Port_Windurst
+        player:setPos(185.6, -12, 223.5, 96, zone)          -- Port_Windurst
     elseif zone == 248 then
-        player:setPos(14.67, -14.56, 66.69, 96, zone)  -- Selbina
+        player:setPos(14.67, -14.56, 66.69, 96, zone)       -- Selbina
     elseif zone == 249 then
-        player:setPos(2.87, -4, 71.95, 0, zone)        -- Mhaura
+        player:setPos(2.87, -4, 71.95, 0, zone)             -- Mhaura
+    elseif zone == 243 then
+        player:setPos(48.9479, 10.0015, 71.2634, 192, zone) -- Ru'Lude Gardens
     end
 end
 
@@ -531,6 +533,8 @@ xi.teleport.explorerMoogleOnEventFinish = function(player, csid, option, event)
             xi.teleport.toExplorerMoogle(player, 248)
         elseif option == 5 and player:delGil(price) then
             xi.teleport.toExplorerMoogle(player, 249)
+        elseif option == 6 and player:delGil(price) then
+            xi.teleport.toExplorerMoogle(player, 243)
         end
     end
 end

@@ -28,7 +28,8 @@ entity.onTrigger = function(player, npc)
         { xi.item.GAUNTLETS,       26956, 1, },
     }
 
-    player:showText(npc, ID.text.RAIMBROYS_SHOP_DIALOG + 1)
+    player:printToPlayer('It will not save you from recklessness, but it will protect you if worn properly.', xi.msg.channel.SAY, npc:getName())
+    player:printToPlayer('Take a look.', xi.msg.channel.SAY, npc:getName())
     xi.shop.general(player, xi.shop.phalanxShops.lowTierMeleeArmor, xi.fameArea.SANDORIA)
 end
 

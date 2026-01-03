@@ -20,8 +20,9 @@ entity.onTrigger = function(player, npc)
         { xi.item.ELVAAN_F_LEDELSENS, 187, },
     }
 
-    player:showText(npc, ID.text.ARACHAGNON_SHOP_DIALOG)
-    xi.shop.general(player, stock, xi.fameArea.SANDORIA)
+    player:printToPlayer('I offer standard adventurer-issue armor for beginners, as well as equipment befitting the Elvaan.', xi.msg.channel.SAY, npc:getName())
+    player:printToPlayer('Our race values strength and discipline, and this RSE reflects that. Choose carefully-no refunds are given.', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.customArachagnonShop, xi.fameArea.SANDORIA)
 end
 
 return entity

@@ -14,6 +14,10 @@ zoneObject.onInitialize = function(zone)
     quests.ffr.initZone(zone) -- register trigger areas 2 through 6
 
     xi.events.harvestFestival.applyHalloweenNpcCostumes(zone:getID())
+
+    -- Phalanx Teleport Moogle
+    local pos = { x = -223.03, y = 8, z = 40.42, rot = 231 }
+    xi.phalanxTeleports.spawnNPC(zone, pos)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

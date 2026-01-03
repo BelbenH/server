@@ -5007,7 +5007,7 @@ INSERT INTO `item_basic` VALUES (5226,0,'homemade_steak','hmd._steak',@USABLE_TY
 INSERT INTO `item_basic` VALUES (5227,0,'plate_of_homemade_salad','homemade_salad',@USABLE_TYPE,1,30296,@NONE,0);
 INSERT INTO `item_basic` VALUES (5228,0,'loaf_of_homemade_bread','hmd._bread',@USABLE_TYPE,1,30296,@NONE,0);
 INSERT INTO `item_basic` VALUES (5229,0,'plate_of_homemade_risotto','hmd._risotto',@USABLE_TYPE,1,30296,@NONE,0);
-INSERT INTO `item_basic` VALUES (5230,0,'love_chocolate','love_chocolate',@USABLE_TYPE,1,1580,@SWEETS,600);
+INSERT INTO `item_basic` VALUES (5230,0,'love_chocolate','love_chocolate',@USABLE_TYPE,1,1580,@SWEETS,155);
 INSERT INTO `item_basic` VALUES (5231,0,'truelove_chocolate','truelove_choco.',@USABLE_TYPE,1,1580,@SWEETS,650);
 INSERT INTO `item_basic` VALUES (5232,0,'jug_of_soy_milk','soy_milk',@USABLE_TYPE,12,1548,@INGREDIENTS,30);
 INSERT INTO `item_basic` VALUES (5233,0,'cube_of_cotton_tofu','cotton_tofu',@USABLE_TYPE,12,1548,@INGREDIENTS,340);

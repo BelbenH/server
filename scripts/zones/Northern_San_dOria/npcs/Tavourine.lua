@@ -28,8 +28,8 @@ entity.onTrigger = function(player, npc)
         { xi.item.LANCE,                19156, 3, },
     }
 
-    player:showText(npc, ID.text.TAVOURINE_SHOP_DIALOG)
-    xi.shop.nation(player, stock, xi.nation.SANDORIA)
+    player:printToPlayer('These ranged weapons meet Royal Armory standards for initial training. Careless use reflects poorly on you.', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.lowTierRanged, xi.fameArea.SANDORIA)
 end
 
 return entity
