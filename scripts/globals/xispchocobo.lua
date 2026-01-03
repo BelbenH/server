@@ -622,12 +622,12 @@ xi.xispchocobo.spawnChocobo = function(player)
             name = xi.xispchocobo.names[player:getCharVar('[XISP]chocoName')]
         end
 
-        -- Alternatively check for zones we don't want chocobo in
+        -- Don't spawn if mounted OR baby / teen and in a dungeon
         if
             player:getStatusEffect(xi.effect.MOUNTED) ~= nil or
-            (chocoStage >= 20 and
+            (chocoStage < 20 and
             zone and
-            zone:getTypeMask() ~= xi.zoneType.OUTDOORS)
+            zone:getTypeMask() == xi.zoneType.DUNGEON)
         then
             return
         end
