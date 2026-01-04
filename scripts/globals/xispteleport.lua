@@ -77,7 +77,7 @@ local frogTeleTable =
         {
             'Jeuno',
             function(playerArg)
-                local teleData = { x = 0.0171217, y = 7.90089, z = -40.2593, rot = 192, zone = xi.zone.RULUDE_GARDENS }
+                local teleData = { x = -0.0377164, y = 9, z = -28.4753, rot = 64, zone = xi.zone.RULUDE_GARDENS }
                 xi.xispteleport.frogTeleTo(playerArg, teleData)
             end,
         },
