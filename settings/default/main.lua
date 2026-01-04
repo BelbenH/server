@@ -336,5 +336,6 @@ xi.settings.main =
     INACTIVITY_WATCHDOG_PERIOD  = 2000,  -- Time in milliseconds which the inactivity watchdog will wait between ticks of the main loop before potentially killing the target process.
 
     -- PHALANX
-    ALPHA_MOB_SPAWN_CHANCE = 5, -- Scale between 0-100
+    ALPHA_MOB_SPAWN_CHANCE   = 5, -- Scale between 0-100
+    AUGMENT_CASKET_DROP_RATE = 1,  -- Multiplier. Ex. 2 = twice as likely to appear
 }
