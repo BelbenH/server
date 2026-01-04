@@ -28981,17 +28981,28 @@ INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,25671,@RARE);    -- Rarab Ca
 
 -- ALPHA MANDRAGORA --
 -- Alpha Mandragora (Level 30 and below)
-INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,17868,@UNCOMMON); -- Jug Of Humus (Uncommon, 10%)
-INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,4368,@UNCOMMON);  -- Two-Leaf Mandragora Bud (Uncommon, 10%)
-INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,4369,@VRARE);     -- Four-Leaf Mandragora Bud (Very Rare, 1%)
+INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,17868,@UNCOMMON); -- Jug Of Humus
+INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,4368,@COMMON);    -- Two-Leaf Mandragora Bud
+INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,4369,@VRARE);     -- Four-Leaf Mandragora Bud
+INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,205,@SRARE);      -- Mandragora Lantern
+INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,26705,@SRARE);    -- Mandragora Shirt
+INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,15299,@SRARE);    -- Mandragora Belt
 -- lvl 30-60
-INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,17868,@UNCOMMON); -- Jug Of Humus (Uncommon, 10%)
-INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,4368,@UNCOMMON);  -- Two-Leaf Mandragora Bud (Uncommon, 10%)
-INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,4369,@VRARE);     -- Four-Leaf Mandragora Bud (Very Rare, 1%)
+INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,17868,@VCOMMON);  -- Jug Of Humus
+INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,17869,@UNCOMMON); -- Jug Of Rich Humus
+INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,4368,@COMMON);    -- Two-Leaf Mandragora Bud
+INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,4369,@RARE);      -- Four-Leaf Mandragora Bud
+INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,205,@SRARE);      -- Mandragora Lantern
+INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,26705,@SRARE);    -- Mandragora Shirt
+INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,15299,@SRARE);    -- Mandragora Belt
 -- lvl 60-75+
-INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,17868,@UNCOMMON); -- Jug Of Humus (Uncommon, 10%)
-INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,4368,@UNCOMMON);  -- Two-Leaf Mandragora Bud (Uncommon, 10%)
-INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,4369,@VRARE);     -- Four-Leaf Mandragora Bud (Very Rare, 1%)
+INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,17868,@VCOMMON); -- Jug Of Humus
+INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,17869,@COMMON);  -- Jug Of Rich Humus
+INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,4368,@VCOMMON);  -- Two-Leaf Mandragora Bud
+INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,4369,@COMMON);   -- Four-Leaf Mandragora Bud
+INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,205,@SRARE);      -- Mandragora Lantern
+INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,26705,@SRARE);    -- Mandragora Shirt
+INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,15299,@SRARE);    -- Mandragora Belt
 
 -- ALPHA CRAB --
 -- lvl 1-30
