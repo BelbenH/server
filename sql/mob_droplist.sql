@@ -29031,14 +29031,20 @@ INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,2812,800);      -- Aptant of
 
 -- ALPHA GREATER BIRD --
 -- lvl 1-30
-INSERT INTO `mob_droplist` VALUES (4512,0,0,@ALWAYS,881,@VCOMMON);   -- Crab Shell
+INSERT INTO `mob_droplist` VALUES (4512,0,0,1000,842,@COMMON);   -- Giant Bird Feather
+INSERT INTO `mob_droplist` VALUES (4512,0,0,1000,842,@UNCOMMON); -- Giant Bird Feather
+INSERT INTO `mob_droplist` VALUES (4512,0,0,1000,843,@RARE);     -- Giant Bird Plume
 
 -- lvl 30-60
-INSERT INTO `mob_droplist` VALUES (4513,0,0,@ALWAYS,881,@VCOMMON);   -- Crab Shell
-INSERT INTO `mob_droplist` VALUES (4513,0,0,@ALWAYS,2813,300);       -- Aptant of Durus 3% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4513,0,0,1000,842,@COMMON);   -- Giant Bird Feather
+INSERT INTO `mob_droplist` VALUES (4513,0,0,1000,842,@COMMON);   -- Giant Bird Feather
+INSERT INTO `mob_droplist` VALUES (4513,0,0,1000,843,@UNCOMMON); -- Giant Bird Plume
+INSERT INTO `mob_droplist` VALUES (4513,0,0,@ALWAYS,2821,300);   -- Aptant of Haelen 3% (Uneffected by TH)
 -- lvl 60-75+
-INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,881,@VCOMMON);  -- Crab Shell
-INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,2813,500);      -- Aptant of Durus 5% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,842,@VCOMMON); -- Giant Bird Feather
+INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,842,@COMMON);  -- Giant Bird Feather
+INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,843,@COMMON);  -- Giant Bird Plume
+INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,2821,500);  -- Aptant of Haelen 5% (Uneffected by TH)
 
 /*!40000 ALTER TABLE `mob_droplist` ENABLE KEYS */;
 UNLOCK TABLES;
