@@ -625,8 +625,7 @@ xi.xispchocobo.spawnChocobo = function(player)
         -- Don't spawn if mounted OR baby / teen and in a dungeon
         if
             player:getStatusEffect(xi.effect.MOUNTED) ~= nil or
-            (chocoStage < 20 and
-            zone and
+            (zone and
             zone:getTypeMask() == xi.zoneType.DUNGEON)
         then
             return
