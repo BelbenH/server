@@ -350,7 +350,7 @@ xi.promyvion.receptacleOnMobDespawn = function(mob)
     -- Handle portal: Open and choose new portal.
     local portal = GetNPCByID(receptacleInfoTable[zoneId][mobId][3]) -- Fetch mob's associated portal.
 
-    if portal and portal:getLocalVar('[Portal]Chosen') == 1 then
+    if portal then -- (Phalanx 100% receptacle portal spawning)
         portal:openDoor(180)                    -- Open portal for 3 minutes.
         portal:setLocalVar('[Portal]Chosen', 0) -- Reset.
 

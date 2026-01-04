@@ -17,10 +17,10 @@ entity.onMobInitialize = function(mob)
 end
 
 entity.onMobSpawn = function(mob)
-    mob:setMod(xi.mod.DEFP, 35)
+    mob:setMod(xi.mod.DEFP, 12)
     mob:setMod(xi.mod.TRIPLE_ATTACK, 10)
-    mob:setMod(xi.mod.STORETP, 62)
-    mob:setMobMod(xi.mobMod.WEAPON_BONUS, 15)
+    mob:setMod(xi.mod.STORETP, 20)
+    mob:setMobMod(xi.mobMod.WEAPON_BONUS, 4)
 end
 
 entity.onMobMobskillChoose = function(mob, target)
@@ -51,7 +51,7 @@ entity.onMobFight = function(mob, target)
     if mob:getHPP() > 35 then
         mob:setMod(xi.mod.REGAIN, 0)
     else
-        mob:setMod(xi.mod.REGAIN, 100)
+        mob:setMod(xi.mod.REGAIN, 50)
     end
 end
 

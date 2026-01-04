@@ -707,7 +707,7 @@ INSERT INTO `mob_groups` VALUES (23,4527,16,'Livid_Seether',960,0,1350,0,0,83,84
 -- Spire_of_Holla (Zone 17)
 -- ------------------------------------------------------------
 
-INSERT INTO `mob_groups` VALUES (1,4382,17,'Wreaker',0,128,0,4400,0,37,38,0);
+INSERT INTO `mob_groups` VALUES (1,4382,17,'Wreaker',0,128,0,3800,0,32,33,0);
 INSERT INTO `mob_groups` VALUES (2,760,17,'Cogitator',0,128,0,2500,0,34,34,0);
 INSERT INTO `mob_groups` VALUES (3,4317,17,'Weeper',0,128,0,300,0,28,28,0);
 INSERT INTO `mob_groups` VALUES (4,0,17,'Recollector',0,128,0,0,0,0,0,0);
@@ -754,8 +754,8 @@ INSERT INTO `mob_groups` VALUES (23,4527,18,'Livid_Seether',960,0,1350,0,0,83,84
 -- Spire_of_Dem (Zone 19)
 -- ------------------------------------------------------------
 
-INSERT INTO `mob_groups` VALUES (1,3204,19,'Progenerator',0,128,0,3700,0,37,38,0);
-INSERT INTO `mob_groups` VALUES (2,2947,19,'Offspring',0,128,0,450,0,27,28,0);
+INSERT INTO `mob_groups` VALUES (1,3204,19,'Progenerator',0,128,0,3100,0,32,33,0);
+INSERT INTO `mob_groups` VALUES (2,2947,19,'Offspring',0,128,0,250,0,27,28,0);
 INSERT INTO `mob_groups` VALUES (3,2080,19,'Ingester',0,128,0,2000,0,37,37,0);
 INSERT INTO `mob_groups` VALUES (4,2825,19,'Neoingester',0,128,0,800,0,30,30,0);
 INSERT INTO `mob_groups` VALUES (5,2824,19,'Neogorger',0,128,0,800,0,30,30,0);
@@ -798,7 +798,7 @@ INSERT INTO `mob_groups` VALUES (23,4527,20,'Livid_Seether',960,0,1350,0,0,83,84
 -- Spire_of_Mea (Zone 21)
 -- ------------------------------------------------------------
 
-INSERT INTO `mob_groups` VALUES (1,966,21,'Delver',0,128,0,3800,0,37,38,0);
+INSERT INTO `mob_groups` VALUES (1,966,21,'Delver',0,128,0,3100,0,32,33,0);
 INSERT INTO `mob_groups` VALUES (2,1237,21,'Envier',0,128,0,2200,0,36,36,0);
 INSERT INTO `mob_groups` VALUES (3,3539,21,'Seether',0,128,0,200,0,28,28,0);
 INSERT INTO `mob_groups` VALUES (4,0,21,'Recollector',0,128,0,0,0,0,0,0);
