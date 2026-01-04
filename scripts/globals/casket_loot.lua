@@ -72,6 +72,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BRASS_BAGHNAKHS,             weight =  300 },
             { itemId = xi.item.XIPHOS,                      weight =  120 },
             { itemId = xi.item.WILLOW_WAND,                 weight =  320 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.EAST_RONFAURE] =
@@ -137,6 +142,12 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BRASS_BAGHNAKHS,             weight =  300 },
             { itemId = xi.item.XIPHOS,                      weight =  120 },
             { itemId = xi.item.WILLOW_WAND,                 weight =  320 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+
         },
     },
     [xi.zone.LA_THEINE_PLATEAU] =
@@ -202,6 +213,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BRASS_XIPHOS,               weight =  370 },
             { itemId = xi.item.HOLLY_POLE,                 weight =  380 },
             { itemId = xi.item.BOMB_ARM,                   weight = 2320 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.VALKURM_DUNES] =
@@ -270,6 +286,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.POETS_CIRCLET,                weight =  455 },
             { itemId = xi.item.SANDALS,                      weight =  745 },
             { itemId = xi.item.WHITE_MITTS,                  weight = 2165 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.JUGNER_FOREST] =
@@ -339,6 +360,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.POETS_CIRCLET,                weight =  455 },
             { itemId = xi.item.SANDALS,                      weight =  745 },
             { itemId = xi.item.WHITE_MITTS,                  weight = 2165 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.BATALLIA_DOWNS] =
@@ -408,6 +434,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.MYTHRIL_KNIFE,                 weight =  525 },
             { itemId = xi.item.ELM_POLE,                      weight =  505 },
             { itemId = xi.item.CHAKRAM,                       weight =  350 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.NORTH_GUSTABERG] =
@@ -475,6 +506,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BRASS_BAGHNAKHS,             weight =  300 },
             { itemId = xi.item.XIPHOS,                      weight =  120 },
             { itemId = xi.item.WILLOW_WAND,                 weight =  320 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.SOUTH_GUSTABERG] =
@@ -542,6 +578,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BRASS_BAGHNAKHS,             weight =  300 },
             { itemId = xi.item.XIPHOS,                      weight =  120 },
             { itemId = xi.item.WILLOW_WAND,                 weight =  320 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.KONSCHTAT_HIGHLANDS] =
@@ -608,6 +649,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BRASS_XIPHOS,               weight =  455 },
             { itemId = xi.item.HOLLY_POLE,                 weight =  610 },
             { itemId = xi.item.BOMB_ARM,                   weight = 1465 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.PASHHOW_MARSHLANDS] =
@@ -677,6 +723,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BAGHNAKHS,                    weight =  330 },
             { itemId = xi.item.SPEAR,                        weight =  320 },
             { itemId = xi.item.ELM_STAFF,                    weight =  350 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.ROLANBERRY_FIELDS] =
@@ -747,6 +798,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BAGHNAKHS,                    weight =  330 },
             { itemId = xi.item.SPEAR,                        weight =  320 },
             { itemId = xi.item.ELM_STAFF,                    weight =  350 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.BEAUCEDINE_GLACIER] =
@@ -800,6 +856,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.VELVET_SLOPS,                 weight =  490 },
             { itemId = xi.item.CUIR_HIGHBOOTS,               weight = 1120 },
             { itemId = xi.item.EBONY_SABOTS,                 weight =  390 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.XARCABARD] =
@@ -854,6 +915,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BONE_ROD,                weight =  450 },
             { itemId = xi.item.BONE_KNIFE,              weight =  840 },
             { itemId = xi.item.KHETEN,                  weight =   80 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.CAPE_TERIGGAN] =
@@ -905,6 +971,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BEAK_HELM,              weight =  615 },
             { itemId = xi.item.BEAK_GLOVES,            weight =  540 },
             { itemId = xi.item.BEAK_LEDELSENS,         weight =  470 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.EASTERN_ALTEPA_DESERT] =
@@ -958,6 +1029,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.VELVET_SLOPS,                 weight =  490 },
             { itemId = xi.item.CUIR_HIGHBOOTS,               weight = 1120 },
             { itemId = xi.item.EBONY_SABOTS,                 weight =  390 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.QUICKSAND_CAVES] =
@@ -1010,6 +1086,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BEAK_HELM,              weight =  615 },
             { itemId = xi.item.BEAK_GLOVES,            weight =  540 },
             { itemId = xi.item.BEAK_LEDELSENS,         weight =  470 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.WEST_SARUTABARUTA] =
@@ -1077,6 +1158,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BRASS_BAGHNAKHS,             weight =  300 },
             { itemId = xi.item.XIPHOS,                      weight =  120 },
             { itemId = xi.item.WILLOW_WAND,                 weight =  320 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.EAST_SARUTABARUTA] =
@@ -1144,6 +1230,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BRASS_BAGHNAKHS,             weight =  300 },
             { itemId = xi.item.XIPHOS,                      weight =  120 },
             { itemId = xi.item.WILLOW_WAND,                 weight =  320 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.TAHRONGI_CANYON] =
@@ -1210,6 +1301,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BRASS_XIPHOS,               weight =  370 },
             { itemId = xi.item.HOLLY_POLE,                 weight =  380 },
             { itemId = xi.item.BOMB_ARM,                   weight = 2320 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.BUBURIMU_PENINSULA] =
@@ -1276,6 +1372,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.DHALMEL_MANTLE,               weight =  405 },
             { itemId = xi.item.KUKRI,                        weight =  350 },
             { itemId = xi.item.BATTLEAXE,                    weight =  345 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.MERIPHATAUD_MOUNTAINS] =
@@ -1345,6 +1446,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BAGHNAKHS,                    weight =  330 },
             { itemId = xi.item.SPEAR,                        weight =  320 },
             { itemId = xi.item.ELM_STAFF,                    weight =  350 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.SAUROMUGUE_CHAMPAIGN] =
@@ -1414,6 +1520,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.MYTHRIL_KNIFE,                 weight =  525 },
             { itemId = xi.item.ELM_POLE,                      weight =  505 },
             { itemId = xi.item.CHAKRAM,                       weight =  350 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.THE_SANCTUARY_OF_ZITAH] =
@@ -1467,6 +1578,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.VELVET_SLOPS,                 weight =  490 },
             { itemId = xi.item.CUIR_HIGHBOOTS,               weight = 1120 },
             { itemId = xi.item.EBONY_SABOTS,                 weight =  390 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.ROMAEVE] =
@@ -1518,6 +1634,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BEAK_HELM,              weight =  615 },
             { itemId = xi.item.BEAK_GLOVES,            weight =  540 },
             { itemId = xi.item.BEAK_LEDELSENS,         weight =  470 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.YUHTUNGA_JUNGLE] =
@@ -1568,6 +1689,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.STUDDED_BOOTS,                 weight =  200 },
             { itemId = xi.item.SOIL_KYAHAN,                   weight =  190 },
             { itemId = xi.item.CHESTNUT_SABOTS,               weight =  390 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.YHOATOR_JUNGLE] =
@@ -1623,6 +1749,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.CUIR_HIGHBOOTS,               weight =  865 },
             { itemId = xi.item.LEGGINGS,                     weight =  645 },
             { itemId = xi.item.EBONY_SABOTS,                 weight =  230 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.WESTERN_ALTEPA_DESERT] =
@@ -1677,6 +1808,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BONE_ROD,                weight =  450 },
             { itemId = xi.item.BONE_KNIFE,              weight =  840 },
             { itemId = xi.item.KHETEN,                  weight =   80 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.QUFIM_ISLAND] =
@@ -1745,6 +1881,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.MYTHRIL_KNIFE,                 weight =  525 },
             { itemId = xi.item.ELM_POLE,                      weight =  505 },
             { itemId = xi.item.CHAKRAM,                       weight =  350 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.BEHEMOTHS_DOMINION] =
@@ -1801,6 +1942,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.CUIR_HIGHBOOTS,               weight =  865 },
             { itemId = xi.item.LEGGINGS,                     weight =  645 },
             { itemId = xi.item.EBONY_SABOTS,                 weight =  230 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.VALLEY_OF_SORROWS] =
@@ -1853,6 +1999,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BEAK_HELM,              weight =  615 },
             { itemId = xi.item.BEAK_GLOVES,            weight =  540 },
             { itemId = xi.item.BEAK_LEDELSENS,         weight =  470 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.RUAUN_GARDENS] =
@@ -1903,6 +2054,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.MARID_BELT,                     weight =  220 },
             { itemId = xi.item.WIVRE_HAIRPIN,                  weight =  695 },
             { itemId = xi.item.WIVRE_GORGET,                   weight =  725 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.THE_BOYAHDA_TREE] =
@@ -1967,6 +2123,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.JUG_OF_SUN_WATER,                  weight = 1020 },
             { itemId = xi.item.JUG_OF_CHIRPING_GRASSHOPPER_BROTH, weight =  500 },
             { itemId = xi.item.JUG_OF_SAVAGE_MOLE_BROTH,          weight =  400 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.MIDDLE_DELKFUTTS_TOWER] =
@@ -2019,6 +2180,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.STUDDED_BOOTS,                 weight =  200 },
             { itemId = xi.item.SOIL_KYAHAN,                   weight =  190 },
             { itemId = xi.item.CHESTNUT_SABOTS,               weight =  390 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.UPPER_DELKFUTTS_TOWER] =
@@ -2058,6 +2224,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.HI_ETHER_P1,       weight = 1900 },
             { itemId = xi.item.PRO_ETHER_P1,      weight =  600 },
             { itemId = xi.item.SILK_PUMPS,        weight =  440 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.TEMPLE_OF_UGGALEPIH] =
@@ -2107,6 +2278,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.DARKSTEEL_BREECHES,              weight =  350 },
             { itemId = xi.item.DARKSTEEL_SOLLERETS,             weight =  540 },
             { itemId = xi.item.SILK_PUMPS,                      weight =  610 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.DEN_OF_RANCOR] =
@@ -2167,6 +2343,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.COEURL_MANTLE,                  weight =  780 },
             { itemId = xi.item.MARID_BELT,                     weight =  220 },
             { itemId = xi.item.WIVRE_HAIRPIN,                  weight =  695 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.RANGUEMONT_PASS] =
@@ -2203,6 +2384,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.PRO_ETHER_P3,                      weight = 2700 },
             { itemId = xi.item.REMEDY,                            weight =  600 },
             { itemId = xi.item.JUG_OF_CHIRPING_GRASSHOPPER_BROTH, weight =  500 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.BOSTAUNIEUX_OUBLIETTE] =
@@ -2266,6 +2452,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.ERRANT_CUFFS,                    weight =   75 },
             { itemId = xi.item.ERRANT_HOUPPELANDE,              weight =   30 },
             { itemId = xi.item.VERDUN,                          weight =  110 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.TORAIMARAI_CANAL] =
@@ -2329,6 +2520,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.ERRANT_CUFFS,                    weight =   75 },
             { itemId = xi.item.ERRANT_HOUPPELANDE,              weight =   30 },
             { itemId = xi.item.VERDUN,                          weight =  110 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.ZERUHN_MINES] =
@@ -2401,6 +2597,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.ETHER_P2,                weight = 4320 },
             { itemId = xi.item.ELIXIR,                  weight =  510 },
             { itemId = xi.item.POT_OF_HONEY,            weight = 2430 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
         itemsHi =
         {
@@ -2453,6 +2654,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.DRAGON_RING,             weight =   25 },
             { itemId = xi.item.BOMB_ARM,                weight = 3810 },
             { itemId = xi.item.JUG_OF_VERMIHUMUS,       weight = 1070 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.KORROLOKA_TUNNEL] =
@@ -2526,6 +2732,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.ETHER_P2,                weight = 4320 },
             { itemId = xi.item.ELIXIR,                  weight =  510 },
             { itemId = xi.item.POT_OF_HONEY,            weight = 2430 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
         itemsHi =
         {
@@ -2553,6 +2764,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.REISHI_MUSHROOM,         weight = 1450 },
             { itemId = xi.item.OGRE_TROUSERS,           weight =  120 },
             { itemId = xi.item.OGRE_MASK,               weight =  110 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.KUFTAL_TUNNEL] =
@@ -2616,6 +2832,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.SCREAM_FUNGUS,           weight =  500 },
             { itemId = xi.item.TOOLBAG_MOKUJIN,         weight =  630 },
             { itemId = xi.item.DARK_ADAMAN_BOLT_QUIVER, weight =  420 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.SEA_SERPENT_GROTTO] =
@@ -2670,6 +2891,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.SILK_SLACKS,                     weight =  345 },
             { itemId = xi.item.SILK_PUMPS,                      weight =  290 },
             { itemId = xi.item.BEAK_LEDELSENS,                  weight =  525 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.VELUGANNON_PALACE] =
@@ -2745,6 +2971,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.DRAGON_RING,             weight =   25 },
             { itemId = xi.item.BOMB_ARM,                weight = 3810 },
             { itemId = xi.item.JUG_OF_VERMIHUMUS,       weight = 1070 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.THE_SHRINE_OF_RUAVITAU] =
@@ -2810,6 +3041,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.JUG_OF_SUN_WATER,                  weight = 1020 },
             { itemId = xi.item.JUG_OF_CHIRPING_GRASSHOPPER_BROTH, weight =  500 },
             { itemId = xi.item.JUG_OF_SAVAGE_MOLE_BROTH,          weight =  400 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.LOWER_DELKFUTTS_TOWER] =
@@ -2862,6 +3098,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.STUDDED_BOOTS,                 weight =  200 },
             { itemId = xi.item.SOIL_KYAHAN,                   weight =  190 },
             { itemId = xi.item.CHESTNUT_SABOTS,               weight =  390 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.KING_RANPERRES_TOMB] =
@@ -2936,6 +3177,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.ETHER_P2,                weight = 4320 },
             { itemId = xi.item.ELIXIR,                  weight =  510 },
             { itemId = xi.item.POT_OF_HONEY,            weight = 2430 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
         itemsHi =
         {
@@ -2978,6 +3224,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.WAR_BRAIS,               weight =   80 },
             { itemId = xi.item.WAR_BOOTS,               weight =   55 },
             { itemId = xi.item.BOMB_ARM,                weight = 3810 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.DANGRUF_WADI] =
@@ -3051,6 +3302,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.ETHER_P2,                weight = 4320 },
             { itemId = xi.item.ELIXIR,                  weight =  510 },
             { itemId = xi.item.POT_OF_HONEY,            weight = 2430 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
         itemsHi =
         {
@@ -3074,6 +3330,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.HI_ETHER_P1,          weight = 2120 },
             { itemId = xi.item.REMEDY,               weight =  795 },
             { itemId = xi.item.GAVIAL_MASK,          weight =  245 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.INNER_HORUTOTO_RUINS] =
@@ -3149,6 +3410,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.WAR_BRAIS,               weight =   80 },
             { itemId = xi.item.WAR_BOOTS,               weight =   55 },
             { itemId = xi.item.BOMB_ARM,                weight = 3810 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.ORDELLES_CAVES] =
@@ -3222,6 +3488,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.ETHER_P2,                weight = 4320 },
             { itemId = xi.item.ELIXIR,                  weight =  510 },
             { itemId = xi.item.POT_OF_HONEY,            weight = 2430 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
         itemsHi =
         {
@@ -3261,6 +3532,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.OGRE_MASK,               weight =  110 },
             { itemId = xi.item.OGRE_GLOVES,             weight =  215 },
             { itemId = xi.item.OGRE_LEDELSENS,          weight =  150 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.OUTER_HORUTOTO_RUINS] =
@@ -3333,6 +3609,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.ETHER_P2,                weight = 4320 },
             { itemId = xi.item.ELIXIR,                  weight =  510 },
             { itemId = xi.item.POT_OF_HONEY,            weight = 2430 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
         itemsHi =
         {
@@ -3385,6 +3666,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.DRAGON_RING,             weight =   25 },
             { itemId = xi.item.BOMB_ARM,                weight = 3810 },
             { itemId = xi.item.JUG_OF_VERMIHUMUS,       weight = 1070 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.THE_ELDIEME_NECROPOLIS] =
@@ -3446,6 +3732,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.CYTHARA_ANGLICA,                   weight =   90 },
             { itemId = xi.item.JUG_OF_CHIRPING_GRASSHOPPER_BROTH, weight = 2570 },
             { itemId = xi.item.ANGON,                             weight = 3100 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.GUSGEN_MINES] =
@@ -3519,6 +3810,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.ETHER_P2,                weight = 4320 },
             { itemId = xi.item.ELIXIR,                  weight =  510 },
             { itemId = xi.item.POT_OF_HONEY,            weight = 2430 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
         itemsHi =
         {
@@ -3559,6 +3855,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.OGRE_MASK,               weight =  110 },
             { itemId = xi.item.OGRE_GLOVES,             weight =  215 },
             { itemId = xi.item.OGRE_LEDELSENS,          weight =  150 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.CRAWLERS_NEST] =
@@ -3620,6 +3921,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.CYTHARA_ANGLICA,                   weight =   90 },
             { itemId = xi.item.JUG_OF_CHIRPING_GRASSHOPPER_BROTH, weight = 2570 },
             { itemId = xi.item.ANGON,                             weight = 3100 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.MAZE_OF_SHAKHRAMI] =
@@ -3693,6 +3999,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.ETHER_P2,                weight = 4320 },
             { itemId = xi.item.ELIXIR,                  weight =  510 },
             { itemId = xi.item.POT_OF_HONEY,            weight = 2430 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
         itemsHi =
         {
@@ -3733,6 +4044,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.OGRE_MASK,               weight =  110 },
             { itemId = xi.item.OGRE_GLOVES,             weight =  215 },
             { itemId = xi.item.OGRE_LEDELSENS,          weight =  150 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.GARLAIGE_CITADEL] =
@@ -3797,6 +4113,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.CYTHARA_ANGLICA,                   weight =   90 },
             { itemId = xi.item.JUG_OF_CHIRPING_GRASSHOPPER_BROTH, weight = 2570 },
             { itemId = xi.item.ANGON,                             weight = 3100 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.FEIYIN] =
@@ -3867,6 +4188,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.VERDUN,                         weight =  230 },
             { itemId = xi.item.JUG_OF_GOBLIN_BUG_BROTH,        weight = 1000 },
             { itemId = xi.item.THROWING_TOMAHAWK,              weight = 2150 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.IFRITS_CAULDRON] =
@@ -3933,6 +4259,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.MARID_BELT,                     weight =  220 },
             { itemId = xi.item.WIVRE_HAIRPIN,                  weight =  695 },
             { itemId = xi.item.WIVRE_GORGET,                   weight =  725 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.GUSTAV_TUNNEL] =
@@ -3966,6 +4297,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.BOTTLE_OF_ASCETICS_GAMBIR,  weight =  305 },
             { itemId = xi.item.BOTTLE_OF_CHAMPIONS_TONIC,  weight =  310 },
             { itemId = xi.item.BOTTLE_OF_FANATICS_TONIC,   weight =  200 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
         items =
         {
@@ -3999,6 +4335,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.JUG_OF_SUN_WATER,                  weight = 1020 },
             { itemId = xi.item.JUG_OF_CHIRPING_GRASSHOPPER_BROTH, weight =  500 },
             { itemId = xi.item.JUG_OF_SAVAGE_MOLE_BROTH,          weight =  400 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
     [xi.zone.LABYRINTH_OF_ONZOZO] =
@@ -4054,6 +4395,11 @@ xi.casket_loot.casketItems =
             { itemId = xi.item.HI_RERAISER,                     weight =  700 },
             { itemId = xi.item.REISHI_MUSHROOM,                 weight =  640 },
             { itemId = xi.item.BARRIER_MODULE,                  weight =  340 },
+            -- Augment Stones
+            { itemId = xi.augment.augmentItems[1][1], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][2], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][3], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
+            { itemId = xi.augment.augmentItems[1][4], weight =  350 * xi.settings.main.AUGMENT_CASKET_DROP_RATE },
         },
     },
 }
