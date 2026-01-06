@@ -5596,6 +5596,7 @@ xi.item =
     SILVER_NAME_TAG                     = 13116,
     RANGERS_NECKLACE                    = 13117,
     TIGER_STOLE                         = 13119,
+    CLAY_AMULET                         = 13120,
     BEAST_COLLAR                        = 13121,
     MINERS_PENDANT                      = 13122,
     TORQUE                              = 13125,
