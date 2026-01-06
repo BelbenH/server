@@ -2270,7 +2270,7 @@ xi.roe.records =
         trigger = xi.roeTrigger.DEFEAT_MOB,
         goal = 500,
         reqs = { mobXP = true },
-        reward = { sparks = 2000, exp = 6000, item = { xi.item.PLUTON_CASE } },
+        reward = { sparks = 2000, exp = 6000, },
     },
 
     [14] =
@@ -2278,7 +2278,7 @@ xi.roe.records =
         trigger = xi.roeTrigger.DEFEAT_MOB,
         goal = 750,
         reqs = { mobXP = true },
-        reward = { sparks = 5000, exp = 10000, item = { xi.item.PLUTON_BOX } },
+        reward = { sparks = 5000, exp = 10000, },
     },
 
     [15] =
@@ -2328,7 +2328,7 @@ xi.roe.records =
         trigger = xi.roeTrigger.DEAL_DAMAGE,
         goal = 100,
         reqs = { dmgMin = 2000 },
-        reward = { sparks = 2000, exp = 5000, item = { { xi.item.COPPER_AMAN_VOUCHER, 6 } } },
+        reward = { sparks = 2000, exp = 5000, },
     },
 
     [19] =
@@ -2394,7 +2394,7 @@ xi.roe.records =
         goal = 200000,
         increment = 0,
         notify = 10000,
-        reward = { sparks = 3000, exp = 7000, item = { xi.item.BEITETSU_BOX } },
+        reward = { sparks = 3000, exp = 7000, },
         check = function(self, player, params)
             if params.dmg and params.dmg > 0 then
                 params.progress = params.progress + params.dmg
@@ -2411,7 +2411,7 @@ xi.roe.records =
         goal = 300000,
         increment = 0,
         notify = 10000,
-        reward = { sparks = 3000, exp = 7000, item = { xi.item.BEITETSU_BOX } },
+        reward = { sparks = 3000, exp = 7000, },
         check = function(self, player, params)
             if params.dmg and params.dmg > 0 then
                 params.progress = params.progress + params.dmg
@@ -2428,7 +2428,7 @@ xi.roe.records =
         goal = 10000,
         increment = 0,
         notify = 500,
-        reward = { sparks = 1000, exp = 2500, item = { xi.item.BOULDER_CASE } },
+        reward = { sparks = 1000, exp = 2500, },
         check = function(self, player, params)
             if params.heal and params.heal > 0 then
                 params.progress = params.progress + params.heal
@@ -2445,7 +2445,7 @@ xi.roe.records =
         goal = 20000,
         increment = 0,
         notify = 1000,
-        reward = { sparks = 3000, exp = 7000, item = { xi.item.BOULDER_BOX } },
+        reward = { sparks = 3000, exp = 7000, },
         check = function(self, player, params)
             if params.heal and params.heal > 0 then
                 params.progress = params.progress + params.heal
@@ -2462,7 +2462,7 @@ xi.roe.records =
         goal = 30000,
         increment = 0,
         notify = 1000,
-        reward = { sparks = 3000, exp = 7000, item = { xi.item.BOULDER_BOX } },
+        reward = { sparks = 3000, exp = 7000, },
         check = function(self, player, params)
             if params.heal and params.heal > 0 then
                 params.progress = params.progress + params.heal
@@ -2544,7 +2544,7 @@ xi.roe.records =
         trigger = xi.roeTrigger.HEAL_ALLY,
         goal = 100,
         reqs = { healMin = 750 },
-        reward = { sparks = 3000, exp = 7000, item = { xi.item.PLUTON_BOX } },
+        reward = { sparks = 3000, exp = 7000, },
     },
 
     -----------------------------------
@@ -4316,7 +4316,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 113 } },
         flags = set { 'repeat' },
-        reward = { sparks = 16, exp = 800, accolades = 5, item = { xi.item.BEAK_NECKLACE } },
+        reward = { sparks = 16, exp = 800, accolades = 5, item = { xi.item.CLAY_AMULET } },
     },
 
     [410] =
@@ -4616,7 +4616,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 5 } },
         flags = set { 'repeat' },
-        reward = { sparks = 16, exp = 800, accolades = 5, item = { xi.item.BEHEMOTH_MANTLE } },
+        reward = { sparks = 16, exp = 800, accolades = 5, item = { xi.item.SAPIENT_CAPE } },
     },
 
     -----------------------------------
@@ -4732,7 +4732,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 84 } },
         flags = set { 'repeat' },
-        reward = { sparks = 12, exp = 600, accolades = 5, item = { xi.item.JEWELED_COLLAR } },
+        reward = { sparks = 12, exp = 600, accolades = 5, item = { xi.item.DARKSTEEL_GORGET } },
     },
 
     [559] =
