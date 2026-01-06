@@ -859,6 +859,7 @@ xi.shop.phalanxShops =
         { xi.item.APPLE_AU_LAIT_TANK,               3880, },
         { xi.item.RABBIT_MANTLE,                     220, },
         { xi.item.CAPE,                              425, },
+        { xi.item.WHITE_BELT,                       1863, },
         { xi.item.BLOOD_STONE,                       125, },
         { xi.item.LEATHER_BELT,                      425, },
         { xi.item.HEKO_OBI,                          495, },

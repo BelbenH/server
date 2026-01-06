@@ -618,16 +618,15 @@ xi.xispchocobo.spawnChocobo = function(player)
             name = 'Young Chocobo'
         end
 
-        if player:getCharVar('[XISP]chocoName') > 0 then
+        if player:getCharVar('[XISP]chocoName') > 0 then -- hawt <3
             name = xi.xispchocobo.names[player:getCharVar('[XISP]chocoName')]
         end
 
         -- Don't spawn if mounted OR baby / teen and in a dungeon
         if
             player:getStatusEffect(xi.effect.MOUNTED) ~= nil or
-            (chocoStage < 20 and
-            zone and
-            zone:getTypeMask() == xi.zoneType.DUNGEON)
+            (zone and zone:getTypeMask() == xi.zoneType.DUNGEON) or -- No chocobos in dungeons.
+            (chocoStage >= 20 and not player:canUseMisc(xi.zoneMisc.MOUNT)) -- No adults in zones they're not allowed in
         then
             return
         end
