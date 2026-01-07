@@ -3442,8 +3442,8 @@ INSERT INTO `mob_skill_lists` VALUES ('TRUST_Tenzen',1023,1390); -- Amatsu: Tori
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Tenzen',1023,1391); -- Amatsu: Kazakiri
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Tenzen',1023,1392); -- Amatsu: Yukiarashi
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Tenzen',1023,1393); -- Amatsu: Tsukioboro
-INSERT INTO `mob_skill_lists` VALUES ('TRUST_Tenzen',1023,1394); -- Amatsu: Hanaikusa
-INSERT INTO `mob_skill_lists` VALUES ('TRUST_Tenzen',1023,1395); -- Amatsu: Tsukikage
+-- INSERT INTO `mob_skill_lists` VALUES ('TRUST_Tenzen',1023,1394); -- Amatsu: Hanaikusa
+-- INSERT INTO `mob_skill_lists` VALUES ('TRUST_Tenzen',1023,1395); -- Amatsu: Tsukikage
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mihli_Aliapoh',1024,162);  -- Brainshaker
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mihli_Aliapoh',1024,166);  -- True Strike
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mihli_Aliapoh',1024,168);  -- Hexastrike
