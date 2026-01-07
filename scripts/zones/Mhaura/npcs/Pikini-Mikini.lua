@@ -15,6 +15,7 @@ entity.onTrigger = function(player, npc)
         { xi.item.POTION,                     946 },
         { xi.item.FLASK_OF_DISTILLED_WATER,    12 },
         { xi.item.SHEET_OF_PARCHMENT,        2059 },
+        { xi.item.SCROLL_OF_REGEN,           4920 }, -- x 10 specialty item.
         { xi.item.LUGWORM,                     12 },
         { xi.item.STRIP_OF_MEAT_JERKY,        124 },
         { xi.item.DISH_OF_SALSA,              153 },
