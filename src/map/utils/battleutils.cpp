@@ -1278,6 +1278,53 @@ void HandleEnspell(CBattleEntity* PAttacker, CBattleEntity* PDefender, action_re
         }
     }
 
+    auto checkWeaponAdditionalEffect = [&]() -> bool
+    {
+        if (PAttacker->objtype == TYPE_PC)
+        {
+            bool hasGlobalAdditionalEffect     = battleutils::GetScaledItemModifier(PAttacker, weapon, Mod::ITEM_ADDEFFECT_TYPE) > 0;     // additional_effect.lua
+            bool hasItemScriptAdditionalEffect = battleutils::GetScaledItemModifier(PAttacker, weapon, Mod::ITEM_ADDEFFECT_SCRIPTED) > 0; // scripts/items/{}.lua
+
+            if (hasGlobalAdditionalEffect && hasItemScriptAdditionalEffect)
+            {
+                ShowErrorFmt("Item '{}' has misconfigured additional effect data with both item script and add effect global configured", weapon->getName());
+            }
+
+            if (hasGlobalAdditionalEffect && luautils::additionalEffectAttack(PAttacker, PDefender, weapon, Action, finaldamage) == 0 && Action->hasAdditionalEffect())
+            {
+                if (Action->addEffectMessage == MsgBasic::ADD_EFFECT_DAMAGE && Action->addEffectParam < 0)
+                {
+                    Action->addEffectMessage = MsgBasic::ADD_EFFECT_RECOVERS_HP;
+                }
+                return true;
+            }
+
+            if (hasItemScriptAdditionalEffect && luautils::OnItemAdditionalEffect(PAttacker, PDefender, weapon, Action, finaldamage) == 0 && Action->hasAdditionalEffect())
+            {
+                if (Action->addEffectMessage == MsgBasic::ADD_EFFECT_DAMAGE && Action->addEffectParam < 0)
+                {
+                    Action->addEffectMessage = MsgBasic::ADD_EFFECT_RECOVERS_HP;
+                }
+                return true;
+            }
+        }
+
+        return false;
+    };
+
+    bool checkedPriorityWeaponAddEffect = false;
+
+    // TODO: grip priority too?
+    if (PAttacker->objtype == TYPE_PC && battleutils::GetScaledItemModifier(PAttacker, weapon, Mod::ITEM_ADDEFFECT_PRIORITY) > 0)
+    {
+        if (checkWeaponAdditionalEffect())
+        {
+            return; // Lambda handled the function
+        }
+
+        checkedPriorityWeaponAddEffect = true;
+    }
+
     if ((PAttacker->getMod(Mod::ENSPELL) > 0 && // Enspell overwrites weapon effects
          (PAttacker->getMod(Mod::ENSPELL_CHANCE) == 0 || PAttacker->getMod(Mod::ENSPELL_CHANCE) > xirand::GetRandomNumber(100))) ||
         PAttacker->StatusEffectContainer->GetActiveRuneCount() > 0) // Rune Enhancement means we deal enspell damage
@@ -1402,14 +1449,10 @@ void HandleEnspell(CBattleEntity* PAttacker, CBattleEntity* PDefender, action_re
             }
         }
     }
-    // check weapon for additional effects
-    else if (PAttacker->objtype == TYPE_PC && battleutils::GetScaledItemModifier(PAttacker, weapon, Mod::ITEM_ADDEFFECT_TYPE) > 0 &&
-             luautils::additionalEffectAttack(PAttacker, PDefender, weapon, Action, finaldamage) == 0 && Action->hasAdditionalEffect())
+    // check weapon for additional effects only if priority hasn't been checked already
+    else if (!checkedPriorityWeaponAddEffect && checkWeaponAdditionalEffect())
     {
-        if (Action->addEffectMessage == MsgBasic::ADD_EFFECT_DAMAGE && Action->addEffectParam < 0)
-        {
-            Action->addEffectMessage = MsgBasic::ADD_EFFECT_RECOVERS_HP;
-        }
+        return; // Lambda handled the function
     }
     // check script for grip if main failed
     else if (PAttacker->objtype == TYPE_PC && static_cast<CCharEntity*>(PAttacker)->getEquip(SLOT_SUB) && weapon == PAttacker->m_Weapons[SLOT_MAIN] &&
@@ -2359,8 +2402,11 @@ void TakeSpellDamage(CBattleEntity* PDefender, CBattleEntity* PAttacker, CSpell*
         BindBreakCheck(PAttacker, PDefender);
 
         // Add TP for damaging spells (Only player chars who have the Occult Accumen trait)
-        int16 tp = battleutils::CalculateSpellTP(PAttacker, PSpell);
-        PAttacker->addTP(tp);
+        auto spellTpFunc = lua["xi"]["combat"]["tp"]["calculateSpellTP"];
+        if (spellTpFunc.valid())
+        {
+            PAttacker->addTP(spellTpFunc(PAttacker, PSpell));
+        }
 
         // Targets of damaging spells gain TP
         auto tpGainFunc = lua["xi"]["combat"]["tp"]["calculateTPGainOnMagicalDamage"];
@@ -2415,7 +2461,7 @@ uint8 GetHitRateEx(CBattleEntity* PAttacker, CBattleEntity* PDefender, uint8 att
     bool hasValidSneakAttack = hasSneakAttack && isBehind;
     bool hasValidTrickAttack = hasTrickAttack && hasAssassin;
 
-    if ((hasValidSneakAttack || hasValidTrickAttack) && getAvailableTrickAttackChar(PAttacker, PDefender))
+    if (hasValidSneakAttack || (hasValidTrickAttack && getAvailableTrickAttackChar(PAttacker, PDefender)))
     {
         hitrate = 100; // Attack with SA active or TA/Assassin cannot miss
     }
@@ -5969,14 +6015,27 @@ timer::duration CalculateSpellRecastTime(CBattleEntity* PEntity, CSpell* PSpell)
 
     recast = std::max<timer::duration>(recast, std::chrono::floor<std::chrono::milliseconds>(base * 0.2f));
 
-    if (PSpell->getSkillType() == SKILLTYPE::SKILL_ELEMENTAL_MAGIC)
+    int32 recastMod = 0;
+    switch (PSpell->getSkillType())
     {
-        recast = std::chrono::floor<std::chrono::milliseconds>(recast * ((100.0f + PEntity->getMod(Mod::ELEMENTAL_MAGIC_RECAST)) / 100.0f));
+        case SKILLTYPE::SKILL_ELEMENTAL_MAGIC:
+            recastMod = PEntity->getMod(Mod::ELEMENTAL_MAGIC_RECAST);
+            break;
+        case SKILLTYPE::SKILL_BLUE_MAGIC:
+            recastMod = PEntity->getMod(Mod::BLUE_MAGIC_RECAST);
+            break;
+        case SKILLTYPE::SKILL_HEALING_MAGIC:
+            recastMod = PEntity->getMod(Mod::HEALING_MAGIC_RECAST);
+            break;
+        case SKILLTYPE::SKILL_ENFEEBLING_MAGIC:
+            recastMod = PEntity->getMod(Mod::ENFEEBLING_MAGIC_RECAST);
+            break;
+        case SKILLTYPE::SKILL_ENHANCING_MAGIC:
+            recastMod = PEntity->getMod(Mod::ENHANCING_MAGIC_RECAST);
+            break;
     }
-    if (PSpell->getSkillType() == SKILLTYPE::SKILL_BLUE_MAGIC)
-    {
-        recast = std::chrono::floor<std::chrono::milliseconds>(recast * ((100.0f + PEntity->getMod(Mod::BLUE_MAGIC_RECAST)) / 100.0f));
-    }
+
+    recast = std::chrono::floor<std::chrono::milliseconds>(recast * ((100.0f + recastMod) / 100.0f));
 
     // Light/Dark arts recast bonus/penalties applies after other bonuses
     if (PSpell->getSpellGroup() == SPELLGROUP_BLACK)
@@ -6066,25 +6125,6 @@ timer::duration CalculateSpellRecastTime(CBattleEntity* PEntity, CSpell* PSpell)
     recast = std::max<timer::duration>(recast, 0s);
 
     return recast;
-}
-
-// Calculate TP generated by spell for Occult Acumen trait
-int16 CalculateSpellTP(CBattleEntity* PEntity, CSpell* PSpell)
-{
-    // Players only
-    if (PEntity->objtype == TYPE_PC)
-    {
-        if (PSpell->getSkillType() == SKILLTYPE::SKILL_ELEMENTAL_MAGIC || PSpell->getSkillType() == SKILLTYPE::SKILL_DARK_MAGIC)
-        {
-            CCharEntity* PChar = static_cast<CCharEntity*>(PEntity);
-            if (charutils::hasTrait(PChar, TRAIT_OCCULT_ACUMEN))
-            {
-                return static_cast<int16>(PSpell->getMPCost() * PChar->getMod(Mod::OCCULT_ACUMEN) / 100.0f * (1 + (PChar->getMod(Mod::STORETP) / 100.0f)));
-            }
-        }
-    }
-
-    return 0;
 }
 
 int16 CalculateWeaponSkillTP(CBattleEntity* PEntity, CWeaponSkill* PWeaponSkill, int16 spentTP)

@@ -7777,11 +7777,11 @@ INSERT INTO `mob_spawn_points` VALUES (16924678,0,'Promathia_2','Promathia',2,-5
 
 -- Apocalypse Nigh
 INSERT INTO `mob_spawn_points` VALUES (16924679,0,'Kamlanaut','Kam\'lanaut',3,-518.190,-120.500,524.392,64);
-INSERT INTO `mob_spawn_points` VALUES (16924680,0,'Ealdnarche','Eald\'narche',4,-529.274,-120.000,516.185,64);
-INSERT INTO `mob_spawn_points` VALUES (16924681,0,'Kamlanaut','Kam\'lanaut',3,511.559,-0.500,528.348,64);
-INSERT INTO `mob_spawn_points` VALUES (16924682,0,'Ealdnarche','Eald\'narche',4,516.331,-0.500,518.179,64);
-INSERT INTO `mob_spawn_points` VALUES (16924683,0,'Kamlanaut','Kam\'lanaut',3,520.361,0.000,493.300,64);
-INSERT INTO `mob_spawn_points` VALUES (16924684,0,'Ealdnarche','Eald\'narche',4,530.361,0.000,493.300,64);
+INSERT INTO `mob_spawn_points` VALUES (16924680,0,'Ealdnarche','Eald\'narche',4,-523.000,-120.000,524.392,64);
+INSERT INTO `mob_spawn_points` VALUES (16924681,0,'Kamlanaut','Kam\'lanaut',3,521.559,0.000,528.348,64);
+INSERT INTO `mob_spawn_points` VALUES (16924682,0,'Ealdnarche','Eald\'narche',4,516.559,0.000,528.348,64);
+INSERT INTO `mob_spawn_points` VALUES (16924683,0,'Kamlanaut','Kam\'lanaut',3,-515.000,-120.000,-511.469,64);
+INSERT INTO `mob_spawn_points` VALUES (16924684,0,'Ealdnarche','Eald\'narche',4,-520.000,-120.000,-511.469,64);
 
 -- Both Paths Taken
 INSERT INTO `mob_spawn_points` VALUES (16924685,0,'Disjoined_One','Disjoined One',5,0.000,0.000,0.000,0);
@@ -50139,10 +50139,10 @@ INSERT INTO `mob_spawn_points` VALUES (17346742,0,'Dragonian_Minstrel','Dragonia
 -- Today's Horoscope
 INSERT INTO `mob_spawn_points` VALUES (17346744,0,'Aries','Aries',34,-396.153,94.703,-64.349,46);
 INSERT INTO `mob_spawn_points` VALUES (17346746,0,'Aries','Aries',34,-156.218,-25.306,115.621,46);
-INSERT INTO `mob_spawn_points` VALUES (17346748,0,'Aries','Aries',34,83.775,-145.323,295.455,46);
+INSERT INTO `mob_spawn_points` VALUES (17346748,0,'Aries','Aries',34,83.834,-145.788,295.622,46);
 
 -- Contaminated Colosseum
-INSERT INTO `mob_spawn_points` VALUES (17346750,0,'Evil_Oscar','Evil Oscar',35,-396.000,94.000,-63.000,46);
+INSERT INTO `mob_spawn_points` VALUES (17346750,0,'Evil_Oscar','Evil Oscar',35,-396.153,94.703,-64.349,46);
 INSERT INTO `mob_spawn_points` VALUES (17346752,0,'Evil_Oscar','Evil Oscar',35,-156.065,-26.009,116.970,46);
 INSERT INTO `mob_spawn_points` VALUES (17346754,0,'Evil_Oscar','Evil Oscar',35,83.928,-146.026,296.804,46);
 
@@ -51822,24 +51822,24 @@ INSERT INTO `mob_spawn_points` VALUES (17367264,0,'Osschaarts_Avatar','Osschaart
 INSERT INTO `mob_spawn_points` VALUES (17367265,0,'Osschaarts_Automaton','Osschaart\'s Automaton',40,-177.358,60.188,-141.977,124);
 
 -- Operation Desert Swarm
-INSERT INTO `mob_spawn_points` VALUES (17367266,0,'Platoon_Scorpion','Platoon Scorpion',41,-175.000,60.000,-142.000,124);
-INSERT INTO `mob_spawn_points` VALUES (17367267,0,'Platoon_Scorpion','Platoon Scorpion',41,-175.000,60.000,-139.000,124);
-INSERT INTO `mob_spawn_points` VALUES (17367268,0,'Platoon_Scorpion','Platoon Scorpion',41,-175.000,60.000,-145.000,124);
-INSERT INTO `mob_spawn_points` VALUES (17367269,0,'Platoon_Scorpion','Platoon Scorpion',41,-172.000,59.000,-145.000,124);
-INSERT INTO `mob_spawn_points` VALUES (17367270,0,'Platoon_Scorpion','Platoon Scorpion',41,-172.000,60.000,-141.000,124);
-INSERT INTO `mob_spawn_points` VALUES (17367271,0,'Platoon_Scorpion','Platoon Scorpion',41,-171.000,59.000,-139.000,124);
-INSERT INTO `mob_spawn_points` VALUES (17367273,0,'Platoon_Scorpion','Platoon Scorpion',41,25.274,0.000,17.964,124);
-INSERT INTO `mob_spawn_points` VALUES (17367274,0,'Platoon_Scorpion','Platoon Scorpion',41,25.274,0.000,20.964,124);
-INSERT INTO `mob_spawn_points` VALUES (17367275,0,'Platoon_Scorpion','Platoon Scorpion',41,25.274,0.000,14.964,124);
-INSERT INTO `mob_spawn_points` VALUES (17367276,0,'Platoon_Scorpion','Platoon Scorpion',41,28.274,-1.000,14.964,124);
-INSERT INTO `mob_spawn_points` VALUES (17367277,0,'Platoon_Scorpion','Platoon Scorpion',41,28.274,0.000,18.964,124);
-INSERT INTO `mob_spawn_points` VALUES (17367278,0,'Platoon_Scorpion','Platoon Scorpion',41,29.274,-1.000,20.964,124);
-INSERT INTO `mob_spawn_points` VALUES (17367280,0,'Platoon_Scorpion','Platoon Scorpion',41,225.224,-60.000,137.946,124);
-INSERT INTO `mob_spawn_points` VALUES (17367281,0,'Platoon_Scorpion','Platoon Scorpion',41,225.224,-60.000,140.946,124);
-INSERT INTO `mob_spawn_points` VALUES (17367282,0,'Platoon_Scorpion','Platoon Scorpion',41,225.224,-60.000,134.946,124);
-INSERT INTO `mob_spawn_points` VALUES (17367283,0,'Platoon_Scorpion','Platoon Scorpion',41,228.224,-61.000,134.946,124);
-INSERT INTO `mob_spawn_points` VALUES (17367284,0,'Platoon_Scorpion','Platoon Scorpion',41,228.224,-60.000,138.946,124);
-INSERT INTO `mob_spawn_points` VALUES (17367285,0,'Platoon_Scorpion','Platoon Scorpion',41,229.224,-61.000,140.946,124);
+INSERT INTO `mob_spawn_points` VALUES (17367266,0,'Platoon_Scorpion','Platoon Scorpion',41,-179.358,59.695,-142.018,128);
+INSERT INTO `mob_spawn_points` VALUES (17367267,0,'Platoon_Scorpion','Platoon Scorpion',41,-175.358,59.797,-145.018,128);
+INSERT INTO `mob_spawn_points` VALUES (17367268,0,'Platoon_Scorpion','Platoon Scorpion',41,-175.358,59.797,-139.018,128);
+INSERT INTO `mob_spawn_points` VALUES (17367269,0,'Platoon_Scorpion','Platoon Scorpion',41,-175.358,59.695,-142.018,128);
+INSERT INTO `mob_spawn_points` VALUES (17367270,0,'Platoon_Scorpion','Platoon Scorpion',41,-179.358,59.797,-139.018,128);
+INSERT INTO `mob_spawn_points` VALUES (17367271,0,'Platoon_Scorpion','Platoon Scorpion',41,-179.358,59.797,-145.018,128);
+INSERT INTO `mob_spawn_points` VALUES (17367273,0,'Platoon_Scorpion','Platoon Scorpion',41,25.274,-0.305,17.964,128);
+INSERT INTO `mob_spawn_points` VALUES (17367274,0,'Platoon_Scorpion','Platoon Scorpion',41,29.274,-0.203,14.964,128);
+INSERT INTO `mob_spawn_points` VALUES (17367275,0,'Platoon_Scorpion','Platoon Scorpion',41,29.274,-0.203,20.964,128);
+INSERT INTO `mob_spawn_points` VALUES (17367276,0,'Platoon_Scorpion','Platoon Scorpion',41,29.274,-0.305,17.964,128);
+INSERT INTO `mob_spawn_points` VALUES (17367277,0,'Platoon_Scorpion','Platoon Scorpion',41,25.274,-0.203,20.964,128);
+INSERT INTO `mob_spawn_points` VALUES (17367278,0,'Platoon_Scorpion','Platoon Scorpion',41,25.274,-0.203,14.964,128);
+INSERT INTO `mob_spawn_points` VALUES (17367280,0,'Platoon_Scorpion','Platoon Scorpion',41,225.224,-60.305,137.946,128);
+INSERT INTO `mob_spawn_points` VALUES (17367281,0,'Platoon_Scorpion','Platoon Scorpion',41,229.224,-60.203,134.946,128);
+INSERT INTO `mob_spawn_points` VALUES (17367282,0,'Platoon_Scorpion','Platoon Scorpion',41,229.224,-60.203,140.946,128);
+INSERT INTO `mob_spawn_points` VALUES (17367283,0,'Platoon_Scorpion','Platoon Scorpion',41,229.224,-60.305,137.946,128);
+INSERT INTO `mob_spawn_points` VALUES (17367284,0,'Platoon_Scorpion','Platoon Scorpion',41,225.224,-60.203,140.946,128);
+INSERT INTO `mob_spawn_points` VALUES (17367285,0,'Platoon_Scorpion','Platoon Scorpion',41,225.224,-60.203,134.946,128);
 
 -- Prehistoric Pigeons
 INSERT INTO `mob_spawn_points` VALUES (17367287,0,'Titanis_Max','Titanis Max',42,-179.358,59.778,-140.518,128);
@@ -69968,7 +69968,7 @@ INSERT INTO `mob_spawn_points` VALUES (17617154,0,'Volcanic_Bomb','Volcanic Bomb
 INSERT INTO `mob_spawn_points` VALUES (17617155,0,'Volcanic_Bomb','Volcanic Bomb',18,-382.992,27.940,259.001,105);
 INSERT INTO `mob_spawn_points` VALUES (17617156,0,'Volcanic_Bomb','Volcanic Bomb',18,-21.588,39.921,62.884,127);
 INSERT INTO `mob_spawn_points` VALUES (17617157,0,'Mimic','Mimic',24,1.000,1.000,1.000,0);
-INSERT INTO `mob_spawn_points` VALUES (17617158,0,'Bomb_Queen','Bomb Queen',25,14.682,20.058,-104.121,0);
+INSERT INTO `mob_spawn_points` VALUES (17617158,0,'Bomb_Queen','Bomb Queen',25,21.128,19.687,-110.232,0);
 INSERT INTO `mob_spawn_points` VALUES (17617159,0,'Bomb_Princess','Bomb Princess',26,1.000,1.000,1.000,0);
 INSERT INTO `mob_spawn_points` VALUES (17617160,0,'Bomb_Prince','Bomb Prince',27,1.000,1.000,1.000,0);
 INSERT INTO `mob_spawn_points` VALUES (17617161,0,'Bomb_Princess','Bomb Princess',26,1.000,1.000,1.000,0);

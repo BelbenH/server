@@ -59,9 +59,8 @@ CBattleEntity::CBattleEntity()
 {
     TracyZoneScoped;
     m_OwnerID.clean();
-    m_ModelRadius = 0;
-    m_mlvl        = 0;
-    m_slvl        = 0;
+    m_mlvl = 0;
+    m_slvl = 0;
 
     m_mjob = JOB_WAR;
     m_sjob = JOB_WAR;
@@ -105,7 +104,7 @@ CBattleEntity::~CBattleEntity()
     TracyZoneScoped;
 }
 
-bool CBattleEntity::isDead()
+auto CBattleEntity::isDead() const -> bool
 {
     return (health.hp <= 0 || status == STATUS_TYPE::DISAPPEAR || PAI->IsCurrentState<CDeathState>() || PAI->IsCurrentState<CDespawnState>());
 }
@@ -198,7 +197,7 @@ bool CBattleEntity::isAsleep()
     return PAI->IsCurrentState<CInactiveState>();
 }
 
-bool CBattleEntity::isMounted()
+auto CBattleEntity::isMounted() const -> bool
 {
     return (animation == ANIMATION_CHOCOBO || animation == ANIMATION_MOUNT);
 }
@@ -3034,8 +3033,8 @@ bool CBattleEntity::OnAttack(CAttackState& state, action_t& action)
             actionResult.param = 0;
         }
 
-        // if we did hit, run enspell/spike routines as long as this isn't a Daken swing
-        if (actionResult.resolution == ActionResolution::Hit && attack.GetAttackType() != PHYSICAL_ATTACK_TYPE::DAKEN)
+        // Run enspell/spike routines for hit, guard, or block as long as this isn't a Daken swing
+        if (actionResult.resolution != ActionResolution::Miss && actionResult.resolution != ActionResolution::Parry && attack.GetAttackType() != PHYSICAL_ATTACK_TYPE::DAKEN)
         {
             // Handle addtl effects/enspells only if the target is not already dead
             if (PTarget->GetHPP() > 0)

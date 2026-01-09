@@ -208,16 +208,6 @@ xi.mob.phOnDespawn = function(ph, phNmId, chance, cooldown, params)
 end
 
 -----------------------------------
--- Mob skills
------------------------------------
-xi.mob.skills =
-{
-    RECOIL_DIVE = 641,
-    CYTOKINESIS = 2514,
-    DISSOLVE = 2550,
-}
-
------------------------------------
 -- mob additional melee effects
 -----------------------------------
 
@@ -818,6 +808,7 @@ xi.mob.callPets = function(mob, petIds, params)
     --      params.ignoreBusy:     allow pets to get summoned even if owner is busy, interupting any action it was performing
     --      params.noAnimation:    no animation packet from owner when calling pet
     --      params.inactiveTime:   how long for the call pet to take (owner will be inactive during period)
+    --      params.ignoreInactive: summoner does not become inactive while summoning a pet
     --          this implies using summoner start/stop entity animation packet (which most mobs use when calling either pets or additional helpers)
     -- if inactiveTime is zero, the following will determine an action packet to signal the mob is calling a pet
     --      params.callPetJob will map to a particular mobskill action packet
@@ -1044,8 +1035,10 @@ xi.mob.callPets = function(mob, petIds, params)
     end
 
     if params.inactiveTime > 0 then
-        -- put owner into inactive state until the timer fires
-        mob:stun(params.inactiveTime)
+        if not params.ignoreInactive then
+            -- put owner into inactive state until the timer fires
+            mob:stun(params.inactiveTime)
+        end
 
         -- start call pet animation
         if not params.noAnimation then
