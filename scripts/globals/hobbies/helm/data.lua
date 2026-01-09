@@ -866,10 +866,10 @@ xi.helm.dataTable =
                     { 1130, xi.item.LAUAN_LOG              },
                     {  780, xi.item.BEEHIVE_CHIP           },
                     {  650, xi.item.DRYAD_ROOT             },
-                    {  650, xi.item.BUTTERPEAR             },
+                    -- {  650, xi.item.BUTTERPEAR             }, -- Out of era item
                     {  610, xi.item.REVIVAL_TREE_ROOT      },
-                    {  610, xi.item.AQUILARIA_LOG          },
-                    {  570, xi.item.KAPOR_LOG              },
+                    -- {  610, xi.item.AQUILARIA_LOG          }, -- Out of era item
+                    -- {  570, xi.item.KAPOR_LOG              }, -- Out of era item
                     {  350, xi.item.MAHOGANY_LOG           },
                     {  170, xi.item.EBONY_LOG              },
                     {   90, xi.item.BAG_OF_TREE_CUTTINGS   },
@@ -1324,11 +1324,11 @@ xi.helm.dataTable =
                     { -137.089, -40.658,  150.613 },
                     { -107.372,  -0.380,  256.981 }, -- (R)H-8
                     {  -64.416, -40.104,  253.775 },
-                    {  -26.623, -60.805, -141.508 },
+                    -- {  -26.623, -60.805, -141.508 }, -- Not on wikipedia
                     {  -24.341, -60.806, -169.115 }, -- (R)G-8
                     {  -13.810, -40.108,  -87.118 }, -- (R)G-7
                     {  -10.364, -40.028,  -84.169 },
-                    {   27.651, -40.074,   62.101 },
+                    -- {   27.651, -40.074,   62.101 }, -- Not on wikipedia
                     {   31.350, -41.101,  195.396 }, -- (R)H-6
                     {   71.523, -60.258, -174.060 },
                     {   92.931, -60.659, -224.312 },

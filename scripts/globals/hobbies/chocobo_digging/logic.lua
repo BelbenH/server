@@ -347,7 +347,7 @@ xi.chocoboDig.start = function(player)
         player:messageText(player, text.FIND_NOTHING)
         player:setLocalVar('[DIG]LastDigTime', GetSystemTime())
 
-        return false
+        return true
     end
 
     -- Handle auto-fail from position.
@@ -361,7 +361,7 @@ xi.chocoboDig.start = function(player)
         player:messageText(player, text.FIND_NOTHING)
         player:setLocalVar('[DIG]LastDigTime', GetSystemTime())
 
-        return false
+        return true
     end
 
     -----------------------------------
