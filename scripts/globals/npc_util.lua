@@ -94,10 +94,6 @@ function npcUtil.popFromQM(player, qm, mobId, params)
             mob:setSpawn(qm:getXPos() + x, qm:getYPos(), qm:getZPos() + z)
         end
 
-        if params.playerPos then
-            mob:setSpawn(xi.xisp.getPointAroundLoc(player:getPos(), 2, 4))
-        end
-
         -- spawn
         mob:spawn()
 

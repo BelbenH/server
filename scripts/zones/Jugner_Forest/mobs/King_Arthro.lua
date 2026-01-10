@@ -45,8 +45,12 @@ entity.onMobInitialize = function(mob)
 
     mob:setMobMod(xi.mobMod.ADD_EFFECT, 1)
     mob:setMod(xi.mod.UFASTCAST, 100)
+    mob:addMod(xi.mod.DOUBLE_ATTACK, 15)
     mob:setMobMod(xi.mobMod.GIL_MIN, 15000)
     mob:setMobMod(xi.mobMod.GIL_MAX, 20000)
+
+    mob:setMobMod(xi.mobMod.WEAPON_BONUS, 20)
+    mob:addImmunity(xi.immunity.SILENCE)
 end
 
 entity.onMobSpawn = function(mob)

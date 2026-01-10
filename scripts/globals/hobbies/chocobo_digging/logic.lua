@@ -173,7 +173,7 @@ local function calculateSkillUp(player)
             -- update the skill rank
             -- Digging does not have test items, so increment rank once player hits 10.0, 20.0, .. 100.0
             if (realSkill + increment) >= (skillRank * 100) + 100 then
-                player:printToPlayer('Your digging skill increased!' xi.msg.channel.SYSTEM_3, '')
+                player:printToPlayer('Your digging skill increased!', xi.msg.channel.SYSTEM_3, '')
                 player:setSkillRank(xi.skill.DIG, skillRank + 1)
             end
         end

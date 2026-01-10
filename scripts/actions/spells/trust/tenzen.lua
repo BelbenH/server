@@ -5,7 +5,8 @@
 local spellObject = {}
 
 spellObject.onMagicCastingCheck = function(caster, target, spell)
-    return xi.trust.canCast(caster, spell, xi.magic.spell.TENZEN_II)
+    return false -- Tenzen temporarily disabled due to the server crashes
+    -- return xi.trust.canCast(caster, spell, xi.magic.spell.TENZEN_II)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
