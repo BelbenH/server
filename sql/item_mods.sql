@@ -12037,7 +12037,7 @@ INSERT INTO `item_mods` VALUES (12343,21,3); -- LIGHT_MEVA: 3
 INSERT INTO `item_mods` VALUES (12343,22,3); -- DARK_MEVA: 3
 
 -- Master Shield
-INSERT INTO `item_mods` VALUES (12344,1,8);    -- DEF: 8
+INSERT INTO `item_mods` VALUES (12344,1,18);    -- DEF: 18
 INSERT INTO `item_mods` VALUES (12344,109,10); -- SHIELD: 10
 
 -- Bloodbead Ecu

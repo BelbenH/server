@@ -24,7 +24,7 @@ local familyData =
         name    = { 'Mandragore', 'Root Reaper', 'Sproutbane', 'Sapling Hex', 'Briar Imp', },
         [tierOne]   = { dropList = 4503, groupID = 201, look = 2204,                                         exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.REGEN] = 2,  [xi.mod.REGAIN] = 100, }, },
         [tierTwo]   = { dropList = 4504, groupID = 201, look = 2954,                                         exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.REGEN] = 5,  [xi.mod.REGAIN] = 150, }, },
-        [tierThree] = { dropList = 4505, groupID = 201, look = '0x00008E0B00000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.REGEN] = 25, [xi.mod.REGAIN] = 200, }, },
+        [tierThree] = { dropList = 4505, groupID = 201, look = '0x00008E0B00000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.REGEN] = 10, [xi.mod.REGAIN] = 200, }, },
     },
 
     [xi.mobSuperFamily.CRAB] =
