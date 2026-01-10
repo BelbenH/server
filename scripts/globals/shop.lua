@@ -732,6 +732,38 @@ xi.shop.phalanxShops =
         { xi.item.MELNINAS_EARRING,               999999, }, -- x ?? specialty item.
     },
 
+    customProudBeardShop = -- Human / Galkan RSE merchant. Bastok Mines - (K-8)
+    {
+        { xi.item.ELVAAN_JERKIN,                     312, },
+        { xi.item.MAGNA_JERKIN,                   312000, }, -- x ?? specialty item. -- M
+        { xi.item.ELVAAN_BODICE,                     312, },
+        { xi.item.MAGNA_BODICE,                   312000, }, -- x ?? specialty item. -- F
+        { xi.item.ELVAAN_GLOVES,                     187, },
+        { xi.item.MAGNA_GAUNTLETS,                187000, }, -- x ?? specialty item. -- M
+        { xi.item.WOOD_GAUNTLETS,                 374000, }, -- x ?? specialty item. -- M
+        { xi.item.ELVAAN_GAUNTLETS,                  187, },
+        { xi.item.MAGNA_GLOVES,                   187000, }, -- x ?? specialty item. -- F
+        { xi.item.WOOD_GLOVES,                    374000, }, -- x ?? specialty item. -- F
+        { xi.item.ELVAAN_M_CHAUSSES,                 270, },
+        { xi.item.MAGNA_M_CHAUSSES,               270000, }, -- x ?? specialty item. -- M
+        { xi.item.ELVAAN_F_CHAUSSES,                 270, },
+        { xi.item.MAGNA_F_CHAUSSES,               270000, }, -- x ?? specialty item. -- F
+        { xi.item.ELVAAN_M_LEDELSENS,                187, },
+        { xi.item.MAGNA_M_LEDELSENS,              187000, }, -- x ?? specialty item. -- M
+        { xi.item.WOOD_M_LEDELSENS,               374000, }, -- x ?? specialty item. -- M
+        { xi.item.ELVAAN_F_LEDELSENS,                187, },
+        { xi.item.MAGNA_F_LEDELSENS,              187000, }, -- x ?? specialty item. -- F
+        { xi.item.WOOD_F_LEDELSENS,               374000, }, -- x ?? specialty item. -- F
+        { xi.item.OLIBANUM_SACHET,                450000, }, -- x ?? specialty item.
+        { xi.item.ATTAR_SACHET,                   450000, }, -- x ?? specialty item.
+        { xi.item.FOREST_BELT,                    450000, }, -- x ?? specialty item.
+        { xi.item.FOREST_STONE,                   450000, }, -- x ?? specialty item.
+        { xi.item.FOREST_ROPE,                    999999, }, -- x ?? specialty item.
+        { xi.item.FOREST_SASH,                    999999, }, -- x ?? specialty item.
+        { xi.item.DESAMILIONS_EARRING,            999999, }, -- x ?? specialty item.
+        { xi.item.MELNINAS_EARRING,               999999, }, -- x ?? specialty item.
+    },
+
     lowTierRanged = -- Used for starter city ranged weapon shops. (Levels: 1 to 11)
     {
         { xi.item.SHORTBOW,                           55, },

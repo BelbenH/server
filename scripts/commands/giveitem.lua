@@ -20,7 +20,7 @@ commandObj.onTrigger = function(player, target, itemId, amount, aug0, aug0val, a
         return
     end
 
-    local targ = player
+    local targ = target
 
     -- Load needed text ids for target's current zone..
     local ID = zones[targ:getZoneID()]
