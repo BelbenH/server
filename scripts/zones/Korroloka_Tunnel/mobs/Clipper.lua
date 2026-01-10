@@ -14,7 +14,7 @@ end
 
 entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 731, 1, xi.regime.type.GROUNDS)
-    xi.alphamob.spawnAlpha(mob, player)
+    xi.alphamob.spawnAlpha(mob, player, optParams)
 end
 
 entity.onMobDespawn = function(mob)

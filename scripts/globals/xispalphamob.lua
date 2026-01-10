@@ -59,28 +59,18 @@ local familyData =
 }
 
 -- DON'T TOUCH ANYTHING BELOW THIS LINE -- THIS IS THE TEMPLATE FOR HOW ALL OTHER MOBS ARE SETUP BY DEFAULT! --
-xi.alphamob.spawnAlpha = function(mob, player, phList)
+xi.alphamob.spawnAlpha = function(mob, player, optParams)
     local roll      = math.random(1, 100)
     local mobLvl    = mob:getMainLvl()
     local playerLvl = player:getMainLvl()
     local chance    = xi.settings.main.ALPHA_MOB_SPAWN_CHANCE -- replace with a setting from main.lua (Can be used for events)
-    local phFlag    = false
+    local flag      = false
 
-
-    -- Check if the mob is a proper ph
-    if phList then
-        for _, phID in pairs(phList) do
-            if mob:getID() == phID then
-                phFlag = true
-                break
-            end
-        end
-    else
-        phFlag = true
+    if optParams.isKiller or optParams.noKiller then
+        flag = true
     end
 
-    -- Return if mob isn't a listed placeholder
-    if not phFlag then
+    if not flag then
         return
     end
 
