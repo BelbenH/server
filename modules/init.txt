@@ -48,7 +48,14 @@ custom/sql/log_ips.sql
 # Update IP address for zones
 custom/sql/ip_update.sql
 
-# Era Modules
+# Era SQL Modules
 era/sql/cop_level_restrictions.sql
 era/sql/era_mob_spawns.sql
 era/sql/remove_aptant_nms.sql
+
+# Era Lua Modules
+era/lua/toau/weaponskills/archery.lua
+era/lua/toau/weaponskills/club.lua
+era/lua/toau/weaponskills/great_katana.lua
+era/lua/toau/weaponskills/marksmanship.lua
+era/lua/toau/weaponskills/polearm.lua

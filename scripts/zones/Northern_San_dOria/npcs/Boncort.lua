@@ -23,8 +23,7 @@ entity.onTrigger = function(player, npc)
         { xi.item.BOTTLE_OF_GRAPE_JUICE,    967, 3, },
         { xi.item.BOTTLE_OF_APPLE_JUICE,    312, 3, },
         { xi.item.SCROLL_OF_SWORD_MADRIGAL, 189, 3, },
-		-- Marguerite QoL addition. Check other nations for additional flowers.
-		{ xi.item.MARGUERITE,		        699, 3, },
+		{ xi.item.MARGUERITE,		        699, 3, }, -- Marguerite QoL addition.
 
     }
 
