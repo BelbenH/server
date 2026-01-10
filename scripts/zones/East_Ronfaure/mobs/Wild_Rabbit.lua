@@ -8,7 +8,7 @@ local entity = {}
 entity.onMobDeath = function(mob, player, optParams)
 	-- Set respawn time in seconds
 	mob:setRespawnTime(30)
-    xi.alphamob.spawnAlpha(mob, player)
+    xi.alphamob.spawnAlpha(mob, player, optParams)
 end
 
 return entity

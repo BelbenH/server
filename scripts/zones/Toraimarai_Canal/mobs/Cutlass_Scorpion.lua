@@ -9,7 +9,7 @@ entity.onMobSpawn = function(mob)
 end
 
 entity.onMobDeath = function(mob, player, optParams)
-    xi.alphamob.spawnAlpha(mob, player)
+    xi.alphamob.spawnAlpha(mob, player, optParams)
 end
 
 return entity
