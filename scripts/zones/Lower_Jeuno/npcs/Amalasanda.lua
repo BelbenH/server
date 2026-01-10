@@ -52,7 +52,7 @@ entity.onTrigger = function(player, npc)
         -- { xi.item.SCROLL_OF_KURAYAMI_ICHI,   2991 },
         -- { xi.item.SCROLL_OF_DOKUMORI_ICHI,   2991 },
         -- { xi.item.SCROLL_OF_TONKO_ICHI,      2991 },
-        -- { xi.item.SCROLL_OF_MONOMI_ICHI,    10069 },
+        { xi.item.SCROLL_OF_MONOMI_ICHI,    15069 },
         -- { xi.item.SCROLL_OF_RECALL_JUGNER,  63787 },
         -- { xi.item.SCROLL_OF_RECALL_PASHH,   63787 },
         -- { xi.item.SCROLL_OF_RECALL_MERIPH,  63787 },
@@ -63,14 +63,14 @@ entity.onTrigger = function(player, npc)
         -- { xi.item.SCROLL_OF_TELEPORT_DEM,   33784 },
         -- { xi.item.SCROLL_OF_TELEPORT_MEA,   33784 },
         -- { xi.item.SCROLL_OF_DRAIN,          10949 },
-        -- { xi.item.SCROLL_OF_ASPIR,          13492 },
+        { xi.item.SCROLL_OF_ASPIR,          43492 },
         -- { xi.item.SCROLL_OF_BLAZE_SPIKES,   10949 },
         -- { xi.item.SCROLL_OF_WARP,           12550 },
         -- { xi.item.SCROLL_OF_WARP_II,        39060 },
         -- { xi.item.SCROLL_OF_RETRACE,        33936 },
         -- { xi.item.SCROLL_OF_SLEEPGA_II,     71208 },
         -- { xi.item.SCROLL_OF_UTSUSEMI_ICHI,  13789 },
-        -- { xi.item.SCROLL_OF_MAGES_BALLAD,   12424 },
+        { xi.item.SCROLL_OF_MAGES_BALLAD,   42424 },
     }
 
     player:showText(npc, zones[xi.zone.LOWER_JEUNO].text.AMALASANDA_SHOP_DIALOG)
