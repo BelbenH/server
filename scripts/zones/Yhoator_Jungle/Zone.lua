@@ -21,6 +21,20 @@ zoneObject.onGameDay = function()
     xi.beastmenTreasure.updatePeddlestox(xi.zone.YHOATOR_JUNGLE, ID.npc.PEDDLESTOX)
 end
 
+zoneObject.onGameHour = function(zone)
+    local weather = zone:getWeather()
+    
+    if weather == xi.weather.NONE or weather == xi.weather.SUNSHINE then
+        local fireChance = math.random(1, 100)
+
+        if fireChance < 5 then
+            zone:setWeather(xi.weather.HEAT_WAVE)
+        elseif fireChance < 20 then
+            zone:setWeather(xi.weather.HOT_SPELL)
+        end
+    end
+end
+
 zoneObject.onConquestUpdate = function(zone, updatetype, influence, owner, ranking, isConquestAlliance)
     xi.conquest.onConquestUpdate(zone, updatetype, influence, owner, ranking, isConquestAlliance)
 end

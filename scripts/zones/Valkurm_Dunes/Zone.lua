@@ -74,6 +74,18 @@ zoneObject.onGameHour = function(zone)
             qm2:setStatus(xi.status.NORMAL)
         end
     end
+
+    local weather = zone:getWeather()
+    
+    if weather == xi.weather.NONE or weather == xi.weather.SUNSHINE then
+        local fireChance = math.random(1, 100)
+    
+        if fireChance < 5 then
+            zone:setWeather(xi.weather.HEAT_WAVE)
+        elseif fireChance < 20 then
+            zone:setWeather(xi.weather.HOT_SPELL)
+        end
+    end
 end
 
 zoneObject.onZoneWeatherChange = function(weather)
