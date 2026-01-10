@@ -60,7 +60,7 @@ effectObject.onEffectLose = function(target, effect)
 
         -- XISP Changes ------------------------------------------
         if target:getCharVar('ownChoco') == 1 then
-            target:setCharVar('[XISP]chocoboTimer', os.time() + math.random(180, 300)) -- 3 - 5 minutes
+            target:setCharVar('[XISP]chocoboTimer', GetSystemTime()+ math.random(180, 300)) -- 3 - 5 minutes
             target:setCharVar('ownChoco', 0)
         end
 

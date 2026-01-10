@@ -18,6 +18,10 @@ zoneObject.onGameDay = function()
     xi.beastmenTreasure.updatePeddlestox(xi.zone.WESTERN_ALTEPA_DESERT, ID.npc.PEDDLESTOX)
 end
 
+zoneObject.onGameHour = function(zone)
+    xi.elementals.checkSpawn(zone)
+end
+
 zoneObject.onZoneIn = function(player, prevZone)
     local cs = -1
 
@@ -51,6 +55,7 @@ zoneObject.onEventFinish = function(player, csid, option, npc)
 end
 
 zoneObject.onZoneWeatherChange = function(weather)
+
     -- HNM King Vinegarroon only spawns during earth weather
     local kvMob = GetMobByID(ID.mob.KING_VINEGARROON)
 
