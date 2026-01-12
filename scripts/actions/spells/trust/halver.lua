@@ -19,11 +19,11 @@ spellObject.onMobSpawn = function(mob)
     -- Sticky hate (tune as you like)
     -------------------------------------------------
     if xi.mod.ENMITY then
-        mob:addMod(xi.mod.ENMITY, 80)
+        mob:addMod(xi.mod.ENMITY, 95)
     end
 
     if xi.mod.ENMITY_LOSS_REDUCTION then
-        mob:addMod(xi.mod.ENMITY_LOSS_REDUCTION, 80)
+        mob:addMod(xi.mod.ENMITY_LOSS_REDUCTION, 95)
     end
 
     -------------------------------------------------
