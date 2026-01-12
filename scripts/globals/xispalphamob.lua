@@ -32,9 +32,9 @@ local familyData =
         skillID = 75,
         bonusSpawnChance = 0,
         name    = { 'Tidebreaker', 'Lord of Brine', 'Bloodreef', 'Old Carapax', 'Reef Bulwark', },
-        [tierOne]   = { dropList = 4506, groupID = 202, look = 366,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.DEF] = 50,  [xi.mod.MDEF] = -75, }, },
-        [tierTwo]   = { dropList = 4507, groupID = 202, look = 2965, exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.DEF] = 75,  [xi.mod.MDEF] = -60, }, },
-        [tierThree] = { dropList = 4508, groupID = 202, look = 358,  exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.DEF] = 150, [xi.mod.MDEF] = -50, }, },
+        [tierOne]   = { dropList = 4506, groupID = 202, look = 366,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.DEF] = 50,  [xi.mod.MDEF] = -10, }, },
+        [tierTwo]   = { dropList = 4507, groupID = 202, look = 2965, exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.DEF] = 75,  [xi.mod.MDEF] = -8,  }, },
+        [tierThree] = { dropList = 4508, groupID = 202, look = 358,  exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.DEF] = 150, [xi.mod.MDEF] = -5,  }, },
     },
 
     [xi.mobSuperFamily.SCORPION] =

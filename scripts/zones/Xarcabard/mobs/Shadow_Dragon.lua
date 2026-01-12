@@ -24,7 +24,7 @@ entity.onMobDespawn = function(mob)
         biastTimeOfDeath <= GetSystemTime() and
         not GetMobByID(mob:getID() + 1):isSpawned()
     then
-        if math.random(1, 20) <= 2 then
+        if math.random(1, 20) <= 5 then -- Needed to increase spawn chance manually here
             SpawnMob(mob:getID() + 1)
             GetMobByID(mob:getID() + 1):setPos(xPos, yPos, zPos)
             GetMobByID(mob:getID() + 1):setSpawn(xPos, yPos, zPos)
