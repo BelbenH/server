@@ -40,31 +40,38 @@ spellObject.onMobSpawn = function(mob)
     mob:addGambit(ai.t.PARTY, { ai.c.HPP_LT, 75 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE })
 
     -------------------------------------------------
-    -- Provoke
+    -- Provoke (keeps hate glued)
     -------------------------------------------------
     mob:addGambit(ai.t.TARGET, { ai.c.ALWAYS, 0 }, { ai.r.JA, ai.s.SPECIFIC, xi.ja.PROVOKE })
 
     -------------------------------------------------
-    -- Weapon Skill: Penta Thrust @ 1000+ TP
-    -- (Your error is almost certainly here: wrong constant path.)
+    -- Weapon Skills (Prefer Penta over Double)
+    -- Note: The mob pool / WS list MUST allow these WS.
     -------------------------------------------------
     local tpCond =
-        (ai.c.TP_GT)  or
         (ai.c.TP_GTE) or
+        (ai.c.TP_GE)  or
         (ai.c.TP_GEQ) or
-        (ai.c.TP_GE)
+        (ai.c.TP_GT)
 
     local penta =
         (xi.ws and xi.ws.PENTA_THRUST) or
         (xi.weaponskills and xi.weaponskills.PENTA_THRUST) or
         (xi.weaponskill and xi.weaponskill.PENTA_THRUST)
 
-    -- Only add the WS gambit if both constants exist in your fork.
+    local dbl =
+        (xi.ws and xi.ws.DOUBLE_THRUST) or
+        (xi.weaponskills and xi.weaponskills.DOUBLE_THRUST) or
+        (xi.weaponskill and xi.weaponskill.DOUBLE_THRUST)
+
+    -- Penta first = preferred
     if tpCond ~= nil and penta ~= nil then
         mob:addGambit(ai.t.TARGET, { tpCond, 999 }, { ai.r.WS, ai.s.SPECIFIC, penta })
-    else
-        -- If you want a visible hint in logs, uncomment:
-        -- printf('[Halver] Missing TP condition or Penta Thrust id (tpCond=%s, penta=%s)', tostring(tpCond), tostring(penta))
+    end
+
+    -- Double second = fallback (only if Penta isn't usable for some reason)
+    if tpCond ~= nil and dbl ~= nil then
+        mob:addGambit(ai.t.TARGET, { tpCond, 999 }, { ai.r.WS, ai.s.SPECIFIC, dbl })
     end
 
     -------------------------------------------------
