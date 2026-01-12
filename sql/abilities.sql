@@ -96,7 +96,7 @@ INSERT INTO `abilities` VALUES (75,'elemental_seal',4,15,1,600,38,0,0,80,2000,0,
 INSERT INTO `abilities` VALUES (76,'trick_attack',6,30,1,60,66,0,0,82,2000,0,6,0,0,0,1,0,710,0,NULL);
 INSERT INTO `abilities` VALUES (77,'weapon_bash',8,20,4,180,88,110,0,201,2000,0,3,3,0,0,1,900,0,0,NULL);
 INSERT INTO `abilities` VALUES (78,'reward',9,12,257,90,103,102,0,84,2000,0,6,4,0,0,0,0,898,0,NULL);
-INSERT INTO `abilities` VALUES (79,'cover',7,35,2,180,76,0,0,86,2000,0,6,16,0,0,1,300,0,0,NULL);
+INSERT INTO `abilities` VALUES (79,'cover',7,10,2,180,76,0,0,86,2000,0,6,16,0,0,1,300,0,0,NULL);
 INSERT INTO `abilities` VALUES (80,'spirit_link',14,25,1,90,162,318,0,94,2000,0,6,0,0,0,0,0,1224,4,NULL);
 -- INSERT INTO `abilities` VALUES (81,'enrage',0,0,0,0,6,0,0,0,0,0,6,16,0,0,0,0,0,0,NULL);
 INSERT INTO `abilities` VALUES (82,'chi_blast',2,41,4,180,18,110,0,92,2000,0,6,16,0,0,0,0,0,0,NULL);
@@ -109,7 +109,7 @@ INSERT INTO `abilities` VALUES (88,'assault',15,1,4,5,170,0,0,94,2000,0,6,20,0,0
 INSERT INTO `abilities` VALUES (89,'retreat',15,1,1,5,171,0,0,94,2000,0,6,0,0,0,-10,0,0,256,NULL);
 INSERT INTO `abilities` VALUES (90,'release',15,1,1,5,172,0,0,94,2000,0,6,0,0,0,-10,0,0,256,NULL);
 INSERT INTO `abilities` VALUES (91,'blood_pact_rage',15,1,1,60,173,0,0,0,2000,0,6,20,0,0,1,300,0,256,NULL);
-INSERT INTO `abilities` VALUES (92,'rampart',7,62,1,300,77,0,0,91,2000,0,6,0,1,14,320,320,776,0,NULL);
+INSERT INTO `abilities` VALUES (92,'rampart',7,60,1,300,77,0,0,91,2000,0,6,0,1,14,320,320,776,0,NULL);
 INSERT INTO `abilities` VALUES (93,'azure_lore',16,0,1,1800,0,0,0,142,2000,0,6,0,0,0,1,300,0,0,'TOAU');
 INSERT INTO `abilities` VALUES (94,'chain_affinity',16,40,1,120,181,0,0,140,2000,0,6,0,0,0,1,300,1344,0,'TOAU');
 INSERT INTO `abilities` VALUES (95,'burst_affinity',16,25,1,120,182,0,0,141,2000,0,6,0,0,0,1,300,1346,0,'TOAU');
@@ -270,7 +270,7 @@ INSERT INTO `abilities` VALUES (251,'ready',9,25,1,0,102,0,0,83,2000,0,6,4,0,0,0
 INSERT INTO `abilities` VALUES (252,'restraint',1,77,1,600,9,100,0,220,2000,0,6,0,0,0,1,300,0,0,'WOTG');
 INSERT INTO `abilities` VALUES (253,'perfect_counter',2,79,1,60,22,100,0,221,2000,0,6,0,0,0,1,80,0,0,NULL);
 INSERT INTO `abilities` VALUES (254,'mana_wall',4,76,1,600,39,0,0,222,2000,0,6,0,0,0,1,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (255,'divine_emblem',7,78,1,180,80,100,0,222,2000,0,6,0,0,0,1,3600,0,0,NULL);
+INSERT INTO `abilities` VALUES (255,'divine_emblem',7,25,1,180,80,100,0,222,2000,0,6,0,0,0,1,3600,0,0,NULL);
 INSERT INTO `abilities` VALUES (256,'nether_void',8,78,1,300,91,100,0,224,2000,0,6,0,0,0,1,80,0,0,NULL);
 INSERT INTO `abilities` VALUES (257,'double_shot',11,79,1,180,126,0,0,225,2000,0,6,0,0,0,1,80,0,0,'ABYSSEA');
 INSERT INTO `abilities` VALUES (258,'sengikori',12,77,1,180,141,100,0,226,2000,0,6,0,0,0,1,80,0,0,NULL);
@@ -291,8 +291,8 @@ INSERT INTO `abilities` VALUES (273,'manawell',4,95,3,600,35,100,0,252,2000,0,6,
 INSERT INTO `abilities` VALUES (274,'saboteur',5,83,1,300,36,0,0,258,2000,0,6,0,0,0,1,80,0,0,'ABYSSEA');
 INSERT INTO `abilities` VALUES (275,'spontaneity',5,95,3,600,37,0,0,259,2000,0,6,20,0,0,1,80,0,0,'ABYSSEA');
 INSERT INTO `abilities` VALUES (276,'conspirator',6,87,1,300,40,0,0,237,2000,0,6,0,1,14,1,80,0,4,'ABYSSEA');
-INSERT INTO `abilities` VALUES (277,'sepulcher',7,87,4,300,41,100,0,253,2000,0,6,10,0,0,1,80,0,0,NULL); -- needs animation
-INSERT INTO `abilities` VALUES (278,'palisade',7,95,1,300,42,100,0,253,2000,0,6,0,0,0,900,1800,0,0,NULL);
+INSERT INTO `abilities` VALUES (277,'sepulcher',7,35,4,300,41,100,0,253,2000,0,6,10,0,0,1,80,0,0,NULL); -- needs animation
+INSERT INTO `abilities` VALUES (278,'palisade',7,50,1,300,42,100,0,253,2000,0,6,0,0,0,900,1800,0,0,NULL);
 INSERT INTO `abilities` VALUES (279,'arcane_crest',8,87,4,300,43,100,0,250,2000,0,6,10,0,0,1,80,0,0,NULL); -- needs animation
 INSERT INTO `abilities` VALUES (280,'scarlet_delirium',8,95,1,90,44,100,0,250,2000,0,6,0,0,0,1,80,0,0,NULL);
 INSERT INTO `abilities` VALUES (281,'spur',9,83,257,180,45,100,0,255,2000,0,6,4,0,0,0,0,0,0,NULL);
@@ -334,7 +334,7 @@ INSERT INTO `abilities` VALUES (325,'asylum',3,96,4,1800,254,100,0,273,2000,0,6,
 INSERT INTO `abilities` VALUES (326,'subtle_sorcery',4,96,1,1800,254,0,0,274,2000,0,6,0,0,0,0,0,0,0,NULL); -- check animation
 INSERT INTO `abilities` VALUES (327,'stymie',5,96,1,1800,254,100,0,275,2000,0,6,0,0,0,1,80,0,0,'SOA');
 INSERT INTO `abilities` VALUES (328,'larceny',6,96,4,1800,254,453,0,181,2000,0,3,3,0,0,0,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (329,'intervene',7,96,4,1800,254,110,0,120,2000,0,3,3,0,0,0,340,0,0,NULL);
+INSERT INTO `abilities` VALUES (329,'intervene',7,50,4,1800,254,110,0,120,2000,0,3,3,0,0,0,340,0,0,NULL);
 INSERT INTO `abilities` VALUES (330,'soul_enslavement',8,96,1,1800,254,100,0,278,2000,0,6,0,0,0,0,0,0,0,NULL);
 INSERT INTO `abilities` VALUES (331,'unleash',9,96,1,1800,254,100,0,279,2000,0,6,0,0,0,0,0,0,0,NULL);
 INSERT INTO `abilities` VALUES (332,'clarion_call',10,96,1,1800,254,100,0,280,2000,0,6,0,0,0,0,0,0,0,NULL); -- check animation
@@ -399,7 +399,7 @@ INSERT INTO `abilities` VALUES (390,'naturalists_roll',17,67,1,60,193,420,0,328,
 INSERT INTO `abilities` VALUES (391,'runeists_roll',17,70,1,60,193,420,0,329,2000,0,6,0,1,8,1,80,0,8,'SOA');
 INSERT INTO `abilities` VALUES (392,'crooked_cards',17,95,1,600,96,100,0,335,2000,0,6,0,0,0,0,0,0,0,NULL);
 INSERT INTO `abilities` VALUES (393,'spirit_bond',14,65,257,60,149,100,0,86,2000,0,6,4,0,0,0,0,0,0,NULL);
-INSERT INTO `abilities` VALUES (394,'majesty',7,70,1,60,150,100,0,338,2000,0,6,0,0,0,0,340,0,0,NULL);
+INSERT INTO `abilities` VALUES (394,'majesty',7,40,1,60,150,100,0,338,2000,0,6,0,0,0,0,340,0,0,NULL);
 INSERT INTO `abilities` VALUES (512,'healing_ruby',15,1,3,60,174,0,0,94,2000,0,6,20,0,0,1,60,0,0,NULL);
 INSERT INTO `abilities` VALUES (513,'poison_nails',15,5,4,60,173,0,0,94,2000,0,6,3,0,0,1,60,0,0,NULL);
 INSERT INTO `abilities` VALUES (514,'shining_ruby',15,24,1,60,174,0,0,94,2000,0,6,20,0,14,1,60,0,0,NULL);
