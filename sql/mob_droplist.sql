@@ -28985,7 +28985,7 @@ INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,17868,@UNCOMMON); -- Jug Of 
 INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,4368,@COMMON);    -- Two-Leaf Mandragora Bud
 INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,4369,@VRARE);     -- Four-Leaf Mandragora Bud
 INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,205,@SRARE);      -- Mandragora Lantern
-INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,26705,@SRARE);    -- Mandragora Shirt
+INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,26705,@SRARE);    -- Mandragora Mask
 INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,15299,@SRARE);    -- Mandragora Belt
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,17868,@VCOMMON);  -- Jug Of Humus
@@ -28993,7 +28993,7 @@ INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,17869,@UNCOMMON); -- Jug Of 
 INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,4368,@COMMON);    -- Two-Leaf Mandragora Bud
 INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,4369,@RARE);      -- Four-Leaf Mandragora Bud
 INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,205,@SRARE);      -- Mandragora Lantern
-INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,26705,@SRARE);    -- Mandragora Shirt
+INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,26705,@SRARE);    -- Mandragora Mask
 INSERT INTO `mob_droplist` VALUES (4504,0,0,@ALWAYS,15299,@SRARE);    -- Mandragora Belt
 -- lvl 60-75+
 INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,17868,@VCOMMON); -- Jug Of Humus
@@ -29001,7 +29001,7 @@ INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,17869,@COMMON);  -- Jug Of R
 INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,4368,@VCOMMON);  -- Two-Leaf Mandragora Bud
 INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,4369,@COMMON);   -- Four-Leaf Mandragora Bud
 INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,205,@SRARE);      -- Mandragora Lantern
-INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,26705,@SRARE);    -- Mandragora Shirt
+INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,26705,@SRARE);    -- Mandragora Mask
 INSERT INTO `mob_droplist` VALUES (4505,0,0,@ALWAYS,15299,@SRARE);    -- Mandragora Belt
 
 -- ALPHA CRAB --
@@ -29010,6 +29010,7 @@ INSERT INTO `mob_droplist` VALUES (4506,0,0,@ALWAYS,881,@VCOMMON);   -- Crab She
 INSERT INTO `mob_droplist` VALUES (4506,0,0,@ALWAYS,4400,@VCOMMON);  -- Crab Shell4400
 INSERT INTO `mob_droplist` VALUES (4506,0,0,@ALWAYS,1193,@UNCOMMON); -- High-Quality Crab Shell
 INSERT INTO `mob_droplist` VALUES (4506,0,0,@ALWAYS,1193,@UNCOMMON); -- High-Quality Crab Shell
+INSERT INTO `mob_droplist` VALUES (4507,0,0,@ALWAYS,2813,50);       -- Aptant of Durus 0.5% (Uneffected by TH)
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4507,0,0,@ALWAYS,881,@VCOMMON);   -- Crab Shell
 INSERT INTO `mob_droplist` VALUES (4507,0,0,@ALWAYS,4400,@VCOMMON);  -- Crab Shell
@@ -29030,15 +29031,17 @@ INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,897,@VCOMMON);   -- Scorpion
 INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,1473,@UNCOMMON); -- High-Quality Scorpion Shell
 INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,2812,100);       -- Aptant of Aceus 1% (Uneffected by TH)
 -- lvl 30-60
-INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,896,@ALWAYS);  -- Scorpion Shell
-INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,897,@VCOMMON); -- Scorpion Claw
-INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,1473,@COMMON); -- High-Quality Scorpion Shell
-INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,2812,500);     -- Aptant of Aceus 5% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,896,@ALWAYS);    -- Scorpion Shell
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,897,@VCOMMON);   -- Scorpion Claw
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,1473,@COMMON);   -- High-Quality Scorpion Shell
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,2812,50);        -- Venomous Claw 0.5% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,2812,500);       -- Aptant of Aceus 5% (Uneffected by TH)
 -- lvl 60-75+
-INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,896,@ALWAYS);   -- Scorpion Shell
-INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,897,@ALWAYS);   -- Scorpion Claw
-INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,1473,@VCOMMON); -- High-Quality Scorpion Shell
-INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,2812,800);      -- Aptant of Aceus 8% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,896,@ALWAYS);    -- Scorpion Shell
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,897,@ALWAYS);    -- Scorpion Claw
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,1473,@VCOMMON);  -- High-Quality Scorpion Shell
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,2812,100);       -- Venomous Claw 1% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,2812,800);       -- Aptant of Aceus 8% (Uneffected by TH)
 
 -- ALPHA GREATER BIRD --
 -- lvl 1-30
