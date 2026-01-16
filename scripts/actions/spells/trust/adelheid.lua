@@ -20,126 +20,141 @@ end
 spellObject.onMobSpawn = function(mob)
     xi.trust.message(mob, xi.trust.messageOffset.SPAWN)
 
-    local lvl = mob:getMainLvl()
-
     -------------------------------------------------
-    -- QoL / Behavior tuning
+    -- SAFE helpers (prevents nil crashes across forks)
     -------------------------------------------------
-    mob:addMod(xi.mod.REFRESH, 2) -- Refresh +2
-
-    -- Magic Attack Bonus +10
-    mob:addMod(xi.mod.MAGIC_ATK_BONUS, 50)
-
-    -- Reduce hate generation (tune: -15 mild, -25 solid, -40 very safe)
-    mob:addMod(xi.mod.ENMITY, -45)
-
-    -------------------------------------------------
-    -- SCH Job Abilities (Level-gated)
-    -------------------------------------------------
-    if lvl >= 10 then
-        mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.DARK_ARTS }, { ai.r.JA, ai.s.SPECIFIC, xi.ja.DARK_ARTS })
+    local function safeAddMod(modId, value)
+        if modId ~= nil and value ~= nil then
+            mob:addMod(modId, value)
+        end
     end
 
-    if lvl >= 30 then
-        mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.ADDENDUM_BLACK }, { ai.r.JA, ai.s.SPECIFIC, xi.ja.ADDENDUM_BLACK })
-    end
+    local function safeAddGambit(targetType, cond, action, weight)
+        -- Ensure required tables exist
+        if not (ai and ai.t and ai.c and ai.r and ai.s) then
+            return
+        end
+        if targetType == nil or cond == nil or action == nil or weight == nil then
+            return
+        end
+        -- For SPECIFIC spell gambits, action[3] must be numeric
+        if action[3] == nil then
+            return
+        end
 
-    -------------------------------------------------
-    -- Interrupts (highest priority)
-    -------------------------------------------------
-    mob:addGambit(ai.t.TARGET, { ai.c.READYING_WS, 0 }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.STUN })
-    mob:addGambit(ai.t.TARGET, { ai.c.READYING_MS, 0 }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.STUN })
-    mob:addGambit(ai.t.TARGET, { ai.c.READYING_JA, 0 }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.STUN })
-    mob:addGambit(ai.t.TARGET, { ai.c.CASTING_MA, 0 }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.STUN })
-
-    -------------------------------------------------
-    -- Healing (priority; keep party alive)
-    -------------------------------------------------
-    mob:addGambit(ai.t.TANK,  { ai.c.HPP_LT, 50 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE })
-    mob:addGambit(ai.t.PARTY, { ai.c.HPP_LT, 33 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE })
-
-    -------------------------------------------------
-    -- MP tools (keeps nuking sustainable)
-    -------------------------------------------------
-    if lvl >= 36 then
-        -- When MP gets low, refill
-        mob:addGambit(ai.t.TARGET, { ai.c.MPP_LT, 40 }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.ASPIR }, 8)
-    end
-
-    if lvl >= 21 then
-        mob:addGambit(ai.t.TARGET, { ai.c.HPP_LT, 80 }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.DRAIN }, 20)
+        mob:addGambit(targetType, cond, action, weight)
     end
 
     -------------------------------------------------
-    -- Addendum: Black utility (keep but not spammy)
+    -- Your tuning (mods only) - SAFE across forks
     -------------------------------------------------
-    if lvl >= 30 then
-        mob:addGambit(ai.t.TARGET, { ai.c.NOT_STATUS, xi.effect.SLEEP_I }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.SLEEP }, 25)
-    end
+    if xi.mod then
+        safeAddMod(xi.mod.REFRESH, 2) -- Refresh +2
 
-    if lvl >= 32 then
-        mob:addGambit(ai.t.TARGET, { ai.c.TARGET_HAS_BUFF, 0 }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.DISPEL }, 25)
-    end
+        -- Some forks use MAGIC_ATK_BONUS, others use MATT
+        if xi.mod.MAGIC_ATK_BONUS then
+            safeAddMod(xi.mod.MAGIC_ATK_BONUS, 150)
+        elseif xi.mod.MATT then
+            safeAddMod(xi.mod.MATT, 150)
+        end
 
-    if lvl >= 65 then
-        mob:addGambit(ai.t.TARGET, { ai.c.NOT_STATUS, xi.effect.SLEEP_II }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.SLEEP_II }, 30)
+        safeAddMod(xi.mod.ENMITY, -95) -- Enmity -95
     end
 
     -------------------------------------------------
-    -- FAST, MP-GATED Elemental Nuking (explicit spells)
-    -- This is the key change: short recast + MP thresholds.
+    -- Arts / Addendum (FIXED so it doesn't JA-spam)
+    -- (also guarded so missing enums don't crash)
     -------------------------------------------------
-    local function addFastNukes(spStone, spWater, spAero, spFire, spBliz, spThun, mppMin, recast)
-        mob:addGambit(ai.t.TARGET, { ai.c.MPP_GT, mppMin }, { ai.r.MA, ai.s.SPECIFIC, spStone }, recast)
-        mob:addGambit(ai.t.TARGET, { ai.c.MPP_GT, mppMin }, { ai.r.MA, ai.s.SPECIFIC, spWater }, recast)
-        mob:addGambit(ai.t.TARGET, { ai.c.MPP_GT, mppMin }, { ai.r.MA, ai.s.SPECIFIC, spAero  }, recast)
-        mob:addGambit(ai.t.TARGET, { ai.c.MPP_GT, mppMin }, { ai.r.MA, ai.s.SPECIFIC, spFire  }, recast)
-        mob:addGambit(ai.t.TARGET, { ai.c.MPP_GT, mppMin }, { ai.r.MA, ai.s.SPECIFIC, spBliz  }, recast)
-        mob:addGambit(ai.t.TARGET, { ai.c.MPP_GT, mppMin }, { ai.r.MA, ai.s.SPECIFIC, spThun  }, recast)
-    end
-
-    -- These values are tuned to “cast often but not go OOM”
-    if lvl >= 70 then
-        -- Tier IV: only when MP is healthy
-        addFastNukes(
-            xi.magic.spell.STONE_IV, xi.magic.spell.WATER_IV, xi.magic.spell.AERO_IV,
-            xi.magic.spell.FIRE_IV,  xi.magic.spell.BLIZZARD_IV, xi.magic.spell.THUNDER_IV,
-            55, 6
+    if xi.effect and xi.effect.DARK_ARTS and xi.ja and xi.ja.DARK_ARTS then
+        safeAddGambit(
+            ai.t.SELF,
+            { ai.c.NOT_STATUS, xi.effect.DARK_ARTS },
+            { ai.r.JA, ai.s.SPECIFIC, xi.ja.DARK_ARTS },
+            5
         )
-    elseif lvl >= 54 then
-        -- Tier III: common damage tier
-        addFastNukes(
-            xi.magic.spell.STONE_III, xi.magic.spell.WATER_III, xi.magic.spell.AERO_III,
-            xi.magic.spell.FIRE_III,  xi.magic.spell.BLIZZARD_III, xi.magic.spell.THUNDER_III,
-            45, 6
-        )
-    elseif lvl >= 30 then
-        -- Tier II: very active
-        addFastNukes(
-            xi.magic.spell.STONE_II, xi.magic.spell.WATER_II, xi.magic.spell.AERO_II,
-            xi.magic.spell.FIRE_II,  xi.magic.spell.BLIZZARD_II, xi.magic.spell.THUNDER_II,
-            40, 7
-        )
-    elseif lvl >= 4 then
-        -- Tier I: active at low levels, but keep MP > 35%
-        addFastNukes(
-            xi.magic.spell.STONE, xi.magic.spell.WATER, xi.magic.spell.AERO,
-            xi.magic.spell.FIRE,  xi.magic.spell.BLIZZARD, xi.magic.spell.THUNDER,
-            35, 8
+    end
+
+    if xi.effect and xi.effect.ADDENDUM_BLACK and xi.ja and xi.ja.ADDENDUM_BLACK then
+        safeAddGambit(
+            ai.t.SELF,
+            { ai.c.NOT_STATUS, xi.effect.ADDENDUM_BLACK },
+            { ai.r.JA, ai.s.SPECIFIC, xi.ja.ADDENDUM_BLACK },
+            5
         )
     end
 
     -------------------------------------------------
-    -- Storm / Helix (DE-PRIORITIZED to prevent “utility lock”)
+    -- Interrupt / Control (keep high priority)
     -------------------------------------------------
-    -- Storm occasionally
-    mob:addGambit(ai.t.SELF, { ai.c.NO_STORM, 0 }, { ai.r.MA, ai.s.STORM_DAY, 0 }, 600)
-
-    -- Helix occasionally (long recast to avoid crowding nukes)
-    mob:addGambit(ai.t.TARGET, { ai.c.NOT_STATUS, xi.effect.HELIX }, { ai.r.MA, ai.s.HELIX_DAY, 0 }, 180)
+    if xi.magic and xi.magic.spell and xi.magic.spell.STUN then
+        safeAddGambit(ai.t.TARGET, { ai.c.READYING_WS, 0 }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.STUN }, 100)
+        safeAddGambit(ai.t.TARGET, { ai.c.READYING_MS, 0 }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.STUN }, 100)
+        safeAddGambit(ai.t.TARGET, { ai.c.READYING_JA, 0 }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.STUN }, 100)
+        safeAddGambit(ai.t.TARGET, { ai.c.CASTING_MA, 0 },  { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.STUN }, 100)
+    end
 
     -------------------------------------------------
-    -- Weapon skill listener (keep)
+    -- Storms / Helix (keep your existing behavior)
+    -------------------------------------------------
+    -- Storms matching day
+    if ai.s and ai.s.STORM_DAY then
+        safeAddGambit(ai.t.SELF, { ai.c.NO_STORM, 0 }, { ai.r.MA, ai.s.STORM_DAY, 0 }, 20)
+    end
+
+    -- Helix matching day (requires HELIX status enum)
+    if xi.effect and xi.effect.HELIX and ai.s and ai.s.HELIX_DAY then
+        safeAddGambit(ai.t.TARGET, { ai.c.NOT_STATUS, xi.effect.HELIX }, { ai.r.MA, ai.s.HELIX_DAY, 0 }, 15)
+    end
+
+    -------------------------------------------------
+    -- Healing (keep high-ish priority)
+    -------------------------------------------------
+    if xi.magic and xi.magic.spellFamily and xi.magic.spellFamily.CURE then
+        safeAddGambit(ai.t.TANK,  { ai.c.HPP_LT, 50 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE }, 85)
+        safeAddGambit(ai.t.PARTY, { ai.c.HPP_LT, 33 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE }, 90)
+    end
+
+    -------------------------------------------------
+    -- OFFENSE: Elemental nukes more often (SPECIFIC, fork-safe)
+    -------------------------------------------------
+    local combatCond
+    if ai.c and ai.c.IN_COMBAT then
+        combatCond = { ai.c.IN_COMBAT, 0 }
+    else
+        combatCond = { ai.c.ALWAYS, 0 }
+    end
+
+    local function addElementNukes(spellTable, weight)
+        if not (xi.magic and xi.magic.spell) then
+            return
+        end
+        for _, spellId in ipairs(spellTable) do
+            if spellId then
+                safeAddGambit(
+                    ai.t.TARGET,
+                    combatCond,
+                    { ai.r.MA, ai.s.SPECIFIC, spellId },
+                    weight
+                )
+                weight = math.max(1, weight - 1)
+            end
+        end
+    end
+
+    if xi.magic and xi.magic.spell then
+        local s = xi.magic.spell
+
+        -- Highest -> lowest tiers; nil entries are skipped safely
+        addElementNukes({ s.FIRE_VI,     s.FIRE_V,     s.FIRE_IV,     s.FIRE_III,     s.FIRE_II,     s.FIRE },     70)
+        addElementNukes({ s.BLIZZARD_VI, s.BLIZZARD_V, s.BLIZZARD_IV, s.BLIZZARD_III, s.BLIZZARD_II, s.BLIZZARD }, 69)
+        addElementNukes({ s.THUNDER_VI,  s.THUNDER_V,  s.THUNDER_IV,  s.THUNDER_III,  s.THUNDER_II,  s.THUNDER },  68)
+        addElementNukes({ s.AERO_VI,     s.AERO_V,     s.AERO_IV,     s.AERO_III,     s.AERO_II,     s.AERO },     67)
+        addElementNukes({ s.WATER_VI,    s.WATER_V,    s.WATER_IV,    s.WATER_III,    s.WATER_II,    s.WATER },    66)
+        addElementNukes({ s.STONE_VI,    s.STONE_V,    s.STONE_IV,    s.STONE_III,    s.STONE_II,    s.STONE },    65)
+    end
+
+    -------------------------------------------------
+    -- Flavor: WS message
     -------------------------------------------------
     mob:addListener('WEAPONSKILL_USE', 'ADELHEID_WEAPONSKILL_USE', function(mobArg, target, wsid, tp, action)
         if wsid == 3469 then -- Twirling Dervish
