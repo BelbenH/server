@@ -6,6 +6,74 @@ xi.job_utils = xi.job_utils or {}
 xi.job_utils.paladin = xi.job_utils.paladin or {}
 
 -----------------------------------
+-- Main-job-only Enmity Tuning
+--
+-- CE = Cumulative Enmity (sticks around longer)
+-- VE = Volatile Enmity (big snap hate that decays fast)
+--
+-- To increase hate: raise CE and/or VE values below.
+-- To reduce hate: lower CE and/or VE values below.
+--
+-- NOTE: These apply ONLY when PLD is the MAIN job.
+-----------------------------------
+local ENMITY_TUNE =
+{
+    -- “Snap” defensive tools
+    Cover        = { CE = 600, VE = 2200 }, -- Big spike: taking hits for someone.
+    Invincible   = { CE = 200, VE = 1000  }, -- Baseline; JP adds additional VE below.
+    Rampart      = { CE = 300, VE = 900  },
+    Sentinel     = { CE = 400, VE = 1200 },
+
+    -- Mid tier / stance-like tools
+    Palisade     = { CE = 250, VE = 750  },
+    Majesty      = { CE = 150, VE = 450  },
+    Fealty       = { CE = 200, VE = 600  },
+    DivineEmblem = { CE = 200, VE = 600  },
+
+    -- Flavor / situational
+    HolyCircle   = { CE = 100, VE = 300  },
+    Sepulcher    = { CE = 250, VE = 750  }, -- Only works on undead anyway.
+    Chivalry     = { CE = 150, VE = 450  },
+
+    -- Damage abilities (already generate hate via damage)
+    Intervene    = { CE = 0,   VE = 600  }, -- Extra snap on top of damage.
+    ShieldBash   = { CE = 0,   VE = 750  }, -- Extra snap on top of damage + stun.
+}
+
+-----------------------------------
+-- Main-job-only enmity helper
+-----------------------------------
+local function addMainPLDEnmity(player, ability, ceAdd, veAdd)
+    -- Enmity boosts apply ONLY if PLD is MAIN job.
+    if player:getMainJob() ~= xi.job.PLD then
+        return
+    end
+
+    local curCE = (ability.getCE and ability:getCE()) or 0
+    local curVE = (ability.getVE and ability:getVE()) or 0
+
+    if ceAdd and ability.setCE then
+        -- Increase/decrease CE by changing ceAdd (or ENMITY_TUNE values)
+        ability:setCE(curCE + ceAdd)
+    end
+
+    if veAdd and ability.setVE then
+        -- Increase/decrease VE by changing veAdd (or ENMITY_TUNE values)
+        ability:setVE(curVE + veAdd)
+    end
+end
+
+-- Convenience wrapper so you can tune in ENMITY_TUNE table
+local function addMainPLDEnmityByKey(player, ability, key)
+    local t = ENMITY_TUNE[key]
+    if not t then
+        return
+    end
+
+    addMainPLDEnmity(player, ability, t.CE or 0, t.VE or 0)
+end
+
+-----------------------------------
 -- Ability Check Functions
 -----------------------------------
 xi.job_utils.paladin.checkCover = function(player, target, ability)
@@ -15,25 +83,42 @@ xi.job_utils.paladin.checkCover = function(player, target, ability)
         not target:isPC()
     then
         return xi.msg.basic.CANNOT_PERFORM_TARG, 0
-    else
-        return 0, 0
     end
+
+    -- ENMITY BOOST (main PLD only):
+    -- Edit ENMITY_TUNE.Cover CE/VE to increase or decrease this.
+    addMainPLDEnmityByKey(player, ability, 'Cover')
+
+    return 0, 0
 end
 
 xi.job_utils.paladin.checkIntervene = function(player, target, ability)
     if player:getShieldSize() == 0 then
         return xi.msg.basic.REQUIRES_SHIELD, 0
-    else
-        ability:setRecast(math.max(0, ability:getRecast() - player:getMod(xi.mod.ONE_HOUR_RECAST) * 60))
-
-        return 0, 0
     end
+
+    -- ENMITY BOOST (main PLD only):
+    -- Intervene does damage (already creates hate),
+    -- this adds extra snap VE on top.
+    -- Edit ENMITY_TUNE.Intervene VE to change this.
+    addMainPLDEnmityByKey(player, ability, 'Intervene')
+
+    ability:setRecast(math.max(0, ability:getRecast() - player:getMod(xi.mod.ONE_HOUR_RECAST) * 60))
+
+    return 0, 0
 end
 
 xi.job_utils.paladin.checkInvincible = function(player, target, ability)
     local jpValue = player:getJobPointLevel(xi.jp.INVINCIBLE_EFFECT)
 
+    -- ENMITY BOOST (main PLD only):
+    -- Baseline snap in addition to JP scaling below.
+    -- Edit ENMITY_TUNE.Invincible CE/VE to change baseline.
+    addMainPLDEnmityByKey(player, ability, 'Invincible')
+
+    -- Existing behavior: Job Points add extra VE
     ability:setVE(ability:getVE() + 100 * jpValue)
+
     ability:setRecast(math.max(0, ability:getRecast() - player:getMod(xi.mod.ONE_HOUR_RECAST) * 60))
 
     return 0, 0
@@ -41,6 +126,10 @@ end
 
 xi.job_utils.paladin.checkSepulcher = function(player, target, ability)
     if target:isUndead() then
+        -- ENMITY BOOST (main PLD only):
+        -- Edit ENMITY_TUNE.Sepulcher CE/VE to change this.
+        addMainPLDEnmityByKey(player, ability, 'Sepulcher')
+
         return 0, 0
     else
         return xi.msg.basic.CANNOT_ON_THAT_TARG, 0
@@ -50,9 +139,64 @@ end
 xi.job_utils.paladin.checkShieldBash = function(player, target, ability)
     if player:getShieldSize() == 0 then
         return xi.msg.basic.REQUIRES_SHIELD, 0
-    else
-        return 0, 0
     end
+
+    -- ENMITY BOOST (main PLD only):
+    -- Shield Bash does damage (already creates hate),
+    -- this adds extra snap VE on top.
+    -- Edit ENMITY_TUNE.ShieldBash VE to change this.
+    addMainPLDEnmityByKey(player, ability, 'ShieldBash')
+
+    return 0, 0
+end
+
+-- Added: checks for other PLD abilities (main-job-only hate boosts)
+xi.job_utils.paladin.checkRampart = function(player, target, ability)
+    -- ENMITY BOOST (main PLD only): Edit ENMITY_TUNE.Rampart CE/VE
+    addMainPLDEnmityByKey(player, ability, 'Rampart')
+    return 0, 0
+end
+
+xi.job_utils.paladin.checkSentinel = function(player, target, ability)
+    -- ENMITY BOOST (main PLD only): Edit ENMITY_TUNE.Sentinel CE/VE
+    addMainPLDEnmityByKey(player, ability, 'Sentinel')
+    return 0, 0
+end
+
+xi.job_utils.paladin.checkPalisade = function(player, target, ability)
+    -- ENMITY BOOST (main PLD only): Edit ENMITY_TUNE.Palisade CE/VE
+    addMainPLDEnmityByKey(player, ability, 'Palisade')
+    return 0, 0
+end
+
+xi.job_utils.paladin.checkMajesty = function(player, target, ability)
+    -- ENMITY BOOST (main PLD only): Edit ENMITY_TUNE.Majesty CE/VE
+    addMainPLDEnmityByKey(player, ability, 'Majesty')
+    return 0, 0
+end
+
+xi.job_utils.paladin.checkDivineEmblem = function(player, target, ability)
+    -- ENMITY BOOST (main PLD only): Edit ENMITY_TUNE.DivineEmblem CE/VE
+    addMainPLDEnmityByKey(player, ability, 'DivineEmblem')
+    return 0, 0
+end
+
+xi.job_utils.paladin.checkFealty = function(player, target, ability)
+    -- ENMITY BOOST (main PLD only): Edit ENMITY_TUNE.Fealty CE/VE
+    addMainPLDEnmityByKey(player, ability, 'Fealty')
+    return 0, 0
+end
+
+xi.job_utils.paladin.checkHolyCircle = function(player, target, ability)
+    -- ENMITY BOOST (main PLD only): Edit ENMITY_TUNE.HolyCircle CE/VE
+    addMainPLDEnmityByKey(player, ability, 'HolyCircle')
+    return 0, 0
+end
+
+xi.job_utils.paladin.checkChivalry = function(player, target, ability)
+    -- ENMITY BOOST (main PLD only): Edit ENMITY_TUNE.Chivalry CE/VE
+    addMainPLDEnmityByKey(player, ability, 'Chivalry')
+    return 0, 0
 end
 
 -----------------------------------
@@ -218,7 +362,7 @@ xi.job_utils.paladin.useShieldBash = function(player, target, ability)
     damage = damage + player:getMod(xi.mod.SHIELD_BASH) + (jpValue * 10)
 
     -- Calculate stun proc chance
-    chance = chance + (player:getMainLvl() - target:getMainLvl()) * 5
+    chance = chance + (player:getMainLvl() - target:getMainLvl()) * 10
 
     if math.random(1, 100) <= chance then
         target:addStatusEffect(xi.effect.STUN, 1, 0, 6)
