@@ -156,7 +156,7 @@ xi.alphamob.calculateStats = function(mob, levelData)
     mob:addMod(xi.mod.MDEF,          levelData.mods[xi.mod.MDEF]         or 0)
     mob:addMod(xi.mod.ATTP,          levelData.mods[xi.mod.ATTP]         or 0)
     mob:addMod(xi.mod.REGEN,         levelData.mods[xi.mod.REGEN]        or 0)
-    mob:addMod(xi.mod.DOUBLE_ATTACK, levelData.mod[xi.mod.DOUBLE_ATTACK] or 0)
+    mob:addMod(xi.mod.DOUBLE_ATTACK, levelData.mods[xi.mod.DOUBLE_ATTACK] or 0)
 
     -- Add mob mods if any
     mob:addMobMod(xi.mobMod.WEAPON_BONUS, levelData.mobMods[xi.mobMod.WEAPON_BONUS] or 0)

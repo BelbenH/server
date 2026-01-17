@@ -15,39 +15,14 @@ end
 spellObject.onMobSpawn = function(mob)
     xi.trust.message(mob, xi.trust.messageOffset.SPAWN)
 
-    -------------------------------------------------
-    -- Sticky hate (tune as you like)
-    -------------------------------------------------
-    if xi.mod.ENMITY then
-        mob:addMod(xi.mod.ENMITY, 95)
-    end
+    mob:addMod(xi.mod.ENMITY, 5)
+    mob:addMod(xi.mod.STORETP, 25)
 
-    if xi.mod.ENMITY_LOSS_REDUCTION then
-        mob:addMod(xi.mod.ENMITY_LOSS_REDUCTION, 95)
-    end
+    mob:addGambit(ai.t.SELF,  { ai.c.HPP_LT, 50 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE })
+    mob:addGambit(ai.t.PARTY, { ai.c.HPP_LT, 50 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE })
 
-    -------------------------------------------------
-    -- MP sustain for cures
-    -------------------------------------------------
-    if xi.mod.REFRESH then
-        mob:addMod(xi.mod.REFRESH, 2)
-    end
-
-    -------------------------------------------------
-    -- Cures (highest available Cure in his spell list)
-    -------------------------------------------------
-    mob:addGambit(ai.t.SELF,  { ai.c.HPP_LT, 75 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE })
-    mob:addGambit(ai.t.PARTY, { ai.c.HPP_LT, 75 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE })
-
-    -------------------------------------------------
-    -- Provoke (keeps hate glued)
-    -------------------------------------------------
     mob:addGambit(ai.t.TARGET, { ai.c.ALWAYS, 0 }, { ai.r.JA, ai.s.SPECIFIC, xi.ja.PROVOKE })
 
-    -------------------------------------------------
-    -- Weapon Skills (Prefer Penta over Double)
-    -- Note: The mob pool / WS list MUST allow these WS.
-    -------------------------------------------------
     local tpCond =
         (ai.c.TP_GTE) or
         (ai.c.TP_GE)  or
@@ -72,13 +47,6 @@ spellObject.onMobSpawn = function(mob)
     -- Double second = fallback (only if Penta isn't usable for some reason)
     if tpCond ~= nil and dbl ~= nil then
         mob:addGambit(ai.t.TARGET, { tpCond, 999 }, { ai.r.WS, ai.s.SPECIFIC, dbl })
-    end
-
-    -------------------------------------------------
-    -- Quality bump
-    -------------------------------------------------
-    if xi.mod.STORETP then
-        mob:addMod(xi.mod.STORETP, 25)
     end
 end
 

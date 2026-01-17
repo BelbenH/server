@@ -13,10 +13,11 @@ end
 
 entity.onMobSpawn = function(mob)
     mob:setMobMod(xi.mobMod.NO_STANDBACK, 1)
-    mob:setMobMod(xi.mobMod.MAGIC_DELAY, 10)
-    mob:setMobMod(xi.mobMod.MAGIC_COOL, 20)
-    mob:setMod(xi.mod.REGAIN, 50)
+    -- mob:setMobMod(xi.mobMod.MAGIC_DELAY, 10)
+    -- mob:setMobMod(xi.mobMod.MAGIC_COOL, 60)
+    mob:setMod(xi.mod.REGAIN, 5)
     mob:setMod(xi.mod.SILENCE_RES_RANK, 9)
+    mob:setMod(xi.mod.MATT, -10)
 end
 
 entity.onMobFight = function(mob, target)
@@ -44,7 +45,7 @@ entity.onMobMobskillChoose = function(mob, target)
         xi.mobSkill.PETRO_GAZE,
     }
 
-    if mob:getHPP() <= 50 then
+    if mob:getHPP() <= 30 then
         table.insert(skillList, xi.mobSkill.CATHARSIS) -- Observed Catharsis usage at low HP only
     end
 
