@@ -29060,6 +29060,31 @@ INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,842,@COMMON);  -- Giant Bird Fe
 INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,843,@COMMON);  -- Giant Bird Plume
 INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,2821,500);  -- Aptant of Haelen 5% (Uneffected by TH)
 
+-- Dynamic Dragons --
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,903,@ALWAYS);  -- Dragon Talon (Always, 100%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,867,@COMMON);  -- Handful Of Dragon Scales (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,1133,@RARE);   -- Vial Of Dragon Blood (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);   -- Dragon Heart (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);   -- Demon Earring (Rare, 5%)
+-- Elemental Ores (Group 1)
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1255,125); -- Fire Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1256,125); -- Ice Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1257,125); -- Wind Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1258,125); -- Earth Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1259,125); -- Lightning Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1260,125); -- Water Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1261,125); -- Light Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1262,125); -- Dark Ore
+-- Elemental Ores (Group 2)
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1255,125); -- Fire Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1256,125); -- Ice Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1257,125); -- Wind Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1258,125); -- Earth Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1259,125); -- Lightning Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1260,125); -- Water Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1261,125); -- Light Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1262,125); -- Dark Ore
+
 /*!40000 ALTER TABLE `mob_droplist` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

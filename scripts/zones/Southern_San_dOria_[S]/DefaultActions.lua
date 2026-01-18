@@ -2,7 +2,7 @@ local ID = zones[xi.zone.SOUTHERN_SAN_DORIA_S]
 
 return {
     ['_6eo']                     = { text = ID.text.GATE_IS_LOCKED }, -- Yes, even though it's a door.
-    ['Achtelle']                 = { text = ID.text.ACHTELLE_FROM_ADOULIN },
+    -- ['Achtelle']                 = { text = ID.text.ACHTELLE_FROM_ADOULIN },
     ['Adjutant']                 = { text = ID.text.TOO_BUSY },
     ['Aissaville']               = { event = 605 },
     ['Alfred']                   = { event = 314 },
