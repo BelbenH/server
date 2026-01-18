@@ -6,6 +6,7 @@ xi.server = xi.server or {}
 
 xi.server.onServerStart = function()
     xi.events.handler.checkSeasonalEvents()
+    xi.dragon.startTimer()
 end
 
 xi.server.onJSTMidnight = function()
@@ -14,6 +15,7 @@ end
 
 xi.server.onTimeServerTick = function()
     xi.chocobo.onTimeServerTick()
+    xi.dragon.spawnHandler()
 end
 
 -- Message for use with SmallPacket0x04B

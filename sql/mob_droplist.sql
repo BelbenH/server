@@ -1041,6 +1041,7 @@ INSERT INTO `mob_droplist` VALUES (118,0,0,1000,1118,@ALWAYS);  -- Antican Pauld
 INSERT INTO `mob_droplist` VALUES (118,0,0,1000,645,@ALWAYS);   -- Chunk Of Darksteel Ore (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (118,0,0,1000,1426,@VCOMMON); -- Warriors Testimony (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (118,0,0,1000,1118,@VRARE);   -- Antican Pauldron (Very Rare, 1%)
+INSERT INTO `mob_droplist` VALUES (118,2,0,1000,751,0);         -- Platinum Beastcoin (Steal)
 
 -- ZoneID: 114 - Antican Decurio
 -- ZoneID: 125 - Antican Eques
@@ -19542,7 +19543,8 @@ INSERT INTO `mob_droplist` VALUES (2443,0,0,1000,4808,@UNCOMMON); -- Scroll Of W
 INSERT INTO `mob_droplist` VALUES (2443,0,0,1000,4779,@COMMON);   -- Scroll Of Water Iii (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2443,0,0,1000,4822,@RARE);     -- Scroll Of Flood (Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (2443,0,0,1000,751,@VCOMMON);   -- Platinum Beastcoin (Very Common, 24)
-INSERT INTO `mob_droplist` VALUES (2440,0,0,1000,1443,@RARE);     -- Pinch Of Dried Mugwort (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (2443,0,0,1000,1443,@RARE);     -- Pinch Of Dried Mugwort (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (2443,2,0,1000,751,0);          -- Platinum Beastcoin (Steal)
 
 -- ZoneID: 159 - Tonberry Pursuer
 INSERT INTO `mob_droplist` VALUES (2444,0,0,1000,1119,@COMMON);   -- Tonberry Coat (Common, 15%)
@@ -29059,6 +29061,31 @@ INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,842,@VCOMMON); -- Giant Bird Fe
 INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,842,@COMMON);  -- Giant Bird Feather
 INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,843,@COMMON);  -- Giant Bird Plume
 INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,2821,500);  -- Aptant of Haelen 5% (Uneffected by TH)
+
+-- Dynamic Dragons --
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,903,@ALWAYS);  -- Dragon Talon (Always, 100%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,867,@COMMON);  -- Handful Of Dragon Scales (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,1133,@RARE);   -- Vial Of Dragon Blood (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);   -- Dragon Heart (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);   -- Demon Earring (Rare, 5%)
+-- Elemental Ores (Group 1)
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1255,125); -- Fire Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1256,125); -- Ice Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1257,125); -- Wind Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1258,125); -- Earth Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1259,125); -- Lightning Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1260,125); -- Water Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1261,125); -- Light Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1262,125); -- Dark Ore
+-- Elemental Ores (Group 2)
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1255,125); -- Fire Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1256,125); -- Ice Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1257,125); -- Wind Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1258,125); -- Earth Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1259,125); -- Lightning Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1260,125); -- Water Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1261,125); -- Light Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1262,125); -- Dark Ore
 
 /*!40000 ALTER TABLE `mob_droplist` ENABLE KEYS */;
 UNLOCK TABLES;

@@ -74,18 +74,18 @@ entity.phList =
 
 entity.onMobInitialize = function(mob)
     mob:setMobMod(xi.mobMod.ADD_EFFECT, 1)
+    xi.mob.updateNMSpawnPoint(mob)
+    mob:addImmunity(xi.immunity.LIGHT_SLEEP)
+    mob:addImmunity(xi.immunity.DARK_SLEEP)
 end
 
 entity.onMobSpawn = function(mob)
     mob:addMod(xi.mod.TRIPLE_ATTACK, 10) -- High double attack to discourage /nin
-    mob:setMobMod(xi.mobMod.WEAPON_BONUS, 20)
+    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 150)
     mob:setMod(xi.mod.MAGIC_DELAY, 20) -- Should make him cast spells more often.
-    mob:addMod(xi.mod.ATT, 15)
+    mob:setMod(xi.mod.STORETP, 75)
     mob:addMod(xi.mod.MATT, 10)
-    mob:addMod(xi.mod.DEF, 30)
-    mob:addMod(xi.mod.EVA, 30)
-    mob:setMod(xi.mod.REGEN, 10)
-    mob:setMod(xi.mod.REGAIN, 5)
+    mob:setMod(xi.mod.SILENCE_RES_RANK, 10)
 end
 
 entity.onAdditionalEffect = function(mob, target, damage)
@@ -94,6 +94,10 @@ end
 
 entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 774, 1, xi.regime.type.GROUNDS)
+end
+
+entity.onMobDespawn = function(mob)
+    xi.mob.updateNMSpawnPoint(mob)
 end
 
 return entity
