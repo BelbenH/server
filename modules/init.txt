@@ -50,12 +50,22 @@ custom/sql/ip_update.sql
 
 # Era SQL Modules
 era/sql/cop_level_restrictions.sql
+era/sql/era_abilities_enmity.sql
 era/sql/era_mob_spawns.sql
+era/sql/era_spell_enmity.sql
 era/sql/remove_aptant_nms.sql
 
 # Era Lua Modules
 era/lua/toau/weaponskills/archery.lua
+era/lua/toau/weaponskills/axe.lua
 era/lua/toau/weaponskills/club.lua
+era/lua/toau/weaponskills/dagger.lua
+era/lua/toau/weaponskills/great_axe.lua
 era/lua/toau/weaponskills/great_katana.lua
+era/lua/toau/weaponskills/great_sword.lua
+era/lua/toau/weaponskills/hand_to_hand.lua
+era/lua/toau/weaponskills/katana.lua
 era/lua/toau/weaponskills/marksmanship.lua
 era/lua/toau/weaponskills/polearm.lua
+era/lua/toau/weaponskills/scythe.lua
+era/lua/toau/weaponskills/sword.lua
