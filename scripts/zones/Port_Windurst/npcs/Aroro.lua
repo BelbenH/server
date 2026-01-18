@@ -27,7 +27,7 @@ entity.onTrigger = function(player, npc)
     }
 
     player:showText(npc, zones[xi.zone.PORT_WINDURST].text.ARORO_SHOP_DIALOG)
-    xi.shop.nation(player, stock, xi.nation.WINDURST)
+    xi.shop.general(player, xi.shop.phalanxShops.lowTierBlackMagic, xi.fameArea.WINDURST)
 end
 
 return entity

@@ -13,9 +13,8 @@ entity.onMobInitialize = function(mob)
 end
 
 entity.onMobSpawn = function(mob)
-    mob:setMod(xi.mod.DOUBLE_ATTACK, 10)
-    mob:setMod(xi.mod.DEFP, 10)
-    mob:setMod(xi.mod.STORETP, 60)
+    mob:setMod(xi.mod.DOUBLE_ATTACK, 5)
+    mob:setMod(xi.mod.STORETP, 10)
     mob:setMobMod(xi.mobMod.WEAPON_BONUS, 4)
 end
 

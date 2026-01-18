@@ -81,7 +81,7 @@ entity.onEventFinish = function(player, csid, option, npc)
             { xi.item.SCROLL_OF_AQUAVEIL,   416, 3, },
             { xi.item.SCROLL_OF_SLOW,       967, 3, },
         }
-        xi.shop.nation(player, stockA, xi.nation.SANDORIA)
+        xi.shop.general(player, xi.shop.phalanxShops.lowTierWhiteMagic, xi.fameArea.SANDORIA)
 
     -- BLACK MAGIC SHOP
     elseif csid == 510 and option == 1 then
@@ -104,7 +104,7 @@ entity.onEventFinish = function(player, csid, option, npc)
             { xi.item.SCROLL_OF_SHOCK,    1575, 3, },
             { xi.item.SCROLL_OF_DROWN,    7356, 3, },
         }
-        xi.shop.nation(player, stockB, xi.nation.SANDORIA)
+        xi.shop.general(player, xi.shop.phalanxShops.lowTierBlackMagic, xi.fameArea.SANDORIA)
     end
 end
 

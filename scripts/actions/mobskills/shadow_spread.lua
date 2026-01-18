@@ -18,12 +18,12 @@ mobskillObject.onMobWeaponSkill = function(target, mob, skill)
         mob:getPool() == xi.mobPool.WREAKER or
         mob:getPool() == xi.mobPool.AGONIZER
     then
-        sleepDuration = 120
+        sleepDuration = 15 -- Phalanx balance
     end
 
     local effects =
     {
-        { effect = xi.effect.CURSE_I,   power = 20,  duration = 180 },
+        { effect = xi.effect.CURSE_I,   power = 5,  duration = 180 }, -- Phalanx (Default: 20)
         { effect = xi.effect.SLEEP_I,   power = 1,   duration = sleepDuration },
         { effect = xi.effect.BLINDNESS, power = 100, duration = 180 },
     }

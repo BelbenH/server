@@ -72,6 +72,26 @@ entity.phList =
     [ID.mob.LORD_OF_ONZOZO - 1] = ID.mob.LORD_OF_ONZOZO, -- -39.356 14.265 -60.406
 }
 
+entity.onMobInitialize = function(mob)
+    mob:setMobMod(xi.mobMod.ADD_EFFECT, 1)
+end
+
+entity.onMobSpawn = function(mob)
+    mob:addMod(xi.mod.TRIPLE_ATTACK, 10) -- High double attack to discourage /nin
+    mob:setMobMod(xi.mobMod.WEAPON_BONUS, 20)
+    mob:setMod(xi.mod.MAGIC_DELAY, 20) -- Should make him cast spells more often.
+    mob:addMod(xi.mod.ATT, 15)
+    mob:addMod(xi.mod.MATT, 10)
+    mob:addMod(xi.mod.DEF, 30)
+    mob:addMod(xi.mod.EVA, 30)
+    mob:setMod(xi.mod.REGEN, 10)
+    mob:setMod(xi.mod.REGAIN, 5)
+end
+
+entity.onAdditionalEffect = function(mob, target, damage)
+    return xi.mob.onAddEffect(mob, target, math.random(15, 20), xi.mob.ae.ENWATER)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 774, 1, xi.regime.type.GROUNDS)
 end

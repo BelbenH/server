@@ -4500,7 +4500,7 @@ INSERT INTO `item_basic` VALUES (4659,51,'scroll_of_shell_iv','shell_iv',@USABLE
 INSERT INTO `item_basic` VALUES (4660,52,'scroll_of_shell_v','shell_v',@USABLE_TYPE,1,34444,@WHITE_MAGIC,7155);
 INSERT INTO `item_basic` VALUES (4661,53,'scroll_of_blink','blink',@USABLE_TYPE,1,1676,@WHITE_MAGIC,821);
 INSERT INTO `item_basic` VALUES (4662,54,'scroll_of_stoneskin','stoneskin',@USABLE_TYPE,1,1676,@WHITE_MAGIC,1210);
-INSERT INTO `item_basic` VALUES (4663,55,'scroll_of_aquaveil','aquaveil',@USABLE_TYPE,1,1676,@WHITE_MAGIC,102);
+INSERT INTO `item_basic` VALUES (4663,55,'scroll_of_aquaveil','aquaveil',@USABLE_TYPE,1,1676,@WHITE_MAGIC,342);
 INSERT INTO `item_basic` VALUES (4664,56,'scroll_of_slow','slow',@USABLE_TYPE,1,1676,@WHITE_MAGIC,561);
 INSERT INTO `item_basic` VALUES (4665,57,'scroll_of_haste','haste',@USABLE_TYPE,1,1676,@WHITE_MAGIC,1728);
 INSERT INTO `item_basic` VALUES (4666,58,'scroll_of_paralyze','paralyze',@USABLE_TYPE,1,1676,@WHITE_MAGIC,31);
@@ -4518,7 +4518,7 @@ INSERT INTO `item_basic` VALUES (4677,69,'scroll_of_barstonra','barstonra',@USAB
 INSERT INTO `item_basic` VALUES (4678,70,'scroll_of_barthundra','barthundra',@USABLE_TYPE,1,1676,@WHITE_MAGIC,1080);
 INSERT INTO `item_basic` VALUES (4679,71,'scroll_of_barwatera','barwatera',@USABLE_TYPE,1,1676,@WHITE_MAGIC,359);
 INSERT INTO `item_basic` VALUES (4680,72,'scroll_of_barsleep','barsleep',@USABLE_TYPE,1,1676,@WHITE_MAGIC,61);
-INSERT INTO `item_basic` VALUES (4681,73,'scroll_of_barpoison','barpoison',@USABLE_TYPE,1,1676,@WHITE_MAGIC,100);
+INSERT INTO `item_basic` VALUES (4681,73,'scroll_of_barpoison','barpoison',@USABLE_TYPE,1,1676,@WHITE_MAGIC,399);
 INSERT INTO `item_basic` VALUES (4682,74,'scroll_of_barparalyze','barparalyze',@USABLE_TYPE,1,1676,@WHITE_MAGIC,518);
 INSERT INTO `item_basic` VALUES (4683,75,'scroll_of_barblind','barblind',@USABLE_TYPE,1,1676,@WHITE_MAGIC,778);
 INSERT INTO `item_basic` VALUES (4684,76,'scroll_of_barsilence','barsilence',@USABLE_TYPE,1,1676,@WHITE_MAGIC,768);
@@ -4530,7 +4530,7 @@ INSERT INTO `item_basic` VALUES (4689,83,'scroll_of_recall-meriph','recall-merip
 INSERT INTO `item_basic` VALUES (4690,84,'scroll_of_baramnesia','baramnesia',@USABLE_TYPE,1,34444,@WHITE_MAGIC,1680);
 INSERT INTO `item_basic` VALUES (4691,85,'scroll_of_baramnesra','baramnesra',@USABLE_TYPE,1,34444,@WHITE_MAGIC,1722);
 INSERT INTO `item_basic` VALUES (4692,847,'scroll_of_haste_ii','haste_ii',@USABLE_TYPE,1,34444,@WHITE_MAGIC,9250); -- DAT missing SCROLL flag
-INSERT INTO `item_basic` VALUES (4694,86,'scroll_of_barsleepra','barsleepra',@USABLE_TYPE,1,1676,@WHITE_MAGIC,241);
+INSERT INTO `item_basic` VALUES (4694,86,'scroll_of_barsleepra','barsleepra',@USABLE_TYPE,1,1676,@WHITE_MAGIC,61);
 INSERT INTO `item_basic` VALUES (4695,87,'scroll_of_barpoisonra','barpoisonra',@USABLE_TYPE,1,1676,@WHITE_MAGIC,399);
 INSERT INTO `item_basic` VALUES (4696,88,'scroll_of_barparalyzra','barparalyzra',@USABLE_TYPE,1,1676,@WHITE_MAGIC,518);
 INSERT INTO `item_basic` VALUES (4697,89,'scroll_of_barblindra','barblindra',@USABLE_TYPE,1,1676,@WHITE_MAGIC,778);
@@ -4671,7 +4671,7 @@ INSERT INTO `item_basic` VALUES (4853,245,'scroll_of_drain','drain',@USABLE_TYPE
 INSERT INTO `item_basic` VALUES (4854,246,'scroll_of_drain_ii','drain_ii',@USABLE_TYPE,1,34444,@BLACK_MAGIC,2679);
 INSERT INTO `item_basic` VALUES (4855,247,'scroll_of_aspir','aspir',@USABLE_TYPE,1,1676,@BLACK_MAGIC,500);
 INSERT INTO `item_basic` VALUES (4856,248,'scroll_of_aspir_ii','aspir_ii',@USABLE_TYPE,1,34444,@BLACK_MAGIC,4200);
-INSERT INTO `item_basic` VALUES (4857,249,'scroll_of_blaze_spikes','blaze_spikes',@USABLE_TYPE,1,1676,@BLACK_MAGIC,101);
+INSERT INTO `item_basic` VALUES (4857,249,'scroll_of_blaze_spikes','blaze_spikes',@USABLE_TYPE,1,1676,@BLACK_MAGIC,943);
 INSERT INTO `item_basic` VALUES (4858,250,'scroll_of_ice_spikes','ice_spikes',@USABLE_TYPE,1,34444,@BLACK_MAGIC,300);
 INSERT INTO `item_basic` VALUES (4859,251,'scroll_of_shock_spikes','shock_spikes',@USABLE_TYPE,1,1676,@BLACK_MAGIC,1296);
 INSERT INTO `item_basic` VALUES (4860,252,'scroll_of_stun','stun',@USABLE_TYPE,1,34444,@BLACK_MAGIC,3060);
@@ -4790,7 +4790,7 @@ INSERT INTO `item_basic` VALUES (4998,390,'scroll_of_knights_minne_ii','knights_
 INSERT INTO `item_basic` VALUES (4999,391,'scroll_of_knights_minne_iii','knights_minne_iii',@USABLE_TYPE,1,1676,@SONGS,1772);
 INSERT INTO `item_basic` VALUES (5000,392,'scroll_of_knights_minne_iv','knights_minne_iv',@USABLE_TYPE,1,34444,@SONGS,2636);
 INSERT INTO `item_basic` VALUES (5001,393,'scroll_of_knights_minne_v','knights_minne_v',@USABLE_TYPE,1,34444,@SONGS,2972);
-INSERT INTO `item_basic` VALUES (5002,394,'scroll_of_valor_minuet','valor_minuet',@USABLE_TYPE,1,1676,@SONGS,16);
+INSERT INTO `item_basic` VALUES (5002,394,'scroll_of_valor_minuet','valor_minuet',@USABLE_TYPE,1,1676,@SONGS,22);
 INSERT INTO `item_basic` VALUES (5003,395,'scroll_of_valor_minuet_ii','valor_minuet_ii',@USABLE_TYPE,1,1676,@SONGS,994);
 INSERT INTO `item_basic` VALUES (5004,396,'scroll_of_valor_minuet_iii','valor_minuet_iii',@USABLE_TYPE,1,1676,@SONGS,1858);
 INSERT INTO `item_basic` VALUES (5005,397,'scroll_of_valor_minuet_iv','valor_minuet_iv',@USABLE_TYPE,1,34444,@SONGS,1025);
@@ -6061,11 +6061,11 @@ INSERT INTO `item_basic` VALUES (6294,0,'liij-voks_grand_coffer','li._gr._coffer
 INSERT INTO `item_basic` VALUES (6295,0,'gramk-droogs_coffer','gramk-dr._coffer',@USABLE_TYPE,99,30288,@NONE,0);
 INSERT INTO `item_basic` VALUES (6296,0,'gramk-droogs_grand_coffer','gr._gr._coffer',@USABLE_TYPE,99,30288,@NONE,0);
 INSERT INTO `item_basic` VALUES (6297,0,'juji_shuriken_pouch','juji_sh._pouch',@USABLE_TYPE,12,1540,@AMMUNITION,255);
-INSERT INTO `item_basic` VALUES (6298,0,'manji_shuriken_pouch','manji_sh._pouch',@USABLE_TYPE,12,1540,@AMMUNITION,584);
-INSERT INTO `item_basic` VALUES (6299,0,'shuriken_pouch','sh._pouch',@USABLE_TYPE,12,1540,@AMMUNITION,60);
+INSERT INTO `item_basic` VALUES (6298,0,'manji_shuriken_pouch','manji_sh._pouch',@USABLE_TYPE,12,1540,@AMMUNITION,2144);
+INSERT INTO `item_basic` VALUES (6299,0,'shuriken_pouch','sh._pouch',@USABLE_TYPE,12,1540,@AMMUNITION,1055);
 INSERT INTO `item_basic` VALUES (6300,0,'koga_shuriken_pouch','koga_sh._pouch',@USABLE_TYPE,12,13892,@NONE,0);
 INSERT INTO `item_basic` VALUES (6301,0,'togakushi_shuriken_pouch','toga._sh._pouch',@USABLE_TYPE,12,30292,@NONE,0);
-INSERT INTO `item_basic` VALUES (6302,0,'fuma_shuriken_pouch','fuma_sh._pouch',@USABLE_TYPE,12,1540,@AMMUNITION,1687);
+INSERT INTO `item_basic` VALUES (6302,0,'fuma_shuriken_pouch','fuma_sh._pouch',@USABLE_TYPE,12,1540,@AMMUNITION,2837);
 INSERT INTO `item_basic` VALUES (6303,0,'iga_shuriken_pouch','iga_sh._pouch',@USABLE_TYPE,12,1540,@AMMUNITION,2030);
 INSERT INTO `item_basic` VALUES (6304,0,'roppo_shuriken_pouch','rop._sh._pouch',@USABLE_TYPE,12,1540,@AMMUNITION,1540);
 INSERT INTO `item_basic` VALUES (6305,0,'roppo_shuriken_+1_pouch','ro._sh._+1_pouch',@USABLE_TYPE,12,1536,@AMMUNITION,0);

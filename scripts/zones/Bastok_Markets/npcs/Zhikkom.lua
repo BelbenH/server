@@ -31,8 +31,9 @@ entity.onTrigger = function(player, npc)
         { xi.item.LANCE,               19156, 3, },
     }
 
-    player:showText(npc, zones[xi.zone.BASTOK_MARKETS].text.ZHIKKOM_SHOP_DIALOG)
-    xi.shop.nation(player, stock, xi.nation.BASTOK)
+    player:printToPlayer('Hello!', xi.msg.channel.SAY, npc:getName())
+    player:printToPlayer('Welcome to the only weaponry store in Bastok, the Dragon\'s Claws!', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.lowTierMelee, xi.fameArea.BASTOK)
 end
 
 return entity

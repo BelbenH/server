@@ -27,8 +27,8 @@ entity.onTrigger = function(player, npc)
         { xi.item.ASH_POLE,         441, 3 },
     }
 
-    player:showText(npc, zones[xi.zone.BASTOK_MARKETS].text.CIQALA_SHOP_DIALOG)
-    xi.shop.nation(player, stock, xi.nation.BASTOK)
+    player:printToPlayer('Forged in tears. Seasoned by destiny.', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.onionShop, xi.fameArea.BASTOK)
 end
 
 return entity
