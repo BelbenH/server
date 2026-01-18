@@ -42,8 +42,8 @@ entity.onTrigger = function(player, npc)
         { xi.item.SCROLL_OF_BATTLEFIELD_ELEGY,  4992, 3, },
     }
 
-    player:showText(npc, zones[xi.zone.BASTOK_MARKETS].text.MJOLL_SHOP_DIALOG)
-    xi.shop.nation(player, stock, xi.nation.BASTOK)
+    player:printToPlayer('A calm heart, steady hands, and the right tools... that\'s how a ninja survives.', xi.msg.channel.SAY, npc:getName())
+    xi.shop.general(player, xi.shop.phalanxShops.ninjaEssentials, xi.fameArea.BASTOK)
 end
 
 return entity

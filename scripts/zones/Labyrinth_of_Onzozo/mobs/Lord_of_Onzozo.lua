@@ -73,16 +73,23 @@ entity.phList =
 }
 
 entity.onMobInitialize = function(mob)
+    mob:setMobMod(xi.mobMod.ADD_EFFECT, 1)
     xi.mob.updateNMSpawnPoint(mob)
     mob:addImmunity(xi.immunity.LIGHT_SLEEP)
     mob:addImmunity(xi.immunity.DARK_SLEEP)
 end
 
 entity.onMobSpawn = function(mob)
-    mob:setMod(xi.mod.STORETP, 75) -- This is the amount of STP required for LOO to reach 1k TP via auto attacks in testing.
+    mob:addMod(xi.mod.TRIPLE_ATTACK, 10) -- High double attack to discourage /nin
     mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 150)
-
+    mob:setMod(xi.mod.MAGIC_DELAY, 20) -- Should make him cast spells more often.
+    mob:setMod(xi.mod.STORETP, 75)
+    mob:addMod(xi.mod.MATT, 10)
     mob:setMod(xi.mod.SILENCE_RES_RANK, 10)
+end
+
+entity.onAdditionalEffect = function(mob, target, damage)
+    return xi.mob.onAddEffect(mob, target, math.random(15, 20), xi.mob.ae.ENWATER)
 end
 
 entity.onMobDeath = function(mob, player, optParams)

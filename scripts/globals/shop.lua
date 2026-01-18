@@ -697,7 +697,7 @@ xi.shop.curioVendorMoogleStock =
 -- PHALANX SHOPS --
 -- Balancing all shops to sell at 5 times the cost of the npc price vs. the 10 times amount that's default.
 -- Any specialty items will still be x 10 or more.
--- Any NM / Chest related items will be talked about and an amount will be given for balancing. (Will be overpriced!)
+-- Any NM / Chest related items will be talked about and an amount will be given for balancing. (Will be overpriced AF to remove gil-flation!)
 xi.shop.phalanxShops =
 {
     customArachagnonShop = -- Elvaan RSE merchant. Northern San d'Oria - (F-3)
@@ -764,6 +764,51 @@ xi.shop.phalanxShops =
         { xi.item.MELNINAS_EARRING,               999999, }, -- x ?? specialty item.
     },
 
+    lowTierWhiteMagic = -- Used for starter city light-based magic shops. (Levels: 1 to 11) Ex: Cure, Banish, etc.
+    {
+        { xi.item.SCROLL_OF_CURE,                    215, },
+        { xi.item.SCROLL_OF_DIA,                     145, },
+        { xi.item.SCROLL_OF_PARALYZE,               1550, }, -- x 50 specialty item. (Can easily be farmed from mobs.)
+        { xi.item.SCROLL_OF_BANISH,                  195, },
+        { xi.item.SCROLL_OF_BARSTONE,                775, },
+        { xi.item.SCROLL_OF_BARSTONRA,               775, },
+        { xi.item.SCROLL_OF_POISONA,                 675, },
+        { xi.item.SCROLL_OF_BARSLEEP,                305, },
+        { xi.item.SCROLL_OF_BARSLEEPRA,              305, },
+        { xi.item.SCROLL_OF_PROTECT,                 310, },
+        { xi.item.SCROLL_OF_PROTECTRA,              3050, }, -- x 50 specialty item. (Can easily be farmed from mobs.)
+        { xi.item.SCROLL_OF_BARWATER,               1795, },
+        { xi.item.SCROLL_OF_BARWATERA,              1795, },
+        { xi.item.SCROLL_OF_PARALYNA,                455, },
+        { xi.item.SCROLL_OF_AQUAVEIL,               1710, },
+        { xi.item.SCROLL_OF_BARPOISON,              1995, },
+        { xi.item.SCROLL_OF_BARPOISONRA,            1995, },
+        { xi.item.SCROLL_OF_CURE_II,                2375, },
+    },
+
+    lowTierBlackMagic = -- Used for starter city black-based magic shops. (Levels: 1 to 11) Ex: Stone, Poison, etc.
+    {
+        { xi.item.SCROLL_OF_STONE,                    85, },
+        { xi.item.SCROLL_OF_POISON,                  270, },
+        { xi.item.SCROLL_OF_BLIND,                  1550, }, -- x 50 specialty item. (Can easily be farmed from mobs.)
+        { xi.item.SCROLL_OF_WATER,                   195, },
+        { xi.item.SCROLL_OF_BIND,                   3050, }, -- x 50 specialty item. (Can easily be farmed from mobs.)
+        { xi.item.SCROLL_OF_AERO,                   1215, },
+        { xi.item.SCROLL_OF_BIO,                    1350, },
+        { xi.item.SCROLL_OF_BLAZE_SPIKES,          47150, }, -- x 100 specialty item. (Can be quested.)
+    },
+
+    onionShop = -- Used to sell base starter onion... things.
+    {
+        { xi.item.WILD_ONION,                        555, }, -- x ?? specialty item. (Can easily be farmed from mobs.)
+        { xi.item.ONION_DAGGER,                       50, },
+        { xi.item.ONION_KNIFE,                        50, },
+        { xi.item.ONION_ROD,                          50, },
+        { xi.item.ONION_STAFF,                        50, },
+        { xi.item.ONION_SWORD,                        50, },
+        { xi.item.ONION_SWORD_II,                  50000, }, -- x ?? specialty item. (Cosmetic Item)
+    },
+
     lowTierRanged = -- Used for starter city ranged weapon shops. (Levels: 1 to 11)
     {
         { xi.item.SHORTBOW,                           55, },
@@ -777,12 +822,12 @@ xi.shop.phalanxShops =
         { xi.item.DART,                               10, },
         { xi.item.WOODEN_ARROW,                        5, },
         { xi.item.BONE_ARROW,                          5, },
-        { xi.item.BONE_QUIVER,                       515, },
+        { xi.item.BONE_QUIVER,                       820, },
         { xi.item.CROSSBOW_BOLT,                       5, },
         { xi.item.BLIND_BOLT,                         25, },
-        { xi.item.BLIND_BOLT_QUIVER,                3000, },
+        { xi.item.BLIND_BOLT_QUIVER,                2800, },
         { xi.item.BRONZE_BULLET,                      15, },
-        { xi.item.BRONZE_BULLET_POUCH,              1500, },
+        { xi.item.BRONZE_BULLET_POUCH,              1810, },
         { xi.item.TIN_BULLET,                         25, },
     },
     
@@ -897,6 +942,69 @@ xi.shop.phalanxShops =
         { xi.item.HEKO_OBI,                          495, },
     },
 
+    lowTierSongs = -- Used for starter city bard shops. (Levels: 1 to 11)
+    {
+        { xi.item.SCROLL_OF_KNIGHTS_MINNE,            60, },
+        { xi.item.SCROLL_OF_VALOR_MINUET,            110, },
+        { xi.item.SCROLL_OF_ARMYS_PAEON,             140, },
+        { xi.item.SCROLL_OF_FOE_REQUIEM,             240, },
+        { xi.item.SCROLL_OF_HERB_PASTORAL,           245, },
+        { xi.item.SCROLL_OF_LIGHT_THRENODY,          100, },
+        { xi.item.SCROLL_OF_SWORD_MADRIGAL,          610, },
+    },
+
+    lowTierInstruments = -- Used for starter city bard shops. (Levels: 1 to 11)
+    {
+        { xi.item.FLUTE,                              60, },
+        { xi.item.FLUTE_P1,                         1500, }, -- x 100 specialty item.
+        { xi.item.MAPLE_HARP,                         60, },
+        { xi.item.MAPLE_HARP_P1,                    1500, }, -- x 100 specialty item.
+        { xi.item.CORNETTE,                          305, },
+        { xi.item.PICCOLO,                          1100, },
+    },
+
+    lowTier2Songs = -- Used for starter city bard shops. (Levels: 11 to 21)
+    {
+        { xi.item.SCROLL_OF_KNIGHTS_MINNE,            60, },
+        { xi.item.SCROLL_OF_VALOR_MINUET,            110, },
+        { xi.item.SCROLL_OF_ARMYS_PAEON,             140, },
+        { xi.item.SCROLL_OF_FOE_REQUIEM,             240, },
+        { xi.item.SCROLL_OF_HERB_PASTORAL,           245, },
+        { xi.item.SCROLL_OF_LIGHT_THRENODY,          100, },
+        { xi.item.SCROLL_OF_SWORD_MADRIGAL,          610, },
+    },
+
+    lowTier2Instruments = -- Used for starter city bard shops. (Levels: 11 to 21)
+    {
+        { xi.item.FLUTE,                              60, },
+        { xi.item.FLUTE_P1,                         1500, }, -- x 100 specialty item.
+        { xi.item.MAPLE_HARP,                         60, },
+        { xi.item.MAPLE_HARP_P1,                    1500, }, -- x 100 specialty item.
+        { xi.item.CORNETTE,                          305, },
+        { xi.item.PICCOLO,                          1100, },
+    },
+
+    midTierSongs = -- Used for starter city bard shops. (Levels: 22 to 50)
+    {
+        { xi.item.SCROLL_OF_KNIGHTS_MINNE,            60, },
+        { xi.item.SCROLL_OF_VALOR_MINUET,            110, },
+        { xi.item.SCROLL_OF_ARMYS_PAEON,             140, },
+        { xi.item.SCROLL_OF_FOE_REQUIEM,             240, },
+        { xi.item.SCROLL_OF_HERB_PASTORAL,           245, },
+        { xi.item.SCROLL_OF_LIGHT_THRENODY,          100, },
+        { xi.item.SCROLL_OF_SWORD_MADRIGAL,          610, },
+    },
+
+    midTierInstruments = -- Used for starter city bard shops. (Levels: 22 to 50)
+    {
+        { xi.item.FLUTE,                              60, },
+        { xi.item.FLUTE_P1,                         1500, }, -- x 100 specialty item.
+        { xi.item.MAPLE_HARP,                         60, },
+        { xi.item.MAPLE_HARP_P1,                    1500, }, -- x 100 specialty item.
+        { xi.item.CORNETTE,                          305, },
+        { xi.item.PICCOLO,                          1100, },
+    },
+
     lowTier2MixedArmor = -- Used for Mhuara / Selbina. (Levels: 12 to 21)
     {
         { xi.item.ELM_SHIELD,                       1815, },
@@ -1000,6 +1108,21 @@ xi.shop.phalanxShops =
         { xi.item.SET_OF_THIEFS_TOOLS,              1800, }, -- x 10 specialty item.
     },
 
+    lowTier2Essentials = -- Used for Mhaura / Selbina item shop vendors. Potions, Ethers, HELM tools, etc...
+    {
+        { xi.item.FLASK_OF_EYE_DROPS,               1038, },
+        { xi.item.ANTIDOTE,                          158, },
+        { xi.item.FLASK_OF_ECHO_DROPS,               400, },
+        { xi.item.POTION,                            266, },
+        { xi.item.POTION,                            266, }, -- yeah BUFFS inbound lol
+        { xi.item.ETHER,                            1208, },
+        -- { xi.item.LIVING_KEY,                       2910, }, -- x 10 specialty item. ***ADD TO HIGHER TIER ESSENTIALS SHOP***
+        { xi.item.PICKAXE,                         15000, },
+        { xi.item.HATCHET,                         15000, },
+        { xi.item.SICKLE,                          15000, },
+        { xi.item.SET_OF_THIEFS_TOOLS,              1800, }, -- x 10 specialty item.
+    },
+
     lowTierTackleShop = -- Used for starter city tackle. 
     {
         { xi.item.LUGWORM,                            12, },
@@ -1019,11 +1142,42 @@ xi.shop.phalanxShops =
         { xi.item.PELICAN_RING,                   145332, }, -- x ?? specialty item.
     },
 
-    lowTierFoods = -- Used for starter city inns, restaurants, or any place you would see food for sale, shop vendors. (Levels: 1 to 11)
+    allFoodsList = -- ALL food will be x 15 the NPC price starting out. This will ensure cooks will still be able to sell food at a profit but will prevent price gouging.
     {
-        { xi.item.LOVE_CHOCOLATE,                    775, },
-        { xi.item.DRIED_BERRY,                       335, },
-        { xi.item.EAR_OF_ROASTED_CORN,                80, },
+        -- Meat & Eggs --
+        { xi.item.STRIP_OF_BISON_JERKY,            12960, }, -- STR +5 MND -2 Attack +18% (1 Hour)
+        { xi.item.SERVING_OF_BISON_STEAK,           6225, }, -- STR +6 AGI +1 INT -3 Attack +18% Ranged Attack +18% (3 Hours)
+        { xi.item.BLACKENED_FROG,                   3960, }, -- DEX +2 AGI +2 MND -2 Attack +14% Ranged Attack +20% (30 Min.)
+        { xi.item.BLACKENED_NEWT,                   4065, }, -- DEX +4 MND -3 Attack +18% (3 Hours)
+        { xi.item.BLACKENED_TOAD,                   6300, }, -- DEX +2 AGI +2 MND -1 (3 Hours)
+        { xi.item.BOWL_OF_BOILED_COCKATRICE,        6960, }, -- STR +5 AGI +2 MND +1 INT -2 Attack +22% Ranged Attack +32% (2 Hours)
+        { xi.item.STRIP_OF_BUFFALO_JERKY,           4485, }, -- STR +4 MND -2 Attack +18% (30 Min.)
+        { xi.item.BUNNY_BALL,                       8250, }, -- HP +10 STR +2 VIT +2 INT -1 Attack +30% Ranged Attack+30% (4 Hours)
+        { xi.item.PLATE_OF_COEURL_SAUTE,            9420, }, -- STR +5 AGI +1 INT -2 Attack +20% Ranged Attack +20% (3 Hours)
+        { xi.item.COLORED_EGG,                      1440, }, -- HP +20 MP +20 Attack +3% (30 Mins.)
+        { xi.item.DHALMEL_PIE,                      1800, }, -- HP +25 STR +4 VIT +1 AGI +2 MND +1 INT -2 Attack +25% Ranged Attack +25% (30 Mins.)
+        { xi.item.DHALMEL_STEAK,                    5505, }, -- STR +4 INT -2 Attack +25% (3 Hours)
+        { xi.item.DRAGON_STEAK,                   109500, }, -- HP +25 STR +7 INT -3 Attack +20% Ranged Attack +20% HP Recov. +2 MP Recov. +2 (3 Hours)
+        { xi.item.SERVING_OF_FROG_FLAMBE,           8025, }, -- DEX +3 AGI +2 MND -2 Attack +14% Ranged Attack +20% (1 Hour)
+        { xi.item.GALKAN_SAUSAGE,                   4530, }, -- STR +3 INT -1 Attack +25% Ranged Attack +25% (30 Mins.)
+        { xi.item.SLICE_OF_GRILLED_HARE,             690, }, -- STR +2 INT -1 Attack +30% (3 Hours)
+        { xi.item.HARD_BOILED_EGG,                   285, }, -- HP +10 MP +10 (30 Mins.)
+        { xi.item.HEDGEHOG_PIE,                    30600, }, -- HP +55 STR +6 VIT +2 INT -3 MND +3 Attack +18% Ranged Attack +18% Accuracy +5 MP Recov. +2 (3 Hours)
+        { xi.item.HELLSTEAK,                       10590, }, -- HP +20 STR +6 INT -2 Attack +18.5% MP Recov. +2 (3 Hours)
+        { xi.item.SERVING_OF_HERB_CRAWLER_EGGS,     9840, }, -- HP +6% MP +10 VIT -1 AGI + 3 Evasion +8 (3 Hours)
+        { xi.item.DISH_OF_HYDRA_KOFTE,             11835, }, -- STR +7 INT -3 ~Attack +21% ~Defense +21% (3 Hours)
+        -- Seafood --
+        { xi.item.BALIK_SIS,                        9000, }, -- DEX +4 MND -2 Attack +13% (30 Mins.)
+        -- Vegetables --
+        { xi.item.BAKED_POPOTO,                     1230, }, -- HP +20 VIT +2 DEX -1 (30 Mins.)
+        -- Soups --
+        { xi.item.ANGLER_STEWPOT,                  11340, }, -- HP +10% MP +10 HP While Healing +5 MP While Healing +1 (3 Hours)
+        -- Breads & Rice --
+        { xi.item.DISH_OF_SPAGHETTI_ARRABBIATA,    11970, }, -- HP +12% STR +5 VIT +2 INT -7 Attack +22.5% (30 Mins.)
+        -- Sweets --
+        { xi.item.ACORN_COOKIE,                       90, }, -- MP Recov. +3 (3 Mins.)
+        -- Drinks --
+        { xi.item.BOTTLE_OF_AMRITA,                25810, }, -- Regen Effect +5 (5 HP every 3 Seconds, 500 HP Total) + Refresh effect +5 (5 MP every 3 Seconds, 500 MP Total) (5 Mins.)
     },
 
     lowTier2Foods = -- Used for Mhuara / Selbina food vendors. (Levels: 12 to 21)
@@ -1037,7 +1191,6 @@ xi.shop.phalanxShops =
         { xi.item.ROAST_CARP,                        645, },
         { xi.item.BOTTLE_OF_APPLE_JUICE,             380, },
         { xi.item.ROAST_PIPIRA,                     1175, },
-        { xi.item.JUG_OF_SOY_MILK,                   150, },
         { xi.item.BAKED_POPOTO,                      410, },
         { xi.item.JACK_O_LANTERN,                   2500, },
     },
@@ -1045,18 +1198,30 @@ xi.shop.phalanxShops =
     ninjaEssentials = -- Used to give players QoL access to basic Ninja tools. 
     {
         { xi.item.SHURIKEN,                           50, },
+        { xi.item.SHURIKEN_POUCH,                   5275, }, -- 1055g sell price (New!)
         { xi.item.JUJI_SHURIKEN,                      75, },
+        { xi.item.JUJI_SHURIKEN_POUCH,              7750, }, -- 1550g sell price (New!)
         { xi.item.MANJI_SHURIKEN,                    105, },
+        { xi.item.MANJI_SHURIKEN_POUCH,            10720, }, -- 2144g sell price (New!)
         { xi.item.FUMA_SHURIKEN,                     140, },
+        { xi.item.FUMA_SHURIKEN_POUCH,             14185, }, -- 2837g sell price (New!)
         { xi.item.NOKIZARU_SHURIKEN,             4999999, },
         { xi.item.SHIHEI,              	             101, },
+        { xi.item.TOOLBAG_SHIHEI,                  10324, },
         { xi.item.SHINOBI_TABI,        	             101, },
+        { xi.item.TOOLBAG_SHINOBI_TABI,            10324, },
 		{ xi.item.SANJAKU_TENUGUI,     	             101, },
+        { xi.item.TOOLBAG_SANJAKU_TENUGUI,         10324, },
         { xi.item.SAIRUI_RAN,          	             101, },
+        { xi.item.TOOLBAG_SAIRUI_RAN,              10324, },
 		{ xi.item.KAGINAWA,          	             101, },
+        { xi.item.TOOLBAG_KAGINAWA,                10324, },
         { xi.item.JUSATSU,          	             101, },
+        { xi.item.TOOLBAG_JUSATSU,                 10324, },
         { xi.item.KODOKU,              	             101, },
+        { xi.item.TOOLBAG_KODOKU,                  10324, },
         { xi.item.INOSHISHINOFUDA,                   101, },
+        { xi.item.TOOLBAG_INOSHISHINOFUDA,         10324, },
     },
 
     lowTier2Weapons= -- Used for Tier 2 weapon shops in Mhaura / Selbina. (Levels: 12 to 21)

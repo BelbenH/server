@@ -19,7 +19,7 @@ entity.onTrigger = function(player, npc)
     }
 
     player:showText(npc, zones[xi.zone.BASTOK_MINES].text.GRISELDA_SHOP_DIALOG)
-    xi.shop.nation(player, stock, xi.nation.BASTOK)
+    xi.shop.general(player, xi.shop.phalanxShops.lowTier2Foods, xi.fameArea.BASTOK)
 end
 
 return entity

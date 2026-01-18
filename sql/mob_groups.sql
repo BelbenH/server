@@ -707,7 +707,7 @@ INSERT INTO `mob_groups` VALUES (23,4527,16,'Livid_Seether',960,0,1350,0,0,83,84
 -- Spire_of_Holla (Zone 17)
 -- ------------------------------------------------------------
 
-INSERT INTO `mob_groups` VALUES (1,4382,17,'Wreaker',0,128,0,3800,0,32,33,0);
+INSERT INTO `mob_groups` VALUES (1,4382,17,'Wreaker',0,128,0,3100,0,32,33,0);
 INSERT INTO `mob_groups` VALUES (2,760,17,'Cogitator',0,128,0,2500,0,34,34,0);
 INSERT INTO `mob_groups` VALUES (3,4317,17,'Weeper',0,128,0,300,0,28,28,0);
 INSERT INTO `mob_groups` VALUES (4,0,17,'Recollector',0,128,0,0,0,0,0,0);
