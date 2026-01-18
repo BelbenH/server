@@ -1623,7 +1623,10 @@ uint8 CBattleEntity::GetDeathType()
 
 void CBattleEntity::addModifier(Mod type, int16 amount)
 {
-    m_modStat[type] += amount;
+    if (type != Mod::NONE)
+    {
+        m_modStat[type] += amount;
+    }
 }
 
 void CBattleEntity::addModifiers(std::vector<CModifier>* modList)
@@ -1631,7 +1634,10 @@ void CBattleEntity::addModifiers(std::vector<CModifier>* modList)
     TracyZoneScoped;
     for (auto modifier : *modList)
     {
-        m_modStat[modifier.getModID()] += modifier.getModAmount();
+        if (modifier.getModID() != Mod::NONE)
+        {
+            m_modStat[modifier.getModID()] += modifier.getModAmount();
+        }
     }
 }
 
@@ -1724,7 +1730,10 @@ void CBattleEntity::addEquipModifiers(std::vector<CModifier>* modList, uint8 ite
 
 void CBattleEntity::setModifier(Mod type, int16 amount)
 {
-    m_modStat[type] = amount;
+    if (type != Mod::NONE)
+    {
+        m_modStat[type] = amount;
+    }
 }
 
 void CBattleEntity::setModifiers(std::vector<CModifier>* modList)
@@ -1732,7 +1741,10 @@ void CBattleEntity::setModifiers(std::vector<CModifier>* modList)
     TracyZoneScoped;
     for (auto& i : *modList)
     {
-        m_modStat[i.getModID()] = i.getModAmount();
+        if (i.getModID() != Mod::NONE)
+        {
+            m_modStat[i.getModID()] = i.getModAmount();
+        }
     }
 }
 
@@ -1744,7 +1756,10 @@ void CBattleEntity::setModifiers(std::vector<CModifier>* modList)
 
 void CBattleEntity::delModifier(Mod type, int16 amount)
 {
-    m_modStat[type] -= amount;
+    if (type != Mod::NONE)
+    {
+        m_modStat[type] -= amount;
+    }
 }
 
 void CBattleEntity::saveModifiers()
@@ -1909,6 +1924,12 @@ void CBattleEntity::delEquipModifiers(std::vector<CModifier>* modList, uint8 ite
 int16 CBattleEntity::getMod(Mod modID)
 {
     TracyZoneScoped;
+
+    if (modID == Mod::NONE)
+    {
+        return 0;
+    }
+
     return m_modStat[modID];
 }
 
@@ -1920,6 +1941,12 @@ int16 CBattleEntity::getMod(Mod modID)
 int16 CBattleEntity::getMaxGearMod(Mod modID)
 {
     TracyZoneScoped;
+
+    if (modID == Mod::NONE)
+    {
+        return 0;
+    }
+
     CCharEntity* PChar       = dynamic_cast<CCharEntity*>(this);
     uint16       maxModValue = 0;
 
@@ -2375,6 +2402,16 @@ void CBattleEntity::OnCastFinished(CMagicState& state, action_t& action)
                 roeutils::event(ROE_BUFFALLY, static_cast<CCharEntity*>(PEminenceTarget), RoeDatagramList{});
             }
         }
+
+        if (PActionTarget->id == PTarget->id)
+        {
+            // TODO: only run this on offensive spells.
+            battleutils::handleKillshotEnmity(this, PActionTarget);
+        }
+        else
+        {
+            battleutils::handleSecondaryTargetEnmity(this, PActionTarget);
+        }
     }
     if ((!(PSpell->isHeal()) || PSpell->tookEffect()) && PActionTarget->isAlive())
     {
@@ -2681,6 +2718,16 @@ void CBattleEntity::OnMobSkillFinished(CMobSkillState& state, action_t& action)
             battleutils::ClaimMob(PTargetFound, this);
         }
         battleutils::DirtyExp(PTargetFound, this);
+
+        if (PTargetFound->id == PTarget->id)
+        {
+            // TODO: only run this on offensive mobskills
+            battleutils::handleKillshotEnmity(this, PTargetFound);
+        }
+        else
+        {
+            battleutils::handleSecondaryTargetEnmity(this, PTargetFound);
+        }
     };
 
     // Process self first if present in targets

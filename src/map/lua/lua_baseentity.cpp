@@ -13381,6 +13381,27 @@ void CLuaBaseEntity::resetEnmity(CLuaBaseEntity* PEntity)
 }
 
 /************************************************************************
+ *  Function: setEnmityActive()
+ *  Purpose : Used to set enmity active or not
+ *  Example : mob:setEnmityActive(target, true)
+ *  Notes   : Used in certain mob special abilities which set enmity inactive
+ ************************************************************************/
+
+void CLuaBaseEntity::setEnmityActive(CLuaBaseEntity* PEntity, bool active)
+{
+    if (m_PBaseEntity->objtype != TYPE_MOB)
+    {
+        ShowWarning("Attempting to reset enmity for invalid entity type (%s).", m_PBaseEntity->getName());
+        return;
+    }
+
+    if (PEntity != nullptr && PEntity->GetBaseEntity()->objtype != TYPE_NPC)
+    {
+        static_cast<CMobEntity*>(m_PBaseEntity)->PEnmityContainer->SetActive(PEntity->m_PBaseEntity->id, active);
+    }
+}
+
+/************************************************************************
  *  Function: updateClaim()
  *  Purpose : Marks a Mob as claimed once popped by a Player
  *  Example : mob:updateClaim(player)
@@ -14179,6 +14200,11 @@ int16 CLuaBaseEntity::getMod(uint16 modID)
         return 0;
     }
 
+    if (modID == 0)
+    {
+        return 0;
+    }
+
     return static_cast<CBattleEntity*>(m_PBaseEntity)->getMod(static_cast<Mod>(modID));
 }
 
@@ -14197,6 +14223,11 @@ void CLuaBaseEntity::setMod(uint16 modID, int16 value)
         return;
     }
 
+    if (modID == 0)
+    {
+        return;
+    }
+
     static_cast<CBattleEntity*>(m_PBaseEntity)->setModifier(static_cast<Mod>(modID), value);
 }
 
@@ -14212,6 +14243,11 @@ void CLuaBaseEntity::delMod(uint16 modID, int16 value)
     if (m_PBaseEntity->objtype == TYPE_NPC)
     {
         ShowWarning("Invalid Entity (NPC: %s) calling function.", m_PBaseEntity->getName());
+        return;
+    }
+
+    if (modID == 0)
+    {
         return;
     }
 
@@ -20034,6 +20070,7 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("updateEnmityFromDamage", CLuaBaseEntity::updateEnmityFromDamage);
     SOL_REGISTER("updateEnmityFromCure", CLuaBaseEntity::updateEnmityFromCure);
     SOL_REGISTER("resetEnmity", CLuaBaseEntity::resetEnmity);
+    SOL_REGISTER("setEnmityActive", CLuaBaseEntity::setEnmityActive);
     SOL_REGISTER("updateClaim", CLuaBaseEntity::updateClaim);
     SOL_REGISTER("hasClaim", CLuaBaseEntity::hasClaim);
     SOL_REGISTER("hasEnmity", CLuaBaseEntity::hasEnmity);
