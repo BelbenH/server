@@ -15,7 +15,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Add your custom 15% heal
     local maxHP = player:getMaxHP()
-    local healAmount = math.floor(maxHP * 0.15)
+    local healAmount = math.floor(maxHP * 0.15 * (1 + player:getStat(xi.mod.VIT) / 100))
 
     player:addHP(healAmount)
     player:printToPlayer("Defender restores " .. healAmount .. " HP!", xi.msg.channel.SYSTEM_3)

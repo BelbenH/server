@@ -315,9 +315,9 @@ xi.teleport.toHomeNation = function(player)
     if pNation == xi.nation.BASTOK then
         player:setPos(89, 0 , -66, 0, 234)
     elseif pNation == xi.nation.SANDORIA then
-        player:setPos(49, -1 , 29, 164, 231)
+        player:setPos(-229.87, 8, 18, 255, 231)
     else
-        player:setPos(193, -12 , 220, 64, 240)
+        player:setPos(-222.9, -8 , 200, 254, 240)
     end
 end
 
