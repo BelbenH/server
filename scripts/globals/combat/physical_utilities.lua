@@ -1187,16 +1187,8 @@ xi.combat.physical.getDamageReductionForBlock = function(defender, attacker, dam
     return originalDamage - damage
 end
 
------------------------------------
--- PHALANX RISING
--- Main PLD: Enmity on Successful Block
---
--- CE = sticky hate, VE = snap hate
--- Blocks can happen often, so keep values modest.
---
--- To increase: raise CE/VE below.
--- To decrease: lower CE/VE below.
------------------------------------
+-- Phalanx
+-- Main PLD: Add enmity on Successful Block
 local PLD_BLOCK_ENMITY =
 {
     -- Index is shield size (from getShieldSize()).
@@ -1215,19 +1207,11 @@ local function applyBlockEnmity(attacker, defender, ceAdd, veAdd)
         return
     end
 
-    -- Most common APIs across forks:
-    if attacker.addEnmity then
-        attacker:addEnmity(defender, ceAdd, veAdd)
+    if attacker:isPC() then
         return
     end
 
-    if attacker.updateEnmity then
-        attacker:updateEnmity(defender, ceAdd, veAdd)
-        return
-    end
-
-    -- If neither exists in your fork, tell me what enmity function you have
-    -- (ex: xi.enmity.addEnmity(attacker, defender, ce, ve)), and we’ll wire it here.
+    attacker:addEnmity(defender, ceAdd, veAdd)
 end
 
 
@@ -1238,35 +1222,6 @@ xi.combat.physical.isBlocked = function(defender, attacker)
 
         if xi.combat.physical.calculateBlockRate(defender, attacker) * 100 >= math.random(1, 10000) then
             blocked = true
-
-            ---------------------------------------------------------
-            -- PHALANX RISING
-            -- ENMITY BOOST: Successful block (MAIN PLD only)
-            --
-            -- Increase/decrease the CE/VE values in PLD_BLOCK_ENMITY above.
-            -- More VE = more snap hate on block.
-            -- More CE = more sticky hate from repeated blocking.
-            ---------------------------------------------------------
-            if defender:getMainJob() == xi.job.PLD then
-                local shieldSize = 3
-
-                -- Prefer an engine method if it exists
-                if defender.getShieldSize then
-                    shieldSize = defender:getShieldSize()
-                else
-                    -- Fallback for PCs: look at the equipped shield item
-                    if defender:isPC() then
-                        local shield = defender:getEquippedItem(xi.slot.SUB)
-                        if shield and shield:isShield() and shield.getShieldSize then
-                            shieldSize = shield:getShieldSize()
-                        end
-                    end
-                end
-
-                local bonus = PLD_BLOCK_ENMITY[shieldSize] or PLD_BLOCK_ENMITY[3]
-                applyBlockEnmity(attacker, defender, bonus.CE or 0, bonus.VE or 0)
-            end
-            ---------------------------------------------------------
         end
 
         -- Handle skill ups.
@@ -1276,6 +1231,15 @@ xi.combat.physical.isBlocked = function(defender, attacker)
             not xi.settings.map.PARRY_OLD_SKILLUP_STYLE) -- Old style skillup is not enabled
         then
             defender:trySkillUp(xi.skill.SHIELD, attacker:getMainLvl())
+
+            -- Phalanx (ENMITY BOOST: Successful block (MAIN PLD only))
+            if defender:getMainJob() == xi.job.PLD then
+                local bonus = PLD_BLOCK_ENMITY[defender:getShieldSize()] or PLD_BLOCK_ENMITY[3]
+
+                if bonus then
+                    applyBlockEnmity(attacker, defender, bonus.CE or 0, bonus.VE or 0)
+                end
+            end
         end
     end
 

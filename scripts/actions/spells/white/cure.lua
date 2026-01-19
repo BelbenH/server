@@ -6,65 +6,6 @@
 ---@type TSpell
 local spellObject = {}
 
-------------------------------------------------------------
--- PHALANX RISING
--- Main PLD: Cure Enmity Bonus (Cure I)
---
--- This file is Cure I specifically.
--- We add EXTRA enmity ONLY when PLD is the caster's MAIN job,
--- on top of the normal: caster:updateEnmityFromCure(target, final)
---
--- Tuning:
---   - Increase VE for more snap hate (decays faster)
---   - Increase CE for more sticky hate (lasts longer)
---   - Decrease values to tone it down
-------------------------------------------------------------
-local PLD_MAIN_CURE_ENMITY_BONUS =
-{
-    -- Cure I bonus (this file)
-    CE = 80,
-    VE = 240,
-}
-
--- Apply an extra enmity bump after the normal cure enmity is processed.
--- NOTE: updateEnmityFromCure is usually the "correct" system-wide handler.
--- This helper attempts to add a direct CE/VE bump.
-local function applyExtraCureEnmityBonus(caster, target, ceAdd, veAdd)
-    if not caster or not target then
-        return
-    end
-
-    -- Only main PLD gets this bonus
-    if caster:getMainJob() ~= xi.job.PLD then
-        return
-    end
-
-    -- Safety clamps (prevents negatives from weird configs)
-    ceAdd = math.max(0, ceAdd or 0)
-    veAdd = math.max(0, veAdd or 0)
-
-    --------------------------------------------------------
-    -- ENMITY BOOST APPLIED HERE:
-    -- Increase/decrease PLD_MAIN_CURE_ENMITY_BONUS CE/VE above
-    -- to tune how much extra hate Cure I generates.
-    --------------------------------------------------------
-
-    -- Most common pattern in LSB-like forks: mobs/targets own enmity lists and accept addEnmity().
-    if target.addEnmity then
-        target:addEnmity(caster, ceAdd, veAdd)
-        return
-    end
-
-    -- Some forks use a global enmity helper instead.
-    if xi and xi.enmity and xi.enmity.addEnmity then
-        xi.enmity.addEnmity(target, caster, ceAdd, veAdd)
-        return
-    end
-
-    -- If your fork has neither, the bonus can't be applied from here without
-    -- knowing your enmity API. (The baseline updateEnmityFromCure still works.)
-end
-
 spellObject.onMagicCastingCheck = function(caster, target, spell)
     return 0
 end
@@ -147,7 +88,7 @@ spellObject.onSpellCast = function(caster, target, spell)
 
         final = final + (final * (target:getMod(xi.mod.CURE_POTENCY_RCVD) / 100))
 
-        -- Applying server mods
+        --Applying server mods
         final = final * xi.settings.main.CURE_POWER
 
         local diff = (target:getMaxHP() - target:getHP())
@@ -158,24 +99,7 @@ spellObject.onSpellCast = function(caster, target, spell)
         target:addHP(final)
 
         target:wakeUp()
-
-        -- Baseline cure enmity (whatever your core normally does)
         caster:updateEnmityFromCure(target, final)
-
-        ------------------------------------------------------------
-        -- PHALANX RISING
-        -- EXTRA ENMITY: Main PLD only
-        --
-        -- This is additional CE/VE on top of updateEnmityFromCure.
-        -- Tune PLD_MAIN_CURE_ENMITY_BONUS at the top of this file.
-        ------------------------------------------------------------
-        applyExtraCureEnmityBonus(
-            caster,
-            target,
-            PLD_MAIN_CURE_ENMITY_BONUS.CE,
-            PLD_MAIN_CURE_ENMITY_BONUS.VE
-        )
-        ------------------------------------------------------------
     else
         -- no effect if player casted on mob
 
