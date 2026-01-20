@@ -57,8 +57,8 @@ m:addOverride('xi.actions.weaponskills.shadowstitch.onUseWeaponSkill', function(
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
 
     -- Handle status effect
-    local effectId      = xi.effect.BIND
-    local actionElement = xi.element.ICE
+    local effectId      = xi.effect.WEIGHT -- Phalanx custom effect
+    local actionElement = xi.element.WIND
     local power         = 1
     local skillType     = xi.skill.DAGGER
     local resist        = xi.combat.magicHitRate.calculateResistRate(player, target, 0, skillType, 0, actionElement, 0, effectId, 0)

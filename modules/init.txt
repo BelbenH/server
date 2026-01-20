@@ -54,6 +54,7 @@ era/sql/era_abilities_enmity.sql
 era/sql/era_mob_spawns.sql
 era/sql/era_spell_enmity.sql
 era/sql/remove_aptant_nms.sql
+era/sql/phalanx_ability_changes.sql
 
 # Era Lua Modules
 era/lua/toau/weaponskills/archery.lua
