@@ -1337,8 +1337,8 @@ local lootTable =
     {
         [treasureType.CHEST] =
         {
-            { xi.item.NONE,          660 }, -- Gil
-            { xi.item.BATTLE_GLOVES, 220 }, -- Item
+            { xi.item.NONE,          460 }, -- Gil
+            { xi.item.BATTLE_GLOVES, 420 }, -- Item
             { xi.item.AMBER_STONE,    20 },
             { xi.item.AMETHYST,       20 },
             { xi.item.CLEAR_TOPAZ,    20 },

@@ -25,9 +25,9 @@ zoneObject.onGameHour = function(zone)
         local fireChance = math.random(1, 100)
 
         if fireChance < 5 then
-            zone:setWeather(xi.weather.HEAT_WAVE)
+            -- zone:setWeather(xi.weather.HEAT_WAVE)
         elseif fireChance < 20 then
-            zone:setWeather(xi.weather.HOT_SPELL)
+            -- zone:setWeather(xi.weather.HOT_SPELL)
         end
     end
 end
