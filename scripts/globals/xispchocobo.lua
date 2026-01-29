@@ -491,6 +491,15 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
                         largeTalons = false,
                     }
 
+                    if playerArg:getCharVar('[XISP]chocoboTimer') > os.time() then -- Timer set when getting off mount
+                        local chocoTimer = player:getCharVar('[XISP]chocoboTimer') - os.time()
+                        local minutes    = math.floor(chocoTimer / 60)
+                        local seconds    = chocoTimer % 60
+                        playerArg:printToPlayer('Your chocobo appears too tired to ride.', xi.msg.channel.NS_SAY, ' ')
+                        playerArg:printToPlayer('You must wait ' .. minutes .. ' more minute(s) and ' .. seconds .. " seconds(s).", xi.msg.channel.NS_SAY, ' ')
+                        return
+                    end
+
                     -- This line registers the player's chocobo as the player's mount
                     playerArg:registerChocobo(playerArg:getCharVar('[XISP]chocoColor'), traits)
 
@@ -533,13 +542,6 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
             return
         elseif #player:getNotorietyList() > 0 then
             player:printToPlayer('You cannot mount your chocobo while in combat.', xi.msg.channel.NS_SAY, ' ')
-            return
-        elseif player:getCharVar('[XISP]chocoboTimer') > os.time() then -- Timer set when getting off mount
-            local chocoTimer = player:getCharVar('[XISP]chocoboTimer') - os.time()
-            local minutes    = math.floor(chocoTimer / 60)
-            local seconds    = chocoTimer % 60
-            player:printToPlayer('Your chocobo appears too tired to ride.', xi.msg.channel.NS_SAY, ' ')
-            player:printToPlayer('You must wait ' .. minutes .. ' more minute(s) and ' .. seconds .. " seconds(s).", xi.msg.channel.NS_SAY, ' ')
             return
         end
 
