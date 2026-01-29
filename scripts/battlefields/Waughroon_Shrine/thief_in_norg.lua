@@ -15,6 +15,7 @@ local content = BattlefieldQuest:new({
     entryNpc         = 'BC_Entrance',
     exitNpc          = 'Burning_Circle',
     requiredItems    = { xi.item.BANISHING_CHARM },
+    allowTrusts      = true,
 
     questArea     = xi.questLog.OUTLANDS,
     quest         = xi.quest.id.outlands.A_THIEF_IN_NORG,

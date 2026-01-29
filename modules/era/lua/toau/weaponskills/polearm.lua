@@ -141,8 +141,8 @@ end)
 m:addOverride('xi.actions.weaponskills.impulse_drive.onUseWeaponSkill', function(player, target, wsID, tp, primary, action, taChar)
     local params   = {}
     params.numHits = 2
-    params.ftpMod  = { 1.00, 1.50, 2.50 }
-    params.str_wsc = 0.5
+    params.ftpMod  = { 1.75, 2.0, 2.5 }
+    params.str_wsc = 1.0
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage

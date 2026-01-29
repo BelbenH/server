@@ -26,7 +26,7 @@ mobskillObject.onMobWeaponSkill = function(target, mob, skill)
     local ftp     = 1
 
     local hpMod   = skill:getMobHPP() / 100
-    ftp           = ftp + hpMod * 14 + math.random(2, 6)
+    ftp           = ftp + hpMod * 4 + math.random(2, 6)
 
     if mob:isMobType(xi.mobType.NOTORIOUS) then
         ftp = ftp * 5
