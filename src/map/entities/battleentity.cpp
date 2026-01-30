@@ -517,7 +517,8 @@ uint32 CBattleEntity::GetWeaponDelay(bool tp)
                 hasteAbility = std::clamp<float>(hasteAbility, -0.25f, 0.25f);
                 hasteGear    = std::clamp<float>(hasteGear, -0.25f, 0.25f);
 
-                hasteMultiplier = std::clamp<float>(1.0f - hasteMagic - hasteAbility - hasteGear, 0.2f, 2.0f);
+                float hasteCap  = 1.0f - settings::get<float>("main.DELAY_REDUCTION_CAP");
+                hasteMultiplier = std::clamp<float>(1.0f - hasteMagic - hasteAbility - hasteGear, hasteCap, 2.0f);
             }
         }
 
@@ -3180,7 +3181,6 @@ void CBattleEntity::OnDespawn(CDespawnState& /*unused*/)
     FadeOut();
     // #event despawn
     PAI->EventHandler.triggerListener("DESPAWN", this);
-    PAI->Internal_Respawn(0s);
 }
 
 void CBattleEntity::SetBattleStartTime(timer::time_point time)

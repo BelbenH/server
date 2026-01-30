@@ -3466,6 +3466,11 @@ function CBaseEntity:isAvatar()
 end
 
 ---@nodiscard
+---@return boolean
+function CBaseEntity:isJugPet()
+end
+
+---@nodiscard
 ---@return CBaseEntity?
 function CBaseEntity:getMaster()
 end
@@ -3668,8 +3673,9 @@ function CBaseEntity:removeAllRunes()
 end
 
 ---@param level integer
+---@param recover boolean?
 ---@return nil
-function CBaseEntity:setMobLevel(level)
+function CBaseEntity:setMobLevel(level, recover)
 end
 
 ---@nodiscard

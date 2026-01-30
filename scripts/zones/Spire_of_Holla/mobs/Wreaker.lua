@@ -18,7 +18,7 @@ entity.onMobSpawn = function(mob)
     mob:setMobMod(xi.mobMod.WEAPON_BONUS, 4)
 end
 
-entity.onMobMobskillChoose = function(mob, target)
+entity.onMobMobskillChoose = function(mob, target, skillId)
     local tpMoves =
     {
         xi.mobSkill.SHADOW_SPREAD,

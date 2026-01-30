@@ -5,6 +5,10 @@
 ---@type TMobEntity
 local entity = {}
 
+entity.onMobInitialize = function(mob)
+    mob:setMobMod(xi.mobMod.NO_STANDBACK, 1)
+end
+
 entity.onMobSpawn = function(mob)
     mob:renameEntity('Tomb Mage', true)
 end

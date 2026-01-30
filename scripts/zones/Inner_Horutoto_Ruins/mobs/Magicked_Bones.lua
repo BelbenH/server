@@ -14,6 +14,10 @@ entity.phList =
 }
 
 entity.onMobInitialize = function(mob)
+    mob:setMobMod(xi.mobMod.NO_STANDBACK, 1)
+end
+
+entity.onMobspawn = function(mob)
     mob:renameEntity('Magicked Bones', true)
 end
 

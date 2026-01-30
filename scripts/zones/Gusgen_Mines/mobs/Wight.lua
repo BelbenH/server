@@ -5,9 +5,12 @@
 ---@type TMobEntity
 local entity = {}
 
+entity.onMobInitialize = function(mob)
+    mob:setMobMod(xi.mobMod.NO_STANDBACK, 1)
+end
+
 entity.onMobSpawn = function(mob)
     mob:renameEntity('Wight', true)
-end
 
 entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 679, 1, xi.regime.type.GROUNDS)
