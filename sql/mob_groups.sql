@@ -8458,7 +8458,7 @@ INSERT INTO `mob_groups` VALUES (1,6558,112,'Lost_Soul_war',300,0,1539,0,0,0,NUL
 INSERT INTO `mob_groups` VALUES (2,2442,112,'Lost_Soul_blm',300,0,1539,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (3,1260,112,'Etemmu',300,0,264,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (4,1264,112,'Evil_Eye',300,0,794,0,0,0,NULL);
-INSERT INTO `mob_groups` VALUES (5,3575,112,'Shadow_Dragon',600,0,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (5,3575,112,'Shadow_Dragon',1800,0,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (6,410,112,'Biast',0,128,266,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (7,2043,112,'Ice_Elemental',300,4,1347,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (8,868,112,'Cursed_Weapon',300,0,548,0,0,0,NULL);
@@ -13147,7 +13147,7 @@ INSERT INTO `mob_groups` VALUES (25,4567,192,'Nocuous_Weapon',0,32,1497,550,0,0,
 INSERT INTO `mob_groups` VALUES (26,4319,192,'Wendigo_war',300,0,2638,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (27,4320,192,'Wendigo_blm',300,0,2640,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (28,7072,192,'Magicked_Bones_dagger',0,128,2867,0,0,0,NULL);
-INSERT INTO `mob_groups` VALUES (29,382,192,'Beady_Beetle',330,0,670,0,0,11,16,0,NULL);
+INSERT INTO `mob_groups` VALUES (29,382,192,'Beady_Beetle',330,0,670,0,0,0,NULL);
 
 -- ------------------------------------------------------------
 -- Ordelles_Caves (Zone 193)

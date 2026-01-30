@@ -11,6 +11,7 @@ end
 
 entity.onMobSpawn = function(mob)
     mob:renameEntity('Shadow', true)
+end
 
 entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 712, 1, xi.regime.type.GROUNDS)
