@@ -69,3 +69,6 @@ era/lua/toau/weaponskills/marksmanship.lua
 era/lua/toau/weaponskills/polearm.lua
 era/lua/toau/weaponskills/scythe.lua
 era/lua/toau/weaponskills/sword.lua
+
+# Phalanx Modules
+era/sql/phalanx_mob_adjustments.sql

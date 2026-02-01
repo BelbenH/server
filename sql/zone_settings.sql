@@ -272,7 +272,7 @@ INSERT INTO `zone_settings` VALUES (227,2,'127.0.0.1',54230,'Ship_bound_for_Selb
 INSERT INTO `zone_settings` VALUES (228,2,'127.0.0.1',54230,'Ship_bound_for_Mhaura_Pirates',106,106,101,103,0,0.00,2200);
 INSERT INTO `zone_settings` VALUES (229,0,'127.0.0.1',54230,'Throne_Room_[V]',0,0,0,0,0,0.00,6297);
 INSERT INTO `zone_settings` VALUES (230,1,'127.0.0.1',54230,'Southern_San_dOria',107,107,107,107,0,0.00,22088);
-INSERT INTO `zone_settings` VALUES (231,1,'127.0.0.1',54230,'Northern_San_dOria',107,107,107,107,0,0.00,21576);
+INSERT INTO `zone_settings` VALUES (231,1,'127.0.0.1',54230,'Northern_San_dOria',107,107,107,107,0,0.00,21608);
 INSERT INTO `zone_settings` VALUES (232,1,'127.0.0.1',54230,'Port_San_dOria',107,107,107,107,0,0.00,22088);
 INSERT INTO `zone_settings` VALUES (233,1,'127.0.0.1',54230,'Chateau_dOraguille',156,156,156,156,0,0.00,5128);
 INSERT INTO `zone_settings` VALUES (234,1,'127.0.0.1',54230,'Bastok_Mines',152,152,152,152,0,0.00,22088);
@@ -281,7 +281,7 @@ INSERT INTO `zone_settings` VALUES (236,1,'127.0.0.1',54230,'Port_Bastok',152,15
 INSERT INTO `zone_settings` VALUES (237,1,'127.0.0.1',54230,'Metalworks',154,154,154,154,0,0.00,5128);
 INSERT INTO `zone_settings` VALUES (238,1,'127.0.0.1',54230,'Windurst_Waters',151,151,151,151,0,0.00,21576);
 INSERT INTO `zone_settings` VALUES (239,1,'127.0.0.1',54230,'Windurst_Walls',151,151,151,151,0,0.00,22088);
-INSERT INTO `zone_settings` VALUES (240,1,'127.0.0.1',54230,'Port_Windurst',151,151,151,151,0,0.00,21576);
+INSERT INTO `zone_settings` VALUES (240,1,'127.0.0.1',54230,'Port_Windurst',151,151,151,151,0,0.00,21608);
 INSERT INTO `zone_settings` VALUES (241,1,'127.0.0.1',54230,'Windurst_Woods',151,151,151,151,0,0.00,22088);
 INSERT INTO `zone_settings` VALUES (242,1,'127.0.0.1',54230,'Heavens_Tower',162,162,151,151,0,0.00,5128);
 INSERT INTO `zone_settings` VALUES (243,1,'127.0.0.1',54230,'RuLude_Gardens',117,117,117,117,0,0.00,22088);

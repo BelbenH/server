@@ -40,7 +40,7 @@ local familyData =
     [xi.mobSuperFamily.SCORPION] =
     {
         skillID = 217,
-        bonusSpawnChance = 2, -- Very few scorpions. Also they're not used as EXP generally
+        bonusSpawnChance = 3, -- Very few scorpions. Also they're not used as EXP generally
         name    = { 'Toxic Maw', 'Vashara', 'Khepracis', 'Crown Teslon', 'Sable Stinger', },
         [tierOne]   = { dropList = 4509, groupID = 203, look = 286,  exp = 950,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ATTP] = 10, }, },
         [tierTwo]   = { dropList = 4510, groupID = 203, look = 337,  exp = 1750, gil = 2000, mobMods = {  }, mods = { [xi.mod.ATTP] = 20, }, },
@@ -91,7 +91,7 @@ xi.alphamob.spawnAlpha = function(mob, player, optParams)
     end
 
     -- Only spawn if the mob was exp rewarding to the player
-    if playerLvl - mobLvl <= 9 and roll <= chance then
+    if playerLvl - mobLvl <= 10 and roll <= chance then
         local levelData = {}
         local zone      = mob:getZone()
         local pos       = mob:getPos()
@@ -99,13 +99,13 @@ xi.alphamob.spawnAlpha = function(mob, player, optParams)
 
         if mobLvl >= tierThree then
             levelData = alphaData[tierThree]
-            alphaLvl  = alphaLvl + 4
+            alphaLvl  = alphaLvl + 3
         elseif mobLvl >= tierTwo then
             levelData = alphaData[tierTwo]
-            alphaLvl  = alphaLvl + 3
+            alphaLvl  = alphaLvl + 2
         elseif mobLvl >= tierOne then
             levelData = alphaData[tierOne]
-            alphaLvl  = alphaLvl + 2
+            alphaLvl  = alphaLvl + 1
         end
 
         local alpha = zone:insertDynamicEntity({

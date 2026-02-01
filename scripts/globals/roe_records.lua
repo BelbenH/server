@@ -4253,7 +4253,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 153 } },
         flags = set { 'repeat' },
-        reward = { sparks = 16, exp = 100, accolades = 5, item = { { xi.item.FLASK_OF_DEODORIZER, 1 } } },
+        reward = { sparks = 16, exp = 1000, accolades = 5, item = { { xi.item.FLASK_OF_DEODORIZER, 1 } } },
     },
 
     [396] =
@@ -4307,7 +4307,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 174 } },
         flags = set { 'repeat' },
-        reward = { sparks = 14, exp = 100, accolades = 5, item = { xi.item.PEISTE_MANTLE } },
+        reward = { sparks = 14, exp = 800, accolades = 5, item = { xi.item.PEISTE_MANTLE } },
     },
 
     [408] =
@@ -4392,7 +4392,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 130 } },
         flags = set { 'repeat' },
-        reward = { sparks = 70, exp = 850, accolades = 7, item = { xi.item.PURPLE_EARRING } },
+        reward = { sparks = 70, exp = 1000, accolades = 7, item = { xi.item.PURPLE_EARRING } },
     },
 
     [426] =
@@ -4401,7 +4401,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 177 } },
         flags = set { 'repeat' },
-        reward = { sparks = 70, exp = 100, accolades = 7, item = { xi.item.YELLOW_EARRING } },
+        reward = { sparks = 70, exp = 1000, accolades = 7, item = { xi.item.YELLOW_EARRING } },
     },
 
     [428] =
@@ -4410,7 +4410,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 178 } },
         flags = set { 'repeat' },
-        reward = { sparks = 70, exp = 100, accolades = 7, item = { xi.item.GREEN_EARRING } },
+        reward = { sparks = 70, exp = 1000, accolades = 7, item = { xi.item.GREEN_EARRING } },
     },
 
     [430] =
@@ -4450,7 +4450,7 @@ xi.roe.records =
         goal = 10,
         reqs = { zone = set { 12 } },
         flags = set { 'repeat' },
-        reward = { sparks = 16, exp = 800, accolades = 5, item = { xi.item.NIGHT_EARRING } },
+        reward = { sparks = 16, exp = 1000, accolades = 5, item = { xi.item.NIGHT_EARRING } },
     },
 
     [438] =
