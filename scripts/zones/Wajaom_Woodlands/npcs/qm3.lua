@@ -10,7 +10,7 @@ local entity = {}
 
 entity.onTrade = function(player, npc, trade)
     if
-        npcUtil.tradeHas(trade, xi.item.BAGGED_SHEEP_BOTFLY) and
+        npcUtil.tradeHas(trade, xi.item.AMOOSHAHS_TENDRIL) and -- Phalanx custom pop
         npcUtil.popFromQM(player, npc, ID.mob.GOTOH_ZHA_THE_REDOLENT)
     then
         -- Trade Sheep Botfly

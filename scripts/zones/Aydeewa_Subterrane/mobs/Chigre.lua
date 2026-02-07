@@ -9,7 +9,8 @@ local entity = {}
 -- Todo: add enailments, Drain samba on target if all ailments on, very fast enmity decay, capture speed
 
 entity.onMobInitialize = function(mob)
-    mob:setMobMod(xi.mobMod.IDLE_DESPAWN, 300)
+    -- mob:setMobMod(xi.mobMod.IDLE_DESPAWN, 300)
+    mob:setRespawnTime(3600) -- Spawns 1 hour after server restart
 end
 
 entity.onMobSpawn = function(mob)
@@ -19,6 +20,10 @@ entity.onMobSpawn = function(mob)
 end
 
 entity.onMobDeath = function(mob, player, optParams)
+end
+
+entity.onMobDespawn = function(mob)
+    mob:setRespawnTime(math.random(75600, 77400)) -- 21 to 21.5 hours
 end
 
 return entity
