@@ -7,3 +7,9 @@ WHERE mobid IN (16875639, 16875640, 16875641, 16875642, 16875643, 16875644, 1687
 
 UPDATE `mob_spawn_points` SET minLevel = 77, maxLevel = 79
 WHERE mobid IN (16875655, 16875656);
+
+-- MOB GROUP EDITS
+UPDATE `mob_groups` SET HP = 10000
+where `name` IN ('Vulpangue', 'Chamrosh', 'Cheese_Hoarder_Gigiroon', 'Brass_Borer', 'Claret', 'Ob', 'Velonis', 'Chigre', 'Lil_Apkallu');
+
+UPDATE `mob_groups` SET HP = 66000 where `name` = ('Pandemonium_Warden');

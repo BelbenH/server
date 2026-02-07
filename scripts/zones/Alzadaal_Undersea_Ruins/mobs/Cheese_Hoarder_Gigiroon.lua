@@ -9,7 +9,8 @@ mixins = { require('scripts/mixins/rage') }
 local entity = {}
 
 entity.onMobInitialize = function(mob)
-    mob:setMobMod(xi.mobMod.IDLE_DESPAWN, 300)
+    -- mob:setMobMod(xi.mobMod.IDLE_DESPAWN, 300)
+    mob:setRespawnTime(3600) -- Spawns 1 hour after server restart
 end
 
 entity.onMobSpawn = function(mob)
@@ -20,6 +21,10 @@ entity.onMobFight = function(mob, target)
 end
 
 entity.onMobDeath = function(mob)
+end
+
+entity.onMobDespawn = function(mob)
+    mob:setRespawnTime(math.random(75600, 77400)) -- 21 to 21.5 hours
 end
 
 return entity
