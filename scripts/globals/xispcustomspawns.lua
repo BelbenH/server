@@ -32,7 +32,7 @@ end
 xi.customspawn.tradeQM = function(player, npc, trade, mobID)
     if
         npcUtil.tradeHasExactly(trade, xi.customspawn.nms[mobID]) and
-        npcUtil.popFromQM(player, npc, mobID, { claim = true })
+        npcUtil.popFromQM(player, npc, mobID, { hide = 0, claim = true })
     then
         player:confirmTrade()
     end

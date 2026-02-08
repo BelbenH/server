@@ -1182,6 +1182,7 @@ xi.shop.phalanxShops =
 
     lowTier2Foods = -- Used for Mhuara / Selbina food vendors. (Levels: 12 to 21)
     {
+        { xi.item.FLASK_OF_DISTILLED_WATER,           15, },
         { xi.item.STRIP_OF_MEAT_JERKY,               150, },
         { xi.item.DRIED_DATE,                        455, },
         { xi.item.ARMY_BISCUIT,                      150, },
