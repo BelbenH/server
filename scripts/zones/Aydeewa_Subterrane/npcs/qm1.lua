@@ -10,7 +10,7 @@ local entity = {}
 
 entity.onTrade = function(player, npc, trade)
     if
-        npcUtil.tradeHas(trade, xi.item.VIAL_OF_PURE_BLOOD) and
+        npcUtil.tradeHas(trade, xi.item.PILE_OF_REACTONS_ASHES) and
         npcUtil.popFromQM(player, npc, ID.mob.NOSFERATU)
     then
         -- Trade Pure Blood

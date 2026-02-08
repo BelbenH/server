@@ -10,7 +10,9 @@ local entity = {}
 
 entity.onTrade = function(player, npc, trade)
     if
-        npcUtil.tradeHas(trade, xi.item.JUG_OF_MONKEY_WINE) and
+        npcUtil.tradeHas(trade, xi.item.ARMED_GEARS_FRAGMENT) and
+        npcUtil.tradeHas(trade, xi.item.GOTOH_ZHAS_NECKLACE) and
+        npcUtil.tradeHas(trade, xi.item.DEAS_HORN) and
         npcUtil.popFromQM(player, npc, ID.mob.TINNIN)
     then
         -- Trade Monkey Wine

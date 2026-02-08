@@ -10,7 +10,7 @@ local entity = {}
 
 entity.onTrade = function(player, npc, trade)
     if
-        npcUtil.tradeHas(trade, xi.item.BUNCH_OF_SENORITA_PAMAMAS) and
+        npcUtil.tradeHas(trade, xi.item.VULPANGUES_WING) and
         npcUtil.popFromQM(player, npc, ID.mob.IRIZ_IMA)
     then
         -- Trade Senorita Pamamas
