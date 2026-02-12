@@ -13,10 +13,10 @@ local weaponskillObject = {}
 weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 1
-    params.ftpMod = { 1.5, 1.75, 3.0 }
-    params.str_wsc = 0.5
-    params.int_wsc = 0.5
-    params.atkVaries = { 1.75, 1.75, 1.75 }
+    params.ftpMod = { 1.75, 2.0, 3.0 }
+    params.str_wsc = 0.6
+    params.int_wsc = 0.6
+    params.atkVaries = { 1.75, 1.85, 1.95 }
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage

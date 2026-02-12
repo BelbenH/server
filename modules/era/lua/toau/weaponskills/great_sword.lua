@@ -98,8 +98,8 @@ end)
 m:addOverride('xi.actions.weaponskills.crescent_moon.onUseWeaponSkill', function(player, target, wsID, tp, primary, action, taChar)
     local params   = {}
     params.numHits = 1
-    params.ftpMod  = { 1.00, 1.75, 2.50 }
-    params.str_wsc = 0.35
+    params.ftpMod  = { 1.5, 1.75, 2.50 }
+    params.str_wsc = 0.65
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage
@@ -112,8 +112,8 @@ m:addOverride('xi.actions.weaponskills.sickle_moon.onUseWeaponSkill', function(p
     local params   = {}
     params.numHits = 2
     params.ftpMod  = { 1.50, 2.00, 2.75 }
-    params.str_wsc = 0.2
-    params.agi_wsc = 0.2
+    params.str_wsc = 0.6
+    -- params.agi_wsc = 0.2
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage
@@ -126,9 +126,9 @@ m:addOverride('xi.actions.weaponskills.spinning_slash.onUseWeaponSkill', functio
     local params     = {}
     params.numHits   = 1
     params.ftpMod    = { 2.50, 3.00, 3.50 }
-    params.str_wsc   = 0.3
+    params.str_wsc   = 0.5
     params.int_wsc   = 0.3
-    params.atkVaries = { 1.50, 1.50, 1.50 }
+    params.atkVaries = { 1.50, 1.75, 2.00 }
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage
@@ -140,10 +140,10 @@ end)
 m:addOverride('xi.actions.weaponskills.ground_strike.onUseWeaponSkill', function(player, target, wsID, tp, primary, action, taChar)
     local params     = {}
     params.numHits   = 1
-    params.ftpMod    = { 1.50, 1.75, 3.00 }
-    params.str_wsc   = 0.5
-    params.int_wsc   = 0.5
-    params.atkVaries = { 1.75, 1.75, 1.75 }
+    params.ftpMod    = { 1.75, 2.0, 3.0 }
+    params.str_wsc   = 0.6
+    params.int_wsc   = 0.6
+    params.atkVaries = { 1.75, 1.85, 1.95 }
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage

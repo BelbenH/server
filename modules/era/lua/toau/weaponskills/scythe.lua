@@ -150,7 +150,7 @@ end)
 m:addOverride('xi.actions.weaponskills.spiral_hell.onUseWeaponSkill', function(player, target, wsID, tp, primary, action, taChar)
     local params   = {}
     params.numHits = 1
-    params.ftpMod  = { 1.375, 1.875, 3.625 }
+    params.ftpMod  = { 2.0, 2.75, 3.625 }
     params.str_wsc = 0.5
     params.int_wsc = 0.5
 
