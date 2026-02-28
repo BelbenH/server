@@ -29062,6 +29062,27 @@ INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,842,@COMMON);  -- Giant Bird Fe
 INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,843,@COMMON);  -- Giant Bird Plume
 INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,2821,500);  -- Aptant of Haelen 5% (Uneffected by TH)
 
+-- ALPHA BEE --
+-- lvl 1-30
+INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,912,@VCOMMON);   -- Beehive Chip
+INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,915,@COMMON);    -- Insect Wing
+INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,916,@UNCOMMON);  -- Insect Jaw
+INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,20569,250);      -- Esikuva (2.5%)
+
+-- lvl 30-60
+INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,912,@VCOMMON);   -- Beehive Chip
+INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,912,@COMMON);    -- Beehive Chip
+INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,915,@COMMON);    -- Insect Wing
+INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,916,@COMMON);    -- Insect Jaw
+INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,20569,500);      -- Esikuva (5%)
+
+-- lvl 60-75+
+INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,912,@VCOMMON);   -- Beehive Chip
+INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,912,@COMMON);    -- Beehive Chip
+INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,915,@VCOMMON);   -- Insect Wing
+INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,916,@COMMON);    -- Insect Jaw
+INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,20569,1000);     -- Esikuva (10%)
+
 -- Dynamic Dragons --
 INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,903,@ALWAYS);  -- Dragon Talon (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,867,@COMMON);  -- Handful Of Dragon Scales (Common, 15%)
