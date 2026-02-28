@@ -7,6 +7,18 @@ local tierThree = 60
 
 local familyData =
 {
+    --[[ NEW ALPHA FAMILY TEMPLATE
+    [xi.mobSuperFamily.<FAMILY>] =
+    {
+        skillID = <SKILL_ID>,
+        bonusSpawnChance = 0,
+        name    = { 'Name1', 'Name2', 'Name3', 'Name4', 'Name5', },
+
+        [tierOne]   = { dropList = <DL1>, groupID = <GID>, look = <LOOK1>, exp = <EXP1>, gil = <GIL1>, mobMods = {  }, mods = {  }, },
+        [tierTwo]   = { dropList = <DL2>, groupID = <GID>, look = <LOOK2>, exp = <EXP2>, gil = <GIL2>, mobMods = {  }, mods = {  }, },
+        [tierThree] = { dropList = <DL3>, groupID = <GID>, look = <LOOK3>, exp = <EXP3>, gil = <GIL3>, mobMods = {  }, mods = {  }, },
+    },]]
+
     [xi.mobSuperFamily.RABBIT] =
     {
         skillID = 404,
@@ -55,6 +67,16 @@ local familyData =
         [tierOne]   = { dropList = 4512, groupID = 204, look = 336, exp = 750,  gil = 1500, mobMods = { [xi.mobMod.EXP_BONUS] = 150, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.EVA] = 50,  [xi.mod.DOUBLE_ATTACK] = 15, }, },
         [tierTwo]   = { dropList = 4513, groupID = 204, look = 337, exp = 1250, gil = 2000, mobMods = { [xi.mobMod.EXP_BONUS] = 400, [xi.mobMod.GIL_MIN] = 1000, [xi.mobMod.GIL_MAX] = 2500, }, mods = { [xi.mod.EVA] = 75,  [xi.mod.DOUBLE_ATTACK] = 20, }, },
         [tierThree] = { dropList = 4514, groupID = 204, look = 338, exp = 1500, gil = 3000, mobMods = { [xi.mobMod.EXP_BONUS] = 650, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.EVA] = 100, [xi.mod.DOUBLE_ATTACK] = 25, }, },
+    },
+    
+    [xi.mobSuperFamily.BEE] =
+    {
+        skillID = 814,
+        bonusSpawnChance = 0,
+        name    = { 'Hive Tyrant', 'Regina Vespa', 'Buzzkiller', 'Needler', 'Stingfather', 'Beelzebuzz', 'Stingularity', 'Apis Dominus', },
+        [tierOne]   = { dropList = 4520, groupID = 205, look = 0x0000110100000000000000000000000000000000,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ACC] = 10, [xi.mod.ATTP] = 10, }, },
+        [tierTwo]   = { dropList = 4521, groupID = 205, look = 0x0000900700000000000000000000000000000000,  exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.ACC] = 15, [xi.mod.ATTP] = 15, }, },
+        [tierThree] = { dropList = 4522, groupID = 205, look = 0x0000C40900000000000000000000000000000000,  exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.ACC] = 25, [xi.mod.ATTP] = 25, }, },
     },
 }
 

@@ -1,12 +1,11 @@
 -----------------------------------
--- Area: Ifrit's Cauldron
---  Mob: Volcano Wasp
+-- Area: North Gustaberg [S]
+--  Mob: Maneating Hornet
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
 
 entity.onMobDeath = function(mob, player, optParams)
-    xi.regime.checkRegime(player, mob, 755, 1, xi.regime.type.GROUNDS)
     xi.alphamob.spawnAlpha(mob, player, optParams)
 end
 

@@ -9,6 +9,7 @@ local ID = zones[xi.zone.ROLANBERRY_FIELDS_S]
 local entity = {}
 
 entity.onMobDeath = function(mob, player, optParams)
+    xi.alphamob.spawnAlpha(mob, player, optParams)
 end
 
 entity.onMobDespawn = function(mob)

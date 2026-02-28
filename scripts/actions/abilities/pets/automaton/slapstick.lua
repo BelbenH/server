@@ -21,9 +21,9 @@ abilityObject.onAutomatonAbility = function(target, automaton, skill, master, ac
     local params      = {}
     params.numHits    = 3
     params.weaponType = xi.skill.CLUB
-    params.ftpMod     = { 1.0, 1.0, 1.0 }
-    params.str_wsc    = 0.2
-    params.dex_wsc    = 0.2
+    params.ftpMod     = { 1.5, 1.5, 1.5 }
+    params.str_wsc    = 0.3
+    params.dex_wsc    = 0.3 -- Phalance increased this slightly
     params.accBonus   = math.floor(xi.weaponskills.fTP(skill:getTP(), { 0, 30, 50 }))
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
