@@ -13,7 +13,6 @@ local familyData =
         skillID = <SKILL_ID>,
         bonusSpawnChance = 0,
         name    = { 'Name1', 'Name2', 'Name3', 'Name4', 'Name5', },
-
         [tierOne]   = { dropList = <DL1>, groupID = <GID>, look = <LOOK1>, exp = <EXP1>, gil = <GIL1>, mobMods = {  }, mods = {  }, },
         [tierTwo]   = { dropList = <DL2>, groupID = <GID>, look = <LOOK2>, exp = <EXP2>, gil = <GIL2>, mobMods = {  }, mods = {  }, },
         [tierThree] = { dropList = <DL3>, groupID = <GID>, look = <LOOK3>, exp = <EXP3>, gil = <GIL3>, mobMods = {  }, mods = {  }, },
@@ -34,8 +33,8 @@ local familyData =
         skillID = 496,
         bonusSpawnChance = 0,
         name    = { 'Mandragore', 'Root Reaper', 'Sproutbane', 'Sapling Hex', 'Briar Imp', },
-        [tierOne]   = { dropList = 4503, groupID = 201, look = 2204,                                         exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.REGEN] = 2,  [xi.mod.REGAIN] = 100, }, },
-        [tierTwo]   = { dropList = 4504, groupID = 201, look = 2954,                                         exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.REGEN] = 5,  [xi.mod.REGAIN] = 150, }, },
+        [tierOne]   = { dropList = 4503, groupID = 201, look = 2954,                                         exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.REGEN] = 2,  [xi.mod.REGAIN] = 100, }, },
+        [tierTwo]   = { dropList = 4504, groupID = 201, look = 2378,                                         exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.REGEN] = 5,  [xi.mod.REGAIN] = 150, }, },
         [tierThree] = { dropList = 4505, groupID = 201, look = '0x00008E0B00000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.REGEN] = 10, [xi.mod.REGAIN] = 200, }, },
     },
 
@@ -45,8 +44,8 @@ local familyData =
         bonusSpawnChance = 0,
         name    = { 'Tidebreaker', 'Lord of Brine', 'Bloodreef', 'Old Carapax', 'Reef Bulwark', },
         [tierOne]   = { dropList = 4506, groupID = 202, look = 366,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.DEF] = 50,  [xi.mod.MDEF] = -10, }, },
-        [tierTwo]   = { dropList = 4507, groupID = 202, look = 2965, exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.DEF] = 75,  [xi.mod.MDEF] = -8,  }, },
-        [tierThree] = { dropList = 4508, groupID = 202, look = 358,  exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.DEF] = 150, [xi.mod.MDEF] = -5,  }, },
+        [tierTwo]   = { dropList = 4507, groupID = 202, look = 358, exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.DEF] = 75,  [xi.mod.MDEF] = -8,  }, },
+        [tierThree] = { dropList = 4508, groupID = 202, look = '0x0000660100000000000000000000000000000000',  exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.DEF] = 150, [xi.mod.MDEF] = -5,  }, },
     },
 
     [xi.mobSuperFamily.SCORPION] =
@@ -74,9 +73,19 @@ local familyData =
         skillID = 814,
         bonusSpawnChance = 0,
         name    = { 'Hive Tyrant', 'Regina Vespa', 'Buzzkiller', 'Needler', 'Stingfather', 'Beelzebuzz', 'Stingularity', 'Apis Dominus', },
-        [tierOne]   = { dropList = 4520, groupID = 205, look = 0x0000110100000000000000000000000000000000,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ACC] = 10, [xi.mod.ATTP] = 10, }, },
-        [tierTwo]   = { dropList = 4521, groupID = 205, look = 0x0000900700000000000000000000000000000000,  exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.ACC] = 15, [xi.mod.ATTP] = 15, }, },
-        [tierThree] = { dropList = 4522, groupID = 205, look = 0x0000C40900000000000000000000000000000000,  exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.ACC] = 25, [xi.mod.ATTP] = 25, }, },
+        [tierOne]   = { dropList = 4520, groupID = 205, look = '0x0000900700000000000000000000000000000000',  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ACC] = 10, [xi.mod.ATTP] = 10, }, },
+        [tierTwo]   = { dropList = 4521, groupID = 205, look = '0x0000900700000000000000000000000000000000',  exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.ACC] = 15, [xi.mod.ATTP] = 15, }, },
+        [tierThree] = { dropList = 4522, groupID = 205, look = '0x0000C40900000000000000000000000000000000',  exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.ACC] = 25, [xi.mod.ATTP] = 25, }, },
+    },
+
+    [xi.mobSuperFamily.CRAWLER] =
+    {
+        skillID = 79, -- placeholder; adjust if you have a preferred crawler “signature” move id
+        bonusSpawnChance = 0,
+        name    = { 'Silk Sovereign', 'Thread Tyrant', 'Cocoon King', 'Webwinder', 'Spindlefiend', },
+        [tierOne]   = { dropList = 4523, groupID = 206, look = 397,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.DEF] = 25, [xi.mod.REGEN] = 2, }, },
+        [tierTwo]   = { dropList = 4524, groupID = 206, look = 406,  exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.DEF] = 50, [xi.mod.REGEN] = 5, }, },
+        [tierThree] = { dropList = 4525, groupID = 206, look = 1809, exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.DEF] = 75, [xi.mod.REGEN] = 10, }, },
     },
 }
 
