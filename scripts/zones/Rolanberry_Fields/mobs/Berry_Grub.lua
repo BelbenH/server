@@ -9,6 +9,7 @@ entity.onMobDeath = function(mob, player, optParams)
     xi.regime.checkRegime(player, mob, 25, 2, xi.regime.type.FIELDS)
     xi.regime.checkRegime(player, mob, 86, 1, xi.regime.type.FIELDS)
     xi.regime.checkRegime(player, mob, 87, 1, xi.regime.type.FIELDS)
+    xi.alphamob.spawnAlpha(mob, player, optParams)
 end
 
 return entity

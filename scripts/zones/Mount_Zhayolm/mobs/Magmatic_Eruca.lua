@@ -10,6 +10,7 @@ mixins = { require('scripts/mixins/families/eruca') }
 local entity = {}
 
 entity.onMobDeath = function(mob, player, optParams)
+    xi.alphamob.spawnAlpha(mob, player, optParams)
 end
 
 entity.onMobDespawn = function(mob)
