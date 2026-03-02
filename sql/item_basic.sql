@@ -14277,7 +14277,7 @@ INSERT INTO `item_basic` VALUES (16863,0,'cruel_spear','cruel_spear',@WEAPON_TYP
 INSERT INTO `item_basic` VALUES (16864,0,'brass_spear_+1','brass_spear_+1',@WEAPON_TYPE,1,2080,@POLEARM,410);
 INSERT INTO `item_basic` VALUES (16865,0,'spear_+1','spear_+1',@WEAPON_TYPE,1,2080,@POLEARM,2827);
 INSERT INTO `item_basic` VALUES (16866,0,'halberd_+1','halberd_+1',@WEAPON_TYPE,1,2080,@POLEARM,1400);
-INSERT INTO `item_basic` VALUES (16867,0,'orc_piercer','orc_piercer',@WEAPON_TYPE,1,2052,@POLEARM,275);
+INSERT INTO `item_basic` VALUES (16867,0,'orc_piercer','orc_piercer',@WEAPON_TYPE,1,2052,@POLEARM,8558);
 INSERT INTO `item_basic` VALUES (16868,0,'heavy_halberd','heavy_halberd',@WEAPON_TYPE,1,2052,@POLEARM,4431);
 INSERT INTO `item_basic` VALUES (16869,0,'thundercloud','thundercloud',@WEAPON_TYPE,1,2052,@POLEARM,12487);
 INSERT INTO `item_basic` VALUES (16870,0,'envy_spear','envy_spear',@WEAPON_TYPE,1,34820,@POLEARM,5562);
@@ -14696,7 +14696,7 @@ INSERT INTO `item_basic` VALUES (17289,0,'chakram_+1','chakram_+1',@WEAPON_TYPE,
 INSERT INTO `item_basic` VALUES (17290,0,'coarse_boomerang','coarse_boomerang',@WEAPON_TYPE,1,2052,@BOW,120);
 INSERT INTO `item_basic` VALUES (17291,0,'flame_boomerang','flame_boomerang',@WEAPON_TYPE,1,2052,@BOW,1152);
 INSERT INTO `item_basic` VALUES (17292,0,'long_boomerang','long_boomerang',@WEAPON_TYPE,1,2052,@BOW,2948);
-INSERT INTO `item_basic` VALUES (17293,0,'yagudo_freezer','yagudo_freezer',@WEAPON_TYPE,1,2052,@BOW,136);
+INSERT INTO `item_basic` VALUES (17293,0,'yagudo_freezer','yagudo_freezer',@WEAPON_TYPE,1,2052,@BOW,5321);
 INSERT INTO `item_basic` VALUES (17294,0,'comet_tail','comet_tail',@WEAPON_TYPE,1,2052,@BOW,9384);
 INSERT INTO `item_basic` VALUES (17295,0,'rising_sun_+1','rising_sun_+1',@WEAPON_TYPE,1,2080,@BOW,4653);
 INSERT INTO `item_basic` VALUES (17296,0,'pebble','pebble',@WEAPON_TYPE,99,2052,@AMMUNITION,1);
@@ -14818,7 +14818,7 @@ INSERT INTO `item_basic` VALUES (17411,0,'holy_mace_+1','holy_mace_+1',@WEAPON_T
 INSERT INTO `item_basic` VALUES (17412,0,'wild_cudgel','wild_cudgel',@WEAPON_TYPE,1,2052,@CLUB,302);
 INSERT INTO `item_basic` VALUES (17413,0,'hermits_wand','hermits_wand',@WEAPON_TYPE,1,2052,@CLUB,391);
 INSERT INTO `item_basic` VALUES (17414,0,'pixie_mace','pixie_mace',@WEAPON_TYPE,1,2052,@CLUB,2095);
-INSERT INTO `item_basic` VALUES (17415,0,'shellbuster','shellbuster',@WEAPON_TYPE,1,2052,@CLUB,98);
+INSERT INTO `item_basic` VALUES (17415,0,'shellbuster','shellbuster',@WEAPON_TYPE,1,2052,@CLUB,4018);
 INSERT INTO `item_basic` VALUES (17416,0,'arcana_breaker','arcana_breaker',@WEAPON_TYPE,1,2052,@CLUB,7790);
 INSERT INTO `item_basic` VALUES (17417,0,'rabbit_stick','rabbit_stick',@WEAPON_TYPE,1,34820,@CLUB,226);
 INSERT INTO `item_basic` VALUES (17418,0,'moonlight_wand','moonlight_wand',@WEAPON_TYPE,1,34820,@CLUB,678);
