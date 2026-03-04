@@ -87,7 +87,7 @@ g_mixins.families.maat = function(maatMob)
 
         if
             mob:getHPP() < 20 or
-            (mob:getMainJob() == xi.job.WHM and mob:getBattleTime() > 450) -- (Phalanx) Default: 300
+            (mob:getMainJob() == xi.job.WHM and mob:getBattleTime() > 300)
         then
             local ID = zones[mob:getZoneID()]
             mob:showText(mob, ID.text.YOUVE_COME_A_LONG_WAY)
