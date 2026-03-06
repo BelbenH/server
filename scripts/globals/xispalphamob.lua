@@ -103,12 +103,13 @@ xi.alphamob.spawnAlpha = function(mob, player, optParams)
 
     -- Evaluate chance based on mob family's bonus chances
     local alphaData = familyData[mob:getSuperFamily()]
-    chance = chance + alphaData.bonusSpawnChance
 
     if not alphaData then
         print('DEBUG: No alpha data for mob super family ID ' .. mob:getSuperFamily())
         return
     end
+
+    chance = chance + (alphaData.bonusSpawnChance or 0)
 
     -- Only spawn if the mob was exp rewarding to the player
     if playerLvl - mobLvl <= 10 and roll <= chance then
@@ -145,23 +146,32 @@ xi.alphamob.spawnAlpha = function(mob, player, optParams)
             releaseIdOnDisappear  = true,
 
             onMobSpawn = function(alpha)
-                alpha:setLocalVar('phSpawnID', mob:getID())
+                local phId = mob:getID()
+                alpha:setLocalVar('phSpawnID', phId)
+                print(string.format('DEBUG ALPHA: Spawned alpha %u for PH %u', alpha:getID(), phId))
                 xi.alphamob.calculateStats(alpha, levelData)
             end,
-
+            
             onMobDeath = function(alpha, player)
-                if player:getMainLvl() < alpha:getMainLvl() then
+                local phId = alpha:getLocalVar('phSpawnID')
+                print(string.format('DEBUG ALPHA: Alpha %u died, restoring PH %u', alpha:getID(), phId))
+                DisallowRespawn(phId, false)
+            
+                if player and player:getMainLvl() < alpha:getMainLvl() then
                     player:addExp(xi.settings.main.EXP_RATE * levelData.exp + math.random(-250, 250))
                     npcUtil.giveCurrency(player, 'gil', levelData.gil + math.random(-100, 100))
                 end
             end,
-
+            
             onMobDespawn = function(alpha)
-                DisallowRespawn(alpha:getLocalVar('phSpawnID'), false)
+                local phId = alpha:getLocalVar('phSpawnID')
+                print(string.format('DEBUG ALPHA: Alpha %u despawned, restoring PH %u', alpha:getID(), phId))
+                DisallowRespawn(phId, false)
             end,
         })
 
-        DisallowRespawn(mob:getID(), true) -- Prevent PH from spawning
+        print(string.format('DEBUG ALPHA: Blocking PH respawn for mob %u', mob:getID()))
+        DisallowRespawn(mob:getID(), true)
         alpha:setSpawn(pos.x, pos.y, pos.z)
         alpha:spawn()
     end
