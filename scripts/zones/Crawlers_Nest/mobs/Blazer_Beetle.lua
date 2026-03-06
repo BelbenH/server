@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Crawlers' Nest
---  Mob: Nest Beetle
+--  Mob: Blazer Beetle
 -----------------------------------
 ---@type TMobEntity
 local entity = {}

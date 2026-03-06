@@ -7,17 +7,6 @@ local tierThree = 60
 
 local familyData =
 {
-    --[[ NEW ALPHA FAMILY TEMPLATE
-    [xi.mobSuperFamily.<FAMILY>] =
-    {
-        skillID = <SKILL_ID>,
-        bonusSpawnChance = 0,
-        name    = { 'Name1', 'Name2', 'Name3', 'Name4', 'Name5', },
-        [tierOne]   = { dropList = <DL1>, groupID = <GID>, look = <LOOK1>, exp = <EXP1>, gil = <GIL1>, mobMods = {  }, mods = {  }, },
-        [tierTwo]   = { dropList = <DL2>, groupID = <GID>, look = <LOOK2>, exp = <EXP2>, gil = <GIL2>, mobMods = {  }, mods = {  }, },
-        [tierThree] = { dropList = <DL3>, groupID = <GID>, look = <LOOK3>, exp = <EXP3>, gil = <GIL3>, mobMods = {  }, mods = {  }, },
-    },]]
-
     [xi.mobSuperFamily.RABBIT] =
     {
         skillID = 404,
