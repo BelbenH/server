@@ -11507,10 +11507,10 @@ INSERT INTO `mob_groups` VALUES (28,985,161,'Demon_Commander',960,0,613,0,0,0,NU
 INSERT INTO `mob_groups` VALUES (29,986,161,'Demon_General',960,0,614,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (30,984,161,'Demon_Chancellor',960,0,612,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (31,989,161,'Demon_Magistrate',960,0,618,0,0,0,NULL);
-INSERT INTO `mob_groups` VALUES (32,472,161,'Blood_Demon',960,0,310,0,0,0,NULL);
-INSERT INTO `mob_groups` VALUES (33,1081,161,'Doom_Demon',960,0,674,0,0,0,NULL);
-INSERT INTO `mob_groups` VALUES (34,226,161,'Arch_Demon',960,0,163,0,0,0,NULL);
-INSERT INTO `mob_groups` VALUES (35,22,161,'Abyssal_Demon',960,0,4,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (32,472,161,'Blood_Demon',300,0,310,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (33,1081,161,'Doom_Demon',300,0,674,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (34,226,161,'Arch_Demon',300,0,163,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (35,22,161,'Abyssal_Demon',300,0,4,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (36,5890,161,'Marquis_Naberius',3600,0,3089,6000,0,0,'WOTG');
 INSERT INTO `mob_groups` VALUES (37,5763,161,'Marquis_Sabnock',0,32,3047,9500,0,0,'WOTG');
 INSERT INTO `mob_groups` VALUES (38,65,161,'Ahriman',960,0,32,0,0,0,NULL);
