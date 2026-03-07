@@ -164,8 +164,21 @@ xi.alphamob.spawnAlpha = function(mob, player, optParams)
             
             onMobDeath = function(alpha, player)
                 local phId = alpha:getLocalVar('phSpawnID')
+                local phMob = GetMobByID(phId)
+            
                 print(string.format('DEBUG ALPHA: Alpha %u died, restoring PH %u', alpha:getID(), phId))
+            
                 DisallowRespawn(phId, false)
+            
+                if phMob then
+                    phMob:setLocalVar('[XISP]spawnControl', 0)
+                
+                    -- Temporary workaround: force a new respawn timer
+                    phMob:setRespawnTime(math.random(45, 75))
+                    print(string.format('DEBUG ALPHA: Restarted PH %u respawn timer', phId))
+                else
+                    print(string.format('DEBUG ALPHA: Failed to find PH mob object for %u', phId))
+                end
             
                 if player and player:getMainLvl() < alpha:getMainLvl() then
                     player:addExp(xi.settings.main.EXP_RATE * levelData.exp + math.random(-250, 250))
@@ -175,8 +188,21 @@ xi.alphamob.spawnAlpha = function(mob, player, optParams)
             
             onMobDespawn = function(alpha)
                 local phId = alpha:getLocalVar('phSpawnID')
+                local phMob = GetMobByID(phId)
+            
                 print(string.format('DEBUG ALPHA: Alpha %u despawned, restoring PH %u', alpha:getID(), phId))
+            
                 DisallowRespawn(phId, false)
+            
+                if phMob then
+                    phMob:setLocalVar('[XISP]spawnControl', 0)
+                
+                    -- Temporary workaround: force a new respawn timer
+                    phMob:setRespawnTime(math.random(45, 75))
+                    print(string.format('DEBUG ALPHA: Restarted PH %u respawn timer after despawn', phId))
+                else
+                    print(string.format('DEBUG ALPHA: Failed to find PH mob object for %u', phId))
+                end
             end,
         })
 

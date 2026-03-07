@@ -10,7 +10,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
 
     -- Base amount scales with skill.
     -- At ~276 club, base ~= 138
-    local base = clubSkill / 2
+    local base = clubSkill / 2.75
 
     -- TP tiers: 1000, 2000, 3000
     -- 1k  -> 1.2x
