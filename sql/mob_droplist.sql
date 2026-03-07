@@ -29139,7 +29139,7 @@ INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Win
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,4106,@UNCOMMON);  -- Wind Cluster
 INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,1626,@SRARE);     -- ???
-INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,20694,@250);      -- Fermion Sword (2.5%)
+INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,20694,250);       -- Fermion Sword (2.5%)
 
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,891,@VCOMMON);    -- Bat Fang
@@ -29149,7 +29149,7 @@ INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Win
 INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,4106,@UNCOMMON);  -- Wind Cluster
 INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,1626,@VRARE);     -- ???
-INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,20694,@500);      -- Fermion Sword (5%)
+INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,20694,500);       -- Fermion Sword (5%)
 
 -- lvl 60-75+
 INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,891,@VCOMMON);    -- Bat Fang
@@ -29159,7 +29159,7 @@ INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Win
 INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,4106,@UNCOMMON);  -- Wind Cluster
 INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,1626,@RARE);      -- ???
-INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,20694,@750);      -- Fermion Sword (7.5%)
+INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,20694,750);       -- Fermion Sword (7.5%)
 
 -----------------------
 -- END OF ALPHA LIST --
