@@ -69,12 +69,22 @@ local familyData =
 
     [xi.mobSuperFamily.CRAWLER] =
     {
-        skillID = 79, -- placeholder; adjust if you have a preferred crawler “signature” move id
+        skillID = 79,
         bonusSpawnChance = 0,
         name    = { 'Silk Sovereign', 'Thread Tyrant', 'Cocoon King', 'Webwinder', 'Spindlefiend', },
         [tierOne]   = { dropList = 4523, groupID = 206, look = 397,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.DEF] = 25, [xi.mod.REGEN] = 2, }, },
         [tierTwo]   = { dropList = 4524, groupID = 206, look = 406,  exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.DEF] = 50, [xi.mod.REGEN] = 5, }, },
         [tierThree] = { dropList = 4525, groupID = 206, look = 1809, exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.DEF] = 75, [xi.mod.REGEN] = 10, }, },
+    },
+
+    [xi.mobSuperFamily.BAT] =
+    {
+        skillID = 46,
+        bonusSpawnChance = 0,
+        name    = { 'Nightreaver', 'Duskfang', 'Bloodwing', 'Grave Flutter', 'Nocturnis', },
+        [tierOne]   = { dropList = 4526, groupID = 207, look = '0x0000010100000000000000000000000000000000', exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.EVA] = 10, [xi.mod.ACC] = 10, }, },
+        [tierTwo]   = { dropList = 4527, groupID = 207, look = '0x0000010100000000000000000000000000000000', exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.EVA] = 15, [xi.mod.ACC] = 15, }, },
+        [tierThree] = { dropList = 4528, groupID = 207, look = '0x0000010100000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.EVA] = 25, [xi.mod.ACC] = 25, }, },
     },
 }
 
