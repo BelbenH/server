@@ -196,8 +196,6 @@ xi.augment.onAugmentTrade = function(player, npc, trade)
         end
     end
 
-    print(augmentItem)
-
     -- Augment Item
     if flag == 1 then
         local table = xi.augment.augmentTable[tier][itemID]
@@ -207,13 +205,13 @@ xi.augment.onAugmentTrade = function(player, npc, trade)
         if augmentItem > 0 then
             if
                 augmentItem >= 16512 and augmentItem <= 22154 and
-                (itemID ~= 3333 and itemID ~= 3334 and itemID ~= 3337)
+                (itemID ~= xi.item.MYTHRIL_MEED and itemID ~= xi.item.DARK_MEED and itemID ~= xi.item.GOLD_MEED)
             then
                 player:printToPlayer("Weapons require a specific type of item. Come back when you've found one.", 0, npc:getPacketName())
                 return
             elseif
                 (augmentItem < 16512 or augmentItem > 22154) and
-                (itemID == 3333 or itemID == 3334 or itemID == 3337)
+                (itemID == xi.item.MYTHRIL_MEED or itemID == xi.item.DARK_MEED or itemID == xi.item.GOLD_MEED)
             then
                 player:printToPlayer("This item only works on weapons, unfortunately.", 0, npc:getPacketName())
                 return

@@ -4406,7 +4406,7 @@ INSERT INTO `item_basic` VALUES (4554,0,'serving_of_shallops_tropicale','shallop
 INSERT INTO `item_basic` VALUES (4555,0,'windurst_salad','windurst_salad',@USABLE_TYPE,1,1580,@VEGETABLES,372);
 INSERT INTO `item_basic` VALUES (4556,0,'serving_of_icecap_rolanberry','icecap_rolanberry',@USABLE_TYPE,1,1580,@SWEETS,505);
 INSERT INTO `item_basic` VALUES (4557,0,'steamed_catfish','steamed_catfish',@USABLE_TYPE,1,1580,@SEAFOOD,698);
-INSERT INTO `item_basic` VALUES (4558,0,'bottle_of_yagudo_drink','yagudo_drink',@USABLE_TYPE,1,1548,@DRINKS,350);
+INSERT INTO `item_basic` VALUES (4558,0,'bottle_of_yagudo_drink','yagudo_drink',@USABLE_TYPE,12,1548,@DRINKS,350);
 INSERT INTO `item_basic` VALUES (4559,0,'serving_of_herb_quus','herb_quus',@USABLE_TYPE,1,1580,@SEAFOOD,363);
 INSERT INTO `item_basic` VALUES (4560,0,'bowl_of_vegetable_soup','vegetable_soup',@USABLE_TYPE,1,1580,@SOUPS,256);
 INSERT INTO `item_basic` VALUES (4561,0,'bowl_of_seafood_stew','seafood_stew',@USABLE_TYPE,1,1580,@SOUPS,1329);

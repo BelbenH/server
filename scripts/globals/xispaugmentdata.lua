@@ -8,7 +8,7 @@ xi.augment.augmentItems =
         xi.item.STONE_OF_BALANCE, -- Balance Stone
         xi.item.STONE_OF_VOYAGE, -- Voyage Stone
         xi.item.STONE_OF_ARDOR, -- Ardor Stone
-        xi.item.MYTHRIL_MEED, -- Copper Meed
+        xi.item.MYTHRIL_MEED, -- Mythril Meed
     },
 
     [2] =
@@ -18,7 +18,7 @@ xi.augment.augmentItems =
         xi.item.COIN_OF_WIELDANCE, -- Wieldance Coin
         xi.item.COIN_OF_ARDOR, -- Ardor Coin
         xi.item.COIN_OF_VISION, -- Vision Coin
-        xi.item.DARK_MEED, -- Gold Meed
+        xi.item.DARK_MEED, -- Dark Meed
     },
 
     [3] =
@@ -28,7 +28,7 @@ xi.augment.augmentItems =
         xi.item.JEWEL_OF_WIELDANCE, -- Wieldance Jewel
         xi.item.JEWEL_OF_ARDOR, -- Ardor Jewel
         xi.item.JEWEL_OF_BALANCE, -- Balance Jewel
-        xi.item.DARK_MEED,
+        -- xi.item.DARK_MEED,
     }
 }
 
