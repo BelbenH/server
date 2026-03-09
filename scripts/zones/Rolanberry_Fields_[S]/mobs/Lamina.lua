@@ -1,6 +1,7 @@
 -----------------------------------
 -- Area: Rolanberry Fields [S]
 --   NM: Lamina
+-- Note: https://www.bg-wiki.com/ffxi/Lamina
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
@@ -22,8 +23,8 @@ entity.spawnPoints =
 }
 
 entity.onMobInitialize = function(mob)
-    xi.mob.updateNMSpawnPoint(mob, entity.spawnPoints)
-    mob:setRespawnTime(math.random(5400, 7200))
+    xi.mob.updateNMSpawnPoint(mob)
+    mob:setRespawnTime(math.random(5400, 7200)) -- 90 to 120 minutes
 
     mob:addImmunity(xi.immunity.BIND)
     mob:addImmunity(xi.immunity.GRAVITY)
@@ -41,8 +42,8 @@ entity.onAdditionalEffect = function(mob, target, damage)
     return xi.mob.onAddEffect(mob, target, damage, xi.mob.ae.SLOW, { chance = 5, duration = 30, power = 10 })
 end
 
-entity.onMobWeaponSkillPrepare = function(mob, target)
-    return xi.mobSkill.PEDAL_PIROUETTE
+entity.onMobMobskillChoose = function(mob, target, skillId)
+    return xi.mobSkill.PEDAL_PIROUETTE -- Petal Pirouette is only TP move
 end
 
 entity.onMobDeath = function(mob, player, optParams)
@@ -50,8 +51,8 @@ entity.onMobDeath = function(mob, player, optParams)
 end
 
 entity.onMobDespawn = function(mob)
-    xi.mob.updateNMSpawnPoint(mob, entity.spawnPoints)
-    mob:setRespawnTime(math.random(5400, 7200))
+    xi.mob.updateNMSpawnPoint(mob)
+    mob:setRespawnTime(math.random(5400, 7200)) -- 90 to 120 minutes
 end
 
 return entity
