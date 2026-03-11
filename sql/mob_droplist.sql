@@ -29112,7 +29112,7 @@ INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,816,@UNCOMMON);   -- Silk Th
 INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,816,@UNCOMMON);   -- Silk Thread
 INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,4107,@UNCOMMON);  -- Earth Cluster
 INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,821,@SRARE);      -- Rainbow Thread
-INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,15149,10;         -- Rival Ribbon (1%)
+INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,15149,10);         -- Rival Ribbon (1%)
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4524,0,0,@ALWAYS,4357,@VCOMMON);   -- Crawler Egg
 INSERT INTO `mob_droplist` VALUES (4524,0,0,@ALWAYS,816,@VCOMMON);    -- Silk Thread
@@ -29138,7 +29138,7 @@ INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Win
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,4106,@UNCOMMON);  -- Wind Cluster
-INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,1626,@SRARE);     -- Avatar Blood
+INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,1626,@SRARE);     -- Avatar Blood
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,20694,25);        -- Fermion Sword (2.5%)
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,891,@VCOMMON);    -- Bat Fang
