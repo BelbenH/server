@@ -28956,11 +28956,7 @@ INSERT INTO `mob_droplist` VALUES (3411,1,5,@VCOMMON,18121,250); -- Valkyrie's F
 INSERT INTO `mob_droplist` VALUES (3411,1,5,@VCOMMON,16117,250); -- Valhalla Helm (Group 5, Very Common, 24% - 25%)
 INSERT INTO `mob_droplist` VALUES (3411,1,5,@VCOMMON,14577,250); -- Valhalla Breastplate (Group 5, Very Common, 24% - 25%)
 
-------------------------------
--- START OF PHALANX SECTION --
---       ALPHA MOBS         --
-------------------------------
-
+-- START OF PHALANX SECTION
 -- ALPHA RABBIT --
 -- lvl 1-30
 INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,856,@ALWAYS);     -- Rabbit Hide
@@ -28969,7 +28965,7 @@ INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,856,@UNCOMMON);   -- Rabbit 
 INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,5909,@UNCOMMON);  -- Pickled Rarab Tail
 INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,4107,@UNCOMMON);  -- Earth Cluster
 INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,25670,@UNCOMMON); -- Rarab Cap
-INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,25671,@RARE);     -- Rarab Cap +1
+INSERT INTO `mob_droplist` VALUES (4500,0,0,@ALWAYS,25671,@VRARE);    -- Rarab Cap +1
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,856,@ALWAYS);     -- Rabbit Hide
 INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,856,@VCOMMON);    -- Rabbit Hide
@@ -28977,7 +28973,7 @@ INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,856,@COMMON);     -- Rabbit 
 INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,5909,@UNCOMMON);  -- Pickled Rarab Tail
 INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,4107,@UNCOMMON);  -- Earth Cluster
 INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,25670,@UNCOMMON); -- Rarab Cap
-INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,25671,@RARE);     -- Rarab Cap +1
+INSERT INTO `mob_droplist` VALUES (4501,0,0,@ALWAYS,25671,@VRARE);    -- Rarab Cap +1
 -- lvl 60-75+
 INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,856,@ALWAYS);     -- Rabbit Hide
 INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,856,@ALWAYS);     -- Rabbit Hide
@@ -28989,7 +28985,7 @@ INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,25670,@UNCOMMON); -- Rarab C
 INSERT INTO `mob_droplist` VALUES (4502,0,0,@ALWAYS,25671,@RARE);     -- Rarab Cap +1
 
 -- ALPHA MANDRAGORA --
--- lvl 1-30
+-- Alpha Mandragora (Level 30 and below)
 INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,17868,@UNCOMMON); -- Jug Of Humus
 INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,4368,@COMMON);    -- Two-Leaf Mandragora Bud
 INSERT INTO `mob_droplist` VALUES (4503,0,0,@ALWAYS,4369,@VRARE);     -- Four-Leaf Mandragora Bud
@@ -29023,21 +29019,21 @@ INSERT INTO `mob_droplist` VALUES (4506,0,0,@ALWAYS,4400,@VCOMMON);   -- Slice o
 INSERT INTO `mob_droplist` VALUES (4506,0,0,@ALWAYS,1193,@UNCOMMON);  -- High-Quality Crab Shell
 INSERT INTO `mob_droplist` VALUES (4506,0,0,@ALWAYS,1193,@UNCOMMON);  -- High-Quality Crab Shell
 INSERT INTO `mob_droplist` VALUES (4506,0,0,@ALWAYS,4109,@UNCOMMON);  -- Water Cluster
-INSERT INTO `mob_droplist` VALUES (4506,0,0,@ALWAYS,2813,25);         -- Aptant of Durus (2.5%)
+INSERT INTO `mob_droplist` VALUES (4506,0,0,@ALWAYS,2813,50);         -- Aptant of Durus 0.5% (Uneffected by TH)
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4507,0,0,@ALWAYS,881,@VCOMMON);    -- Crab Shell
 INSERT INTO `mob_droplist` VALUES (4507,0,0,@ALWAYS,4400,@VCOMMON);   -- Slice of Landcrab Meat
 INSERT INTO `mob_droplist` VALUES (4507,0,0,@ALWAYS,1193,@UNCOMMON);  -- High-Quality Crab Shell
 INSERT INTO `mob_droplist` VALUES (4507,0,0,@ALWAYS,1193,@COMMON);    -- High-Quality Crab Shell
 INSERT INTO `mob_droplist` VALUES (4507,0,0,@ALWAYS,4109,@UNCOMMON);  -- Water Cluster
-INSERT INTO `mob_droplist` VALUES (4507,0,0,@ALWAYS,2813,50);         -- Aptant of Durus (5%)
+INSERT INTO `mob_droplist` VALUES (4507,0,0,@ALWAYS,2813,30);        -- Aptant of Durus 3% (Uneffected by TH)
 -- lvl 60-75+
 INSERT INTO `mob_droplist` VALUES (4508,0,0,@ALWAYS,881,@VCOMMON);    -- Crab Shell
 INSERT INTO `mob_droplist` VALUES (4508,0,0,@ALWAYS,4400,@VCOMMON);   -- Slice of Landcrab Meat
 INSERT INTO `mob_droplist` VALUES (4508,0,0,@ALWAYS,1193,@VCOMMON);   -- High-Quality Crab Shell
 INSERT INTO `mob_droplist` VALUES (4508,0,0,@ALWAYS,1193,@COMMON);    -- High-Quality Crab Shell
 INSERT INTO `mob_droplist` VALUES (4508,0,0,@ALWAYS,4109,@UNCOMMON);  -- Water Cluster
-INSERT INTO `mob_droplist` VALUES (4508,0,0,@ALWAYS,2813,75);         -- Aptant of Durus (7.5%)
+INSERT INTO `mob_droplist` VALUES (4508,0,0,@ALWAYS,2813,50);        -- Aptant of Durus 5% (Uneffected by TH)
 
 -- ALPHA SCORPION --
 -- lvl 1-30
@@ -29045,21 +29041,21 @@ INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,896,@VCOMMON);    -- Scorpio
 INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,897,@VCOMMON);    -- Scorpion Claw
 INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,1473,@UNCOMMON);  -- High-Quality Scorpion Shell
 INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,4107,@UNCOMMON);  -- Earth Cluster
-INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,2812,10);         -- Aptant of Aceus (1%)
+INSERT INTO `mob_droplist` VALUES (4509,0,0,@ALWAYS,2812,10);        -- Aptant of Aceus 1% (Uneffected by TH)
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4510,0,0,@ALWAYS,896,@ALWAYS);     -- Scorpion Shell
 INSERT INTO `mob_droplist` VALUES (4510,0,0,@ALWAYS,897,@VCOMMON);    -- Scorpion Claw
 INSERT INTO `mob_droplist` VALUES (4510,0,0,@ALWAYS,1473,@COMMON);    -- High-Quality Scorpion Shell
 INSERT INTO `mob_droplist` VALUES (4510,0,0,@ALWAYS,4107,@UNCOMMON);  -- Earth Cluster
-INSERT INTO `mob_droplist` VALUES (4510,0,0,@ALWAYS,2812,@SRARE);     -- Venomous Claw
-INSERT INTO `mob_droplist` VALUES (4510,0,0,@ALWAYS,2812,50);         -- Aptant of Aceus (5%)
+INSERT INTO `mob_droplist` VALUES (4510,0,0,@ALWAYS,2812,5);         -- Venomous Claw 0.5% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4510,0,0,@ALWAYS,2812,50);        -- Aptant of Aceus 5% (Uneffected by TH)
 -- lvl 60-75+
 INSERT INTO `mob_droplist` VALUES (4511,0,0,@ALWAYS,896,@ALWAYS);     -- Scorpion Shell
 INSERT INTO `mob_droplist` VALUES (4511,0,0,@ALWAYS,897,@ALWAYS);     -- Scorpion Claw
 INSERT INTO `mob_droplist` VALUES (4511,0,0,@ALWAYS,1473,@VCOMMON);   -- High-Quality Scorpion Shell
 INSERT INTO `mob_droplist` VALUES (4511,0,0,@ALWAYS,4107,@UNCOMMON);  -- Earth Cluster
-INSERT INTO `mob_droplist` VALUES (4511,0,0,@ALWAYS,2812,@VRARE);     -- Venomous Claw
-INSERT INTO `mob_droplist` VALUES (4511,0,0,@ALWAYS,2812,75);         -- Aptant of Aceus (7.5%)
+INSERT INTO `mob_droplist` VALUES (4511,0,0,@ALWAYS,2812,10);        -- Venomous Claw 1% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4511,0,0,@ALWAYS,2812,80);        -- Aptant of Aceus 8% (Uneffected by TH)
 
 -- ALPHA GREATER BIRD --
 -- lvl 1-30
@@ -29067,19 +29063,19 @@ INSERT INTO `mob_droplist` VALUES (4512,0,0,1000,842,@COMMON);        -- Giant B
 INSERT INTO `mob_droplist` VALUES (4512,0,0,1000,842,@UNCOMMON);      -- Giant Bird Feather
 INSERT INTO `mob_droplist` VALUES (4512,0,0,1000,843,@RARE);          -- Giant Bird Plume
 INSERT INTO `mob_droplist` VALUES (4512,0,0,@ALWAYS,4110,@RARE);      -- Light Cluster
-INSERT INTO `mob_droplist` VALUES (4512,0,0,@ALWAYS,2821,10);         -- Aptant of Haelen 1% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4512,0,0,@ALWAYS,2821,10);        -- Aptant of Haelen 1% (Uneffected by TH)
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4513,0,0,1000,842,@COMMON);        -- Giant Bird Feather
 INSERT INTO `mob_droplist` VALUES (4513,0,0,1000,842,@COMMON);        -- Giant Bird Feather
 INSERT INTO `mob_droplist` VALUES (4513,0,0,1000,843,@UNCOMMON);      -- Giant Bird Plume
 INSERT INTO `mob_droplist` VALUES (4513,0,0,@ALWAYS,4110,@RARE);      -- Light Cluster
-INSERT INTO `mob_droplist` VALUES (4513,0,0,@ALWAYS,2821,30);         -- Aptant of Haelen 3% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4513,0,0,@ALWAYS,2821,30);        -- Aptant of Haelen 3% (Uneffected by TH)
 -- lvl 60-75+
 INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,842,@VCOMMON);       -- Giant Bird Feather
 INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,842,@COMMON);        -- Giant Bird Feather
 INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,843,@COMMON);        -- Giant Bird Plume
 INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,4110,@RARE);      -- Light Cluster
-INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,2821,50);         -- Aptant of Haelen 5% (Uneffected by TH)
+INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,2821,50);        -- Aptant of Haelen 5% (Uneffected by TH)
 
 -- ALPHA BEE --
 -- lvl 1-30
@@ -29088,21 +29084,23 @@ INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,912,@COMMON);     -- Beehive
 INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,4370,@COMMON);    -- Honey
 INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,925,@UNCOMMON);   -- Giant Stinger
 INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,4106,@UNCOMMON);  -- Wind Cluster
-INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,20569,25);        -- Esikuva (2.5%)
+INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,20569,25);       -- Esikuva (2.5%)
+
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,912,@VCOMMON);    -- Beehive Chip
 INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,912,@COMMON);     -- Beehive Chip
 INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,4370,@COMMON);    -- Honey
 INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,925,@COMMON);     -- Giant Stinger
 INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,4106,@UNCOMMON);  -- Wind Cluster
-INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,20569,50);        -- Esikuva (5%)
+INSERT INTO `mob_droplist` VALUES (4521,0,0,@ALWAYS,20569,50);       -- Esikuva (5%)
+
 -- lvl 60-75+
 INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,912,@VCOMMON);    -- Beehive Chip
 INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,912,@COMMON);     -- Beehive Chip
 INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,4370,@VCOMMON);   -- Honey
 INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,925,@COMMON);     -- Giant Stinger
 INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,4106,@UNCOMMON);  -- Wind Cluster
-INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,20569,75);        -- Esikuva (7.5%)
+INSERT INTO `mob_droplist` VALUES (4522,0,0,@ALWAYS,20569,100);      -- Esikuva (10%)
 
 -- ALPHA CRAWLER --
 -- lvl 1-30
@@ -29112,7 +29110,8 @@ INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,816,@UNCOMMON);   -- Silk Th
 INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,816,@UNCOMMON);   -- Silk Thread
 INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,4107,@UNCOMMON);  -- Earth Cluster
 INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,821,@SRARE);      -- Rainbow Thread
-INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,15149,10;         -- Rival Ribbon (1%)
+INSERT INTO `mob_droplist` VALUES (4523,0,0,@ALWAYS,15149,@URARE);    -- Rival Ribbon
+
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4524,0,0,@ALWAYS,4357,@VCOMMON);   -- Crawler Egg
 INSERT INTO `mob_droplist` VALUES (4524,0,0,@ALWAYS,816,@VCOMMON);    -- Silk Thread
@@ -29120,7 +29119,8 @@ INSERT INTO `mob_droplist` VALUES (4524,0,0,@ALWAYS,816,@COMMON);     -- Silk Th
 INSERT INTO `mob_droplist` VALUES (4524,0,0,@ALWAYS,816,@UNCOMMON);   -- Silk Thread
 INSERT INTO `mob_droplist` VALUES (4524,0,0,@ALWAYS,4107,@UNCOMMON);  -- Earth Cluster
 INSERT INTO `mob_droplist` VALUES (4524,0,0,@ALWAYS,821,@RARE);       -- Rainbow Thread
-INSERT INTO `mob_droplist` VALUES (4524,0,0,@ALWAYS,15149,20);        -- Rival Ribbon (2%)
+INSERT INTO `mob_droplist` VALUES (4524,0,0,@ALWAYS,15149,@SRARE);    -- Rival Ribbon
+
 -- lvl 60-75+
 INSERT INTO `mob_droplist` VALUES (4525,0,0,@ALWAYS,4357,@VCOMMON);   -- Crawler Egg
 INSERT INTO `mob_droplist` VALUES (4525,0,0,@ALWAYS,816,@VCOMMON);    -- Silk Thread
@@ -29128,9 +29128,9 @@ INSERT INTO `mob_droplist` VALUES (4525,0,0,@ALWAYS,816,@VCOMMON);    -- Silk Th
 INSERT INTO `mob_droplist` VALUES (4525,0,0,@ALWAYS,816,@COMMON);     -- Silk Thread
 INSERT INTO `mob_droplist` VALUES (4525,0,0,@ALWAYS,4107,@UNCOMMON);  -- Earth Cluster
 INSERT INTO `mob_droplist` VALUES (4525,0,0,@ALWAYS,821,@UNCOMMON);   -- Rainbow Thread
-INSERT INTO `mob_droplist` VALUES (4525,0,0,@ALWAYS,15149,30);        -- Rival Ribbon (3%)
+INSERT INTO `mob_droplist` VALUES (4525,0,0,@ALWAYS,15149,@VRARE);    -- Rival Ribbon
 
--- ALPHA GIANT BAT --
+-- ALPHA BAT --
 -- lvl 1-30
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,891,@VCOMMON);    -- Bat Fang
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
@@ -29138,8 +29138,9 @@ INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Win
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,4106,@UNCOMMON);  -- Wind Cluster
-INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,1626,@SRARE);     -- Avatar Blood
-INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,20694,25);        -- Fermion Sword (2.5%)
+INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,1626,@SRARE);     -- ???
+INSERT INTO `mob_droplist` VALUES (4526,0,0,@ALWAYS,20694,25);       -- Fermion Sword (2.5%)
+
 -- lvl 30-60
 INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,891,@VCOMMON);    -- Bat Fang
 INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
@@ -29147,8 +29148,9 @@ INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Win
 INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,4106,@UNCOMMON);  -- Wind Cluster
-INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,1626,@VRARE);     -- Avatar Blood
-INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,20694,50);        -- Fermion Sword (5%)
+INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,1626,@VRARE);     -- ???
+INSERT INTO `mob_droplist` VALUES (4527,0,0,@ALWAYS,20694,50);       -- Fermion Sword (5%)
+
 -- lvl 60-75+
 INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,891,@VCOMMON);    -- Bat Fang
 INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
@@ -29156,31 +29158,8 @@ INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Win
 INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,922,@VCOMMON);    -- Bat Wing
 INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,4106,@UNCOMMON);  -- Wind Cluster
-INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,1626,@RARE);      -- Avatar Blood
-INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,20694,75);        -- Fermion Sword (7.5%)
-
--- ALPHA LIZARD (MOLTED UMBRIL) --
--- lvl 1-30
-INSERT INTO `mob_droplist` VALUES (4529,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
-INSERT INTO `mob_droplist` VALUES (4529,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
-INSERT INTO `mob_droplist` VALUES (4529,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
-INSERT INTO `mob_droplist` VALUES (4529,0,0,@ALWAYS,17867,@VRARE);    -- Cold Carrion Broth
-INSERT INTO `mob_droplist` VALUES (4529,0,0,@ALWAYS,4247,25);         -- Miratete's Memoirs (2.5%)
-INSERT INTO `mob_droplist` VALUES (4529,0,0,@ALWAYS,28587,10);        -- Artificer's Ring (1%)
--- lvl 30-60
-INSERT INTO `mob_droplist` VALUES (4530,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
-INSERT INTO `mob_droplist` VALUES (4530,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
-INSERT INTO `mob_droplist` VALUES (4530,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
-INSERT INTO `mob_droplist` VALUES (4530,0,0,@ALWAYS,17867,@VRARE);    -- Cold Carrion Broth
-INSERT INTO `mob_droplist` VALUES (4530,0,0,@ALWAYS,4247,50);         -- Miratete's Memoirs (5%)
-INSERT INTO `mob_droplist` VALUES (4530,0,0,@ALWAYS,28587,20);        -- Artificer's Ring (2%)
--- lvl 60-75+
-INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
-INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
-INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
-INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,17867,@VRARE);    -- Cold Carrion Broth
-INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,4247,75);         -- Miratete's Memoirs (7.5%)
-INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,28587,30);        -- Artificer's Ring (3%)
+INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,1626,@RARE);      -- ???
+INSERT INTO `mob_droplist` VALUES (4528,0,0,@ALWAYS,20694,75);       -- Fermion Sword (7.5%)
 
 -----------------------
 -- END OF ALPHA LIST --
