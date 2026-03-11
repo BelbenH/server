@@ -83,6 +83,7 @@ entity.phList =
 
 entity.onMobDeath = function(mob, player, optParams)
     xi.hunts.checkHunt(mob, player, 200)
+    xi.alphamob.spawnAlpha(mob, player, optParams)
 end
 
 return entity
