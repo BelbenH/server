@@ -13851,6 +13851,7 @@ INSERT INTO `mob_groups` VALUES (204,3376,210,'[XISP]GreaterBirdAlpha',0,128,0,0
 INSERT INTO `mob_groups` VALUES (205,699,210,'[XISP]BeeAlpha',0,128,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (206,1865,210,'[XISP]CrawlerAlpha',0,128,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (207,233,210,'[XISP]BatAlpha',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (208,5264,210,'[XISP]MoltedUmbril',0,128,0,0,0,0,NULL);
 
 -- ------------------------------------------------------------
 -- Cloister_of_Tides (Zone 211)
