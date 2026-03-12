@@ -1,5 +1,6 @@
 -----------------------------------
---  Mob: Alpha crab PH (Phalanx)
+-- Area: Dangruf Wadi
+-- Mob: Snipper
 -----------------------------------
 ---@type TMobEntity
 local entity = {}

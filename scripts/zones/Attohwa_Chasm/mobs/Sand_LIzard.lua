@@ -1,12 +1,11 @@
 -----------------------------------
--- Area: Yhoator Jungle
---  Mob: White Lizard
+-- Area: Attohwa Chasm
+--  Mob: Sand Lizard
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
 
 entity.onMobDeath = function(mob, player, optParams)
-    xi.regime.checkRegime(player, mob, 129, 1, xi.regime.type.FIELDS)
     xi.alphamob.spawnAlpha(mob, player, optParams)
 end
 

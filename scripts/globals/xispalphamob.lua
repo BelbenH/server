@@ -9,7 +9,8 @@ local familyData =
 {
     [xi.mobSuperFamily.RABBIT] =
     {
-        skillID = 404,
+        spellList = 0,
+        skillListID = 404,
         bonusSpawnChance = 0,
         name    = { 'Alpha Jack', 'Grim Hare', 'Big Thumper', 'Mad Hopper', 'Bunzilla', }, --mob_mod.lua
         [tierOne]   = { dropList = 4500, groupID = 200, look = 268,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.EVA] = 10, }, },
@@ -19,7 +20,8 @@ local familyData =
 
     [xi.mobSuperFamily.MANDRAGORA] =
     {
-        skillID = 496,
+        spellList = 0,
+        skillListID = 496,
         bonusSpawnChance = 0,
         name    = { 'Mandragore', 'Root Reaper', 'Sproutbane', 'Sapling Hex', 'Briar Imp', },
         [tierOne]   = { dropList = 4503, groupID = 201, look = 2954,                                         exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.REGEN] = 2,  [xi.mod.REGAIN] = 100, }, },
@@ -29,7 +31,8 @@ local familyData =
 
     [xi.mobSuperFamily.CRAB] =
     {
-        skillID = 75,
+        spellList = 0,
+        skillListID = 75,
         bonusSpawnChance = 0,
         name    = { 'Tidebreaker', 'Lord of Brine', 'Bloodreef', 'Old Carapax', 'Reef Bulwark', },
         [tierOne]   = { dropList = 4506, groupID = 202, look = 366,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.DEF] = 50,  [xi.mod.MDEF] = -10, }, },
@@ -39,7 +42,8 @@ local familyData =
 
     [xi.mobSuperFamily.SCORPION] =
     {
-        skillID = 217,
+        spellList = 0,
+        skillListID = 217,
         bonusSpawnChance = 3, -- Very few scorpions. Also they're not used as EXP generally
         name    = { 'Toxic Maw', 'Vashara', 'Khepracis', 'Crown Teslon', 'Sable Stinger', },
         [tierOne]   = { dropList = 4509, groupID = 203, look = 286,  exp = 950,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ATTP] = 10, }, },
@@ -49,7 +53,8 @@ local familyData =
 
     [xi.mobSuperFamily.GREATER_BIRD] =
     {
-        skillID = 125,
+        spellList = 0,
+        skillListID = 125,
         bonusSpawnChance = 0,
         name    = { 'Zephyr', 'Aeralith', 'Omenwing', 'Pidgeotto', 'Sky Seraph', },
         [tierOne]   = { dropList = 4512, groupID = 204, look = 336, exp = 750,  gil = 1500, mobMods = { [xi.mobMod.EXP_BONUS] = 150, [xi.mobMod.GIL_MIN] = 500,  [xi.mobMod.GIL_MAX] = 1000, }, mods = { [xi.mod.EVA] = 50,  [xi.mod.DOUBLE_ATTACK] = 15, }, },
@@ -59,7 +64,8 @@ local familyData =
     
     [xi.mobSuperFamily.BEE] =
     {
-        skillID = 814,
+        spellList = 0,
+        skillListID = 814,
         bonusSpawnChance = 0,
         name    = { 'Hive Tyrant', 'Regina Vespa', 'Buzzkiller', 'Needler', 'Stingfather', 'Beelzebuzz', 'Stingularity', 'Apis Dominus', },
         [tierOne]   = { dropList = 4520, groupID = 205, look = '0x0000900700000000000000000000000000000000',  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ACC] = 10, [xi.mod.ATTP] = 10, }, },
@@ -69,7 +75,8 @@ local familyData =
 
     [xi.mobSuperFamily.CRAWLER] =
     {
-        skillID = 79,
+        spellList = 0,
+        skillListID = 79,
         bonusSpawnChance = 0,
         name    = { 'Silk Sovereign', 'Thread Tyrant', 'Cocoon King', 'Webwinder', 'Spindlefiend', },
         [tierOne]   = { dropList = 4523, groupID = 206, look = 397,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.DEF] = 25, [xi.mod.REGEN] = 2, }, },
@@ -79,7 +86,8 @@ local familyData =
 
     [xi.mobSuperFamily.BAT] =
     {
-        skillID = 46,
+        spellList = 0,
+        skillListID = 46,
         bonusSpawnChance = 0,
         name    = { 'Nightreaver', 'Duskfang', 'Bloodwing', 'Grave Flutter', 'Nocturnis', },
         [tierOne]   = { dropList = 4526, groupID = 207, look = '0x0000010100000000000000000000000000000000', exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.EVA] = 10, [xi.mod.ACC] = 10, }, },
@@ -89,7 +97,8 @@ local familyData =
 
     [xi.mobSuperFamily.LIZARD] =
     {
-        skillID = 468,
+        spellList = 28,
+        skillListID = 468,
         bonusSpawnChance = 0,
         name    = { 'Moltwretch', 'Warped Husk', 'Nightscale', 'Crawling Molt', 'Rotmaw', 'Umbral Husk', 'Failed Molt', },
         [tierOne]   = { dropList = 4529, groupID = 208, look = '0x0000050A00000000000000000000000000000000', exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ATT] = 10, [xi.mod.ACC] = 10, }, },
