@@ -98,7 +98,7 @@ local familyData =
     [xi.mobSuperFamily.LIZARD] =
     {
         spellList = 28,
-        skillListID = 468,
+        skillListID = 337,
         bonusSpawnChance = 0,
         name    = { 'Moltwretch', 'Warped Husk', 'Nightscale', 'Crawling Molt', 'Rotmaw', 'Umbral Husk', 'Failed Molt', },
         [tierOne]   = { dropList = 4529, groupID = 208, look = '0x0000050A00000000000000000000000000000000', exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ATT] = 10, [xi.mod.ACC] = 10, }, },
