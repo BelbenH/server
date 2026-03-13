@@ -13850,7 +13850,7 @@ INSERT INTO `mob_groups` VALUES (203,5862,210,'[XISP]ScorpionAlpha',0,128,0,0,0,
 INSERT INTO `mob_groups` VALUES (204,3376,210,'[XISP]GreaterBirdAlpha',0,128,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (205,699,210,'[XISP]BeeAlpha',0,128,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (206,1865,210,'[XISP]CrawlerAlpha',0,128,0,0,0,0,NULL);
-INSERT INTO `mob_groups` VALUES (207,233,210,'[XISP]BatAlpha',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (207,5118,210,'[XISP]BatAlpha',0,128,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (208,5032,210,'[XISP]MoltedUmbril',0,128,0,0,0,0,NULL);
 
 -- ------------------------------------------------------------
