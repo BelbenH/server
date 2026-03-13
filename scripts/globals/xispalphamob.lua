@@ -88,7 +88,7 @@ local familyData =
     {
         spellList = 0,
         skillListID = 46,
-        bonusSpawnChance = 0,
+        bonusSpawnChance = 25,
         name    = { 'Nightreaver', 'Duskfang', 'Bloodwing', 'Grave Flutter', 'Nocturnis', },
         [tierOne]   = { dropList = 4526, groupID = 207, look = '0x0000010100000000000000000000000000000000', exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.EVA] = 10, [xi.mod.ACC] = 10, }, },
         [tierTwo]   = { dropList = 4527, groupID = 207, look = '0x0000010100000000000000000000000000000000', exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.EVA] = 15, [xi.mod.ACC] = 15, }, },
@@ -98,7 +98,7 @@ local familyData =
     [xi.mobSuperFamily.LIZARD] =
     {
         spellList = 28,
-        skillListID = 468,
+        skillListID = 442,
         bonusSpawnChance = 0,
         name    = { 'Moltwretch', 'Warped Husk', 'Nightscale', 'Crawling Molt', 'Rotmaw', 'Umbral Husk', 'Failed Molt', },
         [tierOne]   = { dropList = 4529, groupID = 208, look = '0x0000050A00000000000000000000000000000000', exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ATT] = 10, [xi.mod.ACC] = 10, }, },
