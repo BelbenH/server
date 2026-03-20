@@ -44,6 +44,9 @@ xi.settings.map =
     ENABLE_ITEM_RECYCLE_BIN = true,
 
     ENABLE_AUTO_ATTACK_LUA = true,
+    -- Self-unstuck feature (sends player to homepoint via Help Desk command)
+    SELF_UNSTUCK_ENABLED  = false,
+    SELF_UNSTUCK_COOLDOWN = 86400, -- Cooldown in seconds (default: 24 hours)
 
     -- AH fee structure, defaults are retail.
     AH_BASE_FEE_SINGLE = 1,
