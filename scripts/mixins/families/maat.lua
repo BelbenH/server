@@ -93,21 +93,6 @@ g_mixins.families.maat = function(maatMob)
             mob:showText(mob, ID.text.YOUVE_COME_A_LONG_WAY)
             mob:getBattlefield():win()
         end
-
-        -- RDM
-        if mob:getMainJob() == xi.job.RDM then
-            if mob:getHPP() > 75 then
-                mob:addStatusEffectEx(xi.effect.PHYSICAL_SHIELD, 0, 1, 0, 0)
-                mob:delStatusEffectSilent(xi.effect.MAGIC_SHIELD)
-                mob:setAutoAttackEnabled(false)
-                mob:setMagicCastingEnabled(true)
-            else
-                mob:addStatusEffectEx(xi.effect.MAGIC_SHIELD, 0, 1, 0, 0)
-                mob:delStatusEffectSilent(xi.effect.PHYSICAL_SHIELD)
-                mob:setAutoAttackEnabled(true)
-                mob:setMagicCastingEnabled(false)
-            end
-        end
     end)
 
     maatMob:addListener('ITEM_STOLEN', 'MAAT_ITEM_STOLEN', function(mob, player, itemId)

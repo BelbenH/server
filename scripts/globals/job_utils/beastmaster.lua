@@ -290,15 +290,8 @@ end
 
 -- On Ability Check For Leave, Heel and Stay.
 xi.job_utils.beastmaster.checkPetCommand = function(player, target, ability)
-    local pet = player:getPet()
-
-    if
-        player:hasJugPet() or
-        pet:getObjType() == xi.objType.MOB
-    then
-        if player:getPet() == nil then
-            return xi.msg.basic.REQUIRES_A_PET, 0
-        end
+    if player:getPet() == nil then
+        return xi.msg.basic.REQUIRES_A_PET, 0
     end
 
     return 0, 0

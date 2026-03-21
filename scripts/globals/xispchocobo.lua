@@ -503,7 +503,7 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
                     -- This line registers the player's chocobo as the player's mount
                     playerArg:registerChocobo(playerArg:getCharVar('[XISP]chocoColor'), traits)
 
-                    playerArg:addStatusEffectEx(xi.effect.MOUNTED, xi.effect.MOUNTED, xi.mount.CHOCOBO, 0, 0, 0, 360, true)
+                    playerArg:addStatusEffect(xi.effect.MOUNTED, { power = xi.mount.CHOCOBO, duration = 3600, origin = playerArg, subPower = 64, silent = true })
                     choco:setBehavior(bit.band(choco:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
                     DespawnMob(choco:getID())
                 end
