@@ -179,6 +179,7 @@ xi.alphamob.spawnAlpha = function(mob, player, optParams)
                 alpha:setLocalVar('phSpawnID', phId)
                 print(string.format('DEBUG ALPHA: Spawned alpha %u for PH %u', alpha:getID(), phId))
                 xi.alphamob.calculateStats(alpha, levelData)
+                alpha:setLocalVar('isAlpha', 1)
             end,
             
             onMobDeath = function(alpha, player)

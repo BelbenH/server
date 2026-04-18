@@ -11,6 +11,11 @@ end
 
 mobskillObject.onMobWeaponSkill = function(mob, target, skill, action)
     local potencyBonus = mob:isNM() and math.random(0, 294) or 0
+
+    if mob:getLocalVar('isAlpha') == 1 then
+        potencyBonus = -25
+    end
+
     local potency      = (147 + potencyBonus) / 1024
     local finalPotency = math.floor(mob:getMaxHP() * potency)
 
