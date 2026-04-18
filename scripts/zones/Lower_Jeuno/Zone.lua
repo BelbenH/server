@@ -1,6 +1,13 @@
 -----------------------------------
 -- Zone: Lower_Jeuno (245)
 -----------------------------------
+require('scripts/globals/xispalblackmage')
+require('scripts/globals/xispalwhitemage')
+require('scripts/globals/xispalthief')
+require('scripts/globals/xispaldragoon')
+require('scripts/globals/xispalbard')
+require('scripts/globals/xispalsamurai')
+-----------------------------------
 local ID = zones[xi.zone.LOWER_JEUNO]
 local lowerJeunoGlobal = require('scripts/zones/Lower_Jeuno/globals')
 -----------------------------------
@@ -13,6 +20,13 @@ local zoneObject = {}
 zoneObject.onInitialize = function(zone)
     zone:registerCuboidTriggerArea(1, 23, 0, -43, 44, 7, -39) -- Inside Tenshodo HQ. TODO: Find out if this is used other than in ZM 17 (not anymore). Remove if not.
     xi.chocobo.initZone(zone)
+
+    xi.xispal.onBlackMageInitialize(zone)
+    xi.xispal.onWhiteMageInitialize(zone)
+    xi.xispal.onThiefInitialize(zone)
+    xi.xispal.onDragoonInitialize(zone)
+    xi.xispal.onBardInitialize(zone)
+    xi.xispal.onSamuraiInitialize(zone)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

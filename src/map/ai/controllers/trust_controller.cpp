@@ -97,10 +97,10 @@ void CTrustController::Tick(timer::time_point tick)
         return;
     }
 
-    if (POwner->PMaster->isCharmed)
-    {
-        this->Despawn();
-    }
+    // if (POwner->PMaster->isCharmed)
+    // {
+    //     this->Despawn();
+    // }
 
     if (POwner->PAI->IsEngaged())
     {
@@ -121,12 +121,13 @@ void CTrustController::DoCombatTick(timer::time_point tick)
     CMobEntity*   PMob    = dynamic_cast<CMobEntity*>(PMaster->GetBattleTarget());
     PTarget               = POwner->GetBattleTarget();
 
-    if (!PMaster->PAI->IsEngaged())
-    {
-        PTrust->PAI->Internal_Disengage();
-        m_LastTopEnmity = nullptr;
-        m_CombatEndTime = m_Tick;
-    }
+    // if (!PMaster->PAI->IsEngaged())
+    // {
+    //     PTrust->animation = ANIMATION_NONE;
+    //     PTrust->PAI->Internal_Disengage();
+    //     m_LastTopEnmity = nullptr;
+    //     m_CombatEndTime = m_Tick;
+    // }
 
     if (PMaster && PMob && PTrust->GetBattleTargetID() != PMaster->GetBattleTargetID())
     {
@@ -167,10 +168,10 @@ void CTrustController::DoCombatTick(timer::time_point tick)
             float currentDistanceToTarget = distance(PTrust->loc.p, PTarget->loc.p);
             float currentDistanceToMaster = distance(PTrust->loc.p, PMaster->loc.p);
 
-            if (currentDistanceToTarget > WarpDistance)
-            {
-                PTrust->PAI->PathFind->WarpTo(PTarget->loc.p);
-            }
+            // if (currentDistanceToTarget > WarpDistance)
+            // {
+            //     PTrust->PAI->PathFind->WarpTo(PTarget->loc.p);
+            // }
 
             PTrust->PAI->PathFind->LookAt(PTarget->loc.p);
 
@@ -235,6 +236,7 @@ void CTrustController::DoCombatTick(timer::time_point tick)
         m_GambitsContainer->Tick(tick);
 
         PTrust->PAI->EventHandler.triggerListener("COMBAT_TICK", PTrust, PMaster, PTarget);
+        luautils::OnMobFight(PTrust, PTarget);
     }
 }
 
@@ -265,72 +267,86 @@ void CTrustController::DoRoamTick(timer::time_point tick)
         }
     }
 
-    if (PMaster->PAI->IsEngaged() && trustEngageCondition)
+    if (POwner->PAI->PathFind->IsFollowingPath())
     {
-        POwner->PAI->Internal_Engage(PMaster->GetBattleTargetID());
+        FollowRoamPath();
+    }
+    else if (POwner->PAI->PathFind->IsPatrolling())
+    {
+        POwner->PAI->PathFind->ResumePatrol();
+        FollowRoamPath();
     }
 
-    uint8          currentPartyPos = GetPartyPosition();
-    CBattleEntity* PFollowTarget   = (GetPartyPosition() > 0) ? (CBattleEntity*)PMaster->PTrusts.at(currentPartyPos - 1) : POwner->PMaster;
-    float          currentDistance = distance(POwner->loc.p, PFollowTarget->loc.p);
+    POwner->PAI->EventHandler.triggerListener("ROAM_ACTION", POwner);
+    luautils::OnMobRoamAction(POwner);
+    luautils::OnMobRoam(POwner);
 
-    for (auto* POtherTrust : PMaster->PTrusts)
-    {
-        if (POtherTrust != POwner && distance(POtherTrust->loc.p, POwner->loc.p) < 1.0f && !POwner->PAI->PathFind->IsFollowingPath())
-        {
-            auto diff_angle = worldAngle(POwner->loc.p, POtherTrust->loc.p) + 64;
-            auto amount     = (currentPartyPos % 2) ? 1.0f : -1.0f;
+    // if (PMaster->PAI->IsEngaged() && trustEngageCondition)
+    // {
+    //     POwner->PAI->Internal_Engage(PMaster->GetBattleTargetID());
+    // }
 
-            // clang-format off
-            position_t new_pos =
-            {
-                   POwner->loc.p.x - (cosf(rotationToRadian(diff_angle)) * amount),
-                   POtherTrust->loc.p.y,
-                   POwner->loc.p.z + (sinf(rotationToRadian(diff_angle)) * amount),
-                   0,
-                   0,
-            };
-            // clang-format on
+    // uint8          currentPartyPos = GetPartyPosition();
+    // CBattleEntity* PFollowTarget   = (GetPartyPosition() > 0) ? (CBattleEntity*)PMaster->PTrusts.at(currentPartyPos - 1) : POwner->PMaster;
+    // float          currentDistance = distance(POwner->loc.p, PFollowTarget->loc.p);
 
-            if (POwner->PAI->PathFind->ValidPosition(new_pos) && POwner->PAI->PathFind->PathAround(new_pos, RoamDistance, PATHFLAG_RUN | PATHFLAG_WALLHACK))
-            {
-                POwner->PAI->PathFind->FollowPath(m_Tick);
-            }
-            break;
-        }
-    }
+    // for (auto* POtherTrust : PMaster->PTrusts)
+    // {
+    //     if (POtherTrust != POwner && distance(POtherTrust->loc.p, POwner->loc.p) < 1.0f && !POwner->PAI->PathFind->IsFollowingPath())
+    //     {
+    //         auto diff_angle = worldAngle(POwner->loc.p, POtherTrust->loc.p) + 64;
+    //         auto amount     = (currentPartyPos % 2) ? 1.0f : -1.0f;
 
-    if (currentDistance > WarpDistance)
-    {
-        POwner->PAI->PathFind->WarpTo(PFollowTarget->loc.p);
-    }
-    else if (currentDistance > RoamDistance)
-    {
-        if (currentDistance < RoamDistance * 3.0f && POwner->PAI->PathFind->PathAround(PFollowTarget->loc.p, RoamDistance, PATHFLAG_RUN | PATHFLAG_WALLHACK))
-        {
-            POwner->PAI->PathFind->FollowPath(m_Tick);
-        }
-        else if (POwner->GetSpeed() > 0)
-        {
-            POwner->PAI->PathFind->StepTo(PFollowTarget->loc.p, true);
-        }
-    }
+    //         // clang-format off
+    //         position_t new_pos =
+    //         {
+    //                POwner->loc.p.x - (cosf(rotationToRadian(diff_angle)) * amount),
+    //                POtherTrust->loc.p.y,
+    //                POwner->loc.p.z + (sinf(rotationToRadian(diff_angle)) * amount),
+    //                0,
+    //                0,
+    //         };
+    //         // clang-format on
 
-    if (POwner->CanRest() && m_Tick - POwner->LastAttacked > m_tickDelays.at(0) && m_Tick - m_CombatEndTime > m_tickDelays.at(0) &&
-        m_Tick - m_LastHealTickTime > m_tickDelays.at(m_NumHealingTicks))
-    {
-        if (POwner->health.hp != POwner->health.maxhp || POwner->health.mp != POwner->health.maxmp)
-        {
-            // recover 5% HP & MP
-            uint32 recoverHP = (uint32)(POwner->health.maxhp * 0.05);
-            uint32 recoverMP = (uint32)(POwner->health.maxmp * 0.05);
-            POwner->addHP(recoverHP);
-            POwner->addMP(recoverMP);
-            m_LastHealTickTime = m_Tick;
-            POwner->updatemask |= UPDATE_HP;
-            m_NumHealingTicks = std::clamp(m_NumHealingTicks + 1, static_cast<std::size_t>(0U), m_tickDelays.size() - 1U);
-        }
-    }
+    //         if (POwner->PAI->PathFind->ValidPosition(new_pos) && POwner->PAI->PathFind->PathAround(new_pos, RoamDistance, PATHFLAG_RUN | PATHFLAG_WALLHACK))
+    //         {
+    //             POwner->PAI->PathFind->FollowPath(m_Tick);
+    //         }
+    //         break;
+    //     }
+    // }
+
+    // if (currentDistance > WarpDistance)
+    // {
+    //     POwner->PAI->PathFind->WarpTo(PFollowTarget->loc.p);
+    // }
+    // else if (currentDistance > RoamDistance)
+    // {
+    //     if (currentDistance < RoamDistance * 3.0f && POwner->PAI->PathFind->PathAround(PFollowTarget->loc.p, RoamDistance, PATHFLAG_RUN | PATHFLAG_WALLHACK))
+    //     {
+    //         POwner->PAI->PathFind->FollowPath(m_Tick);
+    //     }
+    //     else if (POwner->GetSpeed() > 0)
+    //     {
+    //         POwner->PAI->PathFind->StepTo(PFollowTarget->loc.p, true);
+    //     }
+    // }
+
+    // if (POwner->CanRest() && m_Tick - POwner->LastAttacked > m_tickDelays.at(0) && m_Tick - m_CombatEndTime > m_tickDelays.at(0) &&
+    //     m_Tick - m_LastHealTickTime > m_tickDelays.at(m_NumHealingTicks))
+    // {
+    //     if (POwner->health.hp != POwner->health.maxhp || POwner->health.mp != POwner->health.maxmp)
+    //     {
+    //         // recover 5% HP & MP
+    //         uint32 recoverHP = (uint32)(POwner->health.maxhp * 0.05);
+    //         uint32 recoverMP = (uint32)(POwner->health.maxmp * 0.05);
+    //         POwner->addHP(recoverHP);
+    //         POwner->addMP(recoverMP);
+    //         m_LastHealTickTime = m_Tick;
+    //         POwner->updatemask |= UPDATE_HP;
+    //         m_NumHealingTicks = std::clamp(m_NumHealingTicks + 1, static_cast<std::size_t>(0U), m_tickDelays.size() - 1U);
+    //     }
+    // }
 }
 
 void CTrustController::Declump(CCharEntity* PMaster, CBattleEntity* PTarget)

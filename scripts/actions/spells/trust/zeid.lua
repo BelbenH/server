@@ -13,15 +13,25 @@ spellObject.onSpellCast = function(caster, target, spell)
 end
 
 spellObject.onMobSpawn = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.SPAWN)
+    xi.xispal.onKnightSpawn(mob, mob:getMaster(), xi.xispal.palInfo[mob:getMaster():getCharVar('[XISP]knightJob')])
+end
+
+spellObject.onMobRoam = function(mob)
+    xi.xispal.onMobRoam(mob, mob:getMaster())
+end
+
+spellObject.onMobFight = function(mob, target)
+    xi.xispal.onMobFight(mob, target, mob:getMaster())
+end
+
+spellObject.onMobDisengage = function(mob)
+    xi.xispal.onMobDisengage(mob)
 end
 
 spellObject.onMobDespawn = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DESPAWN)
 end
 
 spellObject.onMobDeath = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DEATH)
 end
 
 return spellObject

@@ -45,4 +45,19 @@ xi.animation =
     -- TRUST                = 90, -- This is the animation for a trust NPC spawning in.
 }
 
+xi.animMode =
+{
+    SPELLS        = 0,
+    ITEMS         = 1,
+    JOB_ABILITIES = 2,
+    EFFECTS       = 3,
+    UNKNOWN_1     = 4,
+    UNKNOWN_2     = 5,
+    WEAPON_SKILLS = 6,
+    -- ???
+    -- ???
+    -- ???
+    MOB_SKILLS    = 10,
+}
+
 xi.anim = xi.animation

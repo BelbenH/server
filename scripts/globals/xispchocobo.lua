@@ -1,6 +1,20 @@
 xi = xi or {}
 xi.xispchocobo = xi.xispchocobo or {}
 
+-- Chocobo animations for races
+-- !injectaction 5 222 (Exclamation point)
+-- !injectaction 5 235 (Tele animation)
+
+-- !injectaction 5 239 (Choco Race announcement)
+-- !injectaction 5 242 (Race start!)
+-- !injectaction 5 243 (GOAL)
+-- !injectaction 5 243 (COMPLETE)
+
+-- !injectaction 5 239 (Choco Race announcement San d'Oria themed)
+-- !injectaction 5 239 (Choco Race announcement Gustberg themed)
+-- !injectaction 5 239 (Choco Race announcement Windurst themed)
+-- !injectaction 5 254 (Choco Race announcement Crystal themed)
+
 xi.xispchocobo.names =
 {
     [1]  = 'Ruby',
@@ -491,8 +505,8 @@ xi.xispchocobo.chocoboTrigger = function(player, choco)
                         largeTalons = false,
                     }
 
-                    if playerArg:getCharVar('[XISP]chocoboTimer') > os.time() then -- Timer set when getting off mount
-                        local chocoTimer = player:getCharVar('[XISP]chocoboTimer') - os.time()
+                    if playerArg:getCharVar('[XISP]chocoboTimer') > GetSystemTime() then -- Timer set when getting off mount
+                        local chocoTimer = player:getCharVar('[XISP]chocoboTimer') - GetSystemTime()
                         local minutes    = math.floor(chocoTimer / 60)
                         local seconds    = chocoTimer % 60
                         playerArg:printToPlayer('Your chocobo appears too tired to ride.', xi.msg.channel.NS_SAY, ' ')
@@ -684,6 +698,7 @@ xi.xispchocobo.spawnChocobo = function(player)
                 choco:setUnkillable(true)
                 choco:setStatus(xi.status.NORMAL)
                 choco:setLocalVar('[XISP]isChocobo', 1)
+                choco:setLocalVar('[XISP]isPal', 1)
                 choco:setLocalVar('[XISP]ownerID', player:getID())
                 player:setCharVar('[XISP]chocoID', choco:getID())
 

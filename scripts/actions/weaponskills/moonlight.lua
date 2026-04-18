@@ -12,7 +12,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     -- Halved from previous version, spent hours testing this for balance and this feels really good. -Belben
     local base = (clubSkill * 0.25) + (maxMP * 0.075) + (intStat * 0.895)
 
-    local tpMultiplier = 10 + (tp * 0.05)) / 130
+    local tpMultiplier = 10 + (tp * 0.05) / 130
 
     local damagemod = math.floor(base * tpMultiplier * xi.settings.main.WEAPON_SKILL_POWER)
 

@@ -6,7 +6,13 @@
 local effectObject = {}
 
 effectObject.onEffectGain = function(target, effect)
-    target:setAnimation(xi.animation.HEALING)
+    if target:getLocalVar('[XISP]isPal') == 1 then
+        target:setLocalVar('[XISP]isResting', 1)
+        target:entityAnimationPacket(xi.animationString.RESTING_START)
+        target:setLocalVar('[XISP]spellRecast', GetSystemTime() + 2) -- Even players can't immediately stand up
+    else
+        target:setAnimation(xi.animation.HEALING)
+    end
 
     -- Abyssea Lights and time remaining check
     if
@@ -63,8 +69,9 @@ effectObject.onEffectTick = function(target, effect)
         if pet ~= nil then
             local petId = pet:getPetID()
             if
-                pet:isAvatar() or
-                (not pet:isCharmed() and petId >= xi.petId.FIRE_SPIRIT and petId <= xi.petId.DARK_SPIRIT)
+                (pet:isAvatar() or
+                (not pet:isCharmed() and petId >= xi.petId.FIRE_SPIRIT and petId <= xi.petId.DARK_SPIRIT)) and
+                not target:isTrust()
             then
                 target:messageBasic(xi.msg.basic.CANT_HEAL_WITH_AVATAR)
                 target:delStatusEffect(xi.effect.HEALING)
@@ -81,7 +88,8 @@ effectObject.onEffectTick = function(target, effect)
             local healHP = 0
             if
                 target:getContinentID() == 1 and
-                target:hasStatusEffect(xi.effect.SIGNET)
+                target:hasStatusEffect(xi.effect.SIGNET) or
+                target:getLocalVar('[XISP]isPal') == 1
             then
                 healHP = 10 + (3 * math.floor(target:getMainLvl() / 10)) +
                     (healtime - 2) * (1 + math.floor(target:getMaxHP() / 300)) + target:getMod(xi.mod.HPHEAL)
@@ -113,6 +121,15 @@ effectObject.onEffectLose = function(target, effect)
 
     -- Dances with Luopans
     target:setLocalVar('GEO_DWL_Resting', 0)
+
+    -- XISP logic
+    if target:getLocalVar('[XISP]isPal') == 1 then
+        target:setLocalVar('[XISP]canRest', GetSystemTime() + 5)
+        target:entityAnimationPacket(xi.animationString.RESTING_STOP)
+        target:timer(1000, function(targetArg)
+             targetArg:setLocalVar('[XISP]isResting', 0)
+        end)
+    end
 end
 
 return effectObject

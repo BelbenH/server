@@ -41,3 +41,5 @@ This contians a list of animation ids for usable items.
 92 - remove effect
 
 105 - corsair
+
+125 - anniversary
