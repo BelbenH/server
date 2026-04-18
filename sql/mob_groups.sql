@@ -13844,6 +13844,15 @@ INSERT INTO `mob_groups` VALUES (7,6954,209,'Titan_Prime_HTBF',0,128,0,0,0,0,NUL
 INSERT INTO `mob_groups` VALUES (1,7071,210,'Garrison',0,128,0,0,0,1,NULL);
 INSERT INTO `mob_groups` VALUES (100,7071,210,'[XISP]Chocobo',0,128,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (101,1280,210,'[XISP]Dragon',0,128,0,20000,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (102,4588,210,'[XISP]Carbuncle',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (103,4583,210,'[XISP]Titan',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (104,4584,210,'[XISP]Leviathan',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (105,4585,210,'[XISP]Garuda',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (106,4582,210,'[XISP]Ifrit',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (107,4586,210,'[XISP]Shiva',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (108,4587,210,'[XISP]Ramuh',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (109,4581,210,'[XISP]Fenrir',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (110,4592,210,'[XISP]petWyvern',0,128,0,0,0,0,NULL);
 -- Alpha Mobs -- VALUES (UniqueID, NM(Mob_pool_ID, Keep the rest the same.))
 INSERT INTO `mob_groups` VALUES (200,2125,210,'[XISP]RabbitAlpha',0,128,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (201,5546,210,'[XISP]MandragoraAlpha',0,128,0,0,0,0,NULL);

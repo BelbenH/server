@@ -7,7 +7,7 @@ local ID = zones[xi.zone.MAZE_OF_SHAKHRAMI]
 local zoneObject = {}
 
 zoneObject.onInitialize = function(zone)
-    local respawnTime = GetServerVariable("LeechKing_Argus_Respawn") - os.time()
+    local respawnTime = GetServerVariable("LeechKing_Argus_Respawn") - GetSystemTime()
 
     if respawnTime <= 0 then
         respawnTime = 300 -- 5 minutes

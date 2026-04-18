@@ -243,13 +243,15 @@ xi.player.onGameIn = function(player, firstLogin, zoning)
     -- This assists with ensuring Abyssea visitant status is handled properly on logins
     player:setLocalVar('gameLogin', 0)
 
-    xi.xisp.onZone(player) -- XISP Change
+    xi.xisp.onZone(player)
 end
 
 xi.player.onPlayerDeath = function(player)
+    xi.xispal.playerDied(player)
 end
 
 xi.player.onPlayerLevelUp = function(player)
+    xi.xispal.playerLevelUpChat(player)
 end
 
 xi.player.onPlayerLevelDown = function(player)

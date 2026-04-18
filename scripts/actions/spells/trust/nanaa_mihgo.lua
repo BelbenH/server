@@ -13,21 +13,25 @@ spellObject.onSpellCast = function(caster, target, spell)
 end
 
 spellObject.onMobSpawn = function(mob)
-    xi.trust.teamworkMessage(mob, {
-        [xi.magic.spell.ROMAA_MIHGO] = xi.trust.messageOffset.TEAMWORK_1,
-    })
+    xi.xispal.onKnightSpawn(mob, mob:getMaster(), xi.xispal.palInfo[mob:getMaster():getCharVar('[XISP]knightJob')])
+end
 
-    mob:addGambit(ai.t.TARGET, { ai.c.ALWAYS, 0 }, { ai.r.JA, ai.s.SPECIFIC, xi.ja.DESPOIL })
+spellObject.onMobRoam = function(mob)
+    xi.xispal.onMobRoam(mob, mob:getMaster())
+end
 
-    mob:setTrustTPSkillSettings(ai.tp.OPENER, ai.s.HIGHEST)
+spellObject.onMobFight = function(mob, target)
+    xi.xispal.onMobFight(mob, target, mob:getMaster())
+end
+
+spellObject.onMobDisengage = function(mob)
+    xi.xispal.onMobDisengage(mob)
 end
 
 spellObject.onMobDespawn = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DESPAWN)
 end
 
 spellObject.onMobDeath = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DEATH)
 end
 
 return spellObject

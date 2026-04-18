@@ -5,6 +5,8 @@ xi = xi or {}
 xi.job_utils = xi.job_utils or {}
 xi.job_utils.paladin = xi.job_utils.paladin or {}
 
+-- injectanimation 3 263 OP shield bash
+
 -----------------------------------
 -- Ability Check Functions
 -----------------------------------

@@ -55,7 +55,7 @@ CTrustEntity::CTrustEntity(CCharEntity* PChar)
     m_MobSkillList              = 0;
     PMaster                     = PChar;
     m_bReleaseTargIDOnDisappear = true;
-    spawnAnimation              = SPAWN_ANIMATION::SPECIAL; // Initial spawn has the special spawn-in animation
+    spawnAnimation              = SPAWN_ANIMATION::NORMAL; // Initial spawn has the special spawn-in animation
 
     PAI = std::make_unique<CAIContainer>(this,
                                          std::make_unique<CPathFind>(this),

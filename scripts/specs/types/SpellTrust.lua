@@ -3,6 +3,34 @@
 ---@class TSpellTrust
 ---@field onMagicCastingCheck? fun(PChar: CBaseEntity, PTarget: CBaseEntity, PSpell: CSpell): integer?
 ---@field onSpellCast? fun(PCaster: CBaseEntity, PTarget: CBaseEntity, PSpell: CSpell): integer?
----@field onMobSpawn? fun(PMob: CBaseEntity): nil
----@field onMobDespawn? fun(PMob: CBaseEntity): nil
----@field onMobDeath? fun(PMob: CBaseEntity, PKiller: CBaseEntity?): nil
+---@field onMobInitialize? fun(PMob: CBaseEntity)
+---@field onPath? fun(PMob: CBaseEntity)
+---@field onPathPoint? fun(PMob: CBaseEntity)
+---@field onPathComplete? fun(PMob: CBaseEntity)
+---@field onMobEngage? fun(PMob: CBaseEntity, PTarget: CBaseEntity)
+---@field onMobDisengage? fun(PMob: CBaseEntity)
+---@field onMobFollow? fun(PMob: CBaseEntity, PTarget: CBaseEntity)
+---@field onMobUnfollow? fun(PMob: CBaseEntity, PTarget: CBaseEntity)
+---@field onMobDrawIn? fun(PMob: CBaseEntity, PTarget: CBaseEntity)
+---@field onMobFight? fun(PMob: CBaseEntity, PTarget: CBaseEntity)
+---@field onCriticalHit? fun(PMob: CBaseEntity, PAttacker: CBaseEntity?)
+---@field onMobDeath? fun(PMob: CBaseEntity, Pkiller: CBaseEntity?, optParams: { isKiller: boolean, noKiller: boolean, isWeaponSkillKill: boolean, weaponskillUsed: xi.weaponskill, weaponskillDamage: integer })
+---@field onMobSpawnCheck? fun(PMob: CBaseEntity): integer
+---@field onMobSpawn? fun(PMob: CBaseEntity)
+---@field onMobRoamAction? fun(PMob: CBaseEntity)
+---@field onMobRoam? fun(PMob: CBaseEntity)
+---@field onMobDespawn? fun(PMob: CBaseEntity)
+---@field onMobMobskillChoose? fun(PMob: CBaseEntity, PTarget: CBaseEntity, skillId: integer): integer?
+---@field onMobWeaponSkill? fun(PMob: CBaseEntity, PTarget: CBaseEntity, mobSkill: CMobSkill, action: CAction): integer?
+---@field onMobSkillTarget? fun(PTarget: CBaseEntity, PMob: CBaseEntity, mobSkill: CMobSkill): CBaseEntity?
+---@field onMobSkillReadyTime? fun(PTarget: CBaseEntity, PMob: CBaseEntity, mobSkill: CMobSkill): integer?
+---@field onAdditionalEffect? fun(PMob: CBaseEntity, PTarget: CBaseEntity, damage: integer): (any, any, integer?)
+---@field onMobSpellChoose? fun(PMob: CBaseEntity, PTarget: CBaseEntity, PSpell: CSpell?): xi.magic.spell|0?, CBaseEntity?
+---@field onWeaponskillHit? fun(PMob: CBaseEntity, PAttacker: CBaseEntity, weaponskillId: xi.weaponskill)
+---@field onSpikesDamage? fun(PMob: CBaseEntity, PTarget: CBaseEntity, damage: integer): (integer?, integer?, integer?)
+---@field onMagicHit? fun(caster: CBaseEntity, PTarget: CBaseEntity, PSpell: CSpell)
+---@field onSpellPrecast? fun(PMob: CBaseEntity, PSpell: CSpell)
+---@field onSpellCastStart? fun(PMob: CBaseEntity, PTarget: CBaseEntity, PSpell: CSpell)
+---@field onSpellInterrupted? fun(PMob: CBaseEntity, PSpell: CSpell)
+---@field onSteal? fun(player: CBaseEntity, PTarget: CBaseEntity, ability: CAbility, action: CAction): integer?
+---@field onMagicCastingCheck? fun(PMob: CBaseEntity, PTarget: CBaseEntity, PSpell: CSpell): integer?

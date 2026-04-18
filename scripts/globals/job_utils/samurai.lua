@@ -26,8 +26,9 @@ end
 
 xi.job_utils.samurai.checkThirdEye = function(player, target, ability)
     if
-        player:hasStatusEffect(xi.effect.SEIGAN) and
-        player:isWeaponTwoHanded()
+        (player:hasStatusEffect(xi.effect.SEIGAN) and
+        player:isWeaponTwoHanded()) or
+        player:getLocalVar('[XISP]isPal') == 1
     then
         ability:setRecast(ability:getRecast() / 2)
     end
