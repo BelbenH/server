@@ -1205,7 +1205,7 @@ void CMobController::DoRoamTick(timer::time_point tick)
             }
         }
     }
-    if (m_Tick >= m_LastRoamScript + 3s)
+    if (m_Tick >= m_LastRoamScript + 3s || (m_Tick >= m_LastRoamScript + 1s && PMob->GetLocalVar("[XISP]isPal") > 0))
     {
         PMob->PAI->EventHandler.triggerListener("ROAM_TICK", PMob);
         luautils::OnMobRoam(PMob);

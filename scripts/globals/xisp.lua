@@ -35,13 +35,16 @@ xi.xisp.sendMenu = function(player, menuID)
 end
 
 xi.xisp.onZone = function(player)
-    player:timer(200, function(playerArg)
+    player:timer(4000, function(playerArg)
         -- Spawn if chick / teen by default
         if playerArg:getCharVar('[XISP]chocoGrow') <= 19 then
             xi.xispchocobo.spawnChocobo(playerArg)
         else
             xi.xispchocobo.despawnChocobo(playerArg)
         end
+
+        -- Pals
+        xi.xispal.onZone(player)
     end)
 end
 
@@ -70,4 +73,45 @@ end
 
 xi.xisp.trackGM = function(player, commandName)
     print('GM COMMAND:' .. player:getName() .. ' used command: ' .. commandName)
+end
+
+xi.xisp.playerSeed = function(player_seed)
+    local available = {}
+    local max = 0
+
+    -- Initialize available numbers from 1 to max
+    local function initializeAvailable(new_max)
+        available = {}  -- Reset available list each time we need it
+        max = new_max
+        for i = 1, max do
+            table.insert(available, i)
+        end
+    end
+
+    -- Step 2: Random function that returns values from the available list
+    local function random(new_max)
+        -- If max is different from the table size, reinitialize the available list
+        if max ~= new_max then
+            initializeAvailable(new_max)
+        end
+
+        if #available == 0 then
+            return nil
+        end
+
+        -- Advance the seed
+        player_seed = (1103515245 * player_seed + 12345) % 2^31
+        local r = player_seed / 2^31
+
+        -- Pick a random index from available
+        local idx = math.floor(r * #available) + 1
+        local number = available[idx]
+
+        -- Remove the chosen number to prevent duplicates
+        table.remove(available, idx)
+
+        return number
+    end
+
+    return random
 end

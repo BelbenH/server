@@ -4577,6 +4577,13 @@ void ClaimMob(CBattleEntity* PDefender, CBattleEntity* PAttacker, bool passing)
             { // claim by master
                 PAttacker = PAttacker->PMaster;
             }
+            else if (PAttacker->PMaster && PAttacker->PMaster->objtype == TYPE_TRUST)
+            { // claim by trust pet
+                if (PAttacker->PMaster->PMaster)
+                {
+                    PAttacker = PAttacker->PMaster->PMaster;
+                }
+            }
             else
             {
                 return;

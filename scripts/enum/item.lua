@@ -6466,6 +6466,7 @@ xi.item =
     HEIMS_EARRING                       = 14805,
     NOVIO_EARRING                       = 14808,
     NOVIA_EARRING                       = 14809,
+    SIGNAL_PEARL                        = 14810,
     LOQUACIOUS_EARRING                  = 14812,
     BRUTAL_EARRING                      = 14813,
     DIABOLOSS_EARRING                   = 14814,

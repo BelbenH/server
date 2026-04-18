@@ -20,7 +20,7 @@ end
 
 entity.onMobDespawn = function(mob)
     local respawnTime = math.random(64800, 108000) -- 18 - 30 hours
-    SetServerVariable("LeechKing_Argus_Respawn", os.time() + respawnTime)
+    SetServerVariable("LeechKing_Argus_Respawn", GetSystemTime() + respawnTime)
 
     if math.random(1, 100) <= 50 then
         DisallowRespawn(ID.mob.LEECH_KING, true)

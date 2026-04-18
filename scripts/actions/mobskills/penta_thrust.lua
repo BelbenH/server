@@ -16,6 +16,11 @@ mobskillObject.onMobWeaponSkill = function(mob, target, skill, action)
     local ftp     = 1
     local tp      = skill:getTP()
     local accmod  = 0.8 + 0.1 * math.floor((tp - 1000) / 1000)
+
+    if mob:isTrust() then
+        ftp = 2
+    end
+
     local info    = xi.mobskills.mobPhysicalMove(mob, target, skill, numhits, accmod, ftp, xi.mobskills.physicalTpBonus.NO_EFFECT)
     local dmg     = xi.mobskills.mobFinalAdjustments(info, mob, skill, target, xi.attackType.PHYSICAL, xi.damageType.PIERCING, info.hitslanded)
 

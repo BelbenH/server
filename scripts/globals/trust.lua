@@ -293,10 +293,10 @@ xi.trust.canCast = function(caster, spell, notAllowedTrustIds)
         return xi.msg.basic.TRUST_NO_CAST_TRUST
     end
 
-    -- Trusts only allowed in certain zones (Remove this for trusts everywhere)
-    if not caster:canUseMisc(xi.zoneMisc.TRUST) then
-        return xi.msg.basic.TRUST_NO_CALL_AE
-    end
+    -- -- Trusts only allowed in certain zones (Remove this for trusts everywhere)
+    -- if not caster:canUseMisc(xi.zoneMisc.TRUST) then
+    --     return xi.msg.basic.TRUST_NO_CALL_AE
+    -- end
 
     -- You can only summon trusts if you are the party leader or solo
     local leader = caster:getPartyLeader()
@@ -358,15 +358,15 @@ xi.trust.canCast = function(caster, spell, notAllowedTrustIds)
 		numPt = numPt + 1
 	end
 
------------------------------------------------------------------
--- 🎯 ***CUSTOM LIMIT: Max 2 active trusts in any situation***
------------------------------------------------------------------
-local MAX_TRUSTS = 2
-if numTrusts >= MAX_TRUSTS then
-    caster:messageSystem(xi.msg.system.TRUST_MAXIMUM_NUMBER) 
-    return -1
-end
------------------------------------------------------------------
+    -----------------------------------------------------------------
+    -- 🎯 ***CUSTOM LIMIT: Max 2 active trusts in any situation***
+    -----------------------------------------------------------------
+    local MAX_TRUSTS = 2
+    if numTrusts >= MAX_TRUSTS then
+        caster:messageSystem(xi.msg.system.TRUST_MAXIMUM_NUMBER)
+        return -1
+    end
+    -----------------------------------------------------------------
 
 
     -- Max party size

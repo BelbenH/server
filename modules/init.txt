@@ -52,6 +52,7 @@ custom/sql/ip_update.sql
 cop/sql/cop_level_restrictions.sql
 abyssea/sql/era_abilities_enmity.sql
 abyssea/sql/era_spell_enmity.sql
+soa/sql/magic_adjustments.sql
 
 # Era Lua Modules
 wotg/lua/weaponskills/archery.lua

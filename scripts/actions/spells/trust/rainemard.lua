@@ -1,5 +1,6 @@
 -----------------------------------
--- Trust: Rainemard
+-- Trust: Rainemard (920)
+-- Replacement trust for player RDM squire
 -----------------------------------
 ---@type TSpellTrust
 local spellObject = {}
@@ -13,35 +14,68 @@ spellObject.onSpellCast = function(caster, target, spell)
 end
 
 spellObject.onMobSpawn = function(mob)
-    xi.trust.teamworkMessage(mob, {
-        [xi.magic.spell.CURILLA] = xi.trust.messageOffset.TEAMWORK_1,
-    })
+    mob:hideName(true)
+    mob:setStatus(xi.status.INVISIBLE)
 
-    -- TODO: Selection based on enemy weakness
-    mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.ENFIRE }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.ENFIRE })
+    local player = mob:getMaster()
 
-    mob:addGambit(ai.t.TARGET, { ai.c.NOT_STATUS, xi.effect.EVASION_DOWN }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.DISTRACT }, 60)
+    if not player then
+        return
+    end
 
-    mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.PHALANX }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.PHALANX })
-    mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.HASTE }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.HASTE })
-    mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.REFRESH }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.REFRESH })
+    local face = player:getCharVar('[XISP]squireFace')
+    local race = player:getCharVar('[XISP]squireRace')
+    local lvl  = player:getMainLvl()
+    local tier = 0
 
-    -- If Curilla is present, will cast Haste/Phalanx/Refresh on her.
-    mob:addGambit(ai.t.CURILLA, { ai.c.NOT_STATUS, xi.effect.HASTE }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.HASTE })
-    mob:addGambit(ai.t.CURILLA, { ai.c.NOT_STATUS, xi.effect.PHALANX }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.PHALANX_II })
-    mob:addGambit(ai.t.CURILLA, { ai.c.NOT_STATUS, xi.effect.REFRESH }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.REFRESH })
+    if xi.xispal.hasCompletedAF(player) and lvl >= 60 then
+        tier = 4
+    elseif lvl >= 40 then
+        tier = 3
+    elseif lvl >= 30 then
+        tier = 2
+    elseif lvl >= 20 then
+        tier = 1
+    end
 
-    -- NOTE: Do these late, to try and avoid clashing with healers casting -ra's
-    mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.PROTECT }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.PROTECT })
-    mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.SHELL }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.SHELL })
+    if mob:getMainLvl() < 35 then
+        mob:setLocalVar('isMelee', 1)
+    end
+
+    mob:renameEntity(xi.xispal.squireName[player:getCharVar('[XISP]squireName')])
+    mob:setLookString(xi.xispal.generateModelID(xi.xispal.face[face], xi.xispal.race[race], xi.xispal.squireGearSets[tier]))
+    mob:setLocalVar('[XISP]spellRecast', GetSystemTime() + math.random(7, 12))
+
+    mob:setMobMod(xi.mobMod.SPELL_LIST, 1000)
+
+    player:timer(400, function(playerArg)
+        mob:setLocalVar('[XISP]spellRecast', GetSystemTime() + math.random(7, 12))
+        mob:setLocalVar('[XISP]isPal', 1)
+        mob:setStatus(xi.status.NORMAL)
+        mob:hideName(false)
+    end)
+end
+
+spellObject.onMobRoam = function(mob)
+    local player = mob:getMaster()
+
+    xi.xispal.idleSquireChat(mob, player)
+    xi.xispal.onMobRoam(mob, player)
+end
+
+spellObject.onMobFight = function(mob, target)
+    local player = mob:getMaster()
+    xi.xispal.onMobFight(mob, target, player)
+end
+
+spellObject.onMobDisengage = function(mob)
+    xi.xispal.onMobDisengage(mob)
 end
 
 spellObject.onMobDespawn = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DESPAWN)
 end
 
 spellObject.onMobDeath = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DEATH)
 end
 
 return spellObject

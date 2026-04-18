@@ -1,5 +1,6 @@
 -----------------------------------
--- Trust: Curilla
+-- Trust: Rainemard (902)
+-- Replacement trust for Isolde (PLD XISP)
 -----------------------------------
 ---@type TSpellTrust
 local spellObject = {}
@@ -13,26 +14,27 @@ spellObject.onSpellCast = function(caster, target, spell)
 end
 
 spellObject.onMobSpawn = function(mob)
-    xi.trust.teamworkMessage(mob, {
-        [xi.magic.spell.TRION] = xi.trust.messageOffset.TEAMWORK_1,
-        [xi.magic.spell.RAINEMARD] = xi.trust.messageOffset.TEAMWORK_2,
-        [xi.magic.spell.RAHAL] = xi.trust.messageOffset.TEAMWORK_3,
-        [xi.magic.spell.HALVER] = xi.trust.messageOffset.TEAMWORK_4,
-    })
+    xi.xispal.onKnightSpawn(mob, mob:getMaster(), xi.xispal.palInfo[mob:getMaster():getCharVar('[XISP]knightJob')])
+end
 
-    mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.SENTINEL }, { ai.r.JA, ai.s.SPECIFIC, xi.ja.SENTINEL })
+spellObject.onMobRoam = function(mob)
+    local player = mob:getMaster()
+    xi.xispal.onMobRoam(mob, player)
+end
 
-    mob:addGambit(ai.t.TARGET, { ai.c.NOT_STATUS, xi.effect.FLASH }, { ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.FLASH })
+spellObject.onMobFight = function(mob, target)
+    local player = mob:getMaster()
+    xi.xispal.onMobFight(mob, target, player)
+end
 
-    mob:addGambit(ai.t.PARTY, { ai.c.HPP_LT, 75 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE })
+spellObject.onMobDisengage = function(mob)
+    xi.xispal.onMobDisengage(mob)
 end
 
 spellObject.onMobDespawn = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DESPAWN)
 end
 
 spellObject.onMobDeath = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DEATH)
 end
 
 return spellObject
