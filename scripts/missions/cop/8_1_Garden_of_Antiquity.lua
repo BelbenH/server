@@ -196,7 +196,10 @@ mission.sections =
             onEventFinish =
             {
                 [1] = function(player, csid, option, npc)
-                    if npcUtil.giveItem(player, xi.item.TAVNAZIAN_RING) then
+                    if
+                        npcUtil.giveItem(player, xi.item.TAVNAZIAN_RING) and
+                        npcUtil.giveItem(player, xi.augment.augmentItems[2][math.random(1, #xi.augment.augmentItems[2])])
+                    then
                         mission:setVar(player, 'Status', 3)
                     end
                 end,

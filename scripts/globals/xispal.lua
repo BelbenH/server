@@ -497,6 +497,10 @@ xi.xispal.onZone = function(player)
         return
     end
 
+    if player:inMogHouse() then
+        return
+    end
+
     -- Spawn Squire
     if player:getCharVar('[XISP]quest1Var') >= 1 then
         if player:getCharVar('[XISP]squireProg') < 7 then

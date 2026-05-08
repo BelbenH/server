@@ -358,16 +358,11 @@ xi.trust.canCast = function(caster, spell, notAllowedTrustIds)
 		numPt = numPt + 1
 	end
 
-    -----------------------------------------------------------------
-    -- 🎯 ***CUSTOM LIMIT: Max 2 active trusts in any situation***
-    -----------------------------------------------------------------
-    local MAX_TRUSTS = 2
+    local MAX_TRUSTS = 3
     if numTrusts >= MAX_TRUSTS then
         caster:messageSystem(xi.msg.system.TRUST_MAXIMUM_NUMBER)
         return -1
     end
-    -----------------------------------------------------------------
-
 
     -- Max party size
     if numPt >= 6 then

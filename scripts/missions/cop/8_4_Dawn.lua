@@ -36,7 +36,8 @@ local ringOnEventFinish = function(player, csid, option, npc)
     if
         option >= 5 and
         option <= 7 and
-        npcUtil.giveItem(player, ringItems[option - 4])
+        npcUtil.giveItem(player, ringItems[option - 4]) and
+        npcUtil.giveItem(player, xi.augment.augmentItems[3][math.random(1, #xi.augment.augmentItems[3])])
     then
         mission:setVar(player, 'firstRing', 0)
     end

@@ -182,7 +182,7 @@ xi.xispal.checkWeaponSkill = function(pal, target, player, job)
     end
 
     -- TODO: Chat telling player they're almost ready
-    --       Logic to attempt weapon skills
+    --       Logic to attempt skill chains
 
     for _, skill in pairs(xi.xispal.weaponSkills[job]) do
         if pal:getMainLvl() >= skill.lvl then
@@ -207,5 +207,5 @@ xi.xispal.checkWeaponSkill = function(pal, target, player, job)
     end
 
     pal:useMobAbility(weaponskills[math.random(1, #weaponskills)], target)
-    pal:setTP(0)
+    pal:setTP(math.random(5, 110))
 end

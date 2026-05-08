@@ -7,6 +7,9 @@
 local mobskillObject = {}
 
 mobskillObject.onMobSkillCheck = function(target, mob, skill)
+    if target:isTrust() then
+        return 1
+    end
     return 0
 end
 

@@ -18,6 +18,11 @@ mobskillObject.onMobWeaponSkill = function(mob, target, skill, action)
     local numhits = 1
     local accmod = 1
     local ftp    = 3.5 -- fTP and fTP scaling unknown. TODO: capture ftp
+
+    if mob:getLocalVar('isPal') == 1 then
+        ftp = 4.5
+    end
+
     local info = xi.mobskills.mobPhysicalMove(mob, target, skill, numhits, accmod, ftp, xi.mobskills.physicalTpBonus.NO_EFFECT, 0, 0, 0)
     local dmg = xi.mobskills.mobFinalAdjustments(info, mob, skill, target, xi.attackType.PHYSICAL, xi.damageType.SLASHING, info.hitslanded)
 

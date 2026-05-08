@@ -18,6 +18,7 @@ xi.xispal.white =
         { spell = xi.magic.spell.BLINDNA,  effect = xi.effect.BLINDNESS,     lvl = { [xi.job.WHM] = 14, [xi.job.RDM] = 28, [xi.job.BRD] = 28, }, },
         { spell = xi.magic.spell.SILENA,   effect = xi.effect.SILENCE,       lvl = { [xi.job.WHM] = 19, [xi.job.RDM] = 38, [xi.job.BRD] = 38, }, },
         { spell = xi.magic.spell.CURSNA,   effect = xi.effect.CURSE_I,       lvl = { [xi.job.WHM] = 29, [xi.job.RDM] = 58, }, },
+        { spell = xi.magic.spell.CURSNA,   effect = xi.effect.DOOM,          lvl = { [xi.job.WHM] = 29, [xi.job.RDM] = 58, }, },
         { spell = xi.magic.spell.VIRUNA,   effect = xi.effect.DISEASE,       lvl = { [xi.job.WHM] = 34, [xi.job.RDM] = 64, }, },
         { spell = xi.magic.spell.STONA,    effect = xi.effect.PETRIFICATION, lvl = { [xi.job.WHM] = 39, },                    },
 
@@ -429,8 +430,9 @@ xi.xispal.checkCure = function(pal, party, job, lvl)
                     elseif job == xi.job.PLD and member ~= pal then
                         extraTime = 10
                         threshold = threshold * 2
-                    elseif not job == xi.job.WHM then
-                        threshold = threshold * 2.5
+                    elseif job ~= xi.job.WHM then -- All other jobs
+                        threshold = threshold * 3
+                        extraTime = 12
                     end
 
                     -- Prioritize less if they have regen
@@ -726,7 +728,7 @@ xi.xispal.checkBuff = function(pal, party, job, lvl)
         for _, spell in pairs(spells) do
             local spellControl = true
             local spellObject  = GetSpell(spell.spell)
-            local job          = member:getMainJob()
+            local memberJob    = member:getMainJob()
 
             if
                 spell.lvl[job] and lvl >= spell.lvl[job] and
@@ -737,7 +739,7 @@ xi.xispal.checkBuff = function(pal, party, job, lvl)
                 -- Don't cast refresh on 100% MP targets
                 if
                     spell.spell == xi.magic.spell.REFRESH and
-                    member:getMPP() >= 95
+                    (member:getMPP() >= 95 or member:getMaxMP() < 75)
                 then
                     spellControl = false
                 end
@@ -765,9 +767,9 @@ xi.xispal.checkBuff = function(pal, party, job, lvl)
 
                 if spell.spell == xi.magic.spell.HASTE then
                     if
-                        job == xi.job.WHM or job == xi.job.BLM or
-                        job == xi.job.SMN or job == xi.job.RNG or
-                        job == xi.job.SCH or job == xi.job.BRD
+                        memberJob == xi.job.WHM or memberJob == xi.job.BLM or
+                        memberJob == xi.job.SMN or memberJob == xi.job.RNG or
+                        memberJob == xi.job.SCH or memberJob == xi.job.BRD
                     then
                         spellControl = false
                     end
@@ -990,8 +992,8 @@ xi.xispal.checkMagic = function(pal, player)
 
     elseif job == xi.job.BRD then
         xi.xispal.checkNa(pal, party, job, lvl)
-        xi.xispal.checkCure(pal, party, job, lvl)
         xi.xispal.checkSongs(pal, party, job, lvl, player)
+        xi.xispal.checkCure(pal, party, job, lvl)
 
     elseif job == xi.job.NIN then
         xi.xispal.checkNinjutsu(pal, job, lvl)
@@ -1011,11 +1013,9 @@ xi.xispal.castSpell = function(pal, spell, target, job, extraTime)
         -- Add a small delay to cast if pal was resting
         if xi.xispal.stopResting(palArg) then
             palArg:timer(1500, function(palArg2)
-                print('tried to cast spell: ' .. spell)
                 palArg2:castSpell(spell, target)
             end)
         else
-            print('tried to cast spell: ' .. spell)
             palArg:castSpell(spell, target)
         end
     end)

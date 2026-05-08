@@ -29,6 +29,7 @@ mission.sections =
                     local missionStatus = mission:getVar(player, 'Status')
 
                     if missionStatus == 0 then
+                        npcUtil.giveItem(player, xi.augment.augmentItems[1][math.random(1, #xi.augment.augmentItems[1])])
                         return mission:progressEvent(10046)
                     elseif missionStatus == 1 then
                         return mission:event(10052):replaceDefault()

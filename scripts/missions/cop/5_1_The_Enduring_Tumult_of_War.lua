@@ -34,7 +34,8 @@ mission.sections =
                 onTrigger = function(player, npc)
                     if
                         mission:getVar(player, 'Status') == 0 and
-                        not mission:isVarBitsSet(player, 'Option', 0)
+                        not mission:isVarBitsSet(player, 'Option', 0) and
+                        npcUtil.giveItem(player, xi.augment.augmentItems[1][math.random(1, #xi.augment.augmentItems[1])])
                     then
                         return mission:event(117):importantEvent()
                     end

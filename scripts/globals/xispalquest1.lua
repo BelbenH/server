@@ -190,49 +190,6 @@ menu4 =
 dialogue5 = -- Elvaan Male
 {
     {
-        xi.xispal.squireName[0],
-        function(playerArg)
-            playerArg:setCharVar('[XISP]squireName', 0)
-            name = xi.xispal.squireName[0]
-            playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.NS_SAY, 'Monisette')
-            menu5.options = dialogue13
-            xi.xisp.sendMenu(playerArg, menu5)
-        end,
-    },
-    {
-        xi.xispal.squireName[1],
-        function(playerArg)
-            playerArg:setCharVar('[XISP]squireName', 1)
-            name = xi.xispal.squireName[1]
-            playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.NS_SAY, 'Monisette')
-            menu5.options = dialogue13
-            xi.xisp.sendMenu(playerArg, menu5)
-        end,
-    },
-    {
-        xi.xispal.squireName[2],
-        function(playerArg)
-            playerArg:setCharVar('[XISP]squireName', 2)
-            name = xi.xispal.squireName[2]
-            playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.NS_SAY, 'Monisette')
-            menu5.options = dialogue13
-            xi.xisp.sendMenu(playerArg, menu5)
-        end,
-    },
-    {
-        xi.xispal.squireName[3],
-        function(playerArg)
-            playerArg:setCharVar('[XISP]squireName', 3)
-            name = xi.xispal.squireName[3]
-            playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.NS_SAY, 'Monisette')
-            menu5.options = dialogue13
-            xi.xisp.sendMenu(playerArg, menu5)
-        end,
-    },
-}
-dialogue6 = -- Hume Male
-{
-    {
         xi.xispal.squireName[4],
         function(playerArg)
             playerArg:setCharVar('[XISP]squireName', 4)
@@ -267,6 +224,49 @@ dialogue6 = -- Hume Male
         function(playerArg)
             playerArg:setCharVar('[XISP]squireName', 7)
             name = xi.xispal.squireName[7]
+            playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.NS_SAY, 'Monisette')
+            menu5.options = dialogue13
+            xi.xisp.sendMenu(playerArg, menu5)
+        end,
+    },
+}
+dialogue6 = -- Hume Male
+{
+    {
+        xi.xispal.squireName[0],
+        function(playerArg)
+            playerArg:setCharVar('[XISP]squireName', 0)
+            name = xi.xispal.squireName[0]
+            playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.NS_SAY, 'Monisette')
+            menu5.options = dialogue13
+            xi.xisp.sendMenu(playerArg, menu5)
+        end,
+    },
+    {
+        xi.xispal.squireName[1],
+        function(playerArg)
+            playerArg:setCharVar('[XISP]squireName', 1)
+            name = xi.xispal.squireName[1]
+            playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.NS_SAY, 'Monisette')
+            menu5.options = dialogue13
+            xi.xisp.sendMenu(playerArg, menu5)
+        end,
+    },
+    {
+        xi.xispal.squireName[2],
+        function(playerArg)
+            playerArg:setCharVar('[XISP]squireName', 2)
+            name = xi.xispal.squireName[2]
+            playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.NS_SAY, 'Monisette')
+            menu5.options = dialogue13
+            xi.xisp.sendMenu(playerArg, menu5)
+        end,
+    },
+    {
+        xi.xispal.squireName[3],
+        function(playerArg)
+            playerArg:setCharVar('[XISP]squireName', 3)
+            name = xi.xispal.squireName[3]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.NS_SAY, 'Monisette')
             menu5.options = dialogue13
             xi.xisp.sendMenu(playerArg, menu5)

@@ -1210,7 +1210,7 @@ INSERT INTO `mob_groups` VALUES (21,7286,30,'Ouryu',0,128,1962,50000,0,0,NULL);
 -- Monarch_Linn (Zone 31)
 -- ------------------------------------------------------------
 
-INSERT INTO `mob_groups` VALUES (1,2499,31,'Mammet-19_Epsilon',0,128,1585,4000,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (1,2499,31,'Mammet-19_Epsilon',0,128,1585,2750,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (2,3070,31,'Ouryu',0,128,0,10500,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (3,1885,31,'Hamadryad',0,128,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (4,3333,31,'Razon',0,128,0,2100,0,0,NULL);

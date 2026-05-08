@@ -140,6 +140,6 @@ xi.xispal.onDragoonTrigger = function(player, npc)
             end
         end
     else
-        player:printToPlayer("Good day, adventurer. Please leave be.", xi.msg.channel.SAY, table.name)
+        player:printToPlayer("Good day, adventurer. Please leave me be.", xi.msg.channel.SAY, table.name)
     end
 end

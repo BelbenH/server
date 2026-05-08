@@ -86,7 +86,7 @@ xi.xispfollow.keepDistance = function(pal, target, distance)
     local maxDistance  = 20
 
     if pal:getMainJob() == xi.job.BRD then
-        maxDistance = 13
+        maxDistance = 5
     end
 
     if

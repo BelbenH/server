@@ -12,7 +12,7 @@ xi.xispal.squireName =
     -- Elvaan Male
     [4] = 'Edron',
     [5] = 'Halric',
-    [6] = 'Nadir',
+    [6] = 'Zani',
     [7] = 'Petyr',
 
     -- Taru Male
@@ -184,7 +184,7 @@ xi.xispal.squireItems =
     },
     [6] = -- NM loot
     {
-        13014, -- Leaping Boots
+        15351, -- Leaping Boots
         16296, -- Armiger's Lace
         16185, -- Pelte
         16486, -- Beestinger

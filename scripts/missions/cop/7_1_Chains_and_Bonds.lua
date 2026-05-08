@@ -25,6 +25,7 @@ mission.sections =
         {
             onZoneIn = function(player, prevZone)
                 if mission:getVar(player, 'Status') == 0 then
+                    npcUtil.giveItem(player, xi.augment.augmentItems[2][math.random(1, #xi.augment.augmentItems[2])])
                     return 111
                 end
             end,

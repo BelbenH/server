@@ -38,26 +38,34 @@ xi.xispal.spawnYoungSquire = function(player, zone)
         releaseIdOnDisappear  = true,
 
         onTrigger = function(player, pal)
+            if player ~= GetPlayerByID(pal:getLocalVar('[XISP]ownerID')) then
+                return
+            end
+            
             if xi.xispal.youngSquireTrade(player, pal) then
                 xi.xispal.youngSquireChat(player, pal)
             end
         end,
 
         onMobSpawn = function(pal)
+            if not player then
+                return
+            end
+
+            pal:setLocalVar('[XISP]ownerID', player:getID())
+            pal:setLocalVar('[XISP]isPal', 1)
+            pal:setRoamFlags(xi.roamFlag.SCRIPTED)
             pal:setStatus(xi.status.NORMAL)
-            xi.xispal.onMobSpawn(pal, player)
-            pal:setAutoAttackEnabled(false)
-            pal:setUnkillable(true)
-            pal:setLocalVar('requiresPacketUpdate', 1)
+            pal:setMobMod(xi.mobMod.DONT_ROAM_HOME, 1)
+            pal:setMobMod(xi.mobMod.ROAM_DISTANCE, 0)
+            pal:setMobMod(xi.mobMod.NO_DESPAWN, 1)
+            pal:setMobMod(xi.mobMod.ROAM_COOL, 0)
+            pal:setMobMod(xi.mobMod.NO_REST, 1)
         end,
         
         onMobRoam = function(pal)
-            xi.xispfollow.follow(pal, player)
-            xi.xispal.idleYoungSquireChat(pal, player)
-            
-            if not player:isAlive() then
-                DespawnMob(pal:getID())
-            end
+            xi.xispfollow.follow(pal, GetPlayerByID(pal:getLocalVar('[XISP]ownerID')))
+            xi.xispal.idleYoungSquireChat(pal, GetPlayerByID(pal:getLocalVar('[XISP]ownerID')))
         end,
     })
     
@@ -125,9 +133,10 @@ xi.xispal.spawnSquire = function(player, zone)
 
             pal:setRoamFlags(xi.roamFlag.SCRIPTED)
 
+            local zone = player:getZone()
 
             -- Update appearance for players so they're not naked
-            player:timer(600, function(playerArg)
+            player:timer(2000, function(playerArg)
                 pal:setStatus(xi.status.NORMAL)
                 pal:hideName(false)
 
@@ -137,7 +146,7 @@ xi.xispal.spawnSquire = function(player, zone)
                 pal:setMobMod(xi.mobMod.ROAM_COOL, 0)
                 pal:setMobMod(xi.mobMod.NO_REST, 1)
 
-                local zonePlayers = playerArg:getZone():getPlayers()
+                local zonePlayers = zone:getPlayers()
 
                 for _, nearbyPlayer in pairs(zonePlayers) do
                     if nearbyPlayer:checkDistance(pal) <= 50 then
