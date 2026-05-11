@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BEARCLAW_PINNACLE,
     battlefieldId    = xi.battlefield.id.FOLLOW_THE_WHITE_RABBIT,
     maxPlayers       = 18,
+    allowTrusts      = true,
     levelCap         = 75,
     timeLimit        = utils.minutes(30),
     index            = 1,
