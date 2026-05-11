@@ -161,10 +161,10 @@ CMobEntity::CMobEntity()
     PEnmityContainer     = new CEnmityContainer(this);
     SpellContainer       = new CMobSpellContainer(this);
 
-    m_Weapons[SLOT_MAIN]   = new CItemWeapon(0);
-    m_Weapons[SLOT_SUB]    = new CItemWeapon(0);
-    m_Weapons[SLOT_RANGED] = new CItemWeapon(0);
-    m_Weapons[SLOT_AMMO]   = new CItemWeapon(0);
+    m_Weapons[SLOT_MAIN]   = std::make_unique<CItemWeapon>(0).release();
+    m_Weapons[SLOT_SUB]    = std::make_unique<CItemWeapon>(0).release();
+    m_Weapons[SLOT_RANGED] = std::make_unique<CItemWeapon>(0).release();
+    m_Weapons[SLOT_AMMO]   = std::make_unique<CItemWeapon>(0).release();
 
     PAI = std::make_unique<CAIContainer>(this, std::make_unique<CPathFind>(this), std::make_unique<CMobController>(this), std::make_unique<CTargetFind>(this));
 }
@@ -612,6 +612,14 @@ float CMobEntity::GetRoamRate()
     return (float)getMobMod(MOBMOD_ROAM_RATE) / 10.0f;
 }
 
+float CMobEntity::GetRangedAttackRange()
+{
+    // Defaulted range is 14 as observed on all retail fomor.
+    // In the case this changes for other ranger/ninja types use mobmod
+    const int16 rangedAttackRange = getMobMod(MOBMOD_RANGED_ATTACK_RANGE);
+    return rangedAttackRange > 0 ? static_cast<float>(rangedAttackRange) : 14.0f;
+}
+
 bool CMobEntity::ValidTarget(CBattleEntity* PInitiator, uint16 targetFlags)
 {
     TracyZoneScoped;
@@ -1037,11 +1045,11 @@ void CMobEntity::DropItems(CCharEntity* PChar)
             }
         }
 
-        uint8 effect = 0; // Begin Adding Crystals
-
+        // Begin Adding Crystals
         if (m_Element > 0)
         {
-            REGION_TYPE regionID = PChar->loc.zone->GetRegionID();
+            REGION_TYPE regionID       = PChar->loc.zone->GetRegionID();
+            EFFECT      requiredEffect = EFFECT_NONE;
 
             switch (regionID)
             {
@@ -1051,7 +1059,7 @@ void CMobEntity::DropItems(CCharEntity* PChar)
                 case REGION_TYPE::HALVUNG:
                 case REGION_TYPE::ARRAPAGO:
                 case REGION_TYPE::ALZADAAL:
-                    effect = 2;
+                    requiredEffect = EFFECT_SANCTION;
                     break;
 
                 // Sigil Regions
@@ -1063,69 +1071,66 @@ void CMobEntity::DropItems(CCharEntity* PChar)
                 case REGION_TYPE::ARAGONEAU_FRONT:
                 case REGION_TYPE::FAUREGANDI_FRONT:
                 case REGION_TYPE::VALDEAUNIA_FRONT:
-                    effect = 3;
+                    requiredEffect = EFFECT_SIGIL;
                     break;
 
                 // Ionis Regions
                 case REGION_TYPE::ADOULIN_ISLANDS:
                 case REGION_TYPE::EAST_ULBUKA:
-                    effect = 4;
+                    requiredEffect = EFFECT_IONIS;
                     break;
 
                 // Signet Regions
                 default:
-                    effect = (regionID < REGION_TYPE::TAVNAZIA && conquest::GetRegionOwner(regionID) <= 2) ? 1 : 0;
+                    if (regionID < REGION_TYPE::TAVNAZIA && conquest::GetRegionOwner(regionID) <= 2)
+                    {
+                        requiredEffect = EFFECT_SIGNET;
+                    }
                     break;
             }
-        }
 
-        uint8 crystalRolls = 0;
-        // clang-format off
-        PChar->ForParty([this, &crystalRolls, &effect](CBattleEntity* PMember)
-        {
-            switch (effect)
+            if (requiredEffect == EFFECT_NONE)
             {
-                case 1:
-                    if (PMember->StatusEffectContainer->HasStatusEffect(EFFECT_SIGNET) && PMember->getZone() == getZone() &&
-                        distance(PMember->loc.p, loc.p) < 100)
-                    {
-                        crystalRolls++;
-                    }
-                    break;
-                case 2:
-                    if (PMember->StatusEffectContainer->HasStatusEffect(EFFECT_SANCTION) && PMember->getZone() == getZone() &&
-                        distance(PMember->loc.p, loc.p) < 100)
-                    {
-                        crystalRolls++;
-                    }
-                    break;
-                case 3:
-                    if (PMember->StatusEffectContainer->HasStatusEffect(EFFECT_SIGIL) && PMember->getZone() == getZone() &&
-                        distance(PMember->loc.p, loc.p) < 100)
-                    {
-                        crystalRolls++;
-                    }
-                    break;
-                case 4:
-                    if (PMember->StatusEffectContainer->HasStatusEffect(EFFECT_IONIS) && PMember->getZone() == getZone() &&
-                        distance(PMember->loc.p, loc.p) < 100)
-                    {
-                        crystalRolls++;
-                    }
-                    break;
-                default:
-                    break;
+                return;
             }
-        });
-        // clang-format on
 
-        // Is this really checked last? Would crystals actually kick out non-rare/ex items from the same mob dropping a large pool?
-        for (uint8 i = 0; i < crystalRolls; i++)
-        {
-            // TODO: implement nation aketon crystal bonus (per member?)
-            if (xirand::GetRandomNumber(100) < 20)
+            uint8 playersNearby = 0;
+            // clang-format off
+            PChar->ForParty([this, &playersNearby, requiredEffect](CBattleEntity* PMember)
             {
-                AddItemToPool(4095 + m_Element);
+                if (PMember->StatusEffectContainer->HasStatusEffect(requiredEffect) &&
+                    PMember->getZone() == getZone() &&
+                    distance(PMember->loc.p, loc.p) < 100)
+                {
+                    playersNearby++;
+                }
+            });
+            // clang-format on
+
+            if (playersNearby == 0)
+            {
+                return;
+            }
+
+            // Signet regions: 55% if solo, 45% if in a party
+            // Sanction regions: 30%
+            // Others leave at 20% - TODO: need more info on WOTG+
+            uint8 crystalRate = 20;
+            if (requiredEffect == EFFECT_SIGNET)
+            {
+                crystalRate = (playersNearby == 1) ? 55 : 45;
+            }
+            else if (requiredEffect == EFFECT_SANCTION)
+            {
+                crystalRate = 30;
+            }
+
+            for (uint8 i = 0; i < playersNearby; i++)
+            {
+                if (xirand::GetRandomNumber(100) < crystalRate)
+                {
+                    AddItemToPool(4095 + m_Element);
+                }
             }
         }
     }

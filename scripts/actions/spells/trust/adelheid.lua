@@ -42,46 +42,10 @@ spellObject.onMobSpawn = function(mob)
     mob:addGambit(ai.t.TANK,  { ai.c.HPP_LT, 50 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE }, 85)
     mob:addGambit(ai.t.PARTY, { ai.c.HPP_LT, 33 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE }, 90)
 
-    -- Elemental nukes more often 
-    local combatCond
-    if ai.c and ai.c.IN_COMBAT then
-        combatCond = { ai.c.IN_COMBAT, 0 }
-    else
-        combatCond = { ai.c.ALWAYS, 0 }
-    end
-
-    local function addElementNukes(spellTable, weight)
-        if not (xi.magic and xi.magic.spell) then
-            return
-        end
-        for _, spellId in ipairs(spellTable) do
-            if spellId then
-                mob:addGambit(
-                    ai.t.TARGET,
-                    combatCond,
-                    { ai.r.MA, ai.s.SPECIFIC, spellId },
-                    weight
-                )
-                weight = math.max(1, weight - 1)
-            end
-        end
-    end
-
-    local s = xi.magic.spell
-    addElementNukes({ s.FIRE_VI,     s.FIRE_V,     s.FIRE_IV,     s.FIRE_III,     s.FIRE_II,     s.FIRE },     70)
-    addElementNukes({ s.BLIZZARD_VI, s.BLIZZARD_V, s.BLIZZARD_IV, s.BLIZZARD_III, s.BLIZZARD_II, s.BLIZZARD }, 69)
-    addElementNukes({ s.THUNDER_VI,  s.THUNDER_V,  s.THUNDER_IV,  s.THUNDER_III,  s.THUNDER_II,  s.THUNDER },  68)
-    addElementNukes({ s.AERO_VI,     s.AERO_V,     s.AERO_IV,     s.AERO_III,     s.AERO_II,     s.AERO },     67)
-    addElementNukes({ s.WATER_VI,    s.WATER_V,    s.WATER_IV,    s.WATER_III,    s.WATER_II,    s.WATER },    66)
-    addElementNukes({ s.STONE_VI,    s.STONE_V,    s.STONE_IV,    s.STONE_III,    s.STONE_II,    s.STONE },    65)
-
-    -------------------------------------------------
-    -- Flavor: WS message
-    -------------------------------------------------
-    mob:addListener('WEAPONSKILL_USE', 'ADELHEID_WEAPONSKILL_USE', function(mobArg, target, wsid, tp, action)
-        if wsid == 3469 then -- Twirling Dervish
+    mob:addListener('WEAPONSKILL_USE', 'ADELHEID_WEAPONSKILL_USE', function(mobArg, target, skill, tp, action, damage)
+        if skill:getID() == xi.mobSkill.TWIRLING_DERVISH then
             if math.random(1, 100) <= 33 then
-                xi.trust.message(mobArg, xi.trust.messageOffset.SPECIAL_MOVE_1)
+                xi.trust.message(mobArg, xi.trust.messageOffset.SPECIAL_MOVE_1) -- You may want to cover your ears!
             end
         end
     end)

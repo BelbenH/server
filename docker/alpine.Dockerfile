@@ -136,8 +136,8 @@ USER $UNAME
 # https://docs.docker.com/reference/dockerfile/#copy---exclude (docker/dockerfile:1.7-labs)
 COPY --chown=$UNAME:$UGROUP \
     --exclude=.git \
-    --exclude=losmeshes/** \
     --exclude=navmeshes/** \
+    --exclude=ximeshes/** \
     --exclude=scripts \
     --exclude=sql \
     . /server

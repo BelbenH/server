@@ -21,20 +21,22 @@
 
 #include "luautils.h"
 
-#include "common/application.h"
-#include "common/filewatcher.h"
-#include "common/ipc.h"
-#include "common/logging.h"
-#include "common/settings.h"
-#include "common/timer.h"
-#include "common/utils.h"
-#include "common/vana_time.h"
-#include "common/version.h"
+#include <common/application.h>
+#include <common/filewatcher.h>
+#include <common/ipc.h>
+#include <common/logging.h>
+#include <common/settings.h>
+#include <common/timer.h>
+#include <common/types/maybe.h>
+#include <common/utils.h>
+#include <common/vana_time.h>
+#include <common/version.h>
 
 #include "lua_action.h"
 #include "lua_battlefield.h"
 #include "lua_instance.h"
 #include "lua_item.h"
+#include "lua_item_puppet.h"
 #include "lua_loot.h"
 #include "lua_mobskill.h"
 #include "lua_petskill.h"
@@ -78,11 +80,11 @@
 #include "instance.h"
 #include "ipc_client.h"
 #include "items/item_furnishing.h"
+#include "map/navmesh/navmesh.h"
 #include "map_engine.h"
 #include "mob_modifier.h"
 #include "mobskill.h"
 #include "monstrosity.h"
-#include "navmesh.h"
 #include "packets/s2c/0x039_mapschedulor.h"
 #include "petskill.h"
 #include "roe.h"
@@ -98,7 +100,6 @@
 #include <array>
 #include <filesystem>
 #include <numeric>
-#include <optional>
 #include <string>
 #include <unordered_map>
 
@@ -318,6 +319,7 @@ void init(IPP mapIPP, bool isRunningInCI)
     lua.set_function("GetSynergyRecipeByID", &luautils::GetSynergyRecipeByID);
     lua.set_function("GetSynergyRecipeByTrade", &luautils::GetSynergyRecipeByTrade);
     lua.set_function("ReloadSynthRecipes", &synthutils::LoadSynthRecipes);
+    lua.set_function("LoadExpDifficultyCurves", &luautils::LoadExpDifficultyCurves);
 
     // Fishing Contest Functions
     lua.set_function("GetFishingContest", &luautils::GetFishingContest);
@@ -359,6 +361,7 @@ void init(IPP mapIPP, bool isRunningInCI)
         CLuaTreasurePool::Register();
         CLuaZone::Register();
         CLuaItem::Register();
+        CLuaItemPuppet::Register();
 
         // Load global enums
         for (auto const& entry : sorted_directory_iterator<std::filesystem::directory_iterator>("./scripts/enum"))
@@ -1002,6 +1005,32 @@ void OnEntityLoad(CBaseEntity* PEntity)
     }
 }
 
+void LoadExpDifficultyCurves(const sol::table& expToDifficultyTable, const uint8 incrediblyEasyPreyLevel, const uint16 incrediblyEasyPreyMinExp)
+{
+    std::vector<std::pair<uint16, EMobDifficulty>> expDifficultyTable;
+
+    for (auto& [expObj, difficultyObj] : expToDifficultyTable)
+    {
+        uint16         exp        = expObj.as<uint16>();
+        EMobDifficulty difficulty = static_cast<EMobDifficulty>(difficultyObj.as<uint8>());
+
+        expDifficultyTable.emplace_back(exp, difficulty);
+    }
+
+    // Sort highest to lowest
+    std::sort(
+        expDifficultyTable.begin(),
+        expDifficultyTable.end(),
+        [](std::pair<uint16, EMobDifficulty> const& a, std::pair<uint16, EMobDifficulty> const& b)
+        {
+            return a.first > b.first;
+        });
+
+    std::pair<uint16, uint8> iep = { incrediblyEasyPreyLevel, incrediblyEasyPreyMinExp };
+
+    charutils::SetExpDifficultyCurve(expDifficultyTable, iep);
+}
+
 void PopulateIDLookups(uint16 zoneId, const std::string& zoneName)
 {
     TracyZoneScoped;
@@ -1049,7 +1078,7 @@ void PopulateIDLookups(uint16 zoneId, const std::string& zoneName)
 
     // Update GetFirstID to use this new lookup
     // clang-format off
-        lua.set_function("GetFirstID", [&](std::string const& name) -> std::optional<uint32>
+        lua.set_function("GetFirstID", [&](std::string const& name) -> Maybe<uint32>
         {
             if (lookup.find(name) != lookup.end())
             {
@@ -1127,7 +1156,7 @@ void PopulateIDLookups(uint16 zoneId, const std::string& zoneName)
             ShowWarning("GetFirstID is designed to be used at load/reload-time only!");
         });
 
-        lua.set_function("GetTableOfIDs", [&](std::string const& name, std::optional<int> optRange) -> void
+        lua.set_function("GetTableOfIDs", [&](std::string const& name, Maybe<int> optRange) -> void
         {
             ShowWarning("GetTableOfIDs is designed to be used at load/reload-time only!");
         });
@@ -1137,7 +1166,7 @@ void PopulateIDLookups(uint16 zoneId, const std::string& zoneName)
     lua["package"]["loaded"][fmt::format("scripts/zones/{}/IDs", zoneName)] = lua["zones"][zoneId];
 }
 
-void PopulateIDLookupsByFilename(std::optional<std::string> maybeFilename)
+void PopulateIDLookupsByFilename(Maybe<std::string> maybeFilename)
 {
     TracyZoneScoped;
 
@@ -1186,7 +1215,7 @@ void PopulateIDLookupsByFilename(std::optional<std::string> maybeFilename)
     // clang-format on
 }
 
-void PopulateIDLookupsByZone(std::optional<uint16> maybeZoneId)
+void PopulateIDLookupsByZone(Maybe<uint16> maybeZoneId)
 {
     TracyZoneScoped;
 
@@ -1226,11 +1255,11 @@ void SendEntityVisualPacket(const uint32 npcId, const char* command)
     }
 }
 
-CItem* GetItemByID(uint32 itemId)
+auto GetItemByID(uint32 itemId) -> const CItem*
 {
     TracyZoneScoped;
 
-    return itemutils::GetItemPointer(itemId);
+    return xi::items::lookup(itemId);
 }
 
 CBaseEntity* GetNPCByID(uint32 npcid, const sol::object& instanceObj)
@@ -2535,7 +2564,7 @@ void OnEffectLose(CBattleEntity* PEntity, CStatusEffect* PStatusEffect)
     }
 }
 
-void OnAttachmentEquip(CBattleEntity* PEntity, CItemPuppet* attachment)
+void OnAttachmentEquip(CBattleEntity* PEntity, const CItemPuppet* attachment)
 {
     TracyZoneScoped;
 
@@ -2547,7 +2576,7 @@ void OnAttachmentEquip(CBattleEntity* PEntity, CItemPuppet* attachment)
         return;
     }
 
-    auto result = onEquip(PEntity, attachment);
+    auto result = onEquip(PEntity, CLuaItemPuppet(attachment));
     if (!result.valid())
     {
         sol::error err = result;
@@ -2555,7 +2584,7 @@ void OnAttachmentEquip(CBattleEntity* PEntity, CItemPuppet* attachment)
     }
 }
 
-void OnAttachmentUnequip(CBattleEntity* PEntity, CItemPuppet* attachment)
+void OnAttachmentUnequip(CBattleEntity* PEntity, const CItemPuppet* attachment)
 {
     TracyZoneScoped;
 
@@ -2567,7 +2596,7 @@ void OnAttachmentUnequip(CBattleEntity* PEntity, CItemPuppet* attachment)
         return;
     }
 
-    auto result = onUnequip(PEntity, attachment);
+    auto result = onUnequip(PEntity, CLuaItemPuppet(attachment));
     if (!result.valid())
     {
         sol::error err = result;
@@ -2575,7 +2604,7 @@ void OnAttachmentUnequip(CBattleEntity* PEntity, CItemPuppet* attachment)
     }
 }
 
-void OnManeuverGain(CBattleEntity* PEntity, CItemPuppet* attachment, uint8 maneuvers)
+void OnManeuverGain(CBattleEntity* PEntity, const CItemPuppet* attachment, uint8 maneuvers)
 {
     TracyZoneScoped;
 
@@ -2587,7 +2616,7 @@ void OnManeuverGain(CBattleEntity* PEntity, CItemPuppet* attachment, uint8 maneu
         return;
     }
 
-    auto result = onManeuverGain(PEntity, attachment, maneuvers);
+    auto result = onManeuverGain(PEntity, CLuaItemPuppet(attachment), maneuvers);
     if (!result.valid())
     {
         sol::error err = result;
@@ -2595,7 +2624,7 @@ void OnManeuverGain(CBattleEntity* PEntity, CItemPuppet* attachment, uint8 maneu
     }
 }
 
-void OnManeuverLose(CBattleEntity* PEntity, CItemPuppet* attachment, uint8 maneuvers)
+void OnManeuverLose(CBattleEntity* PEntity, const CItemPuppet* attachment, uint8 maneuvers)
 {
     TracyZoneScoped;
 
@@ -2607,7 +2636,7 @@ void OnManeuverLose(CBattleEntity* PEntity, CItemPuppet* attachment, uint8 maneu
         return;
     }
 
-    auto result = onManeuverLose(PEntity, attachment, maneuvers);
+    auto result = onManeuverLose(PEntity, CLuaItemPuppet(attachment), maneuvers);
     if (!result.valid())
     {
         sol::error err = result;
@@ -2615,7 +2644,7 @@ void OnManeuverLose(CBattleEntity* PEntity, CItemPuppet* attachment, uint8 maneu
     }
 }
 
-void OnUpdateAttachment(CBattleEntity* PEntity, CItemPuppet* attachment, uint8 maneuvers)
+void OnUpdateAttachment(CBattleEntity* PEntity, const CItemPuppet* attachment, uint8 maneuvers)
 {
     TracyZoneScoped;
 
@@ -2627,7 +2656,7 @@ void OnUpdateAttachment(CBattleEntity* PEntity, CItemPuppet* attachment, uint8 m
         return;
     }
 
-    auto result = onUpdate(PEntity, attachment, maneuvers);
+    auto result = onUpdate(PEntity, CLuaItemPuppet(attachment), maneuvers);
     if (!result.valid())
     {
         sol::error err = result;
@@ -2699,7 +2728,7 @@ int32 OnItemUse(CBaseEntity* PUser, CBaseEntity* PTarget, CItem* PItem, action_t
 }
 
 // Trigger Code on an item when it has been dropped
-void OnItemDrop(CBaseEntity* PUser, CItem* PItem)
+void OnItemDrop(CBaseEntity* PUser, CItem* PItem, IsRecycleBin recycleBin)
 {
     TracyZoneScoped;
 
@@ -2711,7 +2740,7 @@ void OnItemDrop(CBaseEntity* PUser, CItem* PItem)
         return;
     }
 
-    auto result = onItemDrop(PUser, PItem);
+    auto result = onItemDrop(PUser, PItem, static_cast<bool>(recycleBin));
     if (!result.valid())
     {
         sol::error err = result;
@@ -2883,7 +2912,7 @@ void OnSpellInterrupted(CBattleEntity* PCaster, CSpell* PSpell)
     }
 }
 
-std::tuple<std::optional<SpellID>, std::optional<CBattleEntity*>> OnMobSpellChoose(CBattleEntity* PCaster, CBattleEntity* PTarget, std::optional<SpellID> startingSpellId)
+std::tuple<Maybe<SpellID>, Maybe<CBattleEntity*>> OnMobSpellChoose(CBattleEntity* PCaster, CBattleEntity* PTarget, Maybe<SpellID> startingSpellId)
 {
     TracyZoneScoped;
 
@@ -2929,7 +2958,7 @@ std::tuple<std::optional<SpellID>, std::optional<CBattleEntity*>> OnMobSpellChoo
 
     uint32 newSpellId = result.get_type(0) == sol::type::number ? result.get<int32>(0) : 0;
 
-    std::tuple<std::optional<SpellID>, std::optional<CBattleEntity*>> retVal = {};
+    std::tuple<Maybe<SpellID>, Maybe<CBattleEntity*>> retVal = {};
 
     if (newSpellId > 0)
     {
@@ -3937,7 +3966,7 @@ CBattleEntity* OnMobSkillTarget(CBattleEntity* PTarget, CBaseEntity* PMob, CMobS
     return PTarget;
 }
 
-std::optional<timer::duration> OnMobSkillReadyTime(CBattleEntity* PTarget, CBaseEntity* PMob, CMobSkill* PMobSkill)
+Maybe<timer::duration> OnMobSkillReadyTime(CBattleEntity* PTarget, CBaseEntity* PMob, CMobSkill* PMobSkill)
 {
     TracyZoneScoped;
 
@@ -5026,11 +5055,11 @@ std::string GetServerMessage(uint8 language)
  *                                                                       *
  ************************************************************************/
 
-CItem* GetReadOnlyItem(uint32 id)
+auto GetReadOnlyItem(uint32 id) -> const CItem*
 {
     TracyZoneScoped;
 
-    return itemutils::GetItemPointer(id);
+    return xi::items::lookup(id);
 }
 
 CAbility* GetAbility(uint16 id)
@@ -5079,7 +5108,7 @@ sol::table GetFurthestValidPosition(CLuaBaseEntity* fromTarget, float distance, 
     position_t   pos    = nearPosition(entity->loc.p, distance, theta);
 
     float validPos[3];
-    bool  success = entity->loc.zone->m_navMesh->findFurthestValidPoint(entity->loc.p, pos, validPos);
+    bool  success = entity->loc.zone->navMesh()->findFurthestValidPoint(entity->loc.p, pos, validPos);
     if (!success)
     {
         return sol::lua_nil;
@@ -5441,7 +5470,7 @@ SendToDBoxReturnCode SendItemToDeliveryBox(const std::string& playerName, uint16
 
     // Check to confirm that the item legitimately exists
     // exclude gil as gil does not have an item pointer
-    auto* PItem = itemutils::GetItemPointer(itemId);
+    auto* PItem = xi::items::lookup(itemId);
     if (PItem == nullptr && !isGil)
     {
         return SendToDBoxReturnCode::ITEM_NOT_FOUND;

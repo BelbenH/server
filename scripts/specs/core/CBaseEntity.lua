@@ -555,6 +555,17 @@ end
 function CBaseEntity:setCarefulPathing(careful)
 end
 
+---@nodiscard
+---@param target CBaseEntity
+---@return boolean
+function CBaseEntity:canSee(target)
+end
+
+---@nodiscard
+---@return boolean
+function CBaseEntity:inWater()
+end
+
 ---@param seconds integer?
 ---@return nil
 function CBaseEntity:openDoor(seconds)
@@ -951,6 +962,7 @@ end
 
 -- TODO: This one is going to be really messy, might be better to create multiple definitions
 -- for readability.
+---@return CItem?
 function CBaseEntity:addItem(...)
 end
 
@@ -1052,16 +1064,6 @@ end
 ---@param equip boolean
 ---@return boolean
 function CBaseEntity:addLinkpearl(lsname, equip)
-end
-
----@nodiscard
----@param name string
----@param interestData integer
----@param zeni integer
----@param skillIndex integer
----@param fp integer
----@return CItem?
-function CBaseEntity:addSoulPlate(name, interestData, zeni, skillIndex, fp)
 end
 
 ---@nodiscard
@@ -2903,7 +2905,7 @@ function CBaseEntity:getStatusEffectBySource(StatusID, SourceType, SourceTypePar
 end
 
 ---@nodiscard
----@return table
+---@return CStatusEffect[]
 function CBaseEntity:getStatusEffects()
 end
 
@@ -3576,7 +3578,6 @@ end
 function CBaseEntity:getAttachment(slotId)
 end
 
----@nodiscard
 ---@param itemId integer
 ---@param slotId integer
 ---@return nil
@@ -3677,7 +3678,6 @@ end
 function CBaseEntity:getModelSize()
 end
 
----@nodiscard
 ---@param newSize number
 ---@return nil
 function CBaseEntity:setModelSize(newSize)
@@ -3688,7 +3688,6 @@ end
 function CBaseEntity:getHitboxSize()
 end
 
----@nodiscard
 ---@param newSize number
 ---@return nil
 function CBaseEntity:setHitboxSize(newSize)
@@ -3840,6 +3839,16 @@ end
 ---@param state boolean
 ---@return nil
 function CBaseEntity:setAutoAttackEnabled(state)
+end
+
+---@param state boolean
+---@return nil
+function CBaseEntity:setRangedAttackEnabled(state)
+end
+
+---@nodiscard
+---@return boolean
+function CBaseEntity:isRangedAttackEnabled()
 end
 
 ---@param state boolean

@@ -201,7 +201,8 @@ void IPCClient::handleMessage_CharZone(const IPP& ipp, const ipc::CharZone& mess
     }
     else
     {
-        networking_.sessions().createPendingSession(message.charId); // Create a pending session that the character might use ahead of time
+        // Create a pending session that the character might use ahead of time
+        networking_.sessions().createPendingSession(message.charId);
     }
 }
 

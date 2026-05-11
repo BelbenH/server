@@ -800,7 +800,7 @@ local overseerInvNation =
         [32898] = { rank =  9, cp = 48000, lvl = 71, item = xi.item.RESERVE_CAPTAINS_MACE,         },
         [32899] = { rank =  9, cp = 48000, lvl = 71, item = xi.item.RESERVE_CAPTAINS_LANCE,        },
         [32912] = { rank = 10, cp = 56000, lvl =  1, item = xi.item.KINGDOM_AKETON,                },
-        [32932] = {            cp =  5000, lvl =  1, item = xi.item.KINGDOM_SIGNET_STAFF           },
+        [32932] = { rank = 10, cp =  5000, lvl =  1, item = xi.item.KINGDOM_SIGNET_STAFF           },
         [32940] = { rank = 10, cp = 10000, lvl =  1, item = xi.item.IMPERIAL_CHAIR_SET             },
     },
 
@@ -858,7 +858,7 @@ local overseerInvNation =
         [32898] = { rank =  9, cp = 48000, lvl = 71, item = xi.item.SENIOR_GOLD_MUSKETEERS_AXE,      },
         [32899] = { rank =  9, cp = 48000, lvl = 71, item = xi.item.SENIOR_GOLD_MUSKETEERS_SCIMITAR, },
         [32912] = { rank = 10, cp = 56000, lvl =  1, item = xi.item.REPUBLIC_AKETON,                 },
-        [32932] = {            cp =  5000, lvl =  1, item = xi.item.REPUBLIC_SIGNET_STAFF            },
+        [32932] = { rank = 10, cp =  5000, lvl =  1, item = xi.item.REPUBLIC_SIGNET_STAFF            },
         [32940] = { rank = 10, cp = 10000, lvl =  1, item = xi.item.DECORATIVE_CHAIR_SET             },
     },
 
@@ -920,7 +920,7 @@ local overseerInvNation =
         [32898] = { rank =  9, cp = 48000, lvl = 71, item = xi.item.MASTER_CASTERS_BAGHNAKHS,    },
         [32899] = { rank =  9, cp = 48000, lvl = 71, item = xi.item.MASTER_CASTERS_KNIFE,        },
         [32912] = { rank = 10, cp = 56000, lvl =  1, item = xi.item.FEDERATION_AKETON,           },
-        [32932] = {            cp =  5000, lvl =  1, item = xi.item.FEDERATION_SIGNET_STAFF      },
+        [32932] = { rank = 10, cp =  5000, lvl =  1, item = xi.item.FEDERATION_SIGNET_STAFF      },
         [32940] = { rank = 10, cp = 10000, lvl =  1, item = xi.item.ORNATE_STOOL_SET             },
     },
 }
