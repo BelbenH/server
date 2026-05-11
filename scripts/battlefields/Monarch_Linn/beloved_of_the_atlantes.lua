@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.MONARCH_LINN,
     battlefieldId    = xi.battlefield.id.BELOVED_OF_THE_ATLANTES,
     maxPlayers       = 18,
+    allowTrusts      = true,
     levelCap         = 50,
     timeLimit        = utils.minutes(30),
     index            = 5,

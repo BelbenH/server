@@ -11,6 +11,7 @@ local content = Battlefield:new({
     battlefieldId    = xi.battlefield.id.SIMULANT,
     maxPlayers       = 18,
     levelCap         = 30,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 1,
     entryNpc         = '_0h0',

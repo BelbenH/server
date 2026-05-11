@@ -9,8 +9,8 @@ local entity = {}
 local stanceTable =
 {
 -- [Stance] = { animationSub, canAutoAttack, canCastSpells, physicalShieldPower, magicalShieldPower }
-    [1] = { 1, false, true,  0, 1 }, -- Magical Stance
-    [2] = { 2, true,  false, 1, 0 }, -- Physical Stance
+    [1] = { 1, false, true,  0, 0 }, -- Magical Stance
+    [2] = { 2, true,  false, 0, 0 }, -- Physical Stance
 }
 
 local function changeStance(mob, stance)

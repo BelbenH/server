@@ -376,7 +376,7 @@ xi.xispal.checkRegen = function(pal, party, job, lvl)
                 then
                     if
                         not member:hasStatusEffect(xi.effect.REGEN) and
-                        member:getHPP() < 100
+                        member:getHPP() < 95
                     then
                         regen = spell.spell
                         target = member

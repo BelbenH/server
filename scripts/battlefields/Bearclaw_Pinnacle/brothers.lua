@@ -11,6 +11,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BEARCLAW_PINNACLE,
     battlefieldId    = xi.battlefield.id.BROTHERS,
     maxPlayers       = 18,
+    allowTrusts      = true,
     levelCap         = 75,
     timeLimit        = utils.minutes(30),
     index            = 3,

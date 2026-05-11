@@ -7,11 +7,7 @@
 local entity = {}
 
 entity.onTrigger = function(player, npc)
-    if player:hasCompletedQuest(xi.questLog.JEUNO, xi.quest.id.jeuno.BEYOND_INFINITY) then
-        player:startEvent(10115, player:getGil())
-    else
-        player:startEvent(10116)
-    end
+    player:startEvent(10115, player:getGil())
 end
 
 entity.onEventFinish = function(player, csid, option, npc)

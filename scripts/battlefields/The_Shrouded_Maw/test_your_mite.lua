@@ -11,6 +11,7 @@ local content = Battlefield:new({
     battlefieldId    = xi.battlefield.id.TEST_YOUR_MITE,
     maxPlayers       = 18,
     levelCap         = 40,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 1,
     entryNpc         = 'MC_Entrance',

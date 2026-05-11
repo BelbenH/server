@@ -9,6 +9,7 @@ local mineShaft2716ID = zones[xi.zone.MINE_SHAFT_2716]
 local content = Battlefield:new({
     zoneId           = xi.zone.MINE_SHAFT_2716,
     battlefieldId    = xi.battlefield.id.BIONIC_BUG,
+    allowTrusts      = true,
     maxPlayers       = 18,
     levelCap         = 75,
     timeLimit        = utils.minutes(30),

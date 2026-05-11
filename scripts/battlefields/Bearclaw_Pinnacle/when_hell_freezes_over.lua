@@ -11,6 +11,7 @@ local content = Battlefield:new({
     maxPlayers       = 18,
     levelCap         = 75,
     timeLimit        = utils.minutes(15),
+    allowTrusts      = true,
     index            = 2,
     entryNpc         = 'Wind_Pillar_3',
     exitNpc          = 'Wind_Pillar_Exit',

@@ -13,6 +13,7 @@ local content = Battlefield:new({
     levelCap         = 75,
     timeLimit        = utils.minutes(30),
     index            = 3,
+    allowTrusts       = true,
     entryNpc         = '_081',
     exitNpcs         = { '_082', '_084', '_086' },
     requiredKeyItems = { xi.ki.MIASMA_FILTER },

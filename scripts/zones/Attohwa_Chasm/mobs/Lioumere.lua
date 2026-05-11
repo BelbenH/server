@@ -83,6 +83,10 @@ entity.onMobWeaponSkill = function(mob, target, skill, action)
     end
 end
 
+entity.onMobEngage = function(mob)
+    mob:setMobMod(xi.mobMod.NO_MOVE, 0)
+end
+
 entity.onMobFight = function(mob, target)
     local homeDistance = mob:checkDistance(home.x, home.y, home.z)
 

@@ -11,6 +11,7 @@ local content = Battlefield:new({
     battlefieldId    = xi.battlefield.id.FIRE_IN_THE_SKY,
     maxPlayers       = 18,
     levelCap         = 40,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(15),
     index            = 2,
     entryNpc         = 'SD_Entrance',
