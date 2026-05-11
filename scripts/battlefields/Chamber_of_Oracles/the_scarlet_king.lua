@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.CHAMBER_OF_ORACLES,
     battlefieldId    = xi.battlefield.id.SCARLET_KING,
     maxPlayers       = 6,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 7, -- "The Scarlet King"
     entryNpc         = 'SC_Entrance',

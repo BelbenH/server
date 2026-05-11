@@ -8,6 +8,7 @@ local content = BattlefieldQuest:new({
     battlefieldId    = xi.battlefield.id.TRIAL_BY_LIGHTNING,
     canLoseExp       = false,
     maxPlayers       = 6,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 0,
     entryNpc         = 'LP_Entrance',

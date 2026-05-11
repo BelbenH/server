@@ -11,6 +11,7 @@ local content = BattlefieldMission:new({
     battlefieldId = xi.battlefield.id.FLAMES_FOR_THE_DEAD,
     canLoseExp    = false,
     maxPlayers    = 6,
+    allowTrusts   = true,
     levelCap      = 55,
     timeLimit     = utils.minutes(30),
     index         = 0,

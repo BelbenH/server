@@ -16,6 +16,7 @@ local content = Limbus:new({
     zoneId           = xi.zone.APOLLYON,
     battlefieldId    = xi.battlefield.id.CENTRAL_APOLLYON,
     maxPlayers       = 18,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 4,
     area             = 5,

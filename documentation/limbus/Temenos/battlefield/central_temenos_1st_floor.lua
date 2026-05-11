@@ -12,6 +12,7 @@ local ID = zones[xi.zone.TEMENOS]
 local content = Limbus:new({
     zoneId           = xi.zone.TEMENOS,
     battlefieldId    = xi.battlefield.id.CENTRAL_TEMENOS_1ST_FLOOR,
+    allowTrusts      = true,
     maxPlayers       = 18,
     timeLimit        = utils.minutes(45),
     index            = 6,

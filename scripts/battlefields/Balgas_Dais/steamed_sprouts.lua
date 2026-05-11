@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BALGAS_DAIS,
     battlefieldId    = xi.battlefield.id.STEAMED_SPROUTS,
     maxPlayers       = 6,
+    allowTrusts      = true,
     levelCap         = 40,
     timeLimit        = utils.minutes(30),
     index            = 1,

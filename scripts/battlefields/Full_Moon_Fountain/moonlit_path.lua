@@ -10,6 +10,7 @@ local content = BattlefieldQuest:new({
     battlefieldId    = xi.battlefield.id.MOONLIT_PATH,
     canLoseExp       = false,
     maxPlayers       = 6,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 0,
     entryNpc         = 'MS_Entrance',

@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BALGAS_DAIS,
     battlefieldId    = xi.battlefield.id.HAREM_SCAREM,
     maxPlayers       = 6,
+    allowTrusts      = true,
     levelCap         = 30,
     timeLimit        = utils.minutes(30),
     index            = 10,

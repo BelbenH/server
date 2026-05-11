@@ -8,6 +8,7 @@ local content = BattlefieldQuest:new({
     battlefieldId    = xi.battlefield.id.WAKING_THE_BEAST_CLOISTER_OF_FROST,
     canLoseExp       = false,
     maxPlayers       = 18,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 3,
     entryNpc         = 'IP_Entrance',

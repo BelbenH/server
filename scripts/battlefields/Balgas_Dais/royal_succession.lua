@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BALGAS_DAIS,
     battlefieldId    = xi.battlefield.id.ROYAL_SUCCESSION,
     maxPlayers       = 3,
+    allowTrusts      = true,
     levelCap         = 40,
     timeLimit        = utils.minutes(15),
     index            = 12,

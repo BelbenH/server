@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.SACRIFICIAL_CHAMBER,
     battlefieldId    = xi.battlefield.id.AMPHIBIAN_ASSAULT,
     maxPlayers       = 6,
+    allowTrusts      = true,
     levelCap         = 60,
     timeLimit        = utils.minutes(30),
     index            = 2,

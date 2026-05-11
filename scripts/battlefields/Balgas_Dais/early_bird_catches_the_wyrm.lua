@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BALGAS_DAIS,
     battlefieldId    = xi.battlefield.id.EARLY_BIRD_CATCHES_THE_WYRM,
     maxPlayers       = 18,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 11,
     entryNpc         = 'BC_Entrance',

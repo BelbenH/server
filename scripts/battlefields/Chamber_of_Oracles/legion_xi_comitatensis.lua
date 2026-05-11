@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.CHAMBER_OF_ORACLES,
     battlefieldId    = xi.battlefield.id.LEGION_XI_COMITATENSIS,
     maxPlayers       = 6,
+    allowTrusts      = true,
     levelCap         = 60,
     timeLimit        = utils.minutes(30),
     index            = 1,

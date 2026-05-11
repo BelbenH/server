@@ -8,6 +8,7 @@ local content = BattlefieldQuest:new({
     battlefieldId    = xi.battlefield.id.WAKING_THE_BEAST_CLOISTER_OF_TIDES,
     canLoseExp       = false,
     maxPlayers       = 18,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 2,
     entryNpc         = 'WP_Entrance',

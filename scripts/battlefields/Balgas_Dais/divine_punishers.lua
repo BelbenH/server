@@ -11,6 +11,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BALGAS_DAIS,
     battlefieldId    = xi.battlefield.id.DIVINE_PUNISHERS,
     maxPlayers       = 6,
+    allowTrusts      = true,
     levelCap         = 60,
     timeLimit        = utils.minutes(30),
     index            = 2,

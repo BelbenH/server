@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.CHAMBER_OF_ORACLES,
     battlefieldId    = xi.battlefield.id.EYE_OF_THE_STORM,
     maxPlayers       = 6,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 6,
     entryNpc         = 'SC_Entrance',

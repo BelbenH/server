@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BALGAS_DAIS,
     battlefieldId    = xi.battlefield.id.ROYALE_RAMBLE,
     maxPlayers       = 6,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 16,
     entryNpc         = 'BC_Entrance',

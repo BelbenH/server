@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BALGAS_DAIS,
     battlefieldId    = xi.battlefield.id.RAPID_RAPTORS,
     maxPlayers       = 3,
+    allowTrusts      = true,
     levelCap         = 50,
     timeLimit        = utils.minutes(15),
     index            = 13,

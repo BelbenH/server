@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.GHELSBA_OUTPOST,
     battlefieldId    = xi.battlefield.id.WINGS_OF_FURY,
     maxPlayers       = 3,
+    allowTrusts      = true,
     levelCap         = 20,
     timeLimit        = utils.minutes(15),
     index            = 2,

@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.CHAMBER_OF_ORACLES,
     battlefieldId    = xi.battlefield.id.CACTUAR_SUAVE,
     maxPlayers       = 6,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 5,
     entryNpc         = 'SC_Entrance',

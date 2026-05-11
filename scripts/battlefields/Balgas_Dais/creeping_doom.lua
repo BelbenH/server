@@ -9,6 +9,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BALGAS_DAIS,
     battlefieldId    = xi.battlefield.id.CREEPING_DOOM,
     maxPlayers       = 3,
+    allowTrusts      = true,
     levelCap         = 30,
     timeLimit        = utils.minutes(15),
     index            = 8,

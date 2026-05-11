@@ -10,6 +10,7 @@ local content = Battlefield:new({
     zoneId           = xi.zone.BALGAS_DAIS,
     battlefieldId    = xi.battlefield.id.WILD_WILD_WHISKERS,
     maxPlayers       = 3,
+    allowTrusts      = true,
     levelCap         = 60,
     timeLimit        = utils.minutes(15),
     index            = 14,

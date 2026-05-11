@@ -8,6 +8,7 @@ local content = BattlefieldQuest:new({
     battlefieldId    = xi.battlefield.id.TRIAL_BY_WIND,
     canLoseExp       = false,
     maxPlayers       = 6,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 0,
     entryNpc         = 'WP_Entrance',

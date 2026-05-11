@@ -339,6 +339,7 @@ local content = BattlefieldQuest:new({
     battlefieldId    = xi.battlefield.id.WAKING_THE_BEAST_FULLMOON,
     canLoseExp       = false,
     maxPlayers       = 18,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 2,
     entryNpc         = 'MS_Entrance',
