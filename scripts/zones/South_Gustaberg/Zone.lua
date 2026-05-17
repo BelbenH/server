@@ -7,6 +7,9 @@ local zoneObject = {}
 zoneObject.onInitialize = function(zone)
     -- A Chocobo Riding Game finish line
     zone:registerCylindricalTriggerArea(1, 580.074, -307.355, 5)
+
+    -- XISP Battlegrounds
+    xi.battlegrounds.spawnNPC(zone, { x = 721.2, y = -1, z = -670.6, rotation = 154 })
 end
 
 zoneObject.onZoneIn = function(player, prevZone)
@@ -25,6 +28,10 @@ end
 
 zoneObject.afterZoneIn = function(player)
     xi.chocoboGame.handleMessage(player)
+end
+
+zoneObject.onGameHour = function(zone)
+    xi.battlegrounds.checkZone(zone)
 end
 
 zoneObject.onConquestUpdate = function(zone, updatetype, influence, owner, ranking, isConquestAlliance)

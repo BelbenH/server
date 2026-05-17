@@ -13871,7 +13871,31 @@ INSERT INTO `mob_groups` VALUES (204,3376,210,'[XISP]GreaterBirdAlpha',0,128,0,0
 INSERT INTO `mob_groups` VALUES (205,699,210,'[XISP]BeeAlpha',0,128,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (206,1865,210,'[XISP]CrawlerAlpha',0,128,0,0,0,0,NULL);
 INSERT INTO `mob_groups` VALUES (207,233,210,'[XISP]BatAlpha',0,128,0,0,0,0,NULL);
-INSERT INTO `mob_groups` VALUES (208,5032,210,'[XISP]MoltedUmbril',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (208,5032,210,'[XISP]LizardAlpha',0,128,0,0,0,0,NULL);
+
+-- Battleground Mobs
+-- Open World Battlefields (Tier 1)
+INSERT INTO `mob_groups` VALUES (2002,7071,210,'[XISP]sandoriaSoldier',0,128,0,0,0,1,NULL);
+INSERT INTO `mob_groups` VALUES (2003,7071,210,'[XISP]bastokSoldier',0,128,0,0,0,1,NULL);
+INSERT INTO `mob_groups` VALUES (2004,7071,210,'[XISP]windurstSoldier',0,128,0,0,0,1,NULL);
+INSERT INTO `mob_groups` VALUES (2005,4477,210,'[XISP]quadav',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (2006,3013,210,'[XISP]orc',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (2007,4459,210,'[XISP]yagudo',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (2008,5774,210,'[XISP]quadavNM',0,128,4003,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (2009,259,210,'[XISP]orcNM',0,128,4003,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (2010,3298,210,'[XISP]yagudoNM',0,128,4003,0,0,0,NULL);
+-- Open World Battlefields (Tier 2)
+INSERT INTO `mob_groups` VALUES (2012,7071,210,'[XISP]selbinaMilitia',0,128,0,0,0,1,NULL);
+INSERT INTO `mob_groups` VALUES (2013,7071,210,'[XISP]mhauraMilitia',0,128,0,0,0,1,NULL);
+INSERT INTO `mob_groups` VALUES (2014,1665,210,'[XISP]goblin',0,128,4002,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (2015,1746,210,'[XISP]goblinNM',0,128,4003,0,0,0,NULL);
+-- Open World Battlefields (Tier 3)
+INSERT INTO `mob_groups` VALUES (2016,7071,210,'[XISP]rabaoMilitia',0,128,0,0,0,1,NULL);
+INSERT INTO `mob_groups` VALUES (2017,7071,210,'[XISP]norgMilitia',0,128,0,0,0,1,NULL);
+INSERT INTO `mob_groups` VALUES (2018,182,210,'[XISP]antican',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (2019,2581,210,'[XISP]sahagin',0,128,0,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (2020,3194,210,'[XISP]anticanNM',0,128,4003,0,0,0,NULL);
+INSERT INTO `mob_groups` VALUES (2021,795,210,'[XISP]sahaginNM',0,128,4003,0,0,0,NULL);
 
 -- ------------------------------------------------------------
 -- Cloister_of_Tides (Zone 211)

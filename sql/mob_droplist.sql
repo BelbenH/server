@@ -28969,7 +28969,6 @@ INSERT INTO `mob_droplist` VALUES (3411,1,5,@VCOMMON,14577,250); -- Valhalla Bre
 
 ------------------------------
 -- START OF PHALANX SECTION --
---       ALPHA MOBS         --
 ------------------------------
 
 -- ALPHA RABBIT --
@@ -29092,6 +29091,39 @@ INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,843,@COMMON);        -- Giant B
 INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,4110,@RARE);      -- Light Cluster
 INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,2821,50);         -- Aptant of Haelen 5% (Uneffected by TH)
 
+-- Dynamic Dragons --
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,903,@ALWAYS);  -- Dragon Talon (Always, 100%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,867,@COMMON);  -- Handful Of Dragon Scales (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,1133,@RARE);   -- Vial Of Dragon Blood (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);   -- Dragon Heart (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);   -- Demon Earring (Rare, 5%)
+-- Elemental Ores (Group 1)
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1255,125); -- Fire Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1256,125); -- Ice Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1257,125); -- Wind Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1258,125); -- Earth Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1259,125); -- Lightning Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1260,125); -- Water Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1261,125); -- Light Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1262,125); -- Dark Ore
+-- Elemental Ores (Group 2)
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1255,125); -- Fire Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1256,125); -- Ice Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1257,125); -- Wind Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1258,125); -- Earth Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1259,125); -- Lightning Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1260,125); -- Water Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1261,125); -- Light Ore
+INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1262,125); -- Dark Ore
+
+-- Battleground NM
+INSERT INTO `mob_droplist` VALUES (4516,1,1,@RARE,3223,167); -- Tier 2 Augment
+INSERT INTO `mob_droplist` VALUES (4516,1,1,@RARE,3227,167); -- Tier 2 Augment
+INSERT INTO `mob_droplist` VALUES (4516,1,1,@RARE,3219,167); -- Tier 2 Augment
+INSERT INTO `mob_droplist` VALUES (4516,1,1,@RARE,3215,167); -- Tier 2 Augment
+INSERT INTO `mob_droplist` VALUES (4516,1,1,@RARE,3211,166); -- Tier 2 Augment
+INSERT INTO `mob_droplist` VALUES (4516,1,1,@RARE,3336,166); -- Tier 2 Augment
+
 -- ALPHA BEE --
 -- lvl 1-30
 INSERT INTO `mob_droplist` VALUES (4520,0,0,@ALWAYS,912,@VCOMMON);    -- Beehive Chip
@@ -29192,35 +29224,6 @@ INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of 
 INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,17867,@VRARE);    -- Cold Carrion Broth
 INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,4247,75);         -- Miratete's Memoirs (7.5%)
 INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,28587,30);        -- Artificer's Ring (3%)
-
------------------------
--- END OF ALPHA LIST --
------------------------
-
--- Dynamic Dragons --
-INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,903,@ALWAYS);  -- Dragon Talon (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,867,@COMMON);  -- Handful Of Dragon Scales (Common, 15%)
-INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,1133,@RARE);   -- Vial Of Dragon Blood (Rare, 5%)
-INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);   -- Dragon Heart (Rare, 5%)
-INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);   -- Demon Earring (Rare, 5%)
--- Elemental Ores (Group 1)
-INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1255,125); -- Fire Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1256,125); -- Ice Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1257,125); -- Wind Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1258,125); -- Earth Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1259,125); -- Lightning Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1260,125); -- Water Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1261,125); -- Light Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1262,125); -- Dark Ore
--- Elemental Ores (Group 2)
-INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1255,125); -- Fire Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1256,125); -- Ice Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1257,125); -- Wind Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1258,125); -- Earth Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1259,125); -- Lightning Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1260,125); -- Water Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1261,125); -- Light Ore
-INSERT INTO `mob_droplist` VALUES (4515,1,2,@VCOMMON,1262,125); -- Dark Ore
 
 /*!40000 ALTER TABLE `mob_droplist` ENABLE KEYS */;
 UNLOCK TABLES;

@@ -904,6 +904,7 @@ void CZoneEntities::SpawnNPCs(CCharEntity* PChar)
         const auto isInSpawnList   = itr != spawnList.end();
         const auto isInRange       = isWithinDistance(PChar->loc.p, PCurrentEntity->loc.p, ENTITY_RENDER_DISTANCE);
         const auto isVisibleStatus = PCurrentEntity->status == STATUS_TYPE::NORMAL || PCurrentEntity->status == STATUS_TYPE::UPDATE;
+        const auto alwaysRender    = static_cast<CNpcEntity*>(PCurrentEntity)->m_alwaysRender;
 
         const auto tryAddToSpawnList = [&]()
         {
@@ -923,7 +924,7 @@ void CZoneEntities::SpawnNPCs(CCharEntity* PChar)
             }
         };
 
-        if (isVisibleStatus && isInRange)
+        if (isVisibleStatus && (isInRange || alwaysRender))
         {
             tryAddToSpawnList();
         }

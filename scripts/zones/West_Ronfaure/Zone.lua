@@ -9,6 +9,9 @@ zoneObject.onInitialize = function(zone)
     zone:registerCylindricalTriggerArea(1, -135.60, 264.53, 8)
 
     xi.conquest.setRegionalConquestOverseers(zone:getRegionID())
+
+    -- XISP Battlegrounds
+    xi.battlegrounds.spawnNPC(zone, { x = -409.7, y = -46.7, z = 342.26, rotation = 66 })
 end
 
 zoneObject.onZoneIn = function(player, prevZone)
@@ -27,6 +30,10 @@ end
 
 zoneObject.afterZoneIn = function(player)
     xi.chocoboGame.handleMessage(player)
+end
+
+zoneObject.onGameHour = function(zone)
+    xi.battlegrounds.checkZone(zone)
 end
 
 zoneObject.onConquestUpdate = function(zone, updatetype, influence, owner, ranking, isConquestAlliance)

@@ -878,6 +878,7 @@ public:
     bool getUntargetable();
     void setIsAggroable(bool isAggroable);
     bool isAggroable();
+    void setAlwaysRender(bool alwaysRender); // XISP
 
     void setDelay(uint16 delay);
     void setDamage(uint16 damage);

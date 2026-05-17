@@ -46,7 +46,7 @@ custom/lua/test_npcs_in_gm_home.lua
 custom/sql/log_ips.sql
 
 # Update IP address for zones
-custom/sql/ip_update.sql
+# custom/sql/ip_update.sql
 
 # Era SQL Modules
 cop/sql/cop_level_restrictions.sql
