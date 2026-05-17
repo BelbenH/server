@@ -9,6 +9,9 @@ zoneObject.onInitialize = function(zone)
 
     xi.helm.initZone(zone, xi.helmType.HARVESTING)
     xi.voidwalker.zoneOnInit(zone)
+
+    -- XISP Battlegrounds
+    xi.battlegrounds.spawnNPC(zone, { x = -1.19, y = -13.2, z = 339.69, rotation = 154 })
 end
 
 zoneObject.onZoneIn = function(player, prevZone)
@@ -42,6 +45,10 @@ zoneObject.onConquestUpdate = function(zone, updatetype, influence, owner, ranki
 end
 
 zoneObject.onTriggerAreaEnter = function(player, triggerArea)
+end
+
+zoneObject.onGameHour = function(zone)
+    xi.battlegrounds.checkZone(zone)
 end
 
 zoneObject.onEventUpdate = function(player, csid, option, npc)

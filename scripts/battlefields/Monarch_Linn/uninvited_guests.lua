@@ -11,6 +11,7 @@ local content = BattlefieldQuest:new({
     zoneId           = xi.zone.MONARCH_LINN,
     battlefieldId    = xi.battlefield.id.UNINVITED_GUESTS,
     maxPlayers       = 18,
+    allowTrusts      = true,
     timeLimit        = utils.minutes(30),
     index            = 6,
     entryNpc         = 'SD_Entrance',

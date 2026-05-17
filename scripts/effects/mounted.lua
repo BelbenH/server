@@ -43,6 +43,10 @@ effectObject.onEffectGain = function(target, effect)
         xi.xispchocobo.despawnChocobo(target)
         target:changeMusic(4, 177) -- Special XISP mount music
     end
+
+    if target:getLocalVar('[XISP]inBattle') == 1 then
+        target:changeMusic(4, 247) -- Battleground music
+    end
     ---------------------------------------------------------
 end
 

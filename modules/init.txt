@@ -67,7 +67,12 @@ wotg/lua/weaponskills/katana.lua
 wotg/lua/weaponskills/marksmanship.lua
 wotg/lua/weaponskills/polearm.lua
 wotg/lua/weaponskills/scythe.lua
+wotg/lua/weaponskills/staff.lua
 wotg/lua/weaponskills/sword.lua
+
+rov/lua/tp_gain.lua
+rov/lua/npc_adjustments.lua
+rov/lua/magic_adjustments.lua
 
 # Phalanx Modules
 phalanx/sql/phalanx_mob_adjustments.sql
