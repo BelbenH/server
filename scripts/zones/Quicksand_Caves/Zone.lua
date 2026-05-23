@@ -58,9 +58,9 @@ local function getWeight(player)
     if race == xi.race.GALKA or player:hasKeyItem(xi.ki.LOADSTONE) then
         return 3
     elseif race == xi.race.TARU_M or race == xi.race.TARU_F then
-        return 1
+        return 3
     else
-        return 2
+        return 3
     end
 end
 

@@ -530,13 +530,16 @@ xi.battlegrounds.completeBattlefield = function(player)
 
     zone:setLocalVar('[XISP]battlefieldInProgress', 0)
 
-    for _, member in pairs(player:getParty()) do
-        npcUtil.giveReward(member, { exp = math.random(70, 75) * member:getMainLvl() })
-        member:changeMusic(0, 120)
-        member:changeMusic(1, 120)
-        member:changeMusic(2, zone:getSoloBattleMusic()) -- Normal Combat Music
+    for _, member in pairs(player:getPartyWithTrusts()) do
+        if not member:isTrust() then
+            npcUtil.giveReward(member, { exp = math.random(70, 75) * member:getMainLvl() })
+            member:changeMusic(0, 120)
+            member:changeMusic(1, 120)
+            member:changeMusic(2, zone:getSoloBattleMusic()) -- Normal Combat Music
 
-        member:setLocalVar('[XISP]inBattle', 0)
+            member:setLocalVar('[XISP]inBattle', 0)
+        end
+
         member:delStatusEffect(xi.effect.LEVEL_RESTRICTION)
     end
 

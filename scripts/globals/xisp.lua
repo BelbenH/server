@@ -1,6 +1,19 @@
 xi = xi or {}
 xi.xisp = xi.xisp or {}
 
+xi.xisp.getItemFromTrade = function(trade)
+    local item = nil
+
+    for slotID = 0, 7 do
+        if trade:getItem(slotID) then
+            item = trade:getItem(slotID)
+            break
+        end
+    end
+
+    return item
+end
+
 -- Augmenting an item
 xi.xisp.createExData = function(val)
     local exData = {}

@@ -154,7 +154,7 @@ dialogue4 =
         end,
     },
     {
-        'Minnes.',
+        'Minuets.',
         function(player)
             player:setCharVar('[XISP]bardSongs2', 3)
             player:printToPlayer('Okay. I\'ll sing ' .. songNames[player:getCharVar('[XISP]bardSongs1')] .. ' and ' .. songNames[player:getCharVar('[XISP]bardSongs2')] .. '.', xi.msg.channel.PARTY, table.name)

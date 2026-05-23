@@ -404,19 +404,26 @@ xi.xispal.checkCure = function(pal, party, job, lvl)
     local extraTime = 0
     local mp        = pal:getMP()
 
+    
+    
     for _, member in pairs(party) do
         if member:isAlive() and pal:checkDistance(member) <= 20 then
             local hasRegen = member:hasStatusEffect(xi.effect.REGEN)
             -- For each member, check if they need a cure
             for _, spell in pairs(spells) do
                 local spellObject = GetSpell(spell.spell)
-
+                
                 -- First check if we can cast this spell
                 if
-                    spell.lvl[job] and lvl >= spell.lvl[job] and
-                    spellObject and mp >= spellObject:getMPCost()
+                spell.lvl[job] and lvl >= spell.lvl[job] and
+                spellObject and mp >= spellObject:getMPCost()
                 then
                     local threshold = spell.threshold
+
+                    -- Don't cure bomb while there is no combat. Let regen do the work
+                    if not xi.xispal.getTarget(pal) then
+                        threshold = threshold * 3
+                    end
 
                     -- Ignore Cure I over lvl 30
                     if lvl > 30 and spell.spell == xi.magic.spell.CURE then
@@ -802,6 +809,11 @@ xi.xispal.checkSongs = function(pal, party, job, lvl, player)
     end
 
     local target = xi.xispal.getTarget(pal)
+
+    -- Only cast near player
+    if pal:checkDistance(player) > 9 then
+        return
+    end
 
     -- Combat
     if target then

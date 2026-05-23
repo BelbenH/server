@@ -36,7 +36,43 @@ local quest = Quest:new(xi.questLog.OTHER_AREAS, xi.quest.id.otherAreas.UNINVITE
 
 local rewards =
 {
-    { dropWeight = 100, rewardID = xi.item.MIRATETES_MEMOIRS },
+    { dropWeight = 509, rewardID =  4247 }, -- Miratete's Memoirs
+    { dropWeight = 35,  rewardID =  4550 }, -- Bream Risotto
+    { dropWeight = 30,  rewardID =  1132 }, -- Raxa
+    { dropWeight = 30,  rewardID =  5144 }, -- Crimson Jelly
+    { dropWeight = 30,  rewardID =  4279 }, -- Tavnazian Salad
+    { dropWeight = 29,  rewardID =   678 }, -- Aluminum Ore
+    { dropWeight = 29,  rewardID =  5142 }, -- Bison Steak
+    { dropWeight = 29,  rewardID =  4544 }, -- Mushroom Stew
+    { dropWeight = 27,  rewardID =  1766 }, -- Tiger Eye
+    { dropWeight = 24,  rewardID =  1841 }, -- Unicorn Horn
+    { dropWeight = 24,  rewardID =    61 }, -- Armoire
+    { dropWeight = 24,  rewardID =  1602 }, -- Mannequin Body
+    { dropWeight = 21,  rewardID =  4434 }, -- Mushroom Risotto
+    { dropWeight = 19,  rewardID =  1603 }, -- Mannequin Hands
+    { dropWeight = 18,  rewardID =  1770 }, -- Oversized Fang
+    { dropWeight = 18,  rewardID =  1771 }, -- Dragon Bone
+    { dropWeight = 16,  rewardID =   690 }, -- Elm Log
+    { dropWeight = 15,  rewardID =  1604 }, -- Mannequin Legs
+    { dropWeight = 11,  rewardID =  1605 }, -- Mannequin Feet
+    { dropWeight = 11,  rewardID =   646 }, -- Adaman Ore
+    { dropWeight = 11,  rewardID =   860 }, -- Behemoth Hide
+    { dropWeight = 10,  rewardID =  1765 }, -- Habu Skin
+    { dropWeight = 7,   rewardID =  1842 }, -- Cloud Evoker
+    { dropWeight = 7,   rewardID =  1601 }, -- Mannequin Head
+    { dropWeight = 6,   rewardID =   739 }, -- Orichalcum  Ore
+    { dropWeight = 4,   rewardID =  5158 }, -- Vermillion Jelly
+    { dropWeight = 4,   rewardID =  5185 }, -- Leremieu Salad
+    { dropWeight = 3,   rewardID =   908 }, -- Adamantoise Shell
+    { dropWeight = 3,   rewardID =  1312 }, -- Angel Skin
+    { dropWeight = 3,   rewardID =  4486 }, -- Dragon Heart
+    { dropWeight = 3,   rewardID =  5157 }, -- Marbled Steak
+    { dropWeight = 3,   rewardID =  4268 }, -- Sea Spray Risotto
+    { dropWeight = 3,   rewardID =  1313 }, -- Siren's Hair
+    { dropWeight = 3,   rewardID =  5264 }, -- Yellow Liquid
+    { dropWeight = 2,   rewardID =  4330 }, -- Witch Risotto
+    { dropWeight = 2,   rewardID = 14470 }, -- Assault Breastplate
+    { dropWeight = 2,   rewardID =  4344 }, -- Witch Stew
 }
 
 -----------------------------------

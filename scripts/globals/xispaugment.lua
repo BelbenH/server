@@ -158,13 +158,18 @@ dialogue4 =
 
 xi.augment.onAugmentTrade = function(player, npc, trade)
     local augmentItem = player:getCharVar('[XISP]storedAugment')
-    local item   = GetItemByID(trade:getItemId())
+    
+    if trade:getItemCount() > 1 then
+        return
+    end
+    
+    local item = trade:getItem()
 
-    if item == nil or trade:getItemCount() > 1 then
+    if item == nil then
         return
     end
 
-    local itemID = item:getID()
+    local itemID = trade:getItemId()
     local data  = 0
     local flag  = 0
     local tier  = 0
@@ -288,6 +293,8 @@ xi.augment.onAugmentTrigger = function(player, npc)
     end
 
     local item = player:getCharVar('[XISP]storedAugment')
+
+    print((GetItemByID(item):get()))
 
     if item ~= 0 then
         local itemName = GetItemByID(item):getName()

@@ -458,6 +458,11 @@ end
 
 xi.xispal.onMobDisengage = function(pal)
     pal:setLocalVar('[XISP]canRest', GetSystemTime() + 5)
+
+    if pal:getMainJob() == xi.job.BRD then
+        pal:setLocalVar('[XISP]spellRecast', GetSystemTime() + 5)
+    end
+    
     if pal:getPet() then
         pal:getPet():disengage()
     end

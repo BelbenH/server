@@ -7,7 +7,7 @@ xi.battlegrounds.lootTables =
     {
         AUGMENT =
         {
-            { CHANCE = 60, ITEMS = { xi.augment.augmentItems[1][1], xi.augment.augmentItems[1][2], xi.augment.augmentItems[1][3] }, }, -- Level 1 Enchantments
+            { CHANCE = 15, ITEMS = { xi.augment.augmentItems[1][1], xi.augment.augmentItems[1][2], xi.augment.augmentItems[1][3] }, }, -- Level 1 Enchantments
         },
         EQUIPMENT =
         {
