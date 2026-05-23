@@ -43,6 +43,7 @@ content.groups =
                 spireOfHollaID.mob.COGITATOR + 10,
             },
         },
+        superlinkGroup = 1,
         allDeath  = utils.bind(content.handleAllMonstersDefeated, content),
     },
 
@@ -67,6 +68,7 @@ content.groups =
                 spireOfHollaID.mob.COGITATOR + 13,
             },
         },
+        superlinkGroup = 1,
         spawned = false,
     },
 }

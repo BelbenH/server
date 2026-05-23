@@ -1121,6 +1121,7 @@ EventInfo* CLuaBaseEntity::ParseEvent(int32 EventID, sol::variadic_args va, Even
         eventToStart->textTable     = table.get_or<int16>("text_table", -1);
         eventToStart->interruptText = table.get_or<int16>("interrupt_text", 0);
         eventToStart->eventFlags    = table.get_or<uint32>("flags", 0);
+        eventToStart->canSkip       = table.get_or("canSkip", false);
 
         sol::object csOption = table["cs_option"];
         if (csOption.is<int32>())
@@ -3925,6 +3926,82 @@ void CLuaBaseEntity::setHomePoint()
 }
 
 /************************************************************************
+ *  Function: learnMazeVoucher(uint8)
+ *  Purpose : Marks a Moblin Maze Mongers voucher as learned, persists it,
+ *            and refreshes the client's voucher/rune list.
+ *  Example : player:learnMazeVoucher(xi.maze.voucher.SANITIZATION_TEAM_ALPHA)
+ ************************************************************************/
+
+void CLuaBaseEntity::learnMazeVoucher(uint8 voucherId)
+{
+    auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity);
+    if (!PChar)
+    {
+        ShowWarningFmt("CLuaBaseEntity::learnMazeVoucher called on non-PC entity ({}).", m_PBaseEntity->getName());
+        return;
+    }
+
+    PChar->maze().learnVoucher(voucherId);
+    charutils::SaveMazeUnlocks(PChar);
+}
+
+/************************************************************************
+ *  Function: hasMazeVoucher(uint8)
+ *  Purpose : Returns true if the player has learned the given voucher.
+ *  Example : player:hasMazeVoucher(xi.maze.voucher.SANITIZATION_TEAM_ALPHA)
+ ************************************************************************/
+
+auto CLuaBaseEntity::hasMazeVoucher(uint8 voucherId) -> bool
+{
+    auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity);
+    if (!PChar)
+    {
+        ShowWarningFmt("CLuaBaseEntity::hasMazeVoucher called on non-PC entity ({}).", m_PBaseEntity->getName());
+        return false;
+    }
+
+    return PChar->maze().hasVoucher(voucherId);
+}
+
+/************************************************************************
+ *  Function: learnMazeRune(uint8)
+ *  Purpose : Marks a Moblin Maze Mongers rune as learned, persists it,
+ *            and refreshes the client's voucher/rune list.
+ *  Example : player:learnMazeRune(xi.maze.rune.GUIDANCE_CONTRACT)
+ ************************************************************************/
+
+void CLuaBaseEntity::learnMazeRune(uint16 runeId)
+{
+    auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity);
+    if (!PChar)
+    {
+        ShowWarningFmt("CLuaBaseEntity::learnMazeRune called on non-PC entity ({}).", m_PBaseEntity->getName());
+        return;
+    }
+
+    PChar->maze().learnRune(runeId);
+    charutils::SaveMazeUnlocks(PChar);
+}
+
+/************************************************************************
+ *  Function: hasMazeRune(uint16)
+ *  Purpose : Returns true if the player has learned the given rune.
+ *  Example : player:hasMazeRune(xi.maze.rune.GUIDANCE_CONTRACT)
+ ************************************************************************/
+
+auto CLuaBaseEntity::hasMazeRune(uint16 runeId) -> bool
+{
+    auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity);
+    if (!PChar)
+    {
+        ShowWarningFmt("CLuaBaseEntity::hasMazeRune called on non-PC entity ({}).", m_PBaseEntity->getName());
+        return false;
+    }
+
+    return PChar->maze().hasRune(runeId);
+}
+
+/************************************************************************
  *  Function: resetPlayer()
  *  Purpose : Delete player's account session and send them to Lower Jeuno
  *  Example : player:resetPlayer()
@@ -5281,19 +5358,26 @@ bool CLuaBaseEntity::hasSlotEquipped(uint8 slot)
 
 int8 CLuaBaseEntity::getShieldSize()
 {
-    // TODO: Why is TYPE_PET being checked below, when we only act on TYPE_PC?
-    if (m_PBaseEntity->objtype != TYPE_PC && m_PBaseEntity->objtype != TYPE_PET)
+    int8 shieldSize = 0;
+
+    switch (m_PBaseEntity->objtype)
     {
-        ShowWarning("Entity is not a Player or Pet type (%s).", m_PBaseEntity->getName());
-        return 0;
+        case TYPE_PC:
+        {
+            return static_cast<CCharEntity*>(m_PBaseEntity)->getShieldSize();
+        }
+        case TYPE_TRUST:
+        {
+            return static_cast<CTrustEntity*>(m_PBaseEntity)->getShieldSize();
+        }
+        default:
+        {
+            ShowWarning("Entity is not a Player or Trust (%s).", m_PBaseEntity->getName());
+            shieldSize = 0;
+        }
     }
 
-    if (m_PBaseEntity->objtype == TYPE_PC)
-    {
-        return static_cast<CCharEntity*>(m_PBaseEntity)->getShieldSize();
-    }
-
-    return 0;
+    return shieldSize;
 }
 
 /************************************************************************
@@ -17043,6 +17127,147 @@ void CLuaBaseEntity::setMobLevel(uint8 level, sol::optional<bool> recover)
 }
 
 /************************************************************************
+ *  Function: getStatRank()
+ *  Purpose : Returns a Mob's rank value for a base stat
+ *  Example : local strRank = mob:getStatRank(xi.stat.STR)
+ *  Notes   : Primary stats (STR-CHR) use ranks A-G (1-7).
+ *            ATT/DEF/ACC use ranks A-E (1-5).
+ ************************************************************************/
+
+uint8 CLuaBaseEntity::getStatRank(uint8 statType)
+{
+    if (m_PBaseEntity->objtype != TYPE_MOB)
+    {
+        ShowWarning("getStatRank: invalid entity type (%s).", m_PBaseEntity->getName());
+        return 0;
+    }
+
+    auto* PMob = static_cast<CMobEntity*>(m_PBaseEntity);
+
+    switch (statType)
+    {
+        case 1:
+            return PMob->strRank; // STR
+        case 2:
+            return PMob->dexRank; // DEX
+        case 3:
+            return PMob->vitRank; // VIT
+        case 4:
+            return PMob->agiRank; // AGI
+        case 5:
+            return PMob->intRank; // INT
+        case 6:
+            return PMob->mndRank; // MND
+        case 7:
+            return PMob->chrRank; // CHR
+        case 8:
+            return PMob->attRank; // ATT
+        case 9:
+            return PMob->defRank; // DEF
+        case 10:
+            return PMob->accRank; // ACC
+        default:
+            ShowWarning("getStatRank: unsupported stat type (%d) for mob (%s).", statType, m_PBaseEntity->getName());
+            return 0;
+    }
+}
+
+/************************************************************************
+ *  Function: setStatRank()
+ *  Purpose : Updates a Mob's rank value for a base stat
+ *  Example : mob:setStatRank(xi.stat.STR, xi.rank.A)
+ *  Notes   : Must be called in onMobInitialize, before CalculateMobStats runs on spawn.
+ *            If you call this onMobSpawn or while the mob is alive the changes will take effect on the NEXT spawn.
+ *            Primary stats go to Rank G (7)
+ *            ATT/DEF/ACC only go to Rank E (5)
+ ************************************************************************/
+
+void CLuaBaseEntity::setStatRank(uint8 statType, uint8 rank)
+{
+    // Only allow stat ranks to be set on mobs for now
+    if (m_PBaseEntity->objtype != TYPE_MOB)
+    {
+        ShowWarning("setStatRank: invalid entity type (%s).", m_PBaseEntity->getName());
+        return;
+    }
+
+    // Only allow stat ranks to be changed while the mob is not actively spawned (dead or unspawned).
+    // CalculateMobStats runs on each Spawn(), so changes made while isDead() take effect on the next spawn.
+    auto* PMob = static_cast<CMobEntity*>(m_PBaseEntity);
+    if (!PMob->isDead())
+    {
+        ShowWarning("setStatRank: called on a live mob (id: %d, name: %s). Stat changes will take effect on the next spawn.", m_PBaseEntity->id, m_PBaseEntity->getName());
+    }
+
+    // Allow us to set ATT/DEF/ACC as well.
+    // Primary stats go to Rank G (7)
+    // ATT/DEF/ACC only go to Rank E (5)
+    uint8 maxRank = 0;
+
+    switch (statType)
+    {
+        case 1: // STR
+        case 2: // DEX
+        case 3: // VIT
+        case 4: // AGI
+        case 5: // INT
+        case 6: // MND
+        case 7: // CHR
+            maxRank = 7;
+            break;
+        case 8:  // ATT
+        case 9:  // DEF
+        case 10: // ACC
+            maxRank = 5;
+            break;
+        default:
+            ShowWarning(
+                "setStatRank: unsupported stat type (%d) for mob (%s).", statType, m_PBaseEntity->getName());
+            return;
+    }
+
+    if (rank == 0 || rank > maxRank)
+    {
+        ShowWarning("setStatRank: invalid rank (%d) for stat type (%d) on mob (%s). Valid range is 1-%d.", rank, statType, m_PBaseEntity->getName(), maxRank);
+        return;
+    }
+
+    switch (statType)
+    {
+        case 1:
+            PMob->strRank = rank; // STR
+            break;
+        case 2:
+            PMob->dexRank = rank; // DEX
+            break;
+        case 3:
+            PMob->vitRank = rank; // VIT
+            break;
+        case 4:
+            PMob->agiRank = rank; // AGI
+            break;
+        case 5:
+            PMob->intRank = rank; // INT
+            break;
+        case 6:
+            PMob->mndRank = rank; // MND
+            break;
+        case 7:
+            PMob->chrRank = rank; // CHR
+            break;
+        case 8:
+            PMob->attRank = rank; // ATT
+            break;
+        case 9:
+            PMob->defRank = rank; // DEF
+            break;
+        case 10:
+            PMob->accRank = rank; // ACC
+            break;
+    }
+}
+
+/************************************************************************
  *  Function: getEcosystem()
  *  Purpose : Returns integer value of system associated with an Entity
  *  Example : if pet:getEcosystem() ~= xi.ecosystem.ELEMENTAL then -- Not an elemental
@@ -17059,26 +17284,6 @@ uint8 CLuaBaseEntity::getEcosystem()
 
     auto* PBattle = static_cast<CBattleEntity*>(m_PBaseEntity);
     return static_cast<uint8>(PBattle->m_EcoSystem);
-}
-
-/************************************************************************
- *  Function: getSuperFamily()
- *  Purpose : Returns the integer value of the associated Mob SuperFamily
- *  Example : if mob:getSuperFamily() == 123 then
- *  Notes   : To Do: Enumerate Mob Families in global script
- ************************************************************************/
-
-uint16 CLuaBaseEntity::getSuperFamily()
-{
-    auto* entity = dynamic_cast<CMobEntity*>(m_PBaseEntity);
-
-    if (!entity)
-    {
-        ShowWarning("CLuaBaseEntity::getSuperFamily() -  m_pBaseEntity is not a Mob.");
-        return 0;
-    }
-
-    return entity->m_SuperFamily;
 }
 
 /************************************************************************
@@ -17099,6 +17304,26 @@ uint16 CLuaBaseEntity::getFamily()
     }
 
     return entity->m_Family;
+}
+
+/************************************************************************
+ *  Function: getSpecies()
+ *  Purpose : Returns the integer value of the associated Mob Species
+ *  Example : if mob:getSpecies() == 123 then
+ *  Notes   : To Do: Enumerate Mob Species in global script
+ ************************************************************************/
+
+uint16 CLuaBaseEntity::getSpecies()
+{
+    auto* entity = dynamic_cast<CMobEntity*>(m_PBaseEntity);
+
+    if (!entity)
+    {
+        ShowWarning("CLuaBaseEntity::getSpecies() -  m_pBaseEntity is not a Mob.");
+        return 0;
+    }
+
+    return entity->m_Species;
 }
 
 /************************************************************************
@@ -18596,17 +18821,17 @@ bool CLuaBaseEntity::hasTPMoves()
         return false;
     }
 
-    uint16 familyID = 0;
+    uint16 speciesID = 0;
 
     if (m_PBaseEntity->objtype & TYPE_PET)
     {
-        familyID = static_cast<CPetEntity*>(m_PBaseEntity)->m_Family;
+        speciesID = static_cast<CPetEntity*>(m_PBaseEntity)->m_Species;
     }
     else if (m_PBaseEntity->objtype & TYPE_MOB)
     {
-        familyID = static_cast<CMobEntity*>(m_PBaseEntity)->m_Family;
+        speciesID = static_cast<CMobEntity*>(m_PBaseEntity)->m_Species;
     }
-    const std::vector<uint16>& MobSkills = battleutils::GetMobSkillList(familyID);
+    const std::vector<uint16>& MobSkills = battleutils::GetMobSkillList(speciesID);
 
     return !MobSkills.empty();
 }
@@ -19827,6 +20052,10 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("setTeleportMenu", CLuaBaseEntity::setTeleportMenu);
     SOL_REGISTER("getTeleportMenu", CLuaBaseEntity::getTeleportMenu);
     SOL_REGISTER("setHomePoint", CLuaBaseEntity::setHomePoint);
+    SOL_REGISTER("learnMazeVoucher", CLuaBaseEntity::learnMazeVoucher);
+    SOL_REGISTER("hasMazeVoucher", CLuaBaseEntity::hasMazeVoucher);
+    SOL_REGISTER("learnMazeRune", CLuaBaseEntity::learnMazeRune);
+    SOL_REGISTER("hasMazeRune", CLuaBaseEntity::hasMazeRune);
     SOL_REGISTER("resetPlayer", CLuaBaseEntity::resetPlayer);
 
     SOL_REGISTER("gotoEntity", CLuaBaseEntity::gotoEntity);
@@ -20429,9 +20658,11 @@ void CLuaBaseEntity::Register()
 
     // Mob Entity-Specific
     SOL_REGISTER("setMobLevel", CLuaBaseEntity::setMobLevel);
+    SOL_REGISTER("getStatRank", CLuaBaseEntity::getStatRank);
+    SOL_REGISTER("setStatRank", CLuaBaseEntity::setStatRank);
     SOL_REGISTER("getEcosystem", CLuaBaseEntity::getEcosystem);
-    SOL_REGISTER("getSuperFamily", CLuaBaseEntity::getSuperFamily);
     SOL_REGISTER("getFamily", CLuaBaseEntity::getFamily);
+    SOL_REGISTER("getSpecies", CLuaBaseEntity::getSpecies);
     SOL_REGISTER("isMobType", CLuaBaseEntity::isMobType);
     SOL_REGISTER("isUndead", CLuaBaseEntity::isUndead);
     SOL_REGISTER("isNM", CLuaBaseEntity::isNM);

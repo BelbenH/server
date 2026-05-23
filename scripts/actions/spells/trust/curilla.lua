@@ -1,5 +1,5 @@
 -----------------------------------
--- Trust: Rainemard (902)
+-- Trust: Curilla (902)
 -- Replacement trust for Isolde (PLD XISP)
 -----------------------------------
 ---@type TSpellTrust

@@ -65,6 +65,7 @@ content.groups =
 
         },
 
+        superlinkGroup = 1,
         death = handleDeath,
     },
 
@@ -87,6 +88,7 @@ content.groups =
             },
         },
 
+        superlinkGroup = 1,
         spawned = false,
         death = handleDeath,
     },

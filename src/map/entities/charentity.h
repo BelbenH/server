@@ -1,4 +1,4 @@
-﻿/*
+/*
 ===========================================================================
 
   Copyright (c) 2010-2015 Darkstar Dev Teams
@@ -48,6 +48,7 @@
 
 #include "automatonentity.h"
 #include "battleentity.h"
+#include "maze.h"
 #include "packets/s2c/base.h"
 #include "petentity.h"
 
@@ -624,6 +625,8 @@ public:
 
     auto gmCallContainer() -> GMCallContainer&;
 
+    auto maze() -> maze_t&;
+
     CharHistory_t m_charHistory{};
 
     int8  getShieldSize();
@@ -746,7 +749,8 @@ public:
 
     void clearCharVarsWithPrefix(const std::string& prefix);
 
-    bool m_Locked{}; // Is the player locked in a cutscene
+    bool m_Locked{};         // Is the player locked in a cutscene
+    bool m_zoneInCutscene{}; // Is the player currently in a zone-in cutscene
 
     // Starts a synth with skillType X
     bool startSynth(SKILLTYPE synthSkill);
@@ -761,6 +765,8 @@ protected:
 private:
     CCraftState                               craftState_{};
     std::vector<std::unique_ptr<Transaction>> transactions_;
+
+    maze_t maze_{};
 
     std::array<CItem*, EquipSlotCount> equipped_{};
 
