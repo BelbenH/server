@@ -15,10 +15,10 @@ entity.onMobInitialize = function(mob)
     mob:addImmunity(xi.immunity.SILENCE)
     mob:addImmunity(xi.immunity.PARALYZE)
     mob:setMobMod(xi.mobMod.ADD_EFFECT, 1)
-    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 150)
 end
 
 entity.onMobSpawn = function(mob)
+    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 60)
     mob:setMod(xi.mod.DOUBLE_ATTACK, 20)
     mob:setMobMod(xi.mobMod.MAGIC_COOL, 25)
 end

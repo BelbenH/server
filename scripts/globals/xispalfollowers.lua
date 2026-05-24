@@ -136,7 +136,7 @@ xi.xispal.spawnSquire = function(player, zone)
             local zone = player:getZone()
 
             -- Update appearance for players so they're not naked
-            player:timer(2000, function(playerArg)
+            player:timer(3000, function(playerArg)
                 pal:setStatus(xi.status.NORMAL)
                 pal:hideName(false)
 

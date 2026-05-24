@@ -29226,6 +29226,29 @@ INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,17867,@VRARE);    -- Cold Ca
 INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,4247,75);         -- Miratete's Memoirs (7.5%)
 INSERT INTO `mob_droplist` VALUES (4531,0,0,@ALWAYS,28587,30);        -- Artificer's Ring (3%)
 
+-- ALPHA SKELETON (BEACH PIRATES!) --
+-- lvl 1-30
+INSERT INTO `mob_droplist` VALUES (4532,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
+INSERT INTO `mob_droplist` VALUES (4532,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
+INSERT INTO `mob_droplist` VALUES (4532,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
+INSERT INTO `mob_droplist` VALUES (4532,0,0,@ALWAYS,17867,@VRARE);    -- Cold Carrion Broth
+INSERT INTO `mob_droplist` VALUES (4532,0,0,@ALWAYS,4247,25);         -- Miratete's Memoirs (2.5%)
+INSERT INTO `mob_droplist` VALUES (4532,0,0,@ALWAYS,28587,10);        -- Artificer's Ring (1%)
+-- lvl 30-60
+INSERT INTO `mob_droplist` VALUES (4533,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
+INSERT INTO `mob_droplist` VALUES (4533,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
+INSERT INTO `mob_droplist` VALUES (4533,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
+INSERT INTO `mob_droplist` VALUES (4533,0,0,@ALWAYS,17867,@VRARE);    -- Cold Carrion Broth
+INSERT INTO `mob_droplist` VALUES (4533,0,0,@ALWAYS,4247,50);         -- Miratete's Memoirs (5%)
+INSERT INTO `mob_droplist` VALUES (4533,0,0,@ALWAYS,28587,20);        -- Artificer's Ring (2%)
+-- lvl 60-75+
+INSERT INTO `mob_droplist` VALUES (4534,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
+INSERT INTO `mob_droplist` VALUES (4534,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
+INSERT INTO `mob_droplist` VALUES (4534,0,0,@ALWAYS,3935,@ALWAYS);    -- Jar of Umbril Ooze
+INSERT INTO `mob_droplist` VALUES (4534,0,0,@ALWAYS,17867,@VRARE);    -- Cold Carrion Broth
+INSERT INTO `mob_droplist` VALUES (4534,0,0,@ALWAYS,4247,75);         -- Miratete's Memoirs (7.5%)
+INSERT INTO `mob_droplist` VALUES (4534,0,0,@ALWAYS,28587,30);        -- Artificer's Ring (3%)
+
 /*!40000 ALTER TABLE `mob_droplist` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

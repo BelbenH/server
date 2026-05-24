@@ -7,7 +7,7 @@ local tierThree = 60
 
 local familyData =
 {
-    [xi.mobSuperFamily.RABBIT] =
+    [xi.mobFamily.RABBIT] =
     {
         spellList = 0,
         skillListID = 404,
@@ -18,7 +18,7 @@ local familyData =
         [tierThree] = { dropList = 4502, groupID = 200, look = 1937, exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.EVA] = 25, }, },
     },
 
-    [xi.mobSuperFamily.MANDRAGORA] =
+    [xi.mobFamily.MANDRAGORA] =
     {
         spellList = 0,
         skillListID = 496,
@@ -29,7 +29,7 @@ local familyData =
         [tierThree] = { dropList = 4505, groupID = 201, look = '0x00008E0B00000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.REGEN] = 10, [xi.mod.REGAIN] = 200, }, },
     },
 
-    [xi.mobSuperFamily.CRAB] =
+    [xi.mobFamily.CRAB] =
     {
         spellList = 0,
         skillListID = 75,
@@ -40,7 +40,7 @@ local familyData =
         [tierThree] = { dropList = 4508, groupID = 202, look = '0x0000660100000000000000000000000000000000',  exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.DEF] = 150, [xi.mod.MDEF] = -5,  }, },
     },
 
-    [xi.mobSuperFamily.SCORPION] =
+    [xi.mobFamily.SCORPION] =
     {
         spellList = 0,
         skillListID = 217,
@@ -51,7 +51,7 @@ local familyData =
         [tierThree] = { dropList = 4511, groupID = 203, look = 2107, exp = 2100, gil = 3000, mobMods = {  }, mods = { [xi.mod.ATTP] = 30, }, },
     },
 
-    [xi.mobSuperFamily.GREATER_BIRD] =
+    [xi.mobFamily.ROC_GREATER_BIRD] =
     {
         spellList = 0,
         skillListID = 125,
@@ -62,7 +62,7 @@ local familyData =
         [tierThree] = { dropList = 4514, groupID = 204, look = 338, exp = 1500, gil = 3000, mobMods = { [xi.mobMod.EXP_BONUS] = 650, [xi.mobMod.GIL_MIN] = 2500, [xi.mobMod.GIL_MAX] = 5000, }, mods = { [xi.mod.EVA] = 100, [xi.mod.DOUBLE_ATTACK] = 25, }, },
     },
     
-    [xi.mobSuperFamily.BEE] =
+    [xi.mobFamily.BEE] =
     {
         spellList = 0,
         skillListID = 814,
@@ -73,7 +73,7 @@ local familyData =
         [tierThree] = { dropList = 4522, groupID = 205, look = '0x0000C40900000000000000000000000000000000',  exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.ACC] = 25, [xi.mod.ATTP] = 25, }, },
     },
 
-    [xi.mobSuperFamily.CRAWLER] =
+    [xi.mobFamily.CRAWLER] =
     {
         spellList = 0,
         skillListID = 79,
@@ -84,7 +84,7 @@ local familyData =
         [tierThree] = { dropList = 4525, groupID = 206, look = 1809, exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.DEF] = 75, [xi.mod.REGEN] = 10, }, },
     },
 
-    [xi.mobSuperFamily.BAT] =
+    [xi.mobFamily.BAT] =
     {
         spellList = 0,
         skillListID = 46,
@@ -95,7 +95,7 @@ local familyData =
         [tierThree] = { dropList = 4528, groupID = 207, look = '0x0000010100000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.EVA] = 25, [xi.mod.ACC] = 25, }, },
     },
 
-    [xi.mobSuperFamily.LIZARD] =
+    [xi.mobFamily.LIZARD] =
     {
         spellList = 28,
         skillListID = 442,
@@ -104,6 +104,17 @@ local familyData =
         [tierOne]   = { dropList = 4529, groupID = 208, look = '0x0000050A00000000000000000000000000000000', exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ATT] = 10, [xi.mod.ACC] = 10, }, },
         [tierTwo]   = { dropList = 4530, groupID = 208, look = '0x0000050A00000000000000000000000000000000', exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.ATT] = 15, [xi.mod.ACC] = 15, }, },
         [tierThree] = { dropList = 4531, groupID = 208, look = '0x0000050A00000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.ATT] = 25, [xi.mod.ACC] = 25, }, },
+    },
+
+    [xi.mobFamily.SKELETON] =
+    {
+        spellList = 0,
+        skillListID = 227,
+        bonusSpawnChance = 0,
+        name    = { 'Deadeye Dregg', 'Saltscar Sam', 'Beonshard Bart', 'Redwake Rourke', 'Rottenhook Ray', 'Blackwake Bill', 'Barnacle Ben', 'Ironteeth Ike', 'Krakenhook Kai', 'Vilefin Voss', 'Hollowmast Hagan', },
+        [tierOne]   = { dropList = 4532, groupID = 209, look = '0x0000050A00000000000000000000000000000000', exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ATT] = 10, [xi.mod.ACC] = 10, }, },
+        [tierTwo]   = { dropList = 4533, groupID = 209, look = '0x0000050A00000000000000000000000000000000', exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.ATT] = 15, [xi.mod.ACC] = 15, }, },
+        [tierThree] = { dropList = 4534, groupID = 209, look = '0x0000050A00000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.ATT] = 25, [xi.mod.ACC] = 25, }, },
     },
 }
 
@@ -131,10 +142,10 @@ xi.alphamob.spawnAlpha = function(mob, player, optParams)
     end
 
     -- Evaluate chance based on mob family's bonus chances
-    local alphaData = familyData[mob:getSuperFamily()]
+    local alphaData = familyData[mob:getFamily()]
 
     if not alphaData then
-        print('DEBUG: No alpha data for mob super family ID ' .. mob:getSuperFamily())
+        print('DEBUG: No alpha data for mob super family ID ' .. mob:getFamily())
         return
     end
 

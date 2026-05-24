@@ -371,7 +371,9 @@ xi.xispal.onKnightSpawn = function(pal, player, table)
     if job == xi.job.THF then
         if lvl >= 45 then
             THPower = 2
+            attp = -50
         else
+            attp = -25
             THPower = 1
         end
 

@@ -18,7 +18,7 @@ entity.onMobInitialize = function(mob)
 end
 
 entity.onMobSpawn = function(mob)
-    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 150)
+    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 60)
     mob:setMod(xi.mod.DOUBLE_ATTACK, 20)
     mob:setMobMod(xi.mobMod.MAGIC_COOL, 25)
 end

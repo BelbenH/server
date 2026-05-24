@@ -446,6 +446,10 @@ xi.xispal.checkCure = function(pal, party, job, lvl)
                     if hasRegen then
                         threshold = threshold * 1.5
                     end
+                    
+                    if lvl <= 21 then
+                        threshold = threshold - (threshold * 0.3)
+                    end
 
                     -- Prioritize less if they're resting
                     if member:getLocalVar('[XISP]isResting') == 1 then

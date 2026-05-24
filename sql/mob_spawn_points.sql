@@ -1175,9 +1175,9 @@ INSERT INTO `mob_spawn_points` VALUES (16798095,0,'Camahueto','Camahueto',53,0,0
 -- ------------------------------------------------------------
 
 -- Flames of the Dead
-INSERT INTO `mob_spawn_points` VALUES (16801793,0,'Snoll_Tzar','Snoll Tzar',1,65,66,-460.000,0.402,902.000,64);
-INSERT INTO `mob_spawn_points` VALUES (16801794,0,'Snoll_Tzar','Snoll Tzar',1,65,66,-220.168,0.397,501.688,64);
-INSERT INTO `mob_spawn_points` VALUES (16801795,0,'Snoll_Tzar','Snoll Tzar',1,65,66,-621.041,0.414,221.900,64);
+INSERT INTO `mob_spawn_points` VALUES (16801793,0,'Snoll_Tzar','Snoll Tzar',1,58,60,-460.000,0.402,902.000,64);
+INSERT INTO `mob_spawn_points` VALUES (16801794,0,'Snoll_Tzar','Snoll Tzar',1,58,60,-220.168,0.397,501.688,64);
+INSERT INTO `mob_spawn_points` VALUES (16801795,0,'Snoll_Tzar','Snoll Tzar',1,58,60,-621.041,0.414,221.900,64);
 
 -- Follow the White Rabbit
 INSERT INTO `mob_spawn_points` VALUES (16801796,0,'Bearclaw_Rabbit','Bearclaw Rabbit',2,75,75,-460,-0.097,902,64);

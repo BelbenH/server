@@ -83,6 +83,7 @@ local startQuest = function(player)
     quest:setVar(player, var.PROGRESS, phase.GO_TO_MONARCH_LINN)
     player:setCharVar(var.DEFEAT_MESSAGE, 0)
     player:setCharVar(var.QUEST_REWARD, 0)
+    player:delQuest(xi.mission.log_id.COP, xi.mission.id.cop.THE_SAVAGE)
     quest:begin(player)
 end
 
