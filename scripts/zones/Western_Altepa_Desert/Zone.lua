@@ -12,6 +12,13 @@ zoneObject.onInitialize = function(zone)
 
     local pos = { x = -240, y = 0, z = -650 }
     xi.customspawn.spawnQM(zone, pos, zones[xi.zone.WESTERN_ALTEPA_DESERT].mob.KING_VINEGARROON)
+    -- loop through Altepa Gate, Ruby/Topaz/Emerald/Sapphire pillar/column, set them all always relevant
+    for i = 0, 8, 1 do
+        local npc = GetNPCByID(ID.npc.ALTEPA_GATE + i)
+        if npc then
+            npc:setNpcAlwaysRelevant(true)
+        end
+    end
 end
 
 zoneObject.onGameDay = function()

@@ -33,7 +33,7 @@ xi.shop.general = function(player, stock, log)
     player:createShop(#stock, log)
 
     for _, stockItem in ipairs(stock) do
-        player:addShopItem(stockItem[1], math.floor(stockItem[2] * priceMultiplier))
+        player:addShopItem(stockItem[1], math.floor(stockItem[2] * priceMultiplier), stockItem[3])
     end
 
     player:sendMenu(xi.menuType.SHOP)

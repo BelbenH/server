@@ -1036,33 +1036,33 @@ INSERT INTO `mob_skills` VALUES (1002,708,'summonshadows',0,0.0,10.0,3000,0,1,0,
 -- INSERT INTO `mob_skills` VALUES (1005,749,'#749',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (1006,707,'omega_javelin',0,0.0,15.0,4000,1000,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (1007,708,'zeid_summon_shadows',0,0.0,10.0,3000,0,1,0,0,0,0,0,0); -- No name in log
-INSERT INTO `mob_skills` VALUES (1008,33,'mighty_strikes',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);   -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1009,34,'hundred_fists',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);    -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1010,35,'benediction',1,0.0,7.0,2000,0,1,2,0,0,0,0,0);      -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1011,36,'manafont',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);         -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1012,37,'chainspell',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);       -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1013,38,'perfect_dodge',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);    -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1014,18,'invincible',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);       -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1015,19,'blood_weapon',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);     -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1016,39,'familiar',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);         -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1017,83,'call_beast',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);       -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1018,40,'soul_voice',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);       -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1019,186,'eagle_eye_shot',0,0.0,25.0,2000,0,4,2,0,0,0,0,0); -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1020,96,'meikyo_shisui',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);    -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1021,93,'mijin_gakure',1,0.0,20.0,2000,0,4,2,0,0,0,0,0);    -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1022,94,'call_wyvern',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);      -- Humanoid Animation (XISP)
-INSERT INTO `mob_skills` VALUES (1023,95,'astral_flow_pet',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);  -- Humanoid Animation (XISP)
+INSERT INTO `mob_skills` VALUES (1008,709,'mighty_strikes',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1009,710,'hundred_fists',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1010,711,'benediction',1,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1011,712,'manafont',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1012,713,'chainspell',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1013,714,'perfect_dodge',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1014,715,'invincible',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1015,716,'blood_weapon',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1016,717,'familiar',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1017,718,'call_beast',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1018,719,'soul_voice',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1019,720,'eagle_eye_shot_maat',0,0.0,25.0,2000,0,4,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1020,721,'meikyo_shisui',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1021,722,'mijin_gakure',1,0.0,20.0,2000,0,4,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1022,723,'call_wyvern',0,0.0,7.0,2000,0,1,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1023,438,'astral_flow_pet',0,0.0,7.0,2000,0,1,2,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1024,725,'warp_out',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1025,726,'warp_in',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1026,727,'arbor_storm',1,0.0,10.0,2000,1500,4,0,0,2,0,0,0); -- TODO: Capture Animation (TP move itself is finished)
--- INSERT INTO `mob_skills` VALUES (1027,728,'combo',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
-INSERT INTO `mob_skills` VALUES (1028,729,'tackle',0,0.0,7.0,2000,0,4,0,0,0,0,0,0);
--- INSERT INTO `mob_skills` VALUES (1029,730,'one-ilm_punch',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
--- INSERT INTO `mob_skills` VALUES (1030,731,'backhand_blow',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
--- INSERT INTO `mob_skills` VALUES (1031,732,'spinning_attack',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
--- INSERT INTO `mob_skills` VALUES (1032,733,'howling_fist',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
-INSERT INTO `mob_skills` VALUES (1033,734,'dragon_kick',0,0.0,10.0,2000,0,4,0,0,0,0,0,0);
-INSERT INTO `mob_skills` VALUES (1034,735,'asuran_fists',0,0.0,7.0,2000,0,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1027,728,'combo',0,0.0,7.0,1916,0,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1028,729,'tackle',0,0.0,7.0,1833,0,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1029,730,'one-ilm_punch',0,0.0,7.0,2000,0,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1030,731,'backhand_blow',0,0.0,7.0,1333,0,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1031,732,'spinning_attack',0,0.0,7.0,1833,0,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1032,733,'howling_fist',0,0.0,7.0,1833,0,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1033,734,'dragon_kick',0,0.0,10.0,2166,0,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1034,735,'asuran_fists',0,0.0,7.0,2833,0,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (1035,736,'heavy_strike_ulli',0,0.0,7.0,2000,1500,4,0,0,1,0,0,0); -- Ullikummi knockback heavy strike
 INSERT INTO `mob_skills` VALUES (1036,737,'maats_bash',0,0.0,7.0,2000,0,4,4,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1037,781,'fireball_1',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
@@ -3513,7 +3513,7 @@ INSERT INTO `mob_skills` VALUES (3473,2494,'stellar_burst',0,0.0,7.0,2000,1500,4
 -- INSERT INTO `mob_skills` VALUES (3482,3226,'bolster',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (3483,189,'scissor_guard',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (3484,3228,'hemorrhaze',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
-INSERT INTO `mob_skills` VALUES (3485,3229,'regulator',0,0.0,7.0,2000,0,4,4,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (3485,439,'regulator',0,0.0,7.0,2000,0,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (3486,260,'tongue_lash',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (3487,2477,'sidewinder',0,0.0,16.0,2000,1500,4,0,0,0,5,1,6); -- Semih Lafihna
 INSERT INTO `mob_skills` VALUES (3488,2476,'arching_arrow',0,0.0,16.0,2000,1500,4,0,0,0,11,0,0);

@@ -50,6 +50,7 @@ constexpr std::uint16_t WeatherCycle = 2160;
 #include "map/navmesh/navmesh_builder.h"
 #include "map_engine.h"
 #include "monstrosity.h"
+#include "nominate_manager.h"
 #include "party.h"
 #include "recast_container.h"
 #include "spawn_handler.h"
@@ -88,6 +89,7 @@ CZone::CZone(Scheduler& scheduler, MapConfig config, ZONEID ZoneID, REGION_TYPE 
     m_zoneEntities       = new CZoneEntities(scheduler_, config_, this);
     m_CampaignHandler    = new CCampaignHandler(this);
     m_spawnHandler       = std::make_unique<SpawnHandler>(this);
+    nominateManager_     = std::make_unique<NominateManager>(*this);
 
     // settings should load first
     LoadZoneSettings();
@@ -185,6 +187,11 @@ auto CZone::GetWeatherChangeTime() const -> uint32
 auto CZone::spawnHandler() const -> SpawnHandler*
 {
     return m_spawnHandler.get();
+}
+
+auto CZone::nominateManager() const -> NominateManager*
+{
+    return nominateManager_.get();
 }
 
 const std::string& CZone::getName()
@@ -653,6 +660,7 @@ void CZone::updateCharLevelRestriction(CCharEntity* PChar)
         PChar->StatusEffectContainer->DelStatusEffectsByFlag(EFFECTFLAG_ROLL, EffectNotice::Silent);
         PChar->StatusEffectContainer->DelStatusEffectsByFlag(EFFECTFLAG_SYNTH_SUPPORT, EffectNotice::Silent);
         PChar->StatusEffectContainer->DelStatusEffectsByFlag(EFFECTFLAG_BLOODPACT, EffectNotice::Silent);
+        PChar->StatusEffectContainer->DelStatusEffectSilent(EFFECT_RERAISE);
         PChar->StatusEffectContainer->AddStatusEffect(new CStatusEffect(EFFECT_LEVEL_RESTRICTION, EFFECT_LEVEL_RESTRICTION, m_levelRestriction, 0s, 0s));
     }
 }

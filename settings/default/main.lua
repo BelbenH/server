@@ -25,6 +25,7 @@ xi.settings.main =
     RESTRICT_CONTENT = 0,
 
     -- Enable Expansion (1 = Enabled, 0 = Disabled)
+    ENABLE_ROTZ      = 1,
     ENABLE_COP       = 1,
     ENABLE_TOAU      = 1,
     ENABLE_WOTG      = 1,
@@ -169,6 +170,8 @@ xi.settings.main =
     ENABLE_TRUST_CASTING           = 1,
     ENABLE_TRUST_QUESTS            = 1,
     ENABLE_TRUST_CUSTOM_ENGAGEMENT = 0,
+
+    ENABLE_LIMITED_TIME_TRUST = 0, -- 0 = disabled, 1 = Cornelia, 2 = Matsui-P, will get automatically added to players trust list if the player has a trust permit KI.
 
     ENABLE_TRUST_ALTER_EGO_EXTRAVAGANZA          = 0, -- 0 = disabled, 1 = summer/ny, 2 = spring/autumn, 3 = both
     ENABLE_TRUST_ALTER_EGO_EXTRAVAGANZA_ANNOUNCE = 0, -- 0 = disabled, 1 = add announcement to player login

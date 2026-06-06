@@ -1,5 +1,7 @@
 -----------------------------------
+-- Area: Northern San d'Oria
 --  NPC: Linkshell Concierge
+-- !pos 76.260 0.000 9.700 231
 -----------------------------------
 ---@type TNpcEntity
 local entity = {}

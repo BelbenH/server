@@ -1,5 +1,7 @@
 -----------------------------------
+-- Area: Windurst Walls
 --  NPC: Linkshell Concierge
+-- !pos -220.550 0.530 -136.810 239
 -----------------------------------
 ---@type TNpcEntity
 local entity = {}

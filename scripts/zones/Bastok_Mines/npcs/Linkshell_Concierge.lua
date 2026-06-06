@@ -1,5 +1,7 @@
 -----------------------------------
+-- Area: Bastok Mines
 --  NPC: Linkshell Concierge
+-- !pos 115.880 1.000 -90.280 234
 -----------------------------------
 ---@type TNpcEntity
 local entity = {}
