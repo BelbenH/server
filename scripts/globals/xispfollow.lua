@@ -32,13 +32,13 @@ xi.xispfollow.follow = function(entity, player)
     end
 
     -- Match leader's speed
-    entity:setBaseSpeed(player:getSpeed())
+    entity:setBaseSpeed(player:getBaseSpeed() + 40)
 
     -- Teleport to player if far away
     if entity:checkDistance(player) > 40 then
         entity:setPos(posX, lPos.y, posZ)
         entity:setLocalVar('isMoving', 1)
-        entity:pathTo(posX, lPos.y, posZ)
+        entity:pathTo(posX, lPos.y, posZ, bit.bor(xi.pathflag.RUN, xi.pathflag.SCRIPT))
         return
     end
 
@@ -50,7 +50,7 @@ xi.xispfollow.follow = function(entity, player)
             return
         end
 
-        entity:pathTo(posX, lPos.y, posZ)
+        entity:pathTo(posX, lPos.y, posZ, bit.bor(xi.pathflag.RUN, xi.pathflag.SCRIPT))
     else
         entity:setLocalVar('isMoving', 0)
         entity:pathTo(pos.x, pos.y, pos.z)
@@ -86,11 +86,11 @@ xi.xispfollow.keepDistance = function(pal, target, distance)
     local maxDistance  = 20
 
     if pal:getMainJob() == xi.job.BRD then
-        maxDistance = 5
+        maxDistance = 8
     end
 
     if
-        (currDistance < distance or currDistance > 20) and
+        (currDistance < distance or currDistance > maxDistance) and
         pal:checkDistance(master) < 20 and -- Don't move too far from master
         pal:getLocalVar('[XISP]isResting') == 0 and
         pal:getLocalVar('movementCooldown') < GetSystemTime()

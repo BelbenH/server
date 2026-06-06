@@ -16,7 +16,7 @@ entity.onMobInitialize = function(mob)
     mob:addImmunity(xi.immunity.LIGHT_SLEEP)
     mob:addImmunity(xi.immunity.TERROR)
     mob:addImmunity(xi.immunity.PLAGUE)
-    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 150)
+    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 75)
 end
 
 entity.onMobSpawn = function(mob)
@@ -38,10 +38,10 @@ entity.onMobFight = function(mob, target)
         mob:getMod(xi.mod.UDMGPHYS) == 0 and
         killable == 0
     then
-        mob:setMod(xi.mod.UDMGPHYS, -10000)
-        mob:setMod(xi.mod.UDMGRANGE, -10000)
-        mob:setMod(xi.mod.UDMGMAGIC, -10000)
-        mob:setMod(xi.mod.UDMGBREATH, -10000)
+        mob:setMod(xi.mod.UDMGPHYS, -9800)
+        mob:setMod(xi.mod.UDMGRANGE, -9800)
+        mob:setMod(xi.mod.UDMGMAGIC, -9800)
+        mob:setMod(xi.mod.UDMGBREATH, -9800)
     end
 
     mob:setMod(xi.mod.ATT, mob:getLocalVar('defaultAttack') + power)

@@ -25,7 +25,7 @@ entity.onMobInitialize = function(mob)
     mob:addImmunity(xi.immunity.DARK_SLEEP)
     mob:addImmunity(xi.immunity.PETRIFY)
 
-    mob:setMod(xi.mod.DOUBLE_ATTACK, 50)
+    mob:setMod(xi.mod.DOUBLE_ATTACK, 25)
     mob:setMobMod(xi.mobMod.ADD_EFFECT, 1)
 end
 
@@ -36,7 +36,7 @@ entity.onAdditionalEffect = function(mob, target, damage)
         chance         = 100,
         attackType     = xi.attackType.MAGICAL,
         magicalElement = xi.element.WIND,
-        basePower      = math.floor(damage / 2),
+        basePower      = math.floor(damage / 4),
         actorStat      = xi.mod.INT,
     }
 

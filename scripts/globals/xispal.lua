@@ -217,6 +217,9 @@ xi.xispal.rest = function(pal, player)
     end
 
     if not pal:hasStatusEffect(xi.effect.HEALING) then
+        if pal:getMPP() < 15 then
+            pal:setLocalVar('restTime', GetSystemTime() + 20)
+        end
         pal:addStatusEffect(xi.effect.HEALING, { origin = pal, tick = 10, icon = 0 })
     end
 end

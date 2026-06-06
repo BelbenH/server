@@ -90,16 +90,18 @@ xi.dragon.spawnDragon = function(zone, index)
         releaseIdOnDisappear  = true,
         dropId                = 4515,
 
+        minLevel              = 73,
+        maxLevel              = 75,
+
         onMobSpawn = function(mob)
             zone:setLocalVar('[XISP]dragonSpawned', 1) -- Used for Dragon watchers
             mob:setLocalVar('[XISP]isDragon', 1)
             print("PHALANX DEBUG: Spawning dragon in zone: " .. zone:getName())
             mob:setMobMod(xi.mobMod.SKILL_LIST, info.skillID)
             mob:setMobMod(xi.mobMod.NO_MOVE, 0)
-            mob:setMobMod(xi.mobMod.WEAPON_BONUS, 25)
+            -- mob:setMobMod(xi.mobMod.WEAPON_BONUS, 100)
             mob:setMobMod(xi.mobMod.GIL_MIN, 10000)
             mob:setMobMod(xi.mobMod.GIL_MAX, 20000)
-            mob:addMod(xi.mod.ATT, 150)
         end,
 
         onMobRoam = function(mob)

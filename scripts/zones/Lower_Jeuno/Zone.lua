@@ -3,7 +3,6 @@
 -----------------------------------
 require('scripts/globals/xispalblackmage')
 require('scripts/globals/xispalwhitemage')
-require('scripts/globals/xispalthief')
 require('scripts/globals/xispaldragoon')
 require('scripts/globals/xispalbard')
 require('scripts/globals/xispalsamurai')
@@ -23,7 +22,6 @@ zoneObject.onInitialize = function(zone)
 
     xi.xispal.onBlackMageInitialize(zone)
     xi.xispal.onWhiteMageInitialize(zone)
-    xi.xispal.onThiefInitialize(zone)
     xi.xispal.onDragoonInitialize(zone)
     xi.xispal.onBardInitialize(zone)
     xi.xispal.onSamuraiInitialize(zone)

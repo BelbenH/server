@@ -116,6 +116,18 @@ local familyData =
         [tierTwo]   = { dropList = 4533, groupID = 209, look = '0x0000050A00000000000000000000000000000000', exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.ATT] = 15, [xi.mod.ACC] = 15, }, },
         [tierThree] = { dropList = 4534, groupID = 209, look = '0x0000050A00000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.ATT] = 25, [xi.mod.ACC] = 25, }, },
     },
+
+    -- Unique Alphas
+    [10000] = -- Special alpha #1 spawned from werebats in bostaunieux
+    {
+        spellList = 0,
+        skillListID = 227,
+        bonusSpawnChance = 0,
+        name    = { 'Deadeye Dregg', 'Saltscar Sam', 'Beonshard Bart', 'Redwake Rourke', 'Rottenhook Ray', 'Blackwake Bill', 'Barnacle Ben', 'Ironteeth Ike', 'Krakenhook Kai', 'Vilefin Voss', 'Hollowmast Hagan', },
+        [tierOne]   = { dropList = 4532, groupID = 209, look = '0x0000050A00000000000000000000000000000000', exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ATT] = 10, [xi.mod.ACC] = 10, }, },
+        [tierTwo]   = { dropList = 4533, groupID = 209, look = '0x0000050A00000000000000000000000000000000', exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.ATT] = 15, [xi.mod.ACC] = 15, }, },
+        [tierThree] = { dropList = 4534, groupID = 209, look = '0x0000050A00000000000000000000000000000000', exp = 1500, gil = 3000, mobMods = {  }, mods = { [xi.mod.ATT] = 25, [xi.mod.ACC] = 25, }, },
+    },
 }
 
 -- DON'T TOUCH ANYTHING BELOW THIS LINE -- THIS IS THE TEMPLATE FOR HOW ALL OTHER MOBS ARE SETUP BY DEFAULT! --
@@ -142,6 +154,9 @@ xi.alphamob.spawnAlpha = function(mob, player, optParams)
     end
 
     -- Evaluate chance based on mob family's bonus chances
+    local name = mob:getName()
+    if name == 'Werebat' then
+    end
     local alphaData = familyData[mob:getFamily()]
 
     if not alphaData then

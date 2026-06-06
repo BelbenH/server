@@ -1,7 +1,6 @@
 -- -------------------------------------------------
 -- Zone: Northern San d'Oria
 -- -------------------------------------------------
-
 -- Jeanvirgaud
 UPDATE `npc_list` 
 SET 
@@ -10,7 +9,6 @@ SET
     `pos_y` = 8.00, 
     `pos_z` = 18.265 
 WHERE `npcid` = 17723597; 
-
 -- Excenmille
 UPDATE `npc_list` 
 SET 
@@ -23,7 +21,6 @@ WHERE `npcid` = 17723601;
 -- -------------------------------------------------
 -- Zone: Port Windurst
 -- -------------------------------------------------
-
  -- Rottata
 UPDATE `npc_list` 
 SET 
@@ -36,12 +33,23 @@ WHERE `npcid` = 17760439;
 -- -------------------------------------------------
 -- Add out of era NPCs using content_tag: 'WOTG'
 -- -------------------------------------------------
-
 UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Domenic';
+UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Achtelle';
 
 -- -------------------------------------------------
 -- Remove NPCs using content_tag: 'ROV'
 -- -------------------------------------------------
-
 -- Disable Explorer Moogles
 UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Explorer_Moogle';
+-- Disabled myster box goblins
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Mystrix';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Habitox';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Bountibox';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Specilox';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Arbitrix';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Funtrox';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Priztrix';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Sweepstox';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Wondrix';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Rewardox';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Winrix';

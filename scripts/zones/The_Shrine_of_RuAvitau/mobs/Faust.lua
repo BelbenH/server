@@ -41,7 +41,7 @@ end
 
 entity.onMobInitialize = function(mob)
     mob:setBaseSpeed(80) -- Note: setBaseSpeed() also updates the animation speed to match.
-    mob:setMod(xi.mod.REGAIN, 500)
+    mob:setMod(xi.mod.REGAIN, 100)
     mob:setMobMod(xi.mobMod.GIL_MIN, 18000)
     mob:setMobMod(xi.mobMod.GIL_MAX, 18000)
     mob:setMobMod(xi.mobMod.SIGHT_RANGE, 30)
@@ -52,7 +52,7 @@ entity.onMobInitialize = function(mob)
     mob:addImmunity(xi.immunity.SLOW)
     mob:addImmunity(xi.immunity.TERROR)
     mob:addImmunity(xi.immunity.PLAGUE)
-    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 150)
+    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 75)
 end
 
 entity.onMobSpawn = function(mob)
@@ -71,7 +71,7 @@ end
 entity.onMobFight = function(mob, target)
     -- Nearly always uses Typhoon below 50% HP
     if mob:getHPP() <= 50 and mob:getLocalVar('RegainBoosted') == 0 then
-        mob:setMod(xi.mod.REGAIN, 1000)
+        mob:setMod(xi.mod.REGAIN, 200)
         mob:setLocalVar('RegainBoosted', 1)
     end
 end

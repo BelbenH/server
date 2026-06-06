@@ -2,8 +2,9 @@
 -- Zone: Upper_Jeuno (244)
 -----------------------------------
 require('scripts/globals/xispaldarkknight')
-require('scripts/globals/xispalpaladin')
 require('scripts/globals/xispalsummoner')
+require('scripts/globals/xispalpaladin')
+require('scripts/globals/xispalthief')
 -----------------------------------
 ---@type TZone
 local zoneObject = {}
@@ -14,6 +15,7 @@ zoneObject.onInitialize = function(zone)
     xi.xispal.onDarkKnightInitialize(zone)
     xi.xispal.onSummonerInitialize(zone)
     xi.xispal.onPaladinInitialize(zone)
+    xi.xispal.onThiefInitialize(zone)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

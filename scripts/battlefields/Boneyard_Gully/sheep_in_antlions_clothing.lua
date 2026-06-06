@@ -151,12 +151,12 @@ content.loot =
     },
     {
         quantity = 2,
-        { itemId = xi.item.NONE,                   weight = 750 },
-        { itemId = xi.item.HAGUN,                  weight =  50 },
-        { itemId = xi.item.MARTIAL_AXE,            weight =  50 },
-        { itemId = xi.item.MARTIAL_WAND,           weight =  50 },
-        { itemId = xi.item.FORAGERS_MANTLE,        weight =  50 },
-        { itemId = xi.item.HARMONIAS_TORQUE,       weight =  50 },
+        { itemId = xi.item.NONE,                   weight = 500 },
+        { itemId = xi.item.HAGUN,                  weight =  75 },
+        { itemId = xi.item.MARTIAL_AXE,            weight =  75 },
+        { itemId = xi.item.MARTIAL_WAND,           weight =  75 },
+        { itemId = xi.item.FORAGERS_MANTLE,        weight = 125 },
+        { itemId = xi.item.HARMONIAS_TORQUE,       weight = 150 },
     },
 }
 

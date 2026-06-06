@@ -14,9 +14,9 @@ local slaveGlobes =
     ID.mob.MOTHER_GLOBE + 1,
     ID.mob.MOTHER_GLOBE + 2,
     ID.mob.MOTHER_GLOBE + 3,
-    ID.mob.MOTHER_GLOBE + 4,
-    ID.mob.MOTHER_GLOBE + 5,
-    ID.mob.MOTHER_GLOBE + 6,
+    -- ID.mob.MOTHER_GLOBE + 4,
+    -- ID.mob.MOTHER_GLOBE + 5,
+    -- ID.mob.MOTHER_GLOBE + 6,
 }
 
 local callPetParams =
@@ -193,7 +193,7 @@ end
 
 entity.onMobSpawn = function(mob)
     mob:setLocalVar('nextSlaveSpawnTime', GetSystemTime() + 30) -- spawn first 30s from now
-    mob:addStatusEffect(xi.effect.SHOCK_SPIKES, { power = 60, duration = 3600, origin = mob, silent = true })
+    mob:addStatusEffect(xi.effect.SHOCK_SPIKES, { power = 10, duration = 3600, origin = mob, silent = true })
 
     -- Silently reapply shock spikes immediately
     mob:addListener('EFFECT_LOSE', 'MG_SPIKES', function(mobArg, effect)
@@ -201,7 +201,7 @@ entity.onMobSpawn = function(mob)
             mobArg:isAlive() and
             effect:getEffectType() == xi.effect.SHOCK_SPIKES
         then
-            mobArg:addStatusEffect(xi.effect.SHOCK_SPIKES, { power = 60, duration = 3600, origin = mob, silent = true })
+            mobArg:addStatusEffect(xi.effect.SHOCK_SPIKES, { power = 10, duration = 3600, origin = mob, silent = true })
         end
     end)
 end
@@ -241,7 +241,7 @@ entity.onAdditionalEffect = function(mob, target, damage)
         chance         = 100,
         attackType     = xi.attackType.MAGICAL,
         magicalElement = xi.element.THUNDER,
-        basePower      = math.floor(damage / 2),
+        basePower      = math.floor(damage / 10),
         actorStat      = xi.mod.INT,
     }
 

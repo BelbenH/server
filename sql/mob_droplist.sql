@@ -29093,11 +29093,14 @@ INSERT INTO `mob_droplist` VALUES (4514,0,0,1000,843,@COMMON);        -- Giant B
 INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,4110,@RARE);      -- Light Cluster
 INSERT INTO `mob_droplist` VALUES (4514,0,0,@ALWAYS,2821,50);         -- Aptant of Haelen 5% (Uneffected by TH)
 
-INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,903,@ALWAYS);  -- Dragon Talon (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,867,@COMMON);  -- Handful Of Dragon Scales (Common, 15%)
-INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,1133,@RARE);   -- Vial Of Dragon Blood (Rare, 5%)
-INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);   -- Dragon Heart (Rare, 5%)
-INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);   -- Demon Earring (Rare, 5%)
+-- Open world dragons
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,903,@ALWAYS);   -- Dragon Talon (Always, 100%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,867,@COMMON);   -- Handful Of Dragon Scales (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,1133,@RARE);    -- Vial Of Dragon Blood (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);    -- Dragon Heart (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,4486,@RARE);    -- Demon Earring (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,831,@UNCOMMON); -- Shining Cloth (Uncommon, 10%)
+INSERT INTO `mob_droplist` VALUES (4515,0,0,1000,18131,@VRARE);  -- Zaide (Very Rare, 1%)
 -- Elemental Ores (Group 1)
 INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1255,125); -- Fire Ore
 INSERT INTO `mob_droplist` VALUES (4515,1,1,@VCOMMON,1256,125); -- Ice Ore

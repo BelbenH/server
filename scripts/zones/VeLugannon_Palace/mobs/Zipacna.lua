@@ -301,12 +301,12 @@ local setZipPath = function(mob, door, currPath)
 end
 
 entity.onMobInitialize = function(mob)
-    mob:setMod(xi.mod.REGAIN, 200)
+    mob:setMod(xi.mod.REGAIN, 100) -- Original 200
     mob:addImmunity(xi.immunity.DARK_SLEEP)
     mob:addImmunity(xi.immunity.LIGHT_SLEEP)
     mob:addImmunity(xi.immunity.TERROR)
     mob:addImmunity(xi.immunity.PLAGUE)
-    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 150)
+    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 75) -- original 150
 end
 
 entity.onMobSpawn = function(mob)

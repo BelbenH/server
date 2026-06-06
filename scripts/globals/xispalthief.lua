@@ -63,10 +63,10 @@ xi.xispal.onThiefInitialize = function(zone)
         objtype   = xi.objType.NPC,
         name      = table.name,
         look      = look,
-        x         = -55.3,
-        y         = 5.9,
-        z         = -114.8,
-        rotation  = 231,
+        x         = -1.35,
+        y         = 0,
+        z         = 24.92,
+        rotation  = 80,
         widescan  = 1,
 
         onTrigger  = function(player, npc)

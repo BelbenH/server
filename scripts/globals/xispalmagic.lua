@@ -955,7 +955,8 @@ end
 xi.xispal.checkMagic = function(pal, player)
     if
         xi.xispal.checkCast(pal) or
-        (pal:getMPP() < 40 and pal:getCurrentAction() == xi.action.ROAMING)
+        (pal:getMPP() < 40 and pal:getCurrentAction() == xi.action.ROAMING) or
+        pal:getLocalVar('restTime') > GetSystemTime()
     then
         return
     end

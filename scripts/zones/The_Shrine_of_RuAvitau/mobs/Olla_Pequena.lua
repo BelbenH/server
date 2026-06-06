@@ -18,8 +18,8 @@ entity.onMobInitialize = function(mob)
 end
 
 entity.onMobSpawn = function(mob)
-    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 150)
-    mob:setMod(xi.mod.REGAIN, 100)
+    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 75)
+    mob:setMod(xi.mod.REGAIN, 50)
 end
 
 entity.onAdditionalEffect = function(mob, target, damage)
