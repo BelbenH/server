@@ -363,6 +363,7 @@ xi.xispal.onKnightSpawn = function(pal, player, table)
     local job     = pal:getMainJob()
     local attp    = 0
     local THPower = 0
+    local acc     = 15
 
     if xi.xispal.hasCompletedAF(player) and lvl >= 60 then
         tier = 2
@@ -374,9 +375,9 @@ xi.xispal.onKnightSpawn = function(pal, player, table)
     if job == xi.job.THF then
         if lvl >= 45 then
             THPower = 2
-            attp = -50
+            attp = -20
         else
-            attp = -25
+            attp = -10
             THPower = 1
         end
 
@@ -411,6 +412,7 @@ xi.xispal.onKnightSpawn = function(pal, player, table)
     end
 
     pal:addMod(xi.mod.ATT, attp)
+    pal:addMod(xi.mod.ACC, acc)
     pal:addMod(xi.mod.TREASURE_HUNTER, THPower)
 
     local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][tier])

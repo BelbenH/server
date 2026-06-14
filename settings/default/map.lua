@@ -67,7 +67,7 @@ xi.settings.map =
     ENMITY_CAP = 30000,
 
     -- Misc EXP related settings
-    EXP_RATE                = 1.0,
+    EXP_RATE                = 1.5,
     EXP_LOSS_RATE           = 1.0,
     EXP_PARTY_GAP_PENALTIES = true,
 
@@ -86,7 +86,7 @@ xi.settings.map =
     VANADIEL_TIME_EPOCH = 0,
 
     -- For old fame calculation use .25
-    FAME_MULTIPLIER = 2.00,
+    FAME_MULTIPLIER = 0.5,
 
     -- Percentage of experience normally lost to keep upon death. 0 means full loss, where 1 means no loss.
     EXP_RETAIN = 0,
@@ -102,13 +102,13 @@ xi.settings.map =
     LEVEL_SYNC_ENABLE = true,
 
     -- Disables ability to equip higher level gear when level cap/sync effect is on player.
-    DISABLE_GEAR_SCALING = false,
+    DISABLE_GEAR_SCALING = true,
 
     -- Disables Treasure Hunter procs (Era behavior wants this true)
     DISABLE_TREASURE_HUNTER_PROCS = true,
 
     -- Weaponskill point base (before skillchain) for breaking latent - whole numbers only. retail is 5.
-    WS_POINTS_BASE = 5,
+    WS_POINTS_BASE = 1,
 
     -- Weaponskill points per skillchain level - whole numbers only, retail is 2
     WS_POINTS_SKILLCHAIN = 2,
@@ -148,7 +148,7 @@ xi.settings.map =
     GARDEN_MH_AURA_MATTERS   = false,
 
     -- Use current retail skill up rates and margins (Retail = High Skill-Up rate; Skill-Up when at or under 10 levels above synth recipe level.)
-    CRAFT_MODERN_SYSTEM = true,
+    CRAFT_MODERN_SYSTEM = false,
 
     -- Craft level limit from witch specialization points beginning to count. (Retail = 700; Level 75 era:600)
     CRAFT_COMMON_CAP = 700,
@@ -160,7 +160,7 @@ xi.settings.map =
     CRAFT_HQ_CHANCE_MULTIPLIER = 1.0,
 
     -- Enable/disable all fishing, including quests. ENABLE AT YOUR OWN RISK.
-    FISHING_ENABLE = false,
+    FISHING_ENABLE = true,
 
     -- Sets the minimum level a character must be to fish.
     FISHING_MIN_LEVEL = 1,
@@ -226,7 +226,7 @@ xi.settings.map =
     MOB_GIL_MULTIPLIER = 1.0,
 
     -- All mobs drop this much extra gil per mob LV even if they normally drop zero.
-    ALL_MOBS_GIL_BONUS = 0,
+    ALL_MOBS_GIL_BONUS = 1,
 
     -- Maximum total bonus gil that can be dropped. Default 9999 gil.
     MAX_GIL_BONUS = 9999,
@@ -244,10 +244,10 @@ xi.settings.map =
     GUARD_OLD_SKILLUP_STYLE = false,
 
     -- Globally adjusts ALL battlefield level caps by this many levels.
-    BATTLE_CAP_TWEAK = 0,
+    BATTLE_CAP_TWEAK = 5,
 
     -- Enable/disable level cap of mission battlefields stored in database.
-    LV_CAP_MISSION_BCNM = false,
+    LV_CAP_MISSION_BCNM = true,
 
     -- Allow players to enter BCNMs which are flagged as experimental
     BCNM_ENABLE_EXPERIMENTAL = true,
@@ -299,7 +299,7 @@ xi.settings.map =
     HEALING_TICK_DELAY = 10,
 
     -- Enable/disable keeping jug pets through zoning
-    KEEP_JUGPET_THROUGH_ZONING = false,
+    KEEP_JUGPET_THROUGH_ZONING = true,
 
     -- Despawn jug pets that have a minimum level below level sync or zone level restriction.
     -- Such as despawning Courier Carrie in a level 20 cap when their minimum level to summon is 23.
@@ -310,5 +310,5 @@ xi.settings.map =
     -- their GM level is the same or higher than this number.
     -- The max GM level is 5, so setting this to 6 disables it
     -- for everone. Setting it to 0 enables for everyone.
-    REPORT_LUA_ERRORS_TO_PLAYER_LEVEL = 6,
+    REPORT_LUA_ERRORS_TO_PLAYER_LEVEL = 5,
 }

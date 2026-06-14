@@ -36,6 +36,16 @@ WHERE `npcid` = 17760439;
 UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Domenic';
 UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Achtelle';
 
+-- Ephemeral Moogles
+UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Ephemeral_Moogle_Smith';
+UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Ephemeral_Moogle_Wood';
+UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Ephemeral_Moogle_Alchemy';
+UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Ephemeral_Moogle_Gold';
+UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Ephemeral_Moogle_Cook';
+UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Ephemeral_Moogle_Bone';
+UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Ephemeral_Moogle_Cloth';
+UPDATE `npc_list` SET `content_tag` = 'WOTG' WHERE `name` = 'Ephemeral_Moogle_Leather';
+
 -- -------------------------------------------------
 -- Remove NPCs using content_tag: 'ROV'
 -- -------------------------------------------------
@@ -53,3 +63,4 @@ UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Sweepstox';
 UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Wondrix';
 UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Rewardox';
 UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Winrix';
+UPDATE `npc_list` SET `content_tag` = 'ROV' WHERE `name` = 'Agent_Moogle';

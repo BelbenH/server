@@ -9,6 +9,7 @@ local zoneObject = {}
 zoneObject.onInitialize = function(zone)
     xi.chocobo.initZone(zone)
     xi.extravaganza.shadowEraHide(ID.npc.SHIXO)
+    GetNPCByID(17105258):setStatus(xi.status.NORMAL) -- Temporary fix
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

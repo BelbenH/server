@@ -110,6 +110,7 @@ xi.battlegrounds.spawnChest = function(zone, level, pos, player)
         end,
     })
     chest:setStatus(xi.status.NORMAL)
+    chest:setNpcAlwaysRelevant(true)
     chest:setLocalVar('[XISP]bgFlag', 1)
     return chest
 end
@@ -126,6 +127,7 @@ xi.battlegrounds.spawnTorch = function(zone, pos)
         namevis = false,
     })
     torch:setStatus(xi.status.NORMAL)
+    torch:setNpcAlwaysRelevant(true)
     torch:setLocalVar('[XISP]bgFlag', 1)
     torch:setUntargetable(true)
 end
@@ -144,6 +146,7 @@ xi.battlegrounds.spawnBanner = function(zone, pos)
         namevis = false,
     })
     banner:setStatus(xi.status.NORMAL)
+    banner:setNpcAlwaysRelevant(true)
     banner:setLocalVar('[XISP]bgFlag', 1)
     banner:setUntargetable(true)
 end
@@ -160,6 +163,7 @@ xi.battlegrounds.spawnCampfire = function(zone, pos)
         namevis = false,
     })
     campfire:setStatus(xi.status.NORMAL)
+    campfire:setNpcAlwaysRelevant(true)
     campfire:setLocalVar('[XISP]bgFlag', 1)
     campfire:setUntargetable(true)
 end
@@ -202,6 +206,8 @@ xi.battlegrounds.spawnAlly = function(zone, pos, level)
         groupId               = info.groupID,
         groupZoneId           = xi.zone.GM_HOME,
         releaseIdOnDisappear  = true,
+        minLevel              = level,
+        maxLevel              = level,
 
         onMobSpawn = function(ally)
             if info.spellList > 0 then
@@ -212,7 +218,6 @@ xi.battlegrounds.spawnAlly = function(zone, pos, level)
             ally:setLocalVar('[XISP]bgFlag', 1)
             ally:setMod(xi.mod.REGEN, 300)
             ally:changeJob(info.job)
-            ally:setMobLevel(level)
             ally:setUnkillable(true)
         end,
 
@@ -324,7 +329,7 @@ xi.battlegrounds.generateNM = function(zone, pos, level)
         y                     = pos.y,
         z                     = posZ,
         minLevel              = level,
-        maxLevel              = level,
+        maxLevel              = level + 2,
         rotation              = rot,
         look                  = info.look,
         groupId               = info.groupID,
@@ -333,7 +338,6 @@ xi.battlegrounds.generateNM = function(zone, pos, level)
 
         onMobSpawn = function(mob)
             mob:addStatusEffect(xi.effect.LEVEL_RESTRICTION, { power = info.LEVEL, origin = mob })
-            mob:setMobLevel(newLevel)
             mob:changeJob(info.job)
             mob:setMobMod(xi.mobMod.EXP_BONUS, math.random(10, 15) * level)
             mob:setMobMod(xi.mobMod.GIL_MIN, 10 * level)
@@ -450,6 +454,7 @@ xi.battlegrounds.beginBattle = function(player)
         member:changeMusic(0, 247) -- Night Music
         member:changeMusic(1, 247) -- Day Music
         member:changeMusic(2, 247) -- Battle Music
+        member:changeMusic(3, 247) -- Battle Music
     end
 
     -- Setup the decos + spawn mobs
@@ -502,6 +507,7 @@ xi.battlegrounds.resetZone = function(zone)
         for _, npc in pairs(zone:getNPCs()) do
             if npc:getLocalVar('[XISP]bgFlag') == 1 then
                 npc:setStatus(xi.status.DISAPPEAR)
+                npc:setNpcAlwaysRelevant(false)
             end
         end
 
@@ -515,6 +521,7 @@ xi.battlegrounds.resetZone = function(zone)
             player:changeMusic(0, zone:getBackgroundMusicDay())
             player:changeMusic(1, zone:getBackgroundMusicNight())
             player:changeMusic(2, zone:getSoloBattleMusic())
+            player:changeMusic(3, zone:getSoloBattleMusic())
         end
     end
 end
@@ -536,6 +543,7 @@ xi.battlegrounds.completeBattlefield = function(player)
             member:changeMusic(0, 120)
             member:changeMusic(1, 120)
             member:changeMusic(2, zone:getSoloBattleMusic()) -- Normal Combat Music
+            member:changeMusic(3, zone:getSoloBattleMusic()) -- Normal Combat Music
 
             member:setLocalVar('[XISP]inBattle', 0)
         end
@@ -556,10 +564,12 @@ xi.battlegrounds.completeBattlefield = function(player)
     })
 
     fireworks:setStatus(xi.status.NORMAL)
+    fireworks:setNpcAlwaysRelevant(true)
     fireworks:setUntargetable(true)
 
     fireworks:timer(60000, function(fireworksArg)
         xi.battlegrounds.resetZone(zone)
+        fireworksArg:setNpcAlwaysRelevant(false)
         fireworksArg:setStatus(xi.status.DISAPPEAR)
     end)
 end

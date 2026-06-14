@@ -59,6 +59,25 @@ end
 entity.onTrigger = function(player, npc)
     local copProgress = player:getCurrentMission(xi.mission.log_id.COP)
     local eventId     = player:hasCompletedUniqueEvent(xi.uniqueEvent.VANESSA_ENM_COMPLETE) == 1 and 10065 or 10064 -- 10064: Player is new to Venessa, 10065: Spoke with Venessa
+    local zone = 0
+
+    if player:hasKeyItem(enmTable[4].keyItem) then
+        zone = 23
+    elseif player:hasKeyItem(enmTable[3].keyItem) then
+        zone = 19
+    elseif player:hasKeyItem(enmTable[2].keyItem) then
+        zone = 21
+    elseif player:hasKeyItem(enmTable[1].keyItem) then
+        zone = 17
+    end
+    
+    if zone > 0 then
+        player:printToPlayer('I see you\'re prepared to face the darkness...', xi.msg.channel.SAY, npc:getName())
+        npc:injectActionPacket(player:getID(), 4, 261, 0, 0, 0, 10, 1) -- Warp Animation
+        player:timer(3000, function(playerArg)
+            playerArg:setPos(0, 0, 0, 0, zone)
+        end)
+    end
 
     -- Before unlocking first 3 Promyvions.
     if copProgress <= xi.mission.id.cop.THE_RITES_OF_LIFE then

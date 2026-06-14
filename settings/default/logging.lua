@@ -43,7 +43,7 @@ xi.settings.logging =
     -- Enable/Disable these logging types globally
     LOG_DEBUG   = true,
     LOG_INFO    = true,
-    LOG_WARNING = true,
+    LOG_WARNING = false,
     LOG_LUA     = true, -- Prints from Lua using `print()`
 
     -- Specific Debug loggers

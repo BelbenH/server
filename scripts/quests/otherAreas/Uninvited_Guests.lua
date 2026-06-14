@@ -80,7 +80,7 @@ local rewards =
 -----------------------------------
 local startQuest = function(player)
     npcUtil.giveKeyItem(player, xi.ki.MONARCH_LINN_PATROL_PERMIT)
-    player:delQuest(xi.mission.log_id.COP, xi.mission.id.cop.THE_SAVAGE)
+    player:delQuest(xi.questLog.OTHER_AREAS, xi.quest.id.otherAreas.UNINVITED_GUESTS)
     quest:setVar(player, var.PROGRESS, phase.GO_TO_MONARCH_LINN)
     player:setCharVar(var.DEFEAT_MESSAGE, 0)
     player:setCharVar(var.QUEST_REWARD, 0)
