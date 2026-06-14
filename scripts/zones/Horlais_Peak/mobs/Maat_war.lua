@@ -16,7 +16,7 @@ end
 entity.onMobInitialize = function(mob)
     mob:addListener('TAKE_DAMAGE', 'MAAT_TAKE_DAMAGE', function(mobArg, damage, attacker, attackType, damageType)
         if damage >= 292 then
-            mob:messageText(mob, ID.text.THAT_LL_HURT_IN_THE_MORNING)
+            mobArg:messageText(mobArg, ID.text.THAT_LL_HURT_IN_THE_MORNING)
         end
     end)
 end

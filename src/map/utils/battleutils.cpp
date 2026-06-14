@@ -835,8 +835,8 @@ int32 CalculateEnspellDamage(CBattleEntity* PAttacker, CBattleEntity* PDefender,
 
 int32 CalculateSpikeDamage(CBattleEntity* PAttacker, CBattleEntity* PDefender, action_result_t* Action, uint16 damageTaken)
 {
-    const auto spikeElement = static_cast<ELEMENT>(static_cast<uint8>(GetSpikesDamageType(Action->spikesEffect)) - (uint8)DAMAGE_TYPE::ELEMENTAL);
-    int32      damage       = Action->spikesParam;
+    auto  spikeElement = static_cast<ELEMENT>(static_cast<uint8>(GetSpikesDamageType(Action->spikesEffect)) - (uint8)DAMAGE_TYPE::ELEMENTAL);
+    int32 damage       = Action->spikesParam;
 
     if (PDefender->getMod(Mod::SPIKES_DMG_BONUS) > 0)
     {
@@ -847,6 +847,12 @@ int32 CalculateSpikeDamage(CBattleEntity* PAttacker, CBattleEntity* PDefender, a
     {
         // drain same as damage taken
         damage = damageTaken;
+    }
+
+    if (static_cast<uint8>(Action->spikesEffect) > static_cast<uint8>(ELEMENT::ELEMENT_DARK))
+    {
+        ShowWarningFmt("CalculateSpikeDamage: Spike Element from PDefender ({}, id {}) out of range, got {}. Setting to Fire.", PDefender->getName(), PDefender->id, static_cast<int32>(spikeElement));
+        spikeElement = ELEMENT::ELEMENT_FIRE;
     }
 
     damage = MagicDmgTaken(PAttacker, damage, spikeElement); // apply MDT/MDT2/DT, liement to whoever is taking damage
@@ -906,7 +912,7 @@ auto HandleSpikesDamage(CBattleEntity* PAttacker, CBattleEntity* PDefender, acti
             const float DamageRatio = GetDamageRatio(PDefender, PAttacker, crit, 1.0f, skilltype, SLOT_MAIN, false);
             uint16      dmg         = static_cast<uint32>((PDefender->GetMainWeaponDmg() + battleutils::GetFSTR(PDefender, PAttacker, SLOT_MAIN)) * DamageRatio);
             dmg                     = attackutils::CheckForDamageMultiplier(static_cast<CCharEntity*>(PDefender), dynamic_cast<CItemWeapon*>(PDefender->m_Weapons[SLOT_MAIN]), dmg, PHYSICAL_ATTACK_TYPE::NORMAL, SLOT_MAIN);
-            const uint16 bonus      = dmg * (PDefender->getMod(Mod::RETALIATION) / 100);
+            const uint16 bonus      = std::floor<uint16>(static_cast<float>(dmg) * (static_cast<float>(PDefender->getMod(Mod::RETALIATION)) / 100.f));
             dmg                     = dmg + bonus;
 
             // TP and stoneskin are handled inside TakePhysicalDamage
@@ -4645,11 +4651,6 @@ int32 MagicDmgTaken(CBattleEntity* PDefender, int32 damage, ELEMENT element)
     resist = std::max(resist, 0.125f); // Total cap with MDT-% II included is 87.5%
     damage = (int32)(damage * resist);
 
-    if (damage > 0 && PDefender->objtype == TYPE_PET && PDefender->getMod(Mod::AUTO_STEAM_JACKET) > 1)
-    {
-        damage = HandleSteamJacket(PDefender, damage, damageType);
-    }
-
     // Handle damage absorption.
     if (xirand::GetRandomNumber(100) < PDefender->getMod(Mod::ABSORB_DMG_CHANCE) ||         // All damage.
         xirand::GetRandomNumber(100) < PDefender->getMod(Mod::MAGIC_ABSORB) ||              // Magical damage
@@ -4685,11 +4686,6 @@ int32 PhysicalDmgTaken(CBattleEntity* PDefender, int32 damage, DAMAGE_TYPE damag
     resist = std::max(resist, 0.5f);                         // PDT caps at -50%
     resist += PDefender->getMod(Mod::DMGPHYS_II) / 10000.0f; // Add Burtgang reduction after 50% cap. Extends cap to -68%
     damage = (int32)(damage * resist);
-
-    if (damage > 0 && PDefender->objtype == TYPE_PET && PDefender->getMod(Mod::AUTO_STEAM_JACKET) > 0)
-    {
-        damage = HandleSteamJacket(PDefender, damage, damageType);
-    }
 
     if (damage > 0 && PDefender->objtype == TYPE_PET && PDefender->getMod(Mod::AUTO_EQUALIZER) > 0)
     {
@@ -4734,11 +4730,6 @@ int32 RangedDmgTaken(CBattleEntity* PDefender, int32 damage, DAMAGE_TYPE damageT
     resist = std::max(resist, 0.5f);
     damage = (int32)(damage * resist);
 
-    if (damage > 0 && PDefender->objtype == TYPE_PET && PDefender->getMod(Mod::AUTO_STEAM_JACKET) > 0)
-    {
-        damage = HandleSteamJacket(PDefender, damage, damageType);
-    }
-
     if (damage > 0 && PDefender->objtype == TYPE_PET && PDefender->getMod(Mod::AUTO_EQUALIZER) > 0)
     {
         damage -= (int32)(damage / float(PDefender->GetMaxHP()) * (PDefender->getMod(Mod::AUTO_EQUALIZER) / 10000.0f));
@@ -4768,27 +4759,6 @@ int32 RangedDmgTaken(CBattleEntity* PDefender, int32 damage, DAMAGE_TYPE damageT
 
     damage = CheckAndApplyDamageCap(damage, PDefender);
 
-    return damage;
-}
-
-int32 HandleSteamJacket(CBattleEntity* PDefender, int32 damage, DAMAGE_TYPE damageType)
-{
-    auto  steamJacketType = static_cast<DAMAGE_TYPE>(PDefender->GetLocalVar("steam_jacket_type"));
-    int16 steamJacketHits = (int16)PDefender->GetLocalVar("steam_jacket_hits");
-
-    if (steamJacketType != damageType)
-    {
-        PDefender->SetLocalVar("steam_jacket_type", static_cast<uint16>(damageType));
-        steamJacketHits = 0;
-    }
-
-    steamJacketHits += 1;
-    PDefender->SetLocalVar("steam_jacket_hits", steamJacketHits);
-
-    if (steamJacketHits >= PDefender->getMod(Mod::AUTO_STEAM_JACKET))
-    {
-        return damage - (int32)(damage * (PDefender->getMod(Mod::AUTO_STEAM_JACKET_REDUCTION) / 100.0f));
-    }
     return damage;
 }
 

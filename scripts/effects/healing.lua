@@ -27,33 +27,8 @@ effectObject.onEffectGain = function(target, effect)
         end
     end
 
-    -- Dances with Luopans
-    if
-        target:getLocalVar('GEO_DWL_Locus_Area') == 1 and
-        target:getCharVar('GEO_DWL_Luopan') == 0
-    then
-        local ID                = zones[target:getZoneID()]
-        local maxWaitTime       = 480 -- Max wait of 8 minutes.
-        local secondsPerTick    = xi.settings.map.HEALING_TICK_DELAY
-        local minWaitTime       = math.min(3 * secondsPerTick, maxWaitTime)
-        local waitTimeInSeconds = math.random(minWaitTime, maxWaitTime)
-
-        target:messageSpecial(ID.text.ENERGIES_COURSE)
-        target:setLocalVar('GEO_DWL_Resting', GetSystemTime() + waitTimeInSeconds)
-
-        target:timer(waitTimeInSeconds * 1000, function(targetArg)
-            local finishTime = targetArg:getLocalVar('GEO_DWL_Resting')
-
-            if
-                finishTime > 0 and
-                GetSystemTime() >= finishTime
-            then
-                targetArg:messageSpecial(ID.text.MYSTICAL_WARMTH) -- You feel a mystical warmth welling up inside you!
-                targetArg:setLocalVar('GEO_DWL_Resting', 0)
-                targetArg:setCharVar('GEO_DWL_Luopan', 1)
-            end
-        end)
-    end
+    -- Dances with Luopans: charge the luopan while resting at an Ergon Locus
+    xi.dancesWithLuopans.onHealing(target)
 
     if target:getObjType() == xi.objType.PC then
         xi.voidwalker.onHealing(target)
@@ -119,9 +94,6 @@ effectObject.onEffectLose = function(target, effect)
     target:setAnimation(xi.animation.NONE)
     target:delStatusEffectSilent(xi.effect.LEAVEGAME)
 
-    -- Dances with Luopans
-    target:setLocalVar('GEO_DWL_Resting', 0)
-
     -- XISP logic
     if target:getLocalVar('[XISP]isPal') == 1 then
         target:setLocalVar('[XISP]canRest', GetSystemTime() + 5)
@@ -130,6 +102,8 @@ effectObject.onEffectLose = function(target, effect)
              targetArg:setLocalVar('[XISP]isResting', 0)
         end)
     end
+    -- Dances with Luopans: stopping the rest cancels the luopan charge
+    xi.dancesWithLuopans.onEffectLose(target)
 end
 
 return effectObject
