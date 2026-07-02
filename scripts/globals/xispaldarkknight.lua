@@ -101,6 +101,7 @@ xi.xispal.onDarkKnightTrigger = function(player, npc)
                                     player:printToPlayer("Still... if you'd let me stand beside you, I'd show you my worth. No regrets.", xi.msg.channel.SAY, table.name)
                                     player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                                     npc:setLocalVar('dialogueLock', 0)
+                                    player:setCharVar('[XISP]hasUnlockedKnights', 1)
                                     return
                                 end)
                             end)

@@ -107,6 +107,7 @@ xi.xispal.onDragoonTrigger = function(player, npc)
                                     player:printToPlayer("Let me be your Dragoon, and further rid the curse placed upon my family.", xi.msg.channel.SAY, table.name)
                                     player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                                     npc:setLocalVar('dialogueLock', 0)
+                                    player:setCharVar('[XISP]hasUnlockedKnights', 1)
                                     return
                                 end)
                             end)

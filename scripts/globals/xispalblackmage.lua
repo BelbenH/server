@@ -102,6 +102,7 @@ local hasMage = player:getCharVar('[XISP]hasMage')
                                     player:printToPlayer("If you'll have me, I'll lend you my spells. For the world above, and the roots below.", xi.msg.channel.SAY, table.name)
                                     player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                                     npc:setLocalVar('dialogueLock', 0)
+                                    player:setCharVar('[XISP]hasUnlockedMages', 1)
                                     return
                                 end)
                             end)

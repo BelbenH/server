@@ -104,6 +104,7 @@ xi.xispal.onSummonerTrigger = function(player, npc)
                             player:printToPlayer("What say you? Shall we shake the heavens until even Bahamut stirs?", xi.msg.channel.SAY, table.name)
                             player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                             npc:setLocalVar('dialogueLock', 0)
+                            player:setCharVar('[XISP]hasUnlockedMages', 1)
                             return
                         end)
                     end)

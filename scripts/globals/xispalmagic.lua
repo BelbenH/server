@@ -995,7 +995,7 @@ xi.xispal.checkMagic = function(pal, player)
 
         xi.xispal.checkCure(pal, party, job, lvl)
         xi.xispal.checkNa(pal, party, job, lvl)
-        xi.xispal.checkElemental(pal, player, job, lvl)
+        -- xi.xispal.checkElemental(pal, player, job, lvl)
 
     elseif job == xi.job.BLM then
         xi.xispal.checkStun(pal, job, lvl)
@@ -1019,6 +1019,10 @@ end
 
 
 xi.xispal.castSpell = function(pal, spell, target, job, extraTime)
+    if pal:checkDistance(target) >= 19 then 
+        return
+    end
+
     local pos = pal:getPos()
     pal:pathTo(pos.x, pos.y, pos.z) -- Stop pal in their tracks
 
@@ -1064,27 +1068,4 @@ xi.xispal.setRecast = function(pal, job, extraTime)
     }
 
     pal:setLocalVar('[XISP]spellRecast', jobTable[job] + GetSystemTime() + extraTime)
-end
-
-
-xi.xispal.getTarget = function(pal)
-    if pal:isEngaged() then
-        return pal:getTarget()
-    end
-
-    if pal:getLocalVar('currentTarget') == 0 then
-        return nil
-    end
-
-    local target = GetMobByID(pal:getLocalVar('currentTarget'))
-
-    if target then
-        if target:isAlive() then
-            return target
-        else
-            pal:setLocalVar('currentTarget', 0)
-        end
-    else
-        return nil
-    end
 end

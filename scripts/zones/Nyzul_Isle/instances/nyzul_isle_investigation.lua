@@ -44,7 +44,7 @@ local function pickSetPoint(instance)
         -- Randomly pick the objective from the generated list
         instance:setStage(utils.randomEntry(objective))
 
-        if math.random(1, 30) <= 5 then
+        if math.random(1, 30) <= 2 then
             instance:setLocalVar('gearObjective', math.random(xi.nyzul.gearObjective.AVOID_AGRO, xi.nyzul.gearObjective.DO_NOT_DESTROY))
         end
     end
@@ -72,6 +72,11 @@ local function pickSetPoint(instance)
     -- Set players to Point and messaging
     for _, players in pairs(chars) do
         players:setPos(posX, posY, posZ)
+
+        if players:getPet() ~= nil then
+            players:getPet():setPos(posX, posY, posZ)
+        end
+
         players:messageName(ID.text.WELCOME_TO_FLOOR, players, currentFloor, currentFloor)
 
         if instance:getStage() ~= xi.nyzul.objective.FREE_FLOOR then
@@ -174,6 +179,9 @@ instanceObject.onEventFinish = function(player, csid, option, npc)
     if csid == 1 then
         for _, players in ipairs(chars) do
             players:setPos(0, 0, 0, 0, xi.zone.ALZADAAL_UNDERSEA_RUINS)
+            if players:getPet() ~= nil then
+                players:getPet():setPos(players:getPos())
+            end
         end
     elseif csid == 95 then
         if instance:getLocalVar('runeHandler') == player:getID() then

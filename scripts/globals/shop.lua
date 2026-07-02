@@ -285,6 +285,7 @@ xi.shop.generalGuildStock =
         { xi.item.BLACK_PEARL,                 12000, xi.craftRank.APPRENTICE },
         { xi.item.PEARL,                       11000, xi.craftRank.APPRENTICE },
         { xi.item.CHUNK_OF_ALUMINUM_ORE,        5000, xi.craftRank.APPRENTICE },
+        { xi.item.GOLD_INGOT,                  30000, xi.craftRank.JOURNEYMAN },
         { xi.item.GOLD_SHEET,                  32000, xi.craftRank.JOURNEYMAN },
         { xi.item.GOLD_CHAIN,                  58000, xi.craftRank.JOURNEYMAN },
         { xi.item.CHUNK_OF_PLATINUM_ORE,        6000, xi.craftRank.CRAFTSMAN  },
@@ -959,12 +960,22 @@ xi.shop.phalanxShops =
     lowTierBlackMagic = -- Used for starter city black-based magic shops. (Levels: 1 to 11) Ex: Stone, Poison, etc.
     {
         { xi.item.SCROLL_OF_STONE,                    85, },
+        { xi.item.SCROLL_OF_WATER,                   195, },
+        { xi.item.SCROLL_OF_AERO,                   1215, },
+        { xi.item.SCROLL_OF_FIRE,                    967, },
+        { xi.item.SCROLL_OF_BLIZZARD,               1830, },
+        { xi.item.SCROLL_OF_THUNDER,                3768, },
         { xi.item.SCROLL_OF_POISON,                  270, },
         { xi.item.SCROLL_OF_BLIND,                  1550, }, -- x 50 specialty item. (Can easily be farmed from mobs.)
-        { xi.item.SCROLL_OF_WATER,                   195, },
         { xi.item.SCROLL_OF_BIND,                   3050, }, -- x 50 specialty item. (Can easily be farmed from mobs.)
-        { xi.item.SCROLL_OF_AERO,                   1215, },
         { xi.item.SCROLL_OF_BIO,                    1350, },
+        { xi.item.SCROLL_OF_SLEEP,                 2600,  },
+        { xi.item.SCROLL_OF_BURN,                  5366,  },
+        { xi.item.SCROLL_OF_FROST,                 4261,  },
+        { xi.item.SCROLL_OF_CHOKE,                 2600,  },
+        { xi.item.SCROLL_OF_RASP,                  2111,  },
+        { xi.item.SCROLL_OF_SHOCK,                 1575,  },
+        { xi.item.SCROLL_OF_DROWN,                 7356,  },
         { xi.item.SCROLL_OF_BLAZE_SPIKES,          47150, }, -- x 100 specialty item. (Can be quested.)
     },
 
@@ -1299,6 +1310,7 @@ xi.shop.phalanxShops =
         { xi.item.LITTLE_WORM,                         4, },
         { xi.item.BALL_OF_INSECT_PASTE,               25, },
         { xi.item.FLY_LURE,                         1200, }, -- x 10 specialty item.
+        { xi.item.FROG_LURE,                       18953, }, -- x 10 specialty item.
         { xi.item.WORM_LURE,                        1200, }, -- x 10 specialty item.
         { xi.item.SHRIMP_LURE,                      7640, }, -- x ?? specialty item.
         { xi.item.BAMBOO_FISHING_ROD,                561, },

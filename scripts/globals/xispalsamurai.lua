@@ -131,6 +131,7 @@ xi.xispal.onSamuraiTrigger = function(player, npc)
                                     player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                                     player:setCharVar('[XISP]SamuraiTankMode', 0)
                                     npc:setLocalVar('dialogueLock', 0)
+                                    player:setCharVar('[XISP]hasUnlockedKnights', 1)
                                     return
                                 end)
                             end)

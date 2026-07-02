@@ -101,6 +101,7 @@ xi.xispal.onPaladinTrigger = function(player, npc)
                                     player:printToPlayer("Together, let us earn a legacy that echoes far beyond these chapel walls.", xi.msg.channel.SAY, table.name)
                                     player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                                     npc:setLocalVar('dialogueLock', 0)
+                                    player:setCharVar('[XISP]hasUnlockedKnights', 1)
                                     return
                                 end)
                             end)

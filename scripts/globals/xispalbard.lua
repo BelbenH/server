@@ -229,6 +229,7 @@ xi.xispal.onBardTrigger = function(player, npc)
                                     player:printToPlayer('May I follow you? Just until I find the courage to stand on my own.', xi.msg.channel.SAY, table.name)
                                     player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                                     npc:setLocalVar('dialogueLock', 0)
+                                    player:setCharVar('[XISP]hasUnlockedMages', 1)
                                     return
                                 end)
                             end)

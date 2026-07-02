@@ -32,10 +32,12 @@ xi.xispal.generateModelID = function(face, race, table)
 end
 
 xi.xispal.checkKnightRequirements = function(player, isAdvanced, table)
-    local flag = false
-
     if player:getCharVar('[XISP]squireProg') < 7 then
         return false
+    end
+
+    if player:getCharVar('[XISP]hasUnlockedKnights') == 1 then
+        return true
     end
 
     if isAdvanced then
@@ -44,18 +46,18 @@ xi.xispal.checkKnightRequirements = function(player, isAdvanced, table)
             player:getMainLvl() >= 30 and
             player:getRank(player:getNation()) >= 3
         then
-            flag = true
+            return true
         end
     else
         if
             player:getMainLvl() >= 30 and
             player:getRank(player:getNation()) >= 3
         then
-            flag = true
+            return true
         end
     end
 
-    return flag
+    return false
 end
 
 xi.xispal.checkMageRequirements = function(player, isAdvanced, table)
@@ -63,6 +65,10 @@ xi.xispal.checkMageRequirements = function(player, isAdvanced, table)
 
     if player:getCharVar('[XISP]squireProg') < 7 then
         return false
+    end
+
+    if player:getCharVar('[XISP]hasUnlockedMages') == 1 then
+        return true
     end
 
     if isAdvanced then
@@ -388,7 +394,9 @@ xi.xispal.onKnightSpawn = function(pal, player, table)
         elseif lvl > 65 then
             attp = 150
         elseif lvl == 40 then
-            attp = 50
+            attp = 65
+            else
+            attp = 40
         end
 
     elseif job == xi.job.SAM then
@@ -398,6 +406,8 @@ xi.xispal.onKnightSpawn = function(pal, player, table)
             attp = 175
         elseif lvl == 40 then
             attp = 75
+        else
+            attp = 50
         end
 
     -- DRK (Boost attk)
@@ -408,6 +418,8 @@ xi.xispal.onKnightSpawn = function(pal, player, table)
             attp = 200
         elseif lvl == 40 then
             attp = 100
+        else
+            attp = 75
         end
     end
 
@@ -425,6 +437,7 @@ end
 xi.xispal.onMobRoam = function(pal, player)
     local job      = pal:getMainJob()
     local distance = 15
+    local target   = xi.xispal.getTarget(pal)
 
     if job == xi.job.BRD then
         distance = 10
@@ -438,13 +451,17 @@ xi.xispal.onMobRoam = function(pal, player)
         if pal:getLocalVar('isMelee') == 0 then
             xi.xispal.checkAbilities(pal, player, job)
 
-            if xi.xispal.getTarget(pal) ~= nil then
-                xi.xispfollow.keepDistance(pal, xi.xispal.getTarget(pal), distance)
+            if target ~= nil then
+                xi.xispfollow.keepDistance(pal, target, distance)
             else
                 xi.xispfollow.follow(pal, player)
             end
         else
-            xi.xispfollow.follow(pal, player) -- Rest logic is needed before follow
+            if target ~= nil then
+                pal:engage(target:getTargID())
+            else
+                xi.xispfollow.follow(pal, player) -- Rest logic is needed before follow
+            end
         end
     else
         DespawnMob(pal:getID())
@@ -456,6 +473,12 @@ end
 
 xi.xispal.onMobFight = function(pal, target, player)
     local job = pal:getMainJob()
+
+    -- Fix not approaching target
+    if pal:checkDistance(target) > 10 then
+        local pos = target:getPos()
+        pal:pathTo(pos.x, pos.y, pos.z, bit.bor(xi.pathflag.RUN, xi.pathflag.SCRIPT))
+    end
 
     xi.xispal.checkMagic(pal, player)
     xi.xispal.checkAbilities(pal, player, job)
@@ -488,7 +511,7 @@ xi.xispal.engageTarget = function(player, target)
         end
 
     for _, trust in pairs(party) do
-        if trust:isTrust() then
+        if trust:isTrust() and trust:getMaster() == player then
             trust:setLocalVar('currentTarget', target:getID())
             trust:setLocalVar('elementalRecast', GetSystemTime() + 10)
 
@@ -500,6 +523,28 @@ xi.xispal.engageTarget = function(player, target)
 
     player:injectActionPacket(player:getID(), 6, 94, 0, 0, 0, 10, 1)
     player:setLocalVar('[XISP]palEngageTimer', GetSystemTime() + 5)
+end
+
+xi.xispal.getTarget = function(pal)
+    if pal:isEngaged() and pal:getTarget() then
+        return pal:getTarget()
+    end
+
+    if pal:getLocalVar('currentTarget') == 0 then
+        return nil
+    end
+
+    local target = GetMobByID(pal:getLocalVar('currentTarget'))
+
+    if target then
+        if target:isAlive() then
+            return target
+        else
+            pal:setLocalVar('currentTarget', 0)
+        end
+    else
+        return nil
+    end
 end
 
 xi.xispal.onZone = function(player)
@@ -521,14 +566,4 @@ xi.xispal.onZone = function(player)
             xi.xispal.spawnSquire(player, zone)
         end
     end
-
-    -- -- Spawn Knight
-    -- if player:getCharVar('[XISP]hasKnight') >= 1 then
-    --     xi.xispal.spawnKnight(player, zone)
-    -- end
-
-    -- -- Spawn Mage
-    -- if player:getCharVar('[XISP]hasMage') >= 1 then
-    --     xi.xispal.spawnMage(player, zone)
-    -- end
 end

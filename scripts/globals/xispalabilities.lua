@@ -138,6 +138,10 @@ xi.xispal.checkAbilities = function(pal, player, job)
                 flag = false
             end
 
+            if ability.id == xi.ja.PROVOKE and pal:checkDistance(target) > 12 then
+                flag = false
+            end
+
             -- Tank mode case for SAM
             if job == xi.job.SAM then
                 local tankMode = player:getCharVar('[XISP]SamuraiTankMode')

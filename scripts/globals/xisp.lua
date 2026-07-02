@@ -26,7 +26,7 @@ xi.xisp.createExData = function(val)
 end
 
 xi.xisp.getExData = function(item)
-    local data = item:getExData()
+    local data = item:getExDataRaw()
     return (bit.lshift(data[0 + 1], 8) + data[0]) or 0
 end
 
@@ -35,7 +35,7 @@ xi.xisp.setExData = function(item, val)
         local newData = xi.xisp.createExData(val)
 
         if newData then
-            item:setExData(newData)
+            item:setExDataRaw(newData)
         end
     end
 end

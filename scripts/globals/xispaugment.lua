@@ -36,11 +36,42 @@ dialogue1 =
                 local aug3ID       = playerArg1:getCharVar('[XISP]' .. item .. 'aug3ID')
                 local aug3pow      = playerArg1:getCharVar('[XISP]' .. item .. 'aug3pow')
 
+                local augments = {}
+                local augmentPairs = 
+                {
+                    { aug1ID, aug1pow },
+                    { aug2ID, aug2pow },
+                    { aug3ID, aug3pow },
+                }
+
+                for _, augmentData in ipairs(augmentPairs) do
+                    local augmentId = augmentData[1]
+                    if augmentId ~= nil and augmentId > 0 then
+                        table.insert(augments, { id = augmentId, value = augmentData[2] or 0 })
+                    end
+                end
+
+                local itemData =
+                {
+                    id       = item,
+                    quantity = 1,
+                }
+
+                itemData.exdata =
+                {
+                    augmentKind     = xi.augment.kind.HAS_AUGMENTS,
+                    augmentSubKind  = xi.augment.subKind.STANDARD,
+                }
+
+                if #augments > 0 then
+                    itemData.exdata.augments = augments
+                end
+
                 playerArg1:messageSpecial(ID.text.ITEM_OBTAINED, item)
-                playerArg1:addItem(item, 1, aug1ID, aug1pow, aug2ID, aug2pow, aug3ID, aug3pow)
+                playerArg1:addItem(itemData)
                 playerArg1:setCharVar('[XISP]storedAugment', 0)
-                xi.xisp.setExData(GetItemByID(itemToDelete), 0) -- Reset the stored data
                 playerArg1:delItem(itemToDelete, 1)
+                xi.xisp.setExData(playerArg1:findItem(itemToDelete), 0) -- Reset the stored data
             end)
         end,
     },
@@ -75,8 +106,41 @@ dialogue2 =
             local aug3ID       = playerArg:getCharVar('[XISP]' .. item .. 'aug3ID')
             local aug3pow      = playerArg:getCharVar('[XISP]' .. item .. 'aug3pow')
 
+            local augments = {}
+            local augmentPairs = 
+            {
+                { aug1ID, aug1pow },
+                { aug2ID, aug2pow },
+                { aug3ID, aug3pow },
+            }
+
+            for _, augmentData in ipairs(augmentPairs) do
+                local augmentId = augmentData[1]
+                if augmentId ~= nil and augmentId > 0 then
+                    table.insert(augments, { id = augmentId, value = augmentData[2] or 0 })
+                end
+            end
+
+            local itemData =
+            {
+                id       = item,
+                quantity = 1,
+            }
+
+            itemData.exdata =
+            {
+                augmentKind     = xi.augment.kind.HAS_AUGMENTS,
+                augmentSubKind  = xi.augment.subKind.STANDARD,
+            }
+
+            if #augments > 0 then
+                itemData.exdata.augments = augments
+            end
+
+            
             playerArg:messageSpecial(ID.text.ITEM_OBTAINED, item)
-            playerArg:addItem(item, 1, aug1ID, aug1pow, aug2ID, aug2pow, aug3ID, aug3pow)
+            playerArg:addItem(itemData)
+            -- playerArg:addItem(item, 1, aug1ID, aug1pow, aug2ID, aug2pow, aug3ID, aug3pow)
             playerArg:setCharVar('[XISP]storedAugment', 0)
         end,
     },
@@ -156,6 +220,14 @@ dialogue4 =
     },
 }
 
+xi.augment.pickNewAugment = function(item, table)
+    local newVal = math.random(1, #table)
+    augID   = table[newVal].augmentID
+    name    = table[newVal].name
+    power   = table[newVal].value
+    xi.xisp.setExData(item, augID)
+end
+
 xi.augment.onAugmentTrade = function(player, npc, trade)
     local augmentItem = player:getCharVar('[XISP]storedAugment')
     
@@ -209,13 +281,13 @@ xi.augment.onAugmentTrade = function(player, npc, trade)
         -- Dump if we're trying to upgrade armor with weapon enchantment, or vice versa
         if augmentItem > 0 then
             if
-                augmentItem >= 16512 and augmentItem <= 22154 and
+                augmentItem >= 16385 and augmentItem <= 22249 and
                 (itemID ~= xi.item.MYTHRIL_MEED and itemID ~= xi.item.DARK_MEED and itemID ~= xi.item.GOLD_MEED)
             then
                 player:printToPlayer("Weapons require a specific type of item. Come back when you've found one.", 0, npc:getPacketName())
                 return
             elseif
-                (augmentItem < 16512 or augmentItem > 22154) and
+                (augmentItem < 16385 or augmentItem > 22249) and
                 (itemID == xi.item.MYTHRIL_MEED or itemID == xi.item.DARK_MEED or itemID == xi.item.GOLD_MEED)
             then
                 player:printToPlayer("This item only works on weapons, unfortunately.", 0, npc:getPacketName())
@@ -294,7 +366,6 @@ xi.augment.onAugmentTrigger = function(player, npc)
 
     local item = player:getCharVar('[XISP]storedAugment')
 
-    print((GetItemByID(item):get()))
 
     if item ~= 0 then
         local itemName = GetItemByID(item):getName()
