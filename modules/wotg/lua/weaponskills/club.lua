@@ -80,11 +80,10 @@ end)
 -- Moonlight
 -----------------------------------
 m:addOverride('xi.actions.weaponskills.moonlight.onUseWeaponSkill', function(player, target, wsID, tp, primary, action, taChar)
-    local lvl       = player:getSkillLevel(11)
-    local damage    = (lvl / 9) - 1
-    local damagemod = damage * ((50 + (tp * 0.05)) / 100)
-    damagemod       = damagemod * xi.settings.main.WEAPON_SKILL_POWER
-
+    local lvl = player:getSkillLevel(11) -- get club skill
+    local damage = (lvl / 9) - 1
+    local damagemod = damage * ((50 + (tp * 0.25)) / 10)
+    damagemod = damagemod * xi.settings.main.WEAPON_SKILL_POWER
     return 1, 0, false, damagemod
 end)
 

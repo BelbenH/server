@@ -8,12 +8,22 @@ xi.xispchocobo = xi.xispchocobo or {}
 -- !injectaction 5 239 (Choco Race announcement)
 -- !injectaction 5 242 (Race start!)
 -- !injectaction 5 243 (GOAL)
--- !injectaction 5 243 (COMPLETE)
+-- !injectaction 5 244 (COMPLETE)
 
--- !injectaction 5 239 (Choco Race announcement San d'Oria themed)
--- !injectaction 5 239 (Choco Race announcement Gustberg themed)
+-- !injectaction 5 245 (Choco Race announcement San d'Oria themed)
+-- !injectaction 5 248 (Choco Race announcement Gustberg themed)
 -- !injectaction 5 239 (Choco Race announcement Windurst themed)
 -- !injectaction 5 254 (Choco Race announcement Crystal themed)
+
+-- Costumes:
+-- 1505 for signs
+-- 1509 for checkpoints
+-- 2310 for nation banners
+
+-- Music
+-- 227 Sunbreeze Shuffle (idle music for the race)
+-- 70 Monstrosity (race music)
+
 
 xi.xispchocobo.names =
 {

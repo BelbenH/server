@@ -92,6 +92,333 @@ xi.xispal.youngSquireChat = function(player, pal)
     end
 end
 
+xi.xispal.onSquireTrigger = function(player, pal)
+    local baseMenu, jobMenu = {}
+    local meleeMenu, meleeMenu2, meleeMenu3 = {}
+    local songMenu1, songMenu2 = {}
+    local magicMenu, magicMenu2, magicMenu3 = {}
+    local pldOption, drkOption, drgOption, samOption = {}
+    local smnOption, brdOption = {}
+    local squireName = xi.xispal.squireName[player:getCharVar('[XISP]squireName')]
+    local songNames =
+    {
+        [1] = 'ballads',
+        [2] = 'madrigals',
+        [3] = 'minuets',
+        [4] = 'marches',
+        [5] = 'paeons',
+        [6] = 'minnes',
+    }
+
+    local changeSquireJob = function(player, newJob)
+        local currJob = player:getCharVar('[XISP]squireJob') 
+
+        player:delSpell(xi.xispal.squireJobInfo[currJob].trust)
+        player:addSpell(xi.xispal.squireJobInfo[newJob].trust, { silentLog = true })
+        player:setCharVar('[XISP]squireJob', newJob)
+        player:printToPlayer('Very well. It shall be done.', xi.msg.channel.PARTY, squireName)
+    end
+
+    songMenu1 =
+    {
+        title = 'Which songs should I sing?',
+        options =
+        {
+            {
+                'Ballads.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs1', 1)
+                    xi.xisp.sendMenu(player, songMenu2)
+                end,
+            },
+            {
+                'Madrigals.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs1', 2)
+                    xi.xisp.sendMenu(player, songMenu2)
+                end,
+            },
+            {
+                'Minuets.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs1', 3)
+                    xi.xisp.sendMenu(player, songMenu2)
+                end,
+            },
+            {
+                'Marches.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs1', 4)
+                    xi.xisp.sendMenu(player, songMenu2)
+                end,
+            },
+            {
+                'Paeons.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs1', 5)
+                    xi.xisp.sendMenu(player, songMenu2)
+                end,
+            },
+            {
+                'Minnes.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs1', 6)
+                    xi.xisp.sendMenu(player, songMenu2)
+                end,
+            },
+        },
+    }
+
+    songMenu2 =
+    {
+        title = 'Got it. Anything else?',
+        options =
+        {
+            {
+                'Ballads.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs2', 1)
+                    player:printToPlayer('Okay. I\'ll sing ' .. songNames[player:getCharVar('[XISP]bardSongs1')] .. ' and ' .. songNames[player:getCharVar('[XISP]bardSongs2')] .. '.', xi.msg.channel.PARTY, squireName)
+                end,
+            },
+            {
+                'Madrigals.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs2', 2)
+                    player:printToPlayer('Okay. I\'ll sing ' .. songNames[player:getCharVar('[XISP]bardSongs1')] .. ' and ' .. songNames[player:getCharVar('[XISP]bardSongs2')] .. '.', xi.msg.channel.PARTY, squireName)
+                end,
+            },
+            {
+                'Minuets.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs2', 3)
+                    player:printToPlayer('Okay. I\'ll sing ' .. songNames[player:getCharVar('[XISP]bardSongs1')] .. ' and ' .. songNames[player:getCharVar('[XISP]bardSongs2')] .. '.', xi.msg.channel.PARTY, squireName)
+                end,
+            },
+            {
+                'Marches.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs2', 4)
+                    player:printToPlayer('Okay. I\'ll sing ' .. songNames[player:getCharVar('[XISP]bardSongs1')] .. ' and ' .. songNames[player:getCharVar('[XISP]bardSongs2')] .. '.', xi.msg.channel.PARTY, squireName)
+                end,
+            },
+            {
+                'Paeons.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs2', 5)
+                    player:printToPlayer('Okay. I\'ll sing ' .. songNames[player:getCharVar('[XISP]bardSongs1')] .. ' and ' .. songNames[player:getCharVar('[XISP]bardSongs2')] .. '.', xi.msg.channel.PARTY, squireName)
+                end,
+            },
+            {
+                'Minnes.',
+                function(player)
+                    player:setCharVar('[XISP]bardSongs2', 6)
+                    player:printToPlayer('Okay. I\'ll sing ' .. songNames[player:getCharVar('[XISP]bardSongs1')] .. ' and ' .. songNames[player:getCharVar('[XISP]bardSongs2')] .. '.', xi.msg.channel.PARTY, squireName)
+                end,
+            },
+        },
+    }
+
+    pldOption =
+    {
+        'Paladin',
+        function(playerArg)
+            changeSquireJob(playerArg, xi.job.PLD)
+        end,
+    }
+    drkOption =
+    {
+        'Dark Knight',
+        function(playerArg)
+            changeSquireJob(playerArg, xi.job.DRK)
+        end,
+    }
+    drgOption =
+    {
+        'Dragoon',
+        function(playerArg)
+            changeSquireJob(playerArg, xi.job.DRG)
+        end,
+    }
+    samOption =
+    {
+        'Samurai',
+        function(playerArg)
+            changeSquireJob(playerArg, xi.job.SAM)
+        end,
+    }
+    brdOption =
+    {
+        'Bard',
+        function(playerArg)
+            changeSquireJob(playerArg, xi.job.BRD)
+        end,
+    }
+    smnOption =
+    {
+        'Summoner',
+        function(playerArg)
+            changeSquireJob(playerArg, xi.job.SMN)
+        end,
+    }
+
+    baseMenu =
+    {
+        title = 'What do you require?',
+        options =
+        {
+            {
+                'Change your job.',
+                function(playerArg)
+                    xi.xisp.sendMenu(playerArg, jobMenu)
+                end,
+            },
+            {
+                'Upgrade your gear.',
+                function(playerArg)
+                end,
+            },
+        },
+    }
+
+    jobMenu =
+    {
+        title = 'Which job should I assume?',
+        options =
+        {
+            {
+                'Melee',
+                function(playerArg)
+                    xi.xisp.sendMenu(playerArg, meleeMenu)
+                end,
+            },
+            {
+                'Magic',
+                function(playerArg)
+                    xi.xisp.sendMenu(playerArg, magicMenu)
+                end,
+            },
+        },
+    }
+
+    meleeMenu =
+    {
+        title = 'Now which job?',
+        options =
+        {
+            {
+                'Go back.',
+                function(playerArg)
+                    xi.xisp.sendMenu(playerArg, jobMenu)
+                end,
+            },
+            {
+                'Thief',
+                function(playerArg)
+                    changeSquireJob(playerArg, xi.job.THF)
+                end,
+            },
+        },
+    }
+
+    magicMenu =
+    {
+        title = 'Now which job?',
+        options =
+        {
+            {
+                'Go back.',
+                function(playerArg)
+                    xi.xisp.sendMenu(playerArg, jobMenu)
+                end,
+            },
+            {
+                'White Mage',
+                function(playerArg)
+                    changeSquireJob(playerArg, xi.job.WHM)
+                end,
+            },
+            {
+                'Black Mage',
+                function(playerArg)
+                    changeSquireJob(playerArg, xi.job.BLM)
+                end,
+            },
+            {
+                'Red Mage',
+                function(playerArg)
+                    changeSquireJob(playerArg, xi.job.RDM)
+                end,
+            },
+        },
+    }
+
+    -- Temp fix for old players (Remove when all players have spoken to their squire once)
+    if player:getCharVar('[XISP]squireJob') == 0 then
+        player:setCharVar('[XISP]squireJob', xi.job.RDM)
+    end
+
+    local master = GetPlayerByID(pal:getLocalVar('[XISP]ownerID'))
+    
+    if master == player then
+        player:printToPlayer('Yes, ' .. player:getName() .. '?', xi.msg.channel.PARTY, pal:getPacketName())
+        
+        -- Populate melee jobs
+        local job      = player:getCharVar('[XISP]squireJob')
+        local jobTable = xi.xispal.squireJobInfo
+        local pldTable = jobTable[xi.job.PLD].quest
+        local drkTable = jobTable[xi.job.DRK].quest
+        local drgTable = jobTable[xi.job.DRG].quest
+        local samTable = jobTable[xi.job.SAM].quest
+
+        if player:hasCompletedQuest(pldTable[1], pldTable[2]) and job ~= xi.job.PLD then
+            table.insert(meleeMenu.options, pldOption)
+        end
+        if player:hasCompletedQuest(drkTable[1], drkTable[2]) and job ~= xi.job.DRK then
+            table.insert(meleeMenu.options, drkOption)
+        end
+        if player:hasCompletedQuest(drgTable[1], drgTable[2]) and job ~= xi.job.DRG then
+            table.insert(meleeMenu.options, drgOption)
+        end
+        if player:hasCompletedQuest(samTable[1], samTable[2]) and job ~= xi.job.SAM then
+            table.insert(meleeMenu.options, samOption)
+        end
+
+        -- Populate mage jobs
+        local smnTable = jobTable[xi.job.SMN].quest
+        local brdTable = jobTable[xi.job.BRD].quest
+
+        if player:hasCompletedQuest(smnTable[1], smnTable[2]) and job ~= xi.job.SMN then
+            table.insert(magicMenu.options, smnOption)
+        end
+        if player:hasCompletedQuest(brdTable[1], brdTable[2]) and job ~= xi.job.BRD then
+            table.insert(magicMenu.options, brdOption)
+        end
+
+        local brdOption =
+        {
+            'Let\'s talk songs.',
+            function(playerArg)
+                xi.xisp.sendMenu(master, songMenu1)
+            end,
+        }
+        local nvm =
+        {
+            'Nevermind.',
+            function(playerArg)
+            end,
+        }
+
+        if job == xi.job.BRD then
+            table.insert(baseMenu.options, brdOption)
+        end
+
+        table.insert(baseMenu.options, nvm)
+
+        xi.xisp.sendMenu(master, baseMenu)
+    end
+end
+
 xi.xispal.idleYoungSquireChat = function(pal, player)
     local palName    = pal:getPacketName()
 

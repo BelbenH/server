@@ -36,23 +36,15 @@ xi.xispal.checkKnightRequirements = function(player, isAdvanced, table)
         return false
     end
 
-    if player:getCharVar('[XISP]hasUnlockedKnights') == 1 then
-        return true
-    end
-
     if isAdvanced then
         if
             player:hasCompletedQuest(table.quest[1], table.quest[2]) and
-            player:getMainLvl() >= 30 and
             player:getRank(player:getNation()) >= 3
         then
             return true
         end
     else
-        if
-            player:getMainLvl() >= 30 and
-            player:getRank(player:getNation()) >= 3
-        then
+        if player:getRank(player:getNation()) >= 3 then
             return true
         end
     end
@@ -67,23 +59,15 @@ xi.xispal.checkMageRequirements = function(player, isAdvanced, table)
         return false
     end
 
-    if player:getCharVar('[XISP]hasUnlockedMages') == 1 then
-        return true
-    end
-
     if isAdvanced then
         if
             player:hasCompletedQuest(table.quest[1], table.quest[2]) and
-            player:getMainLvl() >= 40 and
             player:getRank(player:getNation()) >= 4
         then
             flag = true
         end
     else
-        if
-            player:getMainLvl() >= 40 and
-            player:getRank(player:getNation()) >= 4
-        then
+        if player:getRank(player:getNation()) >= 4 then
             flag = true
         end
     end
@@ -223,9 +207,23 @@ xi.xispal.rest = function(pal, player)
     end
 
     if not pal:hasStatusEffect(xi.effect.HEALING) then
-        if pal:getMPP() < 15 then
-            pal:setLocalVar('restTime', GetSystemTime() + 20)
+        local restTime = 0
+        local target   = xi.xispal.getTarget(pal)
+
+        if pal:getMPP() < 10 then
+            restTime = 42
+        elseif pal:getMPP() < 15 then
+            restTime = 32
+        elseif pal:getMPP() < 20 then
+            restTime = 22
         end
+
+        -- Not engaged, priorizitze resting
+        if target == nil then
+            restTime = restTime + 20
+        end
+
+        pal:setLocalVar('restTime', restTime + GetSystemTime())
         pal:addStatusEffect(xi.effect.HEALING, { origin = pal, tick = 10, icon = 0 })
     end
 end
@@ -338,21 +336,103 @@ xi.xispal.onMobSpawn = function(pal, player, table)
     end)
 end
 
-xi.xispal.onMageSpawn = function(pal, player, table)
-    local look = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.mageGearSets[table.job])
+xi.xispal.onSquireSpawn = function(pal)
+    pal:hideName(true)
+    pal:setStatus(xi.status.INVISIBLE)
 
-    local lvl  = player:getMainLvl()
-    local tier = 0
+    local player = pal:getMaster()
 
-    if lvl >= 60 then
-        tier = 4
-    elseif lvl >= 40 then
-        tier = 3
-    elseif lvl >= 30 then
-        tier = 2
-    elseif lvl >= 20 then
-        tier = 1
+    if not player then
+        return
     end
+
+    local face = player:getCharVar('[XISP]squireFace')
+    local race = player:getCharVar('[XISP]squireRace')
+    local lvl  = player:getMainLvl()
+    local job  = pal:getMainJob()
+    local tier = xi.xispal.getTier(player)
+
+    pal:renameEntity(xi.xispal.squireName[player:getCharVar('[XISP]squireName')])
+
+    local attp    = 0
+    local THPower = 0
+    local acc     = 15
+    
+    if job == xi.job.PLD or job == xi.job.SAM or job == xi.job.DRK or job == xi.job.THF then
+        pal:setLocalVar('isMelee', 1)
+        pal:setLookString(xi.xispal.generateModelID(xi.xispal.face[face], xi.xispal.race[race], xi.xispal.knightGearSets[job][tier]))
+
+        if job == xi.job.THF then
+            if lvl >= 45 then
+                THPower = 2
+                attp = -40
+            else
+                attp = -30
+                THPower = 1
+            end
+
+        -- DRG (Boost attk)
+        elseif job == xi.job.DRG then
+            if lvl == 75 then
+                attp = 250
+            elseif lvl > 65 then
+                attp = 150
+            elseif lvl == 40 then
+                attp = 65
+                else
+                attp = 40
+            end
+
+        elseif job == xi.job.SAM then
+            if lvl == 75 then
+                attp = 275
+            elseif lvl > 65 then
+                attp = 175
+            elseif lvl == 40 then
+                attp = 75
+            else
+                attp = 50
+            end
+
+        -- DRK (Boost attk)
+        elseif job == xi.job.DRK then
+            if lvl == 75 then
+                attp = 300
+            elseif lvl > 65 then
+                attp = 200
+            elseif lvl == 40 then
+                attp = 100
+            else
+                attp = 75
+            end
+        end
+        pal:addMod(xi.mod.ATT, attp)
+        pal:addMod(xi.mod.ACC, acc)
+        pal:addMod(xi.mod.TREASURE_HUNTER, THPower)
+    
+    -- Assumed to be a mage if not a job from above
+    else
+        pal:setLookString(xi.xispal.generateModelID(xi.xispal.face[face], xi.xispal.race[race], xi.xispal.mageGearSets[job][tier]))
+
+        if pal:getMainLvl() < 35 and job == xi.job.RDM then
+            pal:setLocalVar('isMelee', 1)
+        end
+    end
+    
+    pal:setLocalVar('[XISP]spellRecast', GetSystemTime() + math.random(7, 12))
+    
+    player:timer(400, function(playerArg)
+        pal:setLocalVar('[XISP]spellRecast', GetSystemTime() + math.random(7, 12))
+        pal:setLocalVar('[XISP]isPal', 1)
+        pal:setStatus(xi.status.NORMAL)
+        pal:hideName(false)
+    end)
+end
+
+xi.xispal.onMageSpawn = function(pal, player, table)
+    local tier = xi.xispal.getTier(player)
+    local look = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.mageGearSets[table.job][tier])
+    local lvl  = player:getMainLvl()
 
     -- Base bonuses for mages
     pal:addMod(xi.mod.MPHEAL, tier)
@@ -364,26 +444,20 @@ xi.xispal.onMageSpawn = function(pal, player, table)
 end
 
 xi.xispal.onKnightSpawn = function(pal, player, table)
-    local tier    = 0
+    local tier    = xi.xispal.getTier(player)
     local lvl     = player:getMainLvl()
     local job     = pal:getMainJob()
     local attp    = 0
     local THPower = 0
     local acc     = 15
 
-    if xi.xispal.hasCompletedAF(player) and lvl >= 60 then
-        tier = 2
-    elseif lvl >= 30 then
-        tier = 1
-    end
-
     -- THF (Add Treasure Hunter)
     if job == xi.job.THF then
         if lvl >= 45 then
             THPower = 2
-            attp = -20
+            attp = -40
         else
-            attp = -10
+            attp = -30
             THPower = 1
         end
 

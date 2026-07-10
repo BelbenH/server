@@ -6,6 +6,7 @@ local zoneObject = {}
 
 zoneObject.onInitialize = function(zone)
     xi.helm.initZone(zone, xi.helmType.LOGGING)
+    local pos = { x = 125.9313, y = -60, z = 301.9897, rot = 31, } -- For Chocobo sign 1505
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

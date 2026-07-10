@@ -14,7 +14,7 @@ local dialogue3 = {}
 local dialogue4 = {}
 
 local table = xi.xispal.palInfo[xi.job.BRD]
-local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.mageGearSets[table.job])
+local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.mageGearSets[table.job][2])
 
 local songNames =
 {
@@ -229,7 +229,6 @@ xi.xispal.onBardTrigger = function(player, npc)
                                     player:printToPlayer('May I follow you? Just until I find the courage to stand on my own.', xi.msg.channel.SAY, table.name)
                                     player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                                     npc:setLocalVar('dialogueLock', 0)
-                                    player:setCharVar('[XISP]hasUnlockedMages', 1)
                                     return
                                 end)
                             end)

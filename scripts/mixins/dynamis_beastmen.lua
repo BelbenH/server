@@ -33,16 +33,16 @@ g_mixins.dynamis_beastmen = function(dynamisBeastmenMob)
         [xi.mobFamily.YAGUDO] = xi.item.TUKUKU_WHITESHELL,   -- Yagudo
     }
 
-    -- With Treasure Hunter on every procced monster, you can expect approximately 1.7 coins per kill on average.
-    -- Without Treasure Hunter, you can expect about 1.25 coins per kill on average.
-    -- Without a proc, the coin drop rate is very low (~10%)
+    -- Default drop rate w/o TH is 10%. Proc'ing the monster opens up extra slots
+    -- to drop at higher drop rates. The indexing is based off the amount of times that the
+    -- mob was proc'ed
     local thCurrency =
     {
-        [0] = { single = 100, hundred =  5 },
-        [1] = { single = 115, hundred = 10 },
-        [2] = { single = 145, hundred = 20 },
-        [3] = { single = 190, hundred = 35 },
-        [4] = { single = 250, hundred = 50 },
+        [0] = { single = 1000, hundred = 50  }, 
+        [1] = { single = 1000, hundred = 50  },
+        [2] = { single = 1000, hundred = 100 },
+        [3] = { single = 1500, hundred = 100 },
+        [4] = { single = 2400, hundred = 500 },
     }
 
     dynamisBeastmenMob:addListener('MAGIC_TAKE', 'DYNAMIS_MAGIC_PROC_CHECK', function(target, caster, spell)
@@ -80,37 +80,76 @@ g_mixins.dynamis_beastmen = function(dynamisBeastmenMob)
             return
         end
 
-        local th            = thCurrency[math.min(mob:getTHlevel(), 4)]
         local currency      = familyCurrency[mob:getFamily()] or xi.item.TUKUKU_WHITESHELL + math.random(0, 2) * 3
         local singleChance  = mob:getMainLvl() > 90 and math.floor(th.single * 1.5) or th.single
         local hundredChance = th.hundred
+        local procRate      = mob:getLocalVar('dynamis_proc')
+        local thLvl         = mob:getTHLevel()
+        local dropRate      = 0
+        local thDropRate    = 0
 
-        -- White (special) adds 100% hundred slot
-        if mob:getLocalVar('dynamis_proc') >= 4 then
-            killer:addTreasure(currency + 1, mob)
+        print('==DYNAMIS== Droprate test to ensure math.random runs on runtime and not on build' .. math.random(1, 10))
+        
+        for _, member in pairs(killer:getAlliance()) do
+            -- Base hundred slot
+            if mob:isNM() then
+                dropRate   = thCurrency[procRate]
+                thDropRate = xi.combat.treasureHunter.getDropRate(thLvl, dropRate)
+
+                if math.random(1,10000) < thDropRate then
+                    npcUtil.giveItem(member, currency + 1)
+                end
+            end
+            
+            -- White (4 procs) adds single slot
+            if procRate >= 4 then
+                dropRate   = thCurrency[4]
+                thDropRate = xi.combat.treasureHunter.getDropRate(thLvl, dropRate)
+
+                if math.random(1,10000) < thDropRate then
+                    npcUtil.giveItem(member, currency)
+                end
+            end
+
+            -- red (3 procs) adds single slot
+            if procRate >= 3 then
+                dropRate   = thCurrency[3]
+                thDropRate = xi.combat.treasureHunter.getDropRate(thLvl, dropRate)
+
+                if math.random(1,10000) < thDropRate then
+                    npcUtil.giveItem(member, currency)
+                end
+            end
+    
+            -- yellow (2 procs) adds single slot
+            if procRate >= 2 then
+                dropRate   = thCurrency[2]
+                thDropRate = xi.combat.treasureHunter.getDropRate(thLvl, dropRate)
+
+                if math.random(1,10000) < thDropRate then
+                    npcUtil.giveItem(member, currency)
+                end
+            end
+    
+            -- blue (1 proc) adds single slot
+            if procRate >= 1 then
+                dropRate   = thCurrency[1]
+                thDropRate = xi.combat.treasureHunter.getDropRate(thLvl, dropRate)
+
+                if math.random(1,10000) < thDropRate then
+                    npcUtil.giveItem(member, currency)
+                end
+            end
+    
+            -- Base single slot
+            dropRate   = thCurrency[procRate]
+            thDropRate = xi.combat.treasureHunter.getDropRate(thLvl, dropRate)
+
+            if math.random(1,10000) < thDropRate then
+                npcUtil.giveItem(member, currency)
+            end
         end
-
-        -- Base hundred slot
-        if mob:isNM() then
-            killer:addTreasure(currency + 1, mob, hundredChance)
-        end
-
-        -- red (high) adds 100% single slot
-        if mob:getLocalVar('dynamis_proc') >= 3 then
-            killer:addTreasure(currency, mob)
-        end
-
-        -- yellow (medium) adds single slot
-        if mob:getLocalVar('dynamis_proc') >= 2 then
-            killer:addTreasure(currency, mob, singleChance)
-        end
-
-        -- blue (low) adds single slot
-        if mob:getLocalVar('dynamis_proc') >= 1 then
-            killer:addTreasure(currency, mob, singleChance)
-        end
-
-        killer:addTreasure(currency, mob, singleChance) -- base single slot
+        
     end)
 end
 

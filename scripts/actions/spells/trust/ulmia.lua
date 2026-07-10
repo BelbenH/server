@@ -1,5 +1,6 @@
 -----------------------------------
--- Trust: Ulmia
+-- Trust: Ulmia (914)
+-- Replacement trust for player BRD squire
 -----------------------------------
 ---@type TSpellTrust
 local spellObject = {}
@@ -13,26 +14,29 @@ spellObject.onSpellCast = function(caster, target, spell)
 end
 
 spellObject.onMobSpawn = function(mob)
-    xi.trust.teamworkMessage(mob, {
-        [xi.magic.spell.PRISHE] = xi.trust.messageOffset.TEAMWORK_1,
-        [xi.magic.spell.MILDAURION] = xi.trust.messageOffset.TEAMWORK_2,
-    })
+    xi.xispal.onSquireSpawn(mob)
+end
 
-    -- TODO: BRD trusts need better logic and major overhaul, for now they compliment each other
-    mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.MADRIGAL }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.MADRIGAL })
-    mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.MINUET }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.VALOR_MINUET })
+spellObject.onMobRoam = function(mob)
+    local player = mob:getMaster()
 
-    mob:setAutoAttackEnabled(false)
+    xi.xispal.idleSquireChat(mob, player)
+    xi.xispal.onMobRoam(mob, player)
+end
 
-    mob:setMobMod(xi.mobMod.TRUST_DISTANCE, xi.trust.movementType.MID_RANGE)
+spellObject.onMobFight = function(mob, target)
+    local player = mob:getMaster()
+    xi.xispal.onMobFight(mob, target, player)
+end
+
+spellObject.onMobDisengage = function(mob)
+    xi.xispal.onMobDisengage(mob)
 end
 
 spellObject.onMobDespawn = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DESPAWN)
 end
 
 spellObject.onMobDeath = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DEATH)
 end
 
 return spellObject

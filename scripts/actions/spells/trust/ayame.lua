@@ -1,11 +1,12 @@
 -----------------------------------
--- Trust: Ayame
+-- Trust: Ayame (900)
+-- Replacement trust for player SAM squire
 -----------------------------------
 ---@type TSpellTrust
 local spellObject = {}
 
 spellObject.onMagicCastingCheck = function(caster, target, spell)
-    return xi.trust.canCast(caster, spell, xi.magic.spell.AYAME_UC)
+    return xi.trust.canCast(caster, spell)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
@@ -13,26 +14,29 @@ spellObject.onSpellCast = function(caster, target, spell)
 end
 
 spellObject.onMobSpawn = function(mob)
-    xi.trust.teamworkMessage(mob, {
-        [xi.magic.spell.NAJI] = xi.trust.messageOffset.TEAMWORK_1,
-        [xi.magic.spell.GILGAMESH] = xi.trust.messageOffset.TEAMWORK_2,
-    })
+    xi.xispal.onSquireSpawn(mob)
+end
 
-    mob:addGambit(ai.t.SELF, { ai.c.NOT_STATUS, xi.effect.HASSO }, { ai.r.JA, ai.s.SPECIFIC, xi.ja.HASSO })
+spellObject.onMobRoam = function(mob)
+    local player = mob:getMaster()
 
-    mob:addGambit(ai.t.SELF, { ai.c.HAS_TOP_ENMITY, 0 }, { ai.r.JA, ai.s.SPECIFIC, xi.ja.THIRD_EYE })
+    xi.xispal.idleSquireChat(mob, player)
+    xi.xispal.onMobRoam(mob, player)
+end
 
-    mob:addGambit(ai.t.SELF, { ai.c.TP_LT, 1000 }, { ai.r.JA, ai.s.SPECIFIC, xi.ja.MEDITATE })
+spellObject.onMobFight = function(mob, target)
+    local player = mob:getMaster()
+    xi.xispal.onMobFight(mob, target, player)
+end
 
-    mob:setTrustTPSkillSettings(ai.tp.OPENER, ai.s.SPECIAL_AYAME)
+spellObject.onMobDisengage = function(mob)
+    xi.xispal.onMobDisengage(mob)
 end
 
 spellObject.onMobDespawn = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DESPAWN)
 end
 
 spellObject.onMobDeath = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DEATH)
 end
 
 return spellObject

@@ -1,5 +1,6 @@
 -----------------------------------
--- Trust: Kukki-Chebukki
+-- Trust: Kukki-Chebukki (961)
+-- Replacement trust for player SMN squire
 -----------------------------------
 ---@type TSpellTrust
 local spellObject = {}
@@ -13,15 +14,29 @@ spellObject.onSpellCast = function(caster, target, spell)
 end
 
 spellObject.onMobSpawn = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.SPAWN)
+    xi.xispal.onSquireSpawn(mob)
+end
+
+spellObject.onMobRoam = function(mob)
+    local player = mob:getMaster()
+
+    xi.xispal.idleSquireChat(mob, player)
+    xi.xispal.onMobRoam(mob, player)
+end
+
+spellObject.onMobFight = function(mob, target)
+    local player = mob:getMaster()
+    xi.xispal.onMobFight(mob, target, player)
+end
+
+spellObject.onMobDisengage = function(mob)
+    xi.xispal.onMobDisengage(mob)
 end
 
 spellObject.onMobDespawn = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DESPAWN)
 end
 
 spellObject.onMobDeath = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DEATH)
 end
 
 return spellObject

@@ -31,6 +31,7 @@ local spawnNewSquire = function(player)
             DespawnMob(squireArg:getID())
             xi.xispal.spawnSquire(player, player:getZone())
             player:addSpell(920, { silentLog = true })
+            player:setCharVar('[XISP]squireJob', xi.job.RDM)
         end)
     end
 end

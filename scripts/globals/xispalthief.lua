@@ -9,7 +9,7 @@ local menu2 = {}
 local dialogue = {}
 local dialogue2 = {}
 local table = xi.xispal.palInfo[xi.job.THF]
-local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][0])
+local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][2])
 
 menu =
 {
@@ -100,7 +100,6 @@ xi.xispal.onThiefTrigger = function(player, npc)
                                 player:printToPlayer("Stick with me and you won't just see the riches of Vanadiel-you'll own them. so what do you say? Partners?", xi.msg.channel.SAY, table.name)
                                 player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                                 npc:setLocalVar('dialogueLock', 0)
-                                player:setCharVar('[XISP]hasUnlockedKnights', 1)
                                 return
                             end)
                         end)

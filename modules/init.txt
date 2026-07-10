@@ -80,3 +80,5 @@ phalanx/sql/phalanx_mob_adjustments.sql
 phalanx/sql/remove_aptant_nms.sql
 phalanx/sql/phalanx_ability_changes.sql
 phalanx/sql/custom_npc_list.sql
+phalanx/sql/synth_recipe_changes.sql
+phalanx/sql/mob_pools_changes.sql

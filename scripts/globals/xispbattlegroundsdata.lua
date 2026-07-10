@@ -7,41 +7,37 @@ xi.battlegrounds.lootTables =
     {
         AUGMENT =
         {
-            { CHANCE = 15, ITEMS = { xi.augment.augmentItems[1][1], xi.augment.augmentItems[1][2], xi.augment.augmentItems[1][3] }, }, -- Level 1 Enchantments
+            { CHANCE = 25, ITEMS = { xi.augment.augmentItems[1][1], xi.augment.augmentItems[1][2], xi.augment.augmentItems[1][3] }, }, -- Level 1 Enchantments
         },
         EQUIPMENT =
         {
-            { CHANCE = 7, ITEMS = { 14563, 14559, 14547, 14551, 14555 }, }, -- Body Armor (Lvl 15)
-            { CHANCE = 7, ITEMS = { 14978, 14974, 14962, 14966, 14970 }, }, -- Hand Armor (Lvl 15)
-            { CHANCE = 7, ITEMS = { 15642, 15638, 15626, 15630, 15634 }, }, -- Leg Armor (Lvl 15)
-            { CHANCE = 7, ITEMS = { 15728, 15724, 15712, 15716, 15720 }, }, -- Feet Armor (Lvl 15)
-            { CHANCE = 7, ITEMS = { 16101, 16097, 16085, 16089, 16093 }, }, -- Head Armor (Lvl 15)
+            { CHANCE = 8,  ITEMS = { 14563, 14559, 14547, 14551, 14555 }, }, -- Body Armor (Lvl 15)
+            { CHANCE = 12, ITEMS = { 14978, 14974, 14962, 14966, 14970 }, }, -- Hand Armor (Lvl 15)
+            { CHANCE = 10, ITEMS = { 15642, 15638, 15626, 15630, 15634 }, }, -- Leg Armor (Lvl 15)
+            { CHANCE = 12, ITEMS = { 15728, 15724, 15712, 15716, 15720 }, }, -- Feet Armor (Lvl 15)
+            { CHANCE = 10, ITEMS = { 16101, 16097, 16085, 16089, 16093 }, }, -- Head Armor (Lvl 15)
         },
     },
 
     [25] = -- Level 25
     {
-        { CHANCE = 75, { xi.augment.augmentItems[1][1], xi.augment.augmentItems[1][2], xi.augment.augmentItems[1][3] }, }, -- Level 1 Enchantments
+        { CHANCE = 30, { xi.augment.augmentItems[1][1], xi.augment.augmentItems[1][2], xi.augment.augmentItems[1][3] }, }, -- Level 1 Enchantments
         { CHANCE = 10, { 14564, 14560, 14548, 14552, 14556 }, }, -- Body Armor (Lvl 25)
         { CHANCE = 15, { 14979, 14975, 14963, 14967, 14971 }, }, -- Hand Armor (Lvl 25)
         { CHANCE = 15, { 15643, 15639, 15627, 15631, 15635 }, }, -- Leg Armor (Lvl 25)
         { CHANCE = 15, { 15729, 15725, 15713, 15717, 15721 }, }, -- Feet Armor (Lvl 25)
         { CHANCE = 15, { 16102, 16098, 16086, 16090, 16094 }, }, -- Head Armor (Lvl 25)
-        { CHANCE = 25, { 5258 }, }, -- Revive Feather
-        { CHANCE = 10, { 5259 }, }, -- Rebirth Feather
     },
 
     [35] = -- Level 35
     {
-        { CHANCE = 75, { xi.augment.augmentItems[1][1], xi.augment.augmentItems[1][2], xi.augment.augmentItems[1][3] }, }, -- Level 1 Enchantments
+        { CHANCE = 35, { xi.augment.augmentItems[1][1], xi.augment.augmentItems[1][2], xi.augment.augmentItems[1][3] }, }, -- Level 1 Enchantments
         { CHANCE = 10, { 14565, 14561, 14549, 14553, 14557 }, }, -- Body Armor (Lvl 35)
         { CHANCE = 15, { 14980, 14976, 14964, 14968, 14972 }, }, -- Hand Armor (Lvl 35)
         { CHANCE = 15, { 15644, 15640, 15628, 15632, 15636 }, }, -- Leg Armor (Lvl 35)
         { CHANCE = 15, { 15730, 15726, 15714, 15718, 15722 }, }, -- Feet Armor (Lvl 35)
         { CHANCE = 15, { 16103, 16099, 16087, 16091, 16095 }, }, -- Head Armor (Lvl 35)
         { CHANCE = 25, { 3225, 3229, 3217, 3213, 3334 }, }, -- Level 2 Enchantments
-        { CHANCE = 25, { 5258 }, }, -- Revive Feather
-        { CHANCE = 10, { 5259 }, }, -- Rebirth Feather
     },
 }
 

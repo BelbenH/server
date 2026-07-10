@@ -33,7 +33,7 @@ local familyData =
     {
         spellList = 0,
         skillListID = 75,
-        bonusSpawnChance = 0,
+        bonusSpawnChance = 10,
         name    = { 'Tidebreaker', 'Lord of Brine', 'Bloodreef', 'Old Carapax', 'Reef Bulwark', },
         [tierOne]   = { dropList = 4506, groupID = 202, look = 366,  exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.DEF] = 50,  [xi.mod.MDEF] = -10, }, },
         [tierTwo]   = { dropList = 4507, groupID = 202, look = 358, exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.DEF] = 75,  [xi.mod.MDEF] = -8,  }, },
@@ -99,7 +99,7 @@ local familyData =
     {
         spellList = 28,
         skillListID = 442,
-        bonusSpawnChance = 0,
+        bonusSpawnChance = 10,
         name    = { 'Moltwretch', 'Warped Husk', 'Nightscale', 'Crawling Molt', 'Rotmaw', 'Umbral Husk', 'Failed Molt', },
         [tierOne]   = { dropList = 4529, groupID = 208, look = '0x0000050A00000000000000000000000000000000', exp = 750,  gil = 1500, mobMods = {  }, mods = { [xi.mod.ATT] = 10, [xi.mod.ACC] = 10, }, },
         [tierTwo]   = { dropList = 4530, groupID = 208, look = '0x0000050A00000000000000000000000000000000', exp = 1250, gil = 2000, mobMods = {  }, mods = { [xi.mod.ATT] = 15, [xi.mod.ACC] = 15, }, },
@@ -208,7 +208,7 @@ xi.alphamob.spawnAlpha = function(mob, player, optParams)
                 alpha:setLocalVar('isAlpha', 1)
             end,
             
-            onMobDeath = function(alpha, player)
+            onMobDeath = function(alpha, player, optparams)
                 local phId = alpha:getLocalVar('phSpawnID')
                 local phMob = GetMobByID(phId)
             

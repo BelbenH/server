@@ -70,7 +70,7 @@
   67    Mog Resort                  Mog Garden
   68    Worlds Away                 CS
   69    Distant Worlds              CS
-  70    Monstrosity                 Monstrosity
+  70    Monstrosity                 Monstrosity (chocobo races contendor)
   71    The Pioneers (Piano)        CS
   72    The Divine                  Kamihr Drifts
   73    The Serpentine Labyrinth    Outer Ra'Kaznar

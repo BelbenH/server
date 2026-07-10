@@ -36,10 +36,10 @@ local rewardMap =
 -- ENM configuration table
 local enmTable =
 {
-    [1] = { keyItem = xi.ki.CENSER_OF_ABANDONMENT, timer = '[ENM]abandonmentTimer' }, -- Simulant
-    [2] = { keyItem = xi.ki.CENSER_OF_ANTIPATHY,   timer = '[ENM]antipathyTimer'   }, -- You Are What You Eat
-    [3] = { keyItem = xi.ki.CENSER_OF_ANIMUS,      timer = '[ENM]animusTimer'      }, -- Playing Host
-    [4] = { keyItem = xi.ki.CENSER_OF_ACRIMONY,    timer = '[ENM]acrimonyTimer'    }, -- Pulling the Plug
+    [1] = { keyItem = xi.ki.CENSER_OF_ABANDONMENT, timer = '[ENM]abandonmentTimer', zone = 17, }, -- Simulant
+    [2] = { keyItem = xi.ki.CENSER_OF_ANTIPATHY,   timer = '[ENM]antipathyTimer',   zone = 19, }, -- You Are What You Eat
+    [3] = { keyItem = xi.ki.CENSER_OF_ANIMUS,      timer = '[ENM]animusTimer',      zone = 21, }, -- Playing Host
+    [4] = { keyItem = xi.ki.CENSER_OF_ACRIMONY,    timer = '[ENM]acrimonyTimer',    zone = 23, }, -- Pulling the Plug
 }
 
 entity.onTrade = function(player, npc, trade)
@@ -62,13 +62,13 @@ entity.onTrigger = function(player, npc)
     local zone = 0
 
     if player:hasKeyItem(enmTable[4].keyItem) then
-        zone = 23
+        zone = enmTable[4].zone
     elseif player:hasKeyItem(enmTable[3].keyItem) then
-        zone = 19
+        zone = enmTable[3].zone
     elseif player:hasKeyItem(enmTable[2].keyItem) then
-        zone = 21
+        zone = enmTable[2].zone
     elseif player:hasKeyItem(enmTable[1].keyItem) then
-        zone = 17
+        zone = enmTable[1].zone
     end
     
     if zone > 0 then

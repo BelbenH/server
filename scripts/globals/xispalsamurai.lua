@@ -11,7 +11,7 @@ local dialogue  = {}
 local dialogue2 = {}
 local dialogue3 = {}
 local table = xi.xispal.palInfo[xi.job.SAM]
-local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][0])
+local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][2])
 
 menu =
 {
@@ -131,7 +131,6 @@ xi.xispal.onSamuraiTrigger = function(player, npc)
                                     player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                                     player:setCharVar('[XISP]SamuraiTankMode', 0)
                                     npc:setLocalVar('dialogueLock', 0)
-                                    player:setCharVar('[XISP]hasUnlockedKnights', 1)
                                     return
                                 end)
                             end)

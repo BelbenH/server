@@ -9,7 +9,7 @@ local menu2 = {}
 local dialogue = {}
 local dialogue2 = {}
 local table = xi.xispal.palInfo[xi.job.WHM]
-local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.mageGearSets[table.job])
+local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.mageGearSets[table.job][2])
 
 menu =
 {
@@ -100,7 +100,6 @@ xi.xispal.onWhiteMageTrigger = function(player, npc)
                             player:printToPlayer("Would you allow me to accompany you on your journey? That I may serve both the light of Altana and the hopes of our noble nation?", xi.msg.channel.SAY, table.name)
                             player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                             npc:setLocalVar('dialogueLock', 0)
-                            player:setCharVar('[XISP]hasUnlockedMages', 1)
                         end)
                     end)
                 end)

@@ -1,11 +1,12 @@
 -----------------------------------
--- Trust: Shantotto
+-- Trust: Shantotto (896)
+-- Replacement trust for player BLM squire
 -----------------------------------
 ---@type TSpellTrust
 local spellObject = {}
 
 spellObject.onMagicCastingCheck = function(caster, target, spell)
-    return xi.trust.canCast(caster, spell, xi.magic.spell.SHANTOTTO_II)
+    return xi.trust.canCast(caster, spell)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
@@ -13,33 +14,29 @@ spellObject.onSpellCast = function(caster, target, spell)
 end
 
 spellObject.onMobSpawn = function(mob)
-    xi.trust.teamworkMessage(mob, {
-        [xi.magic.spell.AJIDO_MARUJIDO] = xi.trust.messageOffset.TEAMWORK_1,
-        [xi.magic.spell.STAR_SIBYL] = xi.trust.messageOffset.TEAMWORK_2,
-        [xi.magic.spell.KORU_MORU] = xi.trust.messageOffset.TEAMWORK_3,
-        [xi.magic.spell.KING_OF_HEARTS] = xi.trust.messageOffset.TEAMWORK_4
-    })
+    xi.xispal.onSquireSpawn(mob)
+end
 
-    mob:addGambit(ai.t.TARGET, { ai.c.MB_AVAILABLE, 0 }, { ai.r.MA, ai.s.MB_ELEMENT, xi.magic.spellFamily.NONE })
+spellObject.onMobRoam = function(mob)
+    local player = mob:getMaster()
 
-    mob:addGambit(ai.t.TARGET, { ai.c.NOT_SC_AVAILABLE, 0 }, { ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.NONE }, 60)
+    xi.xispal.idleSquireChat(mob, player)
+    xi.xispal.onMobRoam(mob, player)
+end
 
-    local power = mob:getMainLvl() / 10
-    mob:addMod(xi.mod.MATT, power)
-    mob:addMod(xi.mod.MACC, power)
-    mob:addMod(xi.mod.HASTE_MAGIC, 1000) -- 10% Haste (Magic)
+spellObject.onMobFight = function(mob, target)
+    local player = mob:getMaster()
+    xi.xispal.onMobFight(mob, target, player)
+end
 
-    mob:setAutoAttackEnabled(false)
-
-    mob:setMobMod(xi.mobMod.TRUST_DISTANCE, xi.trust.movementType.NO_MOVE)
+spellObject.onMobDisengage = function(mob)
+    xi.xispal.onMobDisengage(mob)
 end
 
 spellObject.onMobDespawn = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DESPAWN)
 end
 
 spellObject.onMobDeath = function(mob)
-    xi.trust.message(mob, xi.trust.messageOffset.DEATH)
 end
 
 return spellObject

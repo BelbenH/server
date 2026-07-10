@@ -357,6 +357,11 @@ xi.xispal.checkRegen = function(pal, party, job, lvl)
     local extraTime = 0
     local mp        = pal:getMP()
 
+    -- Prioritize other spells + resting at this point
+    if pal:getMPP() < 25 then
+        return
+    end
+
     -- First loop through to see if anyone is in dire need of cure, if so skip regen and wait for the next check
     for _, member in pairs(party) do
         if member:getHPP() < 50 then
@@ -398,14 +403,16 @@ xi.xispal.checkCure = function(pal, party, job, lvl)
         return
     end
 
+    if pal:getLocalVar('regenRecast') > GetSystemTime() then
+        return
+    end
+
     local spells    = xi.xispal.white.CURE
     local target    = nil
     local cure      = nil
     local extraTime = 0
     local mp        = pal:getMP()
 
-    
-    
     for _, member in pairs(party) do
         if member:isAlive() and pal:checkDistance(member) <= 20 then
             local hasRegen = member:hasStatusEffect(xi.effect.REGEN)
@@ -466,6 +473,7 @@ xi.xispal.checkCure = function(pal, party, job, lvl)
         end
 
         if target and cure then
+            pal:setLocalVar('regenRecast', GetSystemTime() + 22)
             xi.xispal.castSpell(pal, cure, target, job, extraTime)
             return
         end
@@ -720,13 +728,18 @@ xi.xispal.checkBuff = function(pal, party, job, lvl)
     if xi.xispal.checkCast(pal) or pal:getLocalVar('buffTimer') > GetSystemTime() then
         return
     end
-
+    
     local spells    = xi.xispal.white.BUFF
     local buff      = nil
     local target    = nil
     local specTime  = 30
     local extraTime = 0
     local mp        = pal:getMP()
+
+    -- Prioritize rest if lower MP
+    if pal:getMPP() < 35 then
+        return
+    end
 
     -- Dump if a player is in need of a cure
     for _, member in pairs(party) do

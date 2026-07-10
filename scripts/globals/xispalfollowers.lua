@@ -10,6 +10,22 @@
 xi = xi or {}
 xi.xispal = xi.xispal or {}
 
+xi.xispal.getTier = function(player)
+    local lvl = player:getMainLvl()
+
+    if xi.xispal.hasCompletedAF(player) and lvl >= 60 then
+        return 4
+    elseif lvl >= 40 then
+        return 3
+    elseif lvl >= 30 then
+        return 2
+    elseif lvl >= 20 then
+        return 1
+    end
+
+    return 0
+end
+
 xi.xispal.spawnYoungSquire = function(player, zone)
     -- Only spawn NPC squire inside of cities
     if zone and zone:getTypeMask() ~= xi.zoneType.CITY then
@@ -75,6 +91,10 @@ xi.xispal.spawnYoungSquire = function(player, zone)
 end
 
 xi.xispal.spawnSquire = function(player, zone)
+    if player:getCharVar('[XISP]squireJob') == 0 then
+        player:setCharVar('[XISP]squireJob', xi.job.RDM)
+    end
+
     -- Only spawn NPC squire inside of cities
     if zone and zone:getTypeMask() ~= xi.zoneType.CITY then
         return
@@ -83,19 +103,15 @@ xi.xispal.spawnSquire = function(player, zone)
     local face = player:getCharVar('[XISP]squireFace')
     local race = player:getCharVar('[XISP]squireRace')
     local lvl  = player:getMainLvl()
-    local tier = 0
+    local job  = player:getCharVar('[XISP]squireJob')
+    local tier = xi.xispal.getTier(player)
+    local look = ''
 
-    if xi.xispal.hasCompletedAF(player) and lvl >= 60 then
-        tier = 4
-    elseif lvl >= 40 then
-        tier = 3
-    elseif lvl >= 30 then
-        tier = 2
-    elseif lvl >= 20 then
-        tier = 1
+    if job == xi.job.PLD or job == xi.job.SAM or job == xi.job.DRK or job == xi.job.THF then
+        look = xi.xispal.generateModelID(xi.xispal.face[face], xi.xispal.race[race], xi.xispal.knightGearSets[job][tier])
+    else
+        look = xi.xispal.generateModelID(xi.xispal.face[face], xi.xispal.race[race], xi.xispal.mageGearSets[job][tier])
     end
-
-    local look = xi.xispal.generateModelID(xi.xispal.face[face], xi.xispal.race[race], xi.xispal.squireGearSets[tier])
 
     local pos  = player:getPos()
 
@@ -114,10 +130,7 @@ xi.xispal.spawnSquire = function(player, zone)
         releaseIdOnDisappear  = true,
 
         onTrigger = function(player, pal)
-            local master = GetPlayerByID(pal:getLocalVar('[XISP]ownerID'))
-            if master == player then
-                player:printToPlayer('Yes, ' .. player:getName() .. '?', xi.msg.channel.PARTY, pal:getPacketName())
-            end
+            xi.xispal.onSquireTrigger(player, pal)
         end,
 
         onMobSpawn = function(pal)
@@ -164,118 +177,6 @@ xi.xispal.spawnSquire = function(player, zone)
 
     player:setCharVar('[XISP]squireID', pal:getID())
     pal:setSpawn(pos.x + 1, pos.y, pos.z)
-    pal:spawn()
-end
-
-xi.xispal.spawnKnight = function(player, zone)
-    local tier = 0
-    local lvl  = player:getMainLvl()
-
-    if xi.xispal.hasCompletedAF(player) and lvl >= 60 then
-        tier = 2
-    elseif lvl >= 50 then
-        tier = 1
-    end
-
-    local table = xi.xispal.palInfo[player:getCharVar('[XISP]knightJob')]
-    local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][tier])
-    local pos   = player:getPos()
-
-    -- Don't spawn in zones where their NPC is stationed.
-    if zone:getID() == table.zone then
-        return
-    end
-
-    local pal = zone:insertDynamicEntity({
-        objtype               = xi.objType.MOB,
-        allegiance            = xi.allegiance.PLAYER,
-        name                  = table.name,
-        x                     = pos.x - 1,
-        y                     = pos.y,
-        z                     = pos.z + 1,
-        rotation              = pos.rotation,
-        look                  = look,
-        groupId               = table.groupID,
-        groupZoneId           = xi.zone.GM_HOME,
-        releaseIdOnDisappear  = true,
-
-        onMobSpawn = function(pal)
-            pal:changeJob(table.job)
-            xi.xispal.onMobSpawn(pal, player)
-            pal:setLocalVar('isKnight', 1)
-        end,
-
-        onMobRoam = function(pal)
-            xi.xispal.onMobRoam(pal, player)
-        end,
-
-        onMobEngage = function(pal, target)
-            xi.xispal.onMobEngage(pal, target, player)
-        end,
-
-        onMobFight = function(pal, target)
-            xi.xispal.onMobFight(pal, target, player)
-        end,
-
-        onMobDeath = function(pal, player, optParams)
-            xi.xispal.onMobDeath(pal, player)
-        end,
-    })
-
-    player:setCharVar('[XISP]knightID', pal:getID())
-    pal:setSpawn(pos.x - 1, pos.y, pos.z - 1)
-    pal:spawn()
-end
-
-xi.xispal.spawnMage = function(player, zone)
-    local table = xi.xispal.palInfo[player:getCharVar('[XISP]mageJob')]
-    local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.mageGearSets[table.job])
-    local pos   = player:getPos()
-
-    -- Don't spawn in zones where their NPC is stationed.
-    if zone:getID() == table.zone then
-        return
-    end
-
-    local pal = zone:insertDynamicEntity({
-        objtype               = xi.objType.MOB,
-        allegiance            = xi.allegiance.PLAYER,
-        name                  = table.name,
-        x                     = pos.x - 1,
-        y                     = pos.y,
-        z                     = pos.z - 1,
-        rotation              = pos.rotation,
-        look                  = look,
-        groupId               = table.groupID,
-        groupZoneId           = xi.zone.GM_HOME,
-        releaseIdOnDisappear  = true,
-
-        onMobSpawn = function(pal)
-            pal:changeJob(table.job)
-            xi.xispal.onMobSpawn(pal, player)
-            pal:setAutoAttackEnabled(false)
-            pal:setLocalVar('isMage', 1)
-        end,
-
-        onMobRoam = function(pal)
-            xi.xispal.onMobRoam(pal, player)
-        end,
-
-        onMobEngage = function(pal, target)
-            xi.xispal.onMobEngage(pal, target, player)
-        end,
-
-        onMobFight = function(pal, target)
-            xi.xispal.onMobFight(pal, target, player)
-        end,
-
-        onMobDeath = function(pal, player, optParams)
-            xi.xispal.onMobDeath(pal, player)
-        end,
-    })
-
-    player:setCharVar('[XISP]mageID', pal:getID())
-    pal:setSpawn(pos.x - 1, pos.y, pos.z + 1)
     pal:spawn()
 end
 

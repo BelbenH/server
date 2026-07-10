@@ -9,7 +9,7 @@ local menu2 = {}
 local dialogue = {}
 local dialogue2 = {}
 local table = xi.xispal.palInfo[xi.job.DRG]
-local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][0])
+local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][2])
 
 menu =
 {
@@ -107,7 +107,6 @@ xi.xispal.onDragoonTrigger = function(player, npc)
                                     player:printToPlayer("Let me be your Dragoon, and further rid the curse placed upon my family.", xi.msg.channel.SAY, table.name)
                                     player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
                                     npc:setLocalVar('dialogueLock', 0)
-                                    player:setCharVar('[XISP]hasUnlockedKnights', 1)
                                     return
                                 end)
                             end)
