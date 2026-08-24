@@ -200,11 +200,22 @@ xi.xispal.palInfo =
     -- Knights
     [xi.job.DRG] =
     {
-        name    = "Emilien",
-        face    = 4,
-        race    = xi.race.ELVAAN_M,
+        [xi.zone.LOWER_JEUNO] =
+        {
+            name = 'Emilien',
+            face = 4,
+            race = xi.race.ELVAAN_M,
+            pos  = { x = -70.7, y = 6.0, z = -91.6, rot = 20 },
+        },
+        [xi.zone.NORTHERN_SAN_DORIA] =
+        {
+            name = 'Brunloc',
+            face = 1,
+            race = xi.race.HUME_M,
+            pos  = { x = 14.4, y = -0.2, z = 82, rot = 99 },
+        },
+
         job     = xi.job.DRG,
-        zone    = xi.zone.CHATEAU_DORAGUILLE,
         quest   = { xi.questLog.SANDORIA, xi.quest.id.sandoria.THE_HOLY_CREST },
         groupID = 1005,
         trust   = 899, -- Excenmille
@@ -212,34 +223,81 @@ xi.xispal.palInfo =
 
     [xi.job.THF] =
     {
-        name    = "Ayala",
-        face    = 13,
-        race    = xi.race.MITHRA,
+        [xi.zone.UPPER_JEUNO] =
+        {
+            name = 'Ayala',
+            face = 13,
+            race = xi.race.MITHRA,
+            pos  = { x = -1.35, y = 0, z = 24.92, rot = 80 },
+        },
+        [xi.zone.NORTHERN_SAN_DORIA] =
+        {
+            name = 'Garrik',
+            face = 9,
+            race = xi.race.HUME_M,
+            pos  = { x = -149.7, y = 12, z = 219.7, rot = 32 },
+        },
+        [xi.zone.PORT_WINDURST] =
+        {
+            name = 'Lulu',
+            face = 3,
+            race = xi.race.TARU_F,
+            pos  = { x = -15.3, y = -6, z = 152.4, rot = 58 },
+        },
+
         job     = xi.job.THF,
-        zone    = xi.zone.PORT_WINDURST,
         groupID = 1006,
-        trust  = 901, -- Nanaa-mihgo
+        trust   = 901, -- Nanaa-mihgo
     },
 
     [xi.job.SAM] =
     {
-        name    = "Nadir",
-        face    = 14,
-        race    = xi.race.HUME_M,
+        [xi.zone.LOWER_JEUNO] =
+        {
+            name = 'Nadir',
+            face = 14,
+            race = xi.race.HUME_M,
+            pos  = { x = 24.35, y = -0.1, z = -13.2, rot = 177 },
+        },
+        [xi.zone.SOUTHERN_SAN_DORIA] =
+        {
+            name = 'Natsune',
+            face = 14,
+            race = xi.race.ELVAAN_F,
+            pos  = { x = 96, y = 1, z = 102.5, rot = 15 },
+        },
+
         job     = xi.job.SAM,
-        zone    = xi.zone.NORG,
         quest   = { xi.questLog.OUTLANDS, xi.quest.id.outlands.FORGE_YOUR_DESTINY },
         groupID = 1007,
-        trust  = 908, -- Tenzen
+        trust   = 908, -- Tenzen
     },
 
     [xi.job.DRK] =
     {
-        name    = "Yaric",
-        face    = 1,
-        race    = xi.race.GALKA,
+        [xi.zone.UPPER_JEUNO] =
+        {
+            name = 'Yaric',
+            face = 1,
+            race = xi.race.GALKA,
+            pos  = { x = -38.2, y = -0.7, z = 68.4, rot = 129 },
+        },
+        [xi.zone.NORTHERN_SAN_DORIA] =
+        {
+            name = 'Lorisette',
+            face = 12,
+            race = xi.race.ELVAAN_M,
+            pos  = { x = -166.8, y = 12, z = 159.2, rot = 208 },
+        },
+        [xi.zone.PORT_WINDURST] =
+        {
+            name = 'Brolo-yolo',
+            face = 8,
+            race = xi.race.TARU_M,
+            pos  = { x = -87.7, y = -5.75, z = 170.4, rot = 75 },
+        },
+
         job     = xi.job.DRK,
-        zone    = xi.zone.METALWORKS,
         quest   = { xi.questLog.BASTOK, xi.quest.id.bastok.BLADE_OF_DARKNESS },
         groupID = 1008,
         trust   = 906, -- Zeid
@@ -247,11 +305,29 @@ xi.xispal.palInfo =
 
     [xi.job.PLD] =
     {
-        name    = "Isolde",
-        face    = 3,
-        race    = xi.race.ELVAAN_F,
+        [xi.zone.UPPER_JEUNO] =
+        {
+            name = 'Isolde',
+            face = 3,
+            race = xi.race.ELVAAN_F,
+            pos  = { x = -30.9, y = -1, z = 9.2, rot = 179 },
+        },
+        [xi.zone.NORTHERN_SAN_DORIA] =
+        {
+            name = 'Zedant',
+            face = 9,
+            race = xi.race.ELVAAN_M,
+            pos  = { x = -247.3, y = 7, z = 30.9, rot = 13 },
+        },
+        [xi.zone.PORT_WINDURST] =
+        {
+            name = 'Pinoy-Tinoy',
+            face = 4,
+            race = xi.race.TARU_M,
+            pos  = { x = -229, y = -8, z = 213.4, rot = 0 },
+        },
+
         job     = xi.job.PLD,
-        zone    = xi.zone.SOUTHERN_SAN_DORIA,
         quest   = { xi.questLog.SANDORIA, xi.quest.id.sandoria.A_KNIGHTS_TEST },
         groupID = 1009,
         trust   = 902, -- Curilla
@@ -260,33 +336,87 @@ xi.xispal.palInfo =
     -- Mages
     [xi.job.WHM] =
     {
-        name    = "Rilea",
-        face    = 10,
-        race    = xi.race.HUME_F,
+        [xi.zone.LOWER_JEUNO] =
+        {
+            name = 'Rilea',
+            face = 10,
+            race = xi.race.HUME_F,
+            pos  = { x = -30.8, y = 5.9, z = -90.7, rot = 249 },
+        },
+        [xi.zone.NORTHERN_SAN_DORIA] =
+        {
+            name = 'Sephaut',
+            face = 15,
+            race = xi.race.ELVAAN_M,
+            pos  = { x = 139.56, y = 0, z = 124.2, rot = 127 },
+        },
+        [xi.zone.PORT_WINDURST] =
+        {
+            name = 'Maru-Batsu',
+            face = 4,
+            race = xi.race.TARU_M,
+            pos  = { x = -119.4, y = -3.5, z = 121.9, rot = 126 },
+        },
+
         job     = xi.job.WHM,
-        zone    = xi.zone.NORTHERN_SAN_DORIA,
         groupID = 1010,
         trust   = 898, -- Kupipi
     },
 
     [xi.job.BLM] =
     {
-        name    = "Vivio",
-        face    = 5,
-        race    = xi.race.TARU_M,
+        [xi.zone.LOWER_JEUNO] =
+        {
+            name = 'Vivio',
+            face = 5,
+            race = xi.race.TARU_M,
+            pos  = { x = -35.8, y = -1, z = -14.8, rot = 132 },
+        },
+        [xi.zone.NORTHERN_SAN_DORIA] =
+        {
+            name = 'Vivia',
+            face = 5,
+            race = xi.race.TARU_F,
+            pos  = { x = -50, y = -2, z = 28.5, rot = 168 },
+        },
+        [xi.zone.PORT_WINDURST] =
+        {
+            name = 'Batsu-Maru',
+            face = 5,
+            race = xi.race.TARU_M,
+            pos  = { x = -119.4, y = -3.5, z = 120, rot = 126 },
+        },
+
         job     = xi.job.BLM,
-        zone    = xi.zone.HEAVENS_TOWER,
         groupID = 1011,
         trust   = 904, -- Ajido-marujido
     },
 
     [xi.job.SMN] =
     {
-        name    = "Irving",
-        face    = 3,
-        race    = xi.race.HUME_M,
+        [xi.zone.UPPER_JEUNO] =
+        {
+            name = 'Irving',
+            face = 3,
+            race = xi.race.HUME_M,
+            pos  = { x = 7.5, y = 2, z = 75.8, rot = 95 },
+        },
+        [xi.zone.NORTHERN_SAN_DORIA] =
+        {
+            name = 'Tsalolo',
+            face = 9,
+            race = xi.race.TARU_F,
+            pos  = { x = -188.1, y = 0, z = 102.4, rot = 227 },
+        },
+        [xi.zone.WINDURST_WATERS] =
+        {
+            name = 'Mihoy-Nimoy',
+            face = 2,
+            race = xi.race.TARU_M,
+            pos  = { x = 26.5, y = -1.25, z = -220.6, rot = 73 },
+        },
+
         job     = xi.job.SMN,
-        zone    = xi.zone.WINDURST_WALLS,
         quest   = { xi.questLog.WINDURST, xi.quest.id.windurst.I_CAN_HEAR_A_RAINBOW },
         groupID = 1012,
         trust   = 936, -- Karaha-baraha
@@ -294,11 +424,22 @@ xi.xispal.palInfo =
 
     [xi.job.BRD] =
     {
-        name    = "Thessa",
-        face    = 7,
-        race    = xi.race.MITHRA,
+        [xi.zone.LOWER_JEUNO] =
+        {
+            name = 'Thessa',
+            face = 7,
+            race = xi.race.MITHRA,
+            pos  = { x = -19.2, y = -0.1, z = -66.21, rot = 174 },
+        },
+        [xi.zone.SOUTHERN_SAN_DORIA] =
+        {
+            name = 'Bartholomew',
+            face = 7,
+            race = xi.race.GALKA,
+            pos  = { x = 89.9, y = 0, z = 105.7, rot = 198 },
+        },
+
         job     = xi.job.BRD,
-        zone    = xi.zone.LOWER_JEUNO,
         quest   = { xi.questLog.JEUNO, xi.quest.id.jeuno.PATH_OF_THE_BARD },
         groupID = 1013,
         trust   = 911, -- Joachim
@@ -306,11 +447,22 @@ xi.xispal.palInfo =
 
     [xi.job.NIN] =
     {
-        name    = "Umbria",
-        face    = 2,
-        race    = xi.race.TARU_F,
+        [xi.zone.UPPER_JEUNO] =
+        {
+            name    = 'Umbria',
+            face    = 2,
+            race    = xi.race.TARU_F,
+            -- Inconspicuous Door NPC
+        },
+        [xi.zone.SOUTHERN_SAN_DORIA] =
+        {
+            name    = 'Umbria',
+            face    = 9,
+            race    = xi.race.ELVAAN_F,
+            pos  = { x = -167.5, y = -2, z = 70.3, rot = 38 },
+        },
+
         job     = xi.job.NIN,
-        zone    = xi.zone.KAZHAM,
         quest   = { xi.questLog.BASTOK, xi.quest.id.bastok.AYAME_AND_KAEDE },
         groupID = 1014,
         trust   = 918, -- Gessho
@@ -365,6 +517,162 @@ xi.xispal.squireJobInfo =
     [xi.job.RDM] =
     {
         trust   = 920, -- Rainemard
+    },
+}
+
+xi.xispal.upgradeTable =
+{
+    [xi.job.RDM] =
+    {
+        [1]  = { item = xi.item.DARK_STAFF,       mods = { { mod = xi.mod.MPHEAL, val = 10 } }}, -- Dark Staff
+        [2]  = { item = xi.item.RED_CAPE,         mods = { { mod = xi.mod.INT,    val = 3 },  { mod = xi.mod.MND, val = 3  } }}, -- Red Cape
+        [3]  = { item = xi.item.ETHER_RING,       mods = { { mod = xi.mod.MP,     val = 30 }, { mod = xi.mod.HP, val = -30 } }}, -- Ether Ring
+        [4]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, 
+        [5]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, 
+        [6]  = { item = xi.item.VERMILLION_CLOAK, mods = { { mod = xi.mod.REFRESH, val = 1 }, { mod = xi.mod.MP, val = 20 } }}, -- Vermillion Cloak
+        [7]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, 
+        [8]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, 
+        [9]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, 
+        [10] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, 
+        [11] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, 
+        [12] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, 
+        [13] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [14] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [15] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+    },
+    [xi.job.PLD] =
+    {
+        [1]  = { cosmetic = false, item = xi.item.JELLY_RING,         mods = { { mod = xi.mod.DMGPHYS, val = -500 }, }},
+        [2]  = { cosmetic = false, item = xi.item.PARADE_GORGET,      mods = { { mod = xi.mod.REFRESH, val = 1 }, { mod = xi.mod.MP,       val = 10 } }},
+        [3]  = { cosmetic = false, item = xi.item.RESENTMENT_CAPE,    mods = { { mod = xi.mod.ENMITY,  val = 5 }, { mod = xi.mod.DMGMAGIC, val = -500 } }},
+        [4]  = { cosmetic = false, item = xi.item.WARWOLF_BELT,       mods = { { mod = xi.mod.ENMITY,  val = 3 }, { mod = xi.mod.STR,      val = 5 }, { mod = xi.mod.DEX,   val = 5 }, { mod = xi.mod.VIT, val = 5  }, }},
+        [5]  = { cosmetic = false, item = xi.item.HARMONIAS_TORQUE,   mods = { { mod = xi.mod.ENMITY,  val = 3 }, { mod = xi.mod.STR,      val = 2 }, }},
+        [6]  = { cosmetic = true,  item = xi.item.ADAMAN_CUIRASS,     mods = { { mod = xi.mod.ENMITY,  val = 3 }, { mod = xi.mod.VIT,      val = 4 }, { mod = xi.mod.MND,   val = 4 }, { mod = xi.mod.DEF, val = 40 }, }},
+        [7]  = { cosmetic = false, item = xi.item.PALMERINS_SHIELD,   mods = { { mod = xi.mod.DMGPHYS, val = -200 }, }},
+        [8]  = { cosmetic = false, item = xi.item.HOSPITALER_EARRING, mods = { { mod = xi.mod.CURE_POTENCY, val = 5 }, }},
+        [9]  = { cosmetic = false, item = xi.item.HERCULES_RING,      mods = { { mod = xi.mod.ENMITY,  val = 3 }, { mod = xi.mod.REFRESH,  val = 1 }, { mod = xi.mod.REGEN, val = 1 } }},
+        [10] = { cosmetic = true,  item = xi.item.DURANDAL,           mods = { { mod = xi.mod.ENMITY,  val = 3 }, { mod = xi.mod.VIT,      val = 4 }, }},
+        [11] = { cosmetic = true,  item = xi.item.AEGISHJALMR,        mods = { { mod = xi.mod.ENMITY,  val = 7 }, { mod = xi.mod.HP,       val = 25 } }},
+    },
+    [xi.job.DRK] =
+    {
+        [1]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- 
+        [2]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Parade Gorget
+        [3]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Royal Knight Breeches
+        [4]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [5]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [6]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Haubergeon
+        [7]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [8]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [9]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [10] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Alky Bracelets
+        [11] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Peacock Charm / Amulet
+        [12] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Pole Grip
+        [13] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Dusk Hands
+        [14] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Dusk Feet
+        [15] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Naglering
+    },
+    [xi.job.DRG] =
+    {
+        [1]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [2]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [3]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [4]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [5]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Thrakon Breastplate
+        [6]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [7]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [8]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [9]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [10] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Peacock Charm / Amulet
+        [11] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Pole Grip
+        [12] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Dusk Hands
+        [14] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Dusk Feet
+        [15] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+    },
+    [xi.job.SAM] =
+    {
+        [1]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [2]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [3]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [4]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [5]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Haubergeon
+        [6]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [7]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [8]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Ochiudo's Kote
+        [9]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Fuma Kyahan
+        [10] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Peacock Charm / Amulet
+        [11] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Pole Grip
+        [12] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Dusk Hands
+        [14] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Dusk Feet
+        [15] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Hagun
+    },
+    [xi.job.THF] =
+    {
+        [1]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [2]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [3]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [4]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [5]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Thief's Knife
+        [6]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Scorpion Harnes
+        [7]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [8]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [9]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Bravo's Subligar
+        [10] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Peacock Charm
+        [11] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [12] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [14] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [15] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+    },
+    [xi.job.WHM] =
+    {
+        [1]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Light Staff / Dark Staff
+        [2]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Qiqirn Sash
+        [3]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Errant Cape
+        [4]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Noble's Tunic
+        [5]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Cure Clogs
+        [6]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- W Turban
+        [7]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Antivenom Earrings
+        [8]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Medicine Ring
+        [9]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Serket Ring
+        [10] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Blessed Mitts
+        [11] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Rostrum Pumps
+        [12] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Blessed Trousers
+    },
+    [xi.job.BLM] =
+    {
+        [1]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Moldavite Earring
+        [2]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Ice Staff
+        [3]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Phantom Tathlum
+        [4]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Demon Helm
+        [5]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Black Cloak
+        [6]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Penitent's Rope
+        [7]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Druid's Slops
+        [8]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Sorcerer's Ring
+        [9]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Uggalepih Pendant
+        [10] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Rostrum Pumps
+        [11] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Elemental Earring
+        [12] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Igqira Weskit
+        [14] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Elemental Torque
+        [15] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Novio Earring
+    },
+    [xi.job.SMN] =
+    {
+    },
+    [xi.job.NIN] =
+    {
+    },
+    [xi.job.BRD] =
+    {
+        [1]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [2]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }}, -- Demon Helm
+        [3]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [4]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [5]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [6]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [7]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [8]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [9]  = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
+        [10] = { item = 0, mods = { { mod = 0, val = 0 }, { mod = 0, val = 0 } }},
     },
 }
 
@@ -601,7 +909,7 @@ xi.xispal.knightGearSets =
             main  = xi.xispal.weapons[9][1] + 0, -- Halberd
             sub   = 0,
         },
-        [3] = 
+        [2] = 
         {
             body  = xi.xispal.equipment.CENTURION,
             hands = xi.xispal.equipment.SQUIRE,
@@ -772,6 +1080,33 @@ xi.xispal.knightGearSets =
             hands = xi.xispal.equipment.PLD_AF,
             legs  = xi.xispal.equipment.PLD_AF,
             feet  = xi.xispal.equipment.PLD_AF,
+            main  = xi.xispal.weapons[11][1] + 4,
+            sub   = xi.xispal.subs[0][1] + 9,
+        },
+        [5] = -- Adaman Cuirass upgrade
+        {
+            body  = xi.xispal.equipment.ADAMAN_PLATE,
+            hands = xi.xispal.equipment.PLD_AF,
+            legs  = xi.xispal.equipment.PLD_AF,
+            feet  = xi.xispal.equipment.PLD_AF,
+            main  = xi.xispal.weapons[11][1] + 4,
+            sub   = xi.xispal.subs[0][1] + 9,
+        },
+        [6] = -- Palmerin's Shield upgrade
+        {
+            body  = xi.xispal.equipment.ADAMAN_PLATE,
+            hands = xi.xispal.equipment.PLD_AF,
+            legs  = xi.xispal.equipment.ADAMAN_PLATE,
+            feet  = xi.xispal.equipment.PLD_AF,
+            main  = xi.xispal.weapons[11][1] + 4,
+            sub   = xi.xispal.subs[0][1] + 9,
+        },
+        [7] = -- Durandal upgrade
+        {
+            body  = xi.xispal.equipment.ADAMAN_PLATE,
+            hands = xi.xispal.equipment.ADAMAN_PLATE,
+            legs  = xi.xispal.equipment.ADAMAN_PLATE,
+            feet  = xi.xispal.equipment.ADAMAN_PLATE,
             main  = xi.xispal.weapons[11][1] + 4,
             sub   = xi.xispal.subs[0][1] + 9,
         },

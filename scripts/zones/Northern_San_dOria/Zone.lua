@@ -1,8 +1,15 @@
 -----------------------------------
 -- Zone: Northern_San_dOria (231)
 -----------------------------------
-local ID = zones[xi.zone.NORTHERN_SAN_DORIA]
 require('scripts/quests/flyers_for_regine')
+require('scripts/globals/xispaldarkknight')
+require('scripts/globals/xispalsummoner')
+require('scripts/globals/xispalpaladin')
+require('scripts/globals/xispalthief')
+require('scripts/globals/xispaldragoon')
+require('scripts/globals/xispalwhitemage')
+require('scripts/globals/xispalblackmage')
+local ID = zones[xi.zone.NORTHERN_SAN_DORIA]
 -----------------------------------
 ---@type TZone
 local zoneObject = {}
@@ -22,6 +29,15 @@ zoneObject.onInitialize = function(zone)
     -- Phalanx Teleport Moogle
     local mooglePos = { x = -240.88, y = 8, z = 76.6, rot = 34 }
     xi.nomadmoogle.spawnMoogle(zone, mooglePos)
+
+    -- Pals
+    xi.xispal.onWhiteMageInitialize(zone)
+    xi.xispal.onBlackMageInitialize(zone)
+    xi.xispal.onPaladinInitialize(zone)
+    xi.xispal.onSummonerInitialize(zone)
+    xi.xispal.onDragoonInitialize(zone)
+    xi.xispal.onThiefInitialize(zone)
+    xi.xispal.onDarkKnightInitialize(zone)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

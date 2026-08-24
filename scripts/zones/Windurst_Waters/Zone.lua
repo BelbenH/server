@@ -1,6 +1,8 @@
 -----------------------------------
 -- Zone: Windurst_Waters (238)
 -----------------------------------
+require('scripts/globals/xispalsummoner')
+-----------------------------------
 ---@type TZone
 local zoneObject = {}
 
@@ -9,6 +11,9 @@ zoneObject.onInitialize = function(zone)
     zone:registerCuboidTriggerArea(1, 23, -12, -208, 31, -8, -197)
 
     xi.events.harvestFestival.applyHalloweenNpcCostumes(zone:getID())
+
+    -- Phalanx Pals
+    xi.xispal.onSummonerInitialize(zone)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

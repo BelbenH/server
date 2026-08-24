@@ -809,36 +809,26 @@ local function getExtensions(player)
     return count
 end
 
-xi.dynamis.procMonster = function(mob, player)
-    if player and player:getAllegiance() == 1 then
+xi.dynamis.procMonster = function(mob, player, chance)
+    if player then
         local master = player:getMaster()
         if master then
             player = master
         end
 
-        local extensions = getExtensions(player)
-        if extensions > 2 then
-            if
-                player:hasStatusEffect(xi.effect.SJ_RESTRICTION) and
-                math.random(1, 100) == 1
-            then
-                mob:setLocalVar('dynamis_proc', 4)
-                mob:addStatusEffect(xi.effect.TERROR, { duration = 30, origin = player })
-                mob:weaknessTrigger(3)
-            elseif extensions == 5 then
-                mob:setLocalVar('dynamis_proc', 3)
-                mob:addStatusEffect(xi.effect.TERROR, { duration = 30, origin = player })
-                mob:weaknessTrigger(2)
-            elseif extensions == 4 then
-                mob:setLocalVar('dynamis_proc', 2)
-                mob:addStatusEffect(xi.effect.TERROR, { duration = 30, origin = player })
-                mob:weaknessTrigger(1)
-            elseif extensions == 3 then
-                mob:setLocalVar('dynamis_proc', 1)
-                mob:addStatusEffect(xi.effect.TERROR, { duration = 30, origin = player })
-                mob:weaknessTrigger(0)
-            end
+        if chance == nil then
+            chance = 5
         end
+
+        local proc = mob:getLocalVar('dynamis_proc')
+
+        -- local extensions = getExtensions(player)
+        -- if extensions > 2 then
+        if math.random(1, 100) <= chance and proc < 4 then
+            mob:setLocalVar('dynamis_proc', proc + 1)
+            mob:addStatusEffect(xi.effect.TERROR, { duration = 5, origin = player })
+        end
+        -- end
     end
 end
 

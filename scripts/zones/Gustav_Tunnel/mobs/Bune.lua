@@ -72,6 +72,7 @@ end
 
 entity.onMobSpawn = function(mob)
     mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 100)
+    mob:setMod(xi.mod.ATT, 400)
     mob:setMaxMP(0)
 end
 

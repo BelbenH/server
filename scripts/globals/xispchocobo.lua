@@ -20,6 +20,8 @@ xi.xispchocobo = xi.xispchocobo or {}
 -- 1509 for checkpoints
 -- 2310 for nation banners
 
+-- independentAction (243, 4) -- Sweat
+
 -- Music
 -- 227 Sunbreeze Shuffle (idle music for the race)
 -- 70 Monstrosity (race music)

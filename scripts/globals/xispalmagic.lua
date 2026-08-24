@@ -351,16 +351,17 @@ xi.xispal.checkRegen = function(pal, party, job, lvl)
     if xi.xispal.checkCast(pal) then
         return
     end
+    
+    -- Prioritize other spells + resting at this point
+    if pal:getMPP() < 25 or pal:getLocalVar('regenRecast') > GetSystemTime() then
+        return
+    end
+    
     local spells    = xi.xispal.white.REGEN
     local target    = nil
     local regen     = nil
     local extraTime = 0
     local mp        = pal:getMP()
-
-    -- Prioritize other spells + resting at this point
-    if pal:getMPP() < 25 then
-        return
-    end
 
     -- First loop through to see if anyone is in dire need of cure, if so skip regen and wait for the next check
     for _, member in pairs(party) do
@@ -393,6 +394,7 @@ xi.xispal.checkRegen = function(pal, party, job, lvl)
     end
 
     if target and regen then
+        pal:setLocalVar('regenRecast', GetSystemTime() + 22)
         xi.xispal.castSpell(pal, regen, target, job, extraTime)
         return
     end
@@ -400,10 +402,6 @@ end
 
 xi.xispal.checkCure = function(pal, party, job, lvl)
     if xi.xispal.checkCast(pal) then
-        return
-    end
-
-    if pal:getLocalVar('regenRecast') > GetSystemTime() then
         return
     end
 
@@ -440,18 +438,18 @@ xi.xispal.checkCure = function(pal, party, job, lvl)
                     -- Jobs other than whm will heal with more specific behaviors
                     if job == xi.job.RDM then
                         threshold = threshold * 1.5
-                        extraTime = 5
-                    elseif job == xi.job.PLD and member ~= pal then
-                        extraTime = 10
+                        extraTime = 3
+                    elseif job == xi.job.PLD then
+                        extraTime = 7
                         threshold = threshold * 2
                     elseif job ~= xi.job.WHM then -- All other jobs
-                        threshold = threshold * 3
+                        threshold = threshold * 2
                         extraTime = 12
                     end
 
                     -- Prioritize less if they have regen
                     if hasRegen then
-                        threshold = threshold * 1.5
+                        threshold = threshold * 1.25
                     end
                     
                     if lvl <= 21 then
@@ -473,7 +471,6 @@ xi.xispal.checkCure = function(pal, party, job, lvl)
         end
 
         if target and cure then
-            pal:setLocalVar('regenRecast', GetSystemTime() + 22)
             xi.xispal.castSpell(pal, cure, target, job, extraTime)
             return
         end
@@ -853,8 +850,8 @@ xi.xispal.checkSongs = function(pal, party, job, lvl, player)
             if pal:getLocalVar('table1Recast') < GetSystemTime() then
                 for _, song in pairs(table1) do
                     if lvl >= song.lvl and pal:getLocalVar('spellRecast .. song.spell') < GetSystemTime() then
-                        pal:setLocalVar('buffRecast', GetSystemTime() + 25)
-                        pal:setLocalVar('table1Recast', GetSystemTime() + 95)
+                        pal:setLocalVar('buffRecast', GetSystemTime() + 15)
+                        pal:setLocalVar('table1Recast', GetSystemTime() + 65)
                         xi.xispal.castSpell(pal, song.spell, pal, job, 5)
                         return
                     end
@@ -871,8 +868,8 @@ xi.xispal.checkSongs = function(pal, party, job, lvl, player)
                             goto skip
                         end
 
-                        pal:setLocalVar('buffRecast', GetSystemTime() + 25)
-                        pal:setLocalVar('table2Recast', GetSystemTime() + 95)
+                        pal:setLocalVar('buffRecast', GetSystemTime() + 15)
+                        pal:setLocalVar('table2Recast', GetSystemTime() + 65)
                         xi.xispal.castSpell(pal, song.spell, pal, job, 5)
                         return
                     end
@@ -887,12 +884,12 @@ xi.xispal.checkSongs = function(pal, party, job, lvl, player)
                 if lvl >= song.lvl then
                     if song.effect == xi.effect.ELEGY then
                         if target:hasStatusEffect(song.effect) then
-                            pal:setLocalVar('enfeebleRecast', GetSystemTime() + 25)
+                            pal:setLocalVar('enfeebleRecast', GetSystemTime() + 15)
                             xi.xispal.castSpell(pal, song.spell, target, job, 5)
                             return
                         end
                     elseif target:hasStatusEffect(song.effect) then
-                        pal:setLocalVar('enfeebleRecast', GetSystemTime() + 25)
+                        pal:setLocalVar('enfeebleRecast', GetSystemTime() + 15)
                         xi.xispal.castSpell(pal, song.spell, target, job, 5)
                         return
                     end

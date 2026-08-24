@@ -2,6 +2,9 @@
 -- Zone: Southern_San_dOria (230)
 -----------------------------------
 require('scripts/quests/flyers_for_regine')
+require('scripts/globals/xispalbard')
+require('scripts/globals/xispalsamurai')
+require('scripts/globals/xispalninja')
 -----------------------------------
 ---@type TZone
 local zoneObject = {}
@@ -13,6 +16,11 @@ zoneObject.onInitialize = function(zone)
     xi.chocobo.initZone(zone)
     xi.chocoboGame.clearRecord(zone)
     xi.conquest.toggleRegionalNPCs(zone)
+
+    -- Phalanx Pals
+    xi.xispal.onBardInitialize(zone)
+    xi.xispal.onSamuraiInitialize(zone)
+    xi.xispal.onNinjaInitialize(zone)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

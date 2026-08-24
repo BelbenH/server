@@ -1,0 +1,1 @@
+UPDATE `item_usable` SET `useDelay` = 5, `activattion` = 1 WHERE `itemid` = 25671; -- Rarab Cap +1

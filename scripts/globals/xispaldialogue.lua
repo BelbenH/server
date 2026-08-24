@@ -79,14 +79,9 @@ xi.xispal.youngSquireChat = function(player, pal)
             player:setCharVar('[XISP]chatControl', 1)
             return
         elseif chatControl == 1 then
-            player:printToPlayer("There are a few things I need in order to continue in my training... Can you help me find them?", xi.msg.channel.PARTY, pal:getPacketName())
-            player:setCharVar('[XISP]chatControl', 2)
-            return
-        elseif chatControl == 2 then
             local itemName = GetItemByID(item):getName():gsub('%_', " ")
-
+            player:printToPlayer("There are a few things I need in order to continue in my training...", xi.msg.channel.PARTY, pal:getPacketName())
             player:printToPlayer("I think a " .. itemName .. " would help me get started! Can you help me find one?", xi.msg.channel.PARTY, pal:getPacketName())
-            player:setCharVar('[XISP]chatControl', 1)
             return
         end
     end
@@ -117,6 +112,8 @@ xi.xispal.onSquireTrigger = function(player, pal)
         player:addSpell(xi.xispal.squireJobInfo[newJob].trust, { silentLog = true })
         player:setCharVar('[XISP]squireJob', newJob)
         player:printToPlayer('Very well. It shall be done.', xi.msg.channel.PARTY, squireName)
+
+        xi.xispal.changeJob(player)
     end
 
     songMenu1 =
@@ -361,6 +358,7 @@ xi.xispal.onSquireTrigger = function(player, pal)
     local master = GetPlayerByID(pal:getLocalVar('[XISP]ownerID'))
     
     if master == player then
+        pal:lookAt(player:getPos())
         player:printToPlayer('Yes, ' .. player:getName() .. '?', xi.msg.channel.PARTY, pal:getPacketName())
         
         -- Populate melee jobs

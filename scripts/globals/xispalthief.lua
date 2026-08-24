@@ -4,71 +4,84 @@ require('scripts/globals/xispaldata')
 xi = xi or {}
 xi.xispal = xi.xispal or {}
 
-local menu = {}
-local menu2 = {}
-local dialogue = {}
-local dialogue2 = {}
-local table = xi.xispal.palInfo[xi.job.THF]
-local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][2])
+local job        = xi.job.THF
+local table      = xi.xispal.palInfo[job]
+local jeunoTable = table[xi.zone.UPPER_JEUNO]
+local jeunoLook  = xi.xispal.generateModelID(xi.xispal.face[jeunoTable.face], xi.xispal.race[jeunoTable.race], xi.xispal.knightGearSets[job][2])
+local sandyTable = table[xi.zone.NORTHERN_SAN_DORIA]
+local sandyLook  = xi.xispal.generateModelID(xi.xispal.face[sandyTable.face], xi.xispal.race[sandyTable.race], xi.xispal.knightGearSets[job][2])
+local windyTable = table[xi.zone.PORT_WINDURST]
+local windyLook  = xi.xispal.generateModelID(xi.xispal.face[windyTable.face], xi.xispal.race[windyTable.race], xi.xispal.knightGearSets[job][2])
 
-menu =
+local menuInvite =
 {
-    title = 'You need me or something?',
-    options = {},
+    title = 'You need a thief or something?',
+    options =
+    {
+        {
+            'Unfortunately I do',
+            function(player)
+                xi.xispal.setKnight(player, table)
+                player:printToPlayer('Let\'s get a move on!', xi.msg.channel.PARTY, table[player:getZoneID()].name)
+            end,
+        },
+        {
+            'Let me think about it.',
+            function(player)
+                return
+            end,
+        },
+    },
 }
 
-dialogue =
-{
-    {
-        'Unfortunately I do',
-        function(player)
-            xi.xispal.setKnight(player, xi.xispal.palInfo[xi.job.THF])
-            player:printToPlayer("Let's get a move on!", xi.msg.channel.PARTY, table.name)
-        end,
-    },
-    {
-        'Let me think about it.',
-        function(player)
-            return
-        end,
-    },
-}
-
-menu2 =
+local menuDismiss =
 {
     title = 'You want me to scram?',
-    options = {},
-}
-
-dialogue2 =
-{
+    options = 
     {
-        'See ya later!',
-        function(player)
-            player:printToPlayer("Fine! I was getting tired of you anyways.", xi.msg.channel.PARTY, table.name)
-            xi.xispal.removeKnight(player)
-        end,
-    },
-    {
-        'On second thought...',
-        function(player)
-            return
-        end,
+        {
+            'See ya later!',
+            function(player)
+                player:printToPlayer('Fine! I was getting tired of you anyways.', table[player:getZoneID()].name)
+                xi.xispal.removeKnight(player)
+            end,
+        },
+        {
+            'On second thought...',
+            function(player)
+                return
+            end,
+        },
     },
 }
 
 -- Ayala (XISP)
 xi.xispal.onThiefInitialize = function(zone)
+    local zoneID = zone:getID()
+    local palLook = ''
+    local palTable = {}
+
+    if zoneID == xi.zone.UPPER_JEUNO then
+        palLook  = jeunoLook
+        palTable = jeunoTable
+    elseif zoneID == xi.zone.NORTHERN_SAN_DORIA then
+        palLook  = sandyLook
+        palTable = sandyTable
+    elseif zoneID == xi.zone.PORT_WINDURST then
+        palLook  = windyLook
+        palTable = windyTable
+    end
+
     zone:insertDynamicEntity({
         objtype   = xi.objType.NPC,
-        name      = table.name,
-        look      = look,
-        x         = -1.35,
-        y         = 0,
-        z         = 24.92,
-        rotation  = 80,
+        name      = palTable.name,
+        look      = palLook,
+        x         = palTable.pos.x,
+        y         = palTable.pos.y,
+        z         = palTable.pos.z,
+        rotation  = palTable.pos.rot,
         widescan  = 1,
-
+    
         onTrigger  = function(player, npc)
             xi.xispal.onThiefTrigger(player, npc)
         end,
@@ -78,60 +91,26 @@ end
 xi.xispal.onThiefTrigger = function(player, npc)
     local hasKnight = player:getCharVar('[XISP]hasKnight')
 
-    if npc:getLocalVar('dialogueLock') == 1 then
-        return
-    end
-
     if xi.xispal.checkKnightRequirements(player, false, table) then
-        if player:getCharVar('[XISP]' .. table.name .. 'FirstDialogue') == 0 and npc:getLocalVar('dialogueLock') == 0 then
-            npc:setLocalVar('dialogueLock', 1)
+        -- Currently in party
+        if hasKnight == 1 and player:getCharVar('[XISP]knightJob') == job then
+            player:printToPlayer('Oh, ' .. player:getName() .. '! About the gil I owe you...', xi.msg.channel.PARTY, npc:getPacketName())
+            npc:sendEmote(player, xi.emote.THINK, xi.emoteMode.MOTION, false)
+            xi.xisp.sendMenu(player, menuDismiss)
 
-            player:printToPlayer("Well now... Look at you. Clean boots, eyes full of purpose. You've got that whole 'I'm going to change the world' look to you.", xi.msg.channel.SAY, table.name)
-            player:timer(6000, function(player)
-                player:printToPlayer("Name's Ayala. I'm what you might call a... facilitator of fortunes. I've got a knack of finding things other don't even know they've lost.", xi.msg.channel.SAY, table.name)
-                player:timer(6000, function(player)
-                    player:printToPlayer("And you? You look like someone who opens doors. Me? I slip through 'em.", xi.msg.channel.SAY, table.name)
-                    player:timer(6000, function(player)
-                        player:printToPlayer("See, we could be useful to each other. You've got strength, presence-enough to get us into places most wouldn't dare tread.", xi.msg.channel.SAY, table.name)
-                        player:timer(6000, function(player)
-                            player:printToPlayer("I've got eyes for opportunity and hands quicker than a Sahagin in shallow water. You like loot? I do.", xi.msg.channel.SAY, table.name)
-                            player:printToPlayer("You like not dying in a pit full of goblin firetraps? I like that too.", xi.msg.channel.SAY, table.name)
-                            player:timer(8000, function(player)
-                                player:printToPlayer("Stick with me and you won't just see the riches of Vanadiel-you'll own them. so what do you say? Partners?", xi.msg.channel.SAY, table.name)
-                                player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
-                                npc:setLocalVar('dialogueLock', 0)
-                                return
-                            end)
-                        end)
-                    end)
+        -- Player has knight, but this one isn't in party, or we need to recruit
+        elseif
+            (hasKnight == 1 and player:getCharVar('[XISP]knightJob') ~= job) or
+            hasKnight == 0
+        then
+            player:printToPlayer('Yes, adventurer? What are you looking at?', xi.msg.channel.SAY, npc:getPacketName())
+            npc:sendEmote(player, xi.emote.PANIC, xi.emoteMode.MOTION, false)
+            xi.xisp.sendMenu(player, menuInvite)
 
-                end)
-            end)
-        else
-            if player:getCharVar('[XISP]' .. table.name .. 'FirstDialogue') == 1 then
-                -- Currently in party
-                if hasKnight == 1 and player:getCharVar('[XISP]knightJob') == table.job then
-                    player:printToPlayer("Yes, " .. player:getName() .. ". Whaddya want?", xi.msg.channel.PARTY, table.name)
-                    npc:sendEmote(player, xi.emote.THINK, xi.emoteMode.MOTION, false)
-                    menu2.options = dialogue2
-                    xi.xisp.sendMenu(player, menu2)
-
-                -- Player has knight, but this one isn't in party, or we need to recruit
-                elseif
-                    (hasKnight == 1 and player:getCharVar('[XISP]knightJob') ~= table.job) or
-                    hasKnight == 0
-                then
-                    player:printToPlayer("Oh, " .. player:getName() .. "! About the gil I owe you...", xi.msg.channel.SAY, table.name)
-                    npc:sendEmote(player, xi.emote.PANIC, xi.emoteMode.MOTION, false)
-                    menu.options = dialogue
-                    xi.xisp.sendMenu(player, menu)
-
-                else -- Shouldn't be reached. But a fail-safe
-                    player:printToPlayer("Scram, kid! I'm trying to get a deal.", xi.msg.channel.SAY, table.name)
-                end
-            end
+        else -- Shouldn't be reached. But a fail-safe
+            player:printToPlayer('Scram, kid! I\'m trying to get a deal.', xi.msg.channel.SAY, npc:getPacketName())
         end
     else
-        player:printToPlayer('Scram, kid! Can\'t you see I\'m doing something here? I\'m trying to get a deal.', xi.msg.channel.SAY, table.name)
+        player:printToPlayer('Scram, kid! Can\'t you see I\'m doing something here? I\'m trying to get a deal.', xi.msg.channel.SAY, npc:getPacketName())
     end
 end

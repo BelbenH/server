@@ -77,10 +77,15 @@ end
 
 xi.xispal.setKnight = function(player, table)
     xi.xispal.removeKnight(player)
+
+    local zoneID    = player:getZoneID()
+    local zoneTable = table[zoneID]
+
     player:setCharVar('[XISP]hasKnight', 1)
-    player:setCharVar('[XISP]knightFace', table.face)
-    player:setCharVar('[XISP]knightRace', table.race)
+    player:setCharVar('[XISP]knightFace', zoneTable.face)
+    player:setCharVar('[XISP]knightRace', zoneTable.race)
     player:setCharVar('[XISP]knightJob', table.job)
+    player:setCharVar('[XISP]knightZone', zoneID)
     player:addSpell(table.trust, { silentLog = true })
 end
 
@@ -90,18 +95,25 @@ xi.xispal.removeKnight = function(player)
     if currJob > 0 then
         player:delSpell(xi.xispal.palInfo[currJob].trust)
     end
+
     player:setCharVar('[XISP]hasKnight', 0)
     player:setCharVar('[XISP]knightFace', 0)
     player:setCharVar('[XISP]knightRace', 0)
     player:setCharVar('[XISP]knightJob', 0)
+    player:setCharVar('[XISP]knightZone', 0)
 end
 
 xi.xispal.setMage = function(player, table)
     xi.xispal.removeMage(player)
+
+    local zoneID    = player:getZoneID()
+    local zoneTable = table[zoneID]
+
     player:setCharVar('[XISP]hasMage', 1)
-    player:setCharVar('[XISP]mageFace', table.face)
-    player:setCharVar('[XISP]mageRace', table.race)
+    player:setCharVar('[XISP]mageFace', zoneTable.face)
+    player:setCharVar('[XISP]mageRace', zoneTable.race)
     player:setCharVar('[XISP]mageJob', table.job)
+    player:setCharVar('[XISP]mageZone', zoneID)
     player:addSpell(table.trust, { silentLog = true })
 end
 
@@ -116,14 +128,15 @@ xi.xispal.removeMage = function(player)
     player:setCharVar('[XISP]mageFace', 0)
     player:setCharVar('[XISP]mageRace', 0)
     player:setCharVar('[XISP]mageJob', 0)
+    player:setCharVar('[XISP]mageZone', 0)
 end
 
-xi.xispal.updateFollowers = function(player)
-    player:timer(5000, function(playerArg)
-        for _, member in pairs(xi.xispal.getParty(player)) do
-            member:independentAnimation(member, 2, 3)
-        end
-    end)
+xi.xispal.changeJob = function(player)
+    local palID = player:getCharVar('[XISP]squireID')
+    local pal   = GetMobByID(palID)
+    pal:independentAnimation(pal, 1, 3)
+    DespawnMob(palID)
+    xi.xispal.spawnSquire(player, player:getZone())
 end
 
 -- Power should only range between 1-3
@@ -308,7 +321,7 @@ xi.xispal.checkPet = function(pal, player)
     end
 end
 
-xi.xispal.onMobSpawn = function(pal, player, table)
+xi.xispal.onMobSpawn = function(pal, player, table, zoneTable)
     if not player or not table then
         return
     end
@@ -316,10 +329,11 @@ xi.xispal.onMobSpawn = function(pal, player, table)
     pal:hideName(true)
     pal:setStatus(xi.status.INVISIBLE)
 
-    pal:renameEntity(table.name)
+    pal:renameEntity(zoneTable.name)
 
     pal:setLocalVar('petSummon', GetSystemTime() + 5) -- Used for DRG + SMN
     pal:setLocalVar('[XISP]spellRecast', GetSystemTime() + math.random(7, 12))
+    pal:setLocalVar('abilityCooldown', GetSystemTime() + math.random(2, 4))
     pal:setLocalVar('[XISP]isPal', 1)
 
 
@@ -328,6 +342,18 @@ xi.xispal.onMobSpawn = function(pal, player, table)
     pal:setMobMod(xi.mobMod.NO_DESPAWN, 1)
     pal:setMobMod(xi.mobMod.ROAM_COOL, 0)
     pal:setMobMod(xi.mobMod.NO_REST, 1)
+
+    local job       = pal:getMainJob()
+    local table     = xi.xispal.upgradeTable[job]
+    local playerVar = player:getCharVar('[XISP]palUpgrade' .. job)
+
+    -- Apply pal upgrades
+    for index = 1, playerVar, 1 do
+        for _, upgrade in pairs(table[index].mods) do
+            print('DEBUG: Pal upgrade: Upgraded pal.')
+            pal:addMod(upgrade.mod, upgrade.val)
+        end
+    end
 
     -- Update appearance for players so they're not naked
     player:timer(400, function(playerArg)
@@ -350,7 +376,7 @@ xi.xispal.onSquireSpawn = function(pal)
     local race = player:getCharVar('[XISP]squireRace')
     local lvl  = player:getMainLvl()
     local job  = pal:getMainJob()
-    local tier = xi.xispal.getTier(player)
+    local tier = xi.xispal.getTier(player, pal)
 
     pal:renameEntity(xi.xispal.squireName[player:getCharVar('[XISP]squireName')])
 
@@ -358,16 +384,16 @@ xi.xispal.onSquireSpawn = function(pal)
     local THPower = 0
     local acc     = 15
     
-    if job == xi.job.PLD or job == xi.job.SAM or job == xi.job.DRK or job == xi.job.THF then
+    if job == xi.job.PLD or job == xi.job.SAM or job == xi.job.DRK or job == xi.job.THF or job == xi.job.DRG then
         pal:setLocalVar('isMelee', 1)
         pal:setLookString(xi.xispal.generateModelID(xi.xispal.face[face], xi.xispal.race[race], xi.xispal.knightGearSets[job][tier]))
 
         if job == xi.job.THF then
             if lvl >= 45 then
                 THPower = 2
-                attp = -40
+                attp = -100
             else
-                attp = -30
+                attp = -75
                 THPower = 1
             end
 
@@ -420,9 +446,9 @@ xi.xispal.onSquireSpawn = function(pal)
     end
     
     pal:setLocalVar('[XISP]spellRecast', GetSystemTime() + math.random(7, 12))
+    pal:setLocalVar('abilityCooldown', GetSystemTime() + math.random(2, 3))
     
     player:timer(400, function(playerArg)
-        pal:setLocalVar('[XISP]spellRecast', GetSystemTime() + math.random(7, 12))
         pal:setLocalVar('[XISP]isPal', 1)
         pal:setStatus(xi.status.NORMAL)
         pal:hideName(false)
@@ -430,8 +456,17 @@ xi.xispal.onSquireSpawn = function(pal)
 end
 
 xi.xispal.onMageSpawn = function(pal, player, table)
-    local tier = xi.xispal.getTier(player)
-    local look = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.mageGearSets[table.job][tier])
+    local tier = xi.xispal.getTier(player, pal)
+
+    local mageZone = player:getCharVar('[XISP]mageZone')
+
+     -- Fail safe REMOVE FOR OFFICIAL VERSION
+    if mageZone == 0 then
+        mageZone = xi.zone.LOWER_JEUNO
+    end
+
+    local zoneTable = table[mageZone]
+    local look = xi.xispal.generateModelID(xi.xispal.face[zoneTable.face], xi.xispal.race[zoneTable.race], xi.xispal.mageGearSets[table.job][tier])
     local lvl  = player:getMainLvl()
 
     -- Base bonuses for mages
@@ -440,11 +475,11 @@ xi.xispal.onMageSpawn = function(pal, player, table)
     pal:setAutoAttackEnabled(false)
     pal:setLookString(look)
 
-    xi.xispal.onMobSpawn(pal, player, table)
+    xi.xispal.onMobSpawn(pal, player, table, zoneTable)
 end
 
 xi.xispal.onKnightSpawn = function(pal, player, table)
-    local tier    = xi.xispal.getTier(player)
+    local tier    = xi.xispal.getTier(player, pal)
     local lvl     = player:getMainLvl()
     local job     = pal:getMainJob()
     local attp    = 0
@@ -501,11 +536,20 @@ xi.xispal.onKnightSpawn = function(pal, player, table)
     pal:addMod(xi.mod.ACC, acc)
     pal:addMod(xi.mod.TREASURE_HUNTER, THPower)
 
-    local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][tier])
+    local knightZone = player:getCharVar('[XISP]knightZone')
+
+    -- Fail safe REMOVE FOR OFFICIAL VERSION
+    if knightZone == 0 then
+        knightZone = xi.zone.UPPER_JEUNO
+    end
+
+    local zoneTable = table[knightZone]
+    local look      = xi.xispal.generateModelID(xi.xispal.face[zoneTable.face], xi.xispal.race[zoneTable.race], xi.xispal.knightGearSets[table.job][tier])
+
     pal:setLocalVar('isMelee', 1)
     pal:setLookString(look)
 
-    xi.xispal.onMobSpawn(pal, player, table)
+    xi.xispal.onMobSpawn(pal, player, table, zoneTable)
 end
 
 xi.xispal.onMobRoam = function(pal, player)

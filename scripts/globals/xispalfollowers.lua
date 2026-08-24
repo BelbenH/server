@@ -10,20 +10,26 @@
 xi = xi or {}
 xi.xispal = xi.xispal or {}
 
-xi.xispal.getTier = function(player)
-    local lvl = player:getMainLvl()
+xi.xispal.getTier = function(player, pal)
+    local lvl  = player:getMainLvl()
+    local tier = 0
+    local job  = player:getCharVar('[XISP]squireJob')
 
-    if xi.xispal.hasCompletedAF(player) and lvl >= 60 then
-        return 4
-    elseif lvl >= 40 then
-        return 3
-    elseif lvl >= 30 then
-        return 2
-    elseif lvl >= 20 then
-        return 1
+    if pal ~= nil then
+        job = pal:getMainJob()
     end
 
-    return 0
+    if xi.xispal.hasCompletedAF(player) and lvl >= 60 then
+        tier = 4
+    elseif lvl >= 40 then
+        tier = 3
+    elseif lvl >= 30 then
+        tier =  2
+    elseif lvl >= 20 then
+        tier = 1
+    end
+
+    return tier + player:getCharVar('[XISP]palCosmeticUpgrade' .. job)
 end
 
 xi.xispal.spawnYoungSquire = function(player, zone)
@@ -107,7 +113,7 @@ xi.xispal.spawnSquire = function(player, zone)
     local tier = xi.xispal.getTier(player)
     local look = ''
 
-    if job == xi.job.PLD or job == xi.job.SAM or job == xi.job.DRK or job == xi.job.THF then
+    if job == xi.job.PLD or job == xi.job.SAM or job == xi.job.DRK or job == xi.job.THF or job == xi.job.DRG then
         look = xi.xispal.generateModelID(xi.xispal.face[face], xi.xispal.race[race], xi.xispal.knightGearSets[job][tier])
     else
         look = xi.xispal.generateModelID(xi.xispal.face[face], xi.xispal.race[race], xi.xispal.mageGearSets[job][tier])
@@ -149,7 +155,7 @@ xi.xispal.spawnSquire = function(player, zone)
             local zone = player:getZone()
 
             -- Update appearance for players so they're not naked
-            player:timer(3000, function(playerArg)
+            player:timer(4000, function(playerArg)
                 pal:setStatus(xi.status.NORMAL)
                 pal:hideName(false)
 
@@ -206,7 +212,7 @@ xi.xispal.spawnWyvern = function(pal)
         rotation              = pos.rotation,
         minLevel              = 1,
         maxLevel              = 75,
-        look                  = 761,
+        look                  = 24,
         groupId               = 110,
         groupZoneId           = xi.zone.GM_HOME,
         releaseIdOnDisappear  = true,

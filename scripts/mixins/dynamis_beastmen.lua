@@ -45,34 +45,48 @@ g_mixins.dynamis_beastmen = function(dynamisBeastmenMob)
         [4] = { single = 2400, hundred = 500 },
     }
 
-    dynamisBeastmenMob:addListener('MAGIC_TAKE', 'DYNAMIS_MAGIC_PROC_CHECK', function(target, caster, spell)
-        if
-            procjobs[target:getMainJob()] == 'ma' and
-            math.random(1, 100) <= 8 and
-            target:getLocalVar('dynamis_proc') == 0
+    local elementData =
+    {
+        xi.damageType.FIRE,
+        xi.damageType.ICE,
+        xi.damageType.WIND,
+        xi.damageType.EARTH,
+        xi.damageType.THUNDER,
+        xi.damageType.WATER,
+        xi.damageType.LIGHT,
+        xi.damageType.DARK,
+    }
+
+    dynamisBeastmenMob:addListener('SPAWN', 'DYNAMIS_SPAWN', function(mob)
+        mob:setLocalVar('element', math.random(1, #elementData))
+    end)
+
+    -- Need a 4th trigger method. Skillchains? the better the skillchain, the greater the chance
+
+    dynamisBeastmenMob:addListener('TAKE_DAMAGE', 'DYNAMIS_DEALT_DAMAGE', function(mobArg, damage, attacker, attackType, damageType)
+        if not attacker then
+            return
+        end
+
+        local triggerElement = elementData[mobArg:getLocalVar('element')]
+
+        if 
+            damageType == triggerElement and
+            damage >= 100
         then
-            xi.dynamis.procMonster(target, caster)
+            local chance = 35
+            xi.dynamis.procMonster(target, attacker, chance)
         end
     end)
 
     dynamisBeastmenMob:addListener('WEAPONSKILL_TAKE', 'DYNAMIS_WS_PROC_CHECK', function(user, target, skill, tp, action)
-        if
-            procjobs[target:getMainJob()] == 'ws' and
-            math.random(1, 100) <= 25 and
-            target:getLocalVar('dynamis_proc') == 0
-        then
-            xi.dynamis.procMonster(target, user)
-        end
+        local chance = 15
+        xi.dynamis.procMonster(target, user, chance)
     end)
 
     dynamisBeastmenMob:addListener('ABILITY_TAKE', 'DYNAMIS_ABILITY_PROC_CHECK', function(user, target, skill, action)
-        if
-            procjobs[target:getMainJob()] == 'ja' and
-            math.random(1, 100) <= 20 and
-            target:getLocalVar('dynamis_proc') == 0
-        then
-            xi.dynamis.procMonster(target, user)
-        end
+        local chance = 10
+        xi.dynamis.procMonster(target, user, chance)
     end)
 
     dynamisBeastmenMob:addListener('DEATH', 'DYNAMIS_ITEM_DISTRIBUTION', function(mob, killer)
