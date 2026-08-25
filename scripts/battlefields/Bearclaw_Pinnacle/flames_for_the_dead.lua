@@ -7,7 +7,6 @@ local ID = zones[xi.zone.BEARCLAW_PINNACLE]
 -----------------------------------
 
 local content = BattlefieldMission:new({
-<<<<<<< HEAD
     zoneId         = xi.zone.BEARCLAW_PINNACLE,
     battlefieldId  = xi.battlefield.id.FLAMES_FOR_THE_DEAD,
     canLoseExp     = false,
@@ -19,18 +18,6 @@ local content = BattlefieldMission:new({
     index          = 0,
     entryNpc       = 'Wind_Pillar_1',
     exitNpc        = 'Wind_Pillar_Exit',
-=======
-    zoneId         = xi.zone.BEARCLAW_PINNACLE,
-    battlefieldId  = xi.battlefield.id.FLAMES_FOR_THE_DEAD,
-    canLoseExp     = false,
-    cleanupDebuffs = true,
-    maxPlayers     = 6,
-    levelCap       = 99,
-    timeLimit      = utils.minutes(30),
-    index          = 0,
-    entryNpc       = 'Wind_Pillar_1',
-    exitNpc        = 'Wind_Pillar_Exit',
->>>>>>> upstream/base
 
     missionArea           = xi.mission.log_id.COP,
     mission               = xi.mission.id.cop.THREE_PATHS,

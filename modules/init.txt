@@ -52,30 +52,27 @@ custom/sql/log_ips.sql
 custom/sql/ip_update.sql
 
 # Era SQL Modules
-cop/sql/cop_level_restrictions.sql
-abyssea/sql/era_abilities_enmity.sql
-abyssea/sql/era_spell_enmity.sql
-soa/sql/magic_adjustments.sql
+era/sql/abyssea/cop_level_restrictions.sql
+era/sql/abyssea/era_abilities_enmity.sql
+era/sql/abyssea/era_spell_enmity.sql
+era/sql/soa/magic_adjustments.sql
 
 # Era Lua Modules
-wotg/lua/weaponskills/archery.lua
-wotg/lua/weaponskills/axe.lua
-wotg/lua/weaponskills/club.lua
-wotg/lua/weaponskills/dagger.lua
-wotg/lua/weaponskills/great_axe.lua
-wotg/lua/weaponskills/great_katana.lua
-wotg/lua/weaponskills/great_sword.lua
-wotg/lua/weaponskills/hand_to_hand.lua
-wotg/lua/weaponskills/katana.lua
-wotg/lua/weaponskills/marksmanship.lua
-wotg/lua/weaponskills/polearm.lua
-wotg/lua/weaponskills/scythe.lua
-wotg/lua/weaponskills/staff.lua
-wotg/lua/weaponskills/sword.lua
+era/lua/actions/weaponskills/archery.lua
+era/lua/actions/weaponskills/axe.lua
+era/lua/actions/weaponskills/club.lua
+era/lua/actions/weaponskills/dagger.lua
+era/lua/actions/weaponskills/great_axe.lua
+era/lua/actions/weaponskills/great_katana.lua
+era/lua/actions/weaponskills/great_sword.lua
+era/lua/actions/weaponskills/hand_to_hand.lua
+era/lua/actions/weaponskills/katana.lua
+era/lua/actions/weaponskills/marksmanship.lua
+era/lua/actions/weaponskills/polearm.lua
+era/lua/actions/weaponskills/scythe.lua
+era/lua/actions/weaponskills/staff.lua
+era/lua/actions/weaponskills/sword.lua
 
-soa/lua/tp_gain.lua
-soa/lua/magic_adjustments.lua
-soa/lua/npc_adjustments.lua
 
 # Phalanx SQL Modules
 phalanx/sql/phalanx_mob_adjustments.sql

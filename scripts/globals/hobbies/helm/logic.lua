@@ -51,7 +51,7 @@ local breakMods =
 local function doesToolBreak(player, info, helmType)
     local roll        = math.randomFloat(0, 100)
     local mods        = breakMods[helmType]
-    local breakChance = info.zone[player:getZoneID()].breakRate
+    local breakChance = 0 -- Phalanx, tools don't break
 
     if mods and mods[1] and mods[2] then
         local nqMultiplier = 0.893 ^ math.max(player:getMod(mods[1]), 0)
