@@ -29,17 +29,17 @@ entity.onMobInitialize = function(mob)
     end)
 end
 
--- RDM Maat needs Grav Res Rank 7
 entity.onMobSpawn = function(mob)
-    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 150)
+    mob:setMobMod(xi.mobMod.BASE_DAMAGE_MULTIPLIER, 125)
     mob:setUnkillable(true)
     mob:setBaseSpeed(60)
     mob:setMod(xi.mod.SILENCE_RES_RANK, 7)
+    mob:setMod(xi.mod.GRAVITY_RES_RANK, 7)
     mob:setMod(xi.mod.DARK_SLEEP_RES_RANK, 3)
 
     -- Reset mob.
     xi.combat.behavior.enableAllActions(mob)
-    mob:setLocalVar('[2hour]HPP', math.random(55, 60))
+    mob:setLocalVar('[2hour]HPP', math.randomInt(55, 60))
     mob:setLocalVar('[2hour]Used', 0)
     mob:setLocalVar('initialTaunt', 0)
     mob:setLocalVar('enrageTime', 0)
@@ -108,7 +108,10 @@ entity.onMobSpellChoose = function(mob, target, spellId)
         [25] = { xi.magic.spell.GRAVITY,     target, false, xi.action.type.ENFEEBLING_TARGET,    xi.effect.WEIGHT,    0, 100 },
     }
 
-    if target:hasStatusEffectByFlag(xi.effectFlag.DISPELABLE) then
+    if
+        target:hasStatusEffectByFlag(xi.effectFlag.DISPELABLE) and
+        mob:isEngaged()
+    then
         table.insert(spellList, #spellList + 1, { xi.magic.spell.DISPEL, target, false, xi.action.type.NONE, nil, 100 })
     end
 
@@ -167,7 +170,6 @@ entity.onMobFight = function(mob, target)
         GetSystemTime() >= mob:getLocalVar('enrageTime')
     then
         mob:setLocalVar('alreadyEnraged', 1)
-        mob:showText(mob, ID.text.LOOKS_LIKE_YOU_WERENT_READY)
         mob:setMod(xi.mod.REGAIN, 3000)
     end
 end
@@ -188,13 +190,23 @@ entity.onMobMobskillChoose = function(mob, target, skillId)
         xi.mobSkill.DRAGON_KICK_MAAT,
     }
 
-    return tpTable[math.random(1, #tpTable)]
+    return tpTable[math.randomInt(1, #tpTable)]
 end
 
 entity.onMobWeaponSkill = function(mob, target, skill, action)
-    if skill:getID() == xi.mobSkill.CHAINSPELL_MAAT then
+    local skillID = skill:getID()
+
+    if skillID == xi.mobSkill.CHAINSPELL_MAAT then
         mob:showText(mob, ID.text.NOW_THAT_IM_WARMED_UP)
         return
+    end
+
+    if
+        skillID == xi.mobSkill.ASURAN_FISTS_MAAT and
+        mob:getLocalVar('finalWord') == 0
+    then
+        mob:showText(mob, ID.text.LOOKS_LIKE_YOU_WERENT_READY)
+        mob:setLocalVar('finalWord', 1)
     end
 
     if mob:getLocalVar('alreadyEnraged') == 1 then
@@ -207,11 +219,11 @@ entity.onMobWeaponSkill = function(mob, target, skill, action)
         [2] = ID.text.TAKE_THAT_YOU_WHIPPERSNAPPER,
     }
 
-    mob:showText(mob, messageTable[math.random(1, #messageTable)])
+    mob:showText(mob, messageTable[math.randomInt(1, #messageTable)])
 end
 
 entity.onMobDisengage = function(mob)
-    if mob:getLocalVar('alreadyEnraged') == 0 then
+    if mob:getLocalVar('finalWord') == 0 then
         mob:showText(mob, ID.text.LOOKS_LIKE_YOU_WERENT_READY)
     end
 end

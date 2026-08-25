@@ -17,6 +17,8 @@ zoneObject.onInitialize = function(zone)
 
     local pos = { x = -158, y = 0.68, z = 453 }
     xi.customspawn.spawnQM(zone, pos, zones[xi.zone.JUGNER_FOREST].mob.KING_ARTHRO)
+    
+    xi.expeditionaryForce.initZone(zone)
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

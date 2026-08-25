@@ -94,7 +94,7 @@ g_mixins.dynamis_beastmen = function(dynamisBeastmenMob)
             return
         end
 
-        local currency      = familyCurrency[mob:getFamily()] or xi.item.TUKUKU_WHITESHELL + math.random(0, 2) * 3
+        local currency      = familyCurrency[mob:getFamily()] or xi.item.TUKUKU_WHITESHELL + math.randomInt(0, 2) * 3
         local singleChance  = mob:getMainLvl() > 90 and math.floor(th.single * 1.5) or th.single
         local hundredChance = th.hundred
         local procRate      = mob:getLocalVar('dynamis_proc')

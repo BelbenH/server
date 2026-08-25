@@ -67,7 +67,7 @@ entity.spawnPoints =
 
 entity.onMobInitialize = function(mob)
     xi.mob.updateNMSpawnPoint(mob)
-    mob:setRespawnTime(math.random(3600, 7200)) -- When server restarts, reset timer
+    mob:setRespawnTime(math.randomInt(3600, 7200)) -- When server restarts, reset timer
 
     mob:setMobMod(xi.mobMod.GIL_MIN, 20000)
     mob:setMobMod(xi.mobMod.GIL_MAX, 20000)

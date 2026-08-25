@@ -1,8 +1,6 @@
 -----------------------------------
 -- Area: Al Zahbi
 --  NPC: Kahah Hobichai
--- TODO: Stock needs to be modified based on
---       status of Astral Candescence
 -----------------------------------
 local ID = zones[xi.zone.AL_ZAHBI]
 -----------------------------------
@@ -21,7 +19,7 @@ entity.onTrigger = function(player, npc)
     }
 
     player:showText(npc, ID.text.KAHAHHOBICHAI_SHOP_DIALOG)
-    xi.shop.general(player, stock)
+    xi.besieged.shop(player, stock)
 end
 
 return entity

@@ -198,7 +198,7 @@ mission.sections =
             {
                 [1] = function(player, triggerArea)
                     if mission:getVar(player, 'Status') == 7 then
-                        return mission:progressEvent(116)
+                        return mission:progressCutscene(116)
                     end
                 end,
             },
@@ -321,7 +321,7 @@ mission.sections =
                     then
                         mission:setVar(player, 'coloredDropId', 0)
                     elseif mission:getVar(player, 'CProg') == 1 then
-                        return mission:progressEvent(43)
+                        return mission:progressCutscene(43)
                     end
                 end,
             },
@@ -329,7 +329,7 @@ mission.sections =
             onEventFinish =
             {
                 [43] = function(player, csid, option, npc)
-                    local coloredDropId = xi.item.RED_DROP + math.random(0, 7)
+                    local coloredDropId = xi.item.RED_DROP + math.randomInt(0, 7)
 
                     if not npcUtil.giveItem(player, coloredDropId) then
                         mission:setVar(player, 'coloredDropId', coloredDropId)

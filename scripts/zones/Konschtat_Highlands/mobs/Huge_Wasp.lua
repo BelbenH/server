@@ -2,8 +2,6 @@
 -- Area: Konschtat Highlands
 --  Mob: Huge Wasp
 -----------------------------------
-require('scripts/quests/tutorial')
------------------------------------
 ---@type TMobEntity
 local entity = {}
 

@@ -36,15 +36,31 @@ local rocks =
 -- local functions
 -----------------------------------
 
-local function doesToolBreak(player, info)
-    local roll  = math.random(1, 100)
-    local mod   = info.mod
+local breakMods =
+{
+    [xi.helmType.HARVESTING] = { xi.mod.HARVESTING_RESULT_NQ, xi.mod.HARVESTING_RESULT_HQ },
+    [xi.helmType.LOGGING]    = { xi.mod.LOGGING_RESULT_NQ, xi.mod.LOGGING_RESULT_HQ },
+    [xi.helmType.MINING]     = { xi.mod.MINING_RESULT_NQ, xi.mod.MINING_RESULT_HQ },
+    [xi.helmType.EXCAVATION] = nil,
+}
 
-    if mod then
-        roll = roll + (player:getMod(mod) / 10)
+---@param player CBaseEntity
+---@param info table
+---@param helmType xi.helmType
+---@return boolean
+local function doesToolBreak(player, info, helmType)
+    local roll        = math.randomFloat(0, 100)
+    local mods        = breakMods[helmType]
+    local breakChance = info.zone[player:getZoneID()].breakRate
+
+    if mods and mods[1] and mods[2] then
+        local nqMultiplier = 0.893 ^ math.max(player:getMod(mods[1]), 0)
+        local hqMultiplier = 0.843 ^ math.max(player:getMod(mods[2]), 0)
+
+        breakChance = breakChance * nqMultiplier * hqMultiplier
     end
 
-    if roll <= info.settingBreak then
+    if roll < breakChance then
         player:tradeComplete()
         return true
     end
@@ -53,10 +69,16 @@ local function doesToolBreak(player, info)
 end
 
 local function pickItem(player, info)
-    local zoneId = player:getZoneID()
+    local zoneId   = player:getZoneID()
+    local minLevel = info.zone[zoneId].minLevel or 0
+
+    -- some zones award nothing below a level requirement, the tool still breaks
+    if player:getMainLvl() < minLevel then
+        return 0
+    end
 
     -- found nothing
-    if math.random(1, 100) > info.settingRate then
+    if math.randomFloat(0, 100) >= info.zone[zoneId].obtainRate then
         return 0
     end
 
@@ -71,7 +93,7 @@ local function pickItem(player, info)
 
     -- pick weighted result
     local item = 0
-    local pick = math.random(1, sum)
+    local pick = math.randomInt(1, sum)
     sum = 0
 
     for i = 1, #drops do
@@ -98,7 +120,7 @@ end
 
 local function movePoint(player, npc, zoneId, info)
     local points = info.zone[zoneId].points
-    local point  = points[math.random(1, #points)]
+    local point  = points[math.randomInt(1, #points)]
 
     npc:hideNPC(120)
     npc:queue(3000, doMove(npc, unpack(point)))
@@ -161,9 +183,20 @@ xi.helm.onTrade = function(player, npc, trade, helmType, csid, func)
     player:delStatusEffect(xi.effect.INVISIBLE)
 
     if trade:hasItemQty(info.tool, 1) and trade:getItemCount() == 1 then
+        -- Forced wait between gathering attempts
+        if xi.settings.main.ENABLE_HELM_WAIT then
+            local now = GetSystemTime()
+
+            if now < player:getLocalVar('[HELM]LastAttempt') + 3 then
+                return
+            end
+
+            player:setLocalVar('[HELM]LastAttempt', now)
+        end
+
         -- start event
         local itemID = pickItem(player, info)
-        local broke  = doesToolBreak(player, info) and 1 or 0
+        local broke  = doesToolBreak(player, info, helmType) and 1 or 0
         local full   = (player:getFreeSlotsCount() == 0) and 1 or 0
 
         -- Cutscene plays the emote in all zones but Adoulin.
@@ -185,14 +218,11 @@ xi.helm.onTrade = function(player, npc, trade, helmType, csid, func)
             itemID = 0
         end
 
-        -- success! reward item and decrement number of remaining uses on the point
+        -- success! reward item and roll to relocate the point
         if itemID ~= 0 then
             player:addItem(itemID)
 
-            local uses = (npc:getLocalVar('uses') - 1) % 4
-            npc:setLocalVar('uses', uses)
-
-            if uses == 0 then
+            if math.randomInt(1, 100) <= info.relocateRate then
                 movePoint(player, npc, zoneId, info)
             end
         end

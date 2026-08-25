@@ -50,9 +50,9 @@ end
 --  - ancientBoxPos:    (optional) { x, y, z, rot } position of the Ancient Lockbox NPC on completion
 --  - requiredProgress: (optional) Progress value at which the instance auto-completes
 --  - basePoints:       (optional) Base assault points before bonuses and penalties
---  - mobs:             (optional) { { baseID = id, offset = n } } — spawns mobs from baseID to baseID+offset
+--  - mobs:             (optional) { { baseID = id, offset = n } } - spawns mobs from baseID to baseID+offset
 --  - npcs:             (optional) Same format as mobs; sets animation to NORMAL on instance creation
---  - wallNPCs:         (optional) { npcID, ... } — NPCs set to OPEN_DOOR animation on instance creation
+--  - wallNPCs:         (optional) { npcID, ... } - NPCs set to OPEN_DOOR animation on instance creation
 --  - loot:             (optional) Ancient Lockbox reward table. Omit to use the zone's Ancient_Lockbox.lua.
 --      - loot.appraisalReward = { { { itemId, weight }, ... } }       group for unappraised gear
 --      - loot.bonusLoot       = { { { itemId, weight }, ... }, ... }  one or more groups for consumables
@@ -207,6 +207,7 @@ xi.assault.checkRequirements = function(player, content)
     return player:hasKeyItem(content.requiredOrders) and
         player:getCurrentAssault() == content.assaultID and
         player:getCharVar('assaultEntered') == 0 and
+        player:getCharVar('AssaultFailed') == 0 and
         player:getMainLvl() >= content.suggestedLevel
 end
 
@@ -382,10 +383,10 @@ xi.assault.onInstanceComplete = function(instance, posX, posZ)
 end
 
 xi.assault.onInstanceFailure = function(instance)
-    local chars  = instance:getChars()
-    local mobs   = instance:getMobs()
-    local zoneID = instance:getZone():getID()
-    local player = next(chars)
+    local chars     = instance:getChars()
+    local mobs      = instance:getMobs()
+    local zoneID    = instance:getZone():getID()
+    local _, player = next(chars)
     if not player then
         return
     end
@@ -394,8 +395,7 @@ xi.assault.onInstanceFailure = function(instance)
     local area      = xi.assault.missionToArea[assaultID]
 
     for _, entity in pairs(mobs) do
-        local mobID = entity:getID()
-        DespawnMob(mobID, instance)
+        DespawnMob(entity:getID(), instance)
     end
 
     for _, entity in pairs(chars) do
@@ -406,7 +406,7 @@ xi.assault.onInstanceFailure = function(instance)
 
         entity:messageSpecial(zones[zoneID].text.MISSION_FAILED, 10, 10)
         entity:setCharVar('assaultEntered', 0)
-        entity:setCharVar('Assault_Armband', 0)
+        entity:setCharVar('AssaultFailed', 1)
         entity:startEvent(102)
     end
 end

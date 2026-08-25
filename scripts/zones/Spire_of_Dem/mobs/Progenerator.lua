@@ -40,14 +40,10 @@ entity.onMobMobskillChoose = function(mob, target, skillId)
         table.insert(tpMoves, xi.mobSkill.FISSION)
     end
 
-    return tpMoves[math.random(1, #tpMoves)]
+    return tpMoves[math.randomInt(1, #tpMoves)]
 end
 
 entity.onMobFight = function(mob, target)
-    if mob:getTP() >= 2000 then
-        mob:useMobAbility()
-    end
-
     if mob:getHPP() > 35 then
         mob:setMod(xi.mod.REGAIN, 0)
     else

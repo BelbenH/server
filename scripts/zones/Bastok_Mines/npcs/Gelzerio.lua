@@ -8,6 +8,8 @@ local entity = {}
 entity.onTrigger = function(player, npc)
     local stock =
     {
+        { xi.item.SILVER_BELT,       11171, 1 },
+        { xi.item.SWORDBELT,         21780, 1 },
         { xi.item.LUGWORM,              12, 3 },
         { xi.item.LITTLE_WORM,           4, 3 },
         { xi.item.BAMBOO_FISHING_ROD,  561, 3 },

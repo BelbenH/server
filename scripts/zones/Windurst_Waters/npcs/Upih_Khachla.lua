@@ -24,7 +24,7 @@ entity.onTrigger = function(player, npc)
         { xi.item.PINCH_OF_TWINKLE_POWDER,  400, 3 },
         { xi.item.ONZ_OF_DESALINATOR,      4576, 3 },
         { xi.item.ONZ_OF_SALINATOR,        4576, 3 },
-		-- 🔥 Added Ninja Tools --
+		-- Added Ninja Tools --
         { xi.item.SHIHEI,              	    101, 3 },
         { xi.item.SAIRUI_RAN,          	    101, 3 },
 		{ xi.item.KAGINAWA,          	    101, 3 },
@@ -35,7 +35,7 @@ entity.onTrigger = function(player, npc)
         { xi.item.INOSHISHINOFUDA,     	    501, 3 },
         { xi.item.SHIKANOFUDA,         	    501, 3 },
         { xi.item.CHONOFUDA,                501, 3 },
-		-- 🔥 Added Ninja Tools --
+		-- Expensive Tools
         { xi.item.PICKAXE,               	15000, 3 },
 		{ xi.item.HATCHET,               	15000, 3 },
         { xi.item.SICKLE,                   15000, 3 },
@@ -43,7 +43,7 @@ entity.onTrigger = function(player, npc)
 
     -- Thief's tools.
     if GetNationRank(player:getNation()) >= 2 then -- Player nation rank 2 or 3.
-        table.insert(stock, { xi.item.SET_OF_THIEFS_TOOLS, 2158, 3 })
+        table.insert(stock, { xi.item.SET_OF_THIEFS_TOOLS, 3999, 3 })
     end
 
     -- Living Key.
@@ -54,7 +54,7 @@ entity.onTrigger = function(player, npc)
         (windyNationRank == sandyNationRank and windyNationRank == bastokNationRank) or                       -- All 3 nations tied.
         (windyNationRank ~= sandyNationRank and windyNationRank ~= bastokNationRank and windyNationRank == 3) -- Nation not tied and nation last.
     then
-        table.insert(stock, { xi.item.LIVING_KEY, 5520, 3 })
+        table.insert(stock, { xi.item.LIVING_KEY, 5308, 3 })
     end
 
     player:showText(npc, zones[xi.zone.WINDURST_WATERS].text.UPIHKHACHLA_SHOP_DIALOG)

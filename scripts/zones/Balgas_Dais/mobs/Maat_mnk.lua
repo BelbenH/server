@@ -30,14 +30,16 @@ end
 entity.onMobSpawn = function(mob)
     mob:setUnkillable(true)
     mob:setBaseSpeed(60)
+    mob:setMod(xi.mod.ACC, 229)
 
     -- Reset mob.
     xi.combat.behavior.enableAllActions(mob)
-    mob:setLocalVar('[2hour]HPP', math.random(60, 65))
+    mob:setLocalVar('[2hour]HPP', math.randomInt(60, 65))
     mob:setLocalVar('[2hour]Used', 0)
     mob:setLocalVar('initialTaunt', 0)
     mob:setLocalVar('enrageTime', 0)
     mob:setLocalVar('alreadyEnraged', 0)
+    mob:setLocalVar('finalWord', 0)
 end
 
 entity.onMobRoam = function(mob)
@@ -124,7 +126,6 @@ entity.onMobFight = function(mob, target)
         GetSystemTime() >= mob:getLocalVar('enrageTime')
     then
         mob:setLocalVar('alreadyEnraged', 1)
-        mob:showText(mob, ID.text.LOOKS_LIKE_YOU_WERENT_READY)
         mob:setMod(xi.mod.REGAIN, 3000)
     end
 end
@@ -145,13 +146,23 @@ entity.onMobMobskillChoose = function(mob, target, skillId)
         xi.mobSkill.DRAGON_KICK_MAAT,
     }
 
-    return tpTable[math.random(1, #tpTable)]
+    return tpTable[math.randomInt(1, #tpTable)]
 end
 
 entity.onMobWeaponSkill = function(mob, target, skill, action)
-    if skill:getID() == xi.mobSkill.HUNDRED_FISTS_MAAT then
+    local skillID = skill:getID()
+
+    if skillID == xi.mobSkill.HUNDRED_FISTS_MAAT then
         mob:showText(mob, ID.text.NOW_THAT_IM_WARMED_UP)
         return
+    end
+
+    if
+        skillID == xi.mobSkill.ASURAN_FISTS_MAAT and
+        mob:getLocalVar('finalWord') == 0
+    then
+        mob:showText(mob, ID.text.LOOKS_LIKE_YOU_WERENT_READY)
+        mob:setLocalVar('finalWord', 1)
     end
 
     if mob:getLocalVar('alreadyEnraged') == 1 then
@@ -164,11 +175,11 @@ entity.onMobWeaponSkill = function(mob, target, skill, action)
         [2] = ID.text.TAKE_THAT_YOU_WHIPPERSNAPPER,
     }
 
-    mob:showText(mob, messageTable[math.random(1, #messageTable)])
+    mob:showText(mob, messageTable[math.randomInt(1, #messageTable)])
 end
 
 entity.onMobDisengage = function(mob)
-    if mob:getLocalVar('alreadyEnraged') == 0 then
+    if mob:getLocalVar('finalWord') == 0 then
         mob:showText(mob, ID.text.LOOKS_LIKE_YOU_WERENT_READY)
     end
 end

@@ -9,10 +9,10 @@ local entity = {}
 entity.onTrigger = function(player, npc)
     local stock =
     {
-        { xi.item.FLASK_OF_EYE_DROPS,        2698 },
-        { xi.item.ANTIDOTE,                   328 },
-        { xi.item.FLASK_OF_ECHO_DROPS,        832 },
-        { xi.item.POTION,                     946 },
+        { xi.item.FLASK_OF_EYE_DROPS,        2595 },
+        { xi.item.ANTIDOTE,                   316 },
+        { xi.item.FLASK_OF_ECHO_DROPS,        800 },
+        { xi.item.POTION,                     910 },
         { xi.item.FLASK_OF_DISTILLED_WATER,    12 },
         { xi.item.SHEET_OF_PARCHMENT,        2059 },
         { xi.item.SCROLL_OF_REGEN,           4920 }, -- x 10 specialty item.
